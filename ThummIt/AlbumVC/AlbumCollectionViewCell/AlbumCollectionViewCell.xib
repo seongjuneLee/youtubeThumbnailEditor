@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AlbumCollectionViewCell" id="gTV-IL-0wX" customClass="AlbumCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3aP-4k-yWw">
+                        <rect key="frame" x="0.0" y="22" width="200" height="200"/>
+                    </imageView>
+                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-Cr-v91">
+                        <rect key="frame" x="0.0" y="22" width="200" height="200"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyCircle" translatesAutoresizingMaskIntoConstraints="NO" id="t9f-d1-27A">
+                        <rect key="frame" x="170" y="32" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="AAj-68-Ww3"/>
+                            <constraint firstAttribute="width" constant="20" id="k6n-Zw-A4t"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <constraints>
+                <constraint firstItem="3aP-4k-yWw" firstAttribute="centerX" secondItem="SEy-5g-ep8" secondAttribute="centerX" id="1gB-nj-ayE"/>
+                <constraint firstItem="3aP-4k-yWw" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="Evc-2g-M6x"/>
+                <constraint firstItem="BSx-Cr-v91" firstAttribute="centerX" secondItem="3aP-4k-yWw" secondAttribute="centerX" id="GGt-fi-anY"/>
+                <constraint firstItem="BSx-Cr-v91" firstAttribute="centerY" secondItem="3aP-4k-yWw" secondAttribute="centerY" id="bBu-fJ-dfL"/>
+                <constraint firstItem="3aP-4k-yWw" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="bk5-ON-Aoh"/>
+                <constraint firstItem="BSx-Cr-v91" firstAttribute="height" secondItem="3aP-4k-yWw" secondAttribute="height" id="iLi-ut-TQ6"/>
+                <constraint firstItem="BSx-Cr-v91" firstAttribute="width" secondItem="3aP-4k-yWw" secondAttribute="width" id="nBX-iF-a0I"/>
+                <constraint firstItem="t9f-d1-27A" firstAttribute="top" secondItem="3aP-4k-yWw" secondAttribute="top" constant="10" id="rIV-7c-ZtF"/>
+                <constraint firstItem="t9f-d1-27A" firstAttribute="trailing" secondItem="3aP-4k-yWw" secondAttribute="trailing" constant="-10" id="vkx-WD-LGG"/>
+                <constraint firstItem="3aP-4k-yWw" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="vwO-4r-67V"/>
+            </constraints>
+            <size key="customSize" width="306" height="237"/>
+            <connections>
+                <outlet property="imageView" destination="3aP-4k-yWw" id="8uC-dI-yyy"/>
+                <outlet property="stateCircleImageView" destination="t9f-d1-27A" id="xbr-qu-VTV"/>
+                <outlet property="transparentView" destination="BSx-Cr-v91" id="b7R-xq-Yso"/>
+            </connections>
+            <point key="canvasLocation" x="323.1884057971015" y="14.732142857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="emptyCircle" width="194.66667175292969" height="194.66667175292969"/>
+    </resources>
+</document>
