@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "PhotoManager.h"
+#import "ProjectManager.h"
 #import "ThummIt-Swift.h"
 @interface AppDelegate ()
 
@@ -20,7 +21,8 @@
     [MigratorJul.shared migrateIfNeeded];
     
     [PhotoManager.sharedInstance fetchPhassets];
-
+    [ProjectManager.sharedInstance setUpSnapShotFromProject];
+    
     return YES;
 }
 

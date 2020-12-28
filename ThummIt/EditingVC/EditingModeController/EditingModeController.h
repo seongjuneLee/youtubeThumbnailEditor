@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef enum {
     NormalMode = 0,
-    EditingItemMode = 1,
+    EditingPhotoFrameMode = 1,
 } EditingMode;
 
 @protocol EditingModeControllerDelegate <NSObject>

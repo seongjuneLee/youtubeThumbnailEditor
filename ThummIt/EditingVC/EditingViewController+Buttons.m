@@ -14,7 +14,7 @@
     
     if (self.editingModeController.editingMode == NormalMode) {
         [self closeEditingVC];
-    } else if (self.editingModeController.editingMode == EditingItemMode){
+    } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
         [self.editingModeController setUpEditingMode:NormalMode];
         [self dismissAlbumVC];
     }
@@ -26,7 +26,7 @@
     
     if (self.editingModeController.editingMode == NormalMode) {
         [self exportThumbnail];
-    } else if (self.editingModeController.editingMode == EditingItemMode){
+    } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
         [self.editingModeController setUpEditingMode:NormalMode];
         [self doneSelectingPhoto];
     }
@@ -47,6 +47,7 @@
     self.selectedItem.imageView.image = self.originalPhotoFrameImage;
     // 취소시 이미지 뷰 센터 다시 돌려놓기.
     self.selectedItem.imageView.center = self.originalImageViewCenter;
+    self.selectedItem.imageView.transform = self.originalTransform;
     
     // 레이어 되돌려 놓기
     [self.editingLayerController recoverOriginalLayer];
@@ -79,7 +80,9 @@
 
     self.originalPhotoFrameImage = nil;
     self.selectedItem = nil;
-    [SaveManager.sharedInstance save];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [SaveManager.sharedInstance save];
+    });
     
 }
 

@@ -16,16 +16,16 @@
     if ([item isKindOfClass:PhotoFrame.class]) {
         
         self.selectedItem = (PhotoFrame *)item;
-        [self.editingModeController setUpEditingMode:EditingItemMode];
+        [self.editingModeController setUpEditingMode:EditingPhotoFrameMode];
         self.originalPhotoFrameImage = self.selectedItem.imageView.image;
         self.originalImageViewCenter = self.selectedItem.imageView.center;
-        
+        self.originalTransform = self.selectedItem.imageView.transform;
         [self showAlbumVC];
         [self setCurrentPhotoSelectedOnAlbumVC];
         
     }
     
-    [self.editingLayerController setUpWithSelectedItem:item];
+    [self.editingLayerController bringSelectedItemToFront:item];
     
 }
 
@@ -35,7 +35,7 @@
         self.selectedItem.imageView.image = self.originalPhotoFrameImage;
         self.selectedItem.imageView.center = self.originalImageViewCenter;
         [self.editingLayerController recoverOriginalLayer];
-        [self.editingLayerController setUpWithSelectedItem:item];
+        [self.editingLayerController bringSelectedItemToFront:item];
         
         self.selectedItem = item;
         self.originalPhotoFrameImage = self.selectedItem.imageView.image;
@@ -87,41 +87,30 @@
 #pragma mark - 팬
 
 // 팬 제스쳐 노멀 모드
--(void)pangestureBeganForNoramlMode{
-    
+-(void)readyUIForPanning{
+    self.underAreaView.hidden = true;
     [UIView animateWithDuration:0.2 animations:^{
         self.textButtonContainerView.alpha = 0.0;
         self.deleteButtonContainerView.alpha = 1.0;
     }];
-    
 }
 
--(void)pangestureChangedInNormalMode:(Item *)item withDelta:(CGPoint)delta withFingerPoint:(CGPoint)fingerPoint{
-    
-    CGPoint convertedPoint = [self.imageView convertPoint:item.baseView.center fromView:self.view];
-    CGPoint center = CGPointMake(convertedPoint.x/self.imageView.frameWidth, convertedPoint.y/self.imageView.frameHeight);
-    if ([item isKindOfClass:PhotoFrame.class]) {
-        self.selectedItem = item;
-        self.selectedItem.baseView.centerX += delta.x;
-        self.selectedItem.baseView.centerY += delta.y;
-        self.selectedItem.center = center;
-        
-        float iamgeViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
-        if (fingerPoint.y >= iamgeViewBottomY) {
-            [UIView animateWithDuration:0.2 animations:^{
-                self.deleteButtonContainerView.alpha = 0.4;
-            }];
-        } else {
-            [UIView animateWithDuration:0.2 animations:^{
-                self.deleteButtonContainerView.alpha = 1.0;
-            }];
-        }
+-(void)deleteImageRespondToCurrentPointY:(float)currentPointY{
+    float iamgeViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
+    if (currentPointY >= iamgeViewBottomY) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.deleteButtonContainerView.alpha = 0.4;
+        }];
+    } else {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.deleteButtonContainerView.alpha = 1.0;
+        }];
     }
-
 }
 
--(void)pangestureEndedForNoramlMode:(Item *)item withFingerPoint:(CGPoint)fingerPoint{
+-(void)panGestureEndedForNoramlMode:(Item *)item withFingerPoint:(CGPoint)fingerPoint{
     
+    self.underAreaView.hidden = false;
     float iamgeViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
     if (fingerPoint.y >= iamgeViewBottomY) {
         [self deleteItem:item];
@@ -143,19 +132,14 @@
     
 }
 
-// 팬 제스쳐 아이템 편집 모드
+#pragma mark - 핀치제스쳐
 
--(void)pangestureChangedInEditingItemMode:(Item *)item withDelta:(CGPoint)delta{
-    
-    CGPoint center = CGPointMake(item.imageView.center.x/item.baseView.frameWidth, item.imageView.center.y/item.baseView.frameHeight);
-
-    if ([item isKindOfClass:PhotoFrame.class]) {
-        self.selectedItem = item;
-        self.selectedItem.imageView.centerX += delta.x;
-        self.selectedItem.imageView.centerY += delta.y;
-        self.selectedItem.imageViewCenter = center;
-    }
-    
+-(void)pinchGestureInNormalModeBeganWithItem:(Item *)item withSender:(UIGestureRecognizer *)sender{
+    self.underAreaView.hidden = true;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.textButtonContainerView.alpha = 0.0;
+        self.deleteButtonContainerView.alpha = 1.0;
+    }];
 }
 
 @end

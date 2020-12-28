@@ -47,9 +47,6 @@
     // 포토 프레임 올려줌
     self.imageView.backgroundColor = self.selectedTemplate.backgroundColor;
     for (Item *item in self.selectedTemplate.items) {
-        CGPoint convertedPoint = [self.imageView convertPoint:item.baseView.center fromView:self.view];
-        CGPoint center = CGPointMake(convertedPoint.x/self.imageView.frameWidth, convertedPoint.y/self.imageView.frameHeight);
-        item.center = center;
         [self.view insertSubview:item.baseView belowSubview:self.gestureView];
     }
     [SaveManager.sharedInstance save];
@@ -69,6 +66,8 @@
 -(void)connectEditingGestureController{
     
     self.editingGestureController = [[EditingGestureController alloc] initWithView:self.gestureView];
+    self.editingGestureController.imageView = self.imageView;
+    self.editingGestureController.view = self.view;
     self.editingGestureController.delegate = self;
     self.editingGestureController.editingMode = self.editingModeController.editingMode;
     //TODO : 모든 아이템 넘겨주기.
@@ -106,11 +105,13 @@
     float imageViewWidth = self.view.frameWidth;
     float imageViewHeight = imageViewWidth * 9/16;
     for (Item *item in project.items) {
-        float itemX = imageViewWidth * item.center.x;
-        float itemY = imageViewHeight * item.center.y + self.imageView.frameY;
-        [item scaleItem];
-        CGPoint itemCenter = CGPointMake(itemX, itemY);
-        item.baseView.center = itemCenter;
+        if (item.isTemplateItem) {
+            float itemX = imageViewWidth * item.relativeCenter.x;
+            float itemY = imageViewHeight * item.relativeCenter.y + self.imageView.frameY;
+            CGPoint itemCenter = CGPointMake(itemX, itemY);
+            [item scaleItem];
+            item.baseView.center = itemCenter;
+        }
         [self.view insertSubview:item.baseView belowSubview:self.gestureView];
     }
     [SaveManager.sharedInstance save];

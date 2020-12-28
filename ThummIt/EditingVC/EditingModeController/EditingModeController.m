@@ -29,7 +29,7 @@
         } completion:nil];
         self.leftItemWidthConstraint.constant = 25;
         [self.rightItem setTitle:NSLocalizedString(@"Export", nil) forState:UIControlStateNormal];
-    } else if (self.editingMode == EditingItemMode){
+    } else if (self.editingMode == EditingPhotoFrameMode){
         [self.leftItem setImage:nil forState:UIControlStateNormal];
         [UIView transitionWithView:self.leftItem duration:0.3 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
             [self.leftItem setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];

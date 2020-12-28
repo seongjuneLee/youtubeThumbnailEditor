@@ -16,6 +16,7 @@
     if (self) {
         self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
         self.baseView.clipsToBounds = true;
+        self.scale = 1.0;
     }
     return self;
     
@@ -35,7 +36,6 @@
     copied.itemName = [NSString stringWithString:self.itemName];
     
     [copied.baseView addSubview:copied.imageView];
-    copied.center = self.center;
     copied.rotationDegree = self.rotationDegree;
     copied.scale = self.scale;
     copied.imageViewCenter = self.imageViewCenter;
@@ -69,13 +69,6 @@
             self.imageView.image = [UIImage imageWithData:data];
         }
         
-        self.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];
-        self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
-        self.rotationDegree = [[decoder decodeObjectForKey:@"rotationDegree"] floatValue];
-        self.imageViewCenter = [[decoder decodeObjectForKey:@"imageViewCenter"] CGPointValue];
-        self.imageViewScale = [[decoder decodeObjectForKey:@"imageViewScale"] floatValue];
-        self.imageViewRotationDegree = [[decoder decodeObjectForKey:@"imageViewRotationDegree"] floatValue];
-
     }
     return self;
 }
@@ -88,13 +81,6 @@
     NSString *imageURL = [UIImagePNGRepresentation(self.imageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     [encoder encodeObject:self.imageView forKey:@"imageView"];
     [encoder encodeObject:imageURL forKey:@"imageURL"];
-    [encoder encodeObject:[NSValue valueWithCGPoint:self.center] forKey:@"center"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotation"];
-    
-    [encoder encodeObject:[NSValue valueWithCGPoint:self.imageViewCenter] forKey:@"imageViewCenter"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.imageViewScale] forKey:@"imageViewScale"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.imageViewRotationDegree] forKey:@"imageViewRotationDegree"];
     
 
 }

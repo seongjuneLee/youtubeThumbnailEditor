@@ -8,6 +8,7 @@
 #import "ProjectManager.h"
 #import "ThummIt-Swift.h"
 #import "NSDate+Additions.h"
+#import "UIImage+Additions.h"
 #import "NSString+Additions.h"
 @implementation ProjectManager
 
@@ -157,6 +158,14 @@
     return projects;
 }
 
+-(NSUInteger)fetchedProjectsCount{
+    
+    NSArray<CoreDataProject*>* coreDataProjects = [CoreDataStack fetchAllProjects];
+
+    return coreDataProjects.count;
+    
+}
+
 -(NSString *)generateProjectID{
     
     NSString *dateString = [NSDate localizedDateString] ?: @"";
@@ -168,5 +177,29 @@
 }
 
 
+-(void)setUpSnapShotFromProject{
+    
+    self.projectSnapShots = [NSMutableArray array];
+    NSArray *projects = [ProjectManager.sharedInstance getAllProjectsFromCoreData];
+    for (Project *project in projects) {
+        
+        UIScreen *screen = UIScreen.mainScreen;
+        UIImageView *imageView = [[UIImageView alloc] init];
+        float imageViewWidth = screen.bounds.size.width;
+        imageView.frame = CGRectMake(0, 0, imageViewWidth, imageViewWidth*9/16);
+        imageView.backgroundColor = UIColor.blackColor;
+        
+        for (Item *item  in project.items) {
+            
+            Item *copiedItem = [item copy];
+            [imageView addSubview:copiedItem.baseView];
+            
+        }
+        
+        UIImage *snapShot = [UIImage imageWithView:imageView];
+        [self.projectSnapShots addObject:snapShot];
+    }
+    
+}
 
 @end

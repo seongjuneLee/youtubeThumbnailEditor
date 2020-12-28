@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) UIImage *originalPhotoFrameImage;
 @property (strong, nonatomic, nullable) PHAsset *originalPHAsset;
 @property (nonatomic) CGPoint originalImageViewCenter;
-
+@property (nonatomic) CGAffineTransform originalTransform;
 
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -37,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
 @property (weak, nonatomic) IBOutlet UIView *textButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *deleteButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *underAreaView;
 
 @end
 

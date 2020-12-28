@@ -203,6 +203,7 @@
                         <outlet property="leftItemWidthConstraint" destination="hm7-V8-h9d" id="w3w-EG-UTM"/>
                         <outlet property="rightItem" destination="JmC-6K-MjI" id="vEH-9O-8xp"/>
                         <outlet property="textButtonContainerView" destination="MaA-yZ-tJG" id="ZmA-HC-BW4"/>
+                        <outlet property="underAreaView" destination="ulM-C1-Guu" id="X8Q-cO-OHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gex-iF-IfD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

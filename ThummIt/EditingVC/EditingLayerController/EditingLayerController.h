@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) Item *selectedItem;
 
 
--(void)setUpWithSelectedItem:(Item *)selectedItem;
+-(void)bringSelectedItemToFront:(Item *)selectedItem;
 -(void)recoverOriginalLayer;
 
 @end

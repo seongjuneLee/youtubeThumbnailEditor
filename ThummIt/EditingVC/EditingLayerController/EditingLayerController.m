@@ -16,7 +16,7 @@
     return self;
 }
 
--(void)setUpWithSelectedItem:(Item *)selectedItem{
+-(void)bringSelectedItemToFront:(Item *)selectedItem{
     
     if (!self.transparentView) {
         self.transparentView = [[UIView alloc] initWithFrame:self.imageView.frame];
