@@ -21,7 +21,9 @@ typedef enum {
 @property (nonatomic) ItemType itemType;
 @property (strong ,nonatomic) UIView *baseView;
 @property (strong, nonatomic) NSString *itemName;
+@property (strong, nonatomic) NSString *backgroundImageName;
 @property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UIImageView *backgroundImageView;
 @property (strong, nonatomic) PHAsset *phAsset;
 
 @property (nonatomic) CGPoint relativeCenter;

@@ -81,6 +81,7 @@
 
         } completion:nil];
     }
+    
 }
 
 
@@ -119,8 +120,9 @@
     [UIView animateWithDuration:0.2 animations:^{
         self.textButtonContainerView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
+    }completion:^(BOOL finished) {
+        [SaveManager.sharedInstance save];
     }];
-    [SaveManager.sharedInstance save];
 
 }
 

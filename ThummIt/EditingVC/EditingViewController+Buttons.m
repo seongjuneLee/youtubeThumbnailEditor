@@ -9,6 +9,7 @@
 
 @implementation EditingViewController (Buttons)
 
+#pragma mark - 네비게이션 버튼
 
 - (IBAction)leftItemTapped:(id)sender {
     
@@ -86,4 +87,31 @@
     
 }
 
+#pragma mark - 아이템 버튼
+
+- (IBAction)photoFrameButtonTapped:(id)sender {
+    
+    [self addItemCollectionVC];
+    
+}
+
+-(void)addItemCollectionVC{
+    
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
+    if (!self.itemCollectionVC) {
+        self.itemCollectionVC = (ItemCollectionViewController *)[main instantiateViewControllerWithIdentifier:@"ItemCollectionViewController"];
+        [self addChildViewController:self.itemCollectionVC];
+        [self.view addSubview:self.itemCollectionVC.view];
+
+//        self.itemCollectionVC.delegate = self;
+        self.itemCollectionVC.collectionView.frameY = self.view.frameHeight;
+        self.itemCollectionVC.blurView.frameY = self.view.frameHeight;
+
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.itemCollectionVC.collectionView.frameY = self.itemCollectionVC.view.frameY;
+            self.itemCollectionVC.blurView.frameY = self.itemCollectionVC.view.frameY;
+        } completion:nil];
+    }
+
+}
 @end

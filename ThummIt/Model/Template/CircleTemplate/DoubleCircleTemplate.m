@@ -52,11 +52,5 @@
     
 }
 
--(void)centerLabel:(PhotoFrame *)photoFrame withSizeDelta:(float)delta{
-    
-    photoFrame.plusLabel.frameX -= delta/2;
-    photoFrame.plusLabel.frameY -= delta/2;
-    
-}
 
 @end

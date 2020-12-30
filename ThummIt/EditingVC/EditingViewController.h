@@ -11,6 +11,7 @@
 #import "EditingGestureController.h"
 #import "EditingModeController.h"
 #import "EditingLayerController.h"
+#import "ItemCollectionViewController.h"
 #import "SaveManager.h"
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
@@ -19,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) EditingModeController *editingModeController;
 @property (strong, nonatomic) EditingGestureController *editingGestureController;
 @property (strong, nonatomic) EditingLayerController *editingLayerController;
+
+@property (strong, nonatomic) ItemCollectionViewController *itemCollectionVC;
 
 // 모델
 @property (strong, nonatomic) Template *selectedTemplate;
@@ -38,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *textButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *deleteButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *underAreaView;
+
 
 @end
 

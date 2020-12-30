@@ -33,6 +33,8 @@
     self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
     self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY);
     
+    self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
+    
 }
 
 

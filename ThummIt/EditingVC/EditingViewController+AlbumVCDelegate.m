@@ -18,7 +18,9 @@
     self.selectedItem.imageView.frameOrigin = CGPointMake(0,0);
 
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-        self.selectedItem.imageView.image = image;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.selectedItem.imageView.image = image;
+        });
     }];
     
 }
