@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PhotoFrameCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIView *photoFrameBaseView;
+@property (weak, nonatomic) IBOutlet UIImageView *previewImageView;
 
 @end
 

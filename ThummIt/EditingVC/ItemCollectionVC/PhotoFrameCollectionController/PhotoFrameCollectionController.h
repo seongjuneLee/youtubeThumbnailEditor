@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PhotoFrameCollectionController : NSObject <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PhotoFrameCollectionController : NSObject <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UIImage *firstPhoto;

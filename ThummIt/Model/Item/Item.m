@@ -29,13 +29,13 @@
     copiedBaseView.backgroundColor = self.baseView.backgroundColor;
     copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
     copied.baseView = copiedBaseView;
-    UIImageView *copiedImageView = [[UIImageView alloc] initWithFrame:self.imageView.frame];
-    copiedImageView.image = [self.imageView.image copy];
-    copied.imageView = copiedImageView;
-    copiedImageView.contentMode = self.imageView.contentMode;
+    UIImageView *copiedImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
+    copiedImageView.image = [self.photoImageView.image copy];
+    copied.photoImageView = copiedImageView;
+    copiedImageView.contentMode = self.photoImageView.contentMode;
     copied.itemName = [NSString stringWithString:self.itemName];
     
-    [copied.baseView addSubview:copied.imageView];
+    [copied.baseView addSubview:copied.photoImageView];
     copied.rotationDegree = self.rotationDegree;
     copied.scale = self.scale;
     copied.imageViewCenter = self.imageViewCenter;
@@ -61,12 +61,12 @@
                 self.phAsset = phAsset;
             }
         }
-        self.imageView = [decoder decodeObjectForKey:@"imageView"];
+        self.photoImageView = [decoder decodeObjectForKey:@"imageView"];
         
         NSString *imageURL = [decoder decodeObjectForKey:@"imageURL"];
         if (imageURL.length) {
             NSData *data = [[NSData alloc]initWithBase64EncodedString:imageURL options:NSDataBase64DecodingIgnoreUnknownCharacters];
-            self.imageView.image = [UIImage imageWithData:data];
+            self.photoImageView.image = [UIImage imageWithData:data];
         }
         
     }
@@ -78,8 +78,8 @@
     [encoder encodeObject:self.baseView forKey:@"baseView"];
     [encoder encodeObject:self.itemName forKey:@"itemName"];
     [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
-    NSString *imageURL = [UIImagePNGRepresentation(self.imageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    [encoder encodeObject:self.imageView forKey:@"imageView"];
+    NSString *imageURL = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    [encoder encodeObject:self.photoImageView forKey:@"imageView"];
     [encoder encodeObject:imageURL forKey:@"imageURL"];
     
 

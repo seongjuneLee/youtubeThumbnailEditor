@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Item.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ItemManager : NSObject
@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(NSArray *)circlePhotoFrames;
 -(NSArray *)rectanglePhotoFrames;
+-(void)deleteItem:(Item *)item;
 
 @end
 

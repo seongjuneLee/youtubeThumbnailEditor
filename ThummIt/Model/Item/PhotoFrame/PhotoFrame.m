@@ -23,9 +23,9 @@
         self.baseView = [[UIView alloc] init];
         self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);
         self.baseView.clipsToBounds = true;
-        self.baseView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
-        self.baseView.backgroundColor = UIColor.clearColor;
-        
+        self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
+        self.baseView.backgroundColor = UIColor.whiteColor;
+        [self addSubViewsToBaseView];
     }
     return self;
     
@@ -58,10 +58,8 @@
 
 -(void)addCircleImageWithName:(NSString *)imageName{
     
-    float screenWidth = UIScreen.mainScreen.bounds.size.width;
-    float circleViewWidth = screenWidth*0.8/2;
-
-    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, circleViewWidth, circleViewWidth)];
+    self.backgroundImageView = [[UIImageView alloc] init];
+    self.backgroundImageView.frameSize = self.baseView.frameSize;
     self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
     self.backgroundImageView.backgroundColor = UIColor.clearColor;
     self.backgroundImageView.clipsToBounds = true;
@@ -69,8 +67,8 @@
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     if (imageName) {
         self.backgroundImageView.image = [UIImage imageNamed:imageName];
+        [self.baseView addSubview:self.backgroundImageView];
     }
-    [self.baseView addSubview:self.backgroundImageView];
 
 }
 
@@ -80,13 +78,12 @@
     self.plusLabel.text = NSLocalizedString(@"+ Photo", nil);
     self.plusLabel.textColor = UIColor.blackColor;
     [self.plusLabel sizeToFit];
-    self.plusLabel.center = CGPointMake(self.backgroundImageView.frameWidth/2, self.backgroundImageView.frameHeight/2);
-    [self.baseView insertSubview:self.plusLabel atIndex:0];
+    [self.baseView addSubview:self.plusLabel];
     
-    self.imageView = [[UIImageView alloc] init];
-    self.imageView.frameSize = self.backgroundImageView.frameSize;
-    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    [self.baseView insertSubview:self.imageView atIndex:1];
+    self.photoImageView = [[UIImageView alloc] init];
+    self.photoImageView.frameSize = self.baseView.frameSize;
+    self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.baseView addSubview:self.photoImageView];
     
 }
 
@@ -94,8 +91,8 @@
     
     [super scaleItem];
     self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
-    self.plusLabel.center = CGPointMake(self.backgroundImageView.frameWidth/2, self.backgroundImageView.frameHeight/2);
-    self.imageView.center = CGPointMake(self.backgroundImageView.frameWidth/2, self.backgroundImageView.frameHeight/2);
+    self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
+    self.photoImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
 
 }
 

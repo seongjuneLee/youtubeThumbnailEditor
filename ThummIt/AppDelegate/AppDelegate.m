@@ -20,7 +20,6 @@
     // Override point for customization after application launch.
     [MigratorJul.shared migrateIfNeeded];
     
-    [PhotoManager.sharedInstance fetchPhassets];
     [ProjectManager.sharedInstance setUpSnapShotFromProject];
     
     return YES;

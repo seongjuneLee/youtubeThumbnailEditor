@@ -17,9 +17,9 @@
         
         self.selectedItem = (PhotoFrame *)item;
         [self.editingModeController setUpEditingMode:EditingPhotoFrameMode];
-        self.originalPhotoFrameImage = self.selectedItem.imageView.image;
-        self.originalImageViewCenter = self.selectedItem.imageView.center;
-        self.originalTransform = self.selectedItem.imageView.transform;
+        self.originalPhotoFrameImage = self.selectedItem.photoImageView.image;
+        self.originalImageViewCenter = self.selectedItem.photoImageView.center;
+        self.originalTransform = self.selectedItem.photoImageView.transform;
         [self showAlbumVC];
         [self setCurrentPhotoSelectedOnAlbumVC];
         
@@ -32,13 +32,13 @@
 -(void)changeSelectedItem:(Item *)item{
     
     if (self.selectedItem != item) {
-        self.selectedItem.imageView.image = self.originalPhotoFrameImage;
-        self.selectedItem.imageView.center = self.originalImageViewCenter;
+        self.selectedItem.photoImageView.image = self.originalPhotoFrameImage;
+        self.selectedItem.photoImageView.center = self.originalImageViewCenter;
         [self.editingLayerController recoverOriginalLayer];
         [self.editingLayerController bringSelectedItemToFront:item];
         
         self.selectedItem = item;
-        self.originalPhotoFrameImage = self.selectedItem.imageView.image;
+        self.originalPhotoFrameImage = self.selectedItem.photoImageView.image;
         [self setCurrentPhotoSelectedOnAlbumVC];
     }
     
@@ -60,27 +60,23 @@
     [self.albumVC.collectionView reloadData];
     PHAsset *selectedPHAsset = phassets[index];
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-        self.selectedItem.imageView.image = image;
+        self.selectedItem.photoImageView.image = image;
     }];
         
 }
 
 -(void)showAlbumVC{
     
-    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-    if (!self.albumVC) {
-        self.albumVC = (AlbumViewController *)[main instantiateViewControllerWithIdentifier:@"AlbumViewController"];
-        [self addChildViewController:self.albumVC];
-        [self.view addSubview:self.albumVC.view];
-
-        self.albumVC.delegate = self;
-        self.albumVC.collectionView.frameY = self.view.frameHeight;
-
-        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            self.albumVC.collectionView.frameY = self.albumVC.view.frameY;
-
-        } completion:nil];
-    }
+    [self addChildViewController:self.albumVC];
+    [self.view addSubview:self.albumVC.view];
+    
+    self.albumVC.delegate = self;
+    self.albumVC.collectionView.frameY = self.view.frameHeight;
+    
+    [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.albumVC.collectionView.frameY = self.albumVC.view.frameY;
+        
+    } completion:nil];
     
 }
 
@@ -114,7 +110,7 @@
     self.underAreaView.hidden = false;
     float iamgeViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
     if (fingerPoint.y >= iamgeViewBottomY) {
-        [self deleteItem:item];
+        [ItemManager.sharedInstance deleteItem:item];
     }
 
     [UIView animateWithDuration:0.2 animations:^{
@@ -126,13 +122,6 @@
 
 }
 
--(void)deleteItem:(Item *)item{
-    
-    [item.baseView removeFromSuperview];
-    [SaveManager.sharedInstance.currentProject.items removeObject:item];
-    [SaveManager.sharedInstance save];
-    
-}
 
 #pragma mark - 핀치제스쳐
 

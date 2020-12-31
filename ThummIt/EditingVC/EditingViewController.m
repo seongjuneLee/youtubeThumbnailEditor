@@ -7,7 +7,6 @@
 
 #import "EditingViewController.h"
 #import "EditingViewController+GestureControllerDelegate.h"
-#import "EditingViewController+ModeControllerDelegate.h"
 
 @interface EditingViewController ()
 
@@ -24,7 +23,8 @@
 
     [self basicUIUXSetting];
 
-    [self connectEditingControllers];
+    [self connectControllers];
+    
 }
 
 -(void)viewWillLayoutSubviews{
@@ -57,12 +57,18 @@
 
 #pragma mark - controller 연결
 
--(void)connectEditingControllers{
+-(void)connectControllers{
     
     [self connectEditingModeController];
     [self connectEditingGestureController];
     [self connectEditingLayerController];
     
+    UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
+    self.itemCollectionVC = (ItemCollectionViewController *)[editing instantiateViewControllerWithIdentifier:@"ItemCollectionViewController"];
+
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+    self.albumVC = (AlbumViewController *)[main instantiateViewControllerWithIdentifier:@"AlbumViewController"];
+
 }
 
 -(void)connectEditingGestureController{

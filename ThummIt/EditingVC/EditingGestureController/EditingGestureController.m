@@ -124,8 +124,8 @@
         deltaPoint = CGPointMake(currentPoint.x - self.originalPoint.x, currentPoint.y - self.originalPoint.y);
 
         if ([self.currentItem isKindOfClass:PhotoFrame.class]) {
-            self.currentItem.imageView.centerX += deltaPoint.x;
-            self.currentItem.imageView.centerY += deltaPoint.y;
+            self.currentItem.photoImageView.centerX += deltaPoint.x;
+            self.currentItem.photoImageView.centerY += deltaPoint.y;
         }
         
         self.originalPoint = [sender locationInView:self.currentItem.baseView];
@@ -208,12 +208,12 @@
             self.originalSecondFinger = [sender locationOfTouch:1 inView:self.currentItem.baseView];
             
             self.originalPinchCenter = CGPointMake((self.originalFirstFinger.x+self.originalSecondFinger.x)/2.0, (self.originalFirstFinger.y+self.originalSecondFinger.y)/2.0);
-            self.originalItemViewCenter = self.currentItem.imageView.center;
+            self.originalItemViewCenter = self.currentItem.photoImageView.center;
             
             CGPoint finger1Point = [sender locationOfTouch:0 inView:self.gestureView];
             CGPoint finger2Point = [sender locationOfTouch:1 inView:self.gestureView];
             
-            CGAffineTransform t = self.currentItem.imageView.transform;
+            CGAffineTransform t = self.currentItem.photoImageView.transform;
             self.originalScaleRatio = sqrt(t.a * t.a + t.c * t.c);
             self.originalPinchDistance = [self distanceFrom:finger1Point to:finger2Point];
         }
@@ -232,7 +232,7 @@
         CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.currentRotation);
         
         // 최종 적용
-        self.currentItem.imageView.transform = CGAffineTransformConcat(scaleTransform, rotationTransform);
+        self.currentItem.photoImageView.transform = CGAffineTransformConcat(scaleTransform, rotationTransform);
         
         // 중심값 이동
         CGPoint newPinchCenter = [sender locationInView:self.currentItem.baseView];
@@ -241,7 +241,7 @@
         
         // 센터가이드 적용
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
-        self.currentItem.imageView.center = changedPoint;
+        self.currentItem.photoImageView.center = changedPoint;
     }
 
 }
@@ -308,8 +308,8 @@
 -(BOOL)isImageViewOutOfBounds:(PhotoFrame *)photoFrame{
     
     CGPoint baseViewCenter = photoFrame.baseView.center;
-    CGPoint imageViewOrigin = photoFrame.imageView.bounds.origin;
-    CGSize imageViewSize =photoFrame.imageView.frameSize;
+    CGPoint imageViewOrigin = photoFrame.photoImageView.bounds.origin;
+    CGSize imageViewSize =photoFrame.photoImageView.frameSize;
     
     
     if (baseViewCenter.x < imageViewOrigin.x // 오른쪽

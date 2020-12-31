@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIVisualEffectView *blurView;
 @property (strong, nonatomic) PhotoFrameCollectionController *collectionController;
 
+-(void)dismissSelf;
+
 @end
 
 NS_ASSUME_NONNULL_END

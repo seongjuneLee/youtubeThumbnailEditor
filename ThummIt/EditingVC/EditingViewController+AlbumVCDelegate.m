@@ -15,11 +15,11 @@
     if (!self.originalPhotoFrameImage) {
         self.selectedItem.phAsset = selectedPHAsset;
     }
-    self.selectedItem.imageView.frameOrigin = CGPointMake(0,0);
+    self.selectedItem.photoImageView.frameOrigin = CGPointMake(0,0);
 
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.selectedItem.imageView.image = image;
+            self.selectedItem.photoImageView.image = image;
         });
     }];
     

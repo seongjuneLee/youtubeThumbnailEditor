@@ -6,6 +6,7 @@
 //
 
 #import "ItemManager.h"
+#import "SaveManager.h"
 #import "PhotoFrameHeader.h"
 
 @implementation ItemManager
@@ -45,6 +46,14 @@
     
     NSArray *photoFrames = @[basicCircle, christmasCircle];
     return photoFrames;
+}
+
+-(void)deleteItem:(Item *)item{
+    
+    [item.baseView removeFromSuperview];
+    [SaveManager.sharedInstance.currentProject.items removeObject:item];
+    [SaveManager.sharedInstance save];
+    
 }
 
 @end

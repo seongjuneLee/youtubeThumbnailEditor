@@ -7,9 +7,11 @@
 
 #import "PhotoFrameCollectionController.h"
 #import "PhotoFrameCollectionViewCell.h"
+#import "PhotoFrameCollectionReusableView.h"
 #import "ItemManager.h"
 #import "PhotoManager.h"
 #import "PhotoFrame.h"
+#import "UIView+Additions.h"
 
 @implementation PhotoFrameCollectionController
 
@@ -17,9 +19,9 @@
     
     self = [super init];
     if (self) {
-        [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(200, 200) WithCompletionBlock:^(UIImage * _Nonnull image) {
-            self.firstPhoto = image;
-        }];
+//        [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(200, 200) WithCompletionBlock:^(UIImage * _Nonnull image) {
+//            self.firstPhoto = image;
+//        }];
     }
     return self;
 }
@@ -32,9 +34,8 @@
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
         [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoFrameCollectionViewCell" bundle:NSBundle.mainBundle] forCellWithReuseIdentifier:@"PhotoFrameCollectionViewCell"];
-        [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(200, 200) WithCompletionBlock:^(UIImage * _Nonnull image) {
-            self.firstPhoto = image;
-        }];
+        [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoFrameCollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView"];
+
     }
     
     return self;
@@ -66,10 +67,23 @@
     } else if (indexPath.section == 1){
         photoFrame = ItemManager.sharedInstance.rectanglePhotoFrames[indexPath.item];
     }
-    photoFrame.imageView.image = self.firstPhoto;
-    cell.photoFrameBaseView = photoFrame.baseView;
+    photoFrame.photoImageView.image = self.firstPhoto;
+    cell.previewImageView.image = [photoFrame.baseView toImage];
     
     return cell;
+}
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+    PhotoFrameCollectionReusableView *reusableView = (PhotoFrameCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView" forIndexPath:indexPath];
+    NSString *category = ItemManager.sharedInstance.photoFrameCategories[indexPath.section];
+    reusableView.categoryLabel.text = category;
+    
+    return reusableView;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(self.collectionView.frameWidth, 80);
 }
 
 @end

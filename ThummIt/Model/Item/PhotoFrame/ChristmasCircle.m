@@ -17,7 +17,6 @@
         self.itemName = @"BasicCircle";
         self.backgroundImageName = @"christmasCircle";
         [self addCircleImageWithName:self.backgroundImageName];
-        [self addSubViewsToBaseView];
     }
     return self;
     

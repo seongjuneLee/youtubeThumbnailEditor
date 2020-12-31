@@ -15,7 +15,7 @@
     if(self){
         
         self.itemName = @"BasicCircle";
-        [self addCircleImageWithName:self.backgroundImageName];
+        
         
     }
     return self;
