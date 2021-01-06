@@ -14,7 +14,7 @@
     static dispatch_once_t onceToken; // onceToken = 0
     dispatch_once(&onceToken, ^{
         sharedInstance = [[SaveManager alloc] init];
-        sharedInstance.savingQueue = dispatch_queue_create("project editing queue", DISPATCH_QUEUE_SERIAL);
+        sharedInstance.savingQueue = dispatch_queue_create("saving queue", DISPATCH_QUEUE_SERIAL);
     });
     
     return sharedInstance;

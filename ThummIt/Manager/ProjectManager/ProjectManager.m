@@ -25,7 +25,7 @@
 -(Project *)generateNewProjectWithTemplate:(Template *)selectedTemplate{
     
     Project* project = [CoreDataStack newProject];
-    project.items = selectedTemplate.items;
+    project.photoFrames = selectedTemplate.photoFrames;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
@@ -192,6 +192,7 @@
         for (Item *item  in project.items) {
             
             Item *copiedItem = [item copy];
+            copiedItem.baseView.frameY -= 100;
             [imageView addSubview:copiedItem.baseView];
             
         }

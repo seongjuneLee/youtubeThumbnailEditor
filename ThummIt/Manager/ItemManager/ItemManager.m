@@ -48,6 +48,15 @@
     return photoFrames;
 }
 
+-(void)addItem:(Item *)item withView:(UIView *)view underView:(nonnull UIView *)gestureView withCriteriaView:(UIImageView *)imageView{
+    
+    item.baseView.center = CGPointMake(imageView.frameWidth/2, imageView.frameY + imageView.frameHeight/2);
+    [view insertSubview:item.baseView belowSubview:gestureView];
+    [SaveManager.sharedInstance.currentProject.items addObject:item];
+    [SaveManager.sharedInstance save];
+    
+}
+
 -(void)deleteItem:(Item *)item{
     
     [item.baseView removeFromSuperview];

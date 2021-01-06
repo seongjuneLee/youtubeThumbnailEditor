@@ -6,7 +6,9 @@
 //
 
 #import "ItemCollectionViewController.h"
+#import "EditingViewController.h"
 #import "PhotoManager.h"
+#import "ItemManager.h"
 @interface ItemCollectionViewController ()
 
 @end
@@ -25,7 +27,6 @@
 
 -(void)viewWillLayoutSubviews{
     
-    self.blurView.frameSize = self.view.frameSize;
     
 }
 
@@ -34,6 +35,7 @@
     float screenHeight = UIScreen.mainScreen.bounds.size.height;
     [UIView animateWithDuration:0.4 animations:^{
         self.collectionView.frameY = screenHeight;
+        self.blurView.frameY = screenHeight;
     }completion:^(BOOL finished) {
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
@@ -60,6 +62,7 @@
     
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
     self.blurView = [[UIVisualEffectView alloc] init];
+    self.blurView.frameSize = self.view.frameSize;
     self.blurView.effect = blurEffect;
     [self.view insertSubview:self.blurView atIndex:0];
     
@@ -68,11 +71,27 @@
 -(void)connectCollectionController{
     
     self.collectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
+    self.collectionController.delegate = self;
     [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.collectionController.firstPhoto = image;
         });
     }];
+
+}
+
+#pragma mark - 델리게이트
+
+-(void)didSelectPhotoFrame:(PhotoFrame *)photoFrame{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (editingVC.currentItem) {
+        [editingVC.currentItem.baseView removeFromSuperview];
+    }
+    [editingVC.editingLayerController bringSelectedItemToFront:photoFrame];
+    photoFrame.baseView.center = editingVC.imageView.center;
+    [editingVC.view addSubview:photoFrame.baseView];
+    editingVC.currentItem = photoFrame;
 
 }
 

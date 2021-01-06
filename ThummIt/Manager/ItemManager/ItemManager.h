@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(NSArray *)circlePhotoFrames;
 -(NSArray *)rectanglePhotoFrames;
+-(void)addItem:(Item *)item withView:(UIView *)view underView:(UIView *)gestureView withCriteriaView:(UIImageView *)imageView;
 -(void)deleteItem:(Item *)item;
 
 @end

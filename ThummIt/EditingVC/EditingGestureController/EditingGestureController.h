@@ -41,13 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) id<EditingGestureControllerDelegate> delegate;
 
 @property (nonatomic) EditingMode editingMode;
-@property (weak, nonatomic) EditingModeController *editingModeController;
-
+@property (weak, nonatomic) UIViewController *editingVC;
 @property (weak, nonatomic) UIView *gestureView;
-@property (weak, nonatomic) UIView *imageView;
-@property (weak, nonatomic) UIView *view;
 
-@property (strong, nonatomic) NSMutableArray *items;
 @property (strong, nonatomic, nullable) Item *currentItem;
 
 @property (nonatomic) CGPoint originalPoint;

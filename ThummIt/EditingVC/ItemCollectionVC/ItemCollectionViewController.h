@@ -7,14 +7,16 @@
 
 #import <UIKit/UIKit.h>
 #import "PhotoFrameCollectionController.h"
-
+#import "Item.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ItemCollectionViewController : UIViewController
+@interface ItemCollectionViewController : UIViewController <PhotoFrameCollectionControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) UIVisualEffectView *blurView;
 @property (strong, nonatomic) PhotoFrameCollectionController *collectionController;
+
+@property (weak, nonatomic) UIViewController *editingVC;
 
 -(void)dismissSelf;
 

@@ -10,7 +10,6 @@
 #import "PhotoFrameCollectionReusableView.h"
 #import "ItemManager.h"
 #import "PhotoManager.h"
-#import "PhotoFrame.h"
 #import "UIView+Additions.h"
 
 @implementation PhotoFrameCollectionController
@@ -19,9 +18,6 @@
     
     self = [super init];
     if (self) {
-//        [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(200, 200) WithCompletionBlock:^(UIImage * _Nonnull image) {
-//            self.firstPhoto = image;
-//        }];
     }
     return self;
 }
@@ -41,6 +37,8 @@
     return self;
     
 }
+
+#pragma mark - 데이타 소스
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
@@ -72,6 +70,22 @@
     
     return cell;
 }
+
+#pragma mark - 델리게이트
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    PhotoFrame *photoFrame;
+    if (indexPath.section == 0) {
+        photoFrame = ItemManager.sharedInstance.circlePhotoFrames[indexPath.item];
+    } else if (indexPath.section == 1){
+        photoFrame = ItemManager.sharedInstance.rectanglePhotoFrames[indexPath.item];
+    }
+    [self.delegate didSelectPhotoFrame:photoFrame];
+    
+}
+
+#pragma mark - 레이아웃 델리게이트
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     

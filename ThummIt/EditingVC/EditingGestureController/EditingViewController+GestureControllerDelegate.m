@@ -67,16 +67,21 @@
 
 -(void)showAlbumVC{
     
-    [self addChildViewController:self.albumVC];
-    [self.view addSubview:self.albumVC.view];
-    
-    self.albumVC.delegate = self;
-    self.albumVC.collectionView.frameY = self.view.frameHeight;
-    
-    [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.albumVC.collectionView.frameY = self.albumVC.view.frameY;
+    if (!self.albumVC) {
+        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+        self.albumVC = (AlbumViewController *)[main instantiateViewControllerWithIdentifier:@"AlbumViewController"];
+
+        [self addChildViewController:self.albumVC];
+        [self.view addSubview:self.albumVC.view];
         
-    } completion:nil];
+        self.albumVC.delegate = self;
+        self.albumVC.collectionView.frameY = self.view.frameHeight;
+        
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.albumVC.collectionView.frameY = self.albumVC.view.frameY;
+            
+        } completion:nil];
+    }
     
 }
 

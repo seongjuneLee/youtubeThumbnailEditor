@@ -23,10 +23,7 @@ typedef enum {
 
 @property (weak, nonatomic) id<EditingModeControllerDelegate> delegate;
 @property (nonatomic) EditingMode editingMode;
-
-@property (weak, nonatomic) UIButton *leftItem;
-@property (weak, nonatomic) NSLayoutConstraint *leftItemWidthConstraint;
-@property (weak, nonatomic) UIButton *rightItem;
+@property (weak, nonatomic) UIViewController *editingVC;
 
 -(void)setUpEditingMode:(EditingMode)editingMode;
 

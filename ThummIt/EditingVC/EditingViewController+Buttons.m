@@ -11,6 +11,9 @@
 
 #pragma mark - 네비게이션 버튼
 
+
+#pragma mark - left item 탭
+
 - (IBAction)leftItemTapped:(id)sender {
     
     if (self.editingModeController.editingMode == NormalMode) {
@@ -24,20 +27,6 @@
     }
 
 }
-
-
-- (IBAction)rightItemTapped:(id)sender {
-    
-    if (self.editingModeController.editingMode == NormalMode) {
-        [self exportThumbnail];
-    } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
-        [self.editingModeController setUpEditingMode:NormalMode];
-        [self doneSelectingPhoto];
-    }
-
-}
-
-#pragma mark - left item 탭
 
 -(void)closeEditingVC{
     
@@ -59,6 +48,7 @@
     // albumVC 없애주기
     [self.albumVC dismissSelf];
     self.selectedItem = nil;
+    self.albumVC = nil;
 
 }
 
@@ -71,6 +61,20 @@
 }
 
 #pragma mark - right item 탭
+
+- (IBAction)rightItemTapped:(id)sender {
+    
+    if (self.editingModeController.editingMode == NormalMode) {
+        [self exportThumbnail];
+    } else if (self.editingModeController.editingMode == AddPhotoFrameMode){
+        [self.editingModeController setUpEditingMode:NormalMode];
+        [self doneAddingPhoto];
+    } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
+        [self.editingModeController setUpEditingMode:NormalMode];
+        [self doneSelectingPhoto];
+    }
+
+}
 
 -(void)exportThumbnail{
     
@@ -95,6 +99,18 @@
         [SaveManager.sharedInstance save];
     });
     
+}
+
+-(void)doneAddingPhoto{
+    
+    [self.editingLayerController recoverOriginalLayer];
+    [self.itemCollectionVC dismissSelf];
+    [SaveManager.sharedInstance.currentProject.photoFrames addObject:self.currentItem];
+    NSLog(@"self.currentItem imangename %@",self.currentItem.backgroundImageName);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [SaveManager.sharedInstance save];
+    });
+    self.currentItem = nil;
 }
 
 #pragma mark - 아이템 버튼

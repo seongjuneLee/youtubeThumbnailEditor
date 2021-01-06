@@ -32,7 +32,6 @@
     float imageViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
     self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
     self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY);
-    
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
     
 }
@@ -65,41 +64,31 @@
     
     UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
     self.itemCollectionVC = (ItemCollectionViewController *)[editing instantiateViewControllerWithIdentifier:@"ItemCollectionViewController"];
-
-    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-    self.albumVC = (AlbumViewController *)[main instantiateViewControllerWithIdentifier:@"AlbumViewController"];
-
+    self.itemCollectionVC.editingVC = self;
+    
 }
 
 -(void)connectEditingGestureController{
     
-    self.editingGestureController = [[EditingGestureController alloc] initWithView:self.gestureView];
-    self.editingGestureController.imageView = self.imageView;
-    self.editingGestureController.view = self.view;
+    self.editingGestureController = [[EditingGestureController alloc] init];
+    self.editingGestureController.editingVC = self;
     self.editingGestureController.delegate = self;
-    self.editingGestureController.editingMode = self.editingModeController.editingMode;
-    //TODO : 모든 아이템 넘겨주기.
-    self.editingGestureController.items = SaveManager.sharedInstance.currentProject.items;
-    self.editingGestureController.editingModeController = self.editingModeController;
-
+    self.editingGestureController.gestureView = self.gestureView;
+    [self.editingGestureController addGestureRecognizers];
+    
 }
 
 -(void)connectEditingModeController{
     
     self.editingModeController = [[EditingModeController alloc] init];
-    self.editingModeController.delegate = self;
-    self.editingModeController.leftItemWidthConstraint = self.leftItemWidthConstraint;
-    self.editingModeController.leftItem = self.leftItem;
-    self.editingModeController.rightItem = self.rightItem;
+    self.editingModeController.editingVC = self;
     
 }
 
 -(void)connectEditingLayerController{
     
     self.editingLayerController = [[EditingLayerController alloc] init];
-    self.editingLayerController.imageView = self.imageView;
-    self.editingLayerController.view = self.view;
-    self.editingLayerController.gestureView = self.gestureView;
+    self.editingLayerController.editingVC = self;
     
 }
 
