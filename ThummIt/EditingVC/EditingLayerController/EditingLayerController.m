@@ -19,6 +19,15 @@
 
 -(void)bringCurrentItemToFront:(Item *)currentItem{
     
+    self.currentItem = currentItem;
+
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    self.originalIndex = [editingVC.view.subviews indexOfObject:self.currentItem.baseView];
+    [editingVC.view insertSubview:self.currentItem.baseView belowSubview:editingVC.gestureView];
+    
+}
+
+-(void)showTransparentView{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     if (!self.transparentView) {
@@ -27,11 +36,6 @@
         self.transparentView.alpha = 0.4;
         [editingVC.view insertSubview:self.transparentView belowSubview:editingVC.gestureView];
     }
-    
-    self.currentItem = currentItem;
-    self.originalIndex = [editingVC.view.subviews indexOfObject:self.currentItem.baseView];
-    UIView *CurrentItemBaseView = self.currentItem.baseView;
-    [editingVC.view insertSubview:CurrentItemBaseView belowSubview:editingVC.gestureView];
     
 }
 
@@ -42,6 +46,10 @@
     self.transparentView = nil;
     [editingVC.view insertSubview:self.currentItem.baseView atIndex:self.originalIndex];
     
+}
+-(void)hideTransparentView{
+    [self.transparentView removeFromSuperview];
+    self.transparentView = nil;
 }
 
 @end

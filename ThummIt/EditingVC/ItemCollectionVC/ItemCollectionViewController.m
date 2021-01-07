@@ -85,13 +85,13 @@
 -(void)didSelectPhotoFrame:(PhotoFrame *)photoFrame{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.currentItem) {
+    if (editingVC.currentItem) { // 기존 것 떼어주고
         [editingVC.currentItem.baseView removeFromSuperview];
     }
+    
     photoFrame.baseView.center = editingVC.imageView.center;
-    [editingVC.view addSubview:photoFrame.baseView];
     [editingVC.editingLayerController bringCurrentItemToFront:photoFrame];
-
+    
     editingVC.currentItem = photoFrame;
     editingVC.editingGestureController.currentItem = photoFrame;
 

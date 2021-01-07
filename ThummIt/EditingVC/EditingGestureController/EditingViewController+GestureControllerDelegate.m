@@ -24,7 +24,7 @@
         [self setCurrentPhotoSelectedOnAlbumVC];
         
     }
-    
+    [self.editingLayerController showTransparentView];
     [self.editingLayerController bringCurrentItemToFront:item];
     
 }

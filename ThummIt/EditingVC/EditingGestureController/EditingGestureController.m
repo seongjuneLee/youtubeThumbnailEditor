@@ -95,6 +95,7 @@
         
         if ([self getCurrentItem:sender]) {
             self.currentItem = [self getCurrentItem:sender];
+            [editingVC.editingLayerController bringCurrentItemToFront:self.currentItem];
             self.originalPoint = [sender locationInView:editingVC.gestureView];
             [self.delegate readyUIForPanning];
         } else {
@@ -202,6 +203,7 @@
     if (sender.state == UIGestureRecognizerStateBegan && sender.numberOfTouches ==2) {
         
         if ([self getCurrentItemForPinch:sender]) {
+            [editingVC.editingLayerController bringCurrentItemToFront:self.currentItem];
             self.currentItem = [self getCurrentItemForPinch:sender];
             self.originalFirstFinger = [sender locationOfTouch:0 inView:self.editingVC.view];
             self.originalSecondFinger = [sender locationOfTouch:1 inView:self.editingVC.view];

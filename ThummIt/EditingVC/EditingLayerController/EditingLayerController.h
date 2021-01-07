@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)bringCurrentItemToFront:(Item *)CurrentItem;
 -(void)recoverOriginalLayer;
+-(void)showTransparentView;
+-(void)hideTransparentView;
 
 @end
 

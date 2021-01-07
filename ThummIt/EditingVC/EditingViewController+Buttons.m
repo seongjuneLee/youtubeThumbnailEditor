@@ -56,8 +56,11 @@
 -(void)dismissItemCollectionVC{
     
     [self.itemCollectionVC dismissSelf];
+    [self.albumVC dismissSelf];
     [ItemManager.sharedInstance deleteItem:self.currentItem];
     self.currentItem = nil;
+    self.albumVC = nil;
+
     
 }
 
@@ -106,11 +109,12 @@
     
     [self.editingLayerController recoverOriginalLayer];
     [self.itemCollectionVC dismissSelf];
+    [self.albumVC dismissSelf];
     [SaveManager.sharedInstance.currentProject.photoFrames addObject:self.currentItem];
-    NSLog(@"self.currentItem imangename %@",self.currentItem.backgroundImageName);
     dispatch_async(dispatch_get_main_queue(), ^{
         [SaveManager.sharedInstance save];
     });
+    self.albumVC = nil;
     self.currentItem = nil;
 }
 
