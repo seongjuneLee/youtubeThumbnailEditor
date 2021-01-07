@@ -33,7 +33,7 @@
 
 -(void)save{
     
-    NSData* projectData = [NSKeyedArchiver archivedDataWithRootObject:self requiringSecureCoding:false error:nil];
+    NSData* projectData = [NSKeyedArchiver archivedDataWithRootObject:self];
     NSError* error;
     NSString* oldFilePath;
     

@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EditingViewController (GestureControllerDelegate) <EditingGestureControllerDelegate>
 
+-(void)showAlbumVC;
+
 @end
 
 NS_ASSUME_NONNULL_END

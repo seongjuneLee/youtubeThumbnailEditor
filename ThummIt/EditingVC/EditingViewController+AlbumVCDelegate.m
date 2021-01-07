@@ -13,13 +13,13 @@
     
     PHAsset *selectedPHAsset = self.albumVC.phAssets[self.albumVC.selectedIndexPath.item];
     if (!self.originalPhotoFrameImage) {
-        self.selectedItem.phAsset = selectedPHAsset;
+        self.currentItem.phAsset = selectedPHAsset;
     }
-    self.selectedItem.photoImageView.frameOrigin = CGPointMake(0,0);
+    self.currentItem.photoImageView.frameOrigin = CGPointMake(0,0);
 
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.selectedItem.photoImageView.image = image;
+            self.currentItem.photoImageView.image = image;
         });
     }];
     

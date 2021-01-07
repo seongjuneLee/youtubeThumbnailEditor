@@ -6,6 +6,7 @@
 //
 
 #import "EditingViewController+Buttons.h"
+#import "EditingViewController+GestureControllerDelegate.h"
 
 @implementation EditingViewController (Buttons)
 
@@ -18,7 +19,7 @@
     
     if (self.editingModeController.editingMode == NormalMode) {
         [self closeEditingVC];
-    } else if (self.editingModeController.editingMode == AddPhotoFrameMode){
+    } else if (self.editingModeController.editingMode == AddingPhotoFrameMode || self.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         [self.editingModeController setUpEditingMode:NormalMode];
         [self dismissItemCollectionVC];
     } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
@@ -37,26 +38,30 @@
 -(void)dismissAlbumVC{
     
     // 변경 취소하고, 원래 이미지 다시 넣어주기.
-    self.selectedItem.photoImageView.image = self.originalPhotoFrameImage;
+    self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
     // 취소시 이미지 뷰 센터 다시 돌려놓기.
-    self.selectedItem.photoImageView.center = self.originalImageViewCenter;
-    self.selectedItem.photoImageView.transform = self.originalTransform;
+    self.currentItem.photoImageView.center = self.originalImageViewCenter;
+    self.currentItem.photoImageView.transform = self.originalTransform;
     
     // 레이어 되돌려 놓기
     [self.editingLayerController recoverOriginalLayer];
     
     // albumVC 없애주기
     [self.albumVC dismissSelf];
-    self.selectedItem = nil;
+    self.currentItem = nil;
     self.albumVC = nil;
 
 }
 
 -(void)dismissItemCollectionVC{
     
+    [self.editingLayerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
+    [self.albumVC dismissSelf];
     [ItemManager.sharedInstance deleteItem:self.currentItem];
     self.currentItem = nil;
+    self.albumVC = nil;
+
     
 }
 
@@ -66,12 +71,12 @@
     
     if (self.editingModeController.editingMode == NormalMode) {
         [self exportThumbnail];
-    } else if (self.editingModeController.editingMode == AddPhotoFrameMode){
+    } else if (self.editingModeController.editingMode == AddingPhotoFrameMode || self.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         [self.editingModeController setUpEditingMode:NormalMode];
         [self doneAddingPhoto];
     } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
         [self.editingModeController setUpEditingMode:NormalMode];
-        [self doneSelectingPhoto];
+        [self doneEditingPhoto];
     }
 
 }
@@ -82,19 +87,20 @@
     
 }
 
--(void)doneSelectingPhoto{
+-(void)doneEditingPhoto{
     
     // 레이어 되돌려 놓기
+    
     [self.editingLayerController recoverOriginalLayer];
     
-    self.selectedItem.phAsset = PhotoManager.sharedInstance.phassets[self.albumVC.selectedIndexPath.item];
+    self.currentItem.phAsset = PhotoManager.sharedInstance.phassets[self.albumVC.selectedIndexPath.item];
     
     // albumVC 없애주기
     [self.albumVC dismissSelf];
     self.albumVC = nil;
 
     self.originalPhotoFrameImage = nil;
-    self.selectedItem = nil;
+    self.currentItem = nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         [SaveManager.sharedInstance save];
     });
@@ -103,13 +109,14 @@
 
 -(void)doneAddingPhoto{
     
-    [self.editingLayerController recoverOriginalLayer];
+    [self.editingLayerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
+    [self.albumVC dismissSelf];
     [SaveManager.sharedInstance.currentProject.photoFrames addObject:self.currentItem];
-    NSLog(@"self.currentItem imangename %@",self.currentItem.backgroundImageName);
     dispatch_async(dispatch_get_main_queue(), ^{
         [SaveManager.sharedInstance save];
     });
+    self.albumVC = nil;
     self.currentItem = nil;
 }
 
@@ -117,7 +124,8 @@
 
 - (IBAction)photoFrameButtonTapped:(id)sender {
     
-    [self.editingModeController setUpEditingMode:AddPhotoFrameMode];
+    [self.editingLayerController showTransparentView];
+    [self.editingModeController setUpEditingMode:AddingPhotoFrameMode];
     [self addItemCollectionVC];
     
 }
@@ -133,7 +141,15 @@
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.itemCollectionVC.collectionView.frameY = 0;
         self.itemCollectionVC.blurView.frameY = 0;
-    } completion:nil];
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.itemCollectionVC.itemButton.alpha = 0.8;
+            self.itemCollectionVC.albumButton.alpha = 0.4;
+        }];
+    }];
+    
+    [self showAlbumVC];
+    self.albumVC.view.hidden = true;
     
 }
 @end

@@ -16,11 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) UIView *transparentView;
 @property (nonatomic) NSUInteger originalIndex;
 
-@property (strong, nonatomic) Item *selectedItem;
+@property (strong, nonatomic) Item *currentItem;
 
 
--(void)bringSelectedItemToFront:(Item *)selectedItem;
+-(void)bringCurrentItemToFront:(Item *)CurrentItem;
 -(void)recoverOriginalLayer;
+-(void)showTransparentView;
+-(void)hideTransparentView;
 
 @end
 

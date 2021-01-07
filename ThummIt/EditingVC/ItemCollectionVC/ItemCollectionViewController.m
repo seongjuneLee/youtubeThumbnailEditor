@@ -33,12 +33,16 @@
 -(void)dismissSelf{
     
     float screenHeight = UIScreen.mainScreen.bounds.size.height;
-    [UIView animateWithDuration:0.4 animations:^{
-        self.collectionView.frameY = screenHeight;
-        self.blurView.frameY = screenHeight;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.itemButton.alpha = self.albumButton.alpha = 0;
     }completion:^(BOOL finished) {
-        [self.view removeFromSuperview];
-        [self removeFromParentViewController];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.collectionView.frameY = screenHeight;
+            self.blurView.frameY = screenHeight;
+        }completion:^(BOOL finished) {
+            [self.view removeFromSuperview];
+            [self removeFromParentViewController];
+        }];
     }];
 
 }
@@ -80,19 +84,61 @@
 
 }
 
-#pragma mark - 델리게이트
+#pragma mark - cell 델리게이트
 
 -(void)didSelectPhotoFrame:(PhotoFrame *)photoFrame{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.currentItem) {
-        [editingVC.currentItem.baseView removeFromSuperview];
-    }
-    [editingVC.editingLayerController bringSelectedItemToFront:photoFrame];
     photoFrame.baseView.center = editingVC.imageView.center;
-    [editingVC.view addSubview:photoFrame.baseView];
+    
+    if (editingVC.currentItem) {
+        // 위치, 크기,사진 유지
+        photoFrame.baseView.frame = editingVC.currentItem.baseView.frame;
+        photoFrame.photoImageView.frame = editingVC.currentItem.photoImageView.frame;
+        photoFrame.photoImageView.image = editingVC.currentItem.photoImageView.image;
+        [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
+    }
+    
+    [editingVC.editingLayerController bringCurrentItemToFront:photoFrame];
+    
     editingVC.currentItem = photoFrame;
+    editingVC.editingGestureController.currentItem = photoFrame;
 
 }
+
+#pragma mark - 버튼
+
+- (IBAction)itemButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        self.albumButton.selected = false;
+        sender.alpha = 0.8;
+        self.albumButton.alpha = 0.4;
+        editingVC.albumVC.view.hidden = true;
+        editingVC.editingModeController.editingMode = AddingPhotoFrameMode;
+    }
+
+}
+
+- (IBAction)albumButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        self.itemButton.selected = false;
+        sender.alpha = 0.8;
+        self.itemButton.alpha = 0.4;
+        editingVC.albumVC.view.frameHeight = self.view.frameHeight - (self.itemButton.frameY + self.itemButton.frameHeight + 10);
+        editingVC.albumVC.view.frameY = editingVC.view.frameHeight - editingVC.albumVC.view.frameHeight;
+        editingVC.albumVC.view.hidden = false;
+        editingVC.editingModeController.editingMode = EditingPhotoFrameModeWhileAddingPhotoFrameMode;
+
+    }
+    
+}
+
+
 
 @end
