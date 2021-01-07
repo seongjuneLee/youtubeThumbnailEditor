@@ -19,7 +19,7 @@
     
     if (self.editingModeController.editingMode == NormalMode) {
         [self closeEditingVC];
-    } else if (self.editingModeController.editingMode == AddPhotoFrameMode){
+    } else if (self.editingModeController.editingMode == AddingPhotoFrameMode || self.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         [self.editingModeController setUpEditingMode:NormalMode];
         [self dismissItemCollectionVC];
     } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
@@ -55,6 +55,7 @@
 
 -(void)dismissItemCollectionVC{
     
+    [self.editingLayerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
     [self.albumVC dismissSelf];
     [ItemManager.sharedInstance deleteItem:self.currentItem];
@@ -70,12 +71,12 @@
     
     if (self.editingModeController.editingMode == NormalMode) {
         [self exportThumbnail];
-    } else if (self.editingModeController.editingMode == AddPhotoFrameMode){
+    } else if (self.editingModeController.editingMode == AddingPhotoFrameMode || self.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         [self.editingModeController setUpEditingMode:NormalMode];
         [self doneAddingPhoto];
     } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
         [self.editingModeController setUpEditingMode:NormalMode];
-        [self doneSelectingPhoto];
+        [self doneEditingPhoto];
     }
 
 }
@@ -86,9 +87,10 @@
     
 }
 
--(void)doneSelectingPhoto{
+-(void)doneEditingPhoto{
     
     // 레이어 되돌려 놓기
+    
     [self.editingLayerController recoverOriginalLayer];
     
     self.currentItem.phAsset = PhotoManager.sharedInstance.phassets[self.albumVC.selectedIndexPath.item];
@@ -107,7 +109,7 @@
 
 -(void)doneAddingPhoto{
     
-    [self.editingLayerController recoverOriginalLayer];
+    [self.editingLayerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
     [self.albumVC dismissSelf];
     [SaveManager.sharedInstance.currentProject.photoFrames addObject:self.currentItem];
@@ -122,7 +124,8 @@
 
 - (IBAction)photoFrameButtonTapped:(id)sender {
     
-    [self.editingModeController setUpEditingMode:AddPhotoFrameMode];
+    [self.editingLayerController showTransparentView];
+    [self.editingModeController setUpEditingMode:AddingPhotoFrameMode];
     [self addItemCollectionVC];
     
 }
@@ -138,7 +141,12 @@
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.itemCollectionVC.collectionView.frameY = 0;
         self.itemCollectionVC.blurView.frameY = 0;
-    } completion:nil];
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.itemCollectionVC.itemButton.alpha = 0.8;
+            self.itemCollectionVC.albumButton.alpha = 0.4;
+        }];
+    }];
     
     [self showAlbumVC];
     self.albumVC.view.hidden = true;

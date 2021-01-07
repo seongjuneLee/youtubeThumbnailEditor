@@ -69,8 +69,8 @@
     
     if (!self.albumVC) {
 
-        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-        self.albumVC = (AlbumViewController *)[main instantiateViewControllerWithIdentifier:@"AlbumViewController"];
+        UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
+        self.albumVC = (AlbumViewController *)[editing instantiateViewControllerWithIdentifier:@"AlbumViewController"];
 
         [self addChildViewController:self.albumVC];
         [self.view addSubview:self.albumVC.view];
@@ -102,7 +102,7 @@
             self.textButtonContainerView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
         }];
-    } else if (self.editingModeController.editingMode == AddPhotoFrameMode){
+    } else if (self.editingModeController.editingMode == AddingPhotoFrameMode){
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
             self.textButtonContainerView.alpha = 0.0;

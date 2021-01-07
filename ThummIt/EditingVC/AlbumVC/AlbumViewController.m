@@ -42,6 +42,7 @@
     
     float screenHeight = UIScreen.mainScreen.bounds.size.height;
     [UIView animateWithDuration:0.4 animations:^{
+        self.blurView.frameY = screenHeight;
         self.collectionView.frameY = screenHeight;
     }completion:^(BOOL finished) {
         [self.view removeFromSuperview];
