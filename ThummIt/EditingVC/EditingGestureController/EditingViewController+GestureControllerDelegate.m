@@ -15,30 +15,30 @@
     
     if ([item isKindOfClass:PhotoFrame.class]) {
         
-        self.selectedItem = (PhotoFrame *)item;
+        self.currentItem = (PhotoFrame *)item;
         [self.editingModeController setUpEditingMode:EditingPhotoFrameMode];
-        self.originalPhotoFrameImage = self.selectedItem.photoImageView.image;
-        self.originalImageViewCenter = self.selectedItem.photoImageView.center;
-        self.originalTransform = self.selectedItem.photoImageView.transform;
+        self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
+        self.originalImageViewCenter = self.currentItem.photoImageView.center;
+        self.originalTransform = self.currentItem.photoImageView.transform;
         [self showAlbumVC];
         [self setCurrentPhotoSelectedOnAlbumVC];
         
     }
     
-    [self.editingLayerController bringSelectedItemToFront:item];
+    [self.editingLayerController bringCurrentItemToFront:item];
     
 }
 
--(void)changeSelectedItem:(Item *)item{
+-(void)changeCurrentItem:(Item *)item{
     
-    if (self.selectedItem != item) {
-        self.selectedItem.photoImageView.image = self.originalPhotoFrameImage;
-        self.selectedItem.photoImageView.center = self.originalImageViewCenter;
+    if (self.currentItem != item) {
+        self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
+        self.currentItem.photoImageView.center = self.originalImageViewCenter;
         [self.editingLayerController recoverOriginalLayer];
-        [self.editingLayerController bringSelectedItemToFront:item];
+        [self.editingLayerController bringCurrentItemToFront:item];
         
-        self.selectedItem = item;
-        self.originalPhotoFrameImage = self.selectedItem.photoImageView.image;
+        self.currentItem = item;
+        self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
         [self setCurrentPhotoSelectedOnAlbumVC];
     }
     
@@ -51,7 +51,7 @@
     NSArray *phassets = PhotoManager.sharedInstance.phassets;
     for (int i = 0; i < phassets.count; i++) {
         PHAsset *phAsset = phassets[i];
-        if ([self.selectedItem.phAsset.localIdentifier isEqualToString:phAsset.localIdentifier]) {
+        if ([self.currentItem.phAsset.localIdentifier isEqualToString:phAsset.localIdentifier]) {
             index = i;
         }
     }
@@ -60,7 +60,7 @@
     [self.albumVC.collectionView reloadData];
     PHAsset *selectedPHAsset = phassets[index];
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-        self.selectedItem.photoImageView.image = image;
+        self.currentItem.photoImageView.image = image;
     }];
         
 }
@@ -68,12 +68,17 @@
 -(void)showAlbumVC{
     
     if (!self.albumVC) {
+
         UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
         self.albumVC = (AlbumViewController *)[main instantiateViewControllerWithIdentifier:@"AlbumViewController"];
 
         [self addChildViewController:self.albumVC];
         [self.view addSubview:self.albumVC.view];
         
+        float imageViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
+        self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
+        self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY);
+
         self.albumVC.delegate = self;
         self.albumVC.collectionView.frameY = self.view.frameHeight;
         
@@ -90,11 +95,22 @@
 
 // 팬 제스쳐 노멀 모드
 -(void)readyUIForPanning{
-    self.underAreaView.hidden = true;
-    [UIView animateWithDuration:0.2 animations:^{
-        self.textButtonContainerView.alpha = 0.0;
-        self.deleteButtonContainerView.alpha = 1.0;
-    }];
+    
+    if (self.editingModeController.editingMode == NormalMode) {
+        self.underAreaView.hidden = true;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.textButtonContainerView.alpha = 0.0;
+            self.deleteButtonContainerView.alpha = 1.0;
+        }];
+    } else if (self.editingModeController.editingMode == AddPhotoFrameMode){
+        self.underAreaView.hidden = true;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.textButtonContainerView.alpha = 0.0;
+            self.deleteButtonContainerView.alpha = 1.0;
+            self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
+        }];
+    }
+
 }
 
 -(void)deleteImageRespondToCurrentPointY:(float)currentPointY{
@@ -110,7 +126,7 @@
     }
 }
 
--(void)panGestureEndedForNoramlMode:(Item *)item withFingerPoint:(CGPoint)fingerPoint{
+-(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint{
     
     self.underAreaView.hidden = false;
     float iamgeViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
@@ -121,6 +137,7 @@
     [UIView animateWithDuration:0.2 animations:^{
         self.textButtonContainerView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
+        self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
     }completion:^(BOOL finished) {
         [SaveManager.sharedInstance save];
     }];

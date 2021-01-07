@@ -30,8 +30,6 @@
 -(void)viewWillLayoutSubviews{
 
     float imageViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
-    self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
-    self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY);
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
     
 }
@@ -73,7 +71,7 @@
     self.editingGestureController = [[EditingGestureController alloc] init];
     self.editingGestureController.editingVC = self;
     self.editingGestureController.delegate = self;
-    self.editingGestureController.gestureView = self.gestureView;
+    self.editingGestureController.currentItem = self.currentItem;
     [self.editingGestureController addGestureRecognizers];
     
 }

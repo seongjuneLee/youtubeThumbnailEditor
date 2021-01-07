@@ -23,8 +23,20 @@
     [self setCollectionViewFlowLayout];
     self.phAssets = PhotoManager.sharedInstance.phassets;
     [self.collectionView reloadData];
+    [self makeViewBlurred];
     
 }
+
+-(void)makeViewBlurred{
+    
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
+    self.blurView = [[UIVisualEffectView alloc] init];
+    self.blurView.frameSize = self.view.frameSize;
+    self.blurView.effect = blurEffect;
+    [self.view insertSubview:self.blurView atIndex:0];
+    
+}
+
 
 -(void)dismissSelf{
     

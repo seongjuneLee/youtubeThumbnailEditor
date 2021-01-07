@@ -14,12 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol EditingGestureControllerDelegate <NSObject>
 
 -(void)didSelectItem:(Item *)item;
--(void)changeSelectedItem:(Item *)item;
+-(void)changeCurrentItem:(Item *)item;
 
 // 노멀 모드 팬제스쳐
 -(void)readyUIForPanning;
 -(void)deleteImageRespondToCurrentPointY:(float)currentPointY;
--(void)panGestureEndedForNoramlMode:(Item *)item withFingerPoint:(CGPoint)fingerPoint;
+-(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint;
 
 // 아이템 모드 팬 제스쳐
 -(void)pangestureChangedInEditingItemMode:(Item *)item withDelta:(CGPoint)delta;
@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) UIViewController *editingVC;
 @property (weak, nonatomic) UIView *gestureView;
 
-@property (strong, nonatomic, nullable) Item *currentItem;
+@property (weak, nonatomic) Item *currentItem;
 
 @property (nonatomic) CGPoint originalPoint;
 

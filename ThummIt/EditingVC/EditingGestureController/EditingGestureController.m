@@ -57,7 +57,7 @@
         if (editingVC.editingModeController.editingMode == NormalMode) {
             [self.delegate didSelectItem:[self getCurrentItem:sender]];
         } else if (editingVC.editingModeController.editingMode == EditingPhotoFrameMode) {
-            [self.delegate changeSelectedItem:[self getCurrentItem:sender]];
+            [self.delegate changeCurrentItem:[self getCurrentItem:sender]];
         }
     }
         
@@ -73,7 +73,7 @@
         
     } else if (editingVC.editingModeController.editingMode == AddPhotoFrameMode){
         
-        [self gestureViewPannedForNormalMode:sender];
+        [self gestureViewPannedForAddingPhotoFrameMode:sender];
         
     } else if(editingVC.editingModeController.editingMode == EditingPhotoFrameMode){
         
@@ -112,8 +112,41 @@
         }
         self.originalPoint = [sender locationInView:editingVC.gestureView];
     } else if (sender.state == UIGestureRecognizerStateEnded){
-        [self.delegate panGestureEndedForNoramlMode:self.currentItem withFingerPoint:currentPoint];
+        [self.delegate panGestureEndedForItem:self.currentItem withFingerPoint:currentPoint];
         self.currentItem = nil;
+    }
+
+}
+
+-(void)gestureViewPannedForAddingPhotoFrameMode:(UIPanGestureRecognizer *)sender{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    // 일반 상태
+    CGPoint currentPoint = [sender locationInView:editingVC.gestureView];
+    CGPoint deltaPoint = CGPointZero;
+
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        
+        if (self.currentItem) {
+            self.originalPoint = [sender locationInView:editingVC.gestureView];
+            [self.delegate readyUIForPanning];
+        } else {
+            return;
+        }
+        
+    } else if (sender.state == UIGestureRecognizerStateChanged){
+        
+        deltaPoint = CGPointMake(currentPoint.x - self.originalPoint.x,currentPoint.y - self.originalPoint.y);
+        
+        if ([self.currentItem isKindOfClass:PhotoFrame.class]) {
+            self.currentItem.baseView.centerX += deltaPoint.x;
+            self.currentItem.baseView.centerY += deltaPoint.y;
+            [self.delegate deleteImageRespondToCurrentPointY:currentPoint.y];
+        }
+        self.originalPoint = [sender locationInView:editingVC.gestureView];
+    } else if (sender.state == UIGestureRecognizerStateEnded){
+        [self.delegate panGestureEndedForItem:self.currentItem withFingerPoint:currentPoint];
     }
 
 }

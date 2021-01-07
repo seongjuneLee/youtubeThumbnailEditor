@@ -220,8 +220,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0g-2H-65O">
+                                <rect key="frame" x="302" y="54" width="46" height="33"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="Item">
+                                    <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="itemButtonTapped:" destination="TdZ-if-u2J" eventType="touchUpInside" id="Uxe-7Q-mdD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttm-yg-W6I">
+                                <rect key="frame" x="358" y="54" width="46" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Lfp-bW-nlq"/>
+                                    <constraint firstAttribute="height" constant="33" id="RrN-dz-2aC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="Album">
+                                    <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="albumButtonTapped:" destination="TdZ-if-u2J" eventType="touchUpInside" id="DuU-TG-1uo"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6d4-Tq-A1X">
-                                <rect key="frame" x="0.0" y="22" width="414" height="700"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="acc-Za-2kY">
                                     <size key="itemSize" width="128" height="128"/>
@@ -235,20 +259,28 @@
                         <viewLayoutGuide key="safeArea" id="dPu-Qs-fs0"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6d4-Tq-A1X" firstAttribute="height" secondItem="EnA-7z-EXH" secondAttribute="height" id="Oeb-8H-3XK"/>
-                            <constraint firstItem="6d4-Tq-A1X" firstAttribute="centerY" secondItem="dPu-Qs-fs0" secondAttribute="centerY" id="TLZ-oo-gie"/>
+                            <constraint firstItem="W0g-2H-65O" firstAttribute="width" secondItem="ttm-yg-W6I" secondAttribute="width" id="35y-jy-GHT"/>
+                            <constraint firstItem="dPu-Qs-fs0" firstAttribute="trailing" secondItem="ttm-yg-W6I" secondAttribute="trailing" constant="10" id="HyQ-kj-wwO"/>
+                            <constraint firstItem="ttm-yg-W6I" firstAttribute="top" secondItem="dPu-Qs-fs0" secondAttribute="top" constant="10" id="Kmv-p6-VT3"/>
                             <constraint firstItem="6d4-Tq-A1X" firstAttribute="width" secondItem="EnA-7z-EXH" secondAttribute="width" id="WxG-cH-fvc"/>
+                            <constraint firstItem="W0g-2H-65O" firstAttribute="centerY" secondItem="ttm-yg-W6I" secondAttribute="centerY" id="d7x-Si-Xc7"/>
+                            <constraint firstItem="ttm-yg-W6I" firstAttribute="leading" secondItem="W0g-2H-65O" secondAttribute="trailing" constant="10" id="dfI-WJ-aAD"/>
                             <constraint firstItem="6d4-Tq-A1X" firstAttribute="centerX" secondItem="dPu-Qs-fs0" secondAttribute="centerX" id="k1o-LJ-7s5"/>
+                            <constraint firstItem="6d4-Tq-A1X" firstAttribute="top" secondItem="W0g-2H-65O" secondAttribute="bottom" constant="10" id="nH0-gx-Hj2"/>
+                            <constraint firstItem="6d4-Tq-A1X" firstAttribute="bottom" secondItem="dPu-Qs-fs0" secondAttribute="bottom" id="txR-am-tv8"/>
+                            <constraint firstItem="W0g-2H-65O" firstAttribute="height" secondItem="ttm-yg-W6I" secondAttribute="height" id="uKL-Bd-SuR"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="700"/>
                     <connections>
+                        <outlet property="albumButton" destination="ttm-yg-W6I" id="7Px-My-eQy"/>
                         <outlet property="collectionView" destination="6d4-Tq-A1X" id="puw-st-sYr"/>
+                        <outlet property="itemButton" destination="W0g-2H-65O" id="fHm-uU-RJR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4M-PB-4Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677" y="-252"/>
+            <point key="canvasLocation" x="676.81159420289862" y="-252.45535714285714"/>
         </scene>
     </scenes>
     <resources>

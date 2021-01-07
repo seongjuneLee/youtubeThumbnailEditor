@@ -88,11 +88,46 @@
     if (editingVC.currentItem) {
         [editingVC.currentItem.baseView removeFromSuperview];
     }
-    [editingVC.editingLayerController bringSelectedItemToFront:photoFrame];
     photoFrame.baseView.center = editingVC.imageView.center;
     [editingVC.view addSubview:photoFrame.baseView];
+    [editingVC.editingLayerController bringCurrentItemToFront:photoFrame];
+
     editingVC.currentItem = photoFrame;
+    editingVC.editingGestureController.currentItem = photoFrame;
 
 }
+
+#pragma mark - 버튼
+
+- (IBAction)itemButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        self.albumButton.selected = false;
+        sender.alpha = 0.8;
+        self.albumButton.alpha = 0.4;
+        editingVC.albumVC.view.hidden = true;
+        
+    }
+
+}
+
+- (IBAction)albumButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        self.itemButton.selected = false;
+        sender.alpha = 0.8;
+        self.itemButton.alpha = 0.4;
+        editingVC.albumVC.view.frameHeight = self.view.frameHeight - (self.itemButton.frameY + self.itemButton.frameHeight + 10);
+        editingVC.albumVC.view.frameY = editingVC.view.frameHeight - editingVC.albumVC.view.frameHeight;
+        editingVC.albumVC.view.hidden = false;
+    }
+    
+}
+
+
 
 @end

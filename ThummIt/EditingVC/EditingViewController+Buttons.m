@@ -6,6 +6,7 @@
 //
 
 #import "EditingViewController+Buttons.h"
+#import "EditingViewController+GestureControllerDelegate.h"
 
 @implementation EditingViewController (Buttons)
 
@@ -37,17 +38,17 @@
 -(void)dismissAlbumVC{
     
     // 변경 취소하고, 원래 이미지 다시 넣어주기.
-    self.selectedItem.photoImageView.image = self.originalPhotoFrameImage;
+    self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
     // 취소시 이미지 뷰 센터 다시 돌려놓기.
-    self.selectedItem.photoImageView.center = self.originalImageViewCenter;
-    self.selectedItem.photoImageView.transform = self.originalTransform;
+    self.currentItem.photoImageView.center = self.originalImageViewCenter;
+    self.currentItem.photoImageView.transform = self.originalTransform;
     
     // 레이어 되돌려 놓기
     [self.editingLayerController recoverOriginalLayer];
     
     // albumVC 없애주기
     [self.albumVC dismissSelf];
-    self.selectedItem = nil;
+    self.currentItem = nil;
     self.albumVC = nil;
 
 }
@@ -87,14 +88,14 @@
     // 레이어 되돌려 놓기
     [self.editingLayerController recoverOriginalLayer];
     
-    self.selectedItem.phAsset = PhotoManager.sharedInstance.phassets[self.albumVC.selectedIndexPath.item];
+    self.currentItem.phAsset = PhotoManager.sharedInstance.phassets[self.albumVC.selectedIndexPath.item];
     
     // albumVC 없애주기
     [self.albumVC dismissSelf];
     self.albumVC = nil;
 
     self.originalPhotoFrameImage = nil;
-    self.selectedItem = nil;
+    self.currentItem = nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         [SaveManager.sharedInstance save];
     });
@@ -134,6 +135,9 @@
         self.itemCollectionVC.collectionView.frameY = 0;
         self.itemCollectionVC.blurView.frameY = 0;
     } completion:nil];
+    
+    [self showAlbumVC];
+    self.albumVC.view.hidden = true;
     
 }
 @end
