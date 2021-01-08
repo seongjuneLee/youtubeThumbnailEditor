@@ -13,7 +13,6 @@
     
     self = [super init];
     if(self){
-        self.itemType = 0;
         self.relativeCenter = CGPointMake(0.5, 0.5);
         self.scale = 1;
         self.rotationDegree = 0;

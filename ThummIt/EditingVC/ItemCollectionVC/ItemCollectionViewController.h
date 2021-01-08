@@ -7,8 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PhotoFrameCollectionController.h"
+#import "TextCollectionController.h"
 #import "Item.h"
 NS_ASSUME_NONNULL_BEGIN
+typedef enum {
+    PhotoFrameType = 0,
+    TextType = 1
+}ItemType;
 
 @interface ItemCollectionViewController : UIViewController <PhotoFrameCollectionControllerDelegate>
 
@@ -16,8 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *itemButton;
 @property (weak, nonatomic) IBOutlet UIButton *albumButton;
 
+@property (nonatomic) ItemType itemType;
 @property (strong, nonatomic) UIVisualEffectView *blurView;
-@property (strong, nonatomic) PhotoFrameCollectionController *collectionController;
+@property (strong, nonatomic) PhotoFrameCollectionController *photoFrameCollectionController;
+@property (strong, nonatomic) TextCollectionController *textCollectionController;
 
 @property (weak, nonatomic) UIViewController *editingVC;
 

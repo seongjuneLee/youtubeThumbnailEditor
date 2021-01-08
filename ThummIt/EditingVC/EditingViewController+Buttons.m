@@ -122,12 +122,17 @@
 
 #pragma mark - 아이템 버튼
 
+#pragma mark - 포토 프레임 버튼
+
 - (IBAction)photoFrameButtonTapped:(id)sender {
     
     [self.editingLayerController showTransparentView];
     [self.editingModeController setUpEditingMode:AddingPhotoFrameMode];
+    self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];
-    
+    [self showAlbumVC];
+    self.albumVC.view.hidden = true;
+
 }
 
 -(void)addItemCollectionVC{
@@ -148,8 +153,18 @@
         }];
     }];
     
-    [self showAlbumVC];
-    self.albumVC.view.hidden = true;
     
 }
+
+#pragma mark - 텍스트 버튼
+
+- (IBAction)textButtonTapped:(UIButton *)sender {
+    
+    [self.editingLayerController showTransparentView];
+    [self.editingModeController setUpEditingMode:AddingPhotoFrameMode];
+    self.itemCollectionVC.itemType = TextType;
+    [self addItemCollectionVC];
+    
+}
+
 @end

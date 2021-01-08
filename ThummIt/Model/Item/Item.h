@@ -10,15 +10,9 @@
 #import <Photos/Photos.h>
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum {
-    photoFrame = 0,
-    text = 1,
-    sticker = 2,
-}ItemType;
 
 @interface Item : NSObject <NSCopying, NSCoding>
 
-@property (nonatomic) ItemType itemType;
 @property (strong ,nonatomic) UIView *baseView;
 @property (strong, nonatomic) NSString *itemName;
 @property (strong, nonatomic) NSString *backgroundImageName;

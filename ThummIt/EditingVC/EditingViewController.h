@@ -39,9 +39,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *leftItem;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftItemWidthConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
-@property (weak, nonatomic) IBOutlet UIView *textButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *photoFrameButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *deleteButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *underAreaView;
+@property (weak, nonatomic) IBOutlet UIView *textButtonView;
 
 
 @end

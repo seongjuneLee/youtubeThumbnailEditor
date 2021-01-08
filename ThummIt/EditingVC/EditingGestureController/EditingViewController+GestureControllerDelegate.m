@@ -99,13 +99,13 @@
     if (self.editingModeController.editingMode == NormalMode) {
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
-            self.textButtonContainerView.alpha = 0.0;
+            self.photoFrameButtonContainerView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
         }];
     } else if (self.editingModeController.editingMode == AddingPhotoFrameMode){
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
-            self.textButtonContainerView.alpha = 0.0;
+            self.photoFrameButtonContainerView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
             self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
         }];
@@ -135,7 +135,7 @@
     }
 
     [UIView animateWithDuration:0.2 animations:^{
-        self.textButtonContainerView.alpha = 1.0;
+        self.photoFrameButtonContainerView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
     }completion:^(BOOL finished) {
@@ -150,7 +150,7 @@
 -(void)pinchGestureInNormalModeBeganWithItem:(Item *)item withSender:(UIGestureRecognizer *)sender{
     self.underAreaView.hidden = true;
     [UIView animateWithDuration:0.2 animations:^{
-        self.textButtonContainerView.alpha = 0.0;
+        self.photoFrameButtonContainerView.alpha = 0.0;
         self.deleteButtonContainerView.alpha = 1.0;
     }];
 }

@@ -74,13 +74,19 @@
 
 -(void)connectCollectionController{
     
-    self.collectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
-    self.collectionController.delegate = self;
-    [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.collectionController.firstPhoto = image;
-        });
-    }];
+    if (self.itemType == PhotoFrameType) {
+        self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
+        self.photoFrameCollectionController.delegate = self;
+        [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.photoFrameCollectionController.firstPhoto = image;
+            });
+        }];
+    } else if (self.itemType == TextType){
+        self.textCollectionController = [[TextCollectionController alloc] initWithCollectionView:self.collectionView];
+        
+//        self.textCollectionController.delegate = self;
+    }
 
 }
 
