@@ -332,8 +332,6 @@
         
         if ([item isKindOfClass:PhotoFrame.class]) {
             PhotoFrame *photoFrame = (PhotoFrame *)item;
-            NSLog(@"photoFrame.baseView.frame %@",NSStringFromCGRect(photoFrame.baseView.frame));
-            NSLog(@"tappedLocation %@",NSStringFromCGPoint(tappedLocation));
             if (CGRectContainsPoint(photoFrame.baseView.frame, tappedLocation)) {
                 return item;
             }

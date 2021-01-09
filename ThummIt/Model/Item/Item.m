@@ -29,20 +29,11 @@
     copiedBaseView.backgroundColor = self.baseView.backgroundColor;
     copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
     copied.baseView = copiedBaseView;
-    UIImageView *copiedImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
-    copiedImageView.image = [self.photoImageView.image copy];
-    copied.photoImageView = copiedImageView;
-    copiedImageView.contentMode = self.photoImageView.contentMode;
-    copied.itemName = [NSString stringWithString:self.itemName];
-    [copied.baseView addSubview:copied.photoImageView];
     copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
     copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
     [copied.baseView addSubview:copied.backgroundImageView];
     copied.rotationDegree = self.rotationDegree;
     copied.scale = self.scale;
-    copied.imageViewCenter = self.imageViewCenter;
-    copied.imageViewRotationDegree = self.imageViewRotationDegree;
-    copied.imageViewScale = self.imageViewScale;
 
     
     return copied;
@@ -62,21 +53,7 @@
         self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
 
         self.itemName = [decoder decodeObjectForKey:@"itemName"];
-        
-        NSString *phAssetLocalIdentifier = [decoder decodeObjectForKey:@"localIdentifier"];
-        for (PHAsset *phAsset in PhotoManager.sharedInstance.phassets) {
-            if ([phAsset.localIdentifier isEqualToString:phAssetLocalIdentifier]) {
-                self.phAsset = phAsset;
-            }
-        }
-        self.photoImageView = [decoder decodeObjectForKey:@"photoImageView"];
-        
-        NSString *imageURL = [decoder decodeObjectForKey:@"imageURL"];
-        if (imageURL.length) {
-            NSData *data = [[NSData alloc]initWithBase64EncodedString:imageURL options:NSDataBase64DecodingIgnoreUnknownCharacters];
-            self.photoImageView.image = [UIImage imageWithData:data];
-        }
-        
+                
     }
     return self;
 }
@@ -87,10 +64,6 @@
     [encoder encodeObject:self.itemName forKey:@"itemName"];
     [encoder encodeObject:self.backgroundImageView forKey:@"backgroundImageView"];
     [encoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
-    [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
-    NSString *imageURL = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    [encoder encodeObject:self.photoImageView forKey:@"photoImageView"];
-    [encoder encodeObject:imageURL forKey:@"imageURL"];
     
 
 }

@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PhotoFrame : Item
 
-@property (strong, nonatomic) NSString *backgroundImageName;
 @property (strong, nonatomic) UIButton *plusPhotoButton;
 @property (strong, nonatomic) UILabel *plusLabel;
 

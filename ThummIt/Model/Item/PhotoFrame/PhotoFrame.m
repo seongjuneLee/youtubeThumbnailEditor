@@ -6,6 +6,7 @@
 //
 
 #import "PhotoFrame.h"
+#import "PhotoManager.h"
 
 @implementation PhotoFrame
 
@@ -13,6 +14,7 @@
     
     self = [super init];
     if(self){
+        // 템플릿에서만 필요
         self.relativeCenter = CGPointMake(0.5, 0.5);
         self.scale = 1;
         self.rotationDegree = 0;
@@ -34,7 +36,16 @@
     
     PhotoFrame *copied = [super copyWithZone:zone];
     copied.baseView.layer.cornerRadius = copied.baseView.frameWidth/2;
-    
+    UIImageView *copiedImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
+    copiedImageView.image = [self.photoImageView.image copy];
+    copied.photoImageView = copiedImageView;
+    copiedImageView.contentMode = self.photoImageView.contentMode;
+    copied.itemName = [NSString stringWithString:self.itemName];
+    [copied.baseView addSubview:copied.photoImageView];
+    copied.imageViewCenter = self.imageViewCenter;
+    copied.imageViewRotationDegree = self.imageViewRotationDegree;
+    copied.imageViewScale = self.imageViewScale;
+
     return copied;
 }
 
@@ -43,6 +54,20 @@
     if((self = [super initWithCoder:decoder])) {
         
         
+        NSString *phAssetLocalIdentifier = [decoder decodeObjectForKey:@"localIdentifier"];
+        for (PHAsset *phAsset in PhotoManager.sharedInstance.phassets) {
+            if ([phAsset.localIdentifier isEqualToString:phAssetLocalIdentifier]) {
+                self.phAsset = phAsset;
+            }
+        }
+        self.photoImageView = [decoder decodeObjectForKey:@"photoImageView"];
+        
+        NSString *imageURL = [decoder decodeObjectForKey:@"imageURL"];
+        if (imageURL.length) {
+            NSData *data = [[NSData alloc]initWithBase64EncodedString:imageURL options:NSDataBase64DecodingIgnoreUnknownCharacters];
+            self.photoImageView.image = [UIImage imageWithData:data];
+        }
+
     }
     return self;
 }
@@ -50,6 +75,11 @@
 -(void)encodeWithCoder:(NSCoder *)encoder{
     
     [super encodeWithCoder:encoder];
+    [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
+    NSString *imageURL = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    [encoder encodeObject:self.photoImageView forKey:@"photoImageView"];
+    [encoder encodeObject:imageURL forKey:@"imageURL"];
+
 }
 
 

@@ -55,6 +55,7 @@
 		6E8E7AC025A833590008C5FF /* TextCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7ABF25A833590008C5FF /* TextCollectionController.m */; };
 		6E8E7AF425A83C110008C5FF /* TextCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7AF225A83C110008C5FF /* TextCollectionViewCell.m */; };
 		6E8E7AF525A83C110008C5FF /* TextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E7AF325A83C110008C5FF /* TextCollectionViewCell.xib */; };
+		6E8E7B0B25A84F090008C5FF /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7B0A25A84F090008C5FF /* Text.m */; };
 		6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99877B258A2A9D00C8F907 /* TemplateManager.m */; };
 		6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E998794258A300300C8F907 /* HomeCollectionViewCell.m */; };
 		6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */; };
@@ -79,6 +80,16 @@
 		6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA60258F26B600F7F539 /* CoreDataStack.swift */; };
 		6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */; };
 		6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */; };
+		6EC4DFA625A85D860023485C /* Typography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA525A85D860023485C /* Typography.m */; };
+		6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */; };
+		6EC4DFC125A87BEC0023485C /* BGTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBB25A87BEB0023485C /* BGTextAttribute.m */; };
+		6EC4DFC225A87BEC0023485C /* AdvancedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBF25A87BEC0023485C /* AdvancedTextView.m */; };
+		6EC4DFCB25A87DAF0023485C /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFC725A87DAF0023485C /* UIColor+Additions.m */; };
+		6EC4DFCC25A87DAF0023485C /* UIColor+patternArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFCA25A87DAF0023485C /* UIColor+patternArchive.m */; };
+		6EC4DFD525A885970023485C /* UITextView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFD425A885970023485C /* UITextView+Additions.m */; };
+		6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFDE25A887010023485C /* NSArray+Additions.m */; };
+		6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFEB25A892B00023485C /* NormalTypo.m */; };
+		6EC4DFF225A895240023485C /* TypoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFF125A895240023485C /* TypoManager.m */; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
@@ -193,6 +204,8 @@
 		6E8E7AF125A83C110008C5FF /* TextCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextCollectionViewCell.h; sourceTree = "<group>"; };
 		6E8E7AF225A83C110008C5FF /* TextCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextCollectionViewCell.m; sourceTree = "<group>"; };
 		6E8E7AF325A83C110008C5FF /* TextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCollectionViewCell.xib; sourceTree = "<group>"; };
+		6E8E7B0925A84F090008C5FF /* Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
+		6E8E7B0A25A84F090008C5FF /* Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
 		6E99877A258A2A9D00C8F907 /* TemplateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateManager.h; sourceTree = "<group>"; };
 		6E99877B258A2A9D00C8F907 /* TemplateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateManager.m; sourceTree = "<group>"; };
 		6E998793258A300300C8F907 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -237,6 +250,27 @@
 		6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileManager.swift; sourceTree = "<group>"; };
 		6E9BEA77258F51BA00F7F539 /* NSDate+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		6EC4DFA425A85D860023485C /* Typography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Typography.h; sourceTree = "<group>"; };
+		6EC4DFA525A85D860023485C /* Typography.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Typography.m; sourceTree = "<group>"; };
+		6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewContainer.m; sourceTree = "<group>"; };
+		6EC4DFBB25A87BEB0023485C /* BGTextAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTextAttribute.m; sourceTree = "<group>"; };
+		6EC4DFBC25A87BEB0023485C /* AdvancedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedTextView.h; sourceTree = "<group>"; };
+		6EC4DFBD25A87BEB0023485C /* BGTextAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTextAttribute.h; sourceTree = "<group>"; };
+		6EC4DFBE25A87BEC0023485C /* TextViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewContainer.h; sourceTree = "<group>"; };
+		6EC4DFBF25A87BEC0023485C /* AdvancedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedTextView.m; sourceTree = "<group>"; };
+		6EC4DFC725A87DAF0023485C /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		6EC4DFC825A87DAF0023485C /* UIColor+patternArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+patternArchive.h"; sourceTree = "<group>"; };
+		6EC4DFC925A87DAF0023485C /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		6EC4DFCA25A87DAF0023485C /* UIColor+patternArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+patternArchive.m"; sourceTree = "<group>"; };
+		6EC4DFD325A885970023485C /* UITextView+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Additions.h"; sourceTree = "<group>"; };
+		6EC4DFD425A885970023485C /* UITextView+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Additions.m"; sourceTree = "<group>"; };
+		6EC4DFDD25A887010023485C /* NSArray+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
+		6EC4DFDE25A887010023485C /* NSArray+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
+		6EC4DFEA25A892B00023485C /* NormalTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalTypo.h; sourceTree = "<group>"; };
+		6EC4DFEB25A892B00023485C /* NormalTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalTypo.m; sourceTree = "<group>"; };
+		6EC4DFF025A895240023485C /* TypoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypoManager.h; sourceTree = "<group>"; };
+		6EC4DFF125A895240023485C /* TypoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypoManager.m; sourceTree = "<group>"; };
+		6EC4DFFD25A8955E0023485C /* TypoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypoHeader.h; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -373,11 +407,14 @@
 		6E4A17FB2588A529008578BA /* ETC */ = {
 			isa = PBXGroup;
 			children = (
+				6EC4DFC625A87DAF0023485C /* UIColor */,
 				6E4A17FA2588A521008578BA /* UIVIew */,
 				6E9BEA73258F519600F7F539 /* UIButton */,
 				6E9BEA7D258F51BE00F7F539 /* NSDate */,
 				6E8E79AB258F87100008C5FF /* NSString */,
 				6E8E7A01259237BC0008C5FF /* UIImage */,
+				6EC4DFD925A8859F0023485C /* UITextView */,
+				6EC4DFE325A88ABB0023485C /* NSArray */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -388,10 +425,7 @@
 				6E4A18522588CE2E008578BA /* PhotoFrameHeader.h */,
 				6E4A18302588C84B008578BA /* PhotoFrame.h */,
 				6E4A18312588C84B008578BA /* PhotoFrame.m */,
-				6E4A18492588C99D008578BA /* BasicCircle.h */,
-				6E4A184A2588C99D008578BA /* BasicCircle.m */,
-				6E4A18432588C87A008578BA /* ChristmasCircle.h */,
-				6E4A18442588C87A008578BA /* ChristmasCircle.m */,
+				6EC4DFA325A85D1E0023485C /* Styles */,
 			);
 			path = PhotoFrame;
 			sourceTree = "<group>";
@@ -506,6 +540,7 @@
 				6E9BEA5C258F1BAD00F7F539 /* ProjectManager */,
 				6E9BEA3A258E697200F7F539 /* SaveManager */,
 				6E8E7A3C259B2EA80008C5FF /* ItemManager */,
+				6EC4DFF625A8952A0023485C /* TypoManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -659,6 +694,22 @@
 			path = CollectionCell;
 			sourceTree = "<group>";
 		};
+		6E8E7B0225A84EA30008C5FF /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				6E8E7B0925A84F090008C5FF /* Text.h */,
+				6E8E7B0A25A84F090008C5FF /* Text.m */,
+				6EC4DFBC25A87BEB0023485C /* AdvancedTextView.h */,
+				6EC4DFBF25A87BEC0023485C /* AdvancedTextView.m */,
+				6EC4DFBD25A87BEB0023485C /* BGTextAttribute.h */,
+				6EC4DFBB25A87BEB0023485C /* BGTextAttribute.m */,
+				6EC4DFBE25A87BEC0023485C /* TextViewContainer.h */,
+				6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */,
+				6EC4DFAA25A85D8B0023485C /* Typography */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 		6E998780258A2AA100C8F907 /* TemplateManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +759,7 @@
 				6E9BE9C3258B2E8500F7F539 /* Item.h */,
 				6E9BE9C4258B2E8500F7F539 /* Item.m */,
 				6E4A18392588C84F008578BA /* PhotoFrame */,
+				6E8E7B0225A84EA30008C5FF /* Text */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -803,6 +855,75 @@
 				6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */,
 			);
 			path = NSDate;
+			sourceTree = "<group>";
+		};
+		6EC4DFA325A85D1E0023485C /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				6E4A18492588C99D008578BA /* BasicCircle.h */,
+				6E4A184A2588C99D008578BA /* BasicCircle.m */,
+				6E4A18432588C87A008578BA /* ChristmasCircle.h */,
+				6E4A18442588C87A008578BA /* ChristmasCircle.m */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		6EC4DFAA25A85D8B0023485C /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				6EC4DFFD25A8955E0023485C /* TypoHeader.h */,
+				6EC4DFA425A85D860023485C /* Typography.h */,
+				6EC4DFA525A85D860023485C /* Typography.m */,
+				6EC4E00125A8BAA40023485C /* Styles */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		6EC4DFC625A87DAF0023485C /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				6EC4DFC925A87DAF0023485C /* UIColor+Additions.h */,
+				6EC4DFC725A87DAF0023485C /* UIColor+Additions.m */,
+				6EC4DFC825A87DAF0023485C /* UIColor+patternArchive.h */,
+				6EC4DFCA25A87DAF0023485C /* UIColor+patternArchive.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		6EC4DFD925A8859F0023485C /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				6EC4DFD325A885970023485C /* UITextView+Additions.h */,
+				6EC4DFD425A885970023485C /* UITextView+Additions.m */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
+		6EC4DFE325A88ABB0023485C /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				6EC4DFDD25A887010023485C /* NSArray+Additions.h */,
+				6EC4DFDE25A887010023485C /* NSArray+Additions.m */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		6EC4DFF625A8952A0023485C /* TypoManager */ = {
+			isa = PBXGroup;
+			children = (
+				6EC4DFF025A895240023485C /* TypoManager.h */,
+				6EC4DFF125A895240023485C /* TypoManager.m */,
+			);
+			path = TypoManager;
+			sourceTree = "<group>";
+		};
+		6EC4E00125A8BAA40023485C /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				6EC4DFEA25A892B00023485C /* NormalTypo.h */,
+				6EC4DFEB25A892B00023485C /* NormalTypo.m */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		6EDE19ED258A277F001FC1DA /* HomeCollectionController */ = {
@@ -958,14 +1079,18 @@
 				6E8E79D825921D140008C5FF /* ProjectTableController.m in Sources */,
 				6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */,
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
+				6EC4DFF225A895240023485C /* TypoManager.m in Sources */,
 				6E9BEA2C258E448700F7F539 /* Project.m in Sources */,
 				6E8E7A9B259CBB470008C5FF /* PhotoFrameCollectionReusableView.m in Sources */,
 				6E4A1898258A138F008578BA /* HomeTableController.m in Sources */,
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
+				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
+				6EC4DFCC25A87DAF0023485C /* UIColor+patternArchive.m in Sources */,
 				6E11911E2584BC4B000DD9C0 /* HomeViewController+Buttons.m in Sources */,
 				6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */,
 				6E9BE9CE258B3A5700F7F539 /* EditingViewController+GestureControllerDelegate.m in Sources */,
 				6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */,
+				6EC4DFC225A87BEC0023485C /* AdvancedTextView.m in Sources */,
 				6E9BE9F4258D0F1C00F7F539 /* EditingModeController.m in Sources */,
 				6E9BEA36258E696F00F7F539 /* SaveManager.m in Sources */,
 				6E9BEA46258F0AA300F7F539 /* ThummIt.xcdatamodeld in Sources */,
@@ -977,11 +1102,14 @@
 				6E9BEA22258DECDB00F7F539 /* EditingLayerController.m in Sources */,
 				6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */,
 				6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */,
+				6EC4DFCB25A87DAF0023485C /* UIColor+Additions.m in Sources */,
 				6E1190E62584B163000DD9C0 /* AppDelegate.m in Sources */,
 				6E1190F72584B164000DD9C0 /* main.m in Sources */,
 				6E8E7A2E259B270E0008C5FF /* PhotoFrameCollectionController.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
+				6E8E7B0B25A84F090008C5FF /* Text.m in Sources */,
+				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
 				6E8E79CB25921C830008C5FF /* ProjectViewController.m in Sources */,
@@ -996,17 +1124,21 @@
 				6E9BE992258A526500F7F539 /* AhnsoheeTemplate.m in Sources */,
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
 				6E8E7A24259B26CF0008C5FF /* ItemCollectionViewController.m in Sources */,
+				6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */,
 				6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
+				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
 				6E8E7A6A259C91560008C5FF /* PhotoFrameCollectionViewCell.m in Sources */,
 				6E9BE998258A527C00F7F539 /* QuarterDivisionTemplate.m in Sources */,
 				6E7DD4AE2584D4540014618E /* AlbumViewController+CollectionViewDataSource.m in Sources */,
+				6EC4DFC125A87BEC0023485C /* BGTextAttribute.m in Sources */,
 				6E4A18452588C87A008578BA /* ChristmasCircle.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */,
 				6E1190E92584B163000DD9C0 /* SceneDelegate.m in Sources */,
+				6EC4DFD525A885970023485C /* UITextView+Additions.m in Sources */,
 				6E8E79B82591F9570008C5FF /* MainTabBarViewController.m in Sources */,
 				6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */,
 				6E4A184B2588C99D008578BA /* BasicCircle.m in Sources */,

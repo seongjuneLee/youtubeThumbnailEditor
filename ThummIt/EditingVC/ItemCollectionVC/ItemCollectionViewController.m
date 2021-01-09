@@ -20,9 +20,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self makeViewBlurred];
-    [self connectCollectionController];
     [self setCollectionViewFlowLayout];
 
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [self connectCollectionController];
 }
 
 -(void)viewWillLayoutSubviews{

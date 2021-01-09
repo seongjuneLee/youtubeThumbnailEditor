@@ -20,11 +20,26 @@
     if (self.editingModeController.editingMode == NormalMode) {
         [self closeEditingVC];
     } else if (self.editingModeController.editingMode == AddingPhotoFrameMode || self.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+        
         [self.editingModeController setUpEditingMode:NormalMode];
         [self dismissItemCollectionVC];
+        [self.albumVC dismissSelf];
+        [ItemManager.sharedInstance deleteItem:self.currentItem];
+        self.currentItem = nil;
+        self.albumVC = nil;
+
     } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
+        
         [self.editingModeController setUpEditingMode:NormalMode];
         [self dismissAlbumVC];
+        
+    } else if (self.editingModeController.editingMode == AddingTextMode){
+        
+        [self.editingModeController setUpEditingMode:NormalMode];
+        [self dismissItemCollectionVC];
+        [ItemManager.sharedInstance deleteItem:self.currentItem];
+        self.currentItem = nil;
+
     }
 
 }
@@ -57,10 +72,6 @@
     
     [self.editingLayerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
-    [self.albumVC dismissSelf];
-    [ItemManager.sharedInstance deleteItem:self.currentItem];
-    self.currentItem = nil;
-    self.albumVC = nil;
 
     
 }
@@ -77,6 +88,9 @@
     } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
         [self.editingModeController setUpEditingMode:NormalMode];
         [self doneEditingPhoto];
+    } else if (self.editingModeController.editingMode == AddingTextMode){
+        [self.editingModeController setUpEditingMode:NormalMode];
+        [self doneAddingText];
     }
 
 }
@@ -113,11 +127,19 @@
     [self.itemCollectionVC dismissSelf];
     [self.albumVC dismissSelf];
     [SaveManager.sharedInstance.currentProject.photoFrames addObject:self.currentItem];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [SaveManager.sharedInstance save];
-    });
+    [SaveManager.sharedInstance save];
     self.albumVC = nil;
     self.currentItem = nil;
+}
+
+-(void)doneAddingText{
+    
+    [self.editingLayerController hideTransparentView];
+    [self.itemCollectionVC dismissSelf];
+    [SaveManager.sharedInstance.currentProject.photoFrames addObject:self.currentItem];
+    [SaveManager.sharedInstance save];
+    self.currentItem = nil;
+
 }
 
 #pragma mark - 아이템 버튼

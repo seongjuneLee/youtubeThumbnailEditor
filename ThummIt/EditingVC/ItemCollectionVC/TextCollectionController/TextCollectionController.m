@@ -7,7 +7,9 @@
 
 #import "TextCollectionController.h"
 #import "TextCollectionViewCell.h"
-
+#import "TypoManager.h"
+#import "Typography.h"
+#import "Text.h"
 @implementation TextCollectionController
 
 -(id)init{
@@ -41,13 +43,15 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 0;
+    return TypoManager.sharedInstance.typos.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     TextCollectionViewCell *cell = (TextCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"TextCollectionViewCell" forIndexPath:indexPath];
+    Typography *typo = TypoManager.sharedInstance.typos[indexPath.item];
     
+    cell.textImageView.image = [Text makePlaceHolderWithTypo:typo].image;
     
     return cell;
     
