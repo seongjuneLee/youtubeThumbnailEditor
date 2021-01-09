@@ -11,8 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ItemCollectionViewController (PhotoFrame) <PhotoFrameCollectionControllerDelegate>
 
-- (IBAction)itemButtonTapped:(UIButton *)sender;
-- (IBAction)albumButtonTapped:(UIButton *)sender;
 
 @end
 

@@ -29,6 +29,7 @@
     [editingVC.editingLayerController bringCurrentItemToFront:text];
     
     editingVC.currentItem = text;
+    editingVC.currentText = text;
     editingVC.editingGestureController.currentItem = text;
 
 }

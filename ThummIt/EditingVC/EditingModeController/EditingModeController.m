@@ -20,7 +20,7 @@
     
 }
 
--(void)setUpEditingMode:(EditingMode)editingMode{
+-(void)setNavigationItemRespondToEditingMode:(EditingMode)editingMode{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     self.editingMode = editingMode;

@@ -29,41 +29,8 @@
     [editingVC.editingLayerController bringCurrentItemToFront:photoFrame];
     
     editingVC.currentItem = photoFrame;
+    editingVC.currentPhotoFrame = photoFrame;
     editingVC.editingGestureController.currentItem = photoFrame;
-
-}
-
-
-// 버튼
-
-- (IBAction)itemButtonTapped:(UIButton *)sender {
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (!sender.selected) {
-        sender.selected = true;
-        self.albumButton.selected = false;
-        sender.alpha = 0.8;
-        self.albumButton.alpha = 0.4;
-        editingVC.albumVC.view.hidden = true;
-        editingVC.editingModeController.editingMode = AddingPhotoFrameMode;
-    }
-
-}
-
-- (IBAction)albumButtonTapped:(UIButton *)sender {
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (!sender.selected) {
-        sender.selected = true;
-        self.itemButton.selected = false;
-        sender.alpha = 0.8;
-        self.itemButton.alpha = 0.4;
-        editingVC.albumVC.view.frameHeight = self.view.frameHeight - (self.itemButton.frameY + self.itemButton.frameHeight + 10);
-        editingVC.albumVC.view.frameY = editingVC.view.frameHeight - editingVC.albumVC.view.frameHeight;
-        editingVC.albumVC.view.hidden = false;
-        editingVC.editingModeController.editingMode = EditingPhotoFrameModeWhileAddingPhotoFrameMode;
-
-    }
     
 }
 @end

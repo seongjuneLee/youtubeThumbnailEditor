@@ -23,7 +23,7 @@ typedef enum {
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIButton *itemButton;
-@property (weak, nonatomic) IBOutlet UIButton *albumButton;
+@property (weak, nonatomic) IBOutlet UIButton *contentButton;
 
 @property (nonatomic) ItemType itemType;
 @property (strong, nonatomic) UIVisualEffectView *blurView;
@@ -31,8 +31,6 @@ typedef enum {
 @property (strong, nonatomic) TextCollectionController *textCollectionController;
 
 @property (weak, nonatomic) UIViewController *editingVC;
-@property (weak, nonatomic) Text *currentText;
-@property (weak, nonatomic) PhotoFrame *currentPhotoFrame;
 
 -(void)dismissSelf;
 

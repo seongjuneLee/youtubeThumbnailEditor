@@ -286,7 +286,7 @@
                                     <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="albumButtonTapped:" destination="TdZ-if-u2J" eventType="touchUpInside" id="DuU-TG-1uo"/>
+                                    <action selector="contentButtonTapped:" destination="TdZ-if-u2J" eventType="touchUpInside" id="9lg-NV-gAo"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6d4-Tq-A1X">
@@ -318,8 +318,8 @@
                     </view>
                     <size key="freeformSize" width="414" height="700"/>
                     <connections>
-                        <outlet property="albumButton" destination="ttm-yg-W6I" id="7Px-My-eQy"/>
                         <outlet property="collectionView" destination="6d4-Tq-A1X" id="puw-st-sYr"/>
+                        <outlet property="contentButton" destination="ttm-yg-W6I" id="aEr-qp-Ibs"/>
                         <outlet property="itemButton" destination="W0g-2H-65O" id="fHm-uU-RJR"/>
                     </connections>
                 </viewController>

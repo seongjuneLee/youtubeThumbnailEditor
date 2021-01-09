@@ -16,7 +16,7 @@
     if ([item isKindOfClass:PhotoFrame.class]) {
         
         self.currentItem = (PhotoFrame *)item;
-        [self.editingModeController setUpEditingMode:EditingPhotoFrameMode];
+        [self.editingModeController setNavigationItemRespondToEditingMode:EditingPhotoFrameMode];
         self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
         self.originalImageViewCenter = self.currentItem.photoImageView.center;
         self.originalTransform = self.currentItem.photoImageView.transform;

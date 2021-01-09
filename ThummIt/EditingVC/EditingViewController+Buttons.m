@@ -18,7 +18,7 @@
         [self closeEditingVC];
     } else if (self.editingModeController.editingMode == AddingPhotoFrameMode || self.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
-        [self.editingModeController setUpEditingMode:NormalMode];
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
         [self dismissItemCollectionVC];
         [self.albumVC dismissSelf];
         [ItemManager.sharedInstance deleteItem:self.currentItem];
@@ -27,12 +27,12 @@
 
     } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
         
-        [self.editingModeController setUpEditingMode:NormalMode];
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
         [self dismissAlbumVC];
         
     } else if (self.editingModeController.editingMode == AddingTextMode){
         
-        [self.editingModeController setUpEditingMode:NormalMode];
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
         [self dismissItemCollectionVC];
         [ItemManager.sharedInstance deleteItem:self.currentItem];
         self.currentItem = nil;
@@ -80,13 +80,13 @@
     if (self.editingModeController.editingMode == NormalMode) {
         [self exportThumbnail];
     } else if (self.editingModeController.editingMode == AddingPhotoFrameMode || self.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
-        [self.editingModeController setUpEditingMode:NormalMode];
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
         [self doneAddingPhoto];
     } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
-        [self.editingModeController setUpEditingMode:NormalMode];
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
         [self doneEditingPhoto];
     } else if (self.editingModeController.editingMode == AddingTextMode){
-        [self.editingModeController setUpEditingMode:NormalMode];
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
         [self doneAddingText];
     }
 
@@ -146,7 +146,7 @@
 - (IBAction)photoFrameButtonTapped:(id)sender {
     
     [self.editingLayerController showTransparentView];
-    [self.editingModeController setUpEditingMode:AddingPhotoFrameMode];
+    [self.editingModeController setNavigationItemRespondToEditingMode:AddingPhotoFrameMode];
     self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];
     [self showAlbumVC];
@@ -168,7 +168,7 @@
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
             self.itemCollectionVC.itemButton.alpha = 0.8;
-            self.itemCollectionVC.albumButton.alpha = 0.4;
+            self.itemCollectionVC.contentButton.alpha = 0.4;
         }];
     }];
     
@@ -180,7 +180,7 @@
 - (IBAction)textButtonTapped:(UIButton *)sender {
     
     [self.editingLayerController showTransparentView];
-    [self.editingModeController setUpEditingMode:AddingPhotoFrameMode];
+    [self.editingModeController setNavigationItemRespondToEditingMode:AddingPhotoFrameMode];
     self.itemCollectionVC.itemType = TextType;
     [self addItemCollectionVC];
     

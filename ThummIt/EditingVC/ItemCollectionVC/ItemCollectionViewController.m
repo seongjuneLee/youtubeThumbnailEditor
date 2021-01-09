@@ -38,7 +38,7 @@
     
     float screenHeight = UIScreen.mainScreen.bounds.size.height;
     [UIView animateWithDuration:0.2 animations:^{
-        self.itemButton.alpha = self.albumButton.alpha = 0;
+        self.itemButton.alpha = self.contentButton.alpha = 0;
     }completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
             self.collectionView.frameY = screenHeight;
@@ -86,9 +86,11 @@
                 self.photoFrameCollectionController.firstPhoto = image;
             });
         }];
+        [self.contentButton setTitle:NSLocalizedString(@"Album", nil) forState:UIControlStateNormal];
     } else if (self.itemType == TextType){
         self.textCollectionController = [[TextCollectionController alloc] initWithCollectionView:self.collectionView];
         self.textCollectionController.delegate = self;
+        [self.contentButton setTitle:NSLocalizedString(@"Keyboard", nil) forState:UIControlStateNormal];
     }
     
     
