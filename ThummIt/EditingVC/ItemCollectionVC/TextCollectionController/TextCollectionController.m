@@ -56,4 +56,14 @@
     return cell;
     
 }
+
+#pragma mark - 테이블 델리게이트
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    Typography *typo = TypoManager.sharedInstance.typos[indexPath.item];
+    [self.delegate didSelectTypo:typo];
+    
+}
+
 @end

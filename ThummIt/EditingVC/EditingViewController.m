@@ -63,7 +63,9 @@
     UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
     self.itemCollectionVC = (ItemCollectionViewController *)[editing instantiateViewControllerWithIdentifier:@"ItemCollectionViewController"];
     self.itemCollectionVC.editingVC = self;
-    
+    self.itemCollectionVC.currentText = self.currentText;
+    self.itemCollectionVC.currentPhotoFrame = self.currentPhotoFrame;
+
 }
 
 -(void)connectEditingGestureController{

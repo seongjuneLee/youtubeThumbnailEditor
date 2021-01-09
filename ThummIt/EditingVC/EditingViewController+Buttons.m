@@ -10,9 +10,6 @@
 
 @implementation EditingViewController (Buttons)
 
-#pragma mark - 네비게이션 버튼
-
-
 #pragma mark - left item 탭
 
 - (IBAction)leftItemTapped:(id)sender {

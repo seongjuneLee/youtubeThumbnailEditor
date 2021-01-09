@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 모델
 @property (strong, nonatomic) Template *selectedTemplate;
 @property (strong, nonatomic, nullable) Item *currentItem;
+@property (strong, nonatomic, nullable) Text *currentText;
+@property (strong, nonatomic, nullable) PhotoFrame *currentPhotoFrame;
 
 @property (strong, nonatomic, nullable) AlbumViewController *albumVC;
 @property (strong, nonatomic, nullable) UIImage *originalPhotoFrameImage;

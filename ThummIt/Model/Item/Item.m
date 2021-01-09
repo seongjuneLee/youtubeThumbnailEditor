@@ -14,9 +14,6 @@
     
     self = [super init];
     if (self) {
-        self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
-        self.baseView.clipsToBounds = true;
-        self.scale = 1.0;
     }
     return self;
     

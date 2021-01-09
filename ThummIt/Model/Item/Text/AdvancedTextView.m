@@ -243,7 +243,7 @@
         range.length = string.length; // RandomText의 범위
     }
     
-    [self setFontName:typo.fontName string:string size:typo.fontSize range:range];
+    [self setFontWithName:typo.fontName string:string size:typo.fontSize range:range];
     // 텍스트 색상 (stroke은 음수를 넣어줘서 글자 안쪽으로만 커진다. -> 양수는 Foreground색을 투명하게 한다.)
     if (typo.textColor) {
         [string addAttribute:NSForegroundColorAttributeName value:typo.textColor range:range];
@@ -254,6 +254,7 @@
     
     // 배경 색상
     if (typo.backgroundColor) {
+        
         self.backgroundColor = typo.backgroundColor;
     }
     
@@ -325,7 +326,7 @@
     return string;
     
 }
--(void)setFontName:(NSString *)name string:(NSMutableAttributedString *)string size:(float)size range:(NSRange)range{
+-(void)setFontWithName:(NSString *)name string:(NSMutableAttributedString *)string size:(float)size range:(NSRange)range{
     
     if (name) {
         UIFont* font = [UIFont fontWithName:name size:size];

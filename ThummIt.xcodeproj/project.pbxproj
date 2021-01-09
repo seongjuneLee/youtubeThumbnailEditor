@@ -27,6 +27,9 @@
 		6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A187B258A0E0B008578BA /* DoubleCircleTemplate.m */; };
 		6E4A1885258A1201008578BA /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A1884258A1201008578BA /* CategoryManager.m */; };
 		6E4A1898258A138F008578BA /* HomeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A1897258A138F008578BA /* HomeTableController.m */; };
+		6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */; };
+		6E6E5BF025A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BEF25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m */; };
+		6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BF525A9F44A009821CF /* ItemCollectionViewController+Text.m */; };
 		6E7DD4A22584D3C00014618E /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD4A12584D3C00014618E /* AlbumViewController.m */; };
 		6E7DD4A82584D4490014618E /* AlbumViewController+CollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD4A72584D4490014618E /* AlbumViewController+CollectionViewDelegate.m */; };
 		6E7DD4AE2584D4540014618E /* AlbumViewController+CollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD4AD2584D4540014618E /* AlbumViewController+CollectionViewDataSource.m */; };
@@ -156,6 +159,12 @@
 		6E4A1884258A1201008578BA /* CategoryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryManager.m; sourceTree = "<group>"; };
 		6E4A1896258A138F008578BA /* HomeTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableController.h; sourceTree = "<group>"; };
 		6E4A1897258A138F008578BA /* HomeTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableController.m; sourceTree = "<group>"; };
+		6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditingViewController+Text.h"; sourceTree = "<group>"; };
+		6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EditingViewController+Text.m"; sourceTree = "<group>"; };
+		6E6E5BEE25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItemCollectionViewController+PhotoFrame.h"; sourceTree = "<group>"; };
+		6E6E5BEF25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ItemCollectionViewController+PhotoFrame.m"; sourceTree = "<group>"; };
+		6E6E5BF425A9F44A009821CF /* ItemCollectionViewController+Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItemCollectionViewController+Text.h"; sourceTree = "<group>"; };
+		6E6E5BF525A9F44A009821CF /* ItemCollectionViewController+Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ItemCollectionViewController+Text.m"; sourceTree = "<group>"; };
 		6E7DD4A02584D3C00014618E /* AlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		6E7DD4A12584D3C00014618E /* AlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		6E7DD4A62584D4490014618E /* AlbumViewController+CollectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlbumViewController+CollectionViewDelegate.h"; sourceTree = "<group>"; };
@@ -503,6 +512,8 @@
 				6E4A18602589F7BD008578BA /* EditingViewController+Buttons.m */,
 				6E4A1865258A0009008578BA /* EditingViewController+AlbumVCDelegate.h */,
 				6E4A1866258A0009008578BA /* EditingViewController+AlbumVCDelegate.m */,
+				6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */,
+				6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */,
 				6E8E7A28259B26D70008C5FF /* ItemCollectionVC */,
 			);
 			path = EditingVC;
@@ -628,6 +639,10 @@
 			children = (
 				6E8E7A22259B26CF0008C5FF /* ItemCollectionViewController.h */,
 				6E8E7A23259B26CF0008C5FF /* ItemCollectionViewController.m */,
+				6E6E5BEE25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.h */,
+				6E6E5BEF25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m */,
+				6E6E5BF425A9F44A009821CF /* ItemCollectionViewController+Text.h */,
+				6E6E5BF525A9F44A009821CF /* ItemCollectionViewController+Text.m */,
 				6E8E7A32259B27120008C5FF /* PhotoFrameCollectionController */,
 				6E8E7AC425A8335E0008C5FF /* TextCollectionController */,
 			);
@@ -1091,6 +1106,7 @@
 				6E9BE9CE258B3A5700F7F539 /* EditingViewController+GestureControllerDelegate.m in Sources */,
 				6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */,
 				6EC4DFC225A87BEC0023485C /* AdvancedTextView.m in Sources */,
+				6E6E5BF025A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m in Sources */,
 				6E9BE9F4258D0F1C00F7F539 /* EditingModeController.m in Sources */,
 				6E9BEA36258E696F00F7F539 /* SaveManager.m in Sources */,
 				6E9BEA46258F0AA300F7F539 /* ThummIt.xcdatamodeld in Sources */,
@@ -1114,6 +1130,7 @@
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
 				6E8E79CB25921C830008C5FF /* ProjectViewController.m in Sources */,
 				6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */,
+				6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */,
 				6E9BEA1C258DDECC00F7F539 /* UIButton+Additions.m in Sources */,
 				6E9BE9DB258CFCFE00F7F539 /* PhotoManager.m in Sources */,
 				6E8E799A258F82E80008C5FF /* MigratorJul.swift in Sources */,
@@ -1128,6 +1145,7 @@
 				6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
+				6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
 				6E8E7A6A259C91560008C5FF /* PhotoFrameCollectionViewCell.m in Sources */,
 				6E9BE998258A527C00F7F539 /* QuarterDivisionTemplate.m in Sources */,

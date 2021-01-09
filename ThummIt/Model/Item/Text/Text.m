@@ -17,10 +17,13 @@
         self.text = [[NSString alloc] init];
         self.attributedText = [[NSAttributedString alloc] init];
         self.backgroundAttributedTexts = [NSMutableArray array];
-        
         self.typoRangeArray = [NSMutableArray array];
+        
         self.textView = [self makeTextView];
         self.textViewContainer = [self makeTextViewContainerWithTextView:self.textView];
+        NSLog(@"self.textViewContainer frame %@",NSStringFromCGRect(self.textViewContainer.frame));
+        self.baseView = self.textViewContainer;
+        NSLog(@"self.baseView frame %@",NSStringFromCGRect(self.baseView.frame));
 
         self.center = CGPointMake(0,0);
         self.rotationDegree = 0;
@@ -30,6 +33,18 @@
         
     }
     return self;
+}
+
+-(id)initWithTypo:(Typography *)typo{
+    
+    self = [self init];
+    if(self){
+        
+        [self applyTypo:typo];
+        
+    }
+    return self;
+    
 }
 
 @synthesize textView  = _textView;
@@ -113,19 +128,19 @@
 
 #pragma mark - 타이포 적용
 
--(void)setUpTypo:(Typography *)typo{
+-(void)applyTypo:(Typography *)typo{
     
     NSRange prevRange = self.textView.selectedRange;
     NSRange range = NSMakeRange(prevRange.location, prevRange.length);
     if (range.length == 0) {
         range = NSMakeRange(0, self.textView.text.length);
     }
-    [self setUpTypo:typo forRange:range];
+    [self applyTypo:typo forRange:range];
     
     self.textView.selectedRange = prevRange;
 }
 
--(void)setUpTypo:(Typography *)typo forRange:(NSRange)range{
+-(void)applyTypo:(Typography *)typo forRange:(NSRange)range{
     
     if (!self.textView){
         return;
@@ -149,7 +164,7 @@
         self.backgroundImageView.contentMode = typo.bgContentMode;
         
         // 크기 및 위치 설정
-        [self updatebackgroundImageViewFrame:typo];
+        [self updateBackgroundImageViewFrame:typo];
         
     } else {
         self.backgroundImageView.image = nil;
@@ -169,7 +184,7 @@
     for (NSArray* typoRange in copiedTypoRangeArray) {
         Typography* typo = typoRange.firstObject;
         NSRange range = NSRangeFromString(typoRange.lastObject);
-        [self setUpTypo:typo forRange:range];
+        [self applyTypo:typo forRange:range];
     }
     self.typoRangeArray = copiedTypoRangeArray;
 
@@ -177,7 +192,7 @@
 
 #pragma mark - 배경이미지
 
--(void)updatebackgroundImageViewFrame:(Typography *)typo{
+-(void)updateBackgroundImageViewFrame:(Typography *)typo{
     
     float widthScale = 1.1;
     float heightScale = 1.2; // 텍스트뷰 감싸주도록 좀 크게
@@ -196,6 +211,7 @@
     UIColor* cursorCololr = [UIColor colorWithRed:79.0/255.0 green:163.0/255.0 blue:249.0/255.0 alpha:1.0];
     [[UITextField appearance] setTintColor:cursorCololr];
     AdvancedTextView* textView = [[AdvancedTextView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
+    textView.backgroundColor = UIColor.clearColor;
     textView.keyboardAppearance = UIKeyboardAppearanceDark;
     textView.textAlignment = self.textAlignment;
     textView.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:TEXT_FONT_SIZE];
@@ -218,14 +234,32 @@
     return textViewContainer;
 }
 
--(UIImageView*)makeNewImageView{
++(UIImageView*)makePlaceHolderWithTypo:(Typography*)typo{
     
-    // 이미지뷰 사이즈 설정
+    Text * placeHolderText = [[Text alloc] init];
+    placeHolderText.textView.text = typo.name;
+    placeHolderText.text = typo.name;
+    placeHolderText.textAlignment = NSTextAlignmentCenter;
+    placeHolderText.textView.textAlignment = NSTextAlignmentCenter;
+
+    [placeHolderText applyTypo:typo];
+    placeHolderText.textView.font = [UIFont fontWithName:typo.fontName size:typo.fontSize]; // placeholder는 fontName으로.
+    [placeHolderText resize];
     
-    // 배경 없는 경우 : 이미지뷰의 사이즈 그대로
+    [placeHolderText.textView setNeedsDisplay];
+    UIImageView * imgView = [placeHolderText makePlaceholderImageView];
+    UIImage * img = imgView.toImage;
+    
+    UIImageView *ret = [[UIImageView alloc] initWithImage:img];
+    
+    return ret;
+}
+
+
+-(UIImageView*)makePlaceholderImageView{
+
     CGSize size = CGSizeMake(self.textViewContainer.boundsWidth, self.textViewContainer.boundsHeight);
     
-    // 배경 있는 경우 : 배경이미지뷰가 텍스트뷰보다 조금 더 크므로, 그걸 기준으로 이미지뷰 만들기
     UIImage* image;
     if (self.typo.bgImageName == nil) {
         image = [self imageFromView:self.textView];
@@ -258,31 +292,8 @@
     imageView.userInteractionEnabled = false;
     imageView.image = image;
         
-    self.previewImageView = imageView;
     return imageView;
 }
-
-+(UIImageView*)makePlaceHolderWithTypo:(Typography*)typo{
-    
-    Text * placeHolderText = [[Text alloc] init];
-    placeHolderText.textView.text = typo.name;
-    placeHolderText.text = typo.name;
-    placeHolderText.textAlignment = NSTextAlignmentCenter;
-    placeHolderText.textView.textAlignment = NSTextAlignmentCenter;
-
-    [placeHolderText setUpTypo:typo];
-    placeHolderText.textView.font = [UIFont fontWithName:typo.fontName size:typo.fontSize]; // placeholder는 fontName으로.
-    [placeHolderText resize];
-    
-    [placeHolderText.textView setNeedsDisplay];
-    UIImageView * imgView = [placeHolderText makeNewImageView];
-    UIImage * img = imgView.toImage;
-    
-    UIImageView *ret = [[UIImageView alloc] initWithImage:img];
-    
-    return ret;
-}
-
 -(UIImage *)imageFromView:(UIView *)view{
     CGSize size = view.frameSize;
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
@@ -299,6 +310,7 @@
     // 0. 뷰 새로 파기
     self.textView = [self makeTextView];
     self.textViewContainer = [self makeTextViewContainerWithTextView:self.textView];
+    self.baseView = self.textViewContainer;
     
     // 1. 텍스트뷰 세팅
     self.textView.parent = self;
@@ -320,10 +332,10 @@
         [self.textViewContainer addSubview:self.backgroundImageView];
         [self.textViewContainer sendSubviewToBack:self.backgroundImageView];
     }
-    [self updatebackgroundImageViewFrame:self.typo];
+    [self updateBackgroundImageViewFrame:self.typo];
     [self.textViewContainer setNeedsLayout];
     
-    [self setUpTypo:self.typo]; // 하위호환
+    [self applyTypo:self.typo];
     
     // 5. 부분 타이포 적용
     [self setUpTypoRangeArray:self.typoRangeArray];
@@ -338,7 +350,7 @@
     // 컨테이너 리사이즈
     self.textViewContainer.bounds = self.textView.bounds;
     // 배경이미지뷰 리사이즈
-    [self updatebackgroundImageViewFrame:self.typo];
+    [self updateBackgroundImageViewFrame:self.typo];
 }
 
 #pragma mark - Helper

@@ -32,14 +32,18 @@
 -(void)changeCurrentItem:(Item *)item{
     
     if (self.currentItem != item) {
-        self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
-        self.currentItem.photoImageView.center = self.originalImageViewCenter;
-        [self.editingLayerController recoverOriginalLayer];
-        [self.editingLayerController bringCurrentItemToFront:item];
-        
-        self.currentItem = item;
-        self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
-        [self setCurrentPhotoSelectedOnAlbumVC];
+        if ([item isKindOfClass:PhotoFrame.class]) {
+            self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
+            self.currentItem.photoImageView.center = self.originalImageViewCenter;
+            [self.editingLayerController recoverOriginalLayer];
+            [self.editingLayerController bringCurrentItemToFront:item];
+            
+            self.currentItem = item;
+            self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
+            [self setCurrentPhotoSelectedOnAlbumVC];
+        } else if ([item isKindOfClass:Text.class]){
+            
+        }
     }
     
 }

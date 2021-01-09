@@ -9,13 +9,17 @@
 #import "PhotoFrameCollectionController.h"
 #import "TextCollectionController.h"
 #import "Item.h"
+#import "PhotoManager.h"
+#import "ItemManager.h"
+#import "Text.h"
+
 NS_ASSUME_NONNULL_BEGIN
 typedef enum {
     PhotoFrameType = 0,
     TextType = 1
 }ItemType;
 
-@interface ItemCollectionViewController : UIViewController <PhotoFrameCollectionControllerDelegate>
+@interface ItemCollectionViewController : UIViewController 
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIButton *itemButton;
@@ -27,10 +31,10 @@ typedef enum {
 @property (strong, nonatomic) TextCollectionController *textCollectionController;
 
 @property (weak, nonatomic) UIViewController *editingVC;
+@property (weak, nonatomic) Text *currentText;
+@property (weak, nonatomic) PhotoFrame *currentPhotoFrame;
 
 -(void)dismissSelf;
-- (IBAction)itemButtonTapped:(UIButton *)sender;
-- (IBAction)albumButtonTapped:(UIButton *)sender;
 
 @end
 

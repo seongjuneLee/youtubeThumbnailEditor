@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 뷰
 @property (strong, nonatomic) AdvancedTextView *textView;
 @property (strong, nonatomic) TextViewContainer *textViewContainer;
-@property (strong, nonatomic) UIImageView *previewImageView;
+@property (strong, nonatomic) UIImageView *placeholderImageView;
 
 // 뷰 데이터
 @property (strong, nonatomic) NSString* text;
@@ -31,11 +31,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)resize;
 
--(UIImageView*)makeNewImageView;
--(void)setUpTypo:(Typography *)typo;
+-(UIImageView*)makePlaceholderImageView;
+-(void)applyTypo:(Typography *)typo;
 -(void)setUpTypoRangeArray:(NSArray*)typoRangeArray;
--(void)updateBGImageViewFrame:(Typography *)typo;
+-(void)updateBackgroundImageViewFrame:(Typography *)typo;
 +(UIImageView*)makePlaceHolderWithTypo:(Typography*)typo;
+-(id)initWithTypo:(Typography *)typo;
 
 
 @end

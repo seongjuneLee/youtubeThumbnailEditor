@@ -6,13 +6,20 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Text.h"
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol TextCollectionControllerDelegate <NSObject>
+
+-(void)didSelectTypo:(Typography *)typo;
+
+@end
 
 @interface TextCollectionController : NSObject <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
-//@property (weak, nonatomic) id<PhotoFrameCollectionControllerDelegate> delegate;
+@property (weak, nonatomic) id<TextCollectionControllerDelegate> delegate;
 @property (weak, nonatomic) UICollectionView *collectionView;
+@property (weak, nonatomic) UIViewController *editingVC;
 
 -(id)initWithCollectionView:(UICollectionView *)collectionView;
 
