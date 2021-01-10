@@ -52,7 +52,7 @@
     
     item.baseView.center = CGPointMake(imageView.frameWidth/2, imageView.frameY + imageView.frameHeight/2);
     [view insertSubview:item.baseView belowSubview:gestureView];
-    [SaveManager.sharedInstance.currentProject.items addObject:item];
+    [SaveManager.sharedInstance addItem:item];
     [SaveManager.sharedInstance save];
     
 }
@@ -60,7 +60,7 @@
 -(void)deleteItem:(Item *)item{
     
     [item.baseView removeFromSuperview];
-    [SaveManager.sharedInstance.currentProject.items removeObject:item];
+    [SaveManager.sharedInstance deleteItem:item];
     [SaveManager.sharedInstance save];
     
 }

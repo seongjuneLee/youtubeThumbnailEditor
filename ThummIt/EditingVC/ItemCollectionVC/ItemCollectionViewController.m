@@ -78,6 +78,9 @@
 
 -(void)connectCollectionController{
     
+    self.itemButton.selected = true;
+    self.contentButton.selected = false;
+    
     if (self.itemType == PhotoFrameType) {
         self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
         self.photoFrameCollectionController.delegate = self;
@@ -86,11 +89,13 @@
                 self.photoFrameCollectionController.firstPhoto = image;
             });
         }];
-        [self.contentButton setTitle:NSLocalizedString(@"Album", nil) forState:UIControlStateNormal];
+        [self.itemButton setImage:[UIImage imageNamed:@"photoFrameImage"] forState:UIControlStateNormal];
+        [self.contentButton setImage:[UIImage imageNamed:@"photoAlbum"] forState:UIControlStateNormal];
     } else if (self.itemType == TextType){
         self.textCollectionController = [[TextCollectionController alloc] initWithCollectionView:self.collectionView];
         self.textCollectionController.delegate = self;
-        [self.contentButton setTitle:NSLocalizedString(@"Keyboard", nil) forState:UIControlStateNormal];
+        [self.itemButton setImage:[UIImage imageNamed:@"textImage"] forState:UIControlStateNormal];
+        [self.contentButton setImage:[UIImage imageNamed:@"keyboardImage"] forState:UIControlStateNormal];
     }
     
     

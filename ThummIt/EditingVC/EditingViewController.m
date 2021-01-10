@@ -27,9 +27,6 @@
     
 }
 
-//-(void)setCurrentItem:(Item *)currentItem{
-//    NSLog(@"불림");
-//}
 
 -(void)viewWillLayoutSubviews{
 
@@ -105,8 +102,8 @@
     float imageViewHeight = imageViewWidth * 9/16;
     for (Item *item in project.items) {
         if (item.isTemplateItem) {
-            float itemX = imageViewWidth * item.relativeCenter.x;
-            float itemY = imageViewHeight * item.relativeCenter.y + self.imageView.frameY;
+            float itemX = imageViewWidth * item.center.x;
+            float itemY = imageViewHeight * item.center.y + self.imageView.frameY;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             [item scaleItem];
             item.baseView.center = itemCenter;

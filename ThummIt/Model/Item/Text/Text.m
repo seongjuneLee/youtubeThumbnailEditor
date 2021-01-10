@@ -18,18 +18,16 @@
         self.attributedText = [[NSAttributedString alloc] init];
         self.backgroundAttributedTexts = [NSMutableArray array];
         self.typoRangeArray = [NSMutableArray array];
+        self.textAlignment = NSTextAlignmentCenter;
         
         self.textView = [self makeTextView];
         self.textViewContainer = [self makeTextViewContainerWithTextView:self.textView];
-        NSLog(@"self.textViewContainer frame %@",NSStringFromCGRect(self.textViewContainer.frame));
         self.baseView = self.textViewContainer;
-        NSLog(@"self.baseView frame %@",NSStringFromCGRect(self.baseView.frame));
 
         self.center = CGPointMake(0,0);
         self.rotationDegree = 0;
         self.scale = 1;
         
-        self.textAlignment = NSTextAlignmentCenter;
         
     }
     return self;
@@ -112,7 +110,8 @@
 
 -(id)copyWithZone:(NSZone *)zone{
     
-    Text * copied = [Text new];
+    Text *copied = [super copyWithZone:zone];
+    
     copied.text = self.text;
     copied.attributedText = [self.attributedText copy];
     copied.backgroundAttributedTexts = [self.backgroundAttributedTexts copy];
@@ -208,8 +207,6 @@
 -(AdvancedTextView*)makeTextView{
     
     // 텍스트뷰
-    UIColor* cursorCololr = [UIColor colorWithRed:79.0/255.0 green:163.0/255.0 blue:249.0/255.0 alpha:1.0];
-    [[UITextField appearance] setTintColor:cursorCololr];
     AdvancedTextView* textView = [[AdvancedTextView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
     textView.backgroundColor = UIColor.clearColor;
     textView.keyboardAppearance = UIKeyboardAppearanceDark;
@@ -248,11 +245,8 @@
     
     [placeHolderText.textView setNeedsDisplay];
     UIImageView * imgView = [placeHolderText makePlaceholderImageView];
-    UIImage * img = imgView.toImage;
     
-    UIImageView *ret = [[UIImageView alloc] initWithImage:img];
-    
-    return ret;
+    return imgView;
 }
 
 
@@ -321,10 +315,10 @@
     
     // 2. 텍스트뷰컨테이너 세팅
     self.textViewContainer.center = self.center;
+    NSLog(@"center string %@",NSStringFromCGPoint(self.center));
     CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.scale, self.scale);
     self.textViewContainer.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-    self.textViewContainer.hidden = true;
     [self resize]; // 컨테이너뷰가 텍스트뷰 사이즈 따라가도록
     
     // 3. 배경 이미지뷰 세팅
@@ -339,6 +333,7 @@
     
     // 5. 부분 타이포 적용
     [self setUpTypoRangeArray:self.typoRangeArray];
+    self.baseView = self.textViewContainer;
 }
 
 #pragma mark - 리사이즈

@@ -7,6 +7,7 @@
 
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "EditingViewController+AlbumVCDelegate.h"
+#import "ItemCollectionViewController+Button.h"
 
 @implementation EditingViewController (GestureControllerDelegate)
 
@@ -94,6 +95,17 @@
     
 }
 
+-(void)didTapTextWhileAdding{
+    
+    [self.itemCollectionVC contentButtonTapped:self.itemCollectionVC.contentButton];
+    
+}
+
+-(void)didTapPhotoFrameWhileAdding{
+    
+    [self.itemCollectionVC contentButtonTapped:self.itemCollectionVC.contentButton];
+    
+}
 
 #pragma mark - 팬
 
@@ -104,12 +116,14 @@
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
             self.photoFrameButtonContainerView.alpha = 0.0;
+            self.textButtonContainerView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
         }];
     } else if (self.editingModeController.editingMode == AddingPhotoFrameMode){
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
             self.photoFrameButtonContainerView.alpha = 0.0;
+            self.textButtonContainerView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
             self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
         }];
@@ -122,10 +136,12 @@
     if (currentPointY >= iamgeViewBottomY) {
         [UIView animateWithDuration:0.2 animations:^{
             self.deleteButtonContainerView.alpha = 0.4;
+            self.currentItem.baseView.alpha = 0.4;
         }];
     } else {
         [UIView animateWithDuration:0.2 animations:^{
             self.deleteButtonContainerView.alpha = 1.0;
+            self.currentItem.baseView.alpha = 1.0;
         }];
     }
 }
@@ -140,6 +156,7 @@
 
     [UIView animateWithDuration:0.2 animations:^{
         self.photoFrameButtonContainerView.alpha = 1.0;
+        self.textButtonContainerView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
     }completion:^(BOOL finished) {
@@ -158,5 +175,7 @@
         self.deleteButtonContainerView.alpha = 1.0;
     }];
 }
+
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import "Item.h"
 #import "PhotoFrame.h"
+#import "Text.h"
 #import "Template.h"
 @class CoreDataProject;
 
@@ -23,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIColor * backgroundColor;
 @property (strong, nonatomic) NSString *lastEditedDate;
 @property (strong, nonatomic) NSMutableArray *photoFrames;
+@property (strong, nonatomic) NSMutableArray *texts;
 @property (strong, atomic) CoreDataProject* coreDataStorage;
 
 -(NSMutableArray *)items;

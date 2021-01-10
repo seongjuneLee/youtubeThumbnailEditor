@@ -33,6 +33,22 @@
     
 }
 
+-(void)addItem:(Item *)item{
+    if ([item isKindOfClass:PhotoFrame.class]) {
+        [self.currentProject.photoFrames addObject:(PhotoFrame *)item];
+    } else if ([item isKindOfClass:Text.class]){
+        [self.currentProject.texts addObject:(Text *)item];
+    }
+}
+
+-(void)deleteItem:(Item *)item{
+    if ([item isKindOfClass:PhotoFrame.class]) {
+        [self.currentProject.photoFrames removeObject:(PhotoFrame *)item];
+    } else if ([item isKindOfClass:Text.class]){
+        [self.currentProject.texts removeObject:(Text *)item];
+    }
+}
+
 -(void)save{
     
     dispatch_sync(self.savingQueue, ^{

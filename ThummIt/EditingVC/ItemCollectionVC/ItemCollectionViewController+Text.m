@@ -7,6 +7,7 @@
 
 #import "ItemCollectionViewController+Text.h"
 #import "EditingViewController.h"
+#import "EditingViewController+Text.h"
 
 @implementation ItemCollectionViewController (Text)
 
@@ -18,9 +19,10 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     Text *text = [[Text alloc] init];
-    text.typo = typo;
-    [self showPlaceHolderOfText:text];
-    
+    text.textView.delegate = editingVC;
+    [self showPlaceHolderOfText:text withTypo:typo];
+    [text applyTypo:typo];
+
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지
         [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
@@ -30,18 +32,20 @@
     
     editingVC.currentItem = text;
     editingVC.currentText = text;
+    editingVC.recentTypo = typo;
     editingVC.editingGestureController.currentItem = text;
 
 }
 
--(void)showPlaceHolderOfText:(Text *)text{
+-(void)showPlaceHolderOfText:(Text *)text withTypo:(Typography *)typo{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    text.placeholderImageView = [Text makePlaceHolderWithTypo:text.typo];
+    text.placeholderImageView = [Text makePlaceHolderWithTypo:typo];
     text.textViewContainer.frameSize = text.placeholderImageView.frameSize;
     text.textView.frameSize = text.textViewContainer.frameSize;
-    [text.textViewContainer addSubview:text.placeholderImageView];
+    [text.textViewContainer insertSubview:text.placeholderImageView belowSubview:text.textView];
     text.textViewContainer.center = editingVC.imageView.center;
-
+    text.center = editingVC.imageView.center;
+    
 }
 
 @end

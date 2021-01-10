@@ -40,7 +40,7 @@
     PhotoFrame *firstPhotoFrame = [ChristmasCircle christmasCircle];
     firstPhotoFrame.isTemplateItem = true;
     
-    firstPhotoFrame.relativeCenter = CGPointMake(0.32, 0.5);
+    firstPhotoFrame.center = CGPointMake(0.32, 0.5);
     
     [self.photoFrames addObject:firstPhotoFrame];
 

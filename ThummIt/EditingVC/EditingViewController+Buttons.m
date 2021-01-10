@@ -7,6 +7,8 @@
 
 #import "EditingViewController+Buttons.h"
 #import "EditingViewController+GestureControllerDelegate.h"
+#import "ItemCollectionViewController+Text.h"
+#import "TypoHeader.h"
 
 @implementation EditingViewController (Buttons)
 
@@ -21,8 +23,9 @@
         [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
         [self dismissItemCollectionVC];
         [self.albumVC dismissSelf];
-        [ItemManager.sharedInstance deleteItem:self.currentItem];
+        [self.currentItem.baseView removeFromSuperview];
         self.currentItem = nil;
+        self.currentPhotoFrame = nil;
         self.albumVC = nil;
 
     } else if (self.editingModeController.editingMode == EditingPhotoFrameMode){
@@ -34,8 +37,10 @@
         
         [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
         [self dismissItemCollectionVC];
-        [ItemManager.sharedInstance deleteItem:self.currentItem];
+        [self.currentItem.baseView removeFromSuperview];
+        [self.currentText.textView resignFirstResponder];
         self.currentItem = nil;
+        self.currentText = nil;
 
     }
 
@@ -123,20 +128,22 @@
     [self.editingLayerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
     [self.albumVC dismissSelf];
-    [SaveManager.sharedInstance.currentProject.photoFrames addObject:self.currentItem];
+    [SaveManager.sharedInstance addItem:self.currentItem];
     [SaveManager.sharedInstance save];
     self.albumVC = nil;
     self.currentItem = nil;
+    self.currentPhotoFrame = nil;
 }
 
 -(void)doneAddingText{
     
     [self.editingLayerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
-    [SaveManager.sharedInstance.currentProject.photoFrames addObject:self.currentItem];
+    [SaveManager.sharedInstance addItem:self.currentItem];
     [SaveManager.sharedInstance save];
+    [self.currentText.textView resignFirstResponder];
     self.currentItem = nil;
-
+    self.currentText = nil;
 }
 
 #pragma mark - 아이템 버튼
@@ -162,6 +169,8 @@
     self.itemCollectionVC.collectionView.frameY = self.view.frameHeight;
     self.itemCollectionVC.blurView.frameY = self.view.frameHeight;
     
+    self.itemCollectionVC.itemButton.alpha = 0;
+    self.itemCollectionVC.contentButton.alpha = 0;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.itemCollectionVC.collectionView.frameY = 0;
         self.itemCollectionVC.blurView.frameY = 0;
@@ -180,9 +189,13 @@
 - (IBAction)textButtonTapped:(UIButton *)sender {
     
     [self.editingLayerController showTransparentView];
-    [self.editingModeController setNavigationItemRespondToEditingMode:AddingPhotoFrameMode];
+    [self.editingModeController setNavigationItemRespondToEditingMode:AddingTextMode];
     self.itemCollectionVC.itemType = TextType;
     [self addItemCollectionVC];
+    if (self.recentTypo == nil) {
+        self.recentTypo = [NormalTypo normalTypo];
+    }
+    [self.itemCollectionVC didSelectTypo:self.recentTypo];
     
 }
 

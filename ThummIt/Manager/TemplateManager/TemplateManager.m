@@ -50,21 +50,5 @@
     
 }
 
-//if (indexPath.row == 0) {
-//    for (Template *template in TemplateManager.sharedInstance.templates) {
-//        if ([template.category isEqualToString:NSLocalizedString(@"Entertain", nil)]) {
-//            [self.homeCollectionController.entertainTemplates addObject:template];
-//        }
-//    }
-//    [self.homeCollectionController.collectionView reloadData];
-//} else if (indexPath.row == 1){
-//    for (Template *template in TemplateManager.sharedInstance.templates) {
-//        if ([template.category isEqualToString:NSLocalizedString(@"Vlog", nil)]) {
-//            [self.homeCollectionController.vlogTemplates addObject:template];
-//        }
-//    }
-//    [self.homeCollectionController.collectionView reloadData];
-//}
-
 
 @end

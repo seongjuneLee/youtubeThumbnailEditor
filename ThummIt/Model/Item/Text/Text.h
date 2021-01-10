@@ -16,13 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 // 뷰
 @property (strong, nonatomic) AdvancedTextView *textView;
 @property (strong, nonatomic) TextViewContainer *textViewContainer;
-@property (strong, nonatomic) UIImageView *placeholderImageView;
+@property (strong, nonatomic, nullable) UIImageView *placeholderImageView;
 
 // 뷰 데이터
 @property (strong, nonatomic) NSString* text;
 @property (strong, nonatomic) NSAttributedString* attributedText;
 @property (strong, nonatomic) NSMutableArray* backgroundAttributedTexts;
-@property (nonatomic) CGPoint center;
 @property (nonatomic) NSTextAlignment textAlignment;
 
 // 타이포
@@ -37,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)updateBackgroundImageViewFrame:(Typography *)typo;
 +(UIImageView*)makePlaceHolderWithTypo:(Typography*)typo;
 -(id)initWithTypo:(Typography *)typo;
+-(void)loadUIView;
 
 
 @end

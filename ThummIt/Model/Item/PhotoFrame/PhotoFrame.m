@@ -15,7 +15,7 @@
     self = [super init];
     if(self){
         // 템플릿에서만 필요
-        self.relativeCenter = CGPointMake(0.5, 0.5);
+        self.center = CGPointMake(0.5, 0.5);
         self.scale = 1;
         self.rotationDegree = 0;
         
@@ -35,6 +35,17 @@
 -(id)copyWithZone:(NSZone *)zone{
     
     PhotoFrame *copied = [super copyWithZone:zone];
+    
+    UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.frame];
+    copiedBaseView.backgroundColor = self.baseView.backgroundColor;
+    copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
+    copied.baseView = copiedBaseView;
+    copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
+    copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
+    [copied.baseView addSubview:copied.backgroundImageView];
+    copied.rotationDegree = self.rotationDegree;
+    copied.scale = self.scale;
+
     copied.baseView.layer.cornerRadius = copied.baseView.frameWidth/2;
     UIImageView *copiedImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
     copiedImageView.image = [self.photoImageView.image copy];

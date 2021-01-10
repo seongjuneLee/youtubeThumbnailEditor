@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *backgroundImageName;
 @property (strong, nonatomic) UIImageView *backgroundImageView;
 
-@property (nonatomic) CGPoint relativeCenter;
+@property (nonatomic) CGPoint center;
 @property (nonatomic) NSInteger rotationDegree;
 @property (nonatomic) CGFloat scale;
 

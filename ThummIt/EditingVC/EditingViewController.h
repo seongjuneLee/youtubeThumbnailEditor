@@ -14,6 +14,7 @@
 #import "ItemCollectionViewController.h"
 #import "SaveManager.h"
 #import "ItemManager.h"
+#import "Typography.h"
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
 
@@ -29,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) Item *currentItem;
 @property (strong, nonatomic, nullable) Text *currentText;
 @property (strong, nonatomic, nullable) PhotoFrame *currentPhotoFrame;
+@property (strong, nonatomic, nullable) Typography *recentTypo;
 
 @property (strong, nonatomic, nullable) AlbumViewController *albumVC;
 @property (strong, nonatomic, nullable) UIImage *originalPhotoFrameImage;
@@ -44,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *photoFrameButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *deleteButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *underAreaView;
-@property (weak, nonatomic) IBOutlet UIView *textButtonView;
+@property (weak, nonatomic) IBOutlet UIView *textButtonContainerView;
 
 
 @end
