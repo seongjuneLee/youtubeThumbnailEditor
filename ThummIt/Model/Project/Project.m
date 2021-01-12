@@ -71,7 +71,6 @@
 -(NSMutableArray *)items{
     NSMutableArray *items = [NSMutableArray arrayWithArray:self.photoFrames];
     [items addObjectsFromArray:self.texts];
-    NSLog(@"self.texts count %ld",self.texts.count);
 
     return items;
 }

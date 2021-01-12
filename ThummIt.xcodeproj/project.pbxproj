@@ -22,6 +22,7 @@
 		6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8625AD944B00BBA540 /* BGColorCollectionViewCell.m */; };
 		6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E20BC8725AD944B00BBA540 /* BGColorCollectionViewCell.xib */; };
 		6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8E25AD94D700BBA540 /* BGColorCollectionController.m */; };
+		6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BCB325AE245000BBA540 /* BGColorViewController+ControllerDelegate.m */; };
 		6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17EA25888FFA008578BA /* CircleTemplate.m */; };
 		6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17F42588A518008578BA /* UIView+Additions.m */; };
 		6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A18312588C84B008578BA /* PhotoFrame.m */; };
@@ -151,6 +152,8 @@
 		6E20BC8725AD944B00BBA540 /* BGColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BGColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E20BC8D25AD94D700BBA540 /* BGColorCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGColorCollectionController.h; sourceTree = "<group>"; };
 		6E20BC8E25AD94D700BBA540 /* BGColorCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGColorCollectionController.m; sourceTree = "<group>"; };
+		6E20BCB225AE245000BBA540 /* BGColorViewController+ControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BGColorViewController+ControllerDelegate.h"; sourceTree = "<group>"; };
+		6E20BCB325AE245000BBA540 /* BGColorViewController+ControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BGColorViewController+ControllerDelegate.m"; sourceTree = "<group>"; };
 		6E4A17E925888FFA008578BA /* CircleTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleTemplate.h; sourceTree = "<group>"; };
 		6E4A17EA25888FFA008578BA /* CircleTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleTemplate.m; sourceTree = "<group>"; };
 		6E4A17EF258891D7008578BA /* TemplateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateHeader.h; sourceTree = "<group>"; };
@@ -433,6 +436,8 @@
 			children = (
 				6E20BC6F25AD938000BBA540 /* BGColorViewController.h */,
 				6E20BC7025AD938000BBA540 /* BGColorViewController.m */,
+				6E20BCB225AE245000BBA540 /* BGColorViewController+ControllerDelegate.h */,
+				6E20BCB325AE245000BBA540 /* BGColorViewController+ControllerDelegate.m */,
 				6E20BC9325AD94DD00BBA540 /* CollectionController */,
 			);
 			path = BGColorVC;
@@ -556,12 +561,12 @@
 				6E9BEA26258DECE200F7F539 /* EditingLayerController */,
 				6E7DD4E42587ABE10014618E /* EditingViewController.h */,
 				6E7DD4E52587ABE10014618E /* EditingViewController.m */,
+				6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */,
+				6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */,
 				6E4A185F2589F7BD008578BA /* EditingViewController+Buttons.h */,
 				6E4A18602589F7BD008578BA /* EditingViewController+Buttons.m */,
 				6E4A1865258A0009008578BA /* EditingViewController+AlbumVCDelegate.h */,
 				6E4A1866258A0009008578BA /* EditingViewController+AlbumVCDelegate.m */,
-				6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */,
-				6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */,
 				6E8E7A28259B26D70008C5FF /* ItemCollectionVC */,
 				6E20BC7525AD938600BBA540 /* BGColorVC */,
 			);
@@ -1148,6 +1153,7 @@
 				6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */,
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
 				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
+				6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */,
 				6EC4DFF225A895240023485C /* TypoManager.m in Sources */,
 				6E9BEA2C258E448700F7F539 /* Project.m in Sources */,
 				6E8E7A9B259CBB470008C5FF /* PhotoFrameCollectionReusableView.m in Sources */,

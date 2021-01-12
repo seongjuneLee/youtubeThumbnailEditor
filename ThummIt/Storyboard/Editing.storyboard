@@ -393,63 +393,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="i3S-2D-y6o">
-                                <rect key="frame" x="0.0" y="44" width="414" height="381"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDx-bS-Xub">
+                                <rect key="frame" x="0.0" y="22" width="414" height="500"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="i3S-2D-y6o">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="418"/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rcb-mh-7fi">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-XL-xdb">
+                                        <rect key="frame" x="10" y="418" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TJl-ue-dIg"/>
+                                            <constraint firstAttribute="width" secondItem="sSi-XL-xdb" secondAttribute="height" multiplier="1:1" id="V6h-Om-Gbc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="xmark" catalog="system"/>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="jly-1a-ZCg" eventType="touchUpInside" id="hQc-pa-66n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogb-kI-fO0">
+                                        <rect key="frame" x="354" y="418" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="checkmark" catalog="system"/>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="jly-1a-ZCg" eventType="touchUpInside" id="RAh-6u-SH5"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BG Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zi-B1-aPg">
+                                        <rect key="frame" x="170.5" y="431" width="73" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rcb-mh-7fi">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="jly-1a-ZCg" id="w3Q-yf-mtz"/>
-                                    <outlet property="delegate" destination="jly-1a-ZCg" id="OZn-GO-2Tg"/>
-                                </connections>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-XL-xdb">
-                                <rect key="frame" x="0.0" y="425" width="207" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="TJl-ue-dIg"/>
+                                    <constraint firstItem="sSi-XL-xdb" firstAttribute="top" secondItem="i3S-2D-y6o" secondAttribute="bottom" id="25n-XW-pSl"/>
+                                    <constraint firstItem="Ogb-kI-fO0" firstAttribute="centerY" secondItem="sSi-XL-xdb" secondAttribute="centerY" id="4Ix-yO-bZK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ogb-kI-fO0" secondAttribute="trailing" constant="10" id="5dX-lF-HjQ"/>
+                                    <constraint firstItem="1zi-B1-aPg" firstAttribute="centerX" secondItem="TDx-bS-Xub" secondAttribute="centerX" id="7U1-mt-fWZ"/>
+                                    <constraint firstItem="i3S-2D-y6o" firstAttribute="top" secondItem="TDx-bS-Xub" secondAttribute="top" id="8hd-LP-uZv"/>
+                                    <constraint firstItem="i3S-2D-y6o" firstAttribute="centerX" secondItem="TDx-bS-Xub" secondAttribute="centerX" id="ToH-5W-Ec2"/>
+                                    <constraint firstItem="Ogb-kI-fO0" firstAttribute="width" secondItem="sSi-XL-xdb" secondAttribute="width" id="XcR-0k-8Mb"/>
+                                    <constraint firstItem="sSi-XL-xdb" firstAttribute="leading" secondItem="TDx-bS-Xub" secondAttribute="leading" constant="10" id="b8G-Kd-VBN"/>
+                                    <constraint firstItem="1zi-B1-aPg" firstAttribute="centerY" secondItem="sSi-XL-xdb" secondAttribute="centerY" id="liI-eN-Mxd"/>
+                                    <constraint firstItem="i3S-2D-y6o" firstAttribute="width" secondItem="TDx-bS-Xub" secondAttribute="width" id="tWa-Uy-OS5"/>
+                                    <constraint firstItem="Ogb-kI-fO0" firstAttribute="height" secondItem="sSi-XL-xdb" secondAttribute="height" id="zKJ-Er-Saj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="22"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="jly-1a-ZCg" eventType="touchUpInside" id="hQc-pa-66n"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogb-kI-fO0">
-                                <rect key="frame" x="207" y="425" width="207" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="rfz-4C-QM8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="22"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="doneButtonTapped:" destination="jly-1a-ZCg" eventType="touchUpInside" id="RAh-6u-SH5"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8gD-WZ-SCp"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="i3S-2D-y6o" firstAttribute="top" secondItem="8gD-WZ-SCp" secondAttribute="top" id="69j-cO-ghc"/>
-                            <constraint firstItem="sSi-XL-xdb" firstAttribute="leading" secondItem="8gD-WZ-SCp" secondAttribute="leading" id="7fN-HN-Lfc"/>
-                            <constraint firstItem="Ogb-kI-fO0" firstAttribute="leading" secondItem="sSi-XL-xdb" secondAttribute="trailing" id="AmO-x9-Aw0"/>
-                            <constraint firstItem="sSi-XL-xdb" firstAttribute="top" secondItem="i3S-2D-y6o" secondAttribute="bottom" id="DNs-Pr-cdR"/>
-                            <constraint firstItem="8gD-WZ-SCp" firstAttribute="bottom" secondItem="sSi-XL-xdb" secondAttribute="bottom" id="EYA-rW-fqz"/>
-                            <constraint firstItem="i3S-2D-y6o" firstAttribute="centerX" secondItem="8gD-WZ-SCp" secondAttribute="centerX" id="HUt-kE-4Cp"/>
-                            <constraint firstItem="Ogb-kI-fO0" firstAttribute="height" secondItem="sSi-XL-xdb" secondAttribute="height" id="IYq-0C-UDJ"/>
-                            <constraint firstItem="i3S-2D-y6o" firstAttribute="width" secondItem="l7G-eX-kMI" secondAttribute="width" id="MME-Hm-CS3"/>
-                            <constraint firstItem="sSi-XL-xdb" firstAttribute="width" secondItem="l7G-eX-kMI" secondAttribute="width" multiplier="0.5" id="PlS-20-U2t"/>
-                            <constraint firstItem="Ogb-kI-fO0" firstAttribute="width" secondItem="sSi-XL-xdb" secondAttribute="width" id="guc-px-av2"/>
-                            <constraint firstItem="Ogb-kI-fO0" firstAttribute="centerY" secondItem="sSi-XL-xdb" secondAttribute="centerY" id="yDm-IN-rYk"/>
+                            <constraint firstItem="8gD-WZ-SCp" firstAttribute="bottom" secondItem="sSi-XL-xdb" secondAttribute="bottom" constant="10" id="9Yo-ab-ybM"/>
+                            <constraint firstItem="TDx-bS-Xub" firstAttribute="centerY" secondItem="8gD-WZ-SCp" secondAttribute="centerY" id="NcE-ci-U9b"/>
+                            <constraint firstItem="TDx-bS-Xub" firstAttribute="height" secondItem="l7G-eX-kMI" secondAttribute="height" id="dMh-Ro-3rW"/>
+                            <constraint firstItem="TDx-bS-Xub" firstAttribute="width" secondItem="l7G-eX-kMI" secondAttribute="width" id="rfn-mp-GkN"/>
+                            <constraint firstItem="TDx-bS-Xub" firstAttribute="centerX" secondItem="8gD-WZ-SCp" secondAttribute="centerX" id="t5h-eX-bVO"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="500"/>
                     <connections>
+                        <outlet property="cancelButton" destination="sSi-XL-xdb" id="NQv-Wy-TB5"/>
                         <outlet property="collectionView" destination="i3S-2D-y6o" id="gJz-FP-Hfh"/>
+                        <outlet property="contentView" destination="TDx-bS-Xub" id="NWX-6e-toG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOJ-ZV-xuy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -590,11 +607,13 @@
     <resources>
         <image name="ItemCircle" width="200" height="200"/>
         <image name="backgroundColorImage" width="233.33332824707031" height="233.33332824707031"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="closeButton" width="168" height="168"/>
         <image name="deleteImage" width="116.66666412353516" height="116.66666412353516"/>
         <image name="keyboardImage" width="216.66667175292969" height="216.66667175292969"/>
         <image name="photoFrameImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="stickerImage" width="216.66667175292969" height="216.66667175292969"/>
         <image name="textImage" width="250" height="216.66667175292969"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>

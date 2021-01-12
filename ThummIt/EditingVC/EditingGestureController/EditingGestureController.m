@@ -53,17 +53,17 @@
 -(void)gestureViewTapped:(UITapGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.editingModeController.editingMode == NormalMode) {
+    if (editingVC.modeController.editingMode == NormalMode) {
         if ([self getCurrentItem:sender]) {
             [self.delegate didSelectItem:[self getCurrentItem:sender]];
         }
-    } else if (editingVC.editingModeController.editingMode == AddingPhotoFrameMode) {
+    } else if (editingVC.modeController.editingMode == AddingPhotoFrameMode) {
         [self.delegate didTapPhotoFrameWhileAdding];
-    } else if (editingVC.editingModeController.editingMode == EditingPhotoFrameMode) {
+    } else if (editingVC.modeController.editingMode == EditingPhotoFrameMode) {
         if ([self getCurrentItem:sender]) {
             [self.delegate changeCurrentItem:[self getCurrentItem:sender]];
         }
-    } else if (editingVC.editingModeController.editingMode == AddingTextMode){
+    } else if (editingVC.modeController.editingMode == AddingTextMode){
         [self.delegate didTapTextWhileAdding];
     }
     
@@ -73,23 +73,23 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    if (editingVC.editingModeController.editingMode == NormalMode) {
+    if (editingVC.modeController.editingMode == NormalMode) {
             
         [self gestureViewPannedForMode:NormalMode withSender:sender];
         
-    } else if (editingVC.editingModeController.editingMode == AddingPhotoFrameMode){
+    } else if (editingVC.modeController.editingMode == AddingPhotoFrameMode){
         
         [self gestureViewPannedForMode:AddingPhotoFrameMode withSender:sender];
         
-    } else if(editingVC.editingModeController.editingMode == AddingTextMode){
+    } else if(editingVC.modeController.editingMode == AddingTextMode){
         
         [self gestureViewPannedForMode:AddingTextMode withSender:sender];
         
-    } else if(editingVC.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+    } else if(editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
         [self gestureViewPannedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
 
-    } else if(editingVC.editingModeController.editingMode == EditingPhotoFrameMode){
+    } else if(editingVC.modeController.editingMode == EditingPhotoFrameMode){
         
         [self gestureViewPannedForEditingPhotoMode:EditingPhotoFrameMode withSender:sender];
         
@@ -115,7 +115,7 @@
                 return;
             }
         }
-        [editingVC.editingLayerController bringCurrentItemToFront:editingVC.currentItem];
+        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         [self.delegate readyUIForPanning];
 
         
@@ -182,24 +182,24 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    if (editingVC.editingModeController.editingMode == NormalMode) {
+    if (editingVC.modeController.editingMode == NormalMode) {
         
         [self gestureViewPinchedForMode:NormalMode withSender:sender];
         
-    } else if (editingVC.editingModeController.editingMode == AddingPhotoFrameMode){
+    } else if (editingVC.modeController.editingMode == AddingPhotoFrameMode){
         
         [self gestureViewPinchedForMode:AddingPhotoFrameMode withSender:sender];
 
-    } else if (editingVC.editingModeController.editingMode == AddingTextMode){
+    } else if (editingVC.modeController.editingMode == AddingTextMode){
         
         [self gestureViewPinchedForMode:AddingTextMode withSender:sender];
 
-    } else if (editingVC.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+    } else if (editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
         [self gestureViewPinchedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
         
     }
-    else if (editingVC.editingModeController.editingMode == EditingPhotoFrameMode){
+    else if (editingVC.modeController.editingMode == EditingPhotoFrameMode){
         
         [self gestureViewPinchedForEditingPhotoMode:EditingPhotoFrameMode withSender:sender];
 
@@ -221,7 +221,7 @@
             }
         }
         
-        [editingVC.editingLayerController bringCurrentItemToFront:editingVC.currentItem];
+        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.originalFirstFinger = [sender locationOfTouch:0 inView:self.editingVC.view];
         self.originalSecondFinger = [sender locationOfTouch:1 inView:self.editingVC.view];
         

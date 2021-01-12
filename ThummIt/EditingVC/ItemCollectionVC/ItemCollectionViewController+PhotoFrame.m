@@ -26,11 +26,11 @@
         [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
     }
     
-    [editingVC.editingLayerController bringCurrentItemToFront:photoFrame];
+    [editingVC.layerController bringCurrentItemToFront:photoFrame];
     
     editingVC.currentItem = photoFrame;
     editingVC.currentPhotoFrame = photoFrame;
-    editingVC.editingGestureController.currentItem = photoFrame;
+    editingVC.gestureController.currentItem = photoFrame;
     
 }
 @end

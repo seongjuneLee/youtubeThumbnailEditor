@@ -36,6 +36,11 @@
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
     
+    float bgColorCollectionCellHeight = self.view.frameWidth/8 - 5;
+    float inset = 40;
+    float bgColorVCHeight = bgColorCollectionCellHeight + inset + self.bgColorVC.cancelButton.frameHeight;
+    self.bgColorVC.view.frame = CGRectMake(0, self.view.frameHeight - bgColorVCHeight, self.view.frameWidth, bgColorVCHeight);
+    
 }
 
 
@@ -68,29 +73,32 @@
     self.itemCollectionVC = (ItemCollectionViewController *)[editing instantiateViewControllerWithIdentifier:@"ItemCollectionViewController"];
     self.itemCollectionVC.editingVC = self;
 
+    self.bgColorVC = (BGColorViewController *)[editing instantiateViewControllerWithIdentifier:@"BGColorViewController"];
+    self.bgColorVC.editingVC = self;
+
 }
 
 -(void)connectEditingGestureController{
     
-    self.editingGestureController = [[EditingGestureController alloc] init];
-    self.editingGestureController.editingVC = self;
-    self.editingGestureController.delegate = self;
-    self.editingGestureController.currentItem = self.currentItem;
-    [self.editingGestureController addGestureRecognizers];
+    self.gestureController = [[EditingGestureController alloc] init];
+    self.gestureController.editingVC = self;
+    self.gestureController.delegate = self;
+    self.gestureController.currentItem = self.currentItem;
+    [self.gestureController addGestureRecognizers];
     
 }
 
 -(void)connectEditingModeController{
     
-    self.editingModeController = [[EditingModeController alloc] init];
-    self.editingModeController.editingVC = self;
+    self.modeController = [[EditingModeController alloc] init];
+    self.modeController.editingVC = self;
     
 }
 
 -(void)connectEditingLayerController{
     
-    self.editingLayerController = [[EditingLayerController alloc] init];
-    self.editingLayerController.editingVC = self;
+    self.layerController = [[EditingLayerController alloc] init];
+    self.layerController.editingVC = self;
     
 }
 

@@ -7,6 +7,8 @@
 
 #import "BGColorCollectionController.h"
 #import "BGColorCollectionViewCell.h"
+#import "BGColorViewController.h"
+#import "EditingViewController.h"
 #import "ColorManager.h"
 
 @implementation BGColorCollectionController
@@ -24,6 +26,8 @@
     return self;
 }
 
+#pragma mark - datasource
+
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
     return 1;
@@ -38,9 +42,42 @@
     
     BGColorCollectionViewCell *cell = (BGColorCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"BGColorCollectionViewCell" forIndexPath:indexPath];
     UIColor *currentColor = ColorManager.sharedInstance.bgColors[indexPath.item];
-    cell.backgroundColor = currentColor;
-    
+    cell.colorView.layer.cornerRadius = 5.0;
+    if (currentColor == UIColor.blackColor) {
+        cell.colorView.layer.borderWidth = 1;
+        cell.colorView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    }
+    cell.colorView.backgroundColor = currentColor;
     
     return cell;
 }
+
+
+#pragma mark - delegate
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (self.preselectedIndexPath) {
+        BGColorCollectionViewCell *preselectedCell = (BGColorCollectionViewCell *)[collectionView cellForItemAtIndexPath:self.preselectedIndexPath];
+        preselectedCell.layer.borderWidth = 0;
+    }
+    
+    BGColorCollectionViewCell *cell = (BGColorCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.layer.borderWidth = 4;
+    cell.layer.borderColor = [UIColor whiteColor].CGColor;
+
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    UIColor *currentColor = ColorManager.sharedInstance.bgColors[indexPath.item];
+    editingVC.bgView.backgroundColor = currentColor;
+    self.preselectedIndexPath = indexPath;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    float width = self.collectionView.frameWidth/8 - 5;
+    CGSize cellSize = CGSizeMake(width, width);
+    
+    return cellSize;
+}
+
 @end

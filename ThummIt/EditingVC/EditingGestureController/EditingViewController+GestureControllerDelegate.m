@@ -17,7 +17,7 @@
     if ([item isKindOfClass:PhotoFrame.class]) {
         
         self.currentItem = (PhotoFrame *)item;
-        [self.editingModeController setNavigationItemRespondToEditingMode:EditingPhotoFrameMode];
+        [self.modeController setNavigationItemRespondToEditingMode:EditingPhotoFrameMode];
         self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
         self.originalImageViewCenter = self.currentItem.photoImageView.center;
         self.originalTransform = self.currentItem.photoImageView.transform;
@@ -25,8 +25,8 @@
         [self setCurrentPhotoSelectedOnAlbumVC];
         
     }
-    [self.editingLayerController showTransparentView];
-    [self.editingLayerController bringCurrentItemToFront:item];
+    [self.layerController showTransparentView];
+    [self.layerController bringCurrentItemToFront:item];
     
 }
 
@@ -36,8 +36,8 @@
         if ([item isKindOfClass:PhotoFrame.class]) {
             self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
             self.currentItem.photoImageView.center = self.originalImageViewCenter;
-            [self.editingLayerController recoverOriginalLayer];
-            [self.editingLayerController bringCurrentItemToFront:item];
+            [self.layerController recoverOriginalLayer];
+            [self.layerController bringCurrentItemToFront:item];
             
             self.currentItem = item;
             self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
@@ -112,13 +112,13 @@
 // 팬 제스쳐 노멀 모드
 -(void)readyUIForPanning{
     
-    if (self.editingModeController.editingMode == NormalMode) {
+    if (self.modeController.editingMode == NormalMode) {
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
             self.buttonScrollView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
         }];
-    } else if (self.editingModeController.editingMode == AddingPhotoFrameMode){
+    } else if (self.modeController.editingMode == AddingPhotoFrameMode){
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
             self.buttonScrollView.alpha = 0.0;
