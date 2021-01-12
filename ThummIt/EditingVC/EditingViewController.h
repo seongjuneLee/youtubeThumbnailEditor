@@ -48,6 +48,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *underAreaView;
 @property (weak, nonatomic) IBOutlet UIView *textButtonContainerView;
 
+@property (weak, nonatomic) IBOutlet UIButton *photoFrameButton;
+@property (weak, nonatomic) IBOutlet UIButton *textButton;
+@property (weak, nonatomic) IBOutlet UIButton *stickerButton;
+@property (weak, nonatomic) IBOutlet UIButton *bgColorButton;
+@property (weak, nonatomic) IBOutlet UIView *stickerButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *bgColorButtonContainerView;
 
 @end
 

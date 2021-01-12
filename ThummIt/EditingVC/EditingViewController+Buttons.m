@@ -150,7 +150,8 @@
 
 #pragma mark - 포토 프레임 버튼
 
-- (IBAction)photoFrameButtonTapped:(id)sender {
+- (IBAction)photoFrameButtonTapped:(UIButton *)sender {
+    
     
     [self.editingLayerController showTransparentView];
     [self.editingModeController setNavigationItemRespondToEditingMode:AddingPhotoFrameMode];
@@ -198,5 +199,56 @@
     [self.itemCollectionVC didSelectTypo:self.recentTypo];
     
 }
+
+#pragma mark - 버튼 컨테이너 알파 애니메이션
+
+-(void)photoFrameButtonHoldDown{
+    
+    self.photoFrameButtonContainerView.alpha = 0.6;
+    
+}
+
+-(void)photoFrameButtonHoldRelease{
+    
+    self.photoFrameButtonContainerView.alpha = 1.0;
+    
+}
+
+-(void)textButtonHoldDown{
+    
+    self.textButtonContainerView.alpha = 0.6;
+
+}
+
+-(void)textButtonHoldRelease{
+    
+    self.textButtonContainerView.alpha = 1.0;
+
+}
+
+-(void)stickerButtonHoldDown{
+    
+    self.stickerButtonContainerView.alpha = 0.6;
+
+}
+
+-(void)stickerButtonHoldRelease{
+    
+    self.stickerButtonContainerView.alpha = 1.0;
+    
+}
+
+-(void)bgColorButtonHoldDown{
+    
+    self.bgColorButtonContainerView.alpha = 0.6;
+    
+}
+
+-(void)bgColorButtonHoldRelease{
+    
+    self.bgColorButtonContainerView.alpha = 1.0;
+    
+}
+
 
 @end

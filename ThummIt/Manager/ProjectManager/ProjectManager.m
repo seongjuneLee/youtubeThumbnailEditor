@@ -30,7 +30,6 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
     NSString *stringDate = [dateFormatter stringFromDate:[NSDate date]];
-    NSLog(@"stringDate %@",stringDate);
     project.lastEditedDate = stringDate;
 
     return project;
