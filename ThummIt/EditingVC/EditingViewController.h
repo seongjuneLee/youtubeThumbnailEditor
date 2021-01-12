@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) Item *currentItem;
 @property (strong, nonatomic, nullable) Text *currentText;
 @property (strong, nonatomic, nullable) PhotoFrame *currentPhotoFrame;
+@property (strong, nonatomic, nullable) Sticker *currentSticker;
 @property (strong, nonatomic, nullable) Typography *recentTypo;
 
 @property (strong, nonatomic, nullable) AlbumViewController *albumVC;

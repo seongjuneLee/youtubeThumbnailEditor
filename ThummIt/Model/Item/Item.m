@@ -23,7 +23,6 @@
     
     Item * copied = [[self.class alloc] init];
     
-    
     return copied;
 }
 

@@ -42,6 +42,13 @@
         self.currentItem = nil;
         self.currentText = nil;
 
+    } else if (self.editingModeController.editingMode == AddingStickerMode){
+        
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
+        [self dismissItemCollectionVC];
+        [self.currentItem.baseView removeFromSuperview];
+        self.currentItem = nil;
+        // 추가 필요
     }
 
 }
@@ -93,6 +100,9 @@
     } else if (self.editingModeController.editingMode == AddingTextMode){
         [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
         [self doneAddingText];
+    } else if (self.editingModeController.editingMode == AddingStickerMode){
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
+        [self doneAddingSticker]; // 추가 필요
     }
 
 }
@@ -144,6 +154,17 @@
     [self.currentText.textView resignFirstResponder];
     self.currentItem = nil;
     self.currentText = nil;
+}
+
+-(void)doneAddingSticker{
+    
+    [self.editingLayerController hideTransparentView];
+    [self.itemCollectionVC dismissSelf];
+    [SaveManager.sharedInstance addItem:self.currentItem];
+    [SaveManager.sharedInstance save];
+    
+    self.currentItem = nil;
+    // 추가 필요
 }
 
 #pragma mark - 아이템 버튼
@@ -202,10 +223,13 @@
 
 #pragma mark - 스티커 버튼
 
-- (IBAction)stickerButtonTapped:(id)sender {
+- (IBAction)stickerButtonTapped:(UIButton *)sender {
     
-    
-    
+    [self.editingLayerController showTransparentView];
+    [self.editingModeController setNavigationItemRespondToEditingMode:AddingStickerMode];
+    self.itemCollectionVC.itemType = StickerType;
+    [self addItemCollectionVC];
+    // 추가 필요
 }
 
 #pragma mark - 보더칼라 버튼
