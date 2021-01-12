@@ -34,9 +34,6 @@
 }
 
 -(void)addPhotoFrames{
-//    self.photoFrames = [NSMutableArray new];
-//    PhotoFrame *phoroFrame = [BasicCircle basicCircle];
-//    [self.photoFrames addObject:phoroFrame];
 }
 
 

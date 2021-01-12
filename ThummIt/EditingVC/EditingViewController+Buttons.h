@@ -14,6 +14,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)leftItemTapped:(id)sender;
 - (IBAction)rightItemTapped:(id)sender;
 - (IBAction)photoFrameButtonTapped:(id)sender;
+- (IBAction)textButtonTapped:(UIButton *)sender;
+- (IBAction)stickerButtonTapped:(id)sender;
+- (IBAction)bgColorButtonTapped:(id)sender;
+
+-(void)photoFrameButtonHoldDown;
+-(void)photoFrameButtonHoldRelease;
+-(void)textButtonHoldDown;
+-(void)textButtonHoldRelease;
+-(void)stickerButtonHoldDown;
+-(void)stickerButtonHoldRelease;
+-(void)bgColorButtonHoldDown;
+-(void)bgColorButtonHoldRelease;
 
 @end
 

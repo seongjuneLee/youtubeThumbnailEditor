@@ -30,7 +30,6 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
     NSString *stringDate = [dateFormatter stringFromDate:[NSDate date]];
-    NSLog(@"stringDate %@",stringDate);
     project.lastEditedDate = stringDate;
 
     return project;
@@ -192,8 +191,16 @@
         for (Item *item  in project.items) {
             
             Item *copiedItem = [item copy];
-            copiedItem.baseView.frameY -= 100;
-            [imageView addSubview:copiedItem.baseView];
+            if ([copiedItem isKindOfClass:Text.class]) {
+                Text *text = (Text *)copiedItem;
+                [text loadUIView];
+
+                text.baseView.frameY -= 100;
+                [imageView addSubview:text.baseView];
+            } else if ([copiedItem isKindOfClass:PhotoFrame.class]){
+                copiedItem.baseView.frameY -= 100;
+                [imageView addSubview:copiedItem.baseView];
+            }
             
         }
         

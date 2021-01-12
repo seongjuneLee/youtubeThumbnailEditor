@@ -7,6 +7,7 @@
 
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "EditingViewController+AlbumVCDelegate.h"
+#import "ItemCollectionViewController+Button.h"
 
 @implementation EditingViewController (GestureControllerDelegate)
 
@@ -16,7 +17,7 @@
     if ([item isKindOfClass:PhotoFrame.class]) {
         
         self.currentItem = (PhotoFrame *)item;
-        [self.editingModeController setUpEditingMode:EditingPhotoFrameMode];
+        [self.modeController setNavigationItemRespondToEditingMode:EditingPhotoFrameMode];
         self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
         self.originalImageViewCenter = self.currentItem.photoImageView.center;
         self.originalTransform = self.currentItem.photoImageView.transform;
@@ -24,22 +25,26 @@
         [self setCurrentPhotoSelectedOnAlbumVC];
         
     }
-    [self.editingLayerController showTransparentView];
-    [self.editingLayerController bringCurrentItemToFront:item];
+    [self.layerController showTransparentView];
+    [self.layerController bringCurrentItemToFront:item];
     
 }
 
 -(void)changeCurrentItem:(Item *)item{
     
     if (self.currentItem != item) {
-        self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
-        self.currentItem.photoImageView.center = self.originalImageViewCenter;
-        [self.editingLayerController recoverOriginalLayer];
-        [self.editingLayerController bringCurrentItemToFront:item];
-        
-        self.currentItem = item;
-        self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
-        [self setCurrentPhotoSelectedOnAlbumVC];
+        if ([item isKindOfClass:PhotoFrame.class]) {
+            self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
+            self.currentItem.photoImageView.center = self.originalImageViewCenter;
+            [self.layerController recoverOriginalLayer];
+            [self.layerController bringCurrentItemToFront:item];
+            
+            self.currentItem = item;
+            self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
+            [self setCurrentPhotoSelectedOnAlbumVC];
+        } else if ([item isKindOfClass:Text.class]){
+            
+        }
     }
     
 }
@@ -75,7 +80,7 @@
         [self addChildViewController:self.albumVC];
         [self.view addSubview:self.albumVC.view];
         
-        float imageViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
+        float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
         self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
         self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY);
 
@@ -90,22 +95,33 @@
     
 }
 
+-(void)didTapTextWhileAdding{
+    
+    [self.itemCollectionVC contentButtonTapped:self.itemCollectionVC.contentButton];
+    
+}
+
+-(void)didTapPhotoFrameWhileAdding{
+    
+    [self.itemCollectionVC contentButtonTapped:self.itemCollectionVC.contentButton];
+    
+}
 
 #pragma mark - 팬
 
 // 팬 제스쳐 노멀 모드
 -(void)readyUIForPanning{
     
-    if (self.editingModeController.editingMode == NormalMode) {
+    if (self.modeController.editingMode == NormalMode) {
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
-            self.textButtonContainerView.alpha = 0.0;
+            self.buttonScrollView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
         }];
-    } else if (self.editingModeController.editingMode == AddingPhotoFrameMode){
+    } else if (self.modeController.editingMode == AddingPhotoFrameMode){
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
-            self.textButtonContainerView.alpha = 0.0;
+            self.buttonScrollView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
             self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
         }];
@@ -114,14 +130,16 @@
 }
 
 -(void)deleteImageRespondToCurrentPointY:(float)currentPointY{
-    float iamgeViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
+    float iamgeViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (currentPointY >= iamgeViewBottomY) {
         [UIView animateWithDuration:0.2 animations:^{
             self.deleteButtonContainerView.alpha = 0.4;
+            self.currentItem.baseView.alpha = 0.4;
         }];
     } else {
         [UIView animateWithDuration:0.2 animations:^{
             self.deleteButtonContainerView.alpha = 1.0;
+            self.currentItem.baseView.alpha = 1.0;
         }];
     }
 }
@@ -129,13 +147,13 @@
 -(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint{
     
     self.underAreaView.hidden = false;
-    float iamgeViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
+    float iamgeViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (fingerPoint.y >= iamgeViewBottomY) {
         [ItemManager.sharedInstance deleteItem:item];
     }
 
     [UIView animateWithDuration:0.2 animations:^{
-        self.textButtonContainerView.alpha = 1.0;
+        self.buttonScrollView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
     }completion:^(BOOL finished) {
@@ -150,9 +168,11 @@
 -(void)pinchGestureInNormalModeBeganWithItem:(Item *)item withSender:(UIGestureRecognizer *)sender{
     self.underAreaView.hidden = true;
     [UIView animateWithDuration:0.2 animations:^{
-        self.textButtonContainerView.alpha = 0.0;
+        self.photoFrameButtonContainerView.alpha = 0.0;
         self.deleteButtonContainerView.alpha = 1.0;
     }];
 }
+
+
 
 @end

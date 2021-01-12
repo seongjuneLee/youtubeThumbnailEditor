@@ -13,6 +13,8 @@ typedef enum {
     AddingPhotoFrameMode = 1,
     EditingPhotoFrameModeWhileAddingPhotoFrameMode = 2,
     EditingPhotoFrameMode = 3,
+    AddingTextMode = 4,
+    EditingBGColorMode = 5,
 } EditingMode;
 
 @protocol EditingModeControllerDelegate <NSObject>
@@ -26,7 +28,7 @@ typedef enum {
 @property (nonatomic) EditingMode editingMode;
 @property (weak, nonatomic) UIViewController *editingVC;
 
--(void)setUpEditingMode:(EditingMode)editingMode;
+-(void)setNavigationItemRespondToEditingMode:(EditingMode)editingMode;
 
 @end
 

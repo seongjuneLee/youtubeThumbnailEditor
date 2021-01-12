@@ -23,7 +23,8 @@
     self = [super init];
     
     self.projectID = projectID;
-    self.photoFrames = [NSMutableArray<Item*> new];
+    self.photoFrames = [NSMutableArray<PhotoFrame*> new];
+    self.texts = [NSMutableArray<Text*> new];
     self.projectTitle = @"";
     self.selectedTemplateName = @"";
 
@@ -69,7 +70,8 @@
 
 -(NSMutableArray *)items{
     NSMutableArray *items = [NSMutableArray arrayWithArray:self.photoFrames];
-    
+    [items addObjectsFromArray:self.texts];
+
     return items;
 }
 
@@ -78,6 +80,7 @@
     self.projectID = [decoder decodeObjectForKey:@"projectID"];
     self.projectTitle = [decoder decodeObjectForKey:@"items"];
     self.photoFrames = [decoder decodeObjectForKey:@"photoFrames"];
+    self.texts = [decoder decodeObjectForKey:@"texts"];
     self.selectedTemplateName = [decoder decodeObjectForKey:@"selectedTemplateName"];
     self.backgroundColor = [decoder decodeObjectForKey:@"backgroundColor"];
     self.lastEditedDate = [decoder decodeObjectForKey:@"lastEditedDate"];
@@ -89,6 +92,7 @@
 
     [encoder encodeObject:self.projectID forKey:@"projectID"];
     [encoder encodeObject:self.photoFrames forKey:@"photoFrames"];
+    [encoder encodeObject:self.texts forKey:@"texts"];
     [encoder encodeObject:self.projectTitle forKey:@"projectTitle"];
     [encoder encodeObject:self.selectedTemplateName forKey:@"selectedTemplateName"];
     [encoder encodeObject:self.backgroundColor forKey:@"backgroundColor"];

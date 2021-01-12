@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(Template *)currentTemplate;
 -(void)save;
+-(void)addItem:(Item *)item;
+-(void)deleteItem:(Item *)item;
 
 @end
 

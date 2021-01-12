@@ -21,7 +21,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
+    [ProjectManager.sharedInstance setUpSnapShotFromProject];
+
     if (ProjectManager.sharedInstance.projectSnapShots.count != ProjectManager.sharedInstance.fetchedProjectsCount) { // 프로젝트 갯수에 변화가 있다.
         [ProjectManager.sharedInstance setUpSnapShotFromProject];
     }

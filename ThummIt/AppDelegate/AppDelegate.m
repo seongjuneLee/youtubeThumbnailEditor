@@ -20,7 +20,6 @@
     // Override point for customization after application launch.
     [MigratorJul.shared migrateIfNeeded];
     
-    [ProjectManager.sharedInstance setUpSnapShotFromProject];
     
     return YES;
 }

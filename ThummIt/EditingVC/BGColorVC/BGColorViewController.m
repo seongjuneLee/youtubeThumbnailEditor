@@ -1,0 +1,61 @@
+//
+//  BGColorViewController.m
+//  ThummIt
+//
+//  Created by 이성준 on 2021/01/12.
+//
+
+#import "BGColorViewController.h"
+#import "EditingViewController.h"
+#import "EditingViewController+Buttons.h"
+
+@interface BGColorViewController ()
+
+@end
+
+@implementation BGColorViewController
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self connectBGColorCollectionController];
+    
+}
+
+-(void)dismissSelf{
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.view.alpha = 0;
+    }completion:^(BOOL finished) {
+        self.view.alpha = 1;
+        [self.view removeFromSuperview];
+        [self removeFromParentViewController];
+    }];
+
+}
+
+-(void)connectBGColorCollectionController{
+    
+    self.collectionController = [[BGColorCollectionController alloc] initWithCollectionView:self.collectionView];
+    self.collectionController.editingVC = self.editingVC;
+    
+}
+
+#pragma mark - 버튼
+
+- (IBAction)doneButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    [editingVC rightItemTapped:editingVC.rightItem];
+    
+}
+
+- (IBAction)cancelButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    [editingVC leftItemTapped:editingVC.leftItem];
+    
+}
+
+@end

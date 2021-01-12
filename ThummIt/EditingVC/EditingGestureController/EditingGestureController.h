@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Item.h"
+#import "PhotoFrame.h"
+#import "Text.h"
 #import "EditingModeController.h"
 #import "EditingModeController.h"
 NS_ASSUME_NONNULL_BEGIN
@@ -15,22 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)didSelectItem:(Item *)item;
 -(void)changeCurrentItem:(Item *)item;
+-(void)didTapPhotoFrameWhileAdding;
+-(void)didTapTextWhileAdding;
 
 // 노멀 모드 팬제스쳐
 -(void)readyUIForPanning;
 -(void)deleteImageRespondToCurrentPointY:(float)currentPointY;
 -(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint;
-
-// 아이템 모드 팬 제스쳐
--(void)pangestureChangedInEditingItemMode:(Item *)item withDelta:(CGPoint)delta;
-
-// 핀치 제스쳐
--(void)pinchGestureInNormalModeBeganWithItem:(Item *)item withSender:(UIGestureRecognizer *)sender;
--(void)pinchGestureInNormalModeChangedWithItemMode:(Item *)item withSender:(UIGestureRecognizer *)sender;
-
-// 로테이트
--(void)rotateGestureChangedWithSender:(UIGestureRecognizer *)sender;
--(void)rotateGestureEnded;
 
 @end
 
