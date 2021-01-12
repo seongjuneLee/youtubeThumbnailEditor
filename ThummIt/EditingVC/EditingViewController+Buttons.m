@@ -209,44 +209,58 @@
 }
 
 -(void)photoFrameButtonHoldRelease{
+    [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.photoFrameButtonContainerView.alpha = 1.0;
+        
+    } completion:nil];
     
-    self.photoFrameButtonContainerView.alpha = 1.0;
     
 }
 
 -(void)textButtonHoldDown{
     
     self.textButtonContainerView.alpha = 0.6;
-
+    
 }
 
 -(void)textButtonHoldRelease{
+    [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.textButtonContainerView.alpha = 1.0;
+        
+    } completion:nil];
     
-    self.textButtonContainerView.alpha = 1.0;
-
+    
 }
 
 -(void)stickerButtonHoldDown{
     
     self.stickerButtonContainerView.alpha = 0.6;
-
+    
 }
 
 -(void)stickerButtonHoldRelease{
+    [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.stickerButtonContainerView.alpha = 1.0;
+        
+    } completion:nil];
     
-    self.stickerButtonContainerView.alpha = 1.0;
     
 }
 
 -(void)bgColorButtonHoldDown{
-    
-    self.bgColorButtonContainerView.alpha = 0.6;
-    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.bgColorButtonContainerView.alpha = 0.6;
+    }];
+
 }
 
 -(void)bgColorButtonHoldRelease{
     
-    self.bgColorButtonContainerView.alpha = 1.0;
+    [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.bgColorButtonContainerView.alpha = 1.0;
+        
+    } completion:nil];
+    
     
 }
 
