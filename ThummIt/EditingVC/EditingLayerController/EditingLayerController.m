@@ -31,7 +31,7 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     if (!self.transparentView) {
-        self.transparentView = [[UIView alloc] initWithFrame:editingVC.imageView.frame];
+        self.transparentView = [[UIView alloc] initWithFrame:editingVC.bgView.frame];
         self.transparentView.backgroundColor = UIColor.blackColor;
         self.transparentView.alpha = 0.4;
         [editingVC.view insertSubview:self.transparentView belowSubview:editingVC.gestureView];

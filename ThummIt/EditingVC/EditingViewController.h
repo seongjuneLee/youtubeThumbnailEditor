@@ -39,7 +39,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGAffineTransform originalTransform;
 
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *leftItem;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftItemWidthConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
@@ -54,6 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *bgColorButton;
 @property (weak, nonatomic) IBOutlet UIView *stickerButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *bgColorButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIScrollView *buttonScrollView;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 
 @end
 

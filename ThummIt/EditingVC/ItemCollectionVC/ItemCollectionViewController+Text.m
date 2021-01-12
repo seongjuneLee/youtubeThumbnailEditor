@@ -43,8 +43,8 @@
     text.textViewContainer.frameSize = text.placeholderImageView.frameSize;
     text.textView.frameSize = text.textViewContainer.frameSize;
     [text.textViewContainer insertSubview:text.placeholderImageView belowSubview:text.textView];
-    text.textViewContainer.center = editingVC.imageView.center;
-    text.center = editingVC.imageView.center;
+    text.textViewContainer.center = editingVC.bgView.center;
+    text.center = editingVC.bgView.center;
     
 }
 

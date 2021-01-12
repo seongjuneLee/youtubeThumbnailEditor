@@ -80,7 +80,7 @@
         [self addChildViewController:self.albumVC];
         [self.view addSubview:self.albumVC.view];
         
-        float imageViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
+        float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
         self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
         self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY);
 
@@ -115,15 +115,13 @@
     if (self.editingModeController.editingMode == NormalMode) {
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
-            self.photoFrameButtonContainerView.alpha = 0.0;
-            self.textButtonContainerView.alpha = 0.0;
+            self.buttonScrollView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
         }];
     } else if (self.editingModeController.editingMode == AddingPhotoFrameMode){
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
-            self.photoFrameButtonContainerView.alpha = 0.0;
-            self.textButtonContainerView.alpha = 0.0;
+            self.buttonScrollView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
             self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
         }];
@@ -132,7 +130,7 @@
 }
 
 -(void)deleteImageRespondToCurrentPointY:(float)currentPointY{
-    float iamgeViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
+    float iamgeViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (currentPointY >= iamgeViewBottomY) {
         [UIView animateWithDuration:0.2 animations:^{
             self.deleteButtonContainerView.alpha = 0.4;
@@ -149,14 +147,13 @@
 -(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint{
     
     self.underAreaView.hidden = false;
-    float iamgeViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
+    float iamgeViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (fingerPoint.y >= iamgeViewBottomY) {
         [ItemManager.sharedInstance deleteItem:item];
     }
 
     [UIView animateWithDuration:0.2 animations:^{
-        self.photoFrameButtonContainerView.alpha = 1.0;
-        self.textButtonContainerView.alpha = 1.0;
+        self.buttonScrollView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
     }completion:^(BOOL finished) {

@@ -16,7 +16,7 @@
 -(void)didSelectPhotoFrame:(PhotoFrame *)photoFrame{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    photoFrame.baseView.center = editingVC.imageView.center;
+    photoFrame.baseView.center = editingVC.bgView.center;
     
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지

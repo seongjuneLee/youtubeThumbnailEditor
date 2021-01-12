@@ -33,7 +33,7 @@
 
 -(void)viewWillLayoutSubviews{
 
-    float imageViewBottomY = self.imageView.frameY + self.imageView.frameHeight;
+    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
     
 }
@@ -41,14 +41,14 @@
 
 -(void)basicUIUXSetting{
     
-    self.imageView.userInteractionEnabled = true;
+    self.bgView.userInteractionEnabled = true;
     
 }
 
 -(void)setUpWithTemplate{
     
     // 포토 프레임 올려줌
-    self.imageView.backgroundColor = self.selectedTemplate.backgroundColor;
+    self.bgView.backgroundColor = self.selectedTemplate.backgroundColor;
     for (Item *item in self.selectedTemplate.items) {
         [self.view insertSubview:item.baseView belowSubview:self.gestureView];
     }
@@ -99,14 +99,14 @@
 -(void)loadItems{
     
     Project *project = SaveManager.sharedInstance.currentProject;
-    self.imageView.backgroundColor = project.backgroundColor;
+    self.bgView.backgroundColor = project.backgroundColor;
     
     float imageViewWidth = self.view.frameWidth;
     float imageViewHeight = imageViewWidth * 9/16;
     for (Item *item in project.items) {
         if (item.isTemplateItem) {
             float itemX = imageViewWidth * item.center.x;
-            float itemY = imageViewHeight * item.center.y + self.imageView.frameY;
+            float itemY = imageViewHeight * item.center.y + self.bgView.frameY;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             [item scaleItem];
             item.baseView.center = itemCenter;

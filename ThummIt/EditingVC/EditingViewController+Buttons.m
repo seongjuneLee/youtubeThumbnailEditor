@@ -200,6 +200,25 @@
     
 }
 
+#pragma mark - 스티커 버튼
+
+- (IBAction)stickerButtonTapped:(id)sender {
+    
+    
+    
+}
+
+#pragma mark - 보더칼라 버튼
+
+- (IBAction)bgColorButtonTapped:(id)sender {
+    
+    
+    
+}
+
+
+
+
 #pragma mark - 버튼 컨테이너 알파 애니메이션
 
 -(void)photoFrameButtonHoldDown{

@@ -17,6 +17,11 @@
 		6E1191012584B165000DD9C0 /* ThummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1191002584B165000DD9C0 /* ThummitTests.m */; };
 		6E11910C2584B165000DD9C0 /* ThummitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11910B2584B165000DD9C0 /* ThummitUITests.m */; };
 		6E11911E2584BC4B000DD9C0 /* HomeViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11911D2584BC4B000DD9C0 /* HomeViewController+Buttons.m */; };
+		6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC6625AD78B700BBA540 /* ColorManager.m */; };
+		6E20BC7125AD938000BBA540 /* BGColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC7025AD938000BBA540 /* BGColorViewController.m */; };
+		6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8625AD944B00BBA540 /* BGColorCollectionViewCell.m */; };
+		6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E20BC8725AD944B00BBA540 /* BGColorCollectionViewCell.xib */; };
+		6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8E25AD94D700BBA540 /* BGColorCollectionController.m */; };
 		6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17EA25888FFA008578BA /* CircleTemplate.m */; };
 		6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17F42588A518008578BA /* UIView+Additions.m */; };
 		6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A18312588C84B008578BA /* PhotoFrame.m */; };
@@ -137,6 +142,15 @@
 		6E11910D2584B165000DD9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E11911C2584BC4B000DD9C0 /* HomeViewController+Buttons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeViewController+Buttons.h"; sourceTree = "<group>"; };
 		6E11911D2584BC4B000DD9C0 /* HomeViewController+Buttons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeViewController+Buttons.m"; sourceTree = "<group>"; };
+		6E20BC6525AD78B700BBA540 /* ColorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
+		6E20BC6625AD78B700BBA540 /* ColorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
+		6E20BC6F25AD938000BBA540 /* BGColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGColorViewController.h; sourceTree = "<group>"; };
+		6E20BC7025AD938000BBA540 /* BGColorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGColorViewController.m; sourceTree = "<group>"; };
+		6E20BC8525AD944B00BBA540 /* BGColorCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGColorCollectionViewCell.h; sourceTree = "<group>"; };
+		6E20BC8625AD944B00BBA540 /* BGColorCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGColorCollectionViewCell.m; sourceTree = "<group>"; };
+		6E20BC8725AD944B00BBA540 /* BGColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BGColorCollectionViewCell.xib; sourceTree = "<group>"; };
+		6E20BC8D25AD94D700BBA540 /* BGColorCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGColorCollectionController.h; sourceTree = "<group>"; };
+		6E20BC8E25AD94D700BBA540 /* BGColorCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGColorCollectionController.m; sourceTree = "<group>"; };
 		6E4A17E925888FFA008578BA /* CircleTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleTemplate.h; sourceTree = "<group>"; };
 		6E4A17EA25888FFA008578BA /* CircleTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleTemplate.m; sourceTree = "<group>"; };
 		6E4A17EF258891D7008578BA /* TemplateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateHeader.h; sourceTree = "<group>"; };
@@ -405,6 +419,37 @@
 			path = AlbumVC;
 			sourceTree = "<group>";
 		};
+		6E20BC6B25AD78BB00BBA540 /* ColorManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E20BC6525AD78B700BBA540 /* ColorManager.h */,
+				6E20BC6625AD78B700BBA540 /* ColorManager.m */,
+			);
+			path = ColorManager;
+			sourceTree = "<group>";
+		};
+		6E20BC7525AD938600BBA540 /* BGColorVC */ = {
+			isa = PBXGroup;
+			children = (
+				6E20BC6F25AD938000BBA540 /* BGColorViewController.h */,
+				6E20BC7025AD938000BBA540 /* BGColorViewController.m */,
+				6E20BC9325AD94DD00BBA540 /* CollectionController */,
+			);
+			path = BGColorVC;
+			sourceTree = "<group>";
+		};
+		6E20BC9325AD94DD00BBA540 /* CollectionController */ = {
+			isa = PBXGroup;
+			children = (
+				6E20BC8D25AD94D700BBA540 /* BGColorCollectionController.h */,
+				6E20BC8E25AD94D700BBA540 /* BGColorCollectionController.m */,
+				6E20BC8525AD944B00BBA540 /* BGColorCollectionViewCell.h */,
+				6E20BC8625AD944B00BBA540 /* BGColorCollectionViewCell.m */,
+				6E20BC8725AD944B00BBA540 /* BGColorCollectionViewCell.xib */,
+			);
+			path = CollectionController;
+			sourceTree = "<group>";
+		};
 		6E4A17FA2588A521008578BA /* UIVIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +563,7 @@
 				6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */,
 				6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */,
 				6E8E7A28259B26D70008C5FF /* ItemCollectionVC */,
+				6E20BC7525AD938600BBA540 /* BGColorVC */,
 			);
 			path = EditingVC;
 			sourceTree = "<group>";
@@ -555,6 +601,7 @@
 				6E9BEA3A258E697200F7F539 /* SaveManager */,
 				6E8E7A3C259B2EA80008C5FF /* ItemManager */,
 				6EC4DFF625A8952A0023485C /* TypoManager */,
+				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1060,6 +1107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E7DD4D42584E1D30014618E /* AlbumCollectionViewCell.xib in Resources */,
+				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
 				6E7DD4E02587ABC40014618E /* Editing.storyboard in Resources */,
 				6E8E7AF525A83C110008C5FF /* TextCollectionViewCell.xib in Resources */,
@@ -1099,6 +1147,7 @@
 				6E8E79D825921D140008C5FF /* ProjectTableController.m in Sources */,
 				6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */,
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
+				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
 				6EC4DFF225A895240023485C /* TypoManager.m in Sources */,
 				6E9BEA2C258E448700F7F539 /* Project.m in Sources */,
 				6E8E7A9B259CBB470008C5FF /* PhotoFrameCollectionReusableView.m in Sources */,
@@ -1118,6 +1167,7 @@
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
 				6E7DD51625888C980014618E /* Template.m in Sources */,
+				6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */,
 				6E8E7A38259B2EA40008C5FF /* ItemManager.m in Sources */,
 				6E7DD4A22584D3C00014618E /* AlbumViewController.m in Sources */,
 				6E9BEA22258DECDB00F7F539 /* EditingLayerController.m in Sources */,
@@ -1130,6 +1180,7 @@
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				6E8E7B0B25A84F090008C5FF /* Text.m in Sources */,
+				6E20BC7125AD938000BBA540 /* BGColorViewController.m in Sources */,
 				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
@@ -1149,6 +1200,7 @@
 				6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */,
 				6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
+				6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */,
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
 				6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
