@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "PhotoFrameCollectionController.h"
 #import "TextCollectionController.h"
+#import "StickerCollectionController.h"
 #import "Item.h"
 #import "PhotoManager.h"
 #import "ItemManager.h"
@@ -16,7 +17,8 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef enum {
     PhotoFrameType = 0,
-    TextType = 1
+    TextType = 1,
+    StickerType = 2
 }ItemType;
 
 @interface ItemCollectionViewController : UIViewController 
@@ -29,6 +31,7 @@ typedef enum {
 @property (strong, nonatomic) UIVisualEffectView *blurView;
 @property (strong, nonatomic) PhotoFrameCollectionController *photoFrameCollectionController;
 @property (strong, nonatomic) TextCollectionController *textCollectionController;
+@property (strong, nonatomic) StickerCollectionController *stickerCollectionController;
 
 @property (weak, nonatomic) UIViewController *editingVC;
 

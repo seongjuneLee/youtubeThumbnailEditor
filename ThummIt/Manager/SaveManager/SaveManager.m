@@ -39,6 +39,8 @@
         [self.currentProject.photoFrames addObject:(PhotoFrame *)item];
     } else if ([item isKindOfClass:Text.class]){
         [self.currentProject.texts addObject:(Text *)item];
+    } else if ([item isKindOfClass:Sticker.class]){
+        [self.currentProject.stickers addObject:(Sticker *)item];
     }
 }
 
@@ -47,6 +49,8 @@
         [self.currentProject.photoFrames removeObject:(PhotoFrame *)item];
     } else if ([item isKindOfClass:Text.class]){
         [self.currentProject.texts removeObject:(Text *)item];
+    } else if ([item isKindOfClass:Sticker.class]){
+        [self.currentProject.stickers removeObject:(Sticker *)item];
     }
 }
 

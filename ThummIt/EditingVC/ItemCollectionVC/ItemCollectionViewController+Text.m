@@ -11,8 +11,6 @@
 
 @implementation ItemCollectionViewController (Text)
 
-
-
 #pragma mark - 텍스트 컨트롤러
 
 -(void)didSelectTypo:(Typography *)typo{

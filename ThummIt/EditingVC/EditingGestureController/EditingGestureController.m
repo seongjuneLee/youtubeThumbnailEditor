@@ -85,7 +85,11 @@
         
         [self gestureViewPannedForMode:AddingTextMode withSender:sender];
         
-    } else if(editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+    } else if(editingVC.editingModeController.editingMode == AddingStickerMode){
+        
+        [self gestureViewPannedForMode:AddingStickerMode withSender:sender];
+        
+    } else if(editingVC.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
         [self gestureViewPannedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
 
@@ -194,7 +198,11 @@
         
         [self gestureViewPinchedForMode:AddingTextMode withSender:sender];
 
-    } else if (editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+    } else if (editingVC.editingModeController.editingMode == AddingStickerMode){
+        
+        [self gestureViewPinchedForMode:AddingStickerMode withSender:sender];
+
+    } else if (editingVC.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
         [self gestureViewPinchedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
         
@@ -349,20 +357,13 @@
 
 -(Item *)getCurrentItem:(UIGestureRecognizer*)sender{
     
-
+    
     CGPoint tappedLocation = [sender locationInView:self.gestureView];
     
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        
-        if ([item isKindOfClass:PhotoFrame.class]) {
-            PhotoFrame *photoFrame = (PhotoFrame *)item;
-            if (CGRectContainsPoint(photoFrame.baseView.frame, tappedLocation)) {
-                return item;
-            }
-        } else {
-            if (CGRectContainsPoint(item.baseView.frame, tappedLocation)) {
-                return item;
-            }
+        NSLog(@"item get current. %@",item);
+        if (CGRectContainsPoint(item.baseView.frame, tappedLocation)) {
+            return item;
         }
     }
     return nil;

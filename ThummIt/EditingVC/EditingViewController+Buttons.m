@@ -33,6 +33,14 @@
         
         [self cancelAddingText];
 
+    } else if (self.editingModeController.editingMode == AddingStickerMode){
+        
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
+        [self dismissItemCollectionVC];
+        [self.currentItem.baseView removeFromSuperview];
+        self.currentItem = nil;
+        self.currentSticker = nil;
+        // 추가 필요
     } else if (self.modeController.editingMode == EditingBGColorMode){
         
         [self cancelEditingBGColor];
@@ -122,6 +130,9 @@
         [self doneEditingPhotoFrame];
     } else if (self.modeController.editingMode == AddingTextMode){
         [self doneAddingText];
+    } else if (self.editingModeController.editingMode == AddingStickerMode){
+        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
+        [self doneAddingSticker]; // 추가 필요
     } else if (self.modeController.editingMode == EditingBGColorMode){
         [self doneEditingBGColor];
     }
@@ -178,6 +189,16 @@
     [self.currentText.textView resignFirstResponder];
     self.currentItem = nil;
     self.currentText = nil;
+}
+
+-(void)doneAddingSticker{
+    
+    [self.editingLayerController hideTransparentView];
+    [self.itemCollectionVC dismissSelf];
+    [SaveManager.sharedInstance addItem:self.currentItem];
+    [SaveManager.sharedInstance save];
+    
+    self.currentItem = nil;
 }
 
 -(void)doneEditingBGColor{
@@ -249,10 +270,13 @@
 
 #pragma mark - 스티커 버튼
 
-- (IBAction)stickerButtonTapped:(id)sender {
+- (IBAction)stickerButtonTapped:(UIButton *)sender {
     
-    
-    
+    [self.editingLayerController showTransparentView];
+    [self.editingModeController setNavigationItemRespondToEditingMode:AddingStickerMode];
+    self.itemCollectionVC.itemType = StickerType;
+    [self addItemCollectionVC];
+    // 추가 필요
 }
 
 #pragma mark - 보더칼라 버튼

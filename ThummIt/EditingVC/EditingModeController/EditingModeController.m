@@ -64,6 +64,15 @@
         editingVC.leftItemWidthConstraint.constant = 60;
         [editingVC.rightItem setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
         
+    }else if (self.editingMode == AddingStickerMode){
+        
+        [editingVC.leftItem setImage:nil forState:UIControlStateNormal];
+        [UIView transitionWithView:editingVC.leftItem duration:0.3 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+            
+            [editingVC.leftItem setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
+        } completion:nil];
+        editingVC.leftItemWidthConstraint.constant = 60;
+        [editingVC.rightItem setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
     }else if (self.editingMode == EditingBGColorMode){
         
         [UIView animateWithDuration:0.2 animations:^{
