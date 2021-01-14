@@ -9,6 +9,7 @@
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "ItemCollectionViewController+Text.h"
 #import "TypoHeader.h"
+#import "UndoManager.h"
 
 @implementation EditingViewController (Buttons)
 
@@ -340,6 +341,35 @@
         
     } completion:nil];
     
+    
+}
+
+#pragma mark - undo redo
+
+
+- (IBAction)undoButtonTapped:(UIButton *)sender {
+    
+    [self clearProjectContents];
+    [UndoManager.sharedInstance undo];
+    [self loadItems];
+    self.bgView.backgroundColor = SaveManager.sharedInstance.currentProject.backgroundColor;
+        
+}
+
+- (IBAction)redoButtonTapped:(UIButton *)sender {
+    
+    [self clearProjectContents];
+    [UndoManager.sharedInstance redo];
+    [self loadItems];
+    self.bgView.backgroundColor = SaveManager.sharedInstance.currentProject.backgroundColor;
+
+}
+
+-(void)clearProjectContents{
+    
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+        [item.baseView removeFromSuperview];
+    }
     
 }
 

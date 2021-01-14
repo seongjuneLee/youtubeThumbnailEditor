@@ -20,6 +20,7 @@
     // Do any additional setup after loading the view.
     
     [PhotoManager.sharedInstance fetchPhassets];
+
     [self loadItems];
 
     [self basicUIUXSetting];
@@ -27,9 +28,12 @@
     [self connectControllers];
     
     [self addExtraGestureToButtons];
+    
+    [SaveManager.sharedInstance save];
+    
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
+
 }
-
-
 
 -(void)viewWillLayoutSubviews{
 
@@ -48,17 +52,6 @@
     
     self.bgView.userInteractionEnabled = true;
     
-}
-
--(void)setUpWithTemplate{
-    
-    // 포토 프레임 올려줌
-    self.bgView.backgroundColor = self.selectedTemplate.backgroundColor;
-    for (Item *item in self.selectedTemplate.items) {
-        [self.view insertSubview:item.baseView belowSubview:self.gestureView];
-    }
-    [SaveManager.sharedInstance save];
-
 }
 
 #pragma mark - controller 연결
@@ -118,11 +111,18 @@
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             [item scaleItem];
             item.baseView.center = itemCenter;
+            item.isTemplateItem = false;
         }
         [self.view insertSubview:item.baseView belowSubview:self.gestureView];
     }
-    [SaveManager.sharedInstance save];
 
+}
+
+-(void)respondToUndoRedo{
+    
+    self.undoButton.enabled = UndoManager.sharedInstance.isUndoRemains;
+    self.redoButton.enabled = UndoManager.sharedInstance.isRedoRemains;
+    
 }
 
 -(void)addExtraGestureToButtons{

@@ -31,12 +31,8 @@
     if((self = [super init])) {
         
         self.baseView = [decoder decodeObjectForKey:@"baseView"];
-        self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
-        self.baseView.clipsToBounds = true;
         
         self.backgroundImageView = [decoder decodeObjectForKey:@"backgroundImageView"];
-        self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
-        self.backgroundImageView.clipsToBounds = true;
         self.backgroundImageName = [decoder decodeObjectForKey:@"backgroundImageName"];
         self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
 
