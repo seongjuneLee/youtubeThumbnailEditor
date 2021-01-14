@@ -6,6 +6,7 @@
 //
 
 #import "Project.h"
+#import "UndoManager.h"
 #import "Thummit-Swift.h"
 @implementation Project
 
@@ -73,7 +74,6 @@
     NSMutableArray *items = [NSMutableArray arrayWithArray:self.photoFrames];
     [items addObjectsFromArray:self.texts];
     [items addObjectsFromArray:self.stickers];
-
     return items;
 }
 

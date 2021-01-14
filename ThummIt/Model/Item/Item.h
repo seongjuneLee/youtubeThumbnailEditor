@@ -22,11 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger rotationDegree;
 @property (nonatomic) CGFloat scale;
 
-@property (strong, nonatomic) UIImageView *photoImageView;
 @property (strong, nonatomic) PHAsset *phAsset;
-@property (nonatomic) CGPoint imageViewCenter;
-@property (nonatomic) NSInteger imageViewRotationDegree;
-@property (nonatomic) CGFloat imageViewScale;
 @property (nonatomic) BOOL isTemplateItem;
 
 -(void)scaleItem;

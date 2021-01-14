@@ -20,7 +20,7 @@
     
     if (self.itemType == PhotoFrameType) {
         editingVC.albumVC.view.hidden = true;
-        editingVC.editingModeController.editingMode = AddingPhotoFrameMode;
+        editingVC.modeController.editingMode = AddingPhotoFrameMode;
     } else if (self.itemType == TextType){
         [editingVC.currentText.textView resignFirstResponder];
     }
@@ -40,7 +40,7 @@
         editingVC.albumVC.view.frameHeight = self.view.frameHeight - (self.itemButton.frameY + self.itemButton.frameHeight + 10);
         editingVC.albumVC.view.frameY = editingVC.view.frameHeight - editingVC.albumVC.view.frameHeight;
         editingVC.albumVC.view.hidden = false;
-        editingVC.editingModeController.editingMode = EditingPhotoFrameModeWhileAddingPhotoFrameMode;
+        editingVC.modeController.editingMode = EditingPhotoFrameModeWhileAddingPhotoFrameMode;
     } else if (self.itemType == TextType){
         
         [editingVC.currentText.textView becomeFirstResponder];

@@ -26,12 +26,12 @@
         [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
     }
     
-    [editingVC.editingLayerController bringCurrentItemToFront:text];
+    [editingVC.layerController bringCurrentItemToFront:text];
     
     editingVC.currentItem = text;
     editingVC.currentText = text;
     editingVC.recentTypo = typo;
-    editingVC.editingGestureController.currentItem = text;
+    editingVC.gestureController.currentItem = text;
 
 }
 

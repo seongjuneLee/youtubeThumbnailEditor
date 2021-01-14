@@ -10,20 +10,23 @@
 #import "AlbumViewController.h"
 #import "EditingGestureController.h"
 #import "EditingModeController.h"
+#import "BGColorViewController.h"
 #import "EditingLayerController.h"
 #import "ItemCollectionViewController.h"
 #import "SaveManager.h"
 #import "ItemManager.h"
 #import "Typography.h"
+#import "UndoManager.h"
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
 
 // 컨트롤러
-@property (strong, nonatomic) EditingModeController *editingModeController;
-@property (strong, nonatomic) EditingGestureController *editingGestureController;
-@property (strong, nonatomic) EditingLayerController *editingLayerController;
-
+@property (strong, nonatomic) EditingModeController *modeController;
+@property (strong, nonatomic) EditingGestureController *gestureController;
+@property (strong, nonatomic) EditingLayerController *layerController;
+@property (strong, nonatomic, nullable) BGColorViewController *bgColorVC;
 @property (strong, nonatomic) ItemCollectionViewController *itemCollectionVC;
+@property (strong, nonatomic, nullable) AlbumViewController *albumVC;
 
 // 모델
 @property (strong, nonatomic) Template *selectedTemplate;
@@ -33,7 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) Sticker *currentSticker;
 @property (strong, nonatomic, nullable) Typography *recentTypo;
 
-@property (strong, nonatomic, nullable) AlbumViewController *albumVC;
+// 아이템 변경전 기본값
+@property (strong, nonatomic, nullable) UIColor *originalColor;
 @property (strong, nonatomic, nullable) UIImage *originalPhotoFrameImage;
 @property (strong, nonatomic, nullable) PHAsset *originalPHAsset;
 @property (nonatomic) CGPoint originalImageViewCenter;
@@ -56,6 +60,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *bgColorButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIScrollView *buttonScrollView;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
+@property (weak, nonatomic) IBOutlet UIButton *undoButton;
+@property (weak, nonatomic) IBOutlet UIButton *redoButton;
+
+-(void)loadItems;
 
 @end
 

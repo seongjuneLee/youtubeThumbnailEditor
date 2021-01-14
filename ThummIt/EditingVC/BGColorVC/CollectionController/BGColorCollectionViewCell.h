@@ -10,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BGColorCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *previewImageView;
+
+@property (weak, nonatomic) IBOutlet UIView *colorView;
 
 @end
 
