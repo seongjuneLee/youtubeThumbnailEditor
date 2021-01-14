@@ -24,11 +24,11 @@
         [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
     }
     
-    [editingVC.editingLayerController bringCurrentItemToFront:sticker];
+    [editingVC.layerController bringCurrentItemToFront:sticker];
     
     editingVC.currentItem = sticker;
     editingVC.currentSticker = sticker;
-    editingVC.editingGestureController.currentItem = sticker;
+    editingVC.layerController.currentItem = sticker;
     
 }
 

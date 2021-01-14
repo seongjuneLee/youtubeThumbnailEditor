@@ -33,9 +33,9 @@
         
         [self cancelAddingText];
 
-    } else if (self.editingModeController.editingMode == AddingStickerMode){
+    } else if (self.modeController.editingMode == AddingStickerMode){
         
-        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
+        [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
         [self dismissItemCollectionVC];
         [self.currentItem.baseView removeFromSuperview];
         self.currentItem = nil;
@@ -95,10 +95,11 @@
 -(void)dismissAlbumVC{
     
     // 변경 취소하고, 원래 이미지 다시 넣어주기.
-    self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
+    PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
+    photoFrame.photoImageView.image = self.originalPhotoFrameImage;
     // 취소시 이미지 뷰 센터 다시 돌려놓기.
-    self.currentItem.photoImageView.center = self.originalImageViewCenter;
-    self.currentItem.photoImageView.transform = self.originalTransform;
+    photoFrame.photoImageView.center = self.originalImageViewCenter;
+    photoFrame.photoImageView.transform = self.originalTransform;
     
     // 레이어 되돌려 놓기
     [self.layerController recoverOriginalLayer];
@@ -130,8 +131,8 @@
         [self doneEditingPhotoFrame];
     } else if (self.modeController.editingMode == AddingTextMode){
         [self doneAddingText];
-    } else if (self.editingModeController.editingMode == AddingStickerMode){
-        [self.editingModeController setNavigationItemRespondToEditingMode:NormalMode];
+    } else if (self.modeController.editingMode == AddingStickerMode){
+        [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
         [self doneAddingSticker]; // 추가 필요
     } else if (self.modeController.editingMode == EditingBGColorMode){
         [self doneEditingBGColor];
@@ -193,7 +194,7 @@
 
 -(void)doneAddingSticker{
     
-    [self.editingLayerController hideTransparentView];
+    [self.layerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
     [SaveManager.sharedInstance addItem:self.currentItem];
     [SaveManager.sharedInstance save];
@@ -272,8 +273,8 @@
 
 - (IBAction)stickerButtonTapped:(UIButton *)sender {
     
-    [self.editingLayerController showTransparentView];
-    [self.editingModeController setNavigationItemRespondToEditingMode:AddingStickerMode];
+    [self.layerController showTransparentView];
+    [self.modeController setNavigationItemRespondToEditingMode:AddingStickerMode];
     self.itemCollectionVC.itemType = StickerType;
     [self addItemCollectionVC];
     // 추가 필요

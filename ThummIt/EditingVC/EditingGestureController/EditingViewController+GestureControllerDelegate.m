@@ -16,11 +16,12 @@
     
     if ([item isKindOfClass:PhotoFrame.class]) {
         
-        self.currentItem = (PhotoFrame *)item;
+        PhotoFrame *photoFrame = (PhotoFrame *)item;
+        self.currentItem = photoFrame;
         [self.modeController setNavigationItemRespondToEditingMode:EditingPhotoFrameMode];
-        self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
-        self.originalImageViewCenter = self.currentItem.photoImageView.center;
-        self.originalTransform = self.currentItem.photoImageView.transform;
+        self.originalPhotoFrameImage = photoFrame.photoImageView.image;
+        self.originalImageViewCenter = photoFrame.photoImageView.center;
+        self.originalTransform = photoFrame.photoImageView.transform;
         [self showAlbumVC];
         [self setCurrentPhotoSelectedOnAlbumVC];
         
@@ -34,13 +35,14 @@
     
     if (self.currentItem != item) {
         if ([item isKindOfClass:PhotoFrame.class]) {
-            self.currentItem.photoImageView.image = self.originalPhotoFrameImage;
-            self.currentItem.photoImageView.center = self.originalImageViewCenter;
+            PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
+            photoFrame.photoImageView.image = self.originalPhotoFrameImage;
+            photoFrame.photoImageView.center = self.originalImageViewCenter;
             [self.layerController recoverOriginalLayer];
             [self.layerController bringCurrentItemToFront:item];
             
             self.currentItem = item;
-            self.originalPhotoFrameImage = self.currentItem.photoImageView.image;
+            self.originalPhotoFrameImage = photoFrame.photoImageView.image;
             [self setCurrentPhotoSelectedOnAlbumVC];
         } else if ([item isKindOfClass:Text.class]){
             
@@ -65,7 +67,8 @@
     [self.albumVC.collectionView reloadData];
     PHAsset *selectedPHAsset = phassets[index];
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-        self.currentItem.photoImageView.image = image;
+        PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
+        photoFrame.photoImageView.image = image;
     }];
         
 }

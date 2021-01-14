@@ -85,11 +85,11 @@
         
         [self gestureViewPannedForMode:AddingTextMode withSender:sender];
         
-    } else if(editingVC.editingModeController.editingMode == AddingStickerMode){
+    } else if(editingVC.modeController.editingMode == AddingStickerMode){
         
         [self gestureViewPannedForMode:AddingStickerMode withSender:sender];
         
-    } else if(editingVC.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+    } else if(editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
         [self gestureViewPannedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
 
@@ -169,8 +169,9 @@
         deltaPoint = CGPointMake(currentPoint.x - self.originalPoint.x, currentPoint.y - self.originalPoint.y);
 
         if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]) {
-            editingVC.currentItem.photoImageView.centerX += deltaPoint.x;
-            editingVC.currentItem.photoImageView.centerY += deltaPoint.y;
+            PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentItem;
+            photoFrame.photoImageView.centerX += deltaPoint.x;
+            photoFrame.photoImageView.centerY += deltaPoint.y;
         }
         
         self.originalPoint = [sender locationInView:editingVC.currentItem.baseView];
@@ -198,11 +199,11 @@
         
         [self gestureViewPinchedForMode:AddingTextMode withSender:sender];
 
-    } else if (editingVC.editingModeController.editingMode == AddingStickerMode){
+    } else if (editingVC.modeController.editingMode == AddingStickerMode){
         
         [self gestureViewPinchedForMode:AddingStickerMode withSender:sender];
 
-    } else if (editingVC.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+    } else if (editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
         [self gestureViewPinchedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
         
@@ -279,6 +280,7 @@
 -(void)gestureViewPinchedForEditingPhotoMode:(EditingMode)editingMode withSender:(UIPinchGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentItem;
 
     if (sender.state == UIGestureRecognizerStateBegan && sender.numberOfTouches ==2) {
         if (!editingVC.currentItem) {
@@ -293,12 +295,12 @@
         self.originalSecondFinger = [sender locationOfTouch:1 inView:editingVC.currentItem.baseView];
         
         self.originalPinchCenter = CGPointMake((self.originalFirstFinger.x+self.originalSecondFinger.x)/2.0, (self.originalFirstFinger.y+self.originalSecondFinger.y)/2.0);
-        self.originalItemViewCenter = editingVC.currentItem.photoImageView.center;
+        self.originalItemViewCenter = photoFrame.photoImageView.center;
         
         CGPoint finger1Point = [sender locationOfTouch:0 inView:editingVC.gestureView];
         CGPoint finger2Point = [sender locationOfTouch:1 inView:editingVC.gestureView];
         
-        CGAffineTransform t = editingVC.currentItem.photoImageView.transform;
+        CGAffineTransform t = photoFrame.photoImageView.transform;
         self.originalScaleRatio = sqrt(t.a * t.a + t.c * t.c);
         self.originalPinchDistance = [self distanceFrom:finger1Point to:finger2Point];
         
@@ -316,7 +318,7 @@
         CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.currentRotation);
         
         // 최종 적용
-        editingVC.currentItem.photoImageView.transform = CGAffineTransformConcat(scaleTransform, rotationTransform);
+        photoFrame.photoImageView.transform = CGAffineTransformConcat(scaleTransform, rotationTransform);
         
         // 중심값 이동
         CGPoint newPinchCenter = [sender locationInView:editingVC.currentItem.baseView];
@@ -325,7 +327,7 @@
         
         // 센터가이드 적용
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
-        editingVC.currentItem.photoImageView.center = changedPoint;
+        photoFrame.photoImageView.center = changedPoint;
     } else if (sender.state == UIGestureRecognizerStateEnded){
         if (editingMode == EditingPhotoFrameMode) {
             editingVC.currentItem = nil;

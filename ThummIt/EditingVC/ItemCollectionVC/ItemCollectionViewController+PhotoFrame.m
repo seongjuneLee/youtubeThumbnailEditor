@@ -18,11 +18,12 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     photoFrame.baseView.center = editingVC.bgView.center;
     
+    PhotoFrame *currentPhotoFrame = (PhotoFrame *)editingVC.currentItem;
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지
         photoFrame.baseView.frame = editingVC.currentItem.baseView.frame;
-        photoFrame.photoImageView.frame = editingVC.currentItem.photoImageView.frame;
-        photoFrame.photoImageView.image = editingVC.currentItem.photoImageView.image;
+        photoFrame.photoImageView.frame = currentPhotoFrame.photoImageView.frame;
+        photoFrame.photoImageView.image = currentPhotoFrame.photoImageView.image;
         [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
     }
     
