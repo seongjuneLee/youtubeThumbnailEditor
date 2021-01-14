@@ -39,23 +39,22 @@
     UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.frame];
     copiedBaseView.backgroundColor = self.baseView.backgroundColor;
     copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
+    copiedBaseView.layer.cornerRadius = self.baseView.layer.cornerRadius;
     copied.baseView = copiedBaseView;
+    
+    UIImageView *copiedPhotoImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
+    copiedPhotoImageView.image = [self.photoImageView.image copy];
+    copied.photoImageView = copiedPhotoImageView;
+    copiedPhotoImageView.contentMode = self.photoImageView.contentMode;
+    copied.itemName = [NSString stringWithString:self.itemName];
+    [copied.baseView addSubview:copied.photoImageView];
+
     copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
     copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
     [copied.baseView addSubview:copied.backgroundImageView];
     copied.rotationDegree = self.rotationDegree;
     copied.scale = self.scale;
 
-    copied.baseView.layer.cornerRadius = copied.baseView.frameWidth/2;
-    UIImageView *copiedImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
-    copiedImageView.image = [self.photoImageView.image copy];
-    copied.photoImageView = copiedImageView;
-    copiedImageView.contentMode = self.photoImageView.contentMode;
-    copied.itemName = [NSString stringWithString:self.itemName];
-    [copied.baseView addSubview:copied.photoImageView];
-    copied.imageViewCenter = self.imageViewCenter;
-    copied.imageViewRotationDegree = self.imageViewRotationDegree;
-    copied.imageViewScale = self.imageViewScale;
 
     return copied;
 }
