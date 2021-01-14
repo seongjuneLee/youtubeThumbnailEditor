@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSMutableArray *projectSnapShots;
 
+- (Project*)projectFromProjectID:(NSString *)projectId;
 -(Project *)generateNewProjectWithTemplate:(Template *)selectedTemplate;
 - (NSArray*)getAllProjectsFromCoreData;
 - (BOOL)deleteIdOfProject:(NSString*)projectId;

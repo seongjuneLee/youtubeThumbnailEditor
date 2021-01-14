@@ -16,7 +16,6 @@
 		6E1190F72584B164000DD9C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190F62584B164000DD9C0 /* main.m */; };
 		6E1191012584B165000DD9C0 /* ThummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1191002584B165000DD9C0 /* ThummitTests.m */; };
 		6E11910C2584B165000DD9C0 /* ThummitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11910B2584B165000DD9C0 /* ThummitUITests.m */; };
-		6E11911E2584BC4B000DD9C0 /* HomeViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11911D2584BC4B000DD9C0 /* HomeViewController+Buttons.m */; };
 		6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC6625AD78B700BBA540 /* ColorManager.m */; };
 		6E20BC7125AD938000BBA540 /* BGColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC7025AD938000BBA540 /* BGColorViewController.m */; };
 		6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8625AD944B00BBA540 /* BGColorCollectionViewCell.m */; };
@@ -142,8 +141,6 @@
 		6E1191072584B165000DD9C0 /* ThummItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThummItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E11910B2584B165000DD9C0 /* ThummitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThummitUITests.m; sourceTree = "<group>"; };
 		6E11910D2584B165000DD9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E11911C2584BC4B000DD9C0 /* HomeViewController+Buttons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeViewController+Buttons.h"; sourceTree = "<group>"; };
-		6E11911D2584BC4B000DD9C0 /* HomeViewController+Buttons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HomeViewController+Buttons.m"; sourceTree = "<group>"; };
 		6E20BC6525AD78B700BBA540 /* ColorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
 		6E20BC6625AD78B700BBA540 /* ColorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
 		6E20BC6F25AD938000BBA540 /* BGColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGColorViewController.h; sourceTree = "<group>"; };
@@ -405,8 +402,6 @@
 				6E1190EB2584B163000DD9C0 /* HomeViewController.m */,
 				6E9BE99C258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.h */,
 				6E9BE99D258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m */,
-				6E11911C2584BC4B000DD9C0 /* HomeViewController+Buttons.h */,
-				6E11911D2584BC4B000DD9C0 /* HomeViewController+Buttons.m */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -1175,7 +1170,6 @@
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
 				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
 				6EC4DFCC25A87DAF0023485C /* UIColor+patternArchive.m in Sources */,
-				6E11911E2584BC4B000DD9C0 /* HomeViewController+Buttons.m in Sources */,
 				6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */,
 				6E9BE9CE258B3A5700F7F539 /* EditingViewController+GestureControllerDelegate.m in Sources */,
 				6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */,
