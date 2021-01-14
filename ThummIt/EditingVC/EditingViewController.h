@@ -16,6 +16,7 @@
 #import "SaveManager.h"
 #import "ItemManager.h"
 #import "Typography.h"
+#import "UndoManager.h"
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
 
@@ -58,6 +59,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *bgColorButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIScrollView *buttonScrollView;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
+@property (weak, nonatomic) IBOutlet UIButton *undoButton;
+@property (weak, nonatomic) IBOutlet UIButton *redoButton;
+
+-(void)loadItems;
 
 @end
 

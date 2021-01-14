@@ -6,6 +6,7 @@
 //
 
 #import "SaveManager.h"
+#import "UndoManager.h"
 
 @implementation SaveManager
 
@@ -53,8 +54,10 @@
     
     dispatch_sync(self.savingQueue, ^{
         [self.currentProject save];
+        [UndoManager.sharedInstance addCurrentProjectToUndoRedoStack];
     });
     
 }
+
 
 @end

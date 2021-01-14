@@ -22,6 +22,18 @@
     
 }
 
+
+-(instancetype)initWithCoder:(NSCoder *)decoder{
+    if((self = [super initWithCoder:decoder])) {
+        self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
+        self.baseView.clipsToBounds = true;
+        
+        self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
+        self.backgroundImageView.clipsToBounds = true;
+    }
+    return self;
+}
+
 +(ChristmasCircle*)christmasCircle{
     
     ChristmasCircle* christmasCircle = [[self alloc] init];

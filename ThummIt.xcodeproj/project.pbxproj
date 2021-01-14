@@ -23,6 +23,7 @@
 		6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E20BC8725AD944B00BBA540 /* BGColorCollectionViewCell.xib */; };
 		6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8E25AD94D700BBA540 /* BGColorCollectionController.m */; };
 		6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BCB325AE245000BBA540 /* BGColorViewController+ControllerDelegate.m */; };
+		6E20BCC025AEF58600BBA540 /* UndoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BCBF25AEF58600BBA540 /* UndoManager.m */; };
 		6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17EA25888FFA008578BA /* CircleTemplate.m */; };
 		6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17F42588A518008578BA /* UIView+Additions.m */; };
 		6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A18312588C84B008578BA /* PhotoFrame.m */; };
@@ -154,6 +155,8 @@
 		6E20BC8E25AD94D700BBA540 /* BGColorCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGColorCollectionController.m; sourceTree = "<group>"; };
 		6E20BCB225AE245000BBA540 /* BGColorViewController+ControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BGColorViewController+ControllerDelegate.h"; sourceTree = "<group>"; };
 		6E20BCB325AE245000BBA540 /* BGColorViewController+ControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BGColorViewController+ControllerDelegate.m"; sourceTree = "<group>"; };
+		6E20BCBE25AEF58600BBA540 /* UndoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UndoManager.h; sourceTree = "<group>"; };
+		6E20BCBF25AEF58600BBA540 /* UndoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UndoManager.m; sourceTree = "<group>"; };
 		6E4A17E925888FFA008578BA /* CircleTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleTemplate.h; sourceTree = "<group>"; };
 		6E4A17EA25888FFA008578BA /* CircleTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleTemplate.m; sourceTree = "<group>"; };
 		6E4A17EF258891D7008578BA /* TemplateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateHeader.h; sourceTree = "<group>"; };
@@ -455,6 +458,15 @@
 			path = CollectionController;
 			sourceTree = "<group>";
 		};
+		6E20BCC725AEF59000BBA540 /* UndoManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E20BCBE25AEF58600BBA540 /* UndoManager.h */,
+				6E20BCBF25AEF58600BBA540 /* UndoManager.m */,
+			);
+			path = UndoManager;
+			sourceTree = "<group>";
+		};
 		6E4A17FA2588A521008578BA /* UIVIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -604,6 +616,7 @@
 				6E9BE9DF258CFD0400F7F539 /* PhotoManager */,
 				6E9BEA5C258F1BAD00F7F539 /* ProjectManager */,
 				6E9BEA3A258E697200F7F539 /* SaveManager */,
+				6E20BCC725AEF59000BBA540 /* UndoManager */,
 				6E8E7A3C259B2EA80008C5FF /* ItemManager */,
 				6EC4DFF625A8952A0023485C /* TypoManager */,
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
@@ -1152,6 +1165,7 @@
 				6E8E79D825921D140008C5FF /* ProjectTableController.m in Sources */,
 				6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */,
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
+				6E20BCC025AEF58600BBA540 /* UndoManager.m in Sources */,
 				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
 				6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */,
 				6EC4DFF225A895240023485C /* TypoManager.m in Sources */,
