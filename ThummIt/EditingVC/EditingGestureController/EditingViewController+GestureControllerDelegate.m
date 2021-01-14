@@ -125,7 +125,7 @@
             self.deleteButtonContainerView.alpha = 1.0;
             self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
         }];
-    }
+    } 
 
 }
 

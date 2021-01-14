@@ -1,5 +1,5 @@
 //
-//  BasicCircleSticker.m
+//  BasicCircleStickerRed.m
 //  ThummIt
 //
 //  Created by 조재훈 on 2021/01/13.
@@ -9,11 +9,12 @@
 
 @implementation BasicCircleSticker
 
--(id) init{
+-(id)init{
     
     self = [super init];
     if(self){
-        self.backgroundImageName = @"basicCircleSticker";
+        self.itemName = @"basicCircleSticker";
+        self.backgroundImageName = @"basicCircleStickerRed";
     }
     return self;
     

@@ -9,6 +9,7 @@
 #import "Item.h"
 #import "PhotoFrame.h"
 #import "Text.h"
+#import "Sticker.h"
 #import "EditingModeController.h"
 #import "EditingModeController.h"
 NS_ASSUME_NONNULL_BEGIN

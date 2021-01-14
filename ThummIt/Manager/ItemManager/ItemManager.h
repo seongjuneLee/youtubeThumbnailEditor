@@ -14,9 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (ItemManager *)sharedInstance;
 
 -(NSArray *)photoFrameCategories;
+-(NSArray *)stickerCategories;
 
 -(NSArray *)circlePhotoFrames;
 -(NSArray *)rectanglePhotoFrames;
+-(NSArray *)basicCircleStickers;
+-(NSArray *)basicArrowStickers;
+-(NSArray *)xStickers;
+
 -(void)addItem:(Item *)item withView:(UIView *)view underView:(UIView *)gestureView withCriteriaView:(UIImageView *)imageView;
 -(void)deleteItem:(Item *)item;
 

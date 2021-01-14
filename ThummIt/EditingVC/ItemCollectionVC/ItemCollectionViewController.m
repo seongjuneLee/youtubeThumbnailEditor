@@ -8,6 +8,7 @@
 #import "ItemCollectionViewController.h"
 #import "ItemCollectionViewController+PhotoFrame.h"
 #import "ItemCollectionViewController+Text.h"
+#import "ItemCollectionViewController+Sticker.h"
 #import "EditingViewController.h"
 @interface ItemCollectionViewController ()
 
@@ -99,8 +100,8 @@
     }else if (self.itemType == StickerType){
         self.stickerCollectionController = [[StickerCollectionController alloc] initWithCollectionView:self.collectionView];
         self.stickerCollectionController.delegate = self;
-        [self.itemButton setImage:[UIImage imageNamed:@"textImage"] forState:UIControlStateNormal];
-        [self.contentButton setImage:[UIImage imageNamed:@"keyboardImage"] forState:UIControlStateNormal];
+        [self.itemButton setImage:nil forState:UIControlStateNormal];
+        [self.contentButton setImage:nil forState:UIControlStateNormal];
         // 추가 필요
     }
     

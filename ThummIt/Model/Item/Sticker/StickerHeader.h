@@ -9,5 +9,7 @@
 #define StickerHeader_h
 #import "Sticker.h"
 #import "BasicCircleSticker.h"
+#import "BasicArrowSticker.h"
+#import "xSticker.h"
 
 #endif /* StickerHeader_h */

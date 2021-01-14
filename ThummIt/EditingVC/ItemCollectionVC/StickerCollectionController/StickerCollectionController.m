@@ -7,6 +7,9 @@
 
 #import "StickerCollectionController.h"
 #import "StickerCollectionViewCell.h"
+#import "StickerCollectionReusableView.h"
+
+#import "ItemManager.h"
 
 @implementation StickerCollectionController
 
@@ -28,7 +31,7 @@
         self.collectionView.dataSource = self;
         
         [self.collectionView registerNib:[UINib nibWithNibName:@"StickerCollectionViewCell" bundle:NSBundle.mainBundle] forCellWithReuseIdentifier:@"StickerCollectionViewCell"];
-//        [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoFrameCollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView"];
+        [self.collectionView registerNib:[UINib nibWithNibName:@"StickerCollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"StickerCollectionReusableView"];
 
     }
     
@@ -38,32 +41,70 @@
 
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    
+    return ItemManager.sharedInstance.stickerCategories.count;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return StickerManager.sharedInstance.stickers.count; //
+    if (section == 0) {
+        return ItemManager.sharedInstance.basicCircleStickers.count;
+    } else if (section == 1) {
+        return ItemManager.sharedInstance.basicArrowStickers.count;
+    } else if (section == 2) {
+        return ItemManager.sharedInstance.xStickers.count;
+    }
+    
+    return 0;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     StickerCollectionViewCell *cell = (StickerCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCollectionViewCell" forIndexPath:indexPath];
    
-    Sticker *sticker = StickerManager.sharedInstance.stickers[indexPath.item];
+    Sticker *sticker;
+    if (indexPath.section == 0) {
+        sticker = ItemManager.sharedInstance.basicCircleStickers[indexPath.item];
+    } else if (indexPath.section == 1) {
+        sticker = ItemManager.sharedInstance.basicArrowStickers[indexPath.item];
+    } else if (indexPath.section == 2) {
+        sticker = ItemManager.sharedInstance.xStickers[indexPath.item];
+    }
     cell.stickerImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
     
     return cell;
     
 }
 
-#pragma mark - 테이블 델리게이트
+#pragma mark - 델리게이트
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    Sticker *sticker = StickerManager.sharedInstance.stickers[indexPath.item];
+    Sticker *sticker;
+    if (indexPath.section == 0) {
+        sticker = ItemManager.sharedInstance.basicCircleStickers[indexPath.item];
+    } else if (indexPath.section == 1){
+        sticker = ItemManager.sharedInstance.basicArrowStickers[indexPath.item];
+    } else if (indexPath.section == 2){
+        sticker = ItemManager.sharedInstance.xStickers[indexPath.item];
+    }
     [self.delegate didSelectSticker:sticker];
     
+}
+
+#pragma mark - 레이아웃 델리게이트
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+    StickerCollectionReusableView *reusableView = (StickerCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"StickerCollectionReusableView" forIndexPath:indexPath];
+    NSString *category = ItemManager.sharedInstance.stickerCategories[indexPath.section];
+    reusableView.categoryLabel.text = category;
+    
+    return reusableView;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(self.collectionView.frameWidth, 25);
 }
 
 @end

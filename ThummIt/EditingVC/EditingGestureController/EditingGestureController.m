@@ -85,6 +85,10 @@
         
         [self gestureViewPannedForMode:AddingTextMode withSender:sender];
         
+    } else if(editingVC.editingModeController.editingMode == AddingStickerMode){
+        
+        [self gestureViewPannedForMode:AddingStickerMode withSender:sender];
+        
     } else if(editingVC.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
         [self gestureViewPannedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
@@ -193,6 +197,10 @@
     } else if (editingVC.editingModeController.editingMode == AddingTextMode){
         
         [self gestureViewPinchedForMode:AddingTextMode withSender:sender];
+
+    } else if (editingVC.editingModeController.editingMode == AddingStickerMode){
+        
+        [self gestureViewPinchedForMode:AddingStickerMode withSender:sender];
 
     } else if (editingVC.editingModeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
@@ -349,20 +357,13 @@
 
 -(Item *)getCurrentItem:(UIGestureRecognizer*)sender{
     
-
+    
     CGPoint tappedLocation = [sender locationInView:self.gestureView];
     
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        
-        if ([item isKindOfClass:PhotoFrame.class]) {
-            PhotoFrame *photoFrame = (PhotoFrame *)item;
-            if (CGRectContainsPoint(photoFrame.baseView.frame, tappedLocation)) {
-                return item;
-            }
-        } else {
-            if (CGRectContainsPoint(item.baseView.frame, tappedLocation)) {
-                return item;
-            }
+        NSLog(@"item get current. %@",item);
+        if (CGRectContainsPoint(item.baseView.frame, tappedLocation)) {
+            return item;
         }
     }
     return nil;

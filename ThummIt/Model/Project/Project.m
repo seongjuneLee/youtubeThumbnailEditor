@@ -25,6 +25,7 @@
     self.projectID = projectID;
     self.photoFrames = [NSMutableArray<PhotoFrame*> new];
     self.texts = [NSMutableArray<Text*> new];
+    self.stickers = [NSMutableArray<Sticker*> new];
     self.projectTitle = @"";
     self.selectedTemplateName = @"";
 
@@ -71,7 +72,7 @@
 -(NSMutableArray *)items{
     NSMutableArray *items = [NSMutableArray arrayWithArray:self.photoFrames];
     [items addObjectsFromArray:self.texts];
-    NSLog(@"self.texts count %ld",self.texts.count);
+    [items addObjectsFromArray:self.stickers];
 
     return items;
 }
@@ -82,6 +83,7 @@
     self.projectTitle = [decoder decodeObjectForKey:@"items"];
     self.photoFrames = [decoder decodeObjectForKey:@"photoFrames"];
     self.texts = [decoder decodeObjectForKey:@"texts"];
+    self.stickers = [decoder decodeObjectForKey:@"stickers"];
     self.selectedTemplateName = [decoder decodeObjectForKey:@"selectedTemplateName"];
     self.backgroundColor = [decoder decodeObjectForKey:@"backgroundColor"];
     self.lastEditedDate = [decoder decodeObjectForKey:@"lastEditedDate"];
@@ -94,6 +96,7 @@
     [encoder encodeObject:self.projectID forKey:@"projectID"];
     [encoder encodeObject:self.photoFrames forKey:@"photoFrames"];
     [encoder encodeObject:self.texts forKey:@"texts"];
+    [encoder encodeObject:self.stickers forKey:@"stickers"];
     [encoder encodeObject:self.projectTitle forKey:@"projectTitle"];
     [encoder encodeObject:self.selectedTemplateName forKey:@"selectedTemplateName"];
     [encoder encodeObject:self.backgroundColor forKey:@"backgroundColor"];

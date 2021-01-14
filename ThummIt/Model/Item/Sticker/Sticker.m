@@ -6,7 +6,6 @@
 //
 
 #import "Sticker.h"
-#import "StickerManager.h"
 
 @implementation Sticker
 
@@ -44,7 +43,9 @@
     [copied.baseView addSubview:copied.backgroundImageView];
     copied.rotationDegree = self.rotationDegree;
     copied.baseView.transform = CGAffineTransformMakeRotation(degreesToRadians(copied.rotationDegree));
-    copied.itemName = [NSString stringWithString:self.itemName];
+    if (self.itemName) {
+        copied.itemName = [NSString stringWithString:self.itemName];
+    }
 
     return copied;
 }

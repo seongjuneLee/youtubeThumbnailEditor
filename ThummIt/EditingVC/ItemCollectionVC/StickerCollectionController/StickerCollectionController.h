@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "StickerManager.h"
 #import "Sticker.h"
 
 NS_ASSUME_NONNULL_BEGIN

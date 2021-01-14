@@ -21,7 +21,6 @@
         // 위치, 크기,사진 유지
         sticker.baseView.frame = editingVC.currentItem.baseView.frame;
         sticker.backgroundImageView.frame = editingVC.currentItem.backgroundImageView.frame;
-        sticker.backgroundImageView.image = editingVC.currentItem.backgroundImageView.image;
         [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
     }
     

@@ -48,6 +48,7 @@
         [self dismissItemCollectionVC];
         [self.currentItem.baseView removeFromSuperview];
         self.currentItem = nil;
+        self.currentSticker = nil;
         // 추가 필요
     }
 
@@ -164,7 +165,6 @@
     [SaveManager.sharedInstance save];
     
     self.currentItem = nil;
-    // 추가 필요
 }
 
 #pragma mark - 아이템 버튼
