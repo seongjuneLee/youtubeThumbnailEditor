@@ -24,10 +24,7 @@
     
     PHImageManager *manager = [PHImageManager defaultManager];
     PHImageRequestOptions *requestOptions = [[PHImageRequestOptions alloc] init];
-    // this one is key
     requestOptions.synchronous = YES;
-    
-    // Do something with the asset
     
     [manager requestImageForAsset:phAsset
                        targetSize:size

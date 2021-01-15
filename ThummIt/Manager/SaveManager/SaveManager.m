@@ -58,7 +58,7 @@
     
     dispatch_sync(self.savingQueue, ^{
         [self.currentProject save];
-        [UndoManager.sharedInstance addCurrentProjectToUndoRedoStack];
+//        [UndoManager.sharedInstance addCurrentProjectToUndoRedoStack];
     });
     
 }

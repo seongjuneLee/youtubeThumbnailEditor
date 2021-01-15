@@ -35,34 +35,30 @@
 }
 
 -(void)save{
-    
-    NSData* projectData = [NSKeyedArchiver archivedDataWithRootObject:self];
     NSError* error;
+
+    NSData* projectData = [NSKeyedArchiver archivedDataWithRootObject:self];
     NSString* oldFilePath;
     
     if ([MigratorJul.shared isMigrated]) {
-        
+
         self.coreDataStorage.projectData = projectData;
-        
+
     } else {
         NSString* filePath = [ProjectFileManager.sharedInstance writeWithData:projectData error:&error];
         oldFilePath = self.projectFilePath;
-        
-        if (error){
-            NSLog(@"failed to save!: %@", error.localizedDescription?:@"");
-        }
-        
+
         // update file path
         self.projectFilePath = filePath;
     }
     NSError* coreDataSaveError;
     [CoreDataStack saveContextAndReturnError:&coreDataSaveError];
-    
+
 
     if (coreDataSaveError){
         NSLog(@"failed to save!: %@", error.localizedDescription?:@"");
     }
-    
+
     // delete the old project file
     if (oldFilePath && oldFilePath.length > 0){
         [ProjectFileManager.sharedInstance deleteWithFilePath:oldFilePath error:&error];

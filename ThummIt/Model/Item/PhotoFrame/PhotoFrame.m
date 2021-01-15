@@ -25,7 +25,7 @@
         self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);
         self.baseView.clipsToBounds = true;
         self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
-        self.baseView.backgroundColor = UIColor.whiteColor;
+        self.baseView.backgroundColor = UIColor.clearColor;
         [self addSubViewsToBaseView];
     }
     return self;
@@ -118,6 +118,7 @@
     self.plusLabel.textColor = UIColor.blackColor;
     [self.plusLabel sizeToFit];
     self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
+    self.plusLabel.hidden = true;
     [self.baseView addSubview:self.plusLabel];
     
     self.photoImageView = [[UIImageView alloc] init];
