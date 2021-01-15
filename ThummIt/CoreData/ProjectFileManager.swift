@@ -15,11 +15,7 @@ class ProjectFileManager: NSObject {
     @objc public func write(data: Data) throws -> String {
         
         // create project folder
-        do {
-            try createProjectFolderIfNeeded()
-        } catch(let error) {
-            throw error
-        }
+        try createProjectFolderIfNeeded()
         
         let filePath = randomFilePath()
         

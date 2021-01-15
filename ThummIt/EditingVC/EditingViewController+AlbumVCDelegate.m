@@ -16,7 +16,10 @@
     if (!self.originalPhotoFrameImage) {
         self.currentItem.phAsset = selectedPHAsset;
     }
+    
+    photoFrame.photoImageView.transform = CGAffineTransformMakeRotation(degreesToRadians(0));
     photoFrame.photoImageView.frameOrigin = CGPointMake(0,0);
+    photoFrame.photoImageView.frameSize = photoFrame.baseView.frameSize;
 
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
         dispatch_async(dispatch_get_main_queue(), ^{

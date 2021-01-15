@@ -25,6 +25,7 @@
 
 
 -(void)addCurrentProjectToUndoRedoStack{
+    
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:SaveManager.sharedInstance.currentProject];
 
     [self removeForwads];

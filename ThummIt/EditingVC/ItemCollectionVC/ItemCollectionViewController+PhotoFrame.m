@@ -18,8 +18,8 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     photoFrame.baseView.center = editingVC.bgView.center;
     
-    PhotoFrame *currentPhotoFrame = (PhotoFrame *)editingVC.currentItem;
     if (editingVC.currentItem) {
+        PhotoFrame *currentPhotoFrame = (PhotoFrame *)editingVC.currentItem;
         // 위치, 크기,사진 유지
         photoFrame.baseView.frame = editingVC.currentItem.baseView.frame;
         photoFrame.photoImageView.frame = currentPhotoFrame.photoImageView.frame;
