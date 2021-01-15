@@ -27,7 +27,7 @@
     requestOptions.synchronous = YES;
     
     [manager requestImageForAsset:phAsset
-                       targetSize:PHImageManagerMaximumSize
+                       targetSize:size
                       contentMode:contentMode
                           options:requestOptions
                     resultHandler:^void(UIImage *image, NSDictionary *info) {

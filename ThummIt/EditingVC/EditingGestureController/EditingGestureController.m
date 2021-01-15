@@ -176,9 +176,6 @@
         
         self.originalPoint = [sender locationInView:editingVC.currentItem.baseView];
     } else if (sender.state == UIGestureRecognizerStateEnded){
-        if (editingMode == EditingPhotoFrameMode) {
-            editingVC.currentItem = nil;
-        }
     }
 
 }
@@ -329,9 +326,6 @@
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
         photoFrame.photoImageView.center = changedPoint;
     } else if (sender.state == UIGestureRecognizerStateEnded){
-        if (editingMode == EditingPhotoFrameMode) {
-            editingVC.currentItem = nil;
-        }
     }
 
 }
