@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0341642AAB646EF74E2A79B3 /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4AECC9587098E8A31AB9AC /* Pods_ThummIt.framework */; };
+		360DF00D5FD66B67E5E14688 /* Pods_ThummIt_ThummItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680BA64B38C3256D2FAB10C5 /* Pods_ThummIt_ThummItUITests.framework */; };
 		6E1190E62584B163000DD9C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190E52584B163000DD9C0 /* AppDelegate.m */; };
 		6E1190E92584B163000DD9C0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190E82584B163000DD9C0 /* SceneDelegate.m */; };
 		6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190EB2584B163000DD9C0 /* HomeViewController.m */; };
@@ -103,6 +105,7 @@
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
+		80B05B713D452152BEE88103 /* Pods_ThummItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A2FCC54906C08B86F10FE /* Pods_ThummItTests.framework */; };
 		B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61625ADCC2A00E854C1 /* StickerCollectionController.m */; };
 		B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61D25ADCD9400E854C1 /* StickerCollectionViewCell.m */; };
 		B16FC62025ADCD9400E854C1 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16FC61E25ADCD9400E854C1 /* StickerCollectionViewCell.xib */; };
@@ -133,6 +136,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B5232F300C748E7F6E41853 /* Pods-ThummIt-ThummItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.release.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.release.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.release.xcconfig"; sourceTree = "<group>"; };
+		2E4BF45F5F93A7594C289CF9 /* Pods-ThummIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.debug.xcconfig"; sourceTree = "<group>"; };
+		3B1E7C592EC1CAD320FCA65C /* Pods-ThummItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.debug.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.debug.xcconfig"; sourceTree = "<group>"; };
+		680BA64B38C3256D2FAB10C5 /* Pods_ThummIt_ThummItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt_ThummItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1190E12584B163000DD9C0 /* ThummIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThummIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1190E42584B163000DD9C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E1190E52584B163000DD9C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -315,6 +323,8 @@
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		6EDE19E4258A2740001FC1DA /* HomeCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionController.h; sourceTree = "<group>"; };
 		6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionController.m; sourceTree = "<group>"; };
+		7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.release.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.release.xcconfig"; sourceTree = "<group>"; };
 		B16FC61525ADCC2A00E854C1 /* StickerCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerCollectionController.h; sourceTree = "<group>"; };
 		B16FC61625ADCC2A00E854C1 /* StickerCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickerCollectionController.m; sourceTree = "<group>"; };
 		B16FC61C25ADCD9400E854C1 /* StickerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerCollectionViewCell.h; sourceTree = "<group>"; };
@@ -334,6 +344,8 @@
 		B16FC68625AF76A600E854C1 /* BasicArrowSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicArrowSticker.m; sourceTree = "<group>"; };
 		B16FC68B25AF7F3900E854C1 /* XSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSticker.h; sourceTree = "<group>"; };
 		B16FC68C25AF7F3900E854C1 /* XSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSticker.m; sourceTree = "<group>"; };
+		BD4AECC9587098E8A31AB9AC /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D26A2FCC54906C08B86F10FE /* Pods_ThummItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +353,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0341642AAB646EF74E2A79B3 /* Pods_ThummIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +361,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B05B713D452152BEE88103 /* Pods_ThummItTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +369,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				360DF00D5FD66B67E5E14688 /* Pods_ThummIt_ThummItUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +386,7 @@
 				6E11910A2584B165000DD9C0 /* ThummItMakerUITests */,
 				6E1190E22584B163000DD9C0 /* Products */,
 				6E9BEA3E258F099300F7F539 /* Frameworks */,
+				D7497D01466F91BCF058B268 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -926,6 +942,9 @@
 			isa = PBXGroup;
 			children = (
 				6E9BEA3F258F099300F7F539 /* CoreData.framework */,
+				BD4AECC9587098E8A31AB9AC /* Pods_ThummIt.framework */,
+				680BA64B38C3256D2FAB10C5 /* Pods_ThummIt_ThummItUITests.framework */,
+				D26A2FCC54906C08B86F10FE /* Pods_ThummItTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1104,6 +1123,20 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		D7497D01466F91BCF058B268 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E4BF45F5F93A7594C289CF9 /* Pods-ThummIt.debug.xcconfig */,
+				97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */,
+				7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */,
+				0B5232F300C748E7F6E41853 /* Pods-ThummIt-ThummItUITests.release.xcconfig */,
+				3B1E7C592EC1CAD320FCA65C /* Pods-ThummItTests.debug.xcconfig */,
+				2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1111,9 +1144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E1191102584B165000DD9C0 /* Build configuration list for PBXNativeTarget "ThummIt" */;
 			buildPhases = (
+				197D7E0C9E0107CB8F5E52AF /* [CP] Check Pods Manifest.lock */,
 				6E1190DD2584B163000DD9C0 /* Sources */,
 				6E1190DE2584B163000DD9C0 /* Frameworks */,
 				6E1190DF2584B163000DD9C0 /* Resources */,
+				5FC21CE4CB254EEFA61CE10B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1128,6 +1163,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E1191132584B165000DD9C0 /* Build configuration list for PBXNativeTarget "ThummItTests" */;
 			buildPhases = (
+				D7888AFFC5E9CB625C78B155 /* [CP] Check Pods Manifest.lock */,
 				6E1190F82584B165000DD9C0 /* Sources */,
 				6E1190F92584B165000DD9C0 /* Frameworks */,
 				6E1190FA2584B165000DD9C0 /* Resources */,
@@ -1146,9 +1182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E1191162584B165000DD9C0 /* Build configuration list for PBXNativeTarget "ThummItUITests" */;
 			buildPhases = (
+				B6606DE7A5CAD71E30D443E6 /* [CP] Check Pods Manifest.lock */,
 				6E1191032584B165000DD9C0 /* Sources */,
 				6E1191042584B165000DD9C0 /* Frameworks */,
 				6E1191052584B165000DD9C0 /* Resources */,
+				FD808F0A78E1AC52137FC0A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1239,6 +1277,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		197D7E0C9E0107CB8F5E52AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThummIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FC21CE4CB254EEFA61CE10B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6606DE7A5CAD71E30D443E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThummIt-ThummItUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7888AFFC5E9CB625C78B155 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThummItTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD808F0A78E1AC52137FC0A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6E1190DD2584B163000DD9C0 /* Sources */ = {
@@ -1503,6 +1644,7 @@
 		};
 		6E1191112584B165000DD9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E4BF45F5F93A7594C289CF9 /* Pods-ThummIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1530,6 +1672,7 @@
 		};
 		6E1191122584B165000DD9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1556,6 +1699,7 @@
 		};
 		6E1191142584B165000DD9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B1E7C592EC1CAD320FCA65C /* Pods-ThummItTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1577,6 +1721,7 @@
 		};
 		6E1191152584B165000DD9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1598,6 +1743,7 @@
 		};
 		6E1191172584B165000DD9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1617,6 +1763,7 @@
 		};
 		6E1191182584B165000DD9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B5232F300C748E7F6E41853 /* Pods-ThummIt-ThummItUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -9,6 +9,7 @@
 #import "PhotoManager.h"
 #import "ProjectManager.h"
 #import "ThummIt-Swift.h"
+#import <Parse/Parse.h>
 @interface AppDelegate ()
 
 @end
@@ -20,6 +21,11 @@
     // Override point for customization after application launch.
     [MigratorJul.shared migrateIfNeeded];
     
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
+        configuration.applicationId = @"myappID";
+        configuration.clientKey = @"BcwGJj2vgmdM";
+        configuration.server = @"http://3.34.137.65/parse";
+    }]];
     
     return YES;
 }
