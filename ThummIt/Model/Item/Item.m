@@ -29,7 +29,6 @@
 -(id)initWithCoder:(NSCoder *)decoder{
     if((self = [super init])) {
         
-        self.baseView = [decoder decodeObjectForKey:@"baseView"];
         
         self.backgroundImageView = [decoder decodeObjectForKey:@"backgroundImageView"];
         self.backgroundImageName = [decoder decodeObjectForKey:@"backgroundImageName"];
@@ -46,7 +45,6 @@
 
 -(void)encodeWithCoder:(NSCoder *)encoder{
 
-    [encoder encodeObject:self.baseView forKey:@"baseView"];
     [encoder encodeObject:self.itemName forKey:@"itemName"];
     [encoder encodeObject:self.backgroundImageView forKey:@"backgroundImageView"];
     [encoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
@@ -55,13 +53,6 @@
     [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotationDegree"];
 
 
-}
-
--(void)scaleItem{
-    
-    self.baseView.frameWidth *= self.scale;
-    self.baseView.frameHeight *= self.scale;
-        
 }
 
 @end

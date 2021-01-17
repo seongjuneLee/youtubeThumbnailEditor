@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) PHAsset *phAsset;
 @property (nonatomic) BOOL isTemplateItem;
 
--(void)scaleItem;
+-(void)loadView;
 
 
 @end

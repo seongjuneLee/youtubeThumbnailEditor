@@ -299,7 +299,7 @@
     return image;
 }
 
--(void)loadUIView{
+-(void)loadView{
     
     // 0. 뷰 새로 파기
     self.textView = [self makeTextView];

@@ -109,13 +109,13 @@
             float itemX = imageViewWidth * item.center.x;
             float itemY = imageViewHeight * item.center.y + self.bgView.frameY;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
-            [item scaleItem];
             item.baseView.center = itemCenter;
             item.isTemplateItem = false;
         }
+        [item loadView];
         [self.view insertSubview:item.baseView belowSubview:self.gestureView];
     }
-
+    
 }
 
 -(void)respondToUndoRedo{

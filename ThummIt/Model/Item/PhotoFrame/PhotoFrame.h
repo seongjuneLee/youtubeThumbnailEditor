@@ -15,9 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIButton *plusPhotoButton;
 @property (strong, nonatomic) UILabel *plusLabel;
 @property (strong, nonatomic) UIImageView *photoImageView;
+@property (nonatomic) CGPoint photoCenter;
+@property (nonatomic) float photoRotationDegree;
+@property (nonatomic) float photoScale;
 
 -(void)addSubViewsToBaseView;
--(void)addCircleImageWithName:(NSString *)imageName;
+-(void)addBackgroundImageWithName:(NSString *)imageName;
+-(void)makeBaseView;
 
 @end
 

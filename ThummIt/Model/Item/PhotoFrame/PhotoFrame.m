@@ -19,13 +19,6 @@
         self.scale = 1;
         self.rotationDegree = 0;
         
-        float screenWidth = UIScreen.mainScreen.bounds.size.width;
-        float circleViewWidth = screenWidth*0.8/2;
-        self.baseView = [[UIView alloc] init];
-        self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);
-        self.baseView.clipsToBounds = true;
-        self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
-        self.baseView.backgroundColor = UIColor.clearColor;
         [self addSubViewsToBaseView];
     }
     return self;
@@ -70,13 +63,9 @@
                 self.phAsset = phAsset;
             }
         }
-        self.photoImageView = [decoder decodeObjectForKey:@"photoImageView"];
-        
-        NSString *imageURL = [decoder decodeObjectForKey:@"imageURL"];
-        if (imageURL.length) {
-            NSData *data = [[NSData alloc]initWithBase64EncodedString:imageURL options:NSDataBase64DecodingIgnoreUnknownCharacters];
-            self.photoImageView.image = [UIImage imageWithData:data];
-        }
+        self.photoCenter = [[decoder decodeObjectForKey:@"center"] CGPointValue];
+        self.photoRotationDegree = [[decoder decodeObjectForKey:@"photoRotationDegree"] floatValue];
+        self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
 
     }
     return self;
@@ -85,31 +74,33 @@
 -(void)encodeWithCoder:(NSCoder *)encoder{
     
     [super encodeWithCoder:encoder];
+    
     [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
-    NSString *imageURL = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    [encoder encodeObject:self.photoImageView forKey:@"photoImageView"];
-    [encoder encodeObject:imageURL forKey:@"imageURL"];
-
+    [encoder encodeObject:[NSNumber numberWithFloat:self.photoRotationDegree] forKey:@"photoRotationDegree"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.photoScale] forKey:@"photoScale"];
+    [encoder encodeObject:[NSValue valueWithCGPoint:self.photoCenter] forKey:@"photoCenter"];
+    
+    
 }
 
 
 #pragma mark - helper
-
--(void)addCircleImageWithName:(NSString *)imageName{
+-(void)loadView{
     
-    self.backgroundImageView = [[UIImageView alloc] init];
-    self.backgroundImageView.frameSize = self.baseView.frameSize;
-    self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
-    self.backgroundImageView.backgroundColor = UIColor.clearColor;
-    self.backgroundImageView.clipsToBounds = true;
-    self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
-    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    if (imageName) {
-        self.backgroundImageView.image = [UIImage imageNamed:imageName];
-        [self.baseView addSubview:self.backgroundImageView];
+    [self makeBaseView];
+    self.baseView.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree)), CGAffineTransformMakeScale(self.scale, self.scale));
+    self.baseView.center = self.center;
+    
+    if (self.backgroundImageName) {
+        [self addBackgroundImageWithName:self.backgroundImageName];
     }
+    
+    [self addSubViewsToBaseView];
+    self.photoImageView.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(degreesToRadians(self.photoRotationDegree)), CGAffineTransformMakeScale(self.photoScale, self.photoScale));
+    self.photoImageView.center = self.photoCenter;
 
 }
+
 
 -(void)addSubViewsToBaseView{
     
@@ -126,15 +117,6 @@
     self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.baseView addSubview:self.photoImageView];
     
-}
-
--(void)scaleItem{
-    
-    [super scaleItem];
-    self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
-    self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
-    self.photoImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
-
 }
 
 @end

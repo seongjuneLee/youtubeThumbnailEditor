@@ -193,7 +193,7 @@
             Item *copiedItem = [item copy];
             if ([copiedItem isKindOfClass:Text.class]) {
                 Text *text = (Text *)copiedItem;
-                [text loadUIView];
+                [text loadView];
 
                 text.baseView.frameY -= 100;
                 [imageView addSubview:text.baseView];

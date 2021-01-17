@@ -172,8 +172,8 @@
             PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentItem;
             photoFrame.photoImageView.centerX += deltaPoint.x;
             photoFrame.photoImageView.centerY += deltaPoint.y;
+            photoFrame.photoCenter = photoFrame.photoImageView.center;
         }
-        
         self.originalPoint = [sender locationInView:editingVC.currentItem.baseView];
     } else if (sender.state == UIGestureRecognizerStateEnded){
     }
@@ -281,13 +281,10 @@
 
     if (sender.state == UIGestureRecognizerStateBegan && sender.numberOfTouches ==2) {
         if (!editingVC.currentItem) {
-            if ([self getCurrentItemForPinch:sender]) {
-                editingVC.currentItem =[self getCurrentItemForPinch:sender];
-            } else {
-                return;
-            }
+            return;
+            
         }
-
+        
         self.originalFirstFinger = [sender locationOfTouch:0 inView:editingVC.currentItem.baseView];
         self.originalSecondFinger = [sender locationOfTouch:1 inView:editingVC.currentItem.baseView];
         
@@ -325,6 +322,11 @@
         // 센터가이드 적용
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
         photoFrame.photoImageView.center = changedPoint;
+        
+        photoFrame.photoCenter = changedPoint;
+        photoFrame.photoScale = changeScale;
+        photoFrame.photoRotationDegree = self.currentRotation;
+        
     } else if (sender.state == UIGestureRecognizerStateEnded){
     }
 
