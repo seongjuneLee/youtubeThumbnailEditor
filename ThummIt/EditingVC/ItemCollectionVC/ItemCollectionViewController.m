@@ -85,11 +85,6 @@
     if (self.itemType == PhotoFrameType) {
         self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
         self.photoFrameCollectionController.delegate = self;
-        [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.photoFrameCollectionController.firstPhoto = image;
-            });
-        }];
         [self.itemButton setImage:[UIImage imageNamed:@"photoFrameImage"] forState:UIControlStateNormal];
         [self.contentButton setImage:[UIImage imageNamed:@"photoAlbum"] forState:UIControlStateNormal];
     } else if (self.itemType == TextType){

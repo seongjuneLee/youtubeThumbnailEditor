@@ -68,6 +68,19 @@
 }
 
 -(void)cancelEditingPhotoFrame{
+    
+    
+    // 변경 취소하고, 원래 이미지 다시 넣어주기.
+    PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
+    photoFrame.photoImageView.image = self.originalPhotoFrameImage;
+    // 취소시 이미지 뷰 센터 다시 돌려놓기.
+    photoFrame.photoImageView.center = self.originalImageViewCenter;
+    photoFrame.photoCenter = self.originalImageViewCenter;
+    photoFrame.photoImageView.transform = self.originalTransform;
+    
+    // 레이어 되돌려 놓기
+    [self.layerController recoverOriginalLayer];
+
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
     [self dismissAlbumVC];
 
@@ -93,16 +106,6 @@
 }
 
 -(void)dismissAlbumVC{
-    
-    // 변경 취소하고, 원래 이미지 다시 넣어주기.
-    PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
-    photoFrame.photoImageView.image = self.originalPhotoFrameImage;
-    // 취소시 이미지 뷰 센터 다시 돌려놓기.
-    photoFrame.photoImageView.center = self.originalImageViewCenter;
-    photoFrame.photoImageView.transform = self.originalTransform;
-    
-    // 레이어 되돌려 놓기
-    [self.layerController recoverOriginalLayer];
     
     // albumVC 없애주기
     [self.albumVC dismissSelf];
@@ -152,13 +155,10 @@
     
     [self.layerController recoverOriginalLayer];
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-
-    self.currentItem.phAsset = PhotoManager.sharedInstance.phassets[self.albumVC.selectedIndexPath.item];
+    PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
+    photoFrame.phAsset = PhotoManager.sharedInstance.phassets[self.albumVC.selectedIndexPath.item];
     [SaveManager.sharedInstance save];
-    PhotoFrame *pf = (PhotoFrame *)self.currentItem;
-    NSLog(@"item photoframe origin heererrere %@",NSStringFromCGPoint(pf.photoCenter));
-    NSLog(@"item photoframe origin rergregre %@",NSStringFromCGPoint(pf.photoImageView.center));
-
+    
     // albumVC 없애주기
     [self.albumVC dismissSelf];
     self.albumVC = nil;
@@ -175,8 +175,11 @@
     [self.itemCollectionVC dismissSelf];
     [self.albumVC dismissSelf];
     [SaveManager.sharedInstance addItem:self.currentItem];
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+    }
     [SaveManager.sharedInstance save];
-
+    
     self.albumVC = nil;
     self.currentItem = nil;
     self.currentPhotoFrame = nil;
@@ -188,7 +191,11 @@
     [self.layerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
     [SaveManager.sharedInstance addItem:self.currentItem];
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+    }
     [SaveManager.sharedInstance save];
+
     [self.currentText.textView resignFirstResponder];
     self.currentItem = nil;
     self.currentText = nil;
@@ -198,9 +205,14 @@
     
     [self.layerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
+    self.currentItem.center = self.currentItem.baseView.center;
     [SaveManager.sharedInstance addItem:self.currentItem];
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+    }
     [SaveManager.sharedInstance save];
-    
+
+
     self.currentItem = nil;
 }
 

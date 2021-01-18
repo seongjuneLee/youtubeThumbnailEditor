@@ -19,9 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float photoRotationDegree;
 @property (nonatomic) float photoScale;
 @property (nonatomic) BOOL isCircle;
+@property (strong, nonatomic) PHAsset *phAsset;
 
 -(void)addSubViewsToBaseView;
--(void)addBackgroundImageWithName:(NSString *)imageName;
 -(void)makeBaseView;
 
 @end

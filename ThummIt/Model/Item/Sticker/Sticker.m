@@ -18,12 +18,6 @@
         self.rotationDegree = 0;
         
         
-        float screenWidth = UIScreen.mainScreen.bounds.size.width;
-        float circleViewWidth = screenWidth*0.8/2;
-        self.baseView = [[UIView alloc] init];
-        self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);
-        self.baseView.backgroundColor = UIColor.clearColor;
-        [self addSubViewsToBaseView];
         
     }
     return self;
@@ -42,7 +36,7 @@
     copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
     [copied.baseView addSubview:copied.backgroundImageView];
     copied.rotationDegree = self.rotationDegree;
-    copied.baseView.transform = CGAffineTransformMakeRotation(degreesToRadians(copied.rotationDegree));
+    copied.baseView.transform = CGAffineTransformMakeRotation(copied.rotationDegree);
     if (self.itemName) {
         copied.itemName = [NSString stringWithString:self.itemName];
     }
@@ -67,27 +61,35 @@
 
 #pragma mark - helper
 
--(void)addCircleImageWithName:(NSString *)imageName{
+-(void)loadView{
+    
+    [self makeBaseView];
+    [self addBackgroundImageView];
+    
+}
+
+-(void)makeBaseView{
+    self.baseView = [[UIView alloc] init];
+    self.baseView.clipsToBounds = true;
+    float screenWidth = UIScreen.mainScreen.bounds.size.width;
+    float circleViewWidth = screenWidth*0.8/2;
+    self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);
+    self.baseView.backgroundColor = UIColor.clearColor;
+    
+    self.baseView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(self.scale, self.scale), CGAffineTransformMakeRotation(self.rotationDegree));
+    self.baseView.center = self.center;
+    NSLog(@"self.sticker.center indexInLayer %@",self.indexInLayer);
+}
+
+-(void)addBackgroundImageView{
     
     self.backgroundImageView = [[UIImageView alloc] init];
     self.backgroundImageView.frameSize = self.baseView.frameSize;
     self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
     self.backgroundImageView.backgroundColor = UIColor.clearColor;
     self.backgroundImageView.clipsToBounds = true;
-    self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    if (imageName) {
-        self.backgroundImageView.image = [UIImage imageNamed:imageName];
-        [self.baseView addSubview:self.backgroundImageView];
-    }
-
-}
-
--(void)addSubViewsToBaseView{
-    
-    self.backgroundImageView = [[UIImageView alloc] init];
-    self.backgroundImageView.frameSize = self.baseView.frameSize;
-    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
     [self.baseView addSubview:self.backgroundImageView];
     
 }

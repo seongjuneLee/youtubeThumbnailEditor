@@ -22,22 +22,13 @@
     return sharedInstance;
 }
 
+#pragma mark - 포토 프레임
+
 -(NSArray *)photoFrameCategories{
     
     NSString *circle = NSLocalizedString(@"circle", nil);
     NSString *rectangle = NSLocalizedString(@"rectangle", nil);
     NSArray *categories = @[circle, rectangle];
-    
-    return categories;
-}
-
--(NSArray *)stickerCategories{
-
-    NSString *basicCircle = NSLocalizedString(@"basic circle", nil);
-    NSString *basicArrow = NSLocalizedString(@"basic arrow", nil);
-    NSString *x = NSLocalizedString(@"X", nil);
-
-    NSArray *categories = @[basicCircle, basicArrow, x];
     
     return categories;
 }
@@ -59,6 +50,20 @@
     NSArray *photoFrames = @[basicCircle, christmasCircle];
     return photoFrames;
 }
+
+#pragma mark - 스티커
+
+-(NSArray *)stickerCategories{
+
+    NSString *basicCircle = NSLocalizedString(@"basic circle", nil);
+    NSString *basicArrow = NSLocalizedString(@"basic arrow", nil);
+    NSString *x = NSLocalizedString(@"X", nil);
+
+    NSArray *categories = @[basicCircle, basicArrow, x];
+    
+    return categories;
+}
+
 
 -(NSArray *)basicCircleStickers{
     
@@ -105,10 +110,8 @@
     return stickers;
 }
 
--(void)addItem:(Item *)item withView:(UIView *)view underView:(nonnull UIView *)gestureView withCriteriaView:(UIImageView *)imageView{
+-(void)addItem:(Item *)item{
     
-    item.baseView.center = CGPointMake(imageView.frameWidth/2, imageView.frameY + imageView.frameHeight/2);
-    [view insertSubview:item.baseView belowSubview:gestureView];
     [SaveManager.sharedInstance addItem:item];
     [SaveManager.sharedInstance save];
     

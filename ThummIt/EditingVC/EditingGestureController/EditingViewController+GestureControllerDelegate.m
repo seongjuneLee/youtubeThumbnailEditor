@@ -44,6 +44,8 @@
             self.currentItem = item;
             self.originalPhotoFrameImage = photoFrame.photoImageView.image;
             [self setCurrentPhotoSelectedOnAlbumVC];
+            photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
+            photoFrame.photoCenter = photoFrame.photoImageView.center;
         } else if ([item isKindOfClass:Text.class]){
             
         }
@@ -53,12 +55,13 @@
 
 
 -(void)setCurrentPhotoSelectedOnAlbumVC{
-    
+    PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
+
     NSUInteger index = 0;
     NSArray *phassets = PhotoManager.sharedInstance.phassets;
     for (int i = 0; i < phassets.count; i++) {
         PHAsset *phAsset = phassets[i];
-        if ([self.currentItem.phAsset.localIdentifier isEqualToString:phAsset.localIdentifier]) {
+        if ([photoFrame.phAsset.localIdentifier isEqualToString:phAsset.localIdentifier]) {
             index = i;
         }
     }
@@ -66,13 +69,18 @@
     self.albumVC.selectedIndexPath = [NSIndexPath indexPathForItem:index inSection:0];
     [self.albumVC.collectionView reloadData];
     PHAsset *selectedPHAsset = phassets[index];
-    [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-        PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
-        photoFrame.photoImageView.image = image;
-        photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
-        photoFrame.photoCenter = photoFrame.photoImageView.center;
-    }];
-        
+    if (!photoFrame.photoImageView.image) {
+
+        [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
+            photoFrame.photoImageView.frameSize = photoFrame.baseView.frameSize;
+            photoFrame.photoImageView.transform = CGAffineTransformMakeRotation(degreesToRadians(0));
+            photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2,photoFrame.baseView.frameHeight/2);
+            photoFrame.photoCenter = photoFrame.photoImageView.center;
+
+            photoFrame.photoImageView.image = image;
+        }];
+    }
+    
 }
 
 -(void)showAlbumVC{
@@ -155,6 +163,9 @@
     float iamgeViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (fingerPoint.y >= iamgeViewBottomY) {
         [ItemManager.sharedInstance deleteItem:item];
+        for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+        }
     }
 
     [UIView animateWithDuration:0.2 animations:^{

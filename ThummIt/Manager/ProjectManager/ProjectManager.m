@@ -188,14 +188,17 @@
         imageView.frame = CGRectMake(0, 0, imageViewWidth, imageViewWidth*9/16);
         imageView.backgroundColor = UIColor.blackColor;
         
+        NSMutableArray *indexes = [NSMutableArray array];
+        for (Item *item in project.items) {
+            [indexes addObject:[NSNumber numberWithInteger:[item.indexInLayer integerValue]]];
+        }
+        NSNumber* smallest = [indexes valueForKeyPath:@"@min.self"];        
         for (Item *item  in project.items) {
             
             [item loadView];
-            Item *copiedItem = [item copy];
+            item.baseView.centerY -= 100;
             
-            NSLog(@"copiedItem.baseView frame %@",NSStringFromCGRect(copiedItem.baseView.frame));
-            copiedItem.baseView.frameY -= 100;
-            [imageView addSubview:copiedItem.baseView];
+            [imageView insertSubview:item.baseView atIndex:[item.indexInLayer integerValue] - [smallest integerValue]];
             
         }
         

@@ -14,7 +14,7 @@
     PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
     PHAsset *selectedPHAsset = self.albumVC.phAssets[self.albumVC.selectedIndexPath.item];
     if (!self.originalPhotoFrameImage) {
-        self.currentItem.phAsset = selectedPHAsset;
+        photoFrame.phAsset = selectedPHAsset;
     }
     
     photoFrame.photoImageView.transform = CGAffineTransformMakeRotation(degreesToRadians(0));

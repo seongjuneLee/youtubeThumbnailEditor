@@ -16,13 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong ,nonatomic) UIView *baseView;
 @property (strong, nonatomic) NSString *itemName;
 @property (strong, nonatomic) NSString *backgroundImageName;
+@property (strong, nonatomic) NSString *indexInLayer;
 @property (strong, nonatomic) UIImageView *backgroundImageView;
 
 @property (nonatomic) CGPoint center;
-@property (nonatomic) NSInteger rotationDegree;
+@property (nonatomic) float rotationDegree;
 @property (nonatomic) CGFloat scale;
 
-@property (strong, nonatomic) PHAsset *phAsset;
 @property (nonatomic) BOOL isTemplateItem;
 
 -(void)loadView;

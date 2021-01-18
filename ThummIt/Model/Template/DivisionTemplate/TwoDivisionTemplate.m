@@ -34,9 +34,15 @@
 }
 
 -(void)addPhotoFrames{
-//    self.photoFrames = [NSMutableArray new];
-//    PhotoFrame *phoroFrame = [BasicCircle basicCircle];
-//    [self.photoFrames addObject:phoroFrame];
+    self.photoFrames = [NSMutableArray new];
+    VerticalHalfRectangle *firstPhotoFrame = [VerticalHalfRectangle verticalHalfRectangle];
+    VerticalHalfRectangle *secondPhotoFrame = [VerticalHalfRectangle verticalHalfRectangle];
+    firstPhotoFrame.isTemplateItem = true;
+    secondPhotoFrame.isTemplateItem = true;
+    firstPhotoFrame.center = CGPointMake(0.25, 0.5);
+    secondPhotoFrame.center = CGPointMake(0.75, 0.5);
+    [self.photoFrames addObject:firstPhotoFrame];
+    [self.photoFrames addObject:secondPhotoFrame];
 }
 
 

@@ -112,10 +112,14 @@
     if (sender.state == UIGestureRecognizerStateBegan) {
         self.originalPoint = [sender locationInView:editingVC.gestureView];
 
-        if (!editingVC.currentItem) {
+        if (editingMode == NormalMode) {
             if ([self getCurrentItem:sender]) {
                 editingVC.currentItem =[self getCurrentItem:sender];
             } else {
+                return;
+            }
+        } else {
+            if (!editingVC.currentItem) {
                 return;
             }
         }
@@ -161,11 +165,7 @@
     // 아이템 편집 상태
     if (sender.state == UIGestureRecognizerStateBegan) {
         if (!editingVC.currentItem) {
-            if ([self getCurrentItem:sender]) {
-                editingVC.currentItem = [self getCurrentItem:sender];
-            } else {
-                return;
-            }
+            return;
         }
         self.originalPoint = [sender locationInView:editingVC.currentItem.baseView];
 
@@ -177,7 +177,6 @@
             photoFrame.photoImageView.centerX += deltaPoint.x;
             photoFrame.photoImageView.centerY += deltaPoint.y;
             photoFrame.photoCenter = photoFrame.photoImageView.center;
-            NSLog(@"photoFrame.photoCenter %@",NSStringFromCGPoint(photoFrame.photoCenter));
         }
         self.originalPoint = [sender locationInView:editingVC.currentItem.baseView];
     } else if (sender.state == UIGestureRecognizerStateEnded){
@@ -224,11 +223,14 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     if (sender.state == UIGestureRecognizerStateBegan && sender.numberOfTouches ==2) {
-        if (!editingVC.currentItem) {
-            if ([self getCurrentItemForPinch:sender]) {
-                editingVC.currentItem =[self getCurrentItemForPinch:sender];
-                self.isPinching = true;
+        if (editingMode == NormalMode) {
+            if ([self getCurrentItem:sender]) {
+                editingVC.currentItem =[self getCurrentItem:sender];
             } else {
+                return;
+            }
+        } else {
+            if (!editingVC.currentItem) {
                 return;
             }
         }
@@ -254,9 +256,9 @@
         
         float changedDistance = [self distanceFrom:finger1Point to:finger2Point];
         float changeScale = changedDistance/self.originalPinchDistance;
-        editingVC.currentItem.scale = changeScale;
         CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.originalScaleRatio*changeScale, self.originalScaleRatio*changeScale);
-        
+        editingVC.currentItem.scale = self.originalScaleRatio*changeScale;
+
         // 각도 변경
         CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.currentRotation);
         editingVC.currentItem.rotationDegree = self.currentRotation;
@@ -290,7 +292,6 @@
     if (sender.state == UIGestureRecognizerStateBegan && sender.numberOfTouches ==2) {
         if (!editingVC.currentItem) {
             return;
-            
         }
         self.originalFirstFinger = [sender locationOfTouch:0 inView:editingVC.currentItem.baseView];
         self.originalSecondFinger = [sender locationOfTouch:1 inView:editingVC.currentItem.baseView];
@@ -329,11 +330,9 @@
         // 센터가이드 적용
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
         photoFrame.photoImageView.center = changedPoint;
-        
         photoFrame.photoCenter = changedPoint;
-        photoFrame.photoScale = changeScale;
+        photoFrame.photoScale = self.originalScaleRatio*changeScale;
         photoFrame.photoRotationDegree = self.currentRotation;
-        
     }
 
 }
@@ -363,14 +362,16 @@
     
     
     CGPoint tappedLocation = [sender locationInView:self.gestureView];
-    
+    NSMutableArray *foundItems = [NSMutableArray new];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        NSLog(@"item get current. %@",item);
         if (CGRectContainsPoint(item.baseView.frame, tappedLocation)) {
-            return item;
+            [foundItems addObject:item];
         }
     }
-    return nil;
+    NSSortDescriptor *valueDescriptor = [[NSSortDescriptor alloc] initWithKey:@"indexInLayer" ascending:YES];
+    NSArray *descriptors = [NSArray arrayWithObject:valueDescriptor];
+    NSArray *sortedArray = [foundItems sortedArrayUsingDescriptors:descriptors];
+    return sortedArray.lastObject;
 }
 
 -(Item *)getCurrentItemForPinch:(UIGestureRecognizer *)sender{

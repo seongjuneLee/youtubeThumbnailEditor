@@ -14,8 +14,10 @@
 
 -(void)didSelectSticker:(Sticker *)sticker{
     
+    [sticker loadView];
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     sticker.baseView.center = editingVC.bgView.center;
+    sticker.center = editingVC.bgView.center;
     sticker.backgroundImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지
