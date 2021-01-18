@@ -101,18 +101,19 @@
     
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
-    
     float imageViewWidth = self.view.frameWidth;
     float imageViewHeight = imageViewWidth * 9/16;
     for (Item *item in project.items) {
+        [item loadView];
         if (item.isTemplateItem) {
             float itemX = imageViewWidth * item.center.x;
             float itemY = imageViewHeight * item.center.y + self.bgView.frameY;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
+            item.center = itemCenter;
             item.baseView.center = itemCenter;
             item.isTemplateItem = false;
         }
-        [item loadView];
+        
         [self.view insertSubview:item.baseView belowSubview:self.gestureView];
     }
     

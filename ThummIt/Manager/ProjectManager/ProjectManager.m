@@ -190,17 +190,12 @@
         
         for (Item *item  in project.items) {
             
+            [item loadView];
             Item *copiedItem = [item copy];
-            if ([copiedItem isKindOfClass:Text.class]) {
-                Text *text = (Text *)copiedItem;
-                [text loadView];
-
-                text.baseView.frameY -= 100;
-                [imageView addSubview:text.baseView];
-            } else if ([copiedItem isKindOfClass:PhotoFrame.class]){
-                copiedItem.baseView.frameY -= 100;
-                [imageView addSubview:copiedItem.baseView];
-            }
+            
+            NSLog(@"copiedItem.baseView frame %@",NSStringFromCGRect(copiedItem.baseView.frame));
+            copiedItem.baseView.frameY -= 100;
+            [imageView addSubview:copiedItem.baseView];
             
         }
         

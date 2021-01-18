@@ -144,6 +144,10 @@
         if (editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
+        if (!self.isPinching) {
+            [SaveManager.sharedInstance save];
+        }
+
     }
 
 }
@@ -173,9 +177,11 @@
             photoFrame.photoImageView.centerX += deltaPoint.x;
             photoFrame.photoImageView.centerY += deltaPoint.y;
             photoFrame.photoCenter = photoFrame.photoImageView.center;
+            NSLog(@"photoFrame.photoCenter %@",NSStringFromCGPoint(photoFrame.photoCenter));
         }
         self.originalPoint = [sender locationInView:editingVC.currentItem.baseView];
     } else if (sender.state == UIGestureRecognizerStateEnded){
+
     }
 
 }
@@ -221,12 +227,12 @@
         if (!editingVC.currentItem) {
             if ([self getCurrentItemForPinch:sender]) {
                 editingVC.currentItem =[self getCurrentItemForPinch:sender];
-
+                self.isPinching = true;
             } else {
                 return;
             }
         }
-        
+        self.isPinching = true;
         [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.originalFirstFinger = [sender locationOfTouch:0 inView:self.editingVC.view];
         self.originalSecondFinger = [sender locationOfTouch:1 inView:self.editingVC.view];
@@ -270,6 +276,8 @@
         if (editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
+        [SaveManager.sharedInstance save];
+
     }
     
 }
@@ -284,7 +292,6 @@
             return;
             
         }
-        
         self.originalFirstFinger = [sender locationOfTouch:0 inView:editingVC.currentItem.baseView];
         self.originalSecondFinger = [sender locationOfTouch:1 inView:editingVC.currentItem.baseView];
         
@@ -327,7 +334,6 @@
         photoFrame.photoScale = changeScale;
         photoFrame.photoRotationDegree = self.currentRotation;
         
-    } else if (sender.state == UIGestureRecognizerStateEnded){
     }
 
 }

@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint photoCenter;
 @property (nonatomic) float photoRotationDegree;
 @property (nonatomic) float photoScale;
+@property (nonatomic) BOOL isCircle;
 
 -(void)addSubViewsToBaseView;
 -(void)addBackgroundImageWithName:(NSString *)imageName;

@@ -36,8 +36,10 @@
 
         self.itemName = [decoder decodeObjectForKey:@"itemName"];
         self.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];
+        NSLog(@"self.center %@",NSStringFromCGPoint(self.center));
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.rotationDegree = [[decoder decodeObjectForKey:@"rotationDegree"] floatValue];
+        self.isTemplateItem = self.isTemplateItem;
 
     }
     return self;

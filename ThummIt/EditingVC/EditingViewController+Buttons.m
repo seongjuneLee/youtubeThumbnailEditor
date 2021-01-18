@@ -154,16 +154,17 @@
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
 
     self.currentItem.phAsset = PhotoManager.sharedInstance.phassets[self.albumVC.selectedIndexPath.item];
-    
+    [SaveManager.sharedInstance save];
+    PhotoFrame *pf = (PhotoFrame *)self.currentItem;
+    NSLog(@"item photoframe origin heererrere %@",NSStringFromCGPoint(pf.photoCenter));
+    NSLog(@"item photoframe origin rergregre %@",NSStringFromCGPoint(pf.photoImageView.center));
+
     // albumVC 없애주기
     [self.albumVC dismissSelf];
     self.albumVC = nil;
 
     self.originalPhotoFrameImage = nil;
     self.currentItem = nil;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [SaveManager.sharedInstance save];
-    });
     
 }
 
@@ -175,6 +176,7 @@
     [self.albumVC dismissSelf];
     [SaveManager.sharedInstance addItem:self.currentItem];
     [SaveManager.sharedInstance save];
+
     self.albumVC = nil;
     self.currentItem = nil;
     self.currentPhotoFrame = nil;

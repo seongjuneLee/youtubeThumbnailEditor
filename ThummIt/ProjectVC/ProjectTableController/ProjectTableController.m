@@ -59,7 +59,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    Project *project = self.projects[indexPath.row];
+    Project *project = [ProjectManager.sharedInstance getAllProjectsFromCoreData][indexPath.row];
     SaveManager.sharedInstance.currentProject = project;
     UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
     EditingViewController *editingVC = (EditingViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingViewController"];

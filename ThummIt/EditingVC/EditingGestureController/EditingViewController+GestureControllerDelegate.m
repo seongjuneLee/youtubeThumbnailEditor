@@ -69,6 +69,8 @@
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
         PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
         photoFrame.photoImageView.image = image;
+        photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
+        photoFrame.photoCenter = photoFrame.photoImageView.center;
     }];
         
 }
@@ -159,8 +161,6 @@
         self.buttonScrollView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
-    }completion:^(BOOL finished) {
-        [SaveManager.sharedInstance save];
     }];
 
 }
