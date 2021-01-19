@@ -4,6 +4,8 @@
 //
 //  Created by 이성준 on 2020/12/16.
 //
+#define IDIOM    UI_USER_INTERFACE_IDIOM()
+#define IPAD     UIUserInterfaceIdiomPad
 
 #import "HomeTableController.h"
 #import "CategoryManager.h"
@@ -77,7 +79,20 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 200;
+    
+    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+    float safeAreaHeight = window.bounds.size.height - window.safeAreaInsets.top - window.safeAreaInsets.bottom;
+    
+    
+
+    if ( IDIOM == IPAD ) {
+        return safeAreaHeight * 0.35;
+    /* do something specifically for iPad. */
+    } else {
+        return safeAreaHeight * 0.29;
+    /* do something specifically for iPhone or iPod touch. */
+}
+
 }
 
 -(void)didSelectItemWithCell:(UITableViewCell *)cell withCollectionViewIndex:(NSUInteger)index{

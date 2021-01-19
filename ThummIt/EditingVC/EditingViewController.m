@@ -101,8 +101,10 @@
     
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
+    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+    float safeAreaHeight = window.bounds.size.height - window.safeAreaInsets.top - window.safeAreaInsets.bottom;
+    float safeAreaWidth = window.bounds.size.width;
     float imageViewWidth = self.view.frameWidth;
-    float imageViewHeight = imageViewWidth * 9/16;
     for (Item *item in project.items) {
         [item loadView];
         if (item.isTemplateItem) {
@@ -111,7 +113,7 @@
                 photoFrame.plusLabel.hidden = false;
             }
             float itemX = imageViewWidth * item.center.x;
-            float itemY = imageViewHeight * item.center.y + self.bgView.frameY;
+            float itemY = safeAreaHeight * 0.05 + safeAreaWidth * 9/32 + window.safeAreaInsets.top;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             item.center = itemCenter;
             item.baseView.center = itemCenter;
