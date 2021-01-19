@@ -41,8 +41,7 @@
 -(void)connectProjectTableController{
     
     self.projectTableController = [[ProjectTableController alloc] initWithTableView:self.tableView];
-    self.projectTableController.navigationController = self.navigationController;
-    self.projectTableController.offset = self.offset;
+    self.projectTableController.projectVC = self;
 
 }
 
