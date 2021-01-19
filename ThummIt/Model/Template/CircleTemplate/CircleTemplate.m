@@ -39,7 +39,6 @@
     PhotoFrame *photoFrame = [BasicCircle basicCircle];
     photoFrame.isTemplateItem = true;
     photoFrame.baseView.backgroundColor = UIColor.whiteColor;
-    photoFrame.plusLabel.hidden = false;
     [self.photoFrames addObject:photoFrame];
     
     

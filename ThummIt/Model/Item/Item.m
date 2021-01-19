@@ -14,6 +14,7 @@
     
     self = [super init];
     if (self) {
+        self.indexInLayer = @"";
     }
     return self;
     
@@ -22,6 +23,10 @@
 -(id)copyWithZone:(NSZone *)zone{
     
     Item * copied = [[self.class alloc] init];
+    copied.center = self.center;
+    copied.rotationDegree = self.rotationDegree;
+    copied.scale = self.scale;
+    copied.indexInLayer = self.indexInLayer;
     
     return copied;
 }
@@ -29,39 +34,32 @@
 -(id)initWithCoder:(NSCoder *)decoder{
     if((self = [super init])) {
         
-        self.baseView = [decoder decodeObjectForKey:@"baseView"];
         
         self.backgroundImageView = [decoder decodeObjectForKey:@"backgroundImageView"];
         self.backgroundImageName = [decoder decodeObjectForKey:@"backgroundImageName"];
         self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
 
         self.itemName = [decoder decodeObjectForKey:@"itemName"];
+        self.indexInLayer = [decoder decodeObjectForKey:@"indexInLayer"];
         self.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.rotationDegree = [[decoder decodeObjectForKey:@"rotationDegree"] floatValue];
-
+        self.isTemplateItem = self.isTemplateItem;
     }
     return self;
 }
 
 -(void)encodeWithCoder:(NSCoder *)encoder{
 
-    [encoder encodeObject:self.baseView forKey:@"baseView"];
     [encoder encodeObject:self.itemName forKey:@"itemName"];
+    [encoder encodeObject:self.indexInLayer forKey:@"indexInLayer"];
     [encoder encodeObject:self.backgroundImageView forKey:@"backgroundImageView"];
     [encoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
     [encoder encodeObject:[NSValue valueWithCGPoint:self.center] forKey:@"center"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotationDegree"];
-
-
-}
-
--(void)scaleItem{
     
-    self.baseView.frameWidth *= self.scale;
-    self.baseView.frameHeight *= self.scale;
-        
+
 }
 
 @end

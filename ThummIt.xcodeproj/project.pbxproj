@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -92,6 +92,16 @@
 		6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA60258F26B600F7F539 /* CoreDataStack.swift */; };
 		6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */; };
 		6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */; };
+		6EAD5C2A25B562F900C42187 /* QuarterRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C2925B562F900C42187 /* QuarterRectangle.m */; };
+		6EAD5C4525B5843B00C42187 /* VerticalHalfRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C4425B5843B00C42187 /* VerticalHalfRectangle.m */; };
+		6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */; };
+		6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */; };
+		6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8A25B767C700C42187 /* AccountTableController.m */; };
+		6EAD5C9025B767C700C42187 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8B25B767C700C42187 /* AccountViewController.m */; };
+		6EAD5C9E25B767E200C42187 /* CustomerFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C9B25B767E200C42187 /* CustomerFeedback.m */; };
+		6EAD5C9F25B767E200C42187 /* CustomerFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C9C25B767E200C42187 /* CustomerFeedbackViewController.m */; };
+		6EAD5CA025B767E200C42187 /* CustomerFeedbackVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C9D25B767E200C42187 /* CustomerFeedbackVCViewController.m */; };
+		6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */; };
 		6EC4DFA625A85D860023485C /* Typography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA525A85D860023485C /* Typography.m */; };
 		6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */; };
 		6EC4DFC125A87BEC0023485C /* BGTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBB25A87BEB0023485C /* BGTextAttribute.m */; };
@@ -297,6 +307,25 @@
 		6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileManager.swift; sourceTree = "<group>"; };
 		6E9BEA77258F51BA00F7F539 /* NSDate+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		6EAD5C2825B562F900C42187 /* QuarterRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuarterRectangle.h; sourceTree = "<group>"; };
+		6EAD5C2925B562F900C42187 /* QuarterRectangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuarterRectangle.m; sourceTree = "<group>"; };
+		6EAD5C4325B5843B00C42187 /* VerticalHalfRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalHalfRectangle.h; sourceTree = "<group>"; };
+		6EAD5C4425B5843B00C42187 /* VerticalHalfRectangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalHalfRectangle.m; sourceTree = "<group>"; };
+		6EAD5C8525B767C700C42187 /* AccountTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableController.h; sourceTree = "<group>"; };
+		6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
+		6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		6EAD5C8925B767C700C42187 /* AccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewCell.h; sourceTree = "<group>"; };
+		6EAD5C8A25B767C700C42187 /* AccountTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableController.m; sourceTree = "<group>"; };
+		6EAD5C8B25B767C700C42187 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		6EAD5C8C25B767C700C42187 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		6EAD5C9825B767E200C42187 /* CustomerFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerFeedback.h; sourceTree = "<group>"; };
+		6EAD5C9925B767E200C42187 /* CustomerFeedbackVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerFeedbackVCViewController.h; sourceTree = "<group>"; };
+		6EAD5C9A25B767E200C42187 /* CustomerFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerFeedbackViewController.h; sourceTree = "<group>"; };
+		6EAD5C9B25B767E200C42187 /* CustomerFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerFeedback.m; sourceTree = "<group>"; };
+		6EAD5C9C25B767E200C42187 /* CustomerFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerFeedbackViewController.m; sourceTree = "<group>"; };
+		6EAD5C9D25B767E200C42187 /* CustomerFeedbackVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerFeedbackVCViewController.m; sourceTree = "<group>"; };
+		6EAD5CA425B7699F00C42187 /* UILabel+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
+		6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Additions.m"; sourceTree = "<group>"; };
 		6EC4DFA425A85D860023485C /* Typography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Typography.h; sourceTree = "<group>"; };
 		6EC4DFA525A85D860023485C /* Typography.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Typography.m; sourceTree = "<group>"; };
 		6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewContainer.m; sourceTree = "<group>"; };
@@ -407,8 +436,9 @@
 				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E4A18AC258A15F6008578BA /* Storyboard */,
 				6E8E79C22591F9600008C5FF /* MainTBVC */,
-				6E8E79D225921C8B0008C5FF /* ProjectVC */,
 				6E11912C2584D118000DD9C0 /* HomeVC */,
+				6E8E79D225921C8B0008C5FF /* ProjectVC */,
+				6EAD5C8325B767C700C42187 /* AccountVC */,
 				6E7DD4EA2587ABEA0014618E /* EditingVC */,
 				6E7DD50B25888C3A0014618E /* Model */,
 				6E7DD50F25888C400014618E /* Manager */,
@@ -521,6 +551,7 @@
 		6E4A17FB2588A529008578BA /* ETC */ = {
 			isa = PBXGroup;
 			children = (
+				6EAD5CAA25B769A300C42187 /* UILabel */,
 				6EC4DFC625A87DAF0023485C /* UIColor */,
 				6E4A17FA2588A521008578BA /* UIVIew */,
 				6E9BEA73258F519600F7F539 /* UIButton */,
@@ -956,8 +987,8 @@
 				6E9BEA4C258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift */,
 				6E9BEA4D258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift */,
 				6E9BEA60258F26B600F7F539 /* CoreDataStack.swift */,
-				6E8E799E258F82ED0008C5FF /* Migrator */,
 				6E9BEA44258F0AA300F7F539 /* ThummIt.xcdatamodeld */,
+				6E8E799E258F82ED0008C5FF /* Migrator */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -989,6 +1020,59 @@
 			path = NSDate;
 			sourceTree = "<group>";
 		};
+		6EAD5C8325B767C700C42187 /* AccountVC */ = {
+			isa = PBXGroup;
+			children = (
+				6EAD5C9725B767E200C42187 /* CustomerFeedbackVC */,
+				6EAD5C8425B767C700C42187 /* AccountTableController */,
+				6EAD5C8C25B767C700C42187 /* AccountViewController.h */,
+				6EAD5C8B25B767C700C42187 /* AccountViewController.m */,
+			);
+			path = AccountVC;
+			sourceTree = "<group>";
+		};
+		6EAD5C8425B767C700C42187 /* AccountTableController */ = {
+			isa = PBXGroup;
+			children = (
+				6EAD5C8525B767C700C42187 /* AccountTableController.h */,
+				6EAD5C8A25B767C700C42187 /* AccountTableController.m */,
+				6EAD5C8625B767C700C42187 /* AccountTableViewCell */,
+			);
+			path = AccountTableController;
+			sourceTree = "<group>";
+		};
+		6EAD5C8625B767C700C42187 /* AccountTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6EAD5C8925B767C700C42187 /* AccountTableViewCell.h */,
+				6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */,
+				6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */,
+			);
+			path = AccountTableViewCell;
+			sourceTree = "<group>";
+		};
+		6EAD5C9725B767E200C42187 /* CustomerFeedbackVC */ = {
+			isa = PBXGroup;
+			children = (
+				6EAD5C9825B767E200C42187 /* CustomerFeedback.h */,
+				6EAD5C9925B767E200C42187 /* CustomerFeedbackVCViewController.h */,
+				6EAD5C9A25B767E200C42187 /* CustomerFeedbackViewController.h */,
+				6EAD5C9B25B767E200C42187 /* CustomerFeedback.m */,
+				6EAD5C9C25B767E200C42187 /* CustomerFeedbackViewController.m */,
+				6EAD5C9D25B767E200C42187 /* CustomerFeedbackVCViewController.m */,
+			);
+			path = CustomerFeedbackVC;
+			sourceTree = "<group>";
+		};
+		6EAD5CAA25B769A300C42187 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				6EAD5CA425B7699F00C42187 /* UILabel+Additions.h */,
+				6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		6EC4DFA325A85D1E0023485C /* Styles */ = {
 			isa = PBXGroup;
 			children = (
@@ -996,6 +1080,10 @@
 				6E4A184A2588C99D008578BA /* BasicCircle.m */,
 				6E4A18432588C87A008578BA /* ChristmasCircle.h */,
 				6E4A18442588C87A008578BA /* ChristmasCircle.m */,
+				6EAD5C4325B5843B00C42187 /* VerticalHalfRectangle.h */,
+				6EAD5C4425B5843B00C42187 /* VerticalHalfRectangle.m */,
+				6EAD5C2825B562F900C42187 /* QuarterRectangle.h */,
+				6EAD5C2925B562F900C42187 /* QuarterRectangle.m */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -1133,7 +1221,6 @@
 				3B1E7C592EC1CAD320FCA65C /* Pods-ThummItTests.debug.xcconfig */,
 				2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -1246,6 +1333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E7DD4D42584E1D30014618E /* AlbumCollectionViewCell.xib in Resources */,
+				6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */,
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
 				B16FC62025ADCD9400E854C1 /* StickerCollectionViewCell.xib in Resources */,
@@ -1390,6 +1478,7 @@
 				6E7DD4A82584D4490014618E /* AlbumViewController+CollectionViewDelegate.m in Sources */,
 				6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */,
 				6E8E79D825921D140008C5FF /* ProjectTableController.m in Sources */,
+				6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */,
 				6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */,
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
 				6E20BCC025AEF58600BBA540 /* UndoManager.m in Sources */,
@@ -1411,13 +1500,18 @@
 				B16FC64925ADF90000E854C1 /* BasicCircleSticker.m in Sources */,
 				6E9BEA36258E696F00F7F539 /* SaveManager.m in Sources */,
 				6E9BEA46258F0AA300F7F539 /* ThummIt.xcdatamodeld in Sources */,
+				6EAD5C2A25B562F900C42187 /* QuarterRectangle.m in Sources */,
+				6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */,
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,
+				6EAD5C9025B767C700C42187 /* AccountViewController.m in Sources */,
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
 				6E7DD51625888C980014618E /* Template.m in Sources */,
 				6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */,
 				6E8E7A38259B2EA40008C5FF /* ItemManager.m in Sources */,
 				6E7DD4A22584D3C00014618E /* AlbumViewController.m in Sources */,
 				6E9BEA22258DECDB00F7F539 /* EditingLayerController.m in Sources */,
+				6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */,
+				6EAD5C9E25B767E200C42187 /* CustomerFeedback.m in Sources */,
 				6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */,
 				6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */,
 				6EC4DFCB25A87DAF0023485C /* UIColor+Additions.m in Sources */,
@@ -1433,6 +1527,7 @@
 				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
+				6EAD5C4525B5843B00C42187 /* VerticalHalfRectangle.m in Sources */,
 				6E8E79CB25921C830008C5FF /* ProjectViewController.m in Sources */,
 				6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */,
 				6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */,
@@ -1451,6 +1546,7 @@
 				6E8E7A24259B26CF0008C5FF /* ItemCollectionViewController.m in Sources */,
 				6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */,
 				6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */,
+				6EAD5C9F25B767E200C42187 /* CustomerFeedbackViewController.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
 				6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */,
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
@@ -1467,6 +1563,7 @@
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */,
 				6E1190E92584B163000DD9C0 /* SceneDelegate.m in Sources */,
+				6EAD5CA025B767E200C42187 /* CustomerFeedbackVCViewController.m in Sources */,
 				6EC4DFD525A885970023485C /* UITextView+Additions.m in Sources */,
 				6E8E79B82591F9570008C5FF /* MainTabBarViewController.m in Sources */,
 				6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */,

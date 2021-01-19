@@ -12,9 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ProjectTableController : NSObject <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) UITableView *tableView;
-@property (weak, nonatomic) UINavigationController *navigationController;
+@property (weak, nonatomic) UIViewController *projectVC;
 @property (strong, nonatomic) NSMutableArray *snapShots;
 @property (strong, nonatomic) NSMutableArray *projects;
+@property (nonatomic) NSUInteger offset;
 
 -(id)initWithTableView:(UITableView *)tableView;
 

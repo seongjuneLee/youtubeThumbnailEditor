@@ -35,7 +35,6 @@
             ret = block(ret, self[i]);
         }
     }@catch(NSException * e){
-        NSLog(@"reduce failed: %@",e.reason);
         return defaultValue;
     }
     return ret;

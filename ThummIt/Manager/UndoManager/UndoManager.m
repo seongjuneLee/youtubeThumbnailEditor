@@ -58,7 +58,7 @@
     NSData *data = self.undoRedoStacks[self.currentIndex];
     Project *project = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     project.coreDataStorage = SaveManager.sharedInstance.currentProject.coreDataStorage;
-    SaveManager.sharedInstance.currentProject = project;
+    [SaveManager.sharedInstance applyCurrentProject:project];
     [SaveManager.sharedInstance.currentProject save];
     [self sendPushnotiForUndoRedo];
     
@@ -78,7 +78,7 @@
     NSData *data = self.undoRedoStacks[self.currentIndex];
     Project *project = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     project.coreDataStorage = SaveManager.sharedInstance.currentProject.coreDataStorage;
-    SaveManager.sharedInstance.currentProject = project;
+    [SaveManager.sharedInstance applyCurrentProject:project];
     [SaveManager.sharedInstance.currentProject save];
     [self sendPushnotiForUndoRedo];
     

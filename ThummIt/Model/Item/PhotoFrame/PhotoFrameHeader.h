@@ -12,4 +12,7 @@
 #import "BasicCircle.h"
 #import "ChristmasCircle.h"
 
+#import "VerticalHalfRectangle.h"
+#import "QuarterRectangle.h"
+
 #endif /* BorderHeader_h */

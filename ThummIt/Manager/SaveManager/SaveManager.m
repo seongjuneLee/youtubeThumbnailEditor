@@ -58,10 +58,20 @@
     
     dispatch_sync(self.savingQueue, ^{
         [self.currentProject save];
-//        [UndoManager.sharedInstance addCurrentProjectToUndoRedoStack];
+        [UndoManager.sharedInstance addCurrentProjectToUndoRedoStack];
     });
     
 }
 
+-(void)applyCurrentProject:(Project *)project{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
+    NSString *stringDate = [dateFormatter stringFromDate:[NSDate date]];
+    project.lastEditedDate = stringDate;
+    self.currentProject = project;
+    [self.currentProject save];
+    
+}
 
 @end

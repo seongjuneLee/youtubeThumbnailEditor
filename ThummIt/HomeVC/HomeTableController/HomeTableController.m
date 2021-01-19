@@ -74,7 +74,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"tableview Indexpath row %ld",indexPath.row);
     
 }
 

@@ -43,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint originalImageViewCenter;
 @property (nonatomic) CGAffineTransform originalTransform;
 
+@property (weak, nonatomic) IBOutlet UIView *upperArea;
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
 @property (weak, nonatomic) IBOutlet UIButton *leftItem;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftItemWidthConstraint;

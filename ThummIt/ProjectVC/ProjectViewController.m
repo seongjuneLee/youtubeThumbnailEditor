@@ -13,7 +13,7 @@
 
 @implementation ProjectViewController
 
-- (void)viewDidLoad { 
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self connectProjectTableController];
@@ -21,21 +21,28 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [ProjectManager.sharedInstance setUpSnapShotFromProject];
-
-    if (ProjectManager.sharedInstance.projectSnapShots.count != ProjectManager.sharedInstance.fetchedProjectsCount) { // 프로젝트 갯수에 변화가 있다.
-        [ProjectManager.sharedInstance setUpSnapShotFromProject];
+    
+    NSUInteger projectsCount = ProjectManager.sharedInstance.fetchProjectsCount;
+    
+    if (self.originalCount != projectsCount) {
+        self.projectTableController.offset = 0;
+        if (projectsCount >= 10) {
+            self.projectTableController.offset = projectsCount - 10;
+        }
+        [ProjectManager.sharedInstance loadProjectSnapshots:self.projectTableController.offset];
+        self.projectTableController.snapShots = ProjectManager.sharedInstance.projectSnapShots;
+        [self.tableView reloadData];
     }
-    self.projectTableController.snapShots = ProjectManager.sharedInstance.projectSnapShots;
-    [self.tableView reloadData];
+    
+    self.originalCount = projectsCount;
     
 }
 
 -(void)connectProjectTableController{
     
     self.projectTableController = [[ProjectTableController alloc] initWithTableView:self.tableView];
-    self.projectTableController.navigationController = self.navigationController;
-    
+    self.projectTableController.projectVC = self;
+
 }
 
 @end

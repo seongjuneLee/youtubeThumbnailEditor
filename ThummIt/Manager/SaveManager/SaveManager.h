@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)save;
 -(void)addItem:(Item *)item;
 -(void)deleteItem:(Item *)item;
+-(void)applyCurrentProject:(Project *)project;
 
 @end
 

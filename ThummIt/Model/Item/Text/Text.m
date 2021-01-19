@@ -299,7 +299,7 @@
     return image;
 }
 
--(void)loadUIView{
+-(void)loadView{
     
     // 0. 뷰 새로 파기
     self.textView = [self makeTextView];
@@ -315,7 +315,6 @@
     
     // 2. 텍스트뷰컨테이너 세팅
     self.textViewContainer.center = self.center;
-    NSLog(@"center string %@",NSStringFromCGPoint(self.center));
     CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.scale, self.scale);
     self.textViewContainer.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
@@ -356,7 +355,6 @@
     
     // attributedString의 어트리뷰트 복구
     [string enumerateAttributesInRange:NSMakeRange(0, self.attributedText.length) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(NSDictionary<NSAttributedStringKey,id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
-        NSLog(@"attrs %@ range %@",attrs,NSStringFromRange(range));
     }];
     
     return contain;

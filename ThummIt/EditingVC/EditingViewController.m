@@ -106,17 +106,28 @@
     float safeAreaWidth = window.bounds.size.width;
     float imageViewWidth = self.view.frameWidth;
     for (Item *item in project.items) {
+        [item loadView];
         if (item.isTemplateItem) {
+            if ([item isKindOfClass:PhotoFrame.class]) {
+                PhotoFrame *photoFrame = (PhotoFrame *)item;
+                photoFrame.plusLabel.hidden = false;
+            }
             float itemX = imageViewWidth * item.center.x;
             float itemY = safeAreaHeight * 0.05 + safeAreaWidth * 9/32 + window.safeAreaInsets.top;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
-            [item scaleItem];
+            item.center = itemCenter;
             item.baseView.center = itemCenter;
             item.isTemplateItem = false;
         }
-        [self.view insertSubview:item.baseView belowSubview:self.gestureView];
+        if (item.indexInLayer.length != 0) {
+            [self.view insertSubview:item.baseView atIndex:[item.indexInLayer integerValue]];
+        } else {
+            [self.view insertSubview:item.baseView belowSubview:self.gestureView];
+        }
+        [self.view insertSubview:self.gestureView belowSubview:self.upperArea];
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
     }
-
+    
 }
 
 -(void)respondToUndoRedo{

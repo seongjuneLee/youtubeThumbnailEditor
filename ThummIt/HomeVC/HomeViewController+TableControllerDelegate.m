@@ -22,8 +22,8 @@
         }
     }
     Template *selectedTemplate = templates[collectionIndex];
-    SaveManager.sharedInstance.currentProject = [ProjectManager.sharedInstance generateNewProjectWithTemplate:selectedTemplate];
-    
+    Project *project =  [ProjectManager.sharedInstance generateNewProjectWithTemplate:selectedTemplate];
+    [SaveManager.sharedInstance applyCurrentProject:project];    
     
     UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
     EditingViewController *editingVC = (EditingViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingViewController"];

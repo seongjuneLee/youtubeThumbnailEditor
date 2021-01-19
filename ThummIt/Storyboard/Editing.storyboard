@@ -398,6 +398,7 @@
                         <outlet property="textButtonContainerView" destination="4DQ-QU-Zk5" id="0tZ-ey-VZw"/>
                         <outlet property="underAreaView" destination="ulM-C1-Guu" id="X8Q-cO-OHa"/>
                         <outlet property="undoButton" destination="QtR-ND-K0Y" id="5H1-yi-OUN"/>
+                        <outlet property="upperArea" destination="UhL-LO-vTX" id="sm6-pY-crA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gex-iF-IfD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
