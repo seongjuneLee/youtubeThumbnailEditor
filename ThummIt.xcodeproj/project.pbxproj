@@ -1025,8 +1025,8 @@
 			children = (
 				6EAD5C9725B767E200C42187 /* CustomerFeedbackVC */,
 				6EAD5C8425B767C700C42187 /* AccountTableController */,
-				6EAD5C8B25B767C700C42187 /* AccountViewController.m */,
 				6EAD5C8C25B767C700C42187 /* AccountViewController.h */,
+				6EAD5C8B25B767C700C42187 /* AccountViewController.m */,
 			);
 			path = AccountVC;
 			sourceTree = "<group>";
@@ -1044,9 +1044,9 @@
 		6EAD5C8625B767C700C42187 /* AccountTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				6EAD5C8925B767C700C42187 /* AccountTableViewCell.h */,
 				6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */,
 				6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */,
-				6EAD5C8925B767C700C42187 /* AccountTableViewCell.h */,
 			);
 			path = AccountTableViewCell;
 			sourceTree = "<group>";
