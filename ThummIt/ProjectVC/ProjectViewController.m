@@ -21,9 +21,20 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [ProjectManager.sharedInstance setUpSnapShotFromProject];
-    self.projectTableController.snapShots = ProjectManager.sharedInstance.projectSnapShots;
-    [self.tableView reloadData];
+    
+    NSUInteger projectsCount = ProjectManager.sharedInstance.fetchProjectsCount;
+    
+    if (self.originalCount != projectsCount) {
+        self.projectTableController.offset = 0;
+        if (projectsCount >= 10) {
+            self.projectTableController.offset = projectsCount - 10;
+        }
+        [ProjectManager.sharedInstance loadProjectSnapshots:self.projectTableController.offset];
+        self.projectTableController.snapShots = ProjectManager.sharedInstance.projectSnapShots;
+        [self.tableView reloadData];
+    }
+    
+    self.originalCount = projectsCount;
     
 }
 
@@ -31,7 +42,8 @@
     
     self.projectTableController = [[ProjectTableController alloc] initWithTableView:self.tableView];
     self.projectTableController.navigationController = self.navigationController;
-    
+    self.projectTableController.offset = self.offset;
+
 }
 
 @end

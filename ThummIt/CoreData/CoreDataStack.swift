@@ -124,6 +124,55 @@ class CoreDataStack: NSObject {
         
         return projects
     }
+    
+    @objc public class func fetchProjectsCount() -> NSInteger {
+        
+        guard let context = sharedInstance.mainContext else {
+            return 0
+        }
+        
+        let fetchRequest: NSFetchRequest<CoreDataProject> = CoreDataProject.fetchRequest()
+        
+        var count = 0
+        
+        context.performAndWait {
+            do {
+                count = try context.count(for: fetchRequest)
+            } catch {
+                // 에러
+                NSLog("에러");
+            }
+        }
+        
+        return count
+    }
+
+    @objc public class func fetch(fetchOffSet: NSInteger) -> [CoreDataProject] {
+        
+        guard let context = sharedInstance.mainContext else {
+            return [CoreDataProject]()
+        }
+        
+        let fetchRequest: NSFetchRequest<CoreDataProject> = CoreDataProject.fetchRequest(fetchOffset: fetchOffSet)
+        
+        var fetchObjects = [CoreDataProject]()
+        
+        context.performAndWait {
+            do {
+                fetchObjects = try context.fetch(fetchRequest)
+            } catch {
+                // 에러
+                NSLog("에러");
+            }
+        }
+        var projects = [CoreDataProject]()
+        projects.reserveCapacity(0)
+        for i in 0..<fetchObjects.count{
+            let project = fetchObjects[i]
+            projects.append(project)
+        }
+        return projects
+    }
 
     @objc public class func fetchProject(projectId: String) -> CoreDataProject? {
         guard let context = sharedInstance.mainContext else {

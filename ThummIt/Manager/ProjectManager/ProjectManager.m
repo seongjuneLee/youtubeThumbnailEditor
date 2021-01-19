@@ -94,6 +94,68 @@
     return project;
 }
 
+- (NSArray*)getRecentTenProjectsFromCoreDataWithOffset:(NSUInteger)offSet {
+    
+    NSArray<CoreDataProject*>* coreDataProjects = [CoreDataStack fetchWithFetchOffSet:offSet];
+    
+    NSMutableArray<Project*>* projects = [NSMutableArray new];
+    for (CoreDataProject* coreDataProject in coreDataProjects) {
+        
+        NSData* projectData;
+        if ([MigratorJul.shared isMigrated]) {
+            projectData = coreDataProject.projectData;
+        } else {
+            NSString* filePath = coreDataProject.projectFilePath;
+            if (filePath.length > 0) {
+                NSError* error;
+                projectData = [ProjectFileManager.sharedInstance readWithFilePath:filePath error:&error];
+                
+            }
+        }
+        if (projectData && [projectData isKindOfClass:NSData.class]) {
+            NSError* jsonError;
+            Project *project = [NSKeyedUnarchiver unarchiveObjectWithData:projectData];
+            project.projectID = coreDataProject.projectID;
+
+            if (jsonError){
+                // 에러
+            }
+            NSString* projectId = project.projectID;
+            if (projectId.length == 0) {
+                
+                
+                projectId = [self generateProjectID];
+
+            }
+
+            if (project) {
+                [projects addObject:project];
+            }
+
+        } else {
+            continue;
+        }
+    }
+    
+    [projects sortUsingComparator:^NSComparisonResult(Project*  _Nonnull prj1, Project*  _Nonnull prj2) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
+        NSDate *date1 = [dateFormatter dateFromString:prj1.lastEditedDate];
+        NSDate *date2 = [dateFormatter dateFromString:prj2.lastEditedDate];
+        if (date1.timeIntervalSince1970 < date2.timeIntervalSince1970) {
+            return NSOrderedDescending;
+        }
+        if (date1.timeIntervalSince1970 > date2.timeIntervalSince1970) {
+            return NSOrderedAscending;
+        }
+        
+        return NSOrderedSame;
+    }];
+    
+    return projects;
+}
+
+
 - (NSArray*)getAllProjectsFromCoreData {
     
     NSArray<CoreDataProject*>* coreDataProjects = [CoreDataStack fetchAllProjects];
@@ -155,11 +217,11 @@
     return projects;
 }
 
--(NSUInteger)fetchedProjectsCount{
+-(NSUInteger)fetchProjectsCount{
     
-    NSArray<CoreDataProject*>* coreDataProjects = [CoreDataStack fetchAllProjects];
+    NSUInteger projectsCount = [CoreDataStack fetchProjectsCount];
 
-    return coreDataProjects.count;
+    return projectsCount;
     
 }
 
@@ -174,10 +236,10 @@
 }
 
 
--(void)setUpSnapShotFromProject{
+-(NSMutableArray *)loadProjectSnapshots:(NSUInteger)offSet{
     
     self.projectSnapShots = [NSMutableArray array];
-    NSArray *projects = [ProjectManager.sharedInstance getAllProjectsFromCoreData];
+    NSArray *projects = [ProjectManager.sharedInstance getRecentTenProjectsFromCoreDataWithOffset:offSet];
     for (Project *project in projects) {
         UIScreen *screen = UIScreen.mainScreen;
         UIImageView *imageView = [[UIImageView alloc] init];
@@ -202,7 +264,7 @@
         UIImage *snapShot = [UIImage imageWithView:imageView];
         [self.projectSnapShots addObject:snapShot];
     }
-    
+    return self.projectSnapShots;
 }
 
 @end

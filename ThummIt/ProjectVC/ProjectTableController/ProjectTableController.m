@@ -51,8 +51,25 @@
     ProjectTableViewCell *cell = (ProjectTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ProjectTableViewCell" forIndexPath:indexPath];
     UIImage *snapShot = self.snapShots[indexPath.row];
     cell.backgroundImageView.image = snapShot;
-    
+    BOOL lastItemReached = [snapShot isEqual:self.snapShots.lastObject];
+    if (lastItemReached && indexPath.row == [self.snapShots count] - 1 && self.offset != 0)
+    {
+        if (self.offset < 10) {
+            self.offset = 0;
+        } else {
+            self.offset -= 10;
+        }
+        [self loadMoreWithOffset:self.offset];
+    }
+
     return cell;
+}
+
+-(void)loadMoreWithOffset:(NSUInteger)offset{
+    
+    [self.snapShots addObjectsFromArray:[ProjectManager.sharedInstance loadProjectSnapshots:offset]];
+    [self.tableView reloadData];
+
 }
 
 #pragma mark - 테이블 뷰 델리게이트
