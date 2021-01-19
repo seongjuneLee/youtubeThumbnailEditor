@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) ProjectTableController *projectTableController;
 @property (strong, nonatomic) NSMutableArray *projectSnapShots;
-@property (nonatomic) NSUInteger offset;
 @property (nonatomic) NSUInteger originalCount;
 
 @end

@@ -10,7 +10,7 @@
 #import "ProjectManager.h"
 #import "SaveManager.h"
 #import "ProjectTableViewCell.h"
-
+#import <Toast/Toast.h>
 @implementation ProjectTableController
 
 -(instancetype)init{ 
@@ -67,9 +67,23 @@
 
 -(void)loadMoreWithOffset:(NSUInteger)offset{
     
+    [self.projectVC.view makeToastActivity:CSToastPositionCenter];
+    NSUInteger beforeDataCounts = self.snapShots.count;
+    NSMutableArray *indexPathsToReload = [NSMutableArray new];
     [self.snapShots addObjectsFromArray:[ProjectManager.sharedInstance loadProjectSnapshots:offset]];
-    [self.tableView reloadData];
-
+    for (NSUInteger i = beforeDataCounts; i < self.snapShots.count - beforeDataCounts; i++) {
+        [indexPathsToReload addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView transitionWithView: self.tableView
+                          duration: 0.35f
+                           options: UIViewAnimationOptionTransitionCrossDissolve
+                        animations: ^(void){
+              [self.tableView reloadData];
+         }completion:^(BOOL finished) {
+            [self.projectVC.view hideToastActivity];
+        }];
+    });
 }
 
 #pragma mark - 테이블 뷰 델리게이트
@@ -81,7 +95,7 @@
     [SaveManager.sharedInstance applyCurrentProject:selectProject];
     UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
     EditingViewController *editingVC = (EditingViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingViewController"];
-    [self.navigationController pushViewController:editingVC animated:true];
+    [self.projectVC.navigationController pushViewController:editingVC animated:true];
     [SaveManager.sharedInstance save];
     
 }

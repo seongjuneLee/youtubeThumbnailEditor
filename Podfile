@@ -6,6 +6,8 @@ target 'ThummIt' do
   
   pod 'Parse'
   
+  pod 'Toast', '~> 4.0.0'
+
   # Pods for ThummIt
   
   target 'ThummItTests' do
