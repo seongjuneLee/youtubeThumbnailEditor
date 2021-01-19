@@ -18,13 +18,26 @@ extension CoreDataProject {
     
     @nonobjc public class func fetchRequest(projectId: String) -> NSFetchRequest<CoreDataProject> {
         let request = NSFetchRequest<CoreDataProject>(entityName: "CoreDataProject")
-        request.predicate = NSPredicate(format: "id == %@", projectId)
+        request.predicate = NSPredicate(format: "projectID == %@", projectId)
+        return request
+    }
+    
+    @nonobjc public class func fetchRequest(fetchOffset: NSInteger) -> NSFetchRequest<CoreDataProject> {
+        let request = NSFetchRequest<CoreDataProject>(entityName: "CoreDataProject")
+        
+        var fetchLimit = 10
+        let remainder = Int(ProjectManager.sharedInstance().fetchProjectsCount()) % fetchLimit
+        if fetchOffset == 0 && remainder > 0 {
+            fetchLimit = remainder
+        }
+        request.fetchLimit = fetchLimit
+        request.fetchOffset = fetchOffset
+        
         return request
     }
 
     @NSManaged public var projectData: Data?
     @NSManaged public var projectID: String?
-    @NSManaged public var projectTitle: String?
     @NSManaged public var projectFilePath: String?
 
 }

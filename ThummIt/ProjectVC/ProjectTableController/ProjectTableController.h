@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) NSMutableArray *snapShots;
 @property (strong, nonatomic) NSMutableArray *projects;
+@property (nonatomic) NSUInteger offset;
 
 -(id)initWithTableView:(UITableView *)tableView;
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -92,6 +92,8 @@
 		6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA60258F26B600F7F539 /* CoreDataStack.swift */; };
 		6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */; };
 		6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */; };
+		6EAD5C2A25B562F900C42187 /* QuarterRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C2925B562F900C42187 /* QuarterRectangle.m */; };
+		6EAD5C4525B5843B00C42187 /* VerticalHalfRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C4425B5843B00C42187 /* VerticalHalfRectangle.m */; };
 		6EC4DFA625A85D860023485C /* Typography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA525A85D860023485C /* Typography.m */; };
 		6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */; };
 		6EC4DFC125A87BEC0023485C /* BGTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBB25A87BEB0023485C /* BGTextAttribute.m */; };
@@ -297,6 +299,10 @@
 		6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileManager.swift; sourceTree = "<group>"; };
 		6E9BEA77258F51BA00F7F539 /* NSDate+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		6EAD5C2825B562F900C42187 /* QuarterRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuarterRectangle.h; sourceTree = "<group>"; };
+		6EAD5C2925B562F900C42187 /* QuarterRectangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuarterRectangle.m; sourceTree = "<group>"; };
+		6EAD5C4325B5843B00C42187 /* VerticalHalfRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalHalfRectangle.h; sourceTree = "<group>"; };
+		6EAD5C4425B5843B00C42187 /* VerticalHalfRectangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalHalfRectangle.m; sourceTree = "<group>"; };
 		6EC4DFA425A85D860023485C /* Typography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Typography.h; sourceTree = "<group>"; };
 		6EC4DFA525A85D860023485C /* Typography.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Typography.m; sourceTree = "<group>"; };
 		6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewContainer.m; sourceTree = "<group>"; };
@@ -956,8 +962,8 @@
 				6E9BEA4C258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift */,
 				6E9BEA4D258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift */,
 				6E9BEA60258F26B600F7F539 /* CoreDataStack.swift */,
-				6E8E799E258F82ED0008C5FF /* Migrator */,
 				6E9BEA44258F0AA300F7F539 /* ThummIt.xcdatamodeld */,
+				6E8E799E258F82ED0008C5FF /* Migrator */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -996,6 +1002,10 @@
 				6E4A184A2588C99D008578BA /* BasicCircle.m */,
 				6E4A18432588C87A008578BA /* ChristmasCircle.h */,
 				6E4A18442588C87A008578BA /* ChristmasCircle.m */,
+				6EAD5C4325B5843B00C42187 /* VerticalHalfRectangle.h */,
+				6EAD5C4425B5843B00C42187 /* VerticalHalfRectangle.m */,
+				6EAD5C2825B562F900C42187 /* QuarterRectangle.h */,
+				6EAD5C2925B562F900C42187 /* QuarterRectangle.m */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -1133,7 +1143,6 @@
 				3B1E7C592EC1CAD320FCA65C /* Pods-ThummItTests.debug.xcconfig */,
 				2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -1411,6 +1420,7 @@
 				B16FC64925ADF90000E854C1 /* BasicCircleSticker.m in Sources */,
 				6E9BEA36258E696F00F7F539 /* SaveManager.m in Sources */,
 				6E9BEA46258F0AA300F7F539 /* ThummIt.xcdatamodeld in Sources */,
+				6EAD5C2A25B562F900C42187 /* QuarterRectangle.m in Sources */,
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
 				6E7DD51625888C980014618E /* Template.m in Sources */,
@@ -1433,6 +1443,7 @@
 				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
+				6EAD5C4525B5843B00C42187 /* VerticalHalfRectangle.m in Sources */,
 				6E8E79CB25921C830008C5FF /* ProjectViewController.m in Sources */,
 				6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */,
 				6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */,

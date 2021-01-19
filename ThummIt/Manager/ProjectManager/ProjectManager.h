@@ -21,8 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray*)getAllProjectsFromCoreData;
 - (BOOL)deleteIdOfProject:(NSString*)projectId;
 -(NSString *)generateProjectID;
--(NSUInteger)fetchedProjectsCount;
--(void)setUpSnapShotFromProject;
+-(NSUInteger)fetchProjectsCount;
+-(NSMutableArray *)loadProjectSnapshots:(NSUInteger)offSet;
+- (NSArray*)getRecentTenProjectsFromCoreDataWithOffset:(NSUInteger)offSet;
 
 @end
 

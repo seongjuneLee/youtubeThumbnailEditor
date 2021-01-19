@@ -18,15 +18,8 @@
         self.center = CGPointMake(0.5, 0.5);
         self.scale = 1;
         self.rotationDegree = 0;
-        
-        float screenWidth = UIScreen.mainScreen.bounds.size.width;
-        float circleViewWidth = screenWidth*0.8/2;
-        self.baseView = [[UIView alloc] init];
-        self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);
-        self.baseView.clipsToBounds = true;
-        self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
-        self.baseView.backgroundColor = UIColor.clearColor;
-        [self addSubViewsToBaseView];
+        self.photoScale = 1;
+        self.photoRotationDegree = 0;
     }
     return self;
     
@@ -36,24 +29,34 @@
     
     PhotoFrame *copied = [super copyWithZone:zone];
     
-    UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.frame];
+    copied.photoScale = self.photoScale;
+    copied.photoCenter = self.photoCenter;
+    copied.photoRotationDegree = self.photoRotationDegree;
+    copied.isCircle = self.isCircle;
+    
+    UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.bounds];
     copiedBaseView.backgroundColor = self.baseView.backgroundColor;
     copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
-    copiedBaseView.layer.cornerRadius = self.baseView.layer.cornerRadius;
+    if (copied.isCircle) {
+        copiedBaseView.layer.cornerRadius = self.baseView.frameWidth/2;
+    }
+    copiedBaseView.transform =CGAffineTransformMakeRotation(self.rotationDegree);
+    copiedBaseView.center = self.center;
+    
     copied.baseView = copiedBaseView;
     
     UIImageView *copiedPhotoImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
     copiedPhotoImageView.image = [self.photoImageView.image copy];
+    copiedPhotoImageView.backgroundColor = UIColor.clearColor;
     copied.photoImageView = copiedPhotoImageView;
     copiedPhotoImageView.contentMode = self.photoImageView.contentMode;
     copied.itemName = [NSString stringWithString:self.itemName];
     [copied.baseView addSubview:copied.photoImageView];
+    
 
     copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
     copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
     [copied.baseView addSubview:copied.backgroundImageView];
-    copied.rotationDegree = self.rotationDegree;
-    copied.scale = self.scale;
 
 
     return copied;
@@ -70,13 +73,10 @@
                 self.phAsset = phAsset;
             }
         }
-        self.photoImageView = [decoder decodeObjectForKey:@"photoImageView"];
-        
-        NSString *imageURL = [decoder decodeObjectForKey:@"imageURL"];
-        if (imageURL.length) {
-            NSData *data = [[NSData alloc]initWithBase64EncodedString:imageURL options:NSDataBase64DecodingIgnoreUnknownCharacters];
-            self.photoImageView.image = [UIImage imageWithData:data];
-        }
+        self.photoCenter = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
+        self.photoRotationDegree = [[decoder decodeObjectForKey:@"photoRotationDegree"] floatValue];
+        self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
+        self.isCircle = [[decoder decodeObjectForKey:@"isCircle"] boolValue];
 
     }
     return self;
@@ -85,30 +85,35 @@
 -(void)encodeWithCoder:(NSCoder *)encoder{
     
     [super encodeWithCoder:encoder];
+    
     [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
-    NSString *imageURL = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    [encoder encodeObject:self.photoImageView forKey:@"photoImageView"];
-    [encoder encodeObject:imageURL forKey:@"imageURL"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.photoRotationDegree] forKey:@"photoRotationDegree"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.photoScale] forKey:@"photoScale"];
+    [encoder encodeObject:[NSValue valueWithCGPoint:self.photoCenter] forKey:@"photoCenter"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.isCircle] forKey:@"isCircle"];
 
 }
 
 
 #pragma mark - helper
-
--(void)addCircleImageWithName:(NSString *)imageName{
+-(void)loadView{
     
-    self.backgroundImageView = [[UIImageView alloc] init];
-    self.backgroundImageView.frameSize = self.baseView.frameSize;
-    self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
-    self.backgroundImageView.backgroundColor = UIColor.clearColor;
-    self.backgroundImageView.clipsToBounds = true;
-    self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
-    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    if (imageName) {
-        self.backgroundImageView.image = [UIImage imageNamed:imageName];
-        [self.baseView addSubview:self.backgroundImageView];
+    [self makeBaseView];
+    if (self.isCircle) {
+        self.baseView.layer.cornerRadius = (self.baseView.frameWidth)/2;
+        self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
+        self.backgroundImageView.clipsToBounds = true;
     }
 
+    self.baseView.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(self.rotationDegree), CGAffineTransformMakeScale(self.scale, self.scale));
+    self.baseView.center = self.center;
+    
+    [self addSubViewsToBaseView];
+
+}
+-(void)makeBaseView{
+    self.baseView = [[UIView alloc] init];
+    self.baseView.clipsToBounds = true;
 }
 
 -(void)addSubViewsToBaseView{
@@ -116,24 +121,35 @@
     self.plusLabel = [[UILabel alloc] init];
     self.plusLabel.text = NSLocalizedString(@"+ Photo", nil);
     self.plusLabel.textColor = UIColor.blackColor;
+    self.plusLabel.hidden = true;
     [self.plusLabel sizeToFit];
     self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
-    self.plusLabel.hidden = true;
     [self.baseView addSubview:self.plusLabel];
     
     self.photoImageView = [[UIImageView alloc] init];
     self.photoImageView.frameSize = self.baseView.frameSize;
+    self.photoImageView.backgroundColor = UIColor.clearColor;
     self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
+    if (self.phAsset) {
+        [PhotoManager.sharedInstance getImageFromPHAsset:self.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
+            self.photoImageView.image = image;
+        }];
+    }
     [self.baseView addSubview:self.photoImageView];
     
-}
-
--(void)scaleItem{
-    
-    [super scaleItem];
-    self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
-    self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
-    self.photoImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
+    if (self.backgroundImageName) {
+        self.backgroundImageView = [[UIImageView alloc] init];
+        self.backgroundImageView.frameSize = self.baseView.frameSize;
+        self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
+        self.backgroundImageView.backgroundColor = UIColor.clearColor;
+        self.backgroundImageView.clipsToBounds = true;
+        if (self.isCircle) {
+            self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
+        }
+        self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
+        [self.baseView addSubview:self.backgroundImageView];
+    }
 
 }
 

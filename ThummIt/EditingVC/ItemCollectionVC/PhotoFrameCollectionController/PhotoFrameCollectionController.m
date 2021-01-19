@@ -65,8 +65,16 @@
     } else if (indexPath.section == 1){
         photoFrame = ItemManager.sharedInstance.rectanglePhotoFrames[indexPath.item];
     }
-    photoFrame.photoImageView.image = self.firstPhoto;
-    cell.previewImageView.image = [photoFrame.baseView toImage];
+    [photoFrame loadView];
+
+    [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            photoFrame.photoImageView.image = image;
+            cell.previewImageView.image = [photoFrame.baseView toImage];
+
+        });
+    }];
+
     
     return cell;
 }
@@ -81,6 +89,7 @@
     } else if (indexPath.section == 1){
         photoFrame = ItemManager.sharedInstance.rectanglePhotoFrames[indexPath.item];
     }
+    [photoFrame loadView];
     [self.delegate didSelectPhotoFrame:photoFrame];
     
 }

@@ -16,20 +16,24 @@
         
         self.itemName = @"BasicCircle";
         self.backgroundImageName = @"christmasCircle";
-        [self addCircleImageWithName:self.backgroundImageName];
+        self.isCircle = true;
+        [self makeBaseView];
+        
     }
     return self;
     
 }
 
+-(void)makeBaseView{
+    [super makeBaseView];
+    float screenWidth = UIScreen.mainScreen.bounds.size.width;
+    float circleViewWidth = screenWidth*0.8/2;
+    self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);
+    self.baseView.backgroundColor = UIColor.whiteColor;
+}
 
 -(instancetype)initWithCoder:(NSCoder *)decoder{
     if((self = [super initWithCoder:decoder])) {
-        self.baseView.layer.cornerRadius = self.baseView.frameWidth/2;
-        self.baseView.clipsToBounds = true;
-        
-        self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
-        self.backgroundImageView.clipsToBounds = true;
     }
     return self;
 }
