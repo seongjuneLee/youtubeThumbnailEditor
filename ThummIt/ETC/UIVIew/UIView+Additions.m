@@ -160,7 +160,6 @@
     CGContextRelease(context);
     CGColorSpaceRelease(colorSpace);
     
-    //// //NSLog(@"pixel: %d %d %d %d", pixel[0], pixel[1], pixel[2], pixel[3]);
     
     UIColor *color = [UIColor colorWithRed:pixel[0]/255.0 green:pixel[1]/255.0 blue:pixel[2]/255.0 alpha:pixel[3]/255.0];
     
@@ -173,9 +172,7 @@
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, UIScreen.mainScreen.scale);
     
     [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
-    
-    // old style [self.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
+        
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;

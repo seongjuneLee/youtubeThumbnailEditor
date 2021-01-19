@@ -18,13 +18,12 @@ extension CoreDataProject {
     
     @nonobjc public class func fetchRequest(projectId: String) -> NSFetchRequest<CoreDataProject> {
         let request = NSFetchRequest<CoreDataProject>(entityName: "CoreDataProject")
-        request.predicate = NSPredicate(format: "id == %@", projectId)
+        request.predicate = NSPredicate(format: "projectID == %@", projectId)
         return request
     }
 
     @NSManaged public var projectData: Data?
     @NSManaged public var projectID: String?
-    @NSManaged public var projectTitle: String?
     @NSManaged public var projectFilePath: String?
 
 }

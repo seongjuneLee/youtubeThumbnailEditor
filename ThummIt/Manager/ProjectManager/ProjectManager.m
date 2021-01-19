@@ -59,8 +59,6 @@
     
     CoreDataProject* coreDataProject = [CoreDataStack fetchProjectWithProjectId:projectId];
     
-    // 정말로 removeEmptyProject()의 실행 결과로 모두 다 날아갔는지 알 수 없고,
-    // 이것이 project id없어 크래쉬나고 있는 원인이라 일단 남겨놓음
     if (!coreDataProject){
         return nil;
     }
@@ -78,7 +76,7 @@
     Project *project;
     if (projectData) {
         @try {
-            project = [NSKeyedUnarchiver unarchivedObjectOfClass:Project.class fromData:projectData error:nil];
+            project = [NSKeyedUnarchiver unarchiveObjectWithData:projectData];
             project.coreDataStorage = coreDataProject;
             project.projectID = projectId;
 
@@ -181,7 +179,6 @@
     self.projectSnapShots = [NSMutableArray array];
     NSArray *projects = [ProjectManager.sharedInstance getAllProjectsFromCoreData];
     for (Project *project in projects) {
-        
         UIScreen *screen = UIScreen.mainScreen;
         UIImageView *imageView = [[UIImageView alloc] init];
         float imageViewWidth = screen.bounds.size.width;
@@ -192,7 +189,7 @@
         for (Item *item in project.items) {
             [indexes addObject:[NSNumber numberWithInteger:[item.indexInLayer integerValue]]];
         }
-        NSNumber* smallest = [indexes valueForKeyPath:@"@min.self"];        
+        NSNumber* smallest = [indexes valueForKeyPath:@"@min.self"];
         for (Item *item  in project.items) {
             
             [item loadView];

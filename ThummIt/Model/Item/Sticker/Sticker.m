@@ -78,7 +78,6 @@
     
     self.baseView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(self.scale, self.scale), CGAffineTransformMakeRotation(self.rotationDegree));
     self.baseView.center = self.center;
-    NSLog(@"self.sticker.center indexInLayer %@",self.indexInLayer);
 }
 
 -(void)addBackgroundImageView{

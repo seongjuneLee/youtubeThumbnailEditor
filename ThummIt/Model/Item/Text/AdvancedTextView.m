@@ -204,8 +204,6 @@
         NSMutableAttributedString * string = self.backgroundAttributedTexts[[typo.bgTextAttributes indexOfObject:bgTextAttribute]];
         
         NSRange adjustedRange = NSMakeRange(range.location, range.length);
-//        NSLog(@"range %@",NSStringFromRange(range));
-//        NSLog(@"string.length %lu",(unsigned long)string.length);
         
         /* 이 코드 왜 있어야 하는지 조사하고 필요없으면 빼기 (빼면 out of range 나면서 튕기는 경우를 발견하긴 함) */
         if (string.length < range.location + range.length){
@@ -293,8 +291,6 @@
     }
     if(font){
         [string addAttribute:NSFontAttributeName value:font range:range];
-    } else {
-        NSLog(@"폰트 없음 %@ %@", typo.fontName, typo.fontName);
     }
     
     

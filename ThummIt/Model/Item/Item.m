@@ -45,7 +45,6 @@
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.rotationDegree = [[decoder decodeObjectForKey:@"rotationDegree"] floatValue];
         self.isTemplateItem = self.isTemplateItem;
-        NSLog(@"self.indexInLayer %@",self.indexInLayer);
     }
     return self;
 }

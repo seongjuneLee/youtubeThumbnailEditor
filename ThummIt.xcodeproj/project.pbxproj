@@ -962,8 +962,8 @@
 				6E9BEA4C258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift */,
 				6E9BEA4D258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift */,
 				6E9BEA60258F26B600F7F539 /* CoreDataStack.swift */,
-				6E8E799E258F82ED0008C5FF /* Migrator */,
 				6E9BEA44258F0AA300F7F539 /* ThummIt.xcdatamodeld */,
+				6E8E799E258F82ED0008C5FF /* Migrator */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
