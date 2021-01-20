@@ -29,8 +29,7 @@
         if (projectsCount >= 10) {
             self.projectTableController.offset = projectsCount - 10;
         }
-        [ProjectManager.sharedInstance loadProjectSnapshots:self.projectTableController.offset];
-        self.projectTableController.snapShots = ProjectManager.sharedInstance.projectSnapShots;
+        self.projectTableController.snapShots = [ProjectManager.sharedInstance loadProjectSnapshots:self.projectTableController.offset];
         [self.tableView reloadData];
     }
     

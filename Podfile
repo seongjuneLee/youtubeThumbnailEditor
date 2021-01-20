@@ -8,6 +8,8 @@ target 'ThummIt' do
   
   pod 'Toast', '~> 4.0.0'
 
+  pod 'Firebase/Analytics'
+
   # Pods for ThummIt
   
   target 'ThummItTests' do

@@ -23,7 +23,8 @@
 -(NSArray *)typos{
     
     NormalTypo *normal = [NormalTypo normalTypo];
-    return @[normal];
+    TrapezoidTypo *trapezoidTypo = [TrapezoidTypo trapezoidTypo];
+    return @[normal, trapezoidTypo];
 }
 
 @end

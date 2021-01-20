@@ -26,7 +26,9 @@
     
     Project* project = [CoreDataStack newProject];
     project.photoFrames = selectedTemplate.photoFrames;
-    
+    project.texts = selectedTemplate.texts;
+    project.stickers = selectedTemplate.stickers;
+    NSLog(@"selectedTemplate.texts %@",selectedTemplate.texts);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
     NSString *stringDate = [dateFormatter stringFromDate:[NSDate date]];

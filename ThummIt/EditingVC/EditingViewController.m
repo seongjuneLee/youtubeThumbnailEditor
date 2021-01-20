@@ -101,9 +101,6 @@
     
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
-    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
-    float safeAreaHeight = window.bounds.size.height - window.safeAreaInsets.top - window.safeAreaInsets.bottom;
-    float safeAreaWidth = window.bounds.size.width;
     float imageViewWidth = self.view.frameWidth;
     for (Item *item in project.items) {
         [item loadView];
@@ -113,11 +110,13 @@
                 photoFrame.plusLabel.hidden = false;
             }
             float itemX = imageViewWidth * item.center.x;
-            float itemY = safeAreaHeight * 0.05 + safeAreaWidth * 9/32 + window.safeAreaInsets.top;
+            float itemY = self.view.frameHeight * 0.1 - 4 +imageViewWidth * 9/16*item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
+            
             item.center = itemCenter;
             item.baseView.center = itemCenter;
             item.isTemplateItem = false;
+            item.baseView.transform = CGAffineTransformMakeRotation(degreesToRadians(item.rotationDegree));
         }
         if (item.indexInLayer.length != 0) {
             [self.view insertSubview:item.baseView atIndex:[item.indexInLayer integerValue]];
