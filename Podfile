@@ -7,6 +7,8 @@ target 'ThummIt' do
   pod 'Parse'
   
   pod 'Toast', '~> 4.0.0'
+  
+  pod 'KakaoSDK'
 
   # Pods for ThummIt
   

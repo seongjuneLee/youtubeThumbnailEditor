@@ -7,6 +7,7 @@
 
 #import "AccountViewController.h"
 #import "UILabel+Additions.h"
+#import <KakaoOpenSDK/KakaoOpenSDK.h>
 
 @interface AccountViewController ()
 
@@ -96,5 +97,39 @@
     self.signInView.alpha = 1; //
     
 }
+
+- (IBAction)kakaoSignInButton:(id)sender {
+    [[KOSession sharedSession] close];
+
+    [[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
+        if (error) {
+            NSLog(@"login failed. - error: %@", error);
+        }
+        else {
+            NSLog(@"login succeeded.");
+        }
+    }];
+}
+
+//logout button IBAction 작업필요
+//[[KOSession sharedSession] logoutAndCloseWithCompletionHandler:^(BOOL success, NSError *error) {
+//    if (error) {
+//        NSLog(@"failed to logout. - error: %@", error);
+//    }
+//    else {
+//        NSLog(@"logout succeeded.");
+//    }
+//}];
+
+//연결끊기(logout 후 다시 로그인 화면으로 전환해주기 위함)
+//[KOSessionTask unlinkTaskWithCompletionHandler:^(BOOL success, NSError *error) {
+//    if (error) {
+//        NSLog(@"unlink logout. - error: %@", error);
+//    }
+//    else {
+//        NSLog(@"unlink succeeded.");
+//    }
+//}];
+
 
 @end
