@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		360DF00D5FD66B67E5E14688 /* Pods_ThummIt_ThummItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680BA64B38C3256D2FAB10C5 /* Pods_ThummIt_ThummItUITests.framework */; };
 		6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190EB2584B163000DD9C0 /* HomeViewController.m */; };
 		6E1190EF2584B163000DD9C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190ED2584B163000DD9C0 /* Main.storyboard */; };
 		6E1190F12584B164000DD9C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190F02584B164000DD9C0 /* Assets.xcassets */; };
@@ -113,16 +112,13 @@
 		6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFDE25A887010023485C /* NSArray+Additions.m */; };
 		6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFEB25A892B00023485C /* NormalTypo.m */; };
 		6EC4DFF225A895240023485C /* TypoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFF125A895240023485C /* TypoManager.m */; };
-		6ED138EF25B82C0200012144 /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4AECC9587098E8A31AB9AC /* Pods_ThummIt.framework */; };
-		6ED138F025B82C0200012144 /* Pods_ThummIt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD4AECC9587098E8A31AB9AC /* Pods_ThummIt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6ED138FA25B8507A00012144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED138F925B8507A00012144 /* AppDelegate.swift */; };
 		6ED1398C25B872F600012144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1398B25B872F600012144 /* SceneDelegate.swift */; };
-		6ED1399525B8845C00012144 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED1399125B883AF00012144 /* KakaoOpenSDK.framework */; };
-		6ED1399625B8845C00012144 /* KakaoOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED1399125B883AF00012144 /* KakaoOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
-		80B05B713D452152BEE88103 /* Pods_ThummItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A2FCC54906C08B86F10FE /* Pods_ThummItTests.framework */; };
+		86BE8E8DCEAF4561F7A9E722 /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B689306FD489C375607E803F /* Pods_ThummIt.framework */; };
 		B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61625ADCC2A00E854C1 /* StickerCollectionController.m */; };
 		B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61D25ADCD9400E854C1 /* StickerCollectionViewCell.m */; };
 		B16FC62025ADCD9400E854C1 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16FC61E25ADCD9400E854C1 /* StickerCollectionViewCell.xib */; };
@@ -133,6 +129,8 @@
 		B16FC68125AF459800E854C1 /* StickerCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16FC67F25AF459800E854C1 /* StickerCollectionReusableView.xib */; };
 		B16FC68725AF76A600E854C1 /* BasicArrowSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC68625AF76A600E854C1 /* BasicArrowSticker.m */; };
 		B16FC68D25AF7F3900E854C1 /* XSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC68C25AF7F3900E854C1 /* XSticker.m */; };
+		DE5659CBAD8211E76D43B4F3 /* Pods_ThummItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD291F6CD2042726B78CE135 /* Pods_ThummItTests.framework */; };
+		EB65F0FF43F7752662B2B331 /* Pods_ThummIt_ThummItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D225829A33FA18174E8B18 /* Pods_ThummIt_ThummItUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,8 +157,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6ED138F025B82C0200012144 /* Pods_ThummIt.framework in Embed Frameworks */,
-				6ED1399625B8845C00012144 /* KakaoOpenSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,8 +167,8 @@
 		0B5232F300C748E7F6E41853 /* Pods-ThummIt-ThummItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.release.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.release.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.release.xcconfig"; sourceTree = "<group>"; };
 		2E4BF45F5F93A7594C289CF9 /* Pods-ThummIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.debug.xcconfig"; sourceTree = "<group>"; };
+		32D225829A33FA18174E8B18 /* Pods_ThummIt_ThummItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt_ThummItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1E7C592EC1CAD320FCA65C /* Pods-ThummItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.debug.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.debug.xcconfig"; sourceTree = "<group>"; };
-		680BA64B38C3256D2FAB10C5 /* Pods_ThummIt_ThummItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt_ThummItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1190E12584B163000DD9C0 /* ThummIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThummIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1190EA2584B163000DD9C0 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		6E1190EB2584B163000DD9C0 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -374,7 +370,7 @@
 		6EC4DFFD25A8955E0023485C /* TypoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypoHeader.h; sourceTree = "<group>"; };
 		6ED138F925B8507A00012144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED1398B25B872F600012144 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6ED1399125B883AF00012144 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -401,8 +397,8 @@
 		B16FC68625AF76A600E854C1 /* BasicArrowSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicArrowSticker.m; sourceTree = "<group>"; };
 		B16FC68B25AF7F3900E854C1 /* XSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSticker.h; sourceTree = "<group>"; };
 		B16FC68C25AF7F3900E854C1 /* XSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSticker.m; sourceTree = "<group>"; };
-		BD4AECC9587098E8A31AB9AC /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D26A2FCC54906C08B86F10FE /* Pods_ThummItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B689306FD489C375607E803F /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD291F6CD2042726B78CE135 /* Pods_ThummItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,8 +406,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ED138EF25B82C0200012144 /* Pods_ThummIt.framework in Frameworks */,
-				6ED1399525B8845C00012144 /* KakaoOpenSDK.framework in Frameworks */,
+				86BE8E8DCEAF4561F7A9E722 /* Pods_ThummIt.framework in Frameworks */,
+				6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +415,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80B05B713D452152BEE88103 /* Pods_ThummItTests.framework in Frameworks */,
+				DE5659CBAD8211E76D43B4F3 /* Pods_ThummItTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +423,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				360DF00D5FD66B67E5E14688 /* Pods_ThummIt_ThummItUITests.framework in Frameworks */,
+				EB65F0FF43F7752662B2B331 /* Pods_ThummIt_ThummItUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +471,6 @@
 				6E1190F02584B164000DD9C0 /* Assets.xcassets */,
 				6E1190F52584B164000DD9C0 /* Info.plist */,
 				6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */,
-				6E1190F62584B164000DD9C0 /* main.m */,
 			);
 			path = ThummIt;
 			sourceTree = "<group>";
@@ -1005,11 +1000,11 @@
 		6E9BEA3E258F099300F7F539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6ED1399125B883AF00012144 /* KakaoOpenSDK.framework */,
+				6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */,
 				6E9BEA3F258F099300F7F539 /* CoreData.framework */,
-				BD4AECC9587098E8A31AB9AC /* Pods_ThummIt.framework */,
-				680BA64B38C3256D2FAB10C5 /* Pods_ThummIt_ThummItUITests.framework */,
-				D26A2FCC54906C08B86F10FE /* Pods_ThummItTests.framework */,
+				B689306FD489C375607E803F /* Pods_ThummIt.framework */,
+				32D225829A33FA18174E8B18 /* Pods_ThummIt_ThummItUITests.framework */,
+				BD291F6CD2042726B78CE135 /* Pods_ThummItTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
