@@ -235,6 +235,9 @@ with the design you want.</string>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cad-WO-oP3" userLabel="Kakao Sign In Button">
                                         <rect key="frame" x="20.5" y="308.5" width="373" height="49"/>
+                                        <connections>
+                                            <action selector="kakaoSignInButton:" destination="J4R-UV-EGf" eventType="touchUpInside" id="bIr-ll-nGr"/>
+                                        </connections>
                                     </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEw-PO-a4G" userLabel="Facebook Sign In View">
                                         <rect key="frame" x="20.5" y="372.5" width="373" height="48.5"/>
