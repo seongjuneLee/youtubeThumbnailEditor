@@ -77,7 +77,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView transitionWithView: self.tableView
                           duration: 0.35f
-                           options: UIViewAnimationOptionTransitionCrossDissolve
+                           options: UIViewAnimationOptionCurveEaseIn
                         animations: ^(void){
               [self.tableView reloadData];
          }completion:^(BOOL finished) {

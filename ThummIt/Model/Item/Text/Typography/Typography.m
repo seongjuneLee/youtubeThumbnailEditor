@@ -21,6 +21,7 @@
         self.bgContentMode = UIViewContentModeScaleToFill;
         self.category = NSLocalizedString(@"Jolly", nil);
         self.alpha = 1;
+        
     }
     return self;
 }

@@ -18,7 +18,7 @@
         self.category = NSLocalizedString(@"Entertain", nil);
         self.backgroundColor = UIColor.blackColor;
         self.backgroundImageName = @"";
-        [self addPhotoFrames];
+        [self setUpPhotoFrame];
         
     }
     return self;
@@ -33,7 +33,7 @@
     
 }
 
--(void)addPhotoFrames{
+-(void)setUpPhotoFrame{
     
     self.photoFrames = [NSMutableArray new];
     PhotoFrame *photoFrame = [BasicCircle basicCircle];

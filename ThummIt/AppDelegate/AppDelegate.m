@@ -9,7 +9,9 @@
 #import "PhotoManager.h"
 #import "ProjectManager.h"
 #import "ThummIt-Swift.h"
-#import <Parse/Parse.h>
+
+@import Parse;
+@import FirebaseCore;
 @interface AppDelegate ()
 
 @end
@@ -26,6 +28,15 @@
         configuration.clientKey = @"BcwGJj2vgmdM";
         configuration.server = @"http://3.34.137.65/parse";
     }]];
+    
+    [FIRApp configure];
+    
+    for (NSString *family in [UIFont familyNames]) {
+        NSLog(@"family names :%@\n",family);
+        for (NSString *name in [UIFont fontNamesForFamilyName:family]) {
+            NSLog(@"font Name: %@\n",name);
+        }
+    }
     
     return YES;
 }

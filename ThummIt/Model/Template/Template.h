@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import "PhotoFrameHeader.h"
+#import "TypoHeader.h"
+
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -22,11 +24,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *backgroundImageName;
 @property (strong, nonatomic) UIColor *backgroundColor;
 @property (strong, nonatomic) NSMutableArray *texts;
+@property (strong, nonatomic) NSMutableArray *stickers;
 @property (strong, nonatomic) NSMutableArray *photoFrames;
 
 
 -(NSMutableArray *)items;
 -(void)centerLabel:(PhotoFrame *)photoFrame withSizeDelta:(float)delta;
+-(void)setUpPhotoFrame;
+-(void)setUpTexts;
+-(void)setUpStickers;
 
 @end
 

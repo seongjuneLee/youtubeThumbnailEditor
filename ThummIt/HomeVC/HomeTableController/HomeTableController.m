@@ -4,9 +4,6 @@
 //
 //  Created by 이성준 on 2020/12/16.
 //
-#define IDIOM    UI_USER_INTERFACE_IDIOM()
-#define IPAD     UIUserInterfaceIdiomPad
-
 #import "HomeTableController.h"
 #import "CategoryManager.h"
 #import "HomeTableViewCell.h"
@@ -84,8 +81,9 @@
     float safeAreaHeight = window.bounds.size.height - window.safeAreaInsets.top - window.safeAreaInsets.bottom;
     
     
-
-    if ( IDIOM == IPAD ) {
+    
+    UIDevice* thisDevice = [UIDevice currentDevice];
+    if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         return safeAreaHeight * 0.35;
     /* do something specifically for iPad. */
     } else {

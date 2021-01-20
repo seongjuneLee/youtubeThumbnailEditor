@@ -10,6 +10,8 @@
 #import "PhotoFrame.h"
 #import "ItemManager.h"
 #import "SaveManager.h"
+#import "GuideLine.h"
+#import "DashedGuideLine.h"
 @implementation EditingGestureController
 
 -(id)init{
@@ -154,6 +156,20 @@
 
     }
 
+}
+
+-(void)showGuideLineWithMagnet{
+    
+    GuideLine *guideLine = [[GuideLine alloc] init];
+    
+    // 1. 중앙
+    // 2. 상하 좌우
+    // 3. 아이템 테두리
+    
+    
+    DashedGuideLine *dashedLine = [[DashedGuideLine alloc] init];
+    
+    
 }
 
 -(void)gestureViewPannedForEditingPhotoMode:(EditingMode)editingMode withSender:(UIPanGestureRecognizer *)sender{
