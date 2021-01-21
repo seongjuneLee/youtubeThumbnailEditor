@@ -12,6 +12,8 @@ target 'ThummIt' do
 
   pod 'Firebase/Analytics'
 
+  pod 'FBSDKLoginKit'
+
   # Pods for ThummIt
   
   target 'ThummItTests' do
