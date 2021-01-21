@@ -294,6 +294,9 @@ with the design you want.</string>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIp-9c-AcC" userLabel="Google Sign In Button">
                                         <rect key="frame" x="20.5" y="436" width="373" height="49"/>
+                                        <connections>
+                                            <action selector="googleSignInButtonTapped:" destination="J4R-UV-EGf" eventType="touchUpInside" id="2OC-ZV-RzH"/>
+                                        </connections>
                                     </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAl-MI-wvB" userLabel="Apple Sign In View">
                                         <rect key="frame" x="20.5" y="500" width="373" height="48.5"/>
@@ -429,7 +432,7 @@ with the design you want.</string>
                         <outlet property="emailSignInView" destination="Jat-xW-3rg" id="eAW-80-SMV"/>
                         <outlet property="facebookSignInButton" destination="ohj-JL-ZZF" id="Adt-5T-5Cp"/>
                         <outlet property="facebookSignInView" destination="vEw-PO-a4G" id="80O-Pi-jR1"/>
-                        <outlet property="googleSignInButton" destination="mIp-9c-AcC" id="b29-aX-c4l"/>
+                        <outlet property="googleSignInButton" destination="mIp-9c-AcC" id="gmU-u5-kxg"/>
                         <outlet property="googleSignInView" destination="Vda-qq-IYP" id="9ep-4u-kpC"/>
                         <outlet property="header" destination="Xxw-vk-PoO" id="F8g-kr-6Di"/>
                         <outlet property="kakaoSignInButton" destination="Cad-WO-oP3" id="Qsg-4a-wXS"/>

@@ -222,7 +222,7 @@
 		6E698BB725B89DBC00CE86FB /* GuideLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideLine.m; sourceTree = "<group>"; };
 		6E698BBC25B8A21300CE86FB /* DashedGuideLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashedGuideLine.h; sourceTree = "<group>"; };
 		6E698BBD25B8A21300CE86FB /* DashedGuideLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashedGuideLine.m; sourceTree = "<group>"; };
-		6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditingViewController+Text.h"; sourceTree = "<group>"; };
 		6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EditingViewController+Text.m"; sourceTree = "<group>"; };
 		6E6E5BEE25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItemCollectionViewController+PhotoFrame.h"; sourceTree = "<group>"; };
@@ -470,7 +470,6 @@
 				6E4A17FB2588A529008578BA /* ETC */,
 				6E1190F02584B164000DD9C0 /* Assets.xcassets */,
 				6E1190F52584B164000DD9C0 /* Info.plist */,
-				6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */,
 			);
 			path = ThummIt;
 			sourceTree = "<group>";
@@ -635,6 +634,7 @@
 		6E4A18AD258A1607008578BA /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */,
 				6ED138F925B8507A00012144 /* AppDelegate.swift */,
 				6ED1398B25B872F600012144 /* SceneDelegate.swift */,
 			);
@@ -1292,6 +1292,7 @@
 				6E1190DF2584B163000DD9C0 /* Resources */,
 				5FC21CE4CB254EEFA61CE10B /* [CP] Embed Pods Frameworks */,
 				6ED138EC25B82BF900012144 /* Embed Frameworks */,
+				39B05FA6F26833BB1537F049 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1330,6 +1331,7 @@
 				6E1191042584B165000DD9C0 /* Frameworks */,
 				6E1191052584B165000DD9C0 /* Resources */,
 				FD808F0A78E1AC52137FC0A5 /* [CP] Embed Pods Frameworks */,
+				74D1CF64DDC014EEB7C42D04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1447,6 +1449,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		39B05FA6F26833BB1537F049 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5FC21CE4CB254EEFA61CE10B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1462,6 +1481,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74D1CF64DDC014EEB7C42D04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B6606DE7A5CAD71E30D443E6 /* [CP] Check Pods Manifest.lock */ = {

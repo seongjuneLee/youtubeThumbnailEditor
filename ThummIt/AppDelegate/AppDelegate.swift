@@ -11,9 +11,17 @@ import Parse
 import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
- 
+import FirebaseCore
+import FirebaseAuth
+import GoogleSignIn
+
+
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
+    
+
     
     var window: UIWindow?
     
@@ -48,6 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         KakaoSDKCommon.initSDK(appKey: "NATIVE_APP_KEY")
+        
+        FirebaseApp.configure()
+
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true;
     }
     
@@ -60,6 +74,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false
     }
     
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+      // ...
+      if let error = error {
+        // ...
+        return
+      }
 
+      guard let authentication = user.authentication else { return }
+      let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+      // ...
+    }
+
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
     
 }

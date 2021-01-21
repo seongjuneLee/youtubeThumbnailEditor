@@ -31,6 +31,7 @@
     
     [SaveManager.sharedInstance save];
     
+    
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
 
 }
@@ -167,5 +168,7 @@
     [self.bgColorButton addTarget:self action:@selector(bgColorButtonHoldRelease) forControlEvents:UIControlEventTouchCancel];
 
 }
+
+
 
 @end
