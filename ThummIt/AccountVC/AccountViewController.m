@@ -8,6 +8,9 @@
 #import "AccountViewController.h"
 #import "UILabel+Additions.h"
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
+@import FirebaseCore;
+@import FirebaseAuth;
+@import GoogleSignIn;
 
 @interface AccountViewController ()
 
@@ -20,6 +23,8 @@
     [self setSignInWithViewLayer];
     [self addButtonToPrivacyPolicyLabel];
     [self connectAccountTableController];
+    
+    [GIDSignIn sharedInstance].presentingViewController = self;
     
 }
 
@@ -96,6 +101,12 @@
     
     self.signInView.alpha = 1; //
     
+}
+
+- (IBAction)googleSignInButtonTapped:(id)sender {
+    
+    [GIDSignIn.sharedInstance signIn];
+
 }
 
 - (IBAction)kakaoSignInButton:(id)sender {

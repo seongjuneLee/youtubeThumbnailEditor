@@ -2,21 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>KOTRA_BOLD.otf</string>
-	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>kakao7d796ccb0943d83c4721fe5d3ff85e1c</string>
-		<string>kakaokompassauth</string>
-		<string>storykompassauth</string>
-		<string>kakaolink</string>
-		<string>kakaotalk-5.9.7</string>
-		<string>storylink</string>
-	</array>
-	<key>KAKAO_APP_KEY</key>
-	<string>7d796ccb0943d83c4721fe5d3ff85e1c</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -41,15 +26,38 @@
 				<string>kakao7d796ccb0943d83c4721fe5d3ff85e1c</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.341329154400-fobhjj6a2mdfr87l6defo62o5brefpo2</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>7d796ccb0943d83c4721fe5d3ff85e1c</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakao7d796ccb0943d83c4721fe5d3ff85e1c</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>kakaolink</string>
+		<string>kakaotalk-5.9.7</string>
+		<string>storylink</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses Cameras</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photo Library Access</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>KOTRA_BOLD.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

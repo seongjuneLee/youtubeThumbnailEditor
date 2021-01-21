@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AccountTableController.h"
-
+@import GoogleSignIn;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AccountViewController : UIViewController
@@ -30,13 +30,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIButton *kakaoSignInButton;
 @property (weak, nonatomic) IBOutlet UIButton *facebookSignInButton;
-@property (weak, nonatomic) IBOutlet UIButton *googleSignInButton;
+@property (weak, nonatomic) IBOutlet GIDSignInButton *googleSignInButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *appleSignInButton;
 @property (weak, nonatomic) IBOutlet UIButton *emailSignInButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *privacyPolicyLabel;
 
+
 - (IBAction)kakaoSignInButton:(id)sender;
+- (IBAction)googleSignInButtonTapped:(id)sender;
 
 @end
 
