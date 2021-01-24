@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSMutableArray *)criteriasForItemFrameWithCurrentItem:(Item *)currentItem withBGView:(UIView *)bgView;
 -(NSMutableArray *)frameTargetsWithCurrentItem:(Item *)item;
 - (CGFloat)distanceBetweenRect:(CGRect)rect andPoint:(CGPoint)point;
+-(NSMutableArray *)criteriaseForItemSizeWithBGView:(UIView *)bgView;
 
 @end
 

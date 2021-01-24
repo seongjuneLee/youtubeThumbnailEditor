@@ -16,13 +16,14 @@ typedef enum {
     GuideTargetTopRight = 2,
     GuideTargetBottomLeft = 3,
     GuideTargetBottomRight = 4,
+    GuideTargetSize = 4,
 
-    
 }GuideTargetType;
 @interface GuideTarget : NSObject
 
 @property (nonatomic) GuideTargetType guideTargetType;
 @property (nonatomic) CGPoint targetPoint;
+@property (nonatomic) CGPoint targetSize;
 
 @end
 

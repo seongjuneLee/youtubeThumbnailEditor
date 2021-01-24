@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) GuideLineView *guideLineView;
 @property (strong, nonatomic) DashedGuideLineView *dashedGuideLineView;
 @property (nonatomic) CGRect guideArea;
-@property (nonatomic) float guideValue;
+@property (nonatomic) CGSize guideSize;
 
 -(void)removeFromSuperView;
 

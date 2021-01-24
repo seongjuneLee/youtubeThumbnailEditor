@@ -4,6 +4,13 @@
 //
 //  Created by 이성준 on 2020/12/15.
 //
+#import <UIKit/UIKit.h>
+
+#import <Foundation/Foundation.h>
+
+#import "UIView+Additions.h"
+#import <Photos/Photos.h>
+
 
 #ifndef WYT_PrefixHeader_pch
 #define WYT_PrefixHeader_pch
@@ -11,12 +18,11 @@
 #define degreesToRadians( degrees ) ( ( degrees ) / 180.0 * M_PI )
 #define TEXT_FONT_SIZE 25
 
-#import <UIKit/UIKit.h>
+static inline CGFloat RadiansToDegrees(CGFloat radians) {
+    return radians * 180 / M_PI;
+};
 
-#import <Foundation/Foundation.h>
 
-#import "UIView+Additions.h"
-#import <Photos/Photos.h>
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

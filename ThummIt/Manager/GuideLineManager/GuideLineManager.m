@@ -59,6 +59,46 @@
     
 }
 
+-(NSMutableArray *)criteriaseForItemSizeWithBGView:(UIView *)bgView{
+    
+    NSMutableArray *criterias = [NSMutableArray array];
+    // bgView
+    // 0.5
+    CGSize quarterSize = CGSizeMake(0.5 * bgView.frameWidth, 0.5 * bgView.frameHeight);
+    CGSize verticalHalfSize = CGSizeMake(0.5 * bgView.frameWidth, bgView.frameHeight);
+    CGSize horizontalHalfSize = CGSizeMake(bgView.frameWidth, bgView.frameHeight * 0.5);
+    CGSize equalSize = bgView.frameSize;
+
+    GuideLine *quarterLine =[[GuideLine alloc] init];
+    quarterLine.guideSize = quarterSize;
+    
+    GuideLine *verticalHalfLine =[[GuideLine alloc] init];
+    verticalHalfLine.guideSize = verticalHalfSize;
+
+    GuideLine *horizontalHalfLine =[[GuideLine alloc] init];
+    horizontalHalfLine.guideSize = horizontalHalfSize;
+
+    GuideLine *equalLine =[[GuideLine alloc] init];
+    equalLine.guideSize = equalSize;
+    
+    [criterias addObject:quarterLine];
+    [criterias addObject:verticalHalfLine];
+    [criterias addObject:horizontalHalfLine];
+    [criterias addObject:equalLine];
+
+    // item
+    // 1
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+        GuideLine *itemLine =[[GuideLine alloc] init];
+        itemLine.guideSize = item.baseView.frameSize;
+        itemLine.criteriaItem = item;
+        [criterias addObject:itemLine];
+    }
+    
+    return criterias;
+    
+}
+
 -(NSMutableArray *)criteriasForFrameWithBGView:(UIView *)bgView{
     
     NSMutableArray *criterias = [NSMutableArray array];
@@ -66,41 +106,35 @@
     float padding = 4;
     float guideLineThickness = 2;
     GuideLine *centerXGuide = [[GuideLine alloc] init];
-    centerXGuide.guideLineView.frame = CGRectMake(bgView.centerX - guideLineThickness, bgView.frameY, guideLineThickness, bgView.frameHeight);
+    centerXGuide.guideLineView.frame = CGRectMake(bgView.centerX - guideLineThickness/2, bgView.frameY, guideLineThickness, bgView.frameHeight);
     CGRect centerX = CGRectMake(bgView.centerX - padding, bgView.frameY, padding*2, bgView.frameHeight);
     centerXGuide.guideArea = centerX;
-    centerXGuide.guideValue = bgView.centerX;
     
     
     GuideLine *centerYGuide = [[GuideLine alloc] init];
-    centerYGuide.guideLineView.frame = CGRectMake(0, bgView.centerY - guideLineThickness, bgView.frameWidth, guideLineThickness);
+    centerYGuide.guideLineView.frame = CGRectMake(0, bgView.centerY - guideLineThickness/2, bgView.frameWidth, guideLineThickness);
     CGRect centerY = CGRectMake(0, bgView.centerY - padding, bgView.frameWidth, padding*2);
     centerYGuide.guideArea = centerY;
-    centerYGuide.guideValue = bgView.centerY;
 
     CGRect top = CGRectMake(0, bgView.frameY - padding, bgView.frameWidth, padding*2);
     GuideLine *topGuide = [[GuideLine alloc] init];
-    topGuide.guideLineView.frame = CGRectMake(0, bgView.frameY, bgView.frameWidth, guideLineThickness);
+    topGuide.guideLineView.frame = CGRectMake(0, bgView.frameY - guideLineThickness/2, bgView.frameWidth, guideLineThickness);
     topGuide.guideArea = top;
-    topGuide.guideValue = bgView.frameY;
 
     CGRect bottom = CGRectMake(0, bgView.frameY + bgView.frameHeight - padding, bgView.frameWidth, padding*2);
     GuideLine *bottomGuide = [[GuideLine alloc] init];
     bottomGuide.guideLineView.frame =CGRectMake(0, bgView.frameY + bgView.frameHeight - guideLineThickness/2, bgView.frameWidth, guideLineThickness);
     bottomGuide.guideArea = bottom;
-    bottomGuide.guideValue = bgView.frameY + bgView.frameHeight;
 
     CGRect leading = CGRectMake(-padding, bgView.frameY, padding*2, bgView.frameHeight);
     GuideLine *leadingGuide = [[GuideLine alloc] init];
-    leadingGuide.guideLineView.frame =CGRectMake(0, bgView.frameY, guideLineThickness, bgView.frameHeight);
+    leadingGuide.guideLineView.frame =CGRectMake(-guideLineThickness/2, bgView.frameY, guideLineThickness, bgView.frameHeight);
     leadingGuide.guideArea = leading;
-    leadingGuide.guideValue = bgView.frameWidth;
 
     CGRect trailing = CGRectMake(bgView.frameWidth-padding, bgView.frameY, padding*2, bgView.frameHeight);
     GuideLine *trailingGuide = [[GuideLine alloc] init];
     trailingGuide.guideLineView.frame =CGRectMake(bgView.frameWidth-guideLineThickness, bgView.frameY, guideLineThickness, bgView.frameHeight);
     trailingGuide.guideArea = trailing;
-    trailingGuide.guideValue = 0;
 
     [criterias addObject:centerXGuide];
     [criterias addObject:centerYGuide];
@@ -146,42 +180,36 @@
             centerXGuide.dashedGuideLineView.frame =CGRectMake(item.baseView.centerX,minFrameY- guideLineThickness/2,guideLineThickness,(maxFrameY + maxFrameYItem.baseView.frameHeight) - minFrameY);
             [centerXGuide.dashedGuideLineView makeViewDashed];
             centerXGuide.guideArea = centerX;
-            centerXGuide.guideValue = item.baseView.centerX;
 
             CGRect centerY = CGRectMake(0, item.baseView.centerY - padding, bgView.frameWidth, 10);
             GuideLine *centerYGuide = [[GuideLine alloc] init];
             centerYGuide.dashedGuideLineView.frame =CGRectMake(minFrameX, item.baseView.centerY, (maxFrameX +maxFrameXItem.baseView.frameWidth) - minFrameX, guideLineThickness);
             [centerYGuide.dashedGuideLineView makeViewDashed];
             centerYGuide.guideArea = centerY;
-            centerYGuide.guideValue = item.baseView.centerY;
 
             CGRect top = CGRectMake(0, item.baseView.frameY - padding, bgView.frameWidth, 10);
             GuideLine *topGuide = [[GuideLine alloc] init];
             topGuide.dashedGuideLineView.frame =CGRectMake(minFrameX, item.baseView.frameY, (maxFrameX +maxFrameXItem.baseView.frameWidth) - minFrameX, guideLineThickness);
             [topGuide.dashedGuideLineView makeViewDashed];
             topGuide.guideArea = top;
-            topGuide.guideValue = item.baseView.frameY;
 
             CGRect bottom = CGRectMake(0, item.baseView.frameY + item.baseView.frameHeight - padding, bgView.frameWidth, 10);
             GuideLine *bottomGuide = [[GuideLine alloc] init];
             bottomGuide.dashedGuideLineView.frame =CGRectMake(minFrameX, item.baseView.frameY + item.baseView.frameHeight, (maxFrameX +maxFrameXItem.baseView.frameWidth) - minFrameX, guideLineThickness);
             [bottomGuide.dashedGuideLineView makeViewDashed];
             bottomGuide.guideArea = bottom;
-            bottomGuide.guideValue = item.baseView.frameY + item.baseView.frameHeight;
 
             CGRect leading = CGRectMake(item.baseView.frameX - padding, bgView.frameY, 10, bgView.frameHeight);
             GuideLine *leadingGuide = [[GuideLine alloc] init];
             leadingGuide.dashedGuideLineView.frame =CGRectMake(item.baseView.frameX, minFrameY, guideLineThickness, (maxFrameY +maxFrameYItem.baseView.frameHeight) - minFrameY);
             [leadingGuide.dashedGuideLineView makeViewDashed];
             leadingGuide.guideArea = leading;
-            leadingGuide.guideValue = item.baseView.frameX;
 
             CGRect trailing = CGRectMake(item.baseView.frameX + item.baseView.frameWidth-padding, bgView.frameY, 10, bgView.frameHeight);
             GuideLine *trailingGuide = [[GuideLine alloc] init];
             trailingGuide.dashedGuideLineView.frame =CGRectMake(item.baseView.frameX + item.baseView.frameWidth, minFrameY, guideLineThickness, (maxFrameY +maxFrameYItem.baseView.frameHeight) - minFrameY);
             [trailingGuide.dashedGuideLineView makeViewDashed];
             trailingGuide.guideArea = trailing;
-            leadingGuide.guideValue = item.baseView.frameX + item.baseView.frameWidth;
             
             [criterias addObject:centerXGuide];
             [criterias addObject:centerYGuide];
