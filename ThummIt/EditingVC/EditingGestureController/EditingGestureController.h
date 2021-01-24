@@ -52,6 +52,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint originalSecondFinger;
 @property (nonatomic) CGPoint originalItemViewCenter;
 
+@property (strong, nonatomic) NSMutableArray *guideLines;
+@property (strong, nonatomic) NSMutableArray *itemGuideLines;
+@property (strong, nonatomic) NSMutableArray *itemGuideTargets;
+@property (nonatomic) BOOL isMagneting;
+@property (nonatomic) float shortestDistance;
 
 @property (nonatomic) BOOL isPinchingItem;
 

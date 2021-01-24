@@ -2,24 +2,24 @@
 //  GuideLine.h
 //  ThummIt
 //
-//  Created by 이성준 on 2021/01/21.
+//  Created by 이성준 on 2021/01/23.
 //
 
-#import <UIKit/UIKit.h>
-
+#import <Foundation/Foundation.h>
+#import "GuideLineView.h"
+#import "DashedGuideLineView.h"
+#import "Item.h"
 NS_ASSUME_NONNULL_BEGIN
-typedef enum {
-    Center = 0,
-    Frame = 1,
-    Top = 2,
-    Bottom = 3,
-    Leading = 4,
-    Trailing = 5,
-}GuideType;
 
-@interface GuideLine : UIView
+@interface GuideLine : NSObject
 
-@property (nonatomic) GuideType guideType;
+@property (strong, nonatomic) Item *criteriaItem;
+@property (strong, nonatomic) GuideLineView *guideLineView;
+@property (strong, nonatomic) DashedGuideLineView *dashedGuideLineView;
+@property (nonatomic) CGRect guideArea;
+@property (nonatomic) float guideValue;
+
+-(void)removeFromSuperView;
 
 @end
 

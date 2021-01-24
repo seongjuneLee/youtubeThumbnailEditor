@@ -10,8 +10,9 @@
 #import "PhotoFrame.h"
 #import "ItemManager.h"
 #import "SaveManager.h"
+#import "GuideLineManager.h"
 #import "GuideLine.h"
-#import "DashedGuideLine.h"
+#import "GuideTarget.h"
 @implementation EditingGestureController
 
 -(id)init{
@@ -127,8 +128,9 @@
         }
         [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         [self.delegate readyUIForPanning];
+        self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
+        self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
 
-        
     } else if (sender.state == UIGestureRecognizerStateChanged){
         
         if (!editingVC.currentItem) {
@@ -142,6 +144,16 @@
         self.originalPoint = [sender locationInView:editingVC.gestureView];
         editingVC.currentItem.center = editingVC.currentItem.baseView.center;
         
+        [self guideWithDeltaPoint:deltaPoint];
+        [self showGuideLineForSituation];
+
+        
+        for (GuideLine *guideLine in self.itemGuideLines) {
+            
+        }
+        self.isMagneting = false;
+
+
     } else if (sender.state == UIGestureRecognizerStateEnded){
         if (!editingVC.currentItem) {
             return;
@@ -153,24 +165,111 @@
         if (!self.isPinching) {
             [SaveManager.sharedInstance save];
         }
+        
+        for (GuideLine *guideLine in self.guideLines) {
+            [guideLine.guideLineView removeFromSuperview];
+        }
+        self.isMagneting = false;
 
     }
 
 }
 
--(void)showGuideLineWithMagnet{
+-(void)guideWithDeltaPoint:(CGPoint)deltaPoint{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    float padding = 5;
+            
+    if (!self.isMagneting && (fabs(deltaPoint.x) < 0.6  && fabs(deltaPoint.y) < 0.6)) {
+        GuideTarget *target;
+        for (GuideLine *guideLine in self.guideLines) {
+            if ([self findClosestTargetWithTargets:guideLine]) {
+                target = [self findClosestTargetWithTargets:guideLine];
+                NSLog(@"target point %@",NSStringFromCGPoint(target.targetPoint));
+                if (target.guideTargetType == GuideTargetCenter) {
+                    if (fabs(guideLine.guideLineView.centerX - target.targetPoint.x)<= padding) {
+                        editingVC.currentItem.baseView.centerX = guideLine.guideLineView.centerX;
+                        self.isMagneting = true;
+                    }
+                    if (fabs(guideLine.guideLineView.centerY - target.targetPoint.y)<= padding) {
+                        editingVC.currentItem.baseView.centerY = guideLine.guideLineView.centerY;
+                        self.isMagneting = true;
+                    }
+                } else if (target.guideTargetType == GuideTargetTopLeft) {
+                    
+                    if (fabs(guideLine.guideLineView.centerX - target.targetPoint.x)<= padding) {
+                        editingVC.currentItem.baseView.centerX = guideLine.guideLineView.centerX + editingVC.currentItem.baseView.frameWidth/2;
+                        self.isMagneting = true;
+                    }
+                    if (fabs(guideLine.guideLineView.centerY - target.targetPoint.y)<= padding) {
+                        editingVC.currentItem.baseView.centerY = guideLine.guideLineView.centerY + editingVC.currentItem.baseView.frameHeight/2;
+                        self.isMagneting = true;
+                    }
+
+                } else if (target.guideTargetType == GuideTargetTopRight){
+                    if (fabs(guideLine.guideLineView.centerX - target.targetPoint.x)<= padding) {
+                        editingVC.currentItem.baseView.centerX = guideLine.guideLineView.centerX - editingVC.currentItem.baseView.frameWidth/2;
+                        self.isMagneting = true;
+                    }
+                    if (fabs(guideLine.guideLineView.centerY - target.targetPoint.y)<= padding) {
+                        editingVC.currentItem.baseView.centerY = guideLine.guideLineView.centerY + editingVC.currentItem.baseView.frameHeight/2;
+                        self.isMagneting = true;
+                    }
+                } else if (target.guideTargetType == GuideTargetBottomLeft){
+                    if (fabs(guideLine.guideLineView.centerX - target.targetPoint.x)<= padding) {
+                        editingVC.currentItem.baseView.centerX = guideLine.guideLineView.centerX + editingVC.currentItem.baseView.frameWidth/2;
+                        self.isMagneting = true;
+                    }
+                    if (fabs(guideLine.guideLineView.centerY - target.targetPoint.y)<= padding) {
+                        editingVC.currentItem.baseView.centerY = guideLine.guideLineView.centerY - editingVC.currentItem.baseView.frameHeight/2;
+                        self.isMagneting = true;
+                    }
+                }
+                
+            } else {
+                self.isMagneting = false;
+            }
+        }
+    }
+
+}
+
+-(void)showGuideLineForSituation{
     
-    GuideLine *guideLine = [[GuideLine alloc] init];
-    
-    // 1. 중앙
-    // 2. 상하 좌우
-    // 3. 아이템 테두리
-    
-    
-    DashedGuideLine *dashedLine = [[DashedGuideLine alloc] init];
-    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    for (GuideLine *guideLine in self.guideLines) {
+        if ([self findClosestTargetWithTargets:guideLine]) {
+            if (![editingVC.view.subviews containsObject:guideLine.guideLineView]) {
+                [editingVC.view addSubview:guideLine.guideLineView];
+            }
+        } else {
+            [guideLine.guideLineView removeFromSuperview];
+        }
+    }
     
 }
+
+
+-(GuideTarget *)findClosestTargetWithTargets:(GuideLine *)guideLine{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    self.shortestDistance = 100000;
+    NSMutableArray *targets = [GuideLineManager.sharedInstance frameTargetsWithCurrentItem:editingVC.currentItem];
+    GuideTarget *foundGuideTarget;
+    for (GuideTarget *guideTarget in targets) {
+        if (CGRectContainsPoint(guideLine.guideArea, guideTarget.targetPoint) ) {
+            if ([GuideLineManager.sharedInstance distanceBetweenRect:guideLine.guideLineView.frame andPoint:guideTarget.targetPoint] < self.shortestDistance) {
+                foundGuideTarget = guideTarget;
+                self.shortestDistance = [GuideLineManager.sharedInstance distanceBetweenRect:guideLine.guideLineView.frame andPoint:guideTarget.targetPoint];
+            }
+        }
+    }
+    
+    
+    return foundGuideTarget;
+}
+
 
 -(void)gestureViewPannedForEditingPhotoMode:(EditingMode)editingMode withSender:(UIPanGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
