@@ -8,6 +8,8 @@
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "EditingViewController+AlbumVCDelegate.h"
 #import "ItemCollectionViewController+Button.h"
+#import "EditingViewController+Buttons.h"
+#import "ItemCollectionViewController+Text.h"
 
 @implementation EditingViewController (GestureControllerDelegate)
 
@@ -25,6 +27,22 @@
         [self showAlbumVC];
         [self setCurrentPhotoSelectedOnAlbumVC];
         
+    }
+    else if([item isKindOfClass:Text.class]){
+        
+        Text *text = (Text *)item;
+        self.currentItem = text;
+        self.currentText = text;
+        [self.modeController setNavigationItemRespondToEditingMode:AddingTextMode];
+        [text.textView becomeFirstResponder];
+        [self.layerController showTransparentView];
+        [self.layerController bringCurrentItemToFront:self.currentItem];
+        self.itemCollectionVC.itemType = TextType;
+        [self addItemCollectionVC];
+        if (self.recentTypo == nil) {
+            self.recentTypo = [NormalTypo normalTypo];
+        }
+        [self.itemCollectionVC didSelectTypo:self.recentTypo];
     }
     [self.layerController showTransparentView];
     [self.layerController bringCurrentItemToFront:item];

@@ -8,6 +8,7 @@
 #import "EditingViewController.h"
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "EditingViewController+Buttons.h"
+#import "UIImageView+Additions.h"
 
 @interface EditingViewController ()
 
@@ -32,7 +33,8 @@
     [SaveManager.sharedInstance save];
     
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
-
+    
+    [self makeThumbCircle];
 }
 
 -(void)viewWillLayoutSubviews{
@@ -47,6 +49,23 @@
     
 }
 
+-(void)makeThumbCircle{
+    
+    CGRect trackRect = [self.hueSlider trackRectForBounds:self.hueSlider.bounds];
+    CGRect thumbRect = [self.hueSlider thumbRectForBounds:self.hueSlider.bounds trackRect:trackRect value:self.hueSlider.value];
+    
+    self.thumbCircleView = [[UIView alloc] init];
+//    self.thumbCircleView.clipsToBounds = true;
+    self.thumbCircleView.userInteractionEnabled = false;
+    float scale = 0.7;
+    self.thumbCircleView.layer.cornerRadius = (thumbRect.size.width*scale/2);
+    self.thumbCircleView.frameWidth = (thumbRect.size.width)*scale;
+    self.thumbCircleView.frameHeight = (thumbRect.size.height)*scale;
+
+    self.hueSliderImageView.layer.zPosition = -5;
+    [self.view addSubview:self.thumbCircleView];
+    self.thumbCircleView.layer.zPosition = 5;
+}
 
 -(void)basicUIUXSetting{
     
@@ -167,5 +186,31 @@
     [self.bgColorButton addTarget:self action:@selector(bgColorButtonHoldRelease) forControlEvents:UIControlEventTouchCancel];
 
 }
+- (IBAction)sliderValueChanged:(UISlider *)sender{
+    
+    //thumbPoint 정의
+    CGRect trackRect = [self.hueSlider trackRectForBounds:self.hueSlider.bounds];
+    CGRect thumbRect = [self.hueSlider thumbRectForBounds:self.hueSlider.bounds
+                                             trackRect:trackRect
+                                                 value:self.hueSlider.value];
+    
+    float scale = self.hueSliderImageView.bounds.size.width/(self.hueSlider.bounds.size.width-thumbRect.size.width);
+    CGPoint thumbPoint = CGPointMake(thumbRect.origin.x*scale, thumbRect.origin.y+self.hueSliderImageView.frameSize.height/2);
+    
+    CGPoint thumbCircleViewOrigin = CGPointMake(thumbRect.origin.x+(thumbRect.size.width - self.thumbCircleView.frameWidth)/2,thumbRect.origin.y+(thumbRect.size.height - self.thumbCircleView.frameHeight)/2);
+    CGPoint thumbCenter = CGPointMake(thumbRect.origin.x + 15.5, 15);
+
+    self.thumbCircleView.center = [self.view convertPoint:thumbCenter fromView:self.hueSlider];
+    
+    UIImage *maxImage = [UIImage imageNamed:@"hueSlider"];
+    UIImage *minImage = [UIImage imageNamed:@"hueSlider"];
+    self.hueSliderImageView.image = [UIImage imageNamed:@"hueSlider"];
+    
+    [self.hueSlider setMaximumTrackImage:maxImage forState:UIControlStateNormal];
+    [self.hueSlider setMinimumTrackImage:minImage forState:UIControlStateNormal];
+    self.currentText.textView.textColor = [self.hueSliderImageView colorOfPoint:thumbPoint];
+    self.thumbCircleView.backgroundColor =[self.hueSliderImageView colorOfPoint:thumbPoint];
+
+};
 
 @end

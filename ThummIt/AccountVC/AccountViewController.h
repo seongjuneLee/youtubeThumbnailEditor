@@ -37,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *privacyPolicyLabel;
 
 - (IBAction)kakaoSignInButton:(id)sender;
+- (IBAction)facebookSignInButton:(id)sender;
 
 @end
 

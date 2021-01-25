@@ -11,6 +11,7 @@ import Parse
 import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
+import FBSDKCoreKit
  
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,16 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
     
-    //kakao
+    //kakao_login
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application_kakao(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         KakaoSDKCommon.initSDK(appKey: "NATIVE_APP_KEY")
         return true;
     }
     
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application_kakao(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if (AuthApi.isKakaoTalkLoginUrl(url)) {
             return AuthController.handleOpenUrl(url: url)
         }
@@ -60,6 +61,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false
     }
     
+    //facebook_login
+        
+        func application_facebook(
+            _ application: UIApplication,
+            didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+        ) -> Bool {
+              
+            ApplicationDelegate.shared.application(
+                application,
+                didFinishLaunchingWithOptions: launchOptions
+            )
 
-    
-}
+            return true
+        }
+              
+        func application_facebook(
+            _ app: UIApplication,
+            open url: URL,
+            options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+        ) -> Bool {
+
+            ApplicationDelegate.shared.application(
+                app,
+                open: url,
+                sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+            )
+
+        }
+
+ }
+        

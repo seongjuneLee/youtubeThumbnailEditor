@@ -8,6 +8,7 @@
 #import "AccountViewController.h"
 #import "UILabel+Additions.h"
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface AccountViewController ()
 
@@ -97,6 +98,8 @@
     self.signInView.alpha = 1; //
     
 }
+//kakao_login
+
 
 - (IBAction)kakaoSignInButton:(id)sender {
     [[KOSession sharedSession] close];
@@ -130,6 +133,31 @@
 //        NSLog(@"unlink succeeded.");
 //    }
 //}];
+
+
+//facebook_login
+
+- (IBAction)facebookSignInButton:(id)sender {
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+
+        // User is logged in, do work such as go to next view controller.
+        // 토큰 가지고 페이스북 유저 정보 가져오기.
+    }
+    else {
+        FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+        [login logInWithPermissions: @[@"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+            if (error) {
+                NSLog(@"Process error");
+            } else if(result. isCancelled) {
+                NSLog(@"Cancelled");}
+            else {
+                NSLog(@"Logged in");
+                }
+        }];
+    }
+    
+}
 
 
 @end

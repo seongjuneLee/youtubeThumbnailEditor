@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 타이포
 @property (strong, nonatomic) Typography *typo;
 @property (strong, nonatomic) NSMutableArray *typoRangeArray;
+@property (nonatomic) BOOL isTypedByUser;
 
 -(void)resize;
 

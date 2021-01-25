@@ -18,8 +18,15 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     Text *text = [[Text alloc] init];
     text.textView.delegate = editingVC;
-    [self showPlaceHolderOfText:text withTypo:typo];
     [text applyTypo:typo];
+
+    text.text = text.typo.name;
+    text.textView.text = text.text;
+    [text resize];
+    text.textViewContainer.center = editingVC.bgView.center;
+    text.center = text.textViewContainer.center;
+
+    NSLog(@"");
 
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지
@@ -42,7 +49,6 @@
     text.textView.frameSize = text.textViewContainer.frameSize;
     [text.textViewContainer insertSubview:text.placeholderImageView belowSubview:text.textView];
     text.textViewContainer.center = editingVC.bgView.center;
-    text.center = editingVC.bgView.center;
     
 }
 

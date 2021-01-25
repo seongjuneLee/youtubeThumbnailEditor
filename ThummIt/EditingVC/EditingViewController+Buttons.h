@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)stickerButtonHoldRelease;
 -(void)bgColorButtonHoldDown;
 -(void)bgColorButtonHoldRelease;
+-(void)addItemCollectionVC;
 
 @end
 
