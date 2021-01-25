@@ -266,6 +266,9 @@ with the design you want.</string>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohj-JL-ZZF" userLabel="Facebook Sign In Button">
                                         <rect key="frame" x="20.5" y="372.5" width="373" height="48.5"/>
+                                        <connections>
+                                            <action selector="facebookSignInButton:" destination="J4R-UV-EGf" eventType="touchUpInside" id="O86-2p-Hrr"/>
+                                        </connections>
                                     </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vda-qq-IYP" userLabel="Google Sign In View">
                                         <rect key="frame" x="20.5" y="436" width="373" height="49"/>

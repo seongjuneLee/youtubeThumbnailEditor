@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (IBAction)kakaoSignInButton:(id)sender;
 - (IBAction)googleSignInButtonTapped:(id)sender;
+- (IBAction)facebookSignInButton:(id)sender;
 
 @end
 

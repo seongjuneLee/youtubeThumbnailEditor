@@ -190,11 +190,16 @@
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
     [self.layerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
-    [SaveManager.sharedInstance addItem:self.currentItem];
-    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+    if (self.currentText.isTypedByUser) {
+        [SaveManager.sharedInstance addItem:self.currentItem];
+        for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+        }
+        [SaveManager.sharedInstance save];
+    } else {
+        [self.currentText.baseView removeFromSuperview];
     }
-    [SaveManager.sharedInstance save];
+
 
     [self.currentText.textView resignFirstResponder];
     self.currentItem = nil;

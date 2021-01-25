@@ -81,6 +81,7 @@
     [encoder encodeObject:[NSValue valueWithCGPoint:self.center] forKey:@"center"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotation"];
+    [encoder encodeObject:[NSNumber numberWithBool:self.isTypedByUser] forKey:@"isTypedByUser"];
 
 }
 
@@ -103,7 +104,8 @@
         self.textAlignment = [[decoder decodeObjectForKey:@"textAlignment"] integerValue];
         self.rotationDegree = [[decoder decodeObjectForKey:@"rotation"] floatValue];
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
-        
+        self.isTypedByUser = [[decoder decodeObjectForKey:@"isTypedByUser"] boolValue];
+
     }
     return self;
 }
