@@ -90,8 +90,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
             return AuthController.handleOpenUrl(url: url)
         }
         
-        return GIDSignIn.sharedInstance().handle(url)
-
+        if GIDSignIn.sharedInstance().handle(url) {
+            return GIDSignIn.sharedInstance().handle(url)
+        }
+        return false;
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
