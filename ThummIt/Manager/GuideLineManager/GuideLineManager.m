@@ -112,23 +112,23 @@
     
     
     GuideLine *centerYGuide = [[GuideLine alloc] init];
-    centerYGuide.guideLineView.frame = CGRectMake(0, bgView.centerY - guideLineThickness/2, bgView.frameWidth, guideLineThickness);
+    centerYGuide.guideLineView.frame = CGRectMake(0, bgView.centerY - 1, bgView.frameWidth, guideLineThickness);
     CGRect centerY = CGRectMake(0, bgView.centerY - padding, bgView.frameWidth, padding*2);
     centerYGuide.guideArea = centerY;
 
     CGRect top = CGRectMake(0, bgView.frameY - padding, bgView.frameWidth, padding*2);
     GuideLine *topGuide = [[GuideLine alloc] init];
-    topGuide.guideLineView.frame = CGRectMake(0, bgView.frameY - guideLineThickness/2, bgView.frameWidth, guideLineThickness);
+    topGuide.guideLineView.frame = CGRectMake(0, bgView.frameY, bgView.frameWidth, guideLineThickness);
     topGuide.guideArea = top;
 
     CGRect bottom = CGRectMake(0, bgView.frameY + bgView.frameHeight - padding, bgView.frameWidth, padding*2);
     GuideLine *bottomGuide = [[GuideLine alloc] init];
-    bottomGuide.guideLineView.frame =CGRectMake(0, bgView.frameY + bgView.frameHeight - guideLineThickness/2, bgView.frameWidth, guideLineThickness);
+    bottomGuide.guideLineView.frame =CGRectMake(0, bgView.frameY + bgView.frameHeight - guideLineThickness, bgView.frameWidth, guideLineThickness);
     bottomGuide.guideArea = bottom;
 
     CGRect leading = CGRectMake(-padding, bgView.frameY, padding*2, bgView.frameHeight);
     GuideLine *leadingGuide = [[GuideLine alloc] init];
-    leadingGuide.guideLineView.frame =CGRectMake(-guideLineThickness/2, bgView.frameY, guideLineThickness, bgView.frameHeight);
+    leadingGuide.guideLineView.frame =CGRectMake(0, bgView.frameY, guideLineThickness, bgView.frameHeight);
     leadingGuide.guideArea = leading;
 
     CGRect trailing = CGRectMake(bgView.frameWidth-padding, bgView.frameY, padding*2, bgView.frameHeight);

@@ -159,7 +159,7 @@
         editingVC.currentItem.center = editingVC.currentItem.baseView.center;
         
         [self guideWithDeltaPoint:deltaPoint];
-        [self itemGuideWithDelta:deltaPoint];
+//        [self itemGuideWithDelta:deltaPoint];
         [self showGuideLineForSituation];
 
         self.isMagneting = false;
@@ -195,7 +195,7 @@
     
     float padding = 5;
     
-    if (!self.isMagneting && (fabs(deltaPoint.x) < 0.4  && fabs(deltaPoint.y) < 0.4)) {
+    if ((fabs(deltaPoint.x) < 0.4  && fabs(deltaPoint.y) < 0.4)) {
         GuideTarget *target;
         
         for (GuideLine *guideLine in self.itemGuideLines) {
@@ -214,34 +214,33 @@
                 } else if (target.guideTargetType == GuideTargetTopLeft) {
                     
                     if (fabs(guideLine.dashedGuideLineView.centerX - target.targetPoint.x)<= padding) {
-                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX + editingVC.currentItem.baseView.frameWidth/2;
+                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX - 1 + editingVC.currentItem.baseView.frameWidth/2;
                         self.isMagneting = true;
                     }
                     if (fabs(guideLine.dashedGuideLineView.centerY - target.targetPoint.y)<= padding) {
-                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY + editingVC.currentItem.baseView.frameHeight/2;
+                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY - 1 + editingVC.currentItem.baseView.frameHeight/2;
                         self.isMagneting = true;
                     }
                     
                 } else if (target.guideTargetType == GuideTargetTopRight){
                     if (fabs(guideLine.dashedGuideLineView.centerX - target.targetPoint.x)<= padding) {
-                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX - editingVC.currentItem.baseView.frameWidth/2;
+                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX - 1 - editingVC.currentItem.baseView.frameWidth/2;
                         self.isMagneting = true;
                     }
                     if (fabs(guideLine.dashedGuideLineView.centerY - target.targetPoint.y)<= padding) {
-                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY + editingVC.currentItem.baseView.frameHeight/2;
+                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY - 1 + editingVC.currentItem.baseView.frameHeight/2;
                         self.isMagneting = true;
                     }
                 } else if (target.guideTargetType == GuideTargetBottomLeft){
                     if (fabs(guideLine.dashedGuideLineView.centerX - target.targetPoint.x)<= padding) {
-                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX + editingVC.currentItem.baseView.frameWidth/2;
+                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX - 1 + editingVC.currentItem.baseView.frameWidth/2;
                         self.isMagneting = true;
                     }
                     if (fabs(guideLine.dashedGuideLineView.centerY - target.targetPoint.y)<= padding) {
-                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY - editingVC.currentItem.baseView.frameHeight/2;
+                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY - 1 - editingVC.currentItem.baseView.frameHeight/2;
                         self.isMagneting = true;
                     }
                 }
-                
             }
         }
     }
@@ -249,58 +248,61 @@
 
 -(void)guideWithDeltaPoint:(CGPoint)deltaPoint{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-
+    
     float padding = 5;
-            
+    CGRect centerXRect = CGRectMake(editingVC.bgView.centerX - padding, editingVC.bgView.frameY, padding*2, editingVC.bgView.frameHeight);
+    CGRect leadingRect = CGRectMake(editingVC.bgView.frameX - padding, editingVC.bgView.frameY, padding*2, editingVC.bgView.frameHeight);
+    CGRect trailingRect = CGRectMake(editingVC.bgView.frameX + editingVC.bgView.frameWidth - padding, editingVC.bgView.frameY, padding*2, editingVC.bgView.frameHeight);
+    
+    CGRect centerYRect = CGRectMake(0, editingVC.bgView.centerY -padding, editingVC.bgView.frameWidth, padding*2);
+    CGRect bottomYRect = CGRectMake(0, editingVC.bgView.frameY +editingVC.bgView.frameHeight -padding, editingVC.bgView.frameWidth, padding*2);
+    CGRect topYRect = CGRectMake(0, editingVC.bgView.frameY -padding, editingVC.bgView.frameWidth, padding*2);
+    
+    CGPoint center = editingVC.currentItem.baseView.center;
+    
     if (!self.isMagneting && (fabs(deltaPoint.x) < 0.4  && fabs(deltaPoint.y) < 0.4)) {
-        GuideTarget *target;
-        for (GuideLine *guideLine in self.guideLines) {
-            if ([self findClosestTargetWithTargets:guideLine]) {
-                target = [self findClosestTargetWithTargets:guideLine];
-                if (target.guideTargetType == GuideTargetCenter) {
-                    if (fabs(guideLine.guideLineView.centerX - target.targetPoint.x)<= padding) {
-                        editingVC.currentItem.baseView.centerX = guideLine.guideLineView.centerX;
-                        self.isMagneting = true;
-                    }
-                    if (fabs(guideLine.guideLineView.centerY - target.targetPoint.y)<= padding) {
-                        editingVC.currentItem.baseView.centerY = guideLine.guideLineView.centerY;
-                        self.isMagneting = true;
-                    }
-                } else if (target.guideTargetType == GuideTargetTopLeft) {
-                    
-                    if (fabs(guideLine.guideLineView.centerX - target.targetPoint.x)<= padding) {
-                        editingVC.currentItem.baseView.centerX = guideLine.guideLineView.centerX + editingVC.currentItem.baseView.frameWidth/2;
-                        self.isMagneting = true;
-                    }
-                    if (fabs(guideLine.guideLineView.centerY - target.targetPoint.y)<= padding) {
-                        editingVC.currentItem.baseView.centerY = guideLine.guideLineView.centerY + editingVC.currentItem.baseView.frameHeight/2;
-                        self.isMagneting = true;
-                    }
-
-                } else if (target.guideTargetType == GuideTargetTopRight){
-                    if (fabs(guideLine.guideLineView.centerX - target.targetPoint.x)<= padding) {
-                        editingVC.currentItem.baseView.centerX = guideLine.guideLineView.centerX - editingVC.currentItem.baseView.frameWidth/2;
-                        self.isMagneting = true;
-                    }
-                    if (fabs(guideLine.guideLineView.centerY - target.targetPoint.y)<= padding) {
-                        editingVC.currentItem.baseView.centerY = guideLine.guideLineView.centerY + editingVC.currentItem.baseView.frameHeight/2;
-                        self.isMagneting = true;
-                    }
-                } else if (target.guideTargetType == GuideTargetBottomLeft){
-                    if (fabs(guideLine.guideLineView.centerX - target.targetPoint.x)<= padding) {
-                        editingVC.currentItem.baseView.centerX = guideLine.guideLineView.centerX + editingVC.currentItem.baseView.frameWidth/2;
-                        self.isMagneting = true;
-                    }
-                    if (fabs(guideLine.guideLineView.centerY - target.targetPoint.y)<= padding) {
-                        editingVC.currentItem.baseView.centerY = guideLine.guideLineView.centerY - editingVC.currentItem.baseView.frameHeight/2;
-                        self.isMagneting = true;
-                    }
-                }
-                
-            } else {
-                self.isMagneting = false;
-            }
+        
+        // 센터
+        if (CGRectContainsPoint(centerXRect, center)) {
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.centerX;
         }
+        if (CGRectContainsPoint(centerYRect, center)) {
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.centerY;
+        }
+        CGPoint topRight = CGPointMake(editingVC.currentItem.baseView.frameX + editingVC.currentItem.baseView.frameWidth, editingVC.currentItem.baseView.frameY);
+        
+        // 탑 오른쪽
+        if (CGRectContainsPoint(centerXRect, topRight)) {
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.centerX - editingVC.currentItem.baseView.frameWidth/2;
+        } else if (CGRectContainsPoint(trailingRect, topRight)) {
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.frameX + editingVC.bgView.frameWidth - editingVC.currentItem.baseView.frameWidth/2;
+        }
+        
+        if (CGRectContainsPoint(topYRect, topRight)) {
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.frameY + editingVC.currentItem.baseView.frameHeight/2;
+        } else if (CGRectContainsPoint(centerYRect, topRight)) {
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.centerY + editingVC.currentItem.baseView.frameHeight/2;
+        }
+        
+        // 왼쪽 바텀
+        CGPoint leftBottom = CGPointMake(editingVC.currentItem.baseView.frameX, editingVC.currentItem.baseView.frameY + editingVC.currentItem.baseView.frameHeight);
+        
+        if (CGRectContainsPoint(centerXRect, leftBottom)) {
+            //1 중앙
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.centerX + editingVC.currentItem.baseView.frameWidth/2;
+        } else if (CGRectContainsPoint(leadingRect, leftBottom)) {
+            //2 leading
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.frameX + editingVC.currentItem.baseView.frameWidth/2;
+        }
+        // bottom
+        if (CGRectContainsPoint(centerYRect, leftBottom)) {
+            //1 중앙
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.centerY - editingVC.currentItem.baseView.frameHeight/2;
+        } else if (CGRectContainsPoint(bottomYRect, leftBottom)) {
+            //2 바텀
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.frameY +editingVC.bgView.frameHeight - editingVC.currentItem.baseView.frameHeight/2;
+        }
+        self.isMagneting = true;
     }
 
 }
