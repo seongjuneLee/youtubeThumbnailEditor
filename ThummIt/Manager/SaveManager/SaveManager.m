@@ -24,7 +24,7 @@
 -(Template*)currentTemplate{
     
     Template *currentTemplate;
-    for (NSArray *templates in TemplateManager.sharedInstance.templates) {
+    for (NSArray *templates in TemplateManager.sharedInstance.templateDatas) {
         for (Template *template in templates) {
             if ([self.currentProject.selectedTemplateName isEqualToString:template.templateName]) {
                 currentTemplate = template;
