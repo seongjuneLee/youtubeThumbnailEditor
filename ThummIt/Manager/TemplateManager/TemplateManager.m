@@ -20,17 +20,6 @@
     return sharedInstance;
 }
 
--(NSArray *)templates{
-    
-    
-    Template *circleTemplate = [CircleTemplate circleTemplate];
-    Template *christmasCircle = [ChristmasCircleTemplate christmasCircleTemplate];
-    Template *doubleCircleTemplate = [DoubleCircleTemplate doubleCircleTemplate];
-    Template *twoDivisionTemplate = [TwoDivisionTemplate twoDivisionTemplate];
-    Template *quarterDivisionTemplate = [QuarterDivisionTemplate quarterDivisionTemplate];
-    NSArray *templates = @[circleTemplate,christmasCircle, doubleCircleTemplate,twoDivisionTemplate,quarterDivisionTemplate];
-    return templates;
-}
 
 -(NSArray *)templateDatas{
     
