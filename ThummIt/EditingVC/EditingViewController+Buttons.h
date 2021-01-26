@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)bgColorButtonTapped:(id)sender;
 - (IBAction)undoButtonTapped:(UIButton *)sender;
 - (IBAction)redoButtonTapped:(UIButton *)sender;
+- (IBAction)sliderValueChanged:(UISlider *)sender;
 
 -(void)photoFrameButtonHoldDown;
 -(void)photoFrameButtonHoldRelease;

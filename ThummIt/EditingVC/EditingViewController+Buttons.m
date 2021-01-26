@@ -8,6 +8,7 @@
 #import "EditingViewController+Buttons.h"
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "ItemCollectionViewController+Text.h"
+#import "UIColor+Additions.h"
 #import "TypoHeader.h"
 #import "UndoManager.h"
 
@@ -46,7 +47,7 @@
         [self cancelEditingBGColor];
         
     }
-
+    [self hideAndInitSlider];
 }
 
 -(void)closeEditingVC{
@@ -140,6 +141,24 @@
     } else if (self.modeController.editingMode == EditingBGColorMode){
         [self doneEditingBGColor];
     }
+    
+    [self hideAndInitSlider];
+
+}
+
+-(void)hideAndInitSlider{
+    
+    [self.hueSlider setValue:0];
+
+    CGRect trackRect = [self.hueSlider trackRectForBounds:self.hueSlider.bounds];
+    CGRect thumbRect = [self.hueSlider thumbRectForBounds:self.hueSlider.bounds trackRect:trackRect value:self.hueSlider.value];
+    CGPoint thumbCenter = CGPointMake(thumbRect.origin.x + 15.5, 15);
+    self.thumbCircleView.alpha = 0.0;
+
+    self.thumbCircleView.center = [self.view convertPoint:thumbCenter fromView:self.hueSlider];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.hueSlider.alpha = 0.0;
+    }];
 
 }
 
@@ -285,7 +304,11 @@
         self.recentTypo = [NormalTypo normalTypo];
     }
     [self.itemCollectionVC didSelectTypo:self.recentTypo];
-    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.hueSlider.alpha = 1.0;
+        self.thumbCircleView.alpha = 1.0;
+    }];
+
 }
 
 #pragma mark - 스티커 버튼
@@ -297,6 +320,10 @@
     self.itemCollectionVC.itemType = StickerType;
     [self addItemCollectionVC];
     // 추가 필요
+    [UIView animateWithDuration:0.2 animations:^{
+        self.hueSlider.alpha = 1.0;
+        self.thumbCircleView.alpha = 1.0;
+    }];
 }
 
 #pragma mark - 보더칼라 버튼
@@ -416,6 +443,35 @@
     }
     
 }
+
+#pragma mark - slider
+
+- (IBAction)sliderValueChanged:(UISlider *)sender{
+    
+    //thumbPoint 정의
+    CGRect trackRect = [self.hueSlider trackRectForBounds:self.hueSlider.bounds];
+    CGRect thumbRect = [self.hueSlider thumbRectForBounds:self.hueSlider.bounds trackRect:trackRect value:self.hueSlider.value];
+    CGPoint thumbCenter = CGPointMake(thumbRect.origin.x + 15.5, 15);
+    
+    self.thumbCircleView.center = [self.view convertPoint:thumbCenter fromView:self.hueSlider];
+    UIImage *image = [UIImage imageNamed:@"hueSlider"];
+    float scale = image.size.width*image.scale/(self.hueSlider.bounds.size.width - thumbRect.size.width);
+
+    CGPoint thumbPoint =  CGPointMake(thumbRect.origin.x * scale, thumbRect.origin.y+self.hueSlider.frameHeight/2);
+
+    UIColor *currentPointColor = [UIColor pixelColorInImage:[UIImage imageNamed:@"hueSlider"] atPoint:thumbPoint];
+    
+    if ([self.currentItem isKindOfClass:Text.class]){
+        self.currentText.textView.textColor = currentPointColor;
+
+    } else if ([self.currentItem isKindOfClass:Sticker.class]){
+        [self.currentItem.backgroundImageView setTintColor:currentPointColor];
+    };
+    self.thumbCircleView.backgroundColor = currentPointColor;
+   
+};
+
+
 
 
 @end

@@ -935,6 +935,15 @@
 			path = GuideLineManager;
 			sourceTree = "<group>";
 		};
+		6E8F994D25C03FE8005C8071 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				6ED13B0225BDA75C00012144 /* UIImageView+Additions.h */,
+				6ED13B0325BDA75C00012144 /* UIImageView+Additions.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 		6E998780258A2AA100C8F907 /* TemplateManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1147,6 +1156,7 @@
 		6EAFD5AB25B876C300B193AB /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				6E8F994D25C03FE8005C8071 /* UIImageView */,
 				6EAD5CAA25B769A300C42187 /* UILabel */,
 				6EC4DFC625A87DAF0023485C /* UIColor */,
 				6E4A17FA2588A521008578BA /* UIVIew */,
@@ -1201,8 +1211,6 @@
 				6EC4DFC725A87DAF0023485C /* UIColor+Additions.m */,
 				6EC4DFC825A87DAF0023485C /* UIColor+patternArchive.h */,
 				6EC4DFCA25A87DAF0023485C /* UIColor+patternArchive.m */,
-				6ED13B0225BDA75C00012144 /* UIImageView+Additions.h */,
-				6ED13B0325BDA75C00012144 /* UIImageView+Additions.m */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";

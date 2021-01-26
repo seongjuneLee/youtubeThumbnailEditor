@@ -564,12 +564,10 @@
             self.rotationDashedLine.center = editingVC.currentItem.baseView.center;
             self.rotationDashedLine.transform = CGAffineTransformMakeRotation(guideRadians);
             editingVC.currentItem.baseView.transform = CGAffineTransformConcat(scaleTransform, CGAffineTransformMakeRotation(guideRadians));
-            NSLog(@"가이드");
             foundGuide = true;
             break;
         } else {
             foundGuide = false;
-            NSLog(@"자유");
         }
         
     }

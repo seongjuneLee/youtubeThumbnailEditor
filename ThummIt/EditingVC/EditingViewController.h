@@ -21,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
 
 @property (strong, nonatomic) EditingViewController *collectionView;
-- (IBAction)sliderValueChanged:(UISlider *)sender;
 // 컨트롤러
 @property (strong, nonatomic) EditingModeController *modeController;
 @property (strong, nonatomic) EditingGestureController *gestureController;
@@ -66,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *undoButton;
 @property (weak, nonatomic) IBOutlet UIButton *redoButton;
 @property (weak, nonatomic) IBOutlet UISlider *hueSlider;
-@property (weak, nonatomic) IBOutlet UIImageView *hueSliderImageView;
+@property (strong, nonatomic) UIImageView *hueImageView;
 @property (strong, nonatomic) UIView *thumbCircleView;
 
 -(void)loadItems;
