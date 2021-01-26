@@ -44,6 +44,11 @@
         }
         [self.itemCollectionVC didSelectTypo:self.recentTypo];
     }
+    else if([item isKindOfClass:Sticker.class]){
+        Sticker *sticker = (Sticker *)item;
+        self.currentItem = sticker;
+//        [self.modeController setNavigationItemRespondToEditingMode:editingsticker];
+    }
     [self.layerController showTransparentView];
     [self.layerController bringCurrentItemToFront:item];
     
