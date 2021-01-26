@@ -10,14 +10,29 @@
 #import "PhotoFrame.h"
 #import "ItemManager.h"
 #import "SaveManager.h"
+#import "GuideLineManager.h"
 #import "GuideLine.h"
-#import "DashedGuideLine.h"
+#import "GuideTarget.h"
 @implementation EditingGestureController
 
 -(id)init{
     self = [super init];
     if(self){
-        
+        self.top = [[GuideLineView alloc] init];
+
+        self.bottom = [[GuideLineView alloc] init];
+
+        self.leading = [[GuideLineView alloc] init];
+
+        self.trailing = [[GuideLineView alloc] init];
+        self.itemDegreeGuides = [NSMutableArray array];
+        for (int i = -20; i<20; i++) {
+            float criteriaDegrees = i*45;
+            [self.itemDegreeGuides addObject:@(criteriaDegrees)];
+            
+        }
+
+
     }
     return self;
     
@@ -127,8 +142,9 @@
         }
         [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         [self.delegate readyUIForPanning];
+        self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
+        self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
 
-        
     } else if (sender.state == UIGestureRecognizerStateChanged){
         
         if (!editingVC.currentItem) {
@@ -142,6 +158,12 @@
         self.originalPoint = [sender locationInView:editingVC.gestureView];
         editingVC.currentItem.center = editingVC.currentItem.baseView.center;
         
+        [self guideWithDeltaPoint:deltaPoint];
+        [self showGuideLineForSituation];
+
+        self.isMagneting = false;
+
+
     } else if (sender.state == UIGestureRecognizerStateEnded){
         if (!editingVC.currentItem) {
             return;
@@ -153,24 +175,183 @@
         if (!self.isPinching) {
             [SaveManager.sharedInstance save];
         }
+        
+        for (GuideLine *guideLine in self.guideLines) {
+            [guideLine removeFromSuperView];
+        }
+        for (GuideLine *guideLine in self.itemGuideLines) {
+            [guideLine removeFromSuperView];
+        }
+        self.isMagneting = false;
 
     }
 
 }
 
--(void)showGuideLineWithMagnet{
+-(void)itemGuideWithDelta:(CGPoint)deltaPoint{
     
-    GuideLine *guideLine = [[GuideLine alloc] init];
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
-    // 1. 중앙
-    // 2. 상하 좌우
-    // 3. 아이템 테두리
+    float padding = 5;
     
-    
-    DashedGuideLine *dashedLine = [[DashedGuideLine alloc] init];
-    
-    
+    if ((fabs(deltaPoint.x) < 0.4  && fabs(deltaPoint.y) < 0.4)) {
+        GuideTarget *target;
+        
+        for (GuideLine *guideLine in self.itemGuideLines) {
+            
+            if ([self findClosestTargetWithTargets:guideLine]) {
+                target = [self findClosestTargetWithTargets:guideLine];
+                if (target.guideTargetType == GuideTargetCenter) {
+                    if (fabs(guideLine.dashedGuideLineView.centerX - target.targetPoint.x)<= padding) {
+                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX;
+                        self.isMagneting = true;
+                    }
+                    if (fabs(guideLine.dashedGuideLineView.centerY - target.targetPoint.y)<= padding) {
+                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY;
+                        self.isMagneting = true;
+                    }
+                } else if (target.guideTargetType == GuideTargetTopLeft) {
+                    
+                    if (fabs(guideLine.dashedGuideLineView.centerX - target.targetPoint.x)<= padding) {
+                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX - 1 + editingVC.currentItem.baseView.frameWidth/2;
+                        self.isMagneting = true;
+                    }
+                    if (fabs(guideLine.dashedGuideLineView.centerY - target.targetPoint.y)<= padding) {
+                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY - 1 + editingVC.currentItem.baseView.frameHeight/2;
+                        self.isMagneting = true;
+                    }
+                    
+                } else if (target.guideTargetType == GuideTargetTopRight){
+                    if (fabs(guideLine.dashedGuideLineView.centerX - target.targetPoint.x)<= padding) {
+                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX - 1 - editingVC.currentItem.baseView.frameWidth/2;
+                        self.isMagneting = true;
+                    }
+                    if (fabs(guideLine.dashedGuideLineView.centerY - target.targetPoint.y)<= padding) {
+                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY - 1 + editingVC.currentItem.baseView.frameHeight/2;
+                        self.isMagneting = true;
+                    }
+                } else if (target.guideTargetType == GuideTargetBottomLeft){
+                    if (fabs(guideLine.dashedGuideLineView.centerX - target.targetPoint.x)<= padding) {
+                        editingVC.currentItem.baseView.centerX = guideLine.dashedGuideLineView.centerX - 1 + editingVC.currentItem.baseView.frameWidth/2;
+                        self.isMagneting = true;
+                    }
+                    if (fabs(guideLine.dashedGuideLineView.centerY - target.targetPoint.y)<= padding) {
+                        editingVC.currentItem.baseView.centerY = guideLine.dashedGuideLineView.centerY - 1 - editingVC.currentItem.baseView.frameHeight/2;
+                        self.isMagneting = true;
+                    }
+                }
+            }
+        }
+    }
 }
+
+-(void)guideWithDeltaPoint:(CGPoint)deltaPoint{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    
+    float padding = 5;
+    CGRect centerXRect = CGRectMake(editingVC.bgView.centerX - padding, editingVC.bgView.frameY, padding*2, editingVC.bgView.frameHeight);
+    CGRect leadingRect = CGRectMake(editingVC.bgView.frameX - padding, editingVC.bgView.frameY, padding*2, editingVC.bgView.frameHeight);
+    CGRect trailingRect = CGRectMake(editingVC.bgView.frameX + editingVC.bgView.frameWidth - padding, editingVC.bgView.frameY, padding*2, editingVC.bgView.frameHeight);
+    
+    CGRect centerYRect = CGRectMake(0, editingVC.bgView.centerY -padding, editingVC.bgView.frameWidth, padding*2);
+    CGRect bottomYRect = CGRectMake(0, editingVC.bgView.frameY +editingVC.bgView.frameHeight -padding, editingVC.bgView.frameWidth, padding*2);
+    CGRect topYRect = CGRectMake(0, editingVC.bgView.frameY -padding, editingVC.bgView.frameWidth, padding*2);
+    
+    CGPoint center = editingVC.currentItem.baseView.center;
+    
+    if (!self.isMagneting && (fabs(deltaPoint.x) < 0.4  && fabs(deltaPoint.y) < 0.4)) {
+        
+        // 센터
+        if (CGRectContainsPoint(centerXRect, center)) {
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.centerX;
+        }
+        if (CGRectContainsPoint(centerYRect, center)) {
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.centerY;
+        }
+        CGPoint topRight = CGPointMake(editingVC.currentItem.baseView.frameX + editingVC.currentItem.baseView.frameWidth, editingVC.currentItem.baseView.frameY);
+        
+        // 탑 오른쪽
+        if (CGRectContainsPoint(centerXRect, topRight)) {
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.centerX - editingVC.currentItem.baseView.frameWidth/2;
+        } else if (CGRectContainsPoint(trailingRect, topRight)) {
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.frameX + editingVC.bgView.frameWidth - editingVC.currentItem.baseView.frameWidth/2;
+        }
+        
+        if (CGRectContainsPoint(topYRect, topRight)) {
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.frameY + editingVC.currentItem.baseView.frameHeight/2;
+        } else if (CGRectContainsPoint(centerYRect, topRight)) {
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.centerY + editingVC.currentItem.baseView.frameHeight/2;
+        }
+        
+        // 왼쪽 바텀
+        CGPoint leftBottom = CGPointMake(editingVC.currentItem.baseView.frameX, editingVC.currentItem.baseView.frameY + editingVC.currentItem.baseView.frameHeight);
+        
+        if (CGRectContainsPoint(centerXRect, leftBottom)) {
+            //1 중앙
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.centerX + editingVC.currentItem.baseView.frameWidth/2;
+        } else if (CGRectContainsPoint(leadingRect, leftBottom)) {
+            //2 leading
+            editingVC.currentItem.baseView.centerX = editingVC.bgView.frameX + editingVC.currentItem.baseView.frameWidth/2;
+        }
+        // bottom
+        if (CGRectContainsPoint(centerYRect, leftBottom)) {
+            //1 중앙
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.centerY - editingVC.currentItem.baseView.frameHeight/2;
+        } else if (CGRectContainsPoint(bottomYRect, leftBottom)) {
+            //2 바텀
+            editingVC.currentItem.baseView.centerY = editingVC.bgView.frameY +editingVC.bgView.frameHeight - editingVC.currentItem.baseView.frameHeight/2;
+        }
+        self.isMagneting = true;
+    }
+
+}
+
+-(void)showGuideLineForSituation{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    for (GuideLine *guideLine in self.guideLines) {
+        if ([self findClosestTargetWithTargets:guideLine]) {
+            if (![editingVC.view.subviews containsObject:guideLine.guideLineView]) {
+                [editingVC.view addSubview:guideLine.guideLineView];
+            }
+        } else {
+            [guideLine.guideLineView removeFromSuperview];
+        }
+    }
+    
+    for (GuideLine *guideLine in self.itemGuideLines) {
+        if ([self findClosestTargetWithTargets:guideLine]) {
+            if (![editingVC.view.subviews containsObject:guideLine.dashedGuideLineView]) {
+                [editingVC.view addSubview:guideLine.dashedGuideLineView];
+            }
+        } else {
+            [guideLine.dashedGuideLineView removeFromSuperview];
+        }
+    }
+
+}
+
+
+-(GuideTarget *)findClosestTargetWithTargets:(GuideLine *)guideLine{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    self.shortestDistance = 100000;
+    NSMutableArray *targets = [GuideLineManager.sharedInstance frameTargetsWithCurrentItem:editingVC.currentItem];
+    GuideTarget *foundGuideTarget;
+    for (GuideTarget *guideTarget in targets) {
+        if (CGRectContainsPoint(guideLine.guideArea, guideTarget.targetPoint) ) {
+            if ([GuideLineManager.sharedInstance distanceBetweenRect:guideLine.guideLineView.frame andPoint:guideTarget.targetPoint] < self.shortestDistance) {
+                foundGuideTarget = guideTarget;
+                self.shortestDistance = [GuideLineManager.sharedInstance distanceBetweenRect:guideLine.guideLineView.frame andPoint:guideTarget.targetPoint];
+            }
+        }
+    }
+    
+    
+    return foundGuideTarget;
+}
+
 
 -(void)gestureViewPannedForEditingPhotoMode:(EditingMode)editingMode withSender:(UIPanGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
@@ -290,15 +471,127 @@
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
         editingVC.currentItem.baseView.center = changedPoint;
         editingVC.currentItem.center = changedPoint;
+        
+        [self showDegreeGuideLineWithMagnetWithDeltaDegree:self.currentRotation withScaleTransform:scaleTransform];
+        
     } else if (sender.state == UIGestureRecognizerStateEnded){
         if (editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
         [SaveManager.sharedInstance save];
-
+        [self removeItemSizeGuideLinesFromSuperView];
+        [self.rotationDashedLine removeFromSuperview];
     }
     
 }
+
+-(void)showSizeGuideLine{
+    
+    self.itemSizeGuideLines = [NSMutableArray array];
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    UIView *targetView = editingVC.currentItem.baseView;
+    
+    self.top.frame = CGRectMake(targetView.frameX, editingVC.currentItem.baseView.frameY, targetView.frameWidth, 2);
+    self.bottom.frame = CGRectMake(targetView.frameX, targetView.frameY + targetView.frameHeight, targetView.frameWidth, 2);
+    self.leading.frame = CGRectMake(targetView.frameX, targetView.frameY, 2, targetView.frameHeight);
+    self.trailing.frame = CGRectMake(targetView.frameX + targetView.frameWidth, targetView.frameY, 2, targetView.frameHeight);
+    
+    [editingVC.view addSubview:self.top];
+    [editingVC.view addSubview:self.bottom];
+    [editingVC.view addSubview:self.leading];
+    [editingVC.view addSubview:self.trailing];
+    if (![self.itemSizeGuideLines containsObject:self.top]) {
+        [self.itemSizeGuideLines addObject:self.top];
+    }
+    if (![self.itemSizeGuideLines containsObject:self.bottom]) {
+        [self.itemSizeGuideLines addObject:self.bottom];
+    }
+
+    if (![self.itemSizeGuideLines containsObject:self.leading]) {
+        [self.itemSizeGuideLines addObject:self.leading];
+    }
+
+    if (![self.itemSizeGuideLines containsObject:self.trailing]) {
+        [self.itemSizeGuideLines addObject:self.trailing];
+    }
+    
+}
+
+-(void)removeItemSizeGuideLinesFromSuperView{
+    
+    for (GuideLineView *view in self.itemSizeGuideLines) {
+        [view removeFromSuperview];
+    }
+}
+
+-(void)guideItemSizeWithRotationTransform:(CGAffineTransform)rotation{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    float targetWidth = editingVC.currentItem.baseView.frameWidth;
+    float targetHeight = editingVC.currentItem.baseView.frameHeight;
+    float padding = 5;
+    
+    for (GuideLine *guideLine in [GuideLineManager.sharedInstance criteriaseForItemSizeWithBGView:editingVC.bgView]) {
+        if ((guideLine.guideSize.width - padding <= targetWidth &&  targetWidth <= guideLine.guideSize.width  + padding) && (guideLine.guideSize.height  - padding <= targetHeight &&  targetHeight <= guideLine.guideSize.height  + padding) ) {
+            
+            editingVC.currentItem.baseView.transform = CGAffineTransformConcat(rotation, CGAffineTransformMakeScale(guideLine.guideSize.width/targetWidth, guideLine.guideSize.height/targetHeight));
+            [self showSizeGuideLine];
+
+        } else {
+            [self removeItemSizeGuideLinesFromSuperView];
+        }
+    }
+    
+}
+
+
+
+-(void)showDegreeGuideLineWithMagnetWithDeltaDegree:(float)currentRadians withScaleTransform:(CGAffineTransform)scaleTransform{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    float padding = 0.1;
+    BOOL foundGuide = false;
+    for (NSNumber *guideDegree in [self degreesForGuideLine]) {
+        float rotationDegree = guideDegree.floatValue;
+        float guideRadians = degreesToRadians(rotationDegree);
+        if (guideRadians - padding <= currentRadians && currentRadians <= guideRadians + padding) {
+            
+            if (!self.rotationDashedLine) {
+                self.rotationDashedLine = [[DashedGuideLineView alloc] initWithFrame:CGRectMake(0, 0, editingVC.currentItem.baseView.frameWidth, 2)];
+                [self.rotationDashedLine makeViewDashed];
+                [editingVC.view addSubview:self.rotationDashedLine];
+            }
+            self.rotationDashedLine.center = editingVC.currentItem.baseView.center;
+            self.rotationDashedLine.transform = CGAffineTransformMakeRotation(guideRadians);
+            editingVC.currentItem.baseView.transform = CGAffineTransformConcat(scaleTransform, CGAffineTransformMakeRotation(guideRadians));
+            NSLog(@"가이드");
+            foundGuide = true;
+            break;
+        } else {
+            foundGuide = false;
+            NSLog(@"자유");
+        }
+        
+    }
+    if (!foundGuide) {
+        [self.rotationDashedLine removeFromSuperview];
+        self.rotationDashedLine = nil;
+    }
+    
+}
+
+-(NSMutableArray *)degreesForGuideLine{
+    
+    NSMutableArray *degrees = [NSMutableArray array];
+    
+    for (int i = -20; i < 20; i ++) {
+        [degrees addObject:@(i*45)];
+    }
+
+    return degrees;
+    
+}
+
 
 -(void)gestureViewPinchedForEditingPhotoMode:(EditingMode)editingMode withSender:(UIPinchGestureRecognizer *)sender{
     

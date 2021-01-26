@@ -11,7 +11,9 @@
 #import "Text.h"
 #import "Sticker.h"
 #import "EditingModeController.h"
-#import "EditingModeController.h"
+#import "GuideLineView.h"
+#import "DashedGuideLineView.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol EditingGestureControllerDelegate <NSObject>
@@ -52,9 +54,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint originalSecondFinger;
 @property (nonatomic) CGPoint originalItemViewCenter;
 
+@property (strong, nonatomic) NSMutableArray *guideLines;
+@property (strong, nonatomic) NSMutableArray *itemGuideLines;
+@property (strong, nonatomic) NSMutableArray *itemSizeGuideLines;
+@property (strong, nonatomic) NSMutableArray *itemGuideTargets;
+@property (strong, nonatomic) NSMutableArray *itemDegreeGuides;
+@property (nonatomic) BOOL isMagneting;
+@property (nonatomic) float shortestDistance;
 
 @property (nonatomic) BOOL isPinchingItem;
 
+@property (strong, nonatomic) GuideLineView *top;
+@property (strong, nonatomic) GuideLineView *bottom;
+@property (strong, nonatomic) GuideLineView *trailing;
+@property (strong, nonatomic) GuideLineView *leading;
+@property (strong, nonatomic, nullable) DashedGuideLineView *rotationDashedLine;
 -(void)addGestureRecognizers;
 
 @end

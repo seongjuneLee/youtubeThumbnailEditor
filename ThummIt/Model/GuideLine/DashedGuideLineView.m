@@ -5,10 +5,10 @@
 //  Created by 이성준 on 2021/01/21.
 //
 
-#import "DashedGuideLine.h"
+#import "DashedGuideLineView.h"
 #import "Item.h"
 
-@implementation DashedGuideLine
+@implementation DashedGuideLineView
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -53,7 +53,11 @@
     //draw a line
     
     [path moveToPoint:CGPointMake(0, 0)]; //add yourStartPoint here
-    [path addLineToPoint:CGPointMake(self.frameSize.width, 0)];// add yourEndPoint here
+    if (self.frameSize.width > 2) {
+        [path addLineToPoint:CGPointMake(self.frameSize.width, 0)];// add yourEndPoint here
+    } else {
+        [path addLineToPoint:CGPointMake(0, self.frameSize.height)];// add yourEndPoint here
+    }
     [path stroke];
 
 //    CGFloat dashPattern[] = {2.0f,6.0f,4.0f,2.0f}; //make your pattern here

@@ -30,8 +30,8 @@
 		6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A187B258A0E0B008578BA /* DoubleCircleTemplate.m */; };
 		6E4A1885258A1201008578BA /* CategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A1884258A1201008578BA /* CategoryManager.m */; };
 		6E4A1898258A138F008578BA /* HomeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A1897258A138F008578BA /* HomeTableController.m */; };
-		6E698BB825B89DBC00CE86FB /* GuideLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BB725B89DBC00CE86FB /* GuideLine.m */; };
-		6E698BBE25B8A21300CE86FB /* DashedGuideLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BBD25B8A21300CE86FB /* DashedGuideLine.m */; };
+		6E698BB825B89DBC00CE86FB /* GuideLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BB725B89DBC00CE86FB /* GuideLineView.m */; };
+		6E698BBE25B8A21300CE86FB /* DashedGuideLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BBD25B8A21300CE86FB /* DashedGuideLineView.m */; };
 		6E698BC625B8D21000CE86FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */; };
 		6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */; };
 		6E6E5BF025A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BEF25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m */; };
@@ -66,6 +66,9 @@
 		6E8E7AF425A83C110008C5FF /* TextCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7AF225A83C110008C5FF /* TextCollectionViewCell.m */; };
 		6E8E7AF525A83C110008C5FF /* TextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E8E7AF325A83C110008C5FF /* TextCollectionViewCell.xib */; };
 		6E8E7B0B25A84F090008C5FF /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7B0A25A84F090008C5FF /* Text.m */; };
+		6E8F98E625BC4B08005C8071 /* GuideLineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F98E525BC4B08005C8071 /* GuideLineManager.m */; };
+		6E8F98F425BC551F005C8071 /* GuideLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F98F325BC551F005C8071 /* GuideLine.m */; };
+		6E8F98FD25BCE6CC005C8071 /* GuideTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F98FC25BCE6CC005C8071 /* GuideTarget.m */; };
 		6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99877B258A2A9D00C8F907 /* TemplateManager.m */; };
 		6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E998794258A300300C8F907 /* HomeCollectionViewCell.m */; };
 		6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */; };
@@ -223,10 +226,10 @@
 		6E4A1884258A1201008578BA /* CategoryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryManager.m; sourceTree = "<group>"; };
 		6E4A1896258A138F008578BA /* HomeTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableController.h; sourceTree = "<group>"; };
 		6E4A1897258A138F008578BA /* HomeTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableController.m; sourceTree = "<group>"; };
-		6E698BB625B89DBC00CE86FB /* GuideLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideLine.h; sourceTree = "<group>"; };
-		6E698BB725B89DBC00CE86FB /* GuideLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideLine.m; sourceTree = "<group>"; };
-		6E698BBC25B8A21300CE86FB /* DashedGuideLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashedGuideLine.h; sourceTree = "<group>"; };
-		6E698BBD25B8A21300CE86FB /* DashedGuideLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashedGuideLine.m; sourceTree = "<group>"; };
+		6E698BB625B89DBC00CE86FB /* GuideLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideLineView.h; sourceTree = "<group>"; };
+		6E698BB725B89DBC00CE86FB /* GuideLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideLineView.m; sourceTree = "<group>"; };
+		6E698BBC25B8A21300CE86FB /* DashedGuideLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashedGuideLineView.h; sourceTree = "<group>"; };
+		6E698BBD25B8A21300CE86FB /* DashedGuideLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashedGuideLineView.m; sourceTree = "<group>"; };
 		6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditingViewController+Text.h"; sourceTree = "<group>"; };
 		6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EditingViewController+Text.m"; sourceTree = "<group>"; };
@@ -286,6 +289,12 @@
 		6E8E7AF325A83C110008C5FF /* TextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E8E7B0925A84F090008C5FF /* Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
 		6E8E7B0A25A84F090008C5FF /* Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
+		6E8F98E425BC4B08005C8071 /* GuideLineManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideLineManager.h; sourceTree = "<group>"; };
+		6E8F98E525BC4B08005C8071 /* GuideLineManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideLineManager.m; sourceTree = "<group>"; };
+		6E8F98F225BC551F005C8071 /* GuideLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideLine.h; sourceTree = "<group>"; };
+		6E8F98F325BC551F005C8071 /* GuideLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideLine.m; sourceTree = "<group>"; };
+		6E8F98FB25BCE6CC005C8071 /* GuideTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideTarget.h; sourceTree = "<group>"; };
+		6E8F98FC25BCE6CC005C8071 /* GuideTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideTarget.m; sourceTree = "<group>"; };
 		6E99877A258A2A9D00C8F907 /* TemplateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateManager.h; sourceTree = "<group>"; };
 		6E99877B258A2A9D00C8F907 /* TemplateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateManager.m; sourceTree = "<group>"; };
 		6E998793258A300300C8F907 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -659,10 +668,14 @@
 		6E698BA325B89CB200CE86FB /* GuideLine */ = {
 			isa = PBXGroup;
 			children = (
-				6E698BB625B89DBC00CE86FB /* GuideLine.h */,
-				6E698BB725B89DBC00CE86FB /* GuideLine.m */,
-				6E698BBC25B8A21300CE86FB /* DashedGuideLine.h */,
-				6E698BBD25B8A21300CE86FB /* DashedGuideLine.m */,
+				6E8F98FB25BCE6CC005C8071 /* GuideTarget.h */,
+				6E8F98FC25BCE6CC005C8071 /* GuideTarget.m */,
+				6E8F98F225BC551F005C8071 /* GuideLine.h */,
+				6E8F98F325BC551F005C8071 /* GuideLine.m */,
+				6E698BB625B89DBC00CE86FB /* GuideLineView.h */,
+				6E698BB725B89DBC00CE86FB /* GuideLineView.m */,
+				6E698BBC25B8A21300CE86FB /* DashedGuideLineView.h */,
+				6E698BBD25B8A21300CE86FB /* DashedGuideLineView.m */,
 			);
 			path = GuideLine;
 			sourceTree = "<group>";
@@ -734,6 +747,7 @@
 				6E8E7A3C259B2EA80008C5FF /* ItemManager */,
 				6EC4DFF625A8952A0023485C /* TypoManager */,
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
+				6E8F98E925BC4B0C005C8071 /* GuideLineManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -910,6 +924,15 @@
 				6EC4DFAA25A85D8B0023485C /* Typography */,
 			);
 			path = Text;
+			sourceTree = "<group>";
+		};
+		6E8F98E925BC4B0C005C8071 /* GuideLineManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E8F98E425BC4B08005C8071 /* GuideLineManager.h */,
+				6E8F98E525BC4B08005C8071 /* GuideLineManager.m */,
+			);
+			path = GuideLineManager;
 			sourceTree = "<group>";
 		};
 		6E998780258A2AA100C8F907 /* TemplateManager */ = {
@@ -1598,11 +1621,13 @@
 				6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */,
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
 				6E20BCC025AEF58600BBA540 /* UndoManager.m in Sources */,
+				6E8F98E625BC4B08005C8071 /* GuideLineManager.m in Sources */,
 				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
 				6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */,
 				6EC4DFF225A895240023485C /* TypoManager.m in Sources */,
 				6E9BEA2C258E448700F7F539 /* Project.m in Sources */,
 				6E8E7A9B259CBB470008C5FF /* PhotoFrameCollectionReusableView.m in Sources */,
+				6E8F98F425BC551F005C8071 /* GuideLine.m in Sources */,
 				6E4A1898258A138F008578BA /* HomeTableController.m in Sources */,
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
 				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
@@ -1625,7 +1650,7 @@
 				6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */,
 				6E8E7A38259B2EA40008C5FF /* ItemManager.m in Sources */,
 				6E7DD4A22584D3C00014618E /* AlbumViewController.m in Sources */,
-				6E698BBE25B8A21300CE86FB /* DashedGuideLine.m in Sources */,
+				6E698BBE25B8A21300CE86FB /* DashedGuideLineView.m in Sources */,
 				6E9BEA22258DECDB00F7F539 /* EditingLayerController.m in Sources */,
 				6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */,
 				6EAD5C9E25B767E200C42187 /* CustomerFeedback.m in Sources */,
@@ -1665,6 +1690,7 @@
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
 				6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */,
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
+				6E8F98FD25BCE6CC005C8071 /* GuideTarget.m in Sources */,
 				6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
 				6E8E7A6A259C91560008C5FF /* PhotoFrameCollectionViewCell.m in Sources */,
@@ -1688,7 +1714,7 @@
 				6E4A1885258A1201008578BA /* CategoryManager.m in Sources */,
 				6E8E7AC025A833590008C5FF /* TextCollectionController.m in Sources */,
 				6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */,
-				6E698BB825B89DBC00CE86FB /* GuideLine.m in Sources */,
+				6E698BB825B89DBC00CE86FB /* GuideLineView.m in Sources */,
 				6E9BEA58258F1BA800F7F539 /* ProjectManager.m in Sources */,
 				6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */,
 			);

@@ -11,7 +11,7 @@
 #import "ProjectManager.h"
 #import "SaveManager.h"
 #import "GuideLine.h"
-#import "DashedGuideLine.h"
+#import "DashedGuideLineView.h"
 
 @interface HomeViewController ()
 

@@ -2,27 +2,34 @@
 //  GuideLine.m
 //  ThummIt
 //
-//  Created by 이성준 on 2021/01/21.
+//  Created by 이성준 on 2021/01/23.
 //
 
 #import "GuideLine.h"
 
 @implementation GuideLine
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-
 -(instancetype)init{
-    
     self = [super init];
-    if (self) {
-        self.backgroundColor = [UIColor colorWithRed:60.0/255.0 green:120.0/255.0 blue:180.0/255.0 alpha:1.0];
-        self.frameHeight = 1;
-    }
+    
+    self.guideLineView = [[GuideLineView alloc] init];
+    self.dashedGuideLineView = [[DashedGuideLineView alloc] init];
+    
     return self;
 }
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
+
+-(void)removeFromSuperView{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.2 animations:^{
+            self.guideLineView.alpha =
+            self.dashedGuideLineView.alpha = 0.0;
+        }completion:^(BOOL finished) {
+            [self.guideLineView removeFromSuperview];
+            [self.dashedGuideLineView removeFromSuperview];
+        }];
+    });
+    
     
 }
 
