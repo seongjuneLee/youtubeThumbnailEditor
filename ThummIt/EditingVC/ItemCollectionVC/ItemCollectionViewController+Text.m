@@ -16,6 +16,7 @@
 -(void)didSelectTypo:(Typography *)typo{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+        
     Text *text = [[Text alloc] init];
     text.textView.delegate = editingVC;
     [text applyTypo:typo];

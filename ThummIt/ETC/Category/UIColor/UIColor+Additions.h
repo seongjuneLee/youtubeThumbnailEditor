@@ -12,4 +12,5 @@
 
 -(UIColor*)setBrightness:(CGFloat)brightness alpha:(CGFloat)alpha;
 + (UIColor*) diagonalGradientFromColor:(UIColor*)c1 toColor:(UIColor*)c2 withHeight:(int)height;
++ (UIColor*)pixelColorInImage:(UIImage*)image atPoint:(CGPoint)point;
 @end
