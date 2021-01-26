@@ -67,46 +67,25 @@
 
 -(NSArray *)basicCircleStickers{
     
-    BasicCircleSticker *basicCircleStickerRed = [BasicCircleSticker basicCircleSticker];
-    BasicCircleSticker *basicCircleStickerYellow = [BasicCircleSticker basicCircleSticker];
-    BasicCircleSticker *basicCircleStickerBlack = [BasicCircleSticker basicCircleSticker];
-    BasicCircleSticker *basicCircleStickerWhite = [BasicCircleSticker basicCircleSticker];
-
-    basicCircleStickerYellow.backgroundImageName = @"basicCircleStickerYellow";
-    basicCircleStickerBlack.backgroundImageName = @"basicCircleStickerBlack";
-    basicCircleStickerWhite.backgroundImageName = @"basicCircleStickerWhite";
-    
-    NSArray *stickers = @[basicCircleStickerRed, basicCircleStickerYellow, basicCircleStickerBlack, basicCircleStickerWhite];
+    BasicCircleSticker *basicCircleSticker = [BasicCircleSticker basicCircleSticker];
+    basicCircleSticker.backgroundImageName = @"basicCircleStickerWhite";
+    NSArray *stickers = @[basicCircleSticker];
     return stickers;
 }
 
 -(NSArray *)basicArrowStickers{
     
-    BasicArrowSticker *basicArrowStickerRed = [BasicArrowSticker basicArrowSticker];
-    BasicArrowSticker *basicArrowStickerYellow = [BasicArrowSticker basicArrowSticker];
-    BasicArrowSticker *basicArrowStickerBlack = [BasicArrowSticker basicArrowSticker];
-    BasicArrowSticker *basicArrowStickerWhite  = [BasicArrowSticker basicArrowSticker];
-
-    basicArrowStickerYellow.backgroundImageName = @"basicArrowStickerYellow";
-    basicArrowStickerBlack.backgroundImageName = @"basicArrowStickerBlack";
-    basicArrowStickerWhite.backgroundImageName = @"basicArrowStickerWhite";
-    
-    NSArray *stickers = @[basicArrowStickerRed, basicArrowStickerYellow, basicArrowStickerBlack, basicArrowStickerWhite];
+    BasicArrowSticker *basicArrowSticker  = [BasicArrowSticker basicArrowSticker];
+    basicArrowSticker.backgroundImageName = @"basicArrowStickerWhite";
+    NSArray *stickers = @[basicArrowSticker];
     return stickers;
 }
 
 -(NSArray *)xStickers{
     
-    XSticker *xStickerRed = [XSticker xSticker];
-    XSticker *xStickerYellow = [XSticker xSticker];
-    XSticker *xStickerBlack = [XSticker xSticker];
-    XSticker *xStickerWhite  = [XSticker xSticker];
-
-    xStickerYellow.backgroundImageName = @"xStickerYellow";
-    xStickerBlack.backgroundImageName = @"xStickerBlack";
-    xStickerWhite.backgroundImageName = @"xStickerWhite";
-    
-    NSArray *stickers = @[xStickerRed, xStickerYellow, xStickerBlack, xStickerWhite];
+    XSticker *xSticker  = [XSticker xSticker];
+    xSticker.backgroundImageName = @"xStickerWhite";
+    NSArray *stickers = @[xSticker];
     return stickers;
 }
 

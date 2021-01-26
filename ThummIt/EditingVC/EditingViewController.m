@@ -63,9 +63,10 @@
     self.thumbCircleView.frameWidth = (thumbRect.size.width)*scale;
     self.thumbCircleView.frameHeight = (thumbRect.size.height)*scale;
 
-    self.hueSliderImageView.layer.zPosition = -5;
+    self.hueSliderImageView.layer.zPosition = 1;
+    self.hueSlider.layer.zPosition =2;
+    self.thumbCircleView.layer.zPosition = 3;
     [self.view addSubview:self.thumbCircleView];
-    self.thumbCircleView.layer.zPosition = 5;
 }
 
 -(void)basicUIUXSetting{
@@ -207,11 +208,21 @@
     UIImage *minImage = [UIImage imageNamed:@"hueSlider"];
     self.hueSliderImageView.image = [UIImage imageNamed:@"hueSlider"];
     
+    
+    
     [self.hueSlider setMaximumTrackImage:maxImage forState:UIControlStateNormal];
     [self.hueSlider setMinimumTrackImage:minImage forState:UIControlStateNormal];
     self.currentText.textView.textColor = [self.hueSliderImageView colorOfPoint:thumbPoint];
     self.thumbCircleView.backgroundColor =[self.hueSliderImageView colorOfPoint:thumbPoint];
+    
+    if ([self.currentItem isKindOfClass:Text.class]){
+        self.currentText.textView.textColor = [self.hueSliderImageView colorOfPoint:thumbPoint];
 
+    } else if ([self.currentItem isKindOfClass:Sticker.class]){
+        [self.currentItem.backgroundImageView setTintColor:[self.hueSliderImageView colorOfPoint:thumbPoint]];
+    };
+    self.thumbCircleView.backgroundColor =[self.hueSliderImageView colorOfPoint:thumbPoint];
+   
 };
 
 
