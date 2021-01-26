@@ -11,7 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TemplateManager : NSObject
 
--(NSArray *)templates;
 -(NSArray *)templateDatas;
 +(TemplateManager *)sharedInstance;
 

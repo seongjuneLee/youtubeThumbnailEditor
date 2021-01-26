@@ -12,15 +12,8 @@
 
 // 홈 테이블 뷰 컨틀롤러 델리게이트를 받아 editingVC를 푸시하는 함수.
 -(void)didSelectItemAtTableIndex:(NSUInteger)tableIndex withCollectionIndex:(NSUInteger)collectionIndex{
-    
-    NSString *category = CategoryManager.sharedInstance.categories[tableIndex];
-    
-    NSMutableArray *templates = [NSMutableArray array];
-    for (Template *template in TemplateManager.sharedInstance.templates) {
-        if ([category isEqualToString:template.category]) {
-            [templates addObject:template];
-        }
-    }
+        
+    NSArray *templates = TemplateManager.sharedInstance.templateDatas[tableIndex];
     Template *selectedTemplate = templates[collectionIndex];
     Project *project =  [ProjectManager.sharedInstance generateNewProjectWithTemplate:selectedTemplate];
     [SaveManager.sharedInstance applyCurrentProject:project];    
