@@ -159,7 +159,6 @@
         editingVC.currentItem.center = editingVC.currentItem.baseView.center;
         
         [self guideWithDeltaPoint:deltaPoint];
-//        [self itemGuideWithDelta:deltaPoint];
         [self showGuideLineForSituation];
 
         self.isMagneting = false;
@@ -473,7 +472,6 @@
         editingVC.currentItem.baseView.center = changedPoint;
         editingVC.currentItem.center = changedPoint;
         
-//        [self guideItemSizeWithRotationTransform:rotationTransform];
         [self showDegreeGuideLineWithMagnetWithDeltaDegree:self.currentRotation withScaleTransform:scaleTransform];
         
     } else if (sender.state == UIGestureRecognizerStateEnded){
