@@ -9,9 +9,9 @@
 #define FrameHeader_h
 
 #import "PhotoFrame.h"
-#import "BasicCircle.h"
+#import "BasicCirclePhotoFrame.h"
 #import "ChristmasCircle.h"
-
+#import "FullRectangle.h"
 #import "VerticalHalfRectangle.h"
 #import "QuarterRectangle.h"
 

@@ -26,7 +26,6 @@
     Template *circleTemplate = [CircleTemplate circleTemplate];
     Template *doubleCircleTemplate = [DoubleCircleTemplate doubleCircleTemplate];
     Template *runningManTemplate = [RunningMan1Template runningMan1Template];
-
     Template *sinseoyugiTemplate1 = [SinSeoYuGiTemplate1 sinSeoYuGiTemplate1];
     
     Template *workManTemplate1 = [WorkManTemplate1 workManTemplate1];
@@ -35,6 +34,9 @@
     
 
     NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, sinseoyugiTemplate1,runningManTemplate, workManTemplate1, workManTemplate2, workManTemplate3];
+    Template *infiniteChallenge1Template = [InfiniteChallenge1Template infiniteChallenge1Template];
+
+    NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, sinseoyugiTemplate1, runningManTemplate, infiniteChallenge1Template];
     
     Template *twoDivisionTemplate = [TwoDivisionTemplate twoDivisionTemplate];
     Template *quarterDivisionTemplate = [QuarterDivisionTemplate quarterDivisionTemplate];

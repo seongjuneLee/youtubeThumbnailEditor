@@ -15,8 +15,18 @@
         
         self.name = NSLocalizedString(@"방탈출",nil);
         self.fontName = @"S-CoreDream-9Black";
-        self.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-        self.fontSize = TEXT_FONT_SIZE;
+        self.textColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
+        self.fontSize = TEXT_FONT_SIZE + 20;
+                
+        BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
+        attribute.borderWidth = 10;
+        attribute.borderColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
+        
+        BGTextAttribute *attribute2 = [[BGTextAttribute alloc] init];
+        attribute2.borderWidth = 15;
+        attribute2.borderColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
+        
+        self.bgTextAttributes = @[attribute, attribute2];
     }
     return self;
 }

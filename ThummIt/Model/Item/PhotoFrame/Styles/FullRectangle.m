@@ -36,7 +36,7 @@
     return self;
 }
 
-+(FullRectangle*)verticalHalfRectangle{
++(FullRectangle*)fullRectangle{
     
     FullRectangle* fullRectangle = [[self alloc] init];
     return fullRectangle;
