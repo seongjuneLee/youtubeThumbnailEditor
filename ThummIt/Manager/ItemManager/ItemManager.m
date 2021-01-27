@@ -60,13 +60,10 @@
     RunningManLogoTypo *runningManLogoTypo = [RunningManLogoTypo runningManLogoTypo];
     SeoYuGiLogoTypo *seoYuGiLogoTypo = [SeoYuGiLogoTypo seoYuGiLogoTypo];
     FirstExperienceTypo *firstexperienceTypo = [FirstExperienceTypo firstExperienceTypo];
-    FightManTypo *fightManTypo = [FightManTypo fightManTypo];
     SeoYuGiCloudLogoTypo *seoYuGiCloudLogoTypo = [SeoYuGiCloudLogoTypo seoYuGiCloudLogoTypo];
-    InFrontOfGirlTypo *inFrontOfGirlTypo = [InFrontOfGirlTypo inFrontOfGirlTypo];
     BabarimanTypo *babarimanTypo = [BabarimanTypo babarimanTypo];
     CowRiseTypo *cowRiseTypo = [CowRiseTypo cowRiseTypo];
     EatRoomTypo *eatRoomTypo = [EatRoomTypo eatRoomTypo];
-    HungryTypo *hungryTypo = [HungryTypo hungryTypo];
     DawnWatchingTypo *dawnWatchingTypo = [DawnWatchingTypo dawnWatchingTypo];
     
     WorkManLogo *workManLogo = [WorkManLogo workManLogo];
@@ -93,9 +90,24 @@
     InfiniteChallengeCloudBox *infiniteChallengeCloudBox = [InfiniteChallengeCloudBox infiniteChallengeCloudBox];
 
 
+    DDamTypo *ddamTypo = [DDamTypo ddamTypo];
+    RedShoutingTypo *redShoutingTypo = [RedShoutingTypo redShoutingTypo];
+    YellowGradientTypo *yellowGradientTypo =[YellowGradientTypo yellowGradientTypo];
+    WorkingManNameTypo *workingManNameTypo =[WorkingManNameTypo workingManNameTypo];
+    BlueMoonTypo *blueMoonTypo = [BlueMoonTypo blueMoonTypo];
+    WhatTypo *whatTypo = [WhatTypo whatTypo];
+    AtmosphereTypo *atmosphereTypo = [AtmosphereTypo atmosphereTypo];
+    WhiteYellowGradientTypo *whiteYellowGradientTypo = [WhiteYellowGradientTypo whiteYellowGradientTypo];
+    TikiTypo *tikiTypo = [TikiTypo tikiTypo];
+    KnockOutTypo *knockOutTypo = [KnockOutTypo knockOutTypo];
+    MatterTypo *matterTypo = [MatterTypo matterTypo];
+    SuccessTypo *successTypo = [SuccessTypo successTypo];
+    WhyRealTypo *whyrealTypo = [WhyRealTypo whyRealTypo];
+    RuleTypo *ruleTypo = [RuleTypo ruleTypo];
+
 
     
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox];
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, seoYuGiCloudLogoTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox,ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo ,tikiTypo,knockOutTypo,matterTypo,successTypo,whyrealTypo,ruleTypo];
     
     
     return @[typos];

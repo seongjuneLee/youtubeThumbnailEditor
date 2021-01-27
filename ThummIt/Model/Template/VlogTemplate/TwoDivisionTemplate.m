@@ -45,5 +45,11 @@
     [self.photoFrames addObject:secondPhotoFrame];
 }
 
+-(void)setUpTexts{
+    
+    
+    
+}
+
 
 @end

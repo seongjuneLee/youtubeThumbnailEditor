@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface Template : NSObject <NSCopying,NSCoding>
+@interface Template : NSObject 
 
 
 @property (strong, nonatomic) NSString *previewImageName;

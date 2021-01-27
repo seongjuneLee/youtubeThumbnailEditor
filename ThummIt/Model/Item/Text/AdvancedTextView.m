@@ -11,7 +11,6 @@
 #import "UIColor+Additions.h"
 #import "UITextView+Additions.h"
 #import "NSArray+Additions.h"
-#import "NSMutableAttributedString+Additions.h"
 #import "Text.h"
 
 @implementation AdvancedTextView
