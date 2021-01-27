@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TypoManager : NSObject
 
 + (TypoManager *)sharedInstance;
--(NSArray *)typos;
 
 @end
 
