@@ -23,7 +23,7 @@
         bgTextAttribute2.borderColor = [UIColor colorWithRed:145/255.0f green:69/255.0f blue:34/255.0f alpha:1];
         bgTextAttribute1.borderWidth = 8;
         bgTextAttribute2.borderWidth = 10;
-       
+        
         self.bgTextAttributes = @[bgTextAttribute1 , bgTextAttribute2];
     }
  //대조작업필요

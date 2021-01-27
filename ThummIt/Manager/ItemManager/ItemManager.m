@@ -35,7 +35,7 @@
 
 -(NSArray *)photoFrameDatas{
     
-    BasicCircle *basicCircle = [BasicCircle basicCircle];
+    BasicCirclePhotoFrame *basicCircle = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     ChristmasCircle *christmasCircle = [ChristmasCircle christmasCircle];
     
     NSArray *photoFrames = @[basicCircle, christmasCircle];
@@ -112,8 +112,6 @@
     
     return @[basicStickers];
 }
-
-
 
 -(void)addItem:(Item *)item{
     
