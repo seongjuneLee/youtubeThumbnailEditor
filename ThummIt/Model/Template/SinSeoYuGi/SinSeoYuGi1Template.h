@@ -9,9 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SinSeoYuGiTemplate1 : Template
+@interface SinSeoYuGi1Template : Template
 
-+(SinSeoYuGiTemplate1*)sinSeoYuGiTemplate1;
++(SinSeoYuGi1Template*)sinSeoYuGiTemplate1;
 
 @end
 

@@ -21,17 +21,12 @@
     
     [PhotoManager.sharedInstance fetchPhassets];
 
-    [self loadItems];
 
     [self basicUIUXSetting];
 
     [self connectControllers];
     
     [self addExtraGestureToButtons];
-    
-    [SaveManager.sharedInstance save];
-    
-    
     
     
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
@@ -40,7 +35,11 @@
 }
 
 -(void)viewWillLayoutSubviews{
-
+    
+    if (!self.itemLoaded) {
+        [self loadItems];
+    }
+    
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
     
@@ -127,26 +126,23 @@
 
 -(void)loadItems{
     
+    self.itemLoaded = true;
+    
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
-    float imageViewWidth = self.view.frameWidth;
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
-        [item loadView];
         if (item.isTemplateItem) {
-            if ([item isKindOfClass:PhotoFrame.class]) {
-                PhotoFrame *photoFrame = (PhotoFrame *)item;
-                photoFrame.plusLabel.hidden = false;
-            }
-            float itemX = imageViewWidth * item.center.x;
-            float itemY = self.view.frameHeight * 0.1 - 4 +imageViewWidth * 9/16*item.center.y;
+            float itemX = self.bgView.frameWidth * item.center.x;
+            float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             
             item.center = itemCenter;
             item.baseView.center = itemCenter;
-            item.isTemplateItem = false;
-            item.baseView.transform = CGAffineTransformMakeRotation(degreesToRadians(item.rotationDegree));
+            item.baseView.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(degreesToRadians(item.rotationDegree)), CGAffineTransformMakeScale(item.scale, item.scale));
         }
+        [item loadView];
+
         if (item.indexInLayer.length != 0) {
             [self.view insertSubview:item.baseView atIndex:[item.indexInLayer integerValue]];
         } else {
@@ -154,8 +150,11 @@
         }
         [self.view insertSubview:self.gestureView belowSubview:self.upperArea];
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+        item.isTemplateItem = false;
     }
     
+    [SaveManager.sharedInstance save];
+
 }
 
 -(void)respondToUndoRedo{

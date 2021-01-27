@@ -10,7 +10,7 @@
 
 #import "Template.h"
 #import "PhotoFrameHeader.h"
-#import "SinSeoYuGiTemplate1.h"
+#import "SinSeoYuGi1Template.h"
 
 #import "CircleTemplate.h"
 #import "ChristmasCircleTemplate.h"

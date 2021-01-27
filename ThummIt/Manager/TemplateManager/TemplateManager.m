@@ -27,7 +27,7 @@
     Template *doubleCircleTemplate = [DoubleCircleTemplate doubleCircleTemplate];
     Template *runningManTemplate = [RunningMan1Template runningMan1Template];
 
-    Template *sinseoyugiTemplate1 = [SinSeoYuGiTemplate1 sinSeoYuGiTemplate1];
+    Template *sinseoyugiTemplate1 = [SinSeoYuGi1Template sinSeoYuGiTemplate1];
 
     NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, sinseoyugiTemplate1,runningManTemplate];
     

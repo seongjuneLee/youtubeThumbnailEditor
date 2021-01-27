@@ -118,13 +118,15 @@
 
 -(void)addSubViewsToBaseView{
     
-    self.plusLabel = [[UILabel alloc] init];
-    self.plusLabel.text = NSLocalizedString(@"+ Photo", nil);
-    self.plusLabel.textColor = UIColor.blackColor;
-    self.plusLabel.hidden = true;
-    [self.plusLabel sizeToFit];
-    self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
-    [self.baseView addSubview:self.plusLabel];
+    if (self.isTemplateItem) {
+        self.plusLabel = [[UILabel alloc] init];
+        self.plusLabel.text = NSLocalizedString(@"+ Photo", nil);
+        self.plusLabel.textColor = UIColor.blackColor;
+        self.plusLabel.hidden = true;
+        [self.plusLabel sizeToFit];
+        self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
+        [self.baseView addSubview:self.plusLabel];
+    }
     
     self.photoImageView = [[UIImageView alloc] init];
     self.photoImageView.frameSize = self.baseView.frameSize;
