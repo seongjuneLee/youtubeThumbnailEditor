@@ -19,7 +19,7 @@
     return self;
 }
 
-+(WorkManYellowSticker *) workManFiveFingerSticker{
++(WorkManYellowSticker *) workManYellowSticker{
     
     WorkManYellowSticker * workManYellowSticker = [[self alloc] init];
     return workManYellowSticker;

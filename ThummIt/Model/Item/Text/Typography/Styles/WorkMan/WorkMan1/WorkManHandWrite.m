@@ -15,8 +15,16 @@
     if (self) {
         self.name = NSLocalizedString(@"(무대난입)",nil);
         self.fontName = @"NanumGothicBold";
-        self.textColor = [UIColor blackColor];
-        self.fontSize = TEXT_FONT_SIZE;
+        self.textColor = [UIColor whiteColor];
+        self.fontSize = 30;
+        
+        BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
+        bgTextAttribute1.borderColor = [UIColor blackColor];
+       
+        bgTextAttribute1.borderWidth = 10;
+       
+        
+        self.bgTextAttributes = @[bgTextAttribute1];
     }
     return self;
 }

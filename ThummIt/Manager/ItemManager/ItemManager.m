@@ -68,8 +68,18 @@
     EatRoomTypo *eatRoomTypo = [EatRoomTypo eatRoomTypo];
     HungryTypo *hungryTypo = [HungryTypo hungryTypo];
     DawnWatchingTypo *dawnWatchingTypo = [DawnWatchingTypo dawnWatchingTypo];
+    WorkManLogo *workManLogo = [WorkManLogo workManLogo];
+    WorkManHandWrite *workManHandWrite = [WorkManHandWrite workManHandWrite];
+    WorkManTalkWrite *workManTalkWrite = [WorkManTalkWrite workManTalkWrite];
+    WorkManRedTitle *workManRedTitle = [WorkManRedTitle workManRedTitle];
+    WorkManRightTag *workManRightTag = [WorkManRightTag workManRightTag];
+    WorkmanYelloewTitle *workmanYelloewTitle = [WorkmanYelloewTitle workmanYelloewTitle];
+    WorkManLogo2 *workManLogo2 = [WorkManLogo2 workManLogo2];
+   
+
+
     
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo];
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2];
     return @[typos];
 }
 
@@ -93,7 +103,17 @@
     basicArrowSticker.backgroundImageName = @"basicArrowStickerWhite";
     XSticker *xSticker  = [XSticker xSticker];
     xSticker.backgroundImageName = @"xStickerWhite";
-    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker];
+    WorkManAngrySticker *workManAngrySticker  = [WorkManAngrySticker workManAngrySticker];
+    workManAngrySticker.backgroundImageName = @"workManAngrySticker";
+    WorkManTalkSticker *workManTalkSticker  = [WorkManTalkSticker workManTalkSticker];
+    workManTalkSticker.backgroundImageName = @"workManTalkSticker";
+    WorkManFiveFingerSticker *workManFiveFingerSticker  = [WorkManFiveFingerSticker workManFiveFingerSticker];
+    workManFiveFingerSticker.backgroundImageName = @"workManFiveFingerSticker";
+    WorkManYellowSticker *workManYellowSticker  = [WorkManYellowSticker workManYellowSticker];
+    workManYellowSticker.backgroundImageName = @"workManYellowSticker";
+    
+    
+    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker, workManAngrySticker, workManTalkSticker, workManFiveFingerSticker, workManYellowSticker];
     
     return @[basicStickers];
 }

@@ -15,8 +15,15 @@
     if (self) {
         self.name = NSLocalizedString(@"소리질러!!!!!",nil);
         self.fontName = @"NanumSquareOTFB";
-        self.textColor = [UIColor blackColor];
+        self.textColor = [UIColor whiteColor];
         self.fontSize = TEXT_FONT_SIZE;
+        
+        BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
+        bgTextAttribute1.borderColor = [UIColor blackColor];
+       
+        bgTextAttribute1.borderWidth = 10;
+        
+        self.bgTextAttributes = @[bgTextAttribute1];
 
     }
     return self;

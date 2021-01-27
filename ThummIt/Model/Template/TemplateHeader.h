@@ -21,4 +21,8 @@
 
 #import "RunningMan1Template.h"
 
+#import "WorkManTemplate1.h"
+#import "WorkManTemplate2.h"
+#import "WorkManTemplate3.h"
+
 #endif /* TemplateHeader_h */

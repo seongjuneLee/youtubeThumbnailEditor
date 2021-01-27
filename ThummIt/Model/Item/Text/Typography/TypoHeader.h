@@ -15,7 +15,7 @@
 #import "WorkManHandWrite.h"
 #import "WorkManTalkWrite.h"
 #import "WorkManRedTitle.h"
-#import "WorkManBlueTitle.h"
+
 #import "RunningManLogoTypo.h"
 #import "SeoYuGiLogoTypo.h"
 #import "FirstExperienceTypo.h"
@@ -27,5 +27,13 @@
 #import "EatRoomTypo.h"
 #import "HungryTypo.h"
 #import "DawnWatchingTypo.h"
+
+#import "WorkManRightTag.h"
+
+
+#import "WorkmanYelloewTitle.h"
+
+#import "WorkManLogo2.h"
+#import "WorkManLeftTag.h"
 
 #endif /* TypoHeader_h */
