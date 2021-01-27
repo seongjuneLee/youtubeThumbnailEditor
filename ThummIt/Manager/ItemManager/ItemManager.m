@@ -39,7 +39,7 @@
     ChristmasCircle *christmasCircle = [ChristmasCircle christmasCircle];
     
     NSArray *photoFrames = @[basicCircle, christmasCircle];
-    return photoFrames;
+    return @[photoFrames];
 }
 
 #pragma mark - 텍스트
@@ -95,7 +95,7 @@
     xSticker.backgroundImageName = @"xStickerWhite";
     NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker];
     
-    return basicStickers;
+    return @[basicStickers];
 }
 
 
