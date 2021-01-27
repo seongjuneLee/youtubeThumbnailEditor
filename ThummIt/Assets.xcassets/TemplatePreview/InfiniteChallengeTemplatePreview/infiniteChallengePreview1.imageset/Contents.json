@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "infiniteChallengePreview1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "신서유기 불꽃-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

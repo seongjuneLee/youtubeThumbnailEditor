@@ -11,7 +11,7 @@
 #import "PhotoFrame.h"
 #import "BasicCirclePhotoFrame.h"
 #import "ChristmasCircle.h"
-
+#import "FullRectangle.h"
 #import "VerticalHalfRectangle.h"
 #import "QuarterRectangle.h"
 

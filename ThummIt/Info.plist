@@ -89,6 +89,10 @@
 		<string>NotoSansCJKkr-Bold.otf</string>
 		<string>ELAND-Nice-M.otf</string>
 		<string>BMDOHYEON_otf.otf</string>
+		<string>NanumBarunGothic.otf</string>
+		<string>NanumBarunGothicBold.otf</string>
+		<string>NanumGothicExtraBold.otf</string>
+		<string>yangpyeong_B.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

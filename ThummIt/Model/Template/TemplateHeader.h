@@ -21,4 +21,6 @@
 
 #import "RunningMan1Template.h"
 
+#import "InfiniteChallenge1Template.h"
+
 #endif /* TemplateHeader_h */
