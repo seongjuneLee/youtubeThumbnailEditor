@@ -185,6 +185,8 @@
     for (NSArray* typoRange in copiedTypoRangeArray) {
         Typography* typo = typoRange.firstObject;
         NSRange range = NSRangeFromString(typoRange.lastObject);
+        NSLog(@"rangeee %@",NSStringFromRange(range));
+        NSLog(@"typoRange.lastObject %@",typoRange.lastObject);
         [self applyTypo:typo forRange:range];
     }
     self.typoRangeArray = copiedTypoRangeArray;
@@ -198,8 +200,8 @@
     float widthScale = 1.1;
     float heightScale = 1.2; // 텍스트뷰 감싸주도록 좀 크게
     self.backgroundImageView.frame = CGRectMake(0, 0, self.textView.frameWidth*widthScale + typo.bgWidthPadding, self.textView.frameHeight*heightScale + typo.bgHeightPadding);
-    self.backgroundImageView.center = self.textView.center; // 중앙 맞춰주기
-
+    self.backgroundImageView.center = CGPointMake(self.textView.centerX + self.typo.bgCenterXDelta, self.textView.centerY + self.typo.bgCenterYDelta); // 중앙 맞춰주기
+    
     [self.textViewContainer layoutIfNeeded];
     
 }

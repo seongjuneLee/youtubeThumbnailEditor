@@ -9,9 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InfiniteChallengeWhiteBlack : Typography
+@interface InfiniteChallengeWhite : Typography
 
-+(InfiniteChallengeWhiteBlack*) infiniteChallengeWhiteBlack;
++(InfiniteChallengeWhite*) infiniteChallengeWhite;
 
 @end
 
