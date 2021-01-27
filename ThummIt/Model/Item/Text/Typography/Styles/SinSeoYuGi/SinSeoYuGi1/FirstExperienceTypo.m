@@ -14,17 +14,19 @@
     if (self) {
         self.name = NSLocalizedString(@"첫 경험!",nil);
         self.fontName = @"NotoSansKannada-Bold";
-        self.textColor = [UIColor colorWithRed:253/255.0f green:242/255.0f blue:95/255.0 alpha:1 ];
-        self.borderColor = [UIColor colorWithRed:133/255.0f green:54/255.0f blue:16/255.0f alpha:1];
-        self.shadowColor = [UIColor colorWithRed:208/255.0f green:68/255.0f blue:25/255.0f alpha:1];
-        self.borderWidth = -3;
-        self.shadowRadius = 1;
-        self.shadowOffset = CGSizeMake(1, 1);
-    //  bgTextAttributes.borderWidth =
         self.fontSize = 50;
+        self.textColor = [UIColor colorWithRed:253/255.0f green:242/255.0f blue:95/255.0 alpha:1 ];
+       
+        BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
+        BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
+        borderAtt.borderColor = [UIColor colorWithRed:133/255.0f green:54/255.0f blue:16/255.0f alpha:1];
+        borderAtt.borderWidth = 10;
+        shadowAtt.shadowColor =[UIColor colorWithRed:208/255.0f green:68/255.0f blue:25/255.0f alpha:1];
+        shadowAtt.shadowOffset = CGPointMake(3, 3);
+        
+        self.bgTextAttributes = @[borderAtt, shadowAtt];
     }
- //대조작업필요
-    
+        //기울이기
     return self;
 }
 

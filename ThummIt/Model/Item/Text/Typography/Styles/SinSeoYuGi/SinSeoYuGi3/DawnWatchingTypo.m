@@ -14,19 +14,20 @@
     if (self) {
         self.name = NSLocalizedString(@"새벽 시청 금지!!!",nil);
         self.fontName = @"NotoSansKannada-Bold";
+        self.fontSize = 50;
         self.textColor = [UIColor whiteColor];
-        self.borderColor = [UIColor blackColor];
-        BGTextAttribute * bgTextAttribute = [[BGTextAttribute alloc] init];
-        bgTextAttribute.borderWidth = +5; //기능추가되면 구현
-        self.fontSize = 30;
+        
+        BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
+        bgTextAttribute1.borderColor = [UIColor blackColor];
+        bgTextAttribute1.borderWidth = 10;
+        
+        self.bgTextAttributes = @[bgTextAttribute1];
+        
         self.bgImageName = @"SeoYuGiFlame";
         self.bgContentMode = UIViewContentModeScaleAspectFit;
-        self.bgHeightPadding = 50;
-        self.bgCenterYDelta = 0;
-        
+        self.bgCenterYDelta = -30;
     }
- //대조작업필요
-    
+        //이미지 조정
     return self;
 }
 

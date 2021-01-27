@@ -21,12 +21,11 @@
         BGTextAttribute *bgTextAttribute2 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor colorWithRed:84/255.0f green:8/255.0f blue:8/255.0f alpha:1];
         bgTextAttribute2.borderColor = [UIColor colorWithRed:145/255.0f green:69/255.0f blue:34/255.0f alpha:1];
-        bgTextAttribute1.borderWidth = -4;
-        bgTextAttribute2.borderWidth = -2;
+        bgTextAttribute1.borderWidth = 10;
+        bgTextAttribute2.borderWidth = 18;
        
         self.bgTextAttributes = @[bgTextAttribute1 , bgTextAttribute2];
     }
- //대조작업필요
     
     return self;
 }

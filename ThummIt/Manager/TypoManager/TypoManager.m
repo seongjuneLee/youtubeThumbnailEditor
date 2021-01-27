@@ -27,18 +27,27 @@
     RunningManLogoTypo *runningManLogoTypo = [RunningManLogoTypo runningManLogoTypo];
     SeoYuGiLogoTypo *seoYuGiLogoTypo = [SeoYuGiLogoTypo seoYuGiLogoTypo];
     FirstExperienceTypo *firstexperienceTypo = [FirstExperienceTypo firstExperienceTypo];
-    FightManTypo *fightManTypo = [FightManTypo fightManTypo];
     SeoYuGiCloudLogoTypo *seoYuGiCloudLogoTypo = [SeoYuGiCloudLogoTypo seoYuGiCloudLogoTypo];
-    InFrontOfGirlTypo *inFrontOfGirlTypo = [InFrontOfGirlTypo inFrontOfGirlTypo];
     BabarimanTypo *babarimanTypo = [BabarimanTypo babarimanTypo];
     CowRiseTypo *cowRiseTypo = [CowRiseTypo cowRiseTypo];
     EatRoomTypo *eatRoomTypo = [EatRoomTypo eatRoomTypo];
-    HungryTypo *hungryTypo = [HungryTypo hungryTypo];
     DawnWatchingTypo *dawnWatchingTypo = [DawnWatchingTypo dawnWatchingTypo];
     DDamTypo *ddamTypo = [DDamTypo ddamTypo];
-
+    RedShountingTypo *redShoutingTypo = [RedShountingTypo redShountingTypo];
+    YellowGradientTypo *yellowGradientTypo =[YellowGradientTypo yellowGradientTypo];
+    WorkingManNameTypo *workingManNameTypo =[WorkingManNameTypo workingManNameTypo];
+    RedShountingTypo *redShountingTypo = [RedShountingTypo redShountingTypo];
+    BlueMoonTypo *blueMoonTypo = [BlueMoonTypo blueMoonTypo];
+    WhatTypo *whatTypo = [WhatTypo whatTypo];
+    AtmosphereTypo *atmosphereTypo = [AtmosphereTypo atmosphereTypo];
+    WhiteYellowGradientTypo *whiteYellowGradientTypo = [WhiteYellowGradientTypo whiteYellowGradientTypo];
+    TikiTypo *tikiTypo = [TikiTypo tikiTypo];
+    KnockOutTypo *knockOutTypo = [KnockOutTypo knockOutTypo];
+    MatterTypo *matterTypo = [MatterTypo matterTypo];
+    SuccessTypo *successTypo = [SuccessTypo successTypo];
+    WhyRealTypo *whyrealTypo = [WhyRealTypo whyRealTypo];
+    RuleTypo *ruleTypo = [RuleTypo ruleTypo];
     
-    return @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo,ddamTypo];
+    return @[runningManLogoTypo, ddamTypo, redShountingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo, tikiTypo, knockOutTypo, matterTypo, successTypo, whyrealTypo, ruleTypo, seoYuGiLogoTypo, firstexperienceTypo, seoYuGiCloudLogoTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, dawnWatchingTypo];
 }
-
 @end
