@@ -7,7 +7,6 @@
 //
 
 #import "BGTextAttribute.h"
-#import <TTTAttributedLabel/TTTAttributedLabel.h>
 
 @implementation BGTextAttribute
 
