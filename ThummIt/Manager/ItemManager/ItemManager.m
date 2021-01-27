@@ -57,9 +57,10 @@
 
     NSString *basicCircle = NSLocalizedString(@"basic circle", nil);
     NSString *basicArrow = NSLocalizedString(@"basic arrow", nil);
-    NSString *x = NSLocalizedString(@"X", nil);
+    NSString *x = NSLocalizedString(@"X sticker", nil);
+    NSString *exclamationMark = NSLocalizedString(@"exclamation Mark", nil);
 
-    NSArray *categories = @[basicCircle, basicArrow, x];
+    NSArray *categories = @[basicCircle, basicArrow, x, exclamationMark];
     
     return categories;
 }
@@ -86,6 +87,14 @@
     XSticker *xSticker  = [XSticker xSticker];
     xSticker.backgroundImageName = @"xStickerWhite";
     NSArray *stickers = @[xSticker];
+    return stickers;
+}
+
+-(NSArray *)exclamationMark{
+    
+    ExclamationMark *exclamationMark  = [ExclamationMark exclamationMark];
+    exclamationMark.backgroundImageName = @"exclamationMark";
+    NSArray *stickers = @[exclamationMark];
     return stickers;
 }
 

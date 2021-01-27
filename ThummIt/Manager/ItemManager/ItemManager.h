@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSArray *)basicCircleStickers;
 -(NSArray *)basicArrowStickers;
 -(NSArray *)xStickers;
+-(NSArray *)exclamationMark;
 
 -(void)addItem:(Item *)item withView:(UIView *)view underView:(UIView *)gestureView withCriteriaView:(UIImageView *)imageView;
 -(void)deleteItem:(Item *)item;

@@ -53,6 +53,8 @@
         return ItemManager.sharedInstance.basicArrowStickers.count;
     } else if (section == 2) {
         return ItemManager.sharedInstance.xStickers.count;
+    } else if (section == 3) {
+        return ItemManager.sharedInstance.exclamationMark.count;
     }
     
     return 0;
@@ -87,6 +89,8 @@
         sticker = ItemManager.sharedInstance.basicArrowStickers[indexPath.item];
     } else if (indexPath.section == 2){
         sticker = ItemManager.sharedInstance.xStickers[indexPath.item];
+    } else if (indexPath.section == 3){
+        sticker = ItemManager.sharedInstance.exclamationMark[indexPath.item];
     }
     [self.delegate didSelectSticker:sticker];
     
