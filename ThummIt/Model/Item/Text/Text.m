@@ -135,6 +135,7 @@
     if (range.length == 0) {
         range = NSMakeRange(0, self.textView.text.length);
     }
+    NSLog(@"prevRange prevRange %@",NSStringFromRange(range));
     [self applyTypo:typo forRange:range];
     
     self.textView.selectedRange = prevRange;
@@ -241,7 +242,6 @@
     placeHolderText.textView.textAlignment = NSTextAlignmentCenter;
 
     [placeHolderText applyTypo:typo];
-    placeHolderText.textView.font = [UIFont fontWithName:typo.fontName size:typo.fontSize]; // placeholder는 fontName으로.
     [placeHolderText resize];
     
     [placeHolderText.textView setNeedsDisplay];

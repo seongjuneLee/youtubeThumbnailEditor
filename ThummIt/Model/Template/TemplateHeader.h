@@ -19,4 +19,6 @@
 #import "TwoDivisionTemplate.h"
 #import "QuarterDivisionTemplate.h"
 
+#import "RunningMan1Template.h"
+
 #endif /* TemplateHeader_h */

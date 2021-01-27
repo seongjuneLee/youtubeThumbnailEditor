@@ -17,6 +17,10 @@
     self.currentText.text = textView.text;
     self.currentText.isTypedByUser = true;
     [self.currentText resize];
+    [self.currentText.textView setNeedsDisplay];
+    for (NSMutableAttributedString* attributedText in self.currentText.backgroundAttributedTexts) {
+        attributedText.mutableString.string = textView.text;
+    }
 }
 
 @end

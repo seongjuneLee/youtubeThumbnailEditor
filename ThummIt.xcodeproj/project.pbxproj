@@ -139,6 +139,16 @@
 		6ED13A8325B9A92C00012144 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED13A8025B9A92C00012144 /* FBSDKCoreKit.framework */; };
 		6ED13A8725B9AAC400012144 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED13A8625B9AAC400012144 /* Bolts.framework */; };
 		6ED13B0425BDA75D00012144 /* UIImageView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13B0325BDA75C00012144 /* UIImageView+Additions.m */; };
+		6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13B9B25C08ECC00012144 /* RunningManLogoTypo.m */; };
+		6ED13BA525C08F1F00012144 /* DDamTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13BA425C08F1F00012144 /* DDamTypo.m */; };
+		6ED13BAA25C08F9000012144 /* RedShountingTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13BA925C08F9000012144 /* RedShountingTypo.m */; };
+		6ED13BAF25C08FA700012144 /* YellowGradientTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13BAE25C08FA700012144 /* YellowGradientTypo.m */; };
+		6ED13BB425C08FC700012144 /* WorkingManNameTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13BB325C08FC700012144 /* WorkingManNameTypo.m */; };
+		6ED13BBA25C093F100012144 /* BMHANNA_11yrs_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13BB725C0917F00012144 /* BMHANNA_11yrs_otf.otf */; };
+		6ED13BE425C0CE2500012144 /* NSMutableAttributedString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13BE325C0CE2500012144 /* NSMutableAttributedString+Additions.m */; };
+		6ED13BEC25C0D1B400012144 /* NSLayoutManager+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13BEB25C0D1B400012144 /* NSLayoutManager+Additions.m */; };
+		6ED13C1C25C10DE400012144 /* RunningMan1Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13C1B25C10DE400012144 /* RunningMan1Template.m */; };
+		6ED13C2225C10E7700012144 /* gabia_solmee.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13C2125C10E7700012144 /* gabia_solmee.otf */; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
@@ -435,6 +445,24 @@
 		6ED13A8625B9AAC400012144 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		6ED13B0225BDA75C00012144 /* UIImageView+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Additions.h"; sourceTree = "<group>"; };
 		6ED13B0325BDA75C00012144 /* UIImageView+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Additions.m"; sourceTree = "<group>"; };
+		6ED13B9A25C08ECC00012144 /* RunningManLogoTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunningManLogoTypo.h; sourceTree = "<group>"; };
+		6ED13B9B25C08ECC00012144 /* RunningManLogoTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunningManLogoTypo.m; sourceTree = "<group>"; };
+		6ED13BA325C08F1F00012144 /* DDamTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDamTypo.h; sourceTree = "<group>"; };
+		6ED13BA425C08F1F00012144 /* DDamTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDamTypo.m; sourceTree = "<group>"; };
+		6ED13BA825C08F9000012144 /* RedShountingTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedShountingTypo.h; sourceTree = "<group>"; };
+		6ED13BA925C08F9000012144 /* RedShountingTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedShountingTypo.m; sourceTree = "<group>"; };
+		6ED13BAD25C08FA700012144 /* YellowGradientTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YellowGradientTypo.h; sourceTree = "<group>"; };
+		6ED13BAE25C08FA700012144 /* YellowGradientTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YellowGradientTypo.m; sourceTree = "<group>"; };
+		6ED13BB225C08FC700012144 /* WorkingManNameTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkingManNameTypo.h; sourceTree = "<group>"; };
+		6ED13BB325C08FC700012144 /* WorkingManNameTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkingManNameTypo.m; sourceTree = "<group>"; };
+		6ED13BB725C0917F00012144 /* BMHANNA_11yrs_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNA_11yrs_otf.otf; sourceTree = "<group>"; };
+		6ED13BE225C0CE2500012144 /* NSMutableAttributedString+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Additions.h"; sourceTree = "<group>"; };
+		6ED13BE325C0CE2500012144 /* NSMutableAttributedString+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Additions.m"; sourceTree = "<group>"; };
+		6ED13BEA25C0D1B400012144 /* NSLayoutManager+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutManager+Additions.h"; sourceTree = "<group>"; };
+		6ED13BEB25C0D1B400012144 /* NSLayoutManager+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutManager+Additions.m"; sourceTree = "<group>"; };
+		6ED13C1A25C10DE400012144 /* RunningMan1Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunningMan1Template.h; sourceTree = "<group>"; };
+		6ED13C1B25C10DE400012144 /* RunningMan1Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunningMan1Template.m; sourceTree = "<group>"; };
+		6ED13C2125C10E7700012144 /* gabia_solmee.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gabia_solmee.otf; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -802,6 +830,7 @@
 				6E4A17EF258891D7008578BA /* TemplateHeader.h */,
 				6E7DD51425888C980014618E /* Template.h */,
 				6E7DD51525888C980014618E /* Template.m */,
+				6ED13C1925C10DCE00012144 /* RunningMan */,
 				6E7DD50425888C290014618E /* CircleTemplate */,
 				6E9BE98F258A517400F7F539 /* VlogTemplate */,
 				6E8F995925C084BF005C8071 /* SinSeoYuGi */,
@@ -1271,6 +1300,8 @@
 				6E8E7A01259237BC0008C5FF /* UIImage */,
 				6EC4DFD925A8859F0023485C /* UITextView */,
 				6EC4DFE325A88ABB0023485C /* NSArray */,
+				6ED13BE725C0CE2B00012144 /* NSMutableAttributedString */,
+				6ED13BEF25C0D1B800012144 /* NSLayoutManager */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1279,6 +1310,8 @@
 			isa = PBXGroup;
 			children = (
 				6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */,
+				6ED13C2125C10E7700012144 /* gabia_solmee.otf */,
+				6ED13BB725C0917F00012144 /* BMHANNA_11yrs_otf.otf */,
 				6E8F996F25C0C4F5005C8071 /* 62570-_1_.otf */,
 				6E8F99A125C0E8C9005C8071 /* ELAND-Nice-M.otf */,
 				6E8F997A25C0D3B4005C8071 /* NotoSansCJKkr-Bold.otf */,
@@ -1360,9 +1393,62 @@
 				6EC4DFEB25A892B00023485C /* NormalTypo.m */,
 				6EAFD5BE25B87D0400B193AB /* TrapezoidTypo.h */,
 				6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */,
+				6ED13B8225C0898900012144 /* RunningManTypo */,
 				6E8F996A25C0C0A4005C8071 /* SinSeoYuGi */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		6ED13B8225C0898900012144 /* RunningManTypo */ = {
+			isa = PBXGroup;
+			children = (
+				6ED13B9725C08A5E00012144 /* RunningManTemplate1Typo */,
+			);
+			path = RunningManTypo;
+			sourceTree = "<group>";
+		};
+		6ED13B9725C08A5E00012144 /* RunningManTemplate1Typo */ = {
+			isa = PBXGroup;
+			children = (
+				6ED13B9A25C08ECC00012144 /* RunningManLogoTypo.h */,
+				6ED13B9B25C08ECC00012144 /* RunningManLogoTypo.m */,
+				6ED13BA325C08F1F00012144 /* DDamTypo.h */,
+				6ED13BA425C08F1F00012144 /* DDamTypo.m */,
+				6ED13BA825C08F9000012144 /* RedShountingTypo.h */,
+				6ED13BA925C08F9000012144 /* RedShountingTypo.m */,
+				6ED13BAD25C08FA700012144 /* YellowGradientTypo.h */,
+				6ED13BAE25C08FA700012144 /* YellowGradientTypo.m */,
+				6ED13BB225C08FC700012144 /* WorkingManNameTypo.h */,
+				6ED13BB325C08FC700012144 /* WorkingManNameTypo.m */,
+			);
+			path = RunningManTemplate1Typo;
+			sourceTree = "<group>";
+		};
+		6ED13BE725C0CE2B00012144 /* NSMutableAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				6ED13BE225C0CE2500012144 /* NSMutableAttributedString+Additions.h */,
+				6ED13BE325C0CE2500012144 /* NSMutableAttributedString+Additions.m */,
+			);
+			path = NSMutableAttributedString;
+			sourceTree = "<group>";
+		};
+		6ED13BEF25C0D1B800012144 /* NSLayoutManager */ = {
+			isa = PBXGroup;
+			children = (
+				6ED13BEA25C0D1B400012144 /* NSLayoutManager+Additions.h */,
+				6ED13BEB25C0D1B400012144 /* NSLayoutManager+Additions.m */,
+			);
+			path = NSLayoutManager;
+			sourceTree = "<group>";
+		};
+		6ED13C1925C10DCE00012144 /* RunningMan */ = {
+			isa = PBXGroup;
+			children = (
+				6ED13C1A25C10DE400012144 /* RunningMan1Template.h */,
+				6ED13C1B25C10DE400012144 /* RunningMan1Template.m */,
+			);
+			path = RunningMan;
 			sourceTree = "<group>";
 		};
 		6EDE19ED258A277F001FC1DA /* HomeCollectionController */ = {
@@ -1554,6 +1640,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED13BBA25C093F100012144 /* BMHANNA_11yrs_otf.otf in Resources */,
 				6E8F997B25C0D3CC005C8071 /* NotoSansCJKkr-Bold.otf in Resources */,
 				6E8F997025C0C522005C8071 /* 62570-_1_.otf in Resources */,
 				6E7DD4D42584E1D30014618E /* AlbumCollectionViewCell.xib in Resources */,
@@ -1567,6 +1654,7 @@
 				B16FC68125AF459800E854C1 /* StickerCollectionReusableView.xib in Resources */,
 				6E8E7AF525A83C110008C5FF /* TextCollectionViewCell.xib in Resources */,
 				6E8E79ED25921E440008C5FF /* ProjectTableViewCell.xib in Resources */,
+				6ED13C2225C10E7700012144 /* gabia_solmee.otf in Resources */,
 				6E8E7A6B259C91560008C5FF /* PhotoFrameCollectionViewCell.xib in Resources */,
 				6E8F99A225C0E8C9005C8071 /* ELAND-Nice-M.otf in Resources */,
 				6E1190F12584B164000DD9C0 /* Assets.xcassets in Resources */,
@@ -1747,6 +1835,8 @@
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
 				6E20BCC025AEF58600BBA540 /* UndoManager.m in Sources */,
 				6E8F98E625BC4B08005C8071 /* GuideLineManager.m in Sources */,
+				6ED13C1C25C10DE400012144 /* RunningMan1Template.m in Sources */,
+				6ED13BEC25C0D1B400012144 /* NSLayoutManager+Additions.m in Sources */,
 				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
 				6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */,
 				6EC4DFF225A895240023485C /* TypoManager.m in Sources */,
@@ -1767,6 +1857,7 @@
 				B16FC64925ADF90000E854C1 /* BasicCircleSticker.m in Sources */,
 				6E9BEA36258E696F00F7F539 /* SaveManager.m in Sources */,
 				6E9BEA46258F0AA300F7F539 /* ThummIt.xcdatamodeld in Sources */,
+				6ED13BB425C08FC700012144 /* WorkingManNameTypo.m in Sources */,
 				6E8F998C25C0DAD6005C8071 /* InFrontOfGirlTypo.m in Sources */,
 				6EAD5C2A25B562F900C42187 /* QuarterRectangle.m in Sources */,
 				6E8F99B525C0FADB005C8071 /* HungryTypo.m in Sources */,
@@ -1782,10 +1873,12 @@
 				6E9BEA22258DECDB00F7F539 /* EditingLayerController.m in Sources */,
 				6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */,
 				6EAD5C9E25B767E200C42187 /* CustomerFeedback.m in Sources */,
+				6ED13BAF25C08FA700012144 /* YellowGradientTypo.m in Sources */,
 				6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */,
 				6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */,
 				6EC4DFCB25A87DAF0023485C /* UIColor+Additions.m in Sources */,
 				6E8E7A2E259B270E0008C5FF /* PhotoFrameCollectionController.m in Sources */,
+				6ED13BE425C0CE2500012144 /* NSMutableAttributedString+Additions.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				B16FC66025AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m in Sources */,
@@ -1810,6 +1903,7 @@
 				B16FC68D25AF7F3900E854C1 /* XSticker.m in Sources */,
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
 				6E9BEA4E258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift in Sources */,
+				6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGiTemplate1.m in Sources */,
 				B16FC68025AF459800E854C1 /* StickerCollectionReusableView.m in Sources */,
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,
@@ -1823,6 +1917,7 @@
 				6EAD5C9F25B767E200C42187 /* CustomerFeedbackViewController.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
 				6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */,
+				6ED13BA525C08F1F00012144 /* DDamTypo.m in Sources */,
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
 				6E8F98FD25BCE6CC005C8071 /* GuideTarget.m in Sources */,
 				6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */,
@@ -1836,6 +1931,7 @@
 				B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */,
 				6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */,
 				6E4A18452588C87A008578BA /* ChristmasCircle.m in Sources */,
+				6ED13BAA25C08F9000012144 /* RedShountingTypo.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6E8F998025C0D8E5005C8071 /* FightManTypo.m in Sources */,

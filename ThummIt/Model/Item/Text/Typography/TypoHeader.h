@@ -11,6 +11,7 @@
 #import "Typography.h"
 #import "NormalTypo.h"
 #import "TrapezoidTypo.h"
+#import "RunningManLogoTypo.h"
 #import "SeoYuGiLogoTypo.h"
 #import "FirstExperienceTypo.h"
 #import "FightManTypo.h"
