@@ -90,7 +90,6 @@
 		6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E998794258A300300C8F907 /* HomeCollectionViewCell.m */; };
 		6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */; };
 		6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */; };
-		6E9BE992258A526500F7F539 /* AhnsoheeTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE991258A526500F7F539 /* AhnsoheeTemplate.m */; };
 		6E9BE998258A527C00F7F539 /* QuarterDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */; };
 		6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE99D258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m */; };
 		6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE9B6258B2C4C00F7F539 /* EditingGestureController.m */; };
@@ -124,7 +123,6 @@
 		6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */; };
 		6EBEB49B25C090340017C640 /* WorkManAngrySticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB49A25C090340017C640 /* WorkManAngrySticker.m */; };
 		6EBEB4A525C09EEB0017C640 /* WorkManLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */; };
-		6EBEB4AF25C0ACDA0017C640 /* BMDOHYEON_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB4AA25C0A2570017C640 /* BMDOHYEON_otf.otf */; };
 		6EBEB4CD25C0C6F60017C640 /* WorkManTalkSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4CC25C0C6F60017C640 /* WorkManTalkSticker.m */; };
 		6EBEB4D225C0C7FD0017C640 /* WorkManFiveFingerSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4D125C0C7FD0017C640 /* WorkManFiveFingerSticker.m */; };
 		6EBEB4FB25C0CD800017C640 /* WorkManYellowSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4FA25C0CD800017C640 /* WorkManYellowSticker.m */; };
@@ -135,7 +133,6 @@
 		6EBEB51D25C155490017C640 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB51C25C155060017C640 /* NanumGothicBold.otf */; };
 		6EBEB52125C156600017C640 /* NanumSquareOTFExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB52025C156330017C640 /* NanumSquareOTFExtraBold.otf */; };
 		6EBEB52625C191340017C640 /* WorkManRedTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB52525C191340017C640 /* WorkManRedTitle.m */; };
-		6EBEB52C25C193640017C640 /* SCDream9.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB52B25C193120017C640 /* SCDream9.otf */; };
 		6EBEB53125C1950A0017C640 /* WorkManBlueTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB53025C1950A0017C640 /* WorkManBlueTitle.m */; };
 		6EC4DFA625A85D860023485C /* Typography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA525A85D860023485C /* Typography.m */; };
 		6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */; };
@@ -380,8 +377,6 @@
 		6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E9BE989258A517000F7F539 /* TwoDivisionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoDivisionTemplate.h; sourceTree = "<group>"; };
 		6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoDivisionTemplate.m; sourceTree = "<group>"; };
-		6E9BE990258A526500F7F539 /* AhnsoheeTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AhnsoheeTemplate.h; sourceTree = "<group>"; };
-		6E9BE991258A526500F7F539 /* AhnsoheeTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AhnsoheeTemplate.m; sourceTree = "<group>"; };
 		6E9BE996258A527C00F7F539 /* QuarterDivisionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuarterDivisionTemplate.h; sourceTree = "<group>"; };
 		6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuarterDivisionTemplate.m; sourceTree = "<group>"; };
 		6E9BE99C258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeViewController+TableControllerDelegate.h"; sourceTree = "<group>"; };
@@ -595,6 +590,7 @@
 				6E1190E22584B163000DD9C0 /* Products */,
 				6E9BEA3E258F099300F7F539 /* Frameworks */,
 				D7497D01466F91BCF058B268 /* Pods */,
+				6E8F99E925C1A161005C8071 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1145,6 +1141,15 @@
 			path = SinSeoYuGi;
 			sourceTree = "<group>";
 		};
+		6E8F99E925C1A161005C8071 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				6EBEB52B25C193120017C640 /* SCDream9.otf */,
+				6EBEB4AA25C0A2570017C640 /* BMDOHYEON_otf.otf */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		6E998780258A2AA100C8F907 /* TemplateManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1171,8 +1176,6 @@
 				6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */,
 				6E9BE996258A527C00F7F539 /* QuarterDivisionTemplate.h */,
 				6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */,
-				6E9BE990258A526500F7F539 /* AhnsoheeTemplate.h */,
-				6E9BE991258A526500F7F539 /* AhnsoheeTemplate.m */,
 			);
 			path = VlogTemplate;
 			sourceTree = "<group>";
@@ -1765,12 +1768,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EBEB52C25C193640017C640 /* SCDream9.otf in Resources */,
 				6EBEB52125C156600017C640 /* NanumSquareOTFExtraBold.otf in Resources */,
 				6EBEB51D25C155490017C640 /* NanumGothicBold.otf in Resources */,
 				6EBEB51525C1502F0017C640 /* AnyConv.com__NanumGothic.otf in Resources */,
 				6EBEB51125C14CF40017C640 /* NanumSquareOTFBold.otf in Resources */,
-				6EBEB4AF25C0ACDA0017C640 /* BMDOHYEON_otf.otf in Resources */,
 				6ED13BBA25C093F100012144 /* BMHANNA_11yrs_otf.otf in Resources */,
 				6E8F997B25C0D3CC005C8071 /* NotoSansCJKkr-Bold.otf in Resources */,
 				6E8F997025C0C522005C8071 /* 62570-_1_.otf in Resources */,
@@ -2049,7 +2050,6 @@
 				B16FC68025AF459800E854C1 /* StickerCollectionReusableView.m in Sources */,
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,
 				B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */,
-				6E9BE992258A526500F7F539 /* AhnsoheeTemplate.m in Sources */,
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
 				6E8E7A24259B26CF0008C5FF /* ItemCollectionViewController.m in Sources */,
 				6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */,
