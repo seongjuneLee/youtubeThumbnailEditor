@@ -83,6 +83,8 @@
 		<string>NotoSansCJKkr-Bold.otf</string>
 		<string>ELAND-Nice-M.otf</string>
 		<string>BMDOHYEON_otf.otf</string>
+		<string>TmoneyRoundWindRegular.otf</string>
+		<string>TmoneyRoundWindExtraBold.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

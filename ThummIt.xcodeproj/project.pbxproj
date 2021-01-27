@@ -89,7 +89,6 @@
 		6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E998794258A300300C8F907 /* HomeCollectionViewCell.m */; };
 		6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */; };
 		6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */; };
-		6E9BE992258A526500F7F539 /* AhnsoheeTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE991258A526500F7F539 /* AhnsoheeTemplate.m */; };
 		6E9BE998258A527C00F7F539 /* QuarterDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */; };
 		6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE99D258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m */; };
 		6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE9B6258B2C4C00F7F539 /* EditingGestureController.m */; };
@@ -149,6 +148,8 @@
 		6ED13BEC25C0D1B400012144 /* NSLayoutManager+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13BEB25C0D1B400012144 /* NSLayoutManager+Additions.m */; };
 		6ED13C1C25C10DE400012144 /* RunningMan1Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13C1B25C10DE400012144 /* RunningMan1Template.m */; };
 		6ED13C2225C10E7700012144 /* gabia_solmee.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13C2125C10E7700012144 /* gabia_solmee.otf */; };
+		6ED13C7C25C11B9800012144 /* TmoneyRoundWindExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13C7A25C11B9700012144 /* TmoneyRoundWindExtraBold.otf */; };
+		6ED13C7D25C11B9800012144 /* TmoneyRoundWindRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13C7B25C11B9800012144 /* TmoneyRoundWindRegular.otf */; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
@@ -356,8 +357,6 @@
 		6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E9BE989258A517000F7F539 /* TwoDivisionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoDivisionTemplate.h; sourceTree = "<group>"; };
 		6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoDivisionTemplate.m; sourceTree = "<group>"; };
-		6E9BE990258A526500F7F539 /* AhnsoheeTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AhnsoheeTemplate.h; sourceTree = "<group>"; };
-		6E9BE991258A526500F7F539 /* AhnsoheeTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AhnsoheeTemplate.m; sourceTree = "<group>"; };
 		6E9BE996258A527C00F7F539 /* QuarterDivisionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuarterDivisionTemplate.h; sourceTree = "<group>"; };
 		6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuarterDivisionTemplate.m; sourceTree = "<group>"; };
 		6E9BE99C258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeViewController+TableControllerDelegate.h"; sourceTree = "<group>"; };
@@ -463,6 +462,8 @@
 		6ED13C1A25C10DE400012144 /* RunningMan1Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunningMan1Template.h; sourceTree = "<group>"; };
 		6ED13C1B25C10DE400012144 /* RunningMan1Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunningMan1Template.m; sourceTree = "<group>"; };
 		6ED13C2125C10E7700012144 /* gabia_solmee.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gabia_solmee.otf; sourceTree = "<group>"; };
+		6ED13C7A25C11B9700012144 /* TmoneyRoundWindExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TmoneyRoundWindExtraBold.otf; sourceTree = "<group>"; };
+		6ED13C7B25C11B9800012144 /* TmoneyRoundWindRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TmoneyRoundWindRegular.otf; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -1104,8 +1105,6 @@
 				6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */,
 				6E9BE996258A527C00F7F539 /* QuarterDivisionTemplate.h */,
 				6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */,
-				6E9BE990258A526500F7F539 /* AhnsoheeTemplate.h */,
-				6E9BE991258A526500F7F539 /* AhnsoheeTemplate.m */,
 			);
 			path = VlogTemplate;
 			sourceTree = "<group>";
@@ -1310,6 +1309,8 @@
 			isa = PBXGroup;
 			children = (
 				6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */,
+				6ED13C7A25C11B9700012144 /* TmoneyRoundWindExtraBold.otf */,
+				6ED13C7B25C11B9800012144 /* TmoneyRoundWindRegular.otf */,
 				6ED13C2125C10E7700012144 /* gabia_solmee.otf */,
 				6ED13BB725C0917F00012144 /* BMHANNA_11yrs_otf.otf */,
 				6E8F996F25C0C4F5005C8071 /* 62570-_1_.otf */,
@@ -1649,11 +1650,13 @@
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
 				B16FC62025ADCD9400E854C1 /* StickerCollectionViewCell.xib in Resources */,
+				6ED13C7D25C11B9800012144 /* TmoneyRoundWindRegular.otf in Resources */,
 				6E7DD4E02587ABC40014618E /* Editing.storyboard in Resources */,
 				6EAFD5B625B876D400B193AB /* KOTRA_BOLD.otf in Resources */,
 				B16FC68125AF459800E854C1 /* StickerCollectionReusableView.xib in Resources */,
 				6E8E7AF525A83C110008C5FF /* TextCollectionViewCell.xib in Resources */,
 				6E8E79ED25921E440008C5FF /* ProjectTableViewCell.xib in Resources */,
+				6ED13C7C25C11B9800012144 /* TmoneyRoundWindExtraBold.otf in Resources */,
 				6ED13C2225C10E7700012144 /* gabia_solmee.otf in Resources */,
 				6E8E7A6B259C91560008C5FF /* PhotoFrameCollectionViewCell.xib in Resources */,
 				6E8F99A225C0E8C9005C8071 /* ELAND-Nice-M.otf in Resources */,
@@ -1908,7 +1911,6 @@
 				B16FC68025AF459800E854C1 /* StickerCollectionReusableView.m in Sources */,
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,
 				B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */,
-				6E9BE992258A526500F7F539 /* AhnsoheeTemplate.m in Sources */,
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
 				6E8E7A24259B26CF0008C5FF /* ItemCollectionViewController.m in Sources */,
 				6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */,

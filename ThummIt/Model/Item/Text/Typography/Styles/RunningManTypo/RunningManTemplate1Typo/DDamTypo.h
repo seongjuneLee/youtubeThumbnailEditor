@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DDamTypo : Typography
 
++(DDamTypo*) ddamTypo;
+
 @end
 
 NS_ASSUME_NONNULL_END

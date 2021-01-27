@@ -35,9 +35,10 @@
     EatRoomTypo *eatRoomTypo = [EatRoomTypo eatRoomTypo];
     HungryTypo *hungryTypo = [HungryTypo hungryTypo];
     DawnWatchingTypo *dawnWatchingTypo = [DawnWatchingTypo dawnWatchingTypo];
+    DDamTypo *ddamTypo = [DDamTypo ddamTypo];
+
     
-    
-    return @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo];
+    return @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo,ddamTypo];
 }
 
 @end

@@ -19,13 +19,9 @@
         
     Text *text = [[Text alloc] init];
     text.textView.delegate = editingVC;
-    text.textView.layer.cornerRadius = 10;
-    text.textView.clipsToBounds = true;
 
     text.text = typo.name;
     text.textView.text = text.text;
-    NSLog(@"text.textView.text %@",text.textView.text);
-    NSLog(@"text.text %@",text.text);
     text.textAlignment = NSTextAlignmentCenter;
     text.textView.textAlignment = NSTextAlignmentCenter;
     
@@ -35,8 +31,6 @@
 
     text.textViewContainer.center = editingVC.bgView.center;
     text.center = text.textViewContainer.center;
-
-    NSLog(@"");
 
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지

@@ -13,7 +13,12 @@
     
     self = [super init];
     if(self){
-        
+        self.photoFrames = [NSMutableArray array];
+        self.texts = [NSMutableArray array];
+        self.stickers = [NSMutableArray array];
+        [self setUpPhotoFrame];
+        [self setUpTexts];
+
     }
     return self;
 }

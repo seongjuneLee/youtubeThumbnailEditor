@@ -22,5 +22,6 @@
 #import "EatRoomTypo.h"
 #import "HungryTypo.h"
 #import "DawnWatchingTypo.h"
+#import "DDamTypo.h"
 
 #endif /* TypoHeader_h */
