@@ -5,9 +5,9 @@
 //  Created by 이성준 on 2020/12/15.
 //
 
-#import "BasicCircle.h"
+#import "BasicCirclePhotoFrame.h"
 
-@implementation BasicCircle
+@implementation BasicCirclePhotoFrame
 
 -(id)init{
     
@@ -38,10 +38,10 @@
     return self;
 }
 
-+(BasicCircle*)basicCircle{
++(BasicCirclePhotoFrame*)basicCirclePhotoFrame{
     
-    BasicCircle* basicCircle = [[self alloc] init];
-    return basicCircle;
+    BasicCirclePhotoFrame* basicCirclePhotoFrame = [[self alloc] init];
+    return basicCirclePhotoFrame;
     
 }
 

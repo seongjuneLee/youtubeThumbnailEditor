@@ -24,7 +24,7 @@
 		6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17F42588A518008578BA /* UIView+Additions.m */; };
 		6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A18312588C84B008578BA /* PhotoFrame.m */; };
 		6E4A18452588C87A008578BA /* ChristmasCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A18442588C87A008578BA /* ChristmasCircle.m */; };
-		6E4A184B2588C99D008578BA /* BasicCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A184A2588C99D008578BA /* BasicCircle.m */; };
+		6E4A184B2588C99D008578BA /* BasicCirclePhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A184A2588C99D008578BA /* BasicCirclePhotoFrame.m */; };
 		6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A18602589F7BD008578BA /* EditingViewController+Buttons.m */; };
 		6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A1866258A0009008578BA /* EditingViewController+AlbumVCDelegate.m */; };
 		6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A187B258A0E0B008578BA /* DoubleCircleTemplate.m */; };
@@ -258,8 +258,8 @@
 		6E4A18312588C84B008578BA /* PhotoFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoFrame.m; sourceTree = "<group>"; };
 		6E4A18432588C87A008578BA /* ChristmasCircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChristmasCircle.h; sourceTree = "<group>"; };
 		6E4A18442588C87A008578BA /* ChristmasCircle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChristmasCircle.m; sourceTree = "<group>"; };
-		6E4A18492588C99D008578BA /* BasicCircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicCircle.h; sourceTree = "<group>"; };
-		6E4A184A2588C99D008578BA /* BasicCircle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicCircle.m; sourceTree = "<group>"; };
+		6E4A18492588C99D008578BA /* BasicCirclePhotoFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicCirclePhotoFrame.h; sourceTree = "<group>"; };
+		6E4A184A2588C99D008578BA /* BasicCirclePhotoFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicCirclePhotoFrame.m; sourceTree = "<group>"; };
 		6E4A18522588CE2E008578BA /* PhotoFrameHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoFrameHeader.h; sourceTree = "<group>"; };
 		6E4A185F2589F7BD008578BA /* EditingViewController+Buttons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditingViewController+Buttons.h"; sourceTree = "<group>"; };
 		6E4A18602589F7BD008578BA /* EditingViewController+Buttons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EditingViewController+Buttons.m"; sourceTree = "<group>"; };
@@ -1432,8 +1432,8 @@
 		6EC4DFA325A85D1E0023485C /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				6E4A18492588C99D008578BA /* BasicCircle.h */,
-				6E4A184A2588C99D008578BA /* BasicCircle.m */,
+				6E4A18492588C99D008578BA /* BasicCirclePhotoFrame.h */,
+				6E4A184A2588C99D008578BA /* BasicCirclePhotoFrame.m */,
 				6E4A18432588C87A008578BA /* ChristmasCircle.h */,
 				6E4A18442588C87A008578BA /* ChristmasCircle.m */,
 				6E8F995E25C09EB4005C8071 /* FullRectangle.h */,
@@ -2087,7 +2087,7 @@
 				6E8E79B82591F9570008C5FF /* MainTabBarViewController.m in Sources */,
 				6EBEB49B25C090340017C640 /* WorkManAngrySticker.m in Sources */,
 				6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */,
-				6E4A184B2588C99D008578BA /* BasicCircle.m in Sources */,
+				6E4A184B2588C99D008578BA /* BasicCirclePhotoFrame.m in Sources */,
 				6E4A1885258A1201008578BA /* CategoryManager.m in Sources */,
 				6E8E7AC025A833590008C5FF /* TextCollectionController.m in Sources */,
 				6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */,

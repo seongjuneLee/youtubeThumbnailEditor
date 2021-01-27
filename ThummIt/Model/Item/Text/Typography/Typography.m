@@ -121,6 +121,7 @@
             self.textFromColor = [decoder decodeObjectForKey:@"textFromColor"];
             self.textToColor = [decoder decodeObjectForKey:@"textToColor"];
             self.textGradientHeight = [[decoder decodeObjectForKey:@"textGradientHeight"] floatValue];
+            self.textColor = [UIColor diagonalGradientFromColor:self.textFromColor toColor:self.textToColor withHeight:self.textGradientHeight];
         }
         
         if (self.borderToColor == nil) {
@@ -130,6 +131,7 @@
             self.borderFromColor = [decoder decodeObjectForKey:@"borderFromColor"];
             self.borderToColor = [decoder decodeObjectForKey:@"borderToColor"];
             self.borderGradientHeight = [[decoder decodeObjectForKey:@"borderGradientHeight"] floatValue];
+            self.borderColor = [UIColor diagonalGradientFromColor:self.borderFromColor toColor:self.borderToColor withHeight:self.borderGradientHeight];
         }
         
         if (self.bgToColor == nil) {

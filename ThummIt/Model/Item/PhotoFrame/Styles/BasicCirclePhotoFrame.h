@@ -9,9 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BasicCircle : PhotoFrame
+@interface BasicCirclePhotoFrame : PhotoFrame
 
-+(BasicCircle*)basicCircle;
++(BasicCirclePhotoFrame*)basicCirclePhotoFrame;
 
 @end
 
