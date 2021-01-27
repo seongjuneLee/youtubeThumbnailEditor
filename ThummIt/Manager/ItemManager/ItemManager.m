@@ -26,77 +26,78 @@
 
 -(NSArray *)photoFrameCategories{
     
+    // 여기 카테고리의 순서와 아래 아이템 데이타에서 해당 카테고리 아이템 어레이의 순서를 맞춰주어야 함.
     NSString *circle = NSLocalizedString(@"circle", nil);
-    NSString *rectangle = NSLocalizedString(@"rectangle", nil);
-    NSArray *categories = @[circle, rectangle];
+    NSArray *categories = @[circle];
     
     return categories;
 }
 
--(NSArray *)circlePhotoFrames{
+-(NSArray *)photoFrameDatas{
     
     BasicCircle *basicCircle = [BasicCircle basicCircle];
     ChristmasCircle *christmasCircle = [ChristmasCircle christmasCircle];
     
     NSArray *photoFrames = @[basicCircle, christmasCircle];
-    return photoFrames;
+    return @[photoFrames];
 }
 
--(NSArray *)rectanglePhotoFrames{
+#pragma mark - 텍스트
+
+-(NSArray *)typoCategories{
     
-    BasicCircle *basicCircle = [BasicCircle basicCircle];
-    ChristmasCircle *christmasCircle = [ChristmasCircle christmasCircle];
+    NSString *circle = NSLocalizedString(@"circle", nil);
+    NSArray *categories = @[circle];
     
-    NSArray *photoFrames = @[basicCircle, christmasCircle];
-    return photoFrames;
+    return categories;
 }
+
+
+-(NSArray *)typoDatas{
+    
+    NormalTypo *normal = [NormalTypo normalTypo];
+    TrapezoidTypo *trapezoidTypo = [TrapezoidTypo trapezoidTypo];
+    RunningManLogoTypo *runningManLogoTypo = [RunningManLogoTypo runningManLogoTypo];
+    SeoYuGiLogoTypo *seoYuGiLogoTypo = [SeoYuGiLogoTypo seoYuGiLogoTypo];
+    FirstExperienceTypo *firstexperienceTypo = [FirstExperienceTypo firstExperienceTypo];
+    FightManTypo *fightManTypo = [FightManTypo fightManTypo];
+    SeoYuGiCloudLogoTypo *seoYuGiCloudLogoTypo = [SeoYuGiCloudLogoTypo seoYuGiCloudLogoTypo];
+    InFrontOfGirlTypo *inFrontOfGirlTypo = [InFrontOfGirlTypo inFrontOfGirlTypo];
+    BabarimanTypo *babarimanTypo = [BabarimanTypo babarimanTypo];
+    CowRiseTypo *cowRiseTypo = [CowRiseTypo cowRiseTypo];
+    EatRoomTypo *eatRoomTypo = [EatRoomTypo eatRoomTypo];
+    HungryTypo *hungryTypo = [HungryTypo hungryTypo];
+    DawnWatchingTypo *dawnWatchingTypo = [DawnWatchingTypo dawnWatchingTypo];
+    
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo];
+    return @[typos];
+}
+
+
 
 #pragma mark - 스티커
-
 -(NSArray *)stickerCategories{
 
-    NSString *basicCircle = NSLocalizedString(@"basic circle", nil);
-    NSString *basicArrow = NSLocalizedString(@"basic arrow", nil);
-    NSString *x = NSLocalizedString(@"X sticker", nil);
-    NSString *exclamationMark = NSLocalizedString(@"exclamation Mark", nil);
+    NSString *basic = NSLocalizedString(@"basic", nil);
 
-    NSArray *categories = @[basicCircle, basicArrow, x, exclamationMark];
+    NSArray *categories = @[basic];
     
     return categories;
 }
 
-
--(NSArray *)basicCircleStickers{
+-(NSArray *)stickerDatas{
     
     BasicCircleSticker *basicCircleSticker = [BasicCircleSticker basicCircleSticker];
     basicCircleSticker.backgroundImageName = @"basicCircleStickerWhite";
-    NSArray *stickers = @[basicCircleSticker];
-    return stickers;
-}
-
--(NSArray *)basicArrowStickers{
-    
     BasicArrowSticker *basicArrowSticker  = [BasicArrowSticker basicArrowSticker];
     basicArrowSticker.backgroundImageName = @"basicArrowStickerWhite";
-    NSArray *stickers = @[basicArrowSticker];
-    return stickers;
-}
-
--(NSArray *)xStickers{
-    
     XSticker *xSticker  = [XSticker xSticker];
     xSticker.backgroundImageName = @"xStickerWhite";
-    NSArray *stickers = @[xSticker];
-    return stickers;
+    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker];
+    
+    return @[basicStickers];
 }
 
--(NSArray *)exclamationMark{
-    
-    ExclamationMark *exclamationMark  = [ExclamationMark exclamationMark];
-    exclamationMark.backgroundImageName = @"exclamationMark";
-    NSArray *stickers = @[exclamationMark];
-    return stickers;
-}
 
 -(void)addItem:(Item *)item{
     

@@ -77,6 +77,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>KOTRA_BOLD.otf</string>
+		<string>UTOIMAGE_ ChocolatLatte_OTF.otf</string>
+		<string>SCDream9.otf</string>
 		<string>BMHANNA_11yrs_otf.otf</string>
 		<string>gabia_solmee.otf</string>
 		<string>62570-_1_.otf</string>

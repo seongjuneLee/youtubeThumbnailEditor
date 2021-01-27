@@ -46,32 +46,19 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    if (section == 0) {
-        return ItemManager.sharedInstance.basicCircleStickers.count;
-    } else if (section == 1) {
-        return ItemManager.sharedInstance.basicArrowStickers.count;
-    } else if (section == 2) {
-        return ItemManager.sharedInstance.xStickers.count;
-    } else if (section == 3) {
-        return ItemManager.sharedInstance.exclamationMark.count;
-    }
-    
-    return 0;
+        
+    NSArray *stickers = ItemManager.sharedInstance.stickerDatas[section];
+    return stickers.count;
+
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     StickerCollectionViewCell *cell = (StickerCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCollectionViewCell" forIndexPath:indexPath];
    
-    Sticker *sticker;
-    if (indexPath.section == 0) {
-        sticker = ItemManager.sharedInstance.basicCircleStickers[indexPath.item];
-    } else if (indexPath.section == 1) {
-        sticker = ItemManager.sharedInstance.basicArrowStickers[indexPath.item];
-    } else if (indexPath.section == 2) {
-        sticker = ItemManager.sharedInstance.xStickers[indexPath.item];
-    }
+    NSArray *stickers = ItemManager.sharedInstance.stickerDatas[indexPath.section];
+    
+    Sticker *sticker = stickers[indexPath.item];
     cell.stickerImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
     
     return cell;
@@ -82,16 +69,8 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    Sticker *sticker;
-    if (indexPath.section == 0) {
-        sticker = ItemManager.sharedInstance.basicCircleStickers[indexPath.item];
-    } else if (indexPath.section == 1){
-        sticker = ItemManager.sharedInstance.basicArrowStickers[indexPath.item];
-    } else if (indexPath.section == 2){
-        sticker = ItemManager.sharedInstance.xStickers[indexPath.item];
-    } else if (indexPath.section == 3){
-        sticker = ItemManager.sharedInstance.exclamationMark[indexPath.item];
-    }
+    NSArray *stickers = ItemManager.sharedInstance.stickerDatas[indexPath.section];
+    Sticker *sticker = stickers[indexPath.item];
     [self.delegate didSelectSticker:sticker];
     
 }
