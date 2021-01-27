@@ -97,7 +97,6 @@
         if (typoData) {
             self.typo = [NSKeyedUnarchiver unarchiveObjectWithData:typoData];
         }
-        self.typoRangeArray = [decoder decodeObjectForKey:@"typoRangeArray"];
         
         // 위치, 크기, 각도
         self.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];
