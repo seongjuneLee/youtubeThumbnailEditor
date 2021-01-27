@@ -122,6 +122,21 @@
 		6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */; };
 		6EAFD5B625B876D400B193AB /* KOTRA_BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */; };
 		6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */; };
+		6EBEB49B25C090340017C640 /* WorkManAngrySticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB49A25C090340017C640 /* WorkManAngrySticker.m */; };
+		6EBEB4A525C09EEB0017C640 /* WorkManLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */; };
+		6EBEB4AF25C0ACDA0017C640 /* BMDOHYEON_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB4AA25C0A2570017C640 /* BMDOHYEON_otf.otf */; };
+		6EBEB4CD25C0C6F60017C640 /* WorkManTalkSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4CC25C0C6F60017C640 /* WorkManTalkSticker.m */; };
+		6EBEB4D225C0C7FD0017C640 /* WorkManFiveFingerSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4D125C0C7FD0017C640 /* WorkManFiveFingerSticker.m */; };
+		6EBEB4FB25C0CD800017C640 /* WorkManYellowSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4FA25C0CD800017C640 /* WorkManYellowSticker.m */; };
+		6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB50325C0D3830017C640 /* WorkManHandWrite.m */; };
+		6EBEB50B25C146300017C640 /* WorkManTalkWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB50A25C146300017C640 /* WorkManTalkWrite.m */; };
+		6EBEB51125C14CF40017C640 /* NanumSquareOTFBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB50E25C14C1E0017C640 /* NanumSquareOTFBold.otf */; };
+		6EBEB51525C1502F0017C640 /* AnyConv.com__NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB51425C14FE90017C640 /* AnyConv.com__NanumGothic.otf */; };
+		6EBEB51D25C155490017C640 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB51C25C155060017C640 /* NanumGothicBold.otf */; };
+		6EBEB52125C156600017C640 /* NanumSquareOTFExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB52025C156330017C640 /* NanumSquareOTFExtraBold.otf */; };
+		6EBEB52625C191340017C640 /* WorkManRedTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB52525C191340017C640 /* WorkManRedTitle.m */; };
+		6EBEB52C25C193640017C640 /* SCDream9.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB52B25C193120017C640 /* SCDream9.otf */; };
+		6EBEB53125C1950A0017C640 /* WorkManBlueTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB53025C1950A0017C640 /* WorkManBlueTitle.m */; };
 		6EC4DFA625A85D860023485C /* Typography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA525A85D860023485C /* Typography.m */; };
 		6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */; };
 		6EC4DFC125A87BEC0023485C /* BGTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBB25A87BEB0023485C /* BGTextAttribute.m */; };
@@ -424,6 +439,30 @@
 		6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KOTRA_BOLD.otf; sourceTree = "<group>"; };
 		6EAFD5BE25B87D0400B193AB /* TrapezoidTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrapezoidTypo.h; sourceTree = "<group>"; };
 		6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrapezoidTypo.m; sourceTree = "<group>"; };
+		6EBEB49925C090340017C640 /* WorkManAngrySticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManAngrySticker.h; sourceTree = "<group>"; };
+		6EBEB49A25C090340017C640 /* WorkManAngrySticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManAngrySticker.m; sourceTree = "<group>"; };
+		6EBEB4A325C09EEB0017C640 /* WorkManLogo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManLogo.h; sourceTree = "<group>"; };
+		6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManLogo.m; sourceTree = "<group>"; };
+		6EBEB4AA25C0A2570017C640 /* BMDOHYEON_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMDOHYEON_otf.otf; sourceTree = "<group>"; };
+		6EBEB4CB25C0C6F60017C640 /* WorkManTalkSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManTalkSticker.h; sourceTree = "<group>"; };
+		6EBEB4CC25C0C6F60017C640 /* WorkManTalkSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManTalkSticker.m; sourceTree = "<group>"; };
+		6EBEB4D025C0C7FD0017C640 /* WorkManFiveFingerSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManFiveFingerSticker.h; sourceTree = "<group>"; };
+		6EBEB4D125C0C7FD0017C640 /* WorkManFiveFingerSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManFiveFingerSticker.m; sourceTree = "<group>"; };
+		6EBEB4F925C0CD800017C640 /* WorkManYellowSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManYellowSticker.h; sourceTree = "<group>"; };
+		6EBEB4FA25C0CD800017C640 /* WorkManYellowSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManYellowSticker.m; sourceTree = "<group>"; };
+		6EBEB50225C0D3830017C640 /* WorkManHandWrite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManHandWrite.h; sourceTree = "<group>"; };
+		6EBEB50325C0D3830017C640 /* WorkManHandWrite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManHandWrite.m; sourceTree = "<group>"; };
+		6EBEB50925C146300017C640 /* WorkManTalkWrite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManTalkWrite.h; sourceTree = "<group>"; };
+		6EBEB50A25C146300017C640 /* WorkManTalkWrite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManTalkWrite.m; sourceTree = "<group>"; };
+		6EBEB50E25C14C1E0017C640 /* NanumSquareOTFBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFBold.otf; sourceTree = "<group>"; };
+		6EBEB51425C14FE90017C640 /* AnyConv.com__NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnyConv.com__NanumGothic.otf; sourceTree = "<group>"; };
+		6EBEB51C25C155060017C640 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.otf; sourceTree = "<group>"; };
+		6EBEB52025C156330017C640 /* NanumSquareOTFExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFExtraBold.otf; sourceTree = "<group>"; };
+		6EBEB52425C191340017C640 /* WorkManRedTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManRedTitle.h; sourceTree = "<group>"; };
+		6EBEB52525C191340017C640 /* WorkManRedTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManRedTitle.m; sourceTree = "<group>"; };
+		6EBEB52B25C193120017C640 /* SCDream9.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream9.otf; sourceTree = "<group>"; };
+		6EBEB52F25C1950A0017C640 /* WorkManBlueTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManBlueTitle.h; sourceTree = "<group>"; };
+		6EBEB53025C1950A0017C640 /* WorkManBlueTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManBlueTitle.m; sourceTree = "<group>"; };
 		6EC4DFA425A85D860023485C /* Typography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Typography.h; sourceTree = "<group>"; };
 		6EC4DFA525A85D860023485C /* Typography.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Typography.m; sourceTree = "<group>"; };
 		6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewContainer.m; sourceTree = "<group>"; };
@@ -575,7 +614,6 @@
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
 				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E4A18AC258A15F6008578BA /* Storyboard */,
-				6E8E79C22591F9600008C5FF /* MainTBVC */,
 				6E11912C2584D118000DD9C0 /* HomeVC */,
 				6E7DD4EA2587ABEA0014618E /* EditingVC */,
 				6E8E79D225921C8B0008C5FF /* ProjectVC */,
@@ -615,6 +653,7 @@
 				6E1190EA2584B163000DD9C0 /* HomeViewController.h */,
 				6E1190EB2584B163000DD9C0 /* HomeViewController.m */,
 				6E9BE99C258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.h */,
+				6E8E79C22591F9600008C5FF /* MainTBVC */,
 				6E9BE99D258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m */,
 			);
 			path = HomeVC;
@@ -1337,6 +1376,10 @@
 		6EAFD5BA25B876D700B193AB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				6EBEB52025C156330017C640 /* NanumSquareOTFExtraBold.otf */,
+				6EBEB51C25C155060017C640 /* NanumGothicBold.otf */,
+				6EBEB51425C14FE90017C640 /* AnyConv.com__NanumGothic.otf */,
+				6EBEB50E25C14C1E0017C640 /* NanumSquareOTFBold.otf */,
 				B1F2B6DE25C1940A0064A044 /* UTOIMAGE_ ChocolatLatte_OTF.otf */,
 				6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */,
 				B1F2B6E425C196E30064A044 /* SCDream9.otf */,
@@ -1348,6 +1391,39 @@
 				6E8F99C825C10804005C8071 /* BMDOHYEON_otf.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6EBEB48F25C08BAB0017C640 /* WorkMan */ = {
+			isa = PBXGroup;
+			children = (
+				6EBEB49925C090340017C640 /* WorkManAngrySticker.h */,
+				6EBEB49A25C090340017C640 /* WorkManAngrySticker.m */,
+				6EBEB4CB25C0C6F60017C640 /* WorkManTalkSticker.h */,
+				6EBEB4CC25C0C6F60017C640 /* WorkManTalkSticker.m */,
+				6EBEB4D025C0C7FD0017C640 /* WorkManFiveFingerSticker.h */,
+				6EBEB4D125C0C7FD0017C640 /* WorkManFiveFingerSticker.m */,
+				6EBEB4F925C0CD800017C640 /* WorkManYellowSticker.h */,
+				6EBEB4FA25C0CD800017C640 /* WorkManYellowSticker.m */,
+			);
+			name = WorkMan;
+			path = ../../PhotoFrame/WorkMan;
+			sourceTree = "<group>";
+		};
+		6EBEB4A225C0974E0017C640 /* WorkMan */ = {
+			isa = PBXGroup;
+			children = (
+				6EBEB4A325C09EEB0017C640 /* WorkManLogo.h */,
+				6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */,
+				6EBEB50225C0D3830017C640 /* WorkManHandWrite.h */,
+				6EBEB50325C0D3830017C640 /* WorkManHandWrite.m */,
+				6EBEB50925C146300017C640 /* WorkManTalkWrite.h */,
+				6EBEB50A25C146300017C640 /* WorkManTalkWrite.m */,
+				6EBEB52425C191340017C640 /* WorkManRedTitle.h */,
+				6EBEB52525C191340017C640 /* WorkManRedTitle.m */,
+				6EBEB52F25C1950A0017C640 /* WorkManBlueTitle.h */,
+				6EBEB53025C1950A0017C640 /* WorkManBlueTitle.m */,
+			);
+			path = WorkMan;
 			sourceTree = "<group>";
 		};
 		6EC4DFA325A85D1E0023485C /* Styles */ = {
@@ -1421,8 +1497,9 @@
 			children = (
 				6EC4DFEA25A892B00023485C /* NormalTypo.h */,
 				6EC4DFEB25A892B00023485C /* NormalTypo.m */,
-				6EAFD5BE25B87D0400B193AB /* TrapezoidTypo.h */,
 				6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */,
+				6EAFD5BE25B87D0400B193AB /* TrapezoidTypo.h */,
+				6EBEB4A225C0974E0017C640 /* WorkMan */,
 				B1F2B6D625C193710064A044 /* InfiniteChallengeTypo */,
 				6ED13B8225C0898900012144 /* RunningManTypo */,
 				6E8F996A25C0C0A4005C8071 /* SinSeoYuGi */,
@@ -1533,6 +1610,7 @@
 				B16FC68625AF76A600E854C1 /* BasicArrowSticker.m */,
 				B16FC68B25AF7F3900E854C1 /* XSticker.h */,
 				B16FC68C25AF7F3900E854C1 /* XSticker.m */,
+				6EBEB48F25C08BAB0017C640 /* WorkMan */,
 				6E8F99D725C11630005C8071 /* SinSeoYuGi */,
 			);
 			path = Styles;
@@ -1687,6 +1765,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EBEB52C25C193640017C640 /* SCDream9.otf in Resources */,
+				6EBEB52125C156600017C640 /* NanumSquareOTFExtraBold.otf in Resources */,
+				6EBEB51D25C155490017C640 /* NanumGothicBold.otf in Resources */,
+				6EBEB51525C1502F0017C640 /* AnyConv.com__NanumGothic.otf in Resources */,
+				6EBEB51125C14CF40017C640 /* NanumSquareOTFBold.otf in Resources */,
+				6EBEB4AF25C0ACDA0017C640 /* BMDOHYEON_otf.otf in Resources */,
 				6ED13BBA25C093F100012144 /* BMHANNA_11yrs_otf.otf in Resources */,
 				6E8F997B25C0D3CC005C8071 /* NotoSansCJKkr-Bold.otf in Resources */,
 				6E8F997025C0C522005C8071 /* 62570-_1_.otf in Resources */,
@@ -1877,7 +1961,9 @@
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
 				6E7DD4A82584D4490014618E /* AlbumViewController+CollectionViewDelegate.m in Sources */,
 				6ED13B0425BDA75D00012144 /* UIImageView+Additions.m in Sources */,
+				6EBEB50B25C146300017C640 /* WorkManTalkWrite.m in Sources */,
 				6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */,
+				6EBEB52625C191340017C640 /* WorkManRedTitle.m in Sources */,
 				6E8E79D825921D140008C5FF /* ProjectTableController.m in Sources */,
 				6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */,
 				6E4A18322588C84B008578BA /* PhotoFrame.m in Sources */,
@@ -1887,6 +1973,7 @@
 				6ED13C1C25C10DE400012144 /* RunningMan1Template.m in Sources */,
 				6ED13BEC25C0D1B400012144 /* NSLayoutManager+Additions.m in Sources */,
 				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
+				6EBEB4CD25C0C6F60017C640 /* WorkManTalkSticker.m in Sources */,
 				6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */,
 				6EC4DFF225A895240023485C /* TypoManager.m in Sources */,
 				6E9BEA2C258E448700F7F539 /* Project.m in Sources */,
@@ -1952,6 +2039,7 @@
 				6E9BE9DB258CFCFE00F7F539 /* PhotoManager.m in Sources */,
 				6E8F997725C0D006005C8071 /* FirstExperienceTypo.m in Sources */,
 				6E8E799A258F82E80008C5FF /* MigratorJul.swift in Sources */,
+				6EBEB4FB25C0CD800017C640 /* WorkManYellowSticker.m in Sources */,
 				6E8E7AF425A83C110008C5FF /* TextCollectionViewCell.m in Sources */,
 				B16FC68D25AF7F3900E854C1 /* XSticker.m in Sources */,
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
@@ -1974,6 +2062,7 @@
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
 				6E8F98FD25BCE6CC005C8071 /* GuideTarget.m in Sources */,
 				6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */,
+				6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
 				6E8E7A6A259C91560008C5FF /* PhotoFrameCollectionViewCell.m in Sources */,
 				6E6E5BFC25AA23F3009821CF /* ItemCollectionViewController+Button.m in Sources */,
@@ -1984,6 +2073,7 @@
 				B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */,
 				6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */,
 				6E4A18452588C87A008578BA /* ChristmasCircle.m in Sources */,
+				6EBEB4A525C09EEB0017C640 /* WorkManLogo.m in Sources */,
 				6ED13BAA25C08F9000012144 /* RedShountingTypo.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
@@ -1995,12 +2085,15 @@
 				6EAD5CA025B767E200C42187 /* CustomerFeedbackVCViewController.m in Sources */,
 				6EC4DFD525A885970023485C /* UITextView+Additions.m in Sources */,
 				6E8E79B82591F9570008C5FF /* MainTabBarViewController.m in Sources */,
+				6EBEB49B25C090340017C640 /* WorkManAngrySticker.m in Sources */,
 				6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */,
 				6E4A184B2588C99D008578BA /* BasicCircle.m in Sources */,
 				6E4A1885258A1201008578BA /* CategoryManager.m in Sources */,
 				6E8E7AC025A833590008C5FF /* TextCollectionController.m in Sources */,
 				6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */,
 				6E698BB825B89DBC00CE86FB /* GuideLineView.m in Sources */,
+				6EBEB53125C1950A0017C640 /* WorkManBlueTitle.m in Sources */,
+				6EBEB4D225C0C7FD0017C640 /* WorkManFiveFingerSticker.m in Sources */,
 				6E9BEA58258F1BA800F7F539 /* ProjectManager.m in Sources */,
 				6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */,
 			);

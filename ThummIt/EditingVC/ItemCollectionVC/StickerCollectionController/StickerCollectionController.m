@@ -60,7 +60,8 @@
     
     Sticker *sticker = stickers[indexPath.item];
     cell.stickerImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
-    
+    NSLog(@"[UIImage imageNamed:sticker.backgroundImageName]; %@",[UIImage imageNamed:sticker.backgroundImageName]);
+    NSLog(@"sticker.backgroundImageName %@",sticker.backgroundImageName);
     return cell;
     
 }

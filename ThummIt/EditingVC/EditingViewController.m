@@ -32,6 +32,8 @@
     [SaveManager.sharedInstance save];
     
     
+    
+    
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
     
     [self setUpSlider];

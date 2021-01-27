@@ -77,6 +77,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>KOTRA_BOLD.otf</string>
+		<string>NanumSquareOTFBold.otf</string>
+		<string>AnyConv.com__NanumGothic.otf</string>
+		<string>NanumGothicBold.otf</string>
+		<string>NanumSquareOTFExtraBold.otf</string>
 		<string>UTOIMAGE_ ChocolatLatte_OTF.otf</string>
 		<string>SCDream9.otf</string>
 		<string>BMHANNA_11yrs_otf.otf</string>
