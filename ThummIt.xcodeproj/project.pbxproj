@@ -85,6 +85,7 @@
 		6E8F99BE25C0FB3D005C8071 /* CowRiseTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99BD25C0FB3D005C8071 /* CowRiseTypo.m */; };
 		6E8F99C525C0FC92005C8071 /* DawnWatchingTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99C425C0FC92005C8071 /* DawnWatchingTypo.m */; };
 		6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8F99C825C10804005C8071 /* BMDOHYEON_otf.otf */; };
+		6E8F99DA25C116B5005C8071 /* ExclamationMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99D925C116B5005C8071 /* ExclamationMark.m */; };
 		6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99877B258A2A9D00C8F907 /* TemplateManager.m */; };
 		6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E998794258A300300C8F907 /* HomeCollectionViewCell.m */; };
 		6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */; };
@@ -355,6 +356,8 @@
 		6E8F99C325C0FC91005C8071 /* DawnWatchingTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DawnWatchingTypo.h; sourceTree = "<group>"; };
 		6E8F99C425C0FC92005C8071 /* DawnWatchingTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DawnWatchingTypo.m; sourceTree = "<group>"; };
 		6E8F99C825C10804005C8071 /* BMDOHYEON_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMDOHYEON_otf.otf; sourceTree = "<group>"; };
+		6E8F99D825C116B5005C8071 /* ExclamationMark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExclamationMark.h; sourceTree = "<group>"; };
+		6E8F99D925C116B5005C8071 /* ExclamationMark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExclamationMark.m; sourceTree = "<group>"; };
 		6E99877A258A2A9D00C8F907 /* TemplateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateManager.h; sourceTree = "<group>"; };
 		6E99877B258A2A9D00C8F907 /* TemplateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateManager.m; sourceTree = "<group>"; };
 		6E998793258A300300C8F907 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1094,6 +1097,15 @@
 			path = SinSeoYuGi3;
 			sourceTree = "<group>";
 		};
+		6E8F99D725C11630005C8071 /* SinSeoYuGi */ = {
+			isa = PBXGroup;
+			children = (
+				6E8F99D825C116B5005C8071 /* ExclamationMark.h */,
+				6E8F99D925C116B5005C8071 /* ExclamationMark.m */,
+			);
+			path = SinSeoYuGi;
+			sourceTree = "<group>";
+		};
 		6E998780258A2AA100C8F907 /* TemplateManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1521,6 +1533,7 @@
 				B16FC68625AF76A600E854C1 /* BasicArrowSticker.m */,
 				B16FC68B25AF7F3900E854C1 /* XSticker.h */,
 				B16FC68C25AF7F3900E854C1 /* XSticker.m */,
+				6E8F99D725C11630005C8071 /* SinSeoYuGi */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -1897,6 +1910,7 @@
 				6ED13BB425C08FC700012144 /* WorkingManNameTypo.m in Sources */,
 				6E8F998C25C0DAD6005C8071 /* InFrontOfGirlTypo.m in Sources */,
 				6EAD5C2A25B562F900C42187 /* QuarterRectangle.m in Sources */,
+				6E8F99DA25C116B5005C8071 /* ExclamationMark.m in Sources */,
 				6E8F99B525C0FADB005C8071 /* HungryTypo.m in Sources */,
 				6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */,
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,

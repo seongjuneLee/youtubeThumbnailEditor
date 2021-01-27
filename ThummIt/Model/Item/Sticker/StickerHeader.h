@@ -11,5 +11,6 @@
 #import "BasicCircleSticker.h"
 #import "BasicArrowSticker.h"
 #import "xSticker.h"
+#import "ExclamationMark.h"
 
 #endif /* StickerHeader_h */
