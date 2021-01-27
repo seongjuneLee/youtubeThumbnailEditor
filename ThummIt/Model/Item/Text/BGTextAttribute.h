@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString* textColorPatternImageName;
 @property (nonatomic, strong) UIColor* borderColor;
 @property (nonatomic) float borderWidth;
+@property (nonatomic) float borderRadius;
 
 @property (nonatomic, strong) UIColor* shadowColor;
 @property (nonatomic) CGPoint shadowOffset;

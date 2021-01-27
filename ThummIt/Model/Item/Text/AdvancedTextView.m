@@ -11,6 +11,7 @@
 #import "UIColor+Additions.h"
 #import "UITextView+Additions.h"
 #import "NSArray+Additions.h"
+#import "NSMutableAttributedString+Additions.h"
 #import "Text.h"
 
 @implementation AdvancedTextView
@@ -25,9 +26,7 @@
     // 2. stringRect
     UITextPosition *beginning = self.beginningOfDocument;
     CGRect caretRect = [self caretRectForPosition:beginning];
-    CGRect stringRect = CGRectIntegral([self.attributedText boundingRectWithSize:self.frameSize
-                                                                         options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
-                                                                         context:nil]);
+    CGRect stringRect = CGRectIntegral([self.attributedText boundingRectWithSize:self.frameSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) context:nil]);
     stringRect.size.width += 10;
     float x = self.center.x - stringRect.size.width/2.0;//center
     if (self.paragraphStyle.alignment == NSTextAlignmentRight){
@@ -288,8 +287,6 @@
         [string addAttribute:NSFontAttributeName value:font range:range];
     } else if (typo) {
         font = [UIFont fontWithName:typo.fontName size:typo.fontSize];
-    }
-    if(font){
         [string addAttribute:NSFontAttributeName value:font range:range];
     }
     

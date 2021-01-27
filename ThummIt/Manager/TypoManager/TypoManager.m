@@ -20,11 +20,5 @@
     return sharedInstance;
 }
 
--(NSArray *)typos{
-    
-    NormalTypo *normal = [NormalTypo normalTypo];
-    TrapezoidTypo *trapezoidTypo = [TrapezoidTypo trapezoidTypo];
-    return @[normal, trapezoidTypo];
-}
 
 @end

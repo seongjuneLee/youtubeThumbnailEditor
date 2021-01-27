@@ -47,24 +47,17 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    if (section == 0) {
-        return ItemManager.sharedInstance.circlePhotoFrames.count;
-    } else if (section == 1){
-        return ItemManager.sharedInstance.rectanglePhotoFrames.count;
-    }
-    return 0;
+    NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[section];
+    
+    return photoFrames.count;
 }
 
 -(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     PhotoFrameCollectionViewCell *cell = (PhotoFrameCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoFrameCollectionViewCell" forIndexPath:indexPath];
-    
-    PhotoFrame *photoFrame;
-    if (indexPath.section == 0) {
-        photoFrame = ItemManager.sharedInstance.circlePhotoFrames[indexPath.item];
-    } else if (indexPath.section == 1){
-        photoFrame = ItemManager.sharedInstance.rectanglePhotoFrames[indexPath.item];
-    }
+    NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
+
+    PhotoFrame *photoFrame = photoFrames[indexPath.item];
     [photoFrame loadView];
 
     [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
@@ -82,13 +75,9 @@
 #pragma mark - 델리게이트
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    PhotoFrame *photoFrame;
-    if (indexPath.section == 0) {
-        photoFrame = ItemManager.sharedInstance.circlePhotoFrames[indexPath.item];
-    } else if (indexPath.section == 1){
-        photoFrame = ItemManager.sharedInstance.rectanglePhotoFrames[indexPath.item];
-    }
+    NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
+
+    PhotoFrame *photoFrame = photoFrames[indexPath.item];
     [photoFrame loadView];
     [self.delegate didSelectPhotoFrame:photoFrame];
     
