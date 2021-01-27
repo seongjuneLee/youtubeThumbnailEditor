@@ -24,7 +24,9 @@
         self.bgTextAttributes = @[borderAtt];
     
         self.bgImageName = @"Rule";
-        self.bgContentMode = UIViewContentModeScaleAspectFit;
+//        self.bgContentMode = UIViewContentModeScaleAspectFit;
+        self.bgWidthPadding = 10;
+        self.bgHeightPadding = 60;
     }
         //이미지조정, 기울이기
     return self;

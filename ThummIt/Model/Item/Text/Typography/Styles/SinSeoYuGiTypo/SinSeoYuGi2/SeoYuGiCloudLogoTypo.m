@@ -15,12 +15,12 @@
         self.name = NSLocalizedString(@"세글자",nil);
         self.fontName = @"a2570";
         self.textColor = [UIColor colorWithRed:248/255.0f green:74/255.0f blue:30/255.0 alpha:1 ];
-        self.fontSize = 50;
+        self.fontSize = 20;
 
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor colorWithRed:59/255.0f green:4/255.0f blue:1/255.0f alpha:1];
         borderAtt.borderWidth = 2;
-        
+            
         self.bgTextAttributes = @[borderAtt];
         
         self.bgImageName = @"SeoYUGiCloudLogo";

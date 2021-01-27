@@ -153,7 +153,6 @@
 		6ED13CA825C1AE8D00012144 /* TikiTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CA725C1AE8D00012144 /* TikiTypo.m */; };
 		6ED13CAF25C1AEF700012144 /* KnockOutTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CAE25C1AEF700012144 /* KnockOutTypo.m */; };
 		6ED13CB425C1B97600012144 /* JejuHallasan.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13CB225C1B97500012144 /* JejuHallasan.otf */; };
-		6ED13CC125C1BE0E00012144 /* NanumSquareEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13CC025C1BE0E00012144 /* NanumSquareEB.otf */; };
 		6ED13CC525C1C35300012144 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13CC425C1C35200012144 /* NanumGothicBold.otf */; };
 		6ED13CC925C1C57900012144 /* SDMiSaeng.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13CC825C1C57900012144 /* SDMiSaeng.otf */; };
 		6ED13CCF25C1CACB00012144 /* MatterTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CCE25C1CACB00012144 /* MatterTypo.m */; };
@@ -161,6 +160,7 @@
 		6ED13CDB25C1CB1100012144 /* WhyRealTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CDA25C1CB1100012144 /* WhyRealTypo.m */; };
 		6ED13CE025C1D12900012144 /* NanumSquareOTF_acB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13CDE25C1D12900012144 /* NanumSquareOTF_acB.otf */; };
 		6ED13CE625C1D16B00012144 /* RuleTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CE525C1D16B00012144 /* RuleTypo.m */; };
+		6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13D1B25C2152400012144 /* NanumSquareEB.otf */; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
@@ -479,7 +479,6 @@
 		6ED13CAD25C1AEF700012144 /* KnockOutTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KnockOutTypo.h; sourceTree = "<group>"; };
 		6ED13CAE25C1AEF700012144 /* KnockOutTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnockOutTypo.m; sourceTree = "<group>"; };
 		6ED13CB225C1B97500012144 /* JejuHallasan.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JejuHallasan.otf; sourceTree = "<group>"; };
-		6ED13CC025C1BE0E00012144 /* NanumSquareEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.otf; sourceTree = "<group>"; };
 		6ED13CC425C1C35200012144 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.otf; sourceTree = "<group>"; };
 		6ED13CC825C1C57900012144 /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.otf; sourceTree = "<group>"; };
 		6ED13CCD25C1CACB00012144 /* MatterTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatterTypo.h; sourceTree = "<group>"; };
@@ -489,9 +488,9 @@
 		6ED13CD925C1CB1100012144 /* WhyRealTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhyRealTypo.h; sourceTree = "<group>"; };
 		6ED13CDA25C1CB1100012144 /* WhyRealTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhyRealTypo.m; sourceTree = "<group>"; };
 		6ED13CDE25C1D12900012144 /* NanumSquareOTF_acB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acB.otf; sourceTree = "<group>"; };
-		6ED13CDF25C1D12900012144 /* NanumSquareEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareEB.otf; path = "../../../../Downloads/폰트/NanumFontSetup_OTF_SQUARE/NanumSquareEB.otf"; sourceTree = "<group>"; };
 		6ED13CE425C1D16B00012144 /* RuleTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuleTypo.h; sourceTree = "<group>"; };
 		6ED13CE525C1D16B00012144 /* RuleTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuleTypo.m; sourceTree = "<group>"; };
+		6ED13D1B25C2152400012144 /* NanumSquareEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.otf; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -1056,14 +1055,14 @@
 			path = SinSeoYuGi;
 			sourceTree = "<group>";
 		};
-		6E8F996A25C0C0A4005C8071 /* SinSeoYuGi */ = {
+		6E8F996A25C0C0A4005C8071 /* SinSeoYuGiTypo */ = {
 			isa = PBXGroup;
 			children = (
 				6E8F996B25C0C12A005C8071 /* SinSeoYuGi1 */,
 				6E8F99A525C0ECEC005C8071 /* SinSeoYuGi2 */,
 				6E8F99AD25C0FA16005C8071 /* SinSeoYuGi3 */,
 			);
-			path = SinSeoYuGi;
+			path = SinSeoYuGiTypo;
 			sourceTree = "<group>";
 		};
 		6E8F996B25C0C12A005C8071 /* SinSeoYuGi1 */ = {
@@ -1339,11 +1338,10 @@
 				6E8F99C825C10804005C8071 /* BMDOHYEON_otf.otf */,
 				6ED13C8225C1940300012144 /* BMYEONSUNG_otf.otf */,
 				6ED13CB225C1B97500012144 /* JejuHallasan.otf */,
-				6ED13CC025C1BE0E00012144 /* NanumSquareEB.otf */,
 				6ED13CC425C1C35200012144 /* NanumGothicBold.otf */,
 				6ED13CC825C1C57900012144 /* SDMiSaeng.otf */,
-				6ED13CDF25C1D12900012144 /* NanumSquareEB.otf */,
 				6ED13CDE25C1D12900012144 /* NanumSquareOTF_acB.otf */,
+				6ED13D1B25C2152400012144 /* NanumSquareEB.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1422,7 +1420,7 @@
 				6EAFD5BE25B87D0400B193AB /* TrapezoidTypo.h */,
 				6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */,
 				6ED13B8225C0898900012144 /* RunningManTypo */,
-				6E8F996A25C0C0A4005C8071 /* SinSeoYuGi */,
+				6E8F996A25C0C0A4005C8071 /* SinSeoYuGiTypo */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -1690,10 +1688,10 @@
 				6E8F997B25C0D3CC005C8071 /* NotoSansCJKkr-Bold.otf in Resources */,
 				6ED13CE025C1D12900012144 /* NanumSquareOTF_acB.otf in Resources */,
 				6E8F997025C0C522005C8071 /* 62570-_1_.otf in Resources */,
-				6ED13CC125C1BE0E00012144 /* NanumSquareEB.otf in Resources */,
 				6E7DD4D42584E1D30014618E /* AlbumCollectionViewCell.xib in Resources */,
 				6ED13C8325C1940400012144 /* BMYEONSUNG_otf.otf in Resources */,
 				6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */,
+				6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */,
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
