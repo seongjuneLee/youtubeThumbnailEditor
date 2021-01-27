@@ -68,6 +68,7 @@
     EatRoomTypo *eatRoomTypo = [EatRoomTypo eatRoomTypo];
     HungryTypo *hungryTypo = [HungryTypo hungryTypo];
     DawnWatchingTypo *dawnWatchingTypo = [DawnWatchingTypo dawnWatchingTypo];
+    
     WorkManLogo *workManLogo = [WorkManLogo workManLogo];
     WorkManHandWrite *workManHandWrite = [WorkManHandWrite workManHandWrite];
     WorkManTalkWrite *workManTalkWrite = [WorkManTalkWrite workManTalkWrite];
@@ -75,11 +76,7 @@
     WorkManRightTag *workManRightTag = [WorkManRightTag workManRightTag];
     WorkmanYelloewTitle *workmanYelloewTitle = [WorkmanYelloewTitle workmanYelloewTitle];
     WorkManLogo2 *workManLogo2 = [WorkManLogo2 workManLogo2];
-   
-
-
     
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2];
     InfiniteChallengeLogo *infiniteChallengeLogo = [InfiniteChallengeLogo infiniteChallengeLogo];
     InfiniteChallengeEscapeRoom *infiniteChallengeEscapeRoom = [InfiniteChallengeEscapeRoom infiniteChallengeEscapeRoom];
     InfiniteChallengeWhite *infiniteChallengeWhite = [InfiniteChallengeWhite infiniteChallengeWhite];
@@ -94,8 +91,12 @@
     InfiniteChallengeHashTag *infiniteChallengeHashTag = [InfiniteChallengeHashTag infiniteChallengeHashTag];
     InfiniteChallengeSkyBlueBox *infiniteChallengeSkyBlueBox = [InfiniteChallengeSkyBlueBox infiniteChallengeSkyBlueBox];
     InfiniteChallengeCloudBox *infiniteChallengeCloudBox = [InfiniteChallengeCloudBox infiniteChallengeCloudBox];
+
+
+
     
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox];
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox];
+    
     
     return @[typos];
 }

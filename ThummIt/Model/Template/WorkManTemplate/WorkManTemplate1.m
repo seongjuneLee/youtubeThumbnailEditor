@@ -38,7 +38,7 @@
 -(void)setUpPhotoFrame{
     
     self.photoFrames = [NSMutableArray new];
-    PhotoFrame *photoFrame = [BasicCircle basicCircle];
+    PhotoFrame *photoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     photoFrame.isTemplateItem = true;
     photoFrame.baseView.backgroundColor = UIColor.whiteColor;
     [self.photoFrames addObject:photoFrame];
