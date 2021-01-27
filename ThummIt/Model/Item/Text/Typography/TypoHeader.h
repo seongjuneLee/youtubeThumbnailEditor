@@ -11,4 +11,5 @@
 #import "Typography.h"
 #import "NormalTypo.h"
 #import "TrapezoidTypo.h"
+#import "RunningManLogoTypo.h"
 #endif /* TypoHeader_h */

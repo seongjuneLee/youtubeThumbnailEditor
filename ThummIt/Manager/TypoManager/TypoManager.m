@@ -24,7 +24,8 @@
     
     NormalTypo *normal = [NormalTypo normalTypo];
     TrapezoidTypo *trapezoidTypo = [TrapezoidTypo trapezoidTypo];
-    return @[normal, trapezoidTypo];
+    RunningManLogoTypo *runningManLogoTypo = [RunningManLogoTypo runningManLogoTypo];
+    return @[normal, trapezoidTypo, runningManLogoTypo];
 }
 
 @end

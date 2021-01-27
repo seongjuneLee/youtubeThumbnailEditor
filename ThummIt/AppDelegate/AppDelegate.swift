@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     var window: UIWindow?
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        
+        
         MigratorJul.shared().migrateIfNeeded()
         
         Parse.initialize(with: ParseClientConfiguration(block: { ( configuration :  ParseMutableClientConfiguration) in

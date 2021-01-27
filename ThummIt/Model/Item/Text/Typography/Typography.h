@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BGTextAttribute.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIColor* backgroundColor;
 @property (strong, nonatomic) NSString* textColorPatternImageName;
 @property (nonatomic) float borderWidth;
+@property (nonatomic) BOOL borderRoundCorner;
+
 
 // 그림자
 @property (strong, nonatomic) UIColor* shadowColor;

@@ -7,6 +7,7 @@
 //
 
 #import "BGTextAttribute.h"
+#import <TTTAttributedLabel/TTTAttributedLabel.h>
 
 @implementation BGTextAttribute
 
@@ -44,7 +45,7 @@
     [encoder encodeObject:self.shadowColor forKey:@"shadowColor"];
     [encoder encodeObject:[NSValue valueWithCGPoint:self.shadowOffset] forKey:@"shadowOffset"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.shadowRadius] forKey:@"shadowRadius"];
-    
+    [encoder encodeObject:[NSNumber numberWithFloat:self.borderRadius] forKey:@"borderRadius"];
     
 }
 
@@ -63,6 +64,7 @@
         self.shadowColor = [decoder decodeObjectForKey:@"shadowColor"];
         self.shadowOffset = [[decoder decodeObjectForKey:@"shadowOffset"] CGPointValue];
         self.shadowRadius = [[decoder decodeObjectForKey:@"shadowRadius"] floatValue];
+        self.borderRadius = [[decoder decodeObjectForKey:@"borderRadius"] floatValue];
         
     }
     return self;
@@ -82,6 +84,7 @@
     copy.shadowColor = [self.shadowColor copyWithZone:zone];
     copy.shadowOffset = self.shadowOffset;
     copy.shadowRadius = self.shadowRadius;
+    copy.borderRadius = self.borderRadius;
     
     return copy;
 }
