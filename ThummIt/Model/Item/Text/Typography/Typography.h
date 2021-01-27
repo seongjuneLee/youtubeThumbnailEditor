@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BGTextAttribute.h"
-
+#import "UIColor+Additions.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Typography : NSObject

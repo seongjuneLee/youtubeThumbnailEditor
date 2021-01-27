@@ -13,7 +13,9 @@
     
     self = [super init];
     if(self){
-        
+        self.photoFrames = [NSMutableArray array];
+        self.texts = [NSMutableArray array];
+        self.stickers = [NSMutableArray array];
     }
     return self;
 }
@@ -22,6 +24,8 @@
     
     NSMutableArray *items = [NSMutableArray array];
     [items addObjectsFromArray:self.photoFrames];
+    [items addObjectsFromArray:self.texts];
+    [items addObjectsFromArray:self.stickers];
     return items;
     
 }
