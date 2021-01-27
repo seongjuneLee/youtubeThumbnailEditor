@@ -89,6 +89,40 @@
     return stickers;
 }
 
+-(NSArray *)workManAngrySticker{
+    
+    WorkManAngrySticker *workManAngeySticker  = [WorkManAngrySticker workManAngrySticker];
+    workManAngeySticker.backgroundImageName = @"workManAngeySticker";
+    NSArray *stickers = @[workManAngeySticker];
+    return stickers;
+}
+
+-(NSArray *)workManTalkSticker{
+    
+    WorkManTalkSticker *workManTalkSticker  = [WorkManTalkSticker workManTalkSticker];
+    workManTalkSticker.backgroundImageName = @"workManTalkSticker";
+    NSArray *stickers = @[workManTalkSticker];
+    return stickers;
+}
+
+-(NSArray *)workManFiveFingerSticker{
+    
+    WorkManFiveFingerSticker *workManFiveFingerSticker  = [WorkManFiveFingerSticker workManFiveFingerSticker];
+    workManFiveFingerSticker.backgroundImageName = @"workManFiveFingerSticker";
+    NSArray *stickers = @[workManFiveFingerSticker];
+    return stickers;
+}
+
+-(NSArray *)workManYellowSticker{
+    
+    WorkManYellowSticker *workManYellowSticker  = [WorkManYellowSticker workManYellowSticker];
+    workManYellowSticker.backgroundImageName = @"workManYellowSticker";
+    NSArray *stickers = @[workManYellowSticker];
+    return stickers;
+}
+
+
+
 -(void)addItem:(Item *)item{
     
     [SaveManager.sharedInstance addItem:item];

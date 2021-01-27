@@ -40,10 +40,10 @@
 	<string>1</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>7d796ccb0943d83c4721fe5d3ff85e1c</string>
-    <key>FacebookAppID</key>
-    <string>236997214531786</string>
-    <key>FacebookDisplayName</key>
-    <string>ThummIt</string>
+	<key>FacebookAppID</key>
+	<string>236997214531786</string>
+	<key>FacebookDisplayName</key>
+	<string>ThummIt</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakao7d796ccb0943d83c4721fe5d3ff85e1c</string>
@@ -52,21 +52,21 @@
 		<string>kakaolink</string>
 		<string>kakaotalk-5.9.7</string>
 		<string>storylink</string>
-        <string>fbapi</string>
-          <string>fbapi20130214</string>
-          <string>fbapi20130410</string>
-          <string>fbapi20130702</string>
-          <string>fbapi20131010</string>
-          <string>fbapi20131219</string>
-          <string>fbapi20140410</string>
-          <string>fbapi20140116</string>
-          <string>fbapi20150313</string>
-          <string>fbapi20150629</string>
-          <string>fbapi20160328</string>
-          <string>fbauth</string>
-          <string>fb-messenger-share-api</string>
-          <string>fbauth2</string>
-          <string>fbshareextension</string>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
+		<string>fbapi20131219</string>
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>fbapi20160328</string>
+		<string>fbauth</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -77,6 +77,12 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>KOTRA_BOLD.otf</string>
+		<string>BMDOHYEON_otf.otf</string>
+		<string>NanumSquareOTFBold.otf</string>
+		<string>AnyConv.com__NanumGothic.otf</string>
+		<string>NanumGothicBold.otf</string>
+		<string>NanumSquareOTFExtraBold.otf</string>
+		<string>SCDream9.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -99,6 +105,10 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -11,4 +11,10 @@
 #import "Typography.h"
 #import "NormalTypo.h"
 #import "TrapezoidTypo.h"
+#import "WorkManLogo.h"
+#import "WorkManHandWrite.h"
+#import "WorkManTalkWrite.h"
+#import "WorkManRedTitle.h"
+#import "WorkManBlueTitle.h"
+
 #endif /* TypoHeader_h */
