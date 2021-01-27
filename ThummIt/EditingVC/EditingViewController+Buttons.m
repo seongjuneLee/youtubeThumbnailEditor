@@ -171,7 +171,6 @@
 -(void)doneEditingPhotoFrame{
     
     // 레이어 되돌려 놓기
-    
     [self.layerController recoverOriginalLayer];
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
     PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;

@@ -24,10 +24,10 @@
 -(NSArray *)templateDatas{
     
     Template *circleTemplate = [CircleTemplate circleTemplate];
-    Template *christmasCircle = [ChristmasCircleTemplate christmasCircleTemplate];
     Template *doubleCircleTemplate = [DoubleCircleTemplate doubleCircleTemplate];
+    Template *sinseoyugiTemplate1 = [SinSeoYuGiTemplate1 sinSeoYuGiTemplate1];
 
-    NSArray *entertainTemplates = @[circleTemplate,christmasCircle,doubleCircleTemplate];
+    NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, sinseoyugiTemplate1];
     
     Template *twoDivisionTemplate = [TwoDivisionTemplate twoDivisionTemplate];
     Template *quarterDivisionTemplate = [QuarterDivisionTemplate quarterDivisionTemplate];
