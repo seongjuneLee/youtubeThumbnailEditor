@@ -38,7 +38,6 @@
         self.backgroundImageView = [decoder decodeObjectForKey:@"backgroundImageView"];
         self.backgroundImageName = [decoder decodeObjectForKey:@"backgroundImageName"];
         self.backgroundImageView.image = [[UIImage imageNamed:self.backgroundImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-
         self.itemName = [decoder decodeObjectForKey:@"itemName"];
         self.indexInLayer = [decoder decodeObjectForKey:@"indexInLayer"];
         self.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];

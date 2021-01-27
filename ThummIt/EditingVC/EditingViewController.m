@@ -128,6 +128,7 @@
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
     float imageViewWidth = self.view.frameWidth;
+    self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
         [item loadView];
         if (item.isTemplateItem) {

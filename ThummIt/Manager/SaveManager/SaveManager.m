@@ -29,7 +29,6 @@
             if ([self.currentProject.selectedTemplateName isEqualToString:template.templateName]) {
                 currentTemplate = template;
             }
-
         }
     }
     

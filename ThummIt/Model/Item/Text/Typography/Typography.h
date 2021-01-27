@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BGTextAttribute.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
