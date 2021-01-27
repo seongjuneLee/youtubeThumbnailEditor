@@ -11,7 +11,7 @@ target 'ThummIt' do
   pod 'KakaoSDK'
 
   pod 'Firebase/Analytics'
-
+  
   pod 'FBSDKLoginKit'
   
   pod 'Firebase/Auth'

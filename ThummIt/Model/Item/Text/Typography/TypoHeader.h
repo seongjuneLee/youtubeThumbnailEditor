@@ -16,5 +16,16 @@
 #import "WorkManTalkWrite.h"
 #import "WorkManRedTitle.h"
 #import "WorkManBlueTitle.h"
+#import "RunningManLogoTypo.h"
+#import "SeoYuGiLogoTypo.h"
+#import "FirstExperienceTypo.h"
+#import "FightManTypo.h"
+#import "SeoYuGiCloudLogoTypo.h"
+#import "InFrontOfGirlTypo.h"
+#import "BabarimanTypo.h"
+#import "CowRiseTypo.h"
+#import "EatRoomTypo.h"
+#import "HungryTypo.h"
+#import "DawnWatchingTypo.h"
 
 #endif /* TypoHeader_h */

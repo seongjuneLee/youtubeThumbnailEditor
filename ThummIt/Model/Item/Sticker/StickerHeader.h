@@ -15,5 +15,6 @@
 #import "WorkManTalkSticker.h"
 #import "WorkManFiveFingerSticker.h"
 #import "WorkManYellowSticker.h"
+#import "ExclamationMark.h"
 
 #endif /* StickerHeader_h */

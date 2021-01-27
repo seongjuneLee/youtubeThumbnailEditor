@@ -19,15 +19,19 @@
         
     Text *text = [[Text alloc] init];
     text.textView.delegate = editingVC;
-    [text applyTypo:typo];
 
-    text.text = text.typo.name;
+    text.text = typo.name;
     text.textView.text = text.text;
+    text.textAlignment = NSTextAlignmentCenter;
+    text.textView.textAlignment = NSTextAlignmentCenter;
+    
+    [text applyTypo:typo];
     [text resize];
+    [text.textView setNeedsDisplay];
+
     text.textViewContainer.center = editingVC.bgView.center;
     text.center = text.textViewContainer.center;
 
-    NSLog(@"");
 
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지

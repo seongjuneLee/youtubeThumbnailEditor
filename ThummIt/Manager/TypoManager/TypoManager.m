@@ -20,17 +20,4 @@
     return sharedInstance;
 }
 
--(NSArray *)typos{
-    
-    NormalTypo *normal = [NormalTypo normalTypo];
-    TrapezoidTypo *trapezoidTypo = [TrapezoidTypo trapezoidTypo];
-    WorkManLogo *workManLogo = [WorkManLogo workManLogo];
-    WorkManHandWrite *workManHandWrite =[WorkManHandWrite workManHandWrite];
-    WorkManTalkWrite *workManTalkWrite =[WorkManTalkWrite workManTalkWrite];
-    WorkManRedTitle *workManRedTitle =[WorkManRedTitle workManRedTitle];
-    WorkManBlueTitle *workManBlueTitle =[WorkManBlueTitle workManBlueTitle];
-    
-    return @[normal, trapezoidTypo, workManLogo, workManHandWrite, workManTalkWrite, workManRedTitle, workManBlueTitle];
-}
-
 @end

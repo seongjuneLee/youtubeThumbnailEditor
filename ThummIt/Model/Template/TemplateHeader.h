@@ -10,6 +10,7 @@
 
 #import "Template.h"
 #import "PhotoFrameHeader.h"
+#import "SinSeoYuGiTemplate1.h"
 
 #import "CircleTemplate.h"
 #import "ChristmasCircleTemplate.h"
@@ -17,5 +18,7 @@
 
 #import "TwoDivisionTemplate.h"
 #import "QuarterDivisionTemplate.h"
+
+#import "RunningMan1Template.h"
 
 #endif /* TemplateHeader_h */

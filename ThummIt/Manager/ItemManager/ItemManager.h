@@ -16,15 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSArray *)photoFrameCategories;
 -(NSArray *)stickerCategories;
 
--(NSArray *)circlePhotoFrames;
--(NSArray *)rectanglePhotoFrames;
--(NSArray *)basicCircleStickers;
--(NSArray *)basicArrowStickers;
--(NSArray *)xStickers;
--(NSArray *)workManAngrySticker;
--(NSArray *)workManTalkSticker;
--(NSArray *)workManFiveFingerSticker;
--(NSArray *)workManYellowSticker;
+-(NSArray *)photoFrameDatas;
+-(NSArray *)stickerDatas;
+
+-(NSArray *)typoDatas;
 
 -(void)addItem:(Item *)item withView:(UIView *)view underView:(UIView *)gestureView withCriteriaView:(UIImageView *)imageView;
 -(void)deleteItem:(Item *)item;

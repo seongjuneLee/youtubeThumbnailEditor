@@ -77,12 +77,18 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>KOTRA_BOLD.otf</string>
-		<string>BMDOHYEON_otf.otf</string>
 		<string>NanumSquareOTFBold.otf</string>
 		<string>AnyConv.com__NanumGothic.otf</string>
 		<string>NanumGothicBold.otf</string>
 		<string>NanumSquareOTFExtraBold.otf</string>
+		<string>UTOIMAGE_ ChocolatLatte_OTF.otf</string>
 		<string>SCDream9.otf</string>
+		<string>BMHANNA_11yrs_otf.otf</string>
+		<string>gabia_solmee.otf</string>
+		<string>62570-_1_.otf</string>
+		<string>NotoSansCJKkr-Bold.otf</string>
+		<string>ELAND-Nice-M.otf</string>
+		<string>BMDOHYEON_otf.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -104,11 +110,7 @@
 		</dict>
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>CFBundleDisplayName</key>
-	<string></string>
+	<false/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

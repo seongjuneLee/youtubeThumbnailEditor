@@ -27,7 +27,6 @@
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }
-    [SaveManager.sharedInstance save];
 }
 
 -(void)showTransparentView{
@@ -51,7 +50,6 @@
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }
-    [SaveManager.sharedInstance save];
 }
 -(void)hideTransparentView{
     [self.transparentView removeFromSuperview];

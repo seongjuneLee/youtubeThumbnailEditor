@@ -88,6 +88,7 @@
     [encoder encodeObject:[NSNumber numberWithFloat:self.bgCenterXDelta] forKey:@"bgCenterXDelta"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.bgCenterYDelta] forKey:@"bgCenterYDelta"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.bgContentMode] forKey:@"bgContentMode"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.borderRoundCorner] forKey:@"isRoundedCorner"];
 
 }
 
@@ -158,6 +159,7 @@
         self.bgCenterXDelta = [[decoder decodeObjectForKey:@"bgCenterXDelta"] floatValue];
         self.bgCenterYDelta = [[decoder decodeObjectForKey:@"bgCenterYDelta"] floatValue];
         self.bgContentMode = [[decoder decodeObjectForKey:@"bgContentMode"] floatValue];
+        self.borderRoundCorner = [[decoder decodeObjectForKey:@"isRoundedCorner"] boolValue];
 
     }
     return self;
@@ -204,6 +206,7 @@
     copy.bgCenterXDelta = self.bgCenterXDelta;
     copy.bgCenterYDelta = self.bgCenterYDelta;
     copy.bgContentMode = self.bgContentMode;
+    copy.borderRoundCorner = self.borderRoundCorner;
     copy.typoImageFilePath = [self.typoImageFilePath copyWithZone:zone];
 
     copy.bgTextAttributes = [self.bgTextAttributes copyWithZone:zone];
