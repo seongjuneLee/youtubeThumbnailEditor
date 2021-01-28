@@ -76,6 +76,7 @@
     WorkManRightTag *workManRightTag = [WorkManRightTag workManRightTag];
     WorkmanYelloewTitle *workmanYelloewTitle = [WorkmanYelloewTitle workmanYelloewTitle];
     WorkManLogo2 *workManLogo2 = [WorkManLogo2 workManLogo2];
+    WorkManLeftTag *workManLeftTag = [WorkManLeftTag workManLeftTag];
     
     InfiniteChallengeLogo *infiniteChallengeLogo = [InfiniteChallengeLogo infiniteChallengeLogo];
     InfiniteChallengeEscapeRoom *infiniteChallengeEscapeRoom = [InfiniteChallengeEscapeRoom infiniteChallengeEscapeRoom];
@@ -91,11 +92,29 @@
     InfiniteChallengeHashTag *infiniteChallengeHashTag = [InfiniteChallengeHashTag infiniteChallengeHashTag];
     InfiniteChallengeSkyBlueBox *infiniteChallengeSkyBlueBox = [InfiniteChallengeSkyBlueBox infiniteChallengeSkyBlueBox];
     InfiniteChallengeCloudBox *infiniteChallengeCloudBox = [InfiniteChallengeCloudBox infiniteChallengeCloudBox];
+    
+    VlogWebWrite *vlogWebWrite = [VlogWebWrite vlogWebWrite];
+    VlogDesiner *vlogDesiner = [VlogDesiner vlogDesiner];
+    VlogCompany *vlogCompany = [VlogCompany vlogCompany];
+    VlogNewCampus *vlogNewCampus = [VlogNewCampus vlogNewCampus];
+    VlogDog *vlogDog = [VlogDog vlogDog];
+    VlogModel *vlogModel = [VlogModel vlogModel];
+    VlogSummer *vlogSummer = [VlogSummer vlogSummer];
+    VlogOriginal *vlogOriginal = [VlogOriginal vlogOriginal];
+    VlogTrip *vlogTrip = [VlogTrip vlogTrip];
+    VlogInItaly *vlogInIaly = [VlogInItaly vlogInItaly];
+    VlogItaly *vlogItaly = [VlogItaly vlogItaly];
+    VlogLongDance *vlogLongDance = [VlogLongDance vlogLongDance];
+    VlogShortDance *vlogShortDance = [VlogShortDance vlogShortDance];
+    VlogStudy *vlogStudy = [VlogStudy vlogStudy];
+    Vlog365 *vlog365 = [Vlog365 vlog365];
+    
+
 
 
 
     
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox];
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag,workManLeftTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogWebWrite,vlogDesiner,vlogCompany,vlogNewCampus,vlogDog,vlogModel,vlogSummer,vlogOriginal,vlogTrip,vlogInIaly,vlogItaly,vlogLongDance,vlogShortDance,vlogStudy,vlog365];
     
     
     return @[typos];

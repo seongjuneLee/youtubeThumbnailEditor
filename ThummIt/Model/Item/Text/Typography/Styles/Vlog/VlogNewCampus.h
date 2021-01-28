@@ -1,5 +1,5 @@
 //
-//  WorkManTag2.h
+//  VlogNewCampus.h
 //  ThummIt
 //
 //  Created by 이성준 on 2021/01/28.
@@ -9,9 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WorkManLeftTag : Typography
+@interface VlogNewCampus : Typography
 
-+(WorkManLeftTag *)workManLeftTag;
++(VlogNewCampus *)vlogNewCampus;
 
 @end
 

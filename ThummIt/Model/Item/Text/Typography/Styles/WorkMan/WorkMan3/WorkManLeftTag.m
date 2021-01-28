@@ -17,6 +17,9 @@
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
         self.fontSize = 25;
+        self.bgImageName = @"waveYellowSquare";
+        self.bgHeightPadding = 0;
+        self.bgWidthPadding = 0;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
@@ -29,9 +32,9 @@
     return self;
 }
 
-+(WorkManLeftTag *)workManTag2{
-    WorkManLeftTag *workManTag2 = [[self alloc] init];
-        return workManTag2;
++(WorkManLeftTag *)workManLeftTag{
+    WorkManLeftTag *workManLeftTag = [[self alloc] init];
+        return workManLeftTag;
 }
 
 @end
