@@ -78,7 +78,6 @@
 #import "WhyRealTypo.h"
 #import "RuleTypo.h"
 
-=======
 #import "VlogLookbookTypo.h"
 #import "VlogBrushTypo.h"
 #import "VlogSummerTypo.h"
@@ -90,6 +89,9 @@
 #import "VlogMyeongjoTypo.h"
 #import "VlogGRWMTypo.h"
 #import "VlogNanumSquareTypo.h"
->>>>>>> addTemplatesJH3
+
+#import "FightManTypo.h"
+#import "InFrontOfGirlTypo.h"
+#import "HungryTypo.h"
 
 #endif /* TypoHeader_h */
