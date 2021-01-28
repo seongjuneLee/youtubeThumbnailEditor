@@ -18,6 +18,7 @@
         self.stickers = [NSMutableArray array];
         [self setUpPhotoFrame];
         [self setUpTexts];
+        [self setUpStickers];
 
     }
     return self;
@@ -40,5 +41,14 @@
     
 }
 
+-(void)setUpPhotoFrame{
+    
+}
+-(void)setUpTexts{
+    
+}
+-(void)setUpStickers{
+    
+}
 
 @end
