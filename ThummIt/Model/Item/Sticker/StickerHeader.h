@@ -11,10 +11,16 @@
 #import "BasicCircleSticker.h"
 #import "BasicArrowSticker.h"
 #import "xSticker.h"
+#import "RunningManExcSticker.h"
+#import "RunningManQuSticker.h"
+#import "SinSeoYuGiExc1Sticker.h"
+#import "SinSeoYuGiExc2Sticker.h"
+#import "SinSeoYuGiQuSticker.h"
+#import "SinSeoYuGiEffectSticker.h"
 #import "WorkManAngrySticker.h"
 #import "WorkManTalkSticker.h"
 #import "WorkManFiveFingerSticker.h"
 #import "WorkManYellowSticker.h"
-#import "ExclamationMark.h"
+
 
 #endif /* StickerHeader_h */

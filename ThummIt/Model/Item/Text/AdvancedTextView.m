@@ -11,7 +11,6 @@
 #import "UIColor+Additions.h"
 #import "UITextView+Additions.h"
 #import "NSArray+Additions.h"
-#import "NSMutableAttributedString+Additions.h"
 #import "Text.h"
 
 @implementation AdvancedTextView
@@ -287,9 +286,10 @@
         [string addAttribute:NSFontAttributeName value:font range:range];
     } else if (typo) {
         font = [UIFont fontWithName:typo.fontName size:typo.fontSize];
+    }
+    if (font) {
         [string addAttribute:NSFontAttributeName value:font range:range];
     }
-    
     
     // 아무것도 안 쓴 상태면 내용 넣어주기 (맨 밑에서 뺌)
     if (string.length == 0) {

@@ -23,13 +23,10 @@
 #import "RunningManLogoTypo.h"
 #import "SeoYuGiLogoTypo.h"
 #import "FirstExperienceTypo.h"
-#import "FightManTypo.h"
 #import "SeoYuGiCloudLogoTypo.h"
-#import "InFrontOfGirlTypo.h"
 #import "BabarimanTypo.h"
 #import "CowRiseTypo.h"
 #import "EatRoomTypo.h"
-#import "HungryTypo.h"
 #import "DawnWatchingTypo.h"
 #import "InfiniteChallengeLogo.h"
 #import "InfiniteChallengeEscapeRoom.h"
@@ -60,6 +57,29 @@
 #import "VlogShortDance.h"
 #import "VlogStudy.h"
 #import "Vlog365.h"
+
+
+#import "WorkManRightTag.h"
+
+
+#import "WorkmanYelloewTitle.h"
+
+#import "WorkManLogo2.h"
+#import "WorkManLeftTag.h"
+#import "DDamTypo.h"
+#import "RedShoutingTypo.h"
+#import "YellowGradientTypo.h"
+#import "WorkingManNameTypo.h"
+#import "BlueMoonTypo.h"
+#import "WhatTypo.h"
+#import "AtmosphereTypo.h"
+#import "WhiteYellowGradientTypo.h"
+#import "TikiTypo.h"
+#import "KnockOutTypo.h"
+#import "MatterTypo.h"
+#import "SuccessTypo.h"
+#import "WhyRealTypo.h"
+#import "RuleTypo.h"
 
 
 #endif /* TypoHeader_h */

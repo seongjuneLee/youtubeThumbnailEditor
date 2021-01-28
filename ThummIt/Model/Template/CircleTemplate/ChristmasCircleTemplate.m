@@ -47,4 +47,7 @@
     
 }
 
+-(void)setUpTexts{
+    
+}
 @end

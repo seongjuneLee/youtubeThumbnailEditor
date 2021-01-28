@@ -19,7 +19,6 @@
         self.category = NSLocalizedString(@"Entertain", nil);
         self.backgroundColor = UIColor.blackColor;
         self.backgroundImageName = @"workManFrame3";
-        [self setUpPhotoFrame];
         
     }
     return self;
@@ -42,6 +41,10 @@
     photoFrame.isTemplateItem = true;
     photoFrame.baseView.backgroundColor = UIColor.whiteColor;
     [self.photoFrames addObject:photoFrame];
+    
+}
+
+-(void)setUpTexts{
     
 }
 

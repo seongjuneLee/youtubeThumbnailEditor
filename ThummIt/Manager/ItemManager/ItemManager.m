@@ -60,13 +60,10 @@
     RunningManLogoTypo *runningManLogoTypo = [RunningManLogoTypo runningManLogoTypo];
     SeoYuGiLogoTypo *seoYuGiLogoTypo = [SeoYuGiLogoTypo seoYuGiLogoTypo];
     FirstExperienceTypo *firstexperienceTypo = [FirstExperienceTypo firstExperienceTypo];
-    FightManTypo *fightManTypo = [FightManTypo fightManTypo];
     SeoYuGiCloudLogoTypo *seoYuGiCloudLogoTypo = [SeoYuGiCloudLogoTypo seoYuGiCloudLogoTypo];
-    InFrontOfGirlTypo *inFrontOfGirlTypo = [InFrontOfGirlTypo inFrontOfGirlTypo];
     BabarimanTypo *babarimanTypo = [BabarimanTypo babarimanTypo];
     CowRiseTypo *cowRiseTypo = [CowRiseTypo cowRiseTypo];
     EatRoomTypo *eatRoomTypo = [EatRoomTypo eatRoomTypo];
-    HungryTypo *hungryTypo = [HungryTypo hungryTypo];
     DawnWatchingTypo *dawnWatchingTypo = [DawnWatchingTypo dawnWatchingTypo];
     
     WorkManLogo *workManLogo = [WorkManLogo workManLogo];
@@ -112,9 +109,27 @@
 
 
 
+    DDamTypo *ddamTypo = [DDamTypo ddamTypo];
+    RedShoutingTypo *redShoutingTypo = [RedShoutingTypo redShoutingTypo];
+    YellowGradientTypo *yellowGradientTypo =[YellowGradientTypo yellowGradientTypo];
+    WorkingManNameTypo *workingManNameTypo =[WorkingManNameTypo workingManNameTypo];
+    BlueMoonTypo *blueMoonTypo = [BlueMoonTypo blueMoonTypo];
+    WhatTypo *whatTypo = [WhatTypo whatTypo];
+    AtmosphereTypo *atmosphereTypo = [AtmosphereTypo atmosphereTypo];
+    WhiteYellowGradientTypo *whiteYellowGradientTypo = [WhiteYellowGradientTypo whiteYellowGradientTypo];
+    TikiTypo *tikiTypo = [TikiTypo tikiTypo];
+    KnockOutTypo *knockOutTypo = [KnockOutTypo knockOutTypo];
+    MatterTypo *matterTypo = [MatterTypo matterTypo];
+    SuccessTypo *successTypo = [SuccessTypo successTypo];
+    WhyRealTypo *whyrealTypo = [WhyRealTypo whyRealTypo];
+    RuleTypo *ruleTypo = [RuleTypo ruleTypo];
+
 
     
+
     NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag,workManLeftTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogWebWrite,vlogDesiner,vlogCompany,vlogNewCampus,vlogDog,vlogModel,vlogSummer,vlogOriginal,vlogTrip,vlogInIaly,vlogItaly,vlogLongDance,vlogShortDance,vlogStudy,vlog365];
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, seoYuGiCloudLogoTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox,ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo ,tikiTypo,knockOutTypo,matterTypo,successTypo,whyrealTypo,ruleTypo];
+
     
     
     return @[typos];
@@ -140,6 +155,21 @@
     basicArrowSticker.backgroundImageName = @"basicArrowStickerWhite";
     XSticker *xSticker  = [XSticker xSticker];
     xSticker.backgroundImageName = @"xStickerWhite";
+    RunningManExcSticker* runningManExcSticker =[RunningManExcSticker runningManExcSticker];
+    runningManExcSticker.backgroundImageName = @"runningManExcSticker";
+    RunningManQuSticker* runningManQuSticker =[RunningManQuSticker runningManQuSticker];
+    runningManQuSticker.backgroundImageName = @"runningManQuSticker";
+    SinSeoYuGiExc1Sticker* sinSeoYuGiExc1Sticker =[SinSeoYuGiExc1Sticker sinSeoYuGiExc1Sticker];
+    sinSeoYuGiExc1Sticker.backgroundImageName = @"sinSeoYuGiExc1Sticker";
+    SinSeoYuGiExc2Sticker* sinSeoYuGiExc2Sticker =[SinSeoYuGiExc2Sticker sinSeoYuGiExc2Sticker];
+    sinSeoYuGiExc2Sticker.backgroundImageName = @"sinSeoYuGiExc2Sticker";
+    SinSeoYuGiQuSticker* sinSeoYuGiQuSticker =[SinSeoYuGiQuSticker sinSeoYuGiQuSticker];
+    sinSeoYuGiQuSticker.backgroundImageName = @"sinSeoYuGiQuSticker";
+    SinSeoYuGiEffectSticker* sinSeoYuGiEffectSticker =[SinSeoYuGiEffectSticker sinSeoYuGiEffectSticker];
+    sinSeoYuGiEffectSticker.backgroundImageName = @"sinSeoYuGiEffectSticker";
+    
+    
+    
     WorkManAngrySticker *workManAngrySticker  = [WorkManAngrySticker workManAngrySticker];
     workManAngrySticker.backgroundImageName = @"workManAngrySticker";
     WorkManTalkSticker *workManTalkSticker  = [WorkManTalkSticker workManTalkSticker];
@@ -150,7 +180,7 @@
     workManYellowSticker.backgroundImageName = @"workManYellowSticker";
     
     
-    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker, workManAngrySticker, workManTalkSticker, workManFiveFingerSticker, workManYellowSticker];
+    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker,runningManExcSticker,runningManQuSticker,sinSeoYuGiExc1Sticker,sinSeoYuGiExc2Sticker,sinSeoYuGiQuSticker,sinSeoYuGiEffectSticker, workManAngrySticker, workManTalkSticker, workManFiveFingerSticker, workManYellowSticker];
     
     return @[basicStickers];
 }

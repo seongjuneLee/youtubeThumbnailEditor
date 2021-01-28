@@ -18,7 +18,6 @@
         self.category = NSLocalizedString(@"Entertain", nil);
         self.backgroundColor = UIColor.blackColor;
         self.backgroundImageName = @"";
-        [self setUpPhotoFrame];
         
     }
     return self;
@@ -44,5 +43,8 @@
     
 }
 
+-(void)setUpTexts{
+    
+}
 
 @end
