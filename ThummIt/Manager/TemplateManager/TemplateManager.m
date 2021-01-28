@@ -25,8 +25,15 @@
     
     Template *circleTemplate = [CircleTemplate circleTemplate];
     Template *doubleCircleTemplate = [DoubleCircleTemplate doubleCircleTemplate];
+    
     Template *runningMan1Template = [RunningMan1Template runningMan1Template];
-    Template *sinseoyugiTemplate1 = [SinSeoYuGiTemplate1 sinSeoYuGiTemplate1];
+    Template *runningMan2Template = [RunningMan2Template runningMan2Template];
+    Template *runningMan3Template = [RunningMan3Template runningMan3Template];
+    
+    Template *sinseoyugi1Template = [SinSeoYuGi1Template sinSeoYuGi1Template];
+    Template *sinseoyugi2Template = [SinSeoYuGi2Template sinSeoYuGi2Template];
+    Template *sinseoyugi3Template = [SinSeoYuGi3Template sinSeoYuGi3Template];
+
     
     Template *workManTemplate1 = [WorkManTemplate1 workManTemplate1];
     Template *workManTemplate2 = [WorkManTemplate2 workManTemplate2];
@@ -34,7 +41,7 @@
     
     Template *infiniteChallenge1Template = [InfiniteChallenge1Template infiniteChallenge1Template];
 
-    NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, sinseoyugiTemplate1,runningMan1Template, infiniteChallenge1Template, workManTemplate1, workManTemplate2, workManTemplate3];
+    NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, runningMan1Template,runningMan2Template,runningMan3Template,sinseoyugi1Template,sinseoyugi2Template,sinseoyugi3Template, infiniteChallenge1Template, workManTemplate1, workManTemplate2, workManTemplate3];
 
     
     Template *twoDivisionTemplate = [TwoDivisionTemplate twoDivisionTemplate];

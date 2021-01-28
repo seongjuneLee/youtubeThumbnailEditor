@@ -18,8 +18,6 @@
         self.category = NSLocalizedString(@"Entertainment", nil);
         self.templateName = @"infiniteChallenge1Template";
         self.backgroundImageName = @"infiniteChallengeLogoFrame";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
         
     }
     return self;

@@ -133,6 +133,21 @@
     basicArrowSticker.backgroundImageName = @"basicArrowStickerWhite";
     XSticker *xSticker  = [XSticker xSticker];
     xSticker.backgroundImageName = @"xStickerWhite";
+    RunningManExcSticker* runningManExcSticker =[RunningManExcSticker runningManExcSticker];
+    runningManExcSticker.backgroundImageName = @"runningManExcSticker";
+    RunningManQuSticker* runningManQuSticker =[RunningManQuSticker runningManQuSticker];
+    runningManQuSticker.backgroundImageName = @"runningManQuSticker";
+    SinSeoYuGiExc1Sticker* sinSeoYuGiExc1Sticker =[SinSeoYuGiExc1Sticker sinSeoYuGiExc1Sticker];
+    sinSeoYuGiExc1Sticker.backgroundImageName = @"sinSeoYuGiExc1Sticker";
+    SinSeoYuGiExc2Sticker* sinSeoYuGiExc2Sticker =[SinSeoYuGiExc2Sticker sinSeoYuGiExc2Sticker];
+    sinSeoYuGiExc2Sticker.backgroundImageName = @"sinSeoYuGiExc2Sticker";
+    SinSeoYuGiQuSticker* sinSeoYuGiQuSticker =[SinSeoYuGiQuSticker sinSeoYuGiQuSticker];
+    sinSeoYuGiQuSticker.backgroundImageName = @"sinSeoYuGiQuSticker";
+    SinSeoYuGiEffectSticker* sinSeoYuGiEffectSticker =[SinSeoYuGiEffectSticker sinSeoYuGiEffectSticker];
+    sinSeoYuGiEffectSticker.backgroundImageName = @"sinSeoYuGiEffectSticker";
+    
+    
+    
     WorkManAngrySticker *workManAngrySticker  = [WorkManAngrySticker workManAngrySticker];
     workManAngrySticker.backgroundImageName = @"workManAngrySticker";
     WorkManTalkSticker *workManTalkSticker  = [WorkManTalkSticker workManTalkSticker];
@@ -143,7 +158,7 @@
     workManYellowSticker.backgroundImageName = @"workManYellowSticker";
     
     
-    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker, workManAngrySticker, workManTalkSticker, workManFiveFingerSticker, workManYellowSticker];
+    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker,runningManExcSticker,runningManQuSticker,sinSeoYuGiExc1Sticker,sinSeoYuGiExc2Sticker,sinSeoYuGiQuSticker,sinSeoYuGiEffectSticker, workManAngrySticker, workManTalkSticker, workManFiveFingerSticker, workManYellowSticker];
     
     return @[basicStickers];
 }
