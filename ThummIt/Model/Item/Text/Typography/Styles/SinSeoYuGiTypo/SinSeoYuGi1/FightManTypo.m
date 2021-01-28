@@ -21,7 +21,7 @@
         self.shadowRadius = 1;
         self.shadowOffset = CGSizeMake(1, 1);
     //  bgTextAttributes.borderWidth =
-        self.fontSize = 50;
+        self.fontSize = 50; 
     }
  //대조작업필요
     
