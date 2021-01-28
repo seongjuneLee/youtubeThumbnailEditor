@@ -23,7 +23,7 @@
             
         self.bgTextAttributes = @[borderAtt];
         
-        self.bgImageName = @"SeoYUGiCloudLogo";
+        self.bgImageName = @"seoYuGiCloud";
         self.bgContentMode = UIViewContentModeScaleAspectFit;
         self.bgHeightPadding = -10;
     }
