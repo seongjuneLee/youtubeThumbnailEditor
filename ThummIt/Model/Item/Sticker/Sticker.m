@@ -12,12 +12,11 @@
 -(id)init{
     self = [super init];
     if(self){
+        
         // 템플릿에서만 필요
         self.center = CGPointMake(0.5, 0.5);
         self.scale = 1;
         self.rotationDegree = 0;
-        
-        
         
     }
     return self;

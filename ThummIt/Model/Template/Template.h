@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "PhotoFrameHeader.h"
 #import "TypoHeader.h"
+#import "StickerHeader.h"
 
 #import <UIKit/UIKit.h>
 

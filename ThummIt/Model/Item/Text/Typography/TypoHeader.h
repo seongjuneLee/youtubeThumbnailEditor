@@ -29,10 +29,10 @@
 #import "DawnWatchingTypo.h"
 #import "InfiniteChallengeLogo.h"
 #import "InfiniteChallengeEscapeRoom.h"
-#import "InfiniteChallengeBlackGrey.h"
-#import "InfiniteChallengeWhite.h"
-#import "InfiniteChallengeWhiteBlue.h"
-#import "InfiniteChallengeWhiteOrange.h"
+#import "InfiniteChallengeBlackTypo.h"
+#import "InfiniteChallengeWhiteTypo.h"
+#import "InfiniteChallengeBlueTypo.h"
+#import "InfiniteChallengeOrangeTypo.h"
 #import "InfiniteChallengeLegeno.h"
 #import "InfiniteChallengeYellowSpeechBoxWhite.h"
 #import "InfiniteChallengeYellowSpeechBoxYellow.h"
@@ -41,13 +41,20 @@
 #import "InfiniteChallengeHashTag.h"
 #import "InfiniteChallengeSkyBlueBox.h"
 #import "InfiniteChallengeCloudBox.h"
-
 #import "WorkManRightTag.h"
-
-
 #import "WorkmanYelloewTitle.h"
-
 #import "WorkManLogo2.h"
 #import "WorkManLeftTag.h"
+#import "VlogLookbookTypo.h"
+#import "VlogBrushTypo.h"
+#import "VlogSummerTypo.h"
+#import "VlogDailyTypo.h"
+#import "VlogLogoTagTypo.h"
+#import "VlogCookingTypo.h"
+#import "VlogHashTagTypo.h"
+#import "VlogBMDohyunTypo.h"
+#import "VlogMyeongjoTypo.h"
+#import "VlogGRWMTypo.h"
+#import "VlogNanumSquareTypo.h"
 
 #endif /* TypoHeader_h */

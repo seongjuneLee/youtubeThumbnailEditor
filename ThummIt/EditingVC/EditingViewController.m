@@ -132,7 +132,6 @@
     float imageViewWidth = self.view.frameWidth;
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
-        [item loadView];
         if (item.isTemplateItem) {
             if ([item isKindOfClass:PhotoFrame.class]) {
                 PhotoFrame *photoFrame = (PhotoFrame *)item;
@@ -145,8 +144,9 @@
             item.center = itemCenter;
             item.baseView.center = itemCenter;
             item.isTemplateItem = false;
-            item.baseView.transform = CGAffineTransformMakeRotation(degreesToRadians(item.rotationDegree));
         }
+        [item loadView];
+
         if (item.indexInLayer.length != 0) {
             [self.view insertSubview:item.baseView atIndex:[item.indexInLayer integerValue]];
         } else {

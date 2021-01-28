@@ -15,11 +15,10 @@
     if (self) {
         self.name = NSLocalizedString(@"제철알바",nil);
         self.fontName = @"SangSangAnt";
+        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor blackColor];
-        self.bgImageName = @"";
-        self.bgHeightPadding = 0;
-        self.bgWidthPadding = 0;
-        self.fontSize = 20;
+        self.bgImageName = @"workManYellowTag";
+        self.bgWidthPadding = 100;
     }
     return self;
 }

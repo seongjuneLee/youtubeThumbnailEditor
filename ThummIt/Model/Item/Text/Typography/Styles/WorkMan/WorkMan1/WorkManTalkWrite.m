@@ -17,10 +17,12 @@
         self.fontName = @"NanumSquareOTFB";
         self.textColor = [UIColor whiteColor];
         self.fontSize = TEXT_FONT_SIZE;
+        self.bgImageName = @"workManTalkBox";
+        self.bgHeightPadding = 30;
+        self.bgWidthPadding = 40;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
-       
         bgTextAttribute1.borderWidth = 10;
         
         self.bgTextAttributes = @[bgTextAttribute1];
