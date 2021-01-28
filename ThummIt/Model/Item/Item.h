@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint center;
 @property (nonatomic) float rotationDegree;
 @property (nonatomic) CGFloat scale;
+@property (nonatomic) BOOL isFixedPhotoFrame;
 
 @property (nonatomic) BOOL isTemplateItem;
 

@@ -40,13 +40,20 @@
 
 -(void)setUpPhotoFrame{
     
-    PhotoFrame *photoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
-    photoFrame.center = CGPointMake(0.6, 0.4);
-    photoFrame.scale = 0.7;
-    photoFrame.baseView.backgroundColor = UIColor.whiteColor;
-    
-    photoFrame.isTemplateItem = true;
-    [self.photoFrames addObject:photoFrame];
+    FullRectangle *fullRectangle = [FullRectangle fullRectangle];
+    fullRectangle.isFixedPhotoFrame = true;
+    fullRectangle.isTemplateItem = true;
+    fullRectangle.center = CGPointMake(0.5, 0.5);
+    fullRectangle.plusLabel.hidden = true;
+    [self.photoFrames addObject:fullRectangle];
+
+    PhotoFrame *basicCirclePhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
+    basicCirclePhotoFrame.center = CGPointMake(0.6, 0.4);
+    basicCirclePhotoFrame.scale = 0.7;
+    basicCirclePhotoFrame.plusLabel.hidden = true;
+    basicCirclePhotoFrame.baseView.backgroundColor = UIColor.whiteColor;
+    basicCirclePhotoFrame.isTemplateItem = true;
+    [self.photoFrames addObject:basicCirclePhotoFrame];
     
 }
 

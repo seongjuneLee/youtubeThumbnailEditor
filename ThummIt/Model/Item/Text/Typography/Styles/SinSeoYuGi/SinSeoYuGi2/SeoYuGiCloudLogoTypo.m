@@ -18,7 +18,7 @@
         self.borderColor = [UIColor colorWithRed:59/255.0f green:4/255.0f blue:1/255.0f alpha:1];
         self.borderWidth = -3;
         self.fontSize = 35;
-        self.bgImageName = @"SeoYuGiCloudLogo";
+        self.bgImageName = @"SeoYUGiCloudLogo";
         self.bgContentMode = UIViewContentModeScaleAspectFit;
         self.bgHeightPadding = 50;
         self.bgCenterYDelta = 0;
