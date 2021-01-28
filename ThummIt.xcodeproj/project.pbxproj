@@ -1256,7 +1256,16 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
-		6E8F996A25C0C0A4005C8071 /* SinSeoYuGiTypo */ = {
+		6E8F995925C084BF005C8071 /* SinSeoYuGi */ = {
+			isa = PBXGroup;
+			children = (
+				6E8F995425C084BB005C8071 /* SinSeoYuGi1Template.h */,
+				6E8F995525C084BB005C8071 /* SinSeoYuGi1Template.m */,
+			);
+			path = SinSeoYuGi;
+			sourceTree = "<group>";
+		};
+		6E8F996A25C0C0A4005C8071 /* SinSeoYuGi */ = {
 			isa = PBXGroup;
 			children = (
 				6E8F996B25C0C12A005C8071 /* SinSeoYuGi1 */,
@@ -2456,6 +2465,7 @@
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
 				6ED13D4625C2C82900012144 /* SinSeoYuGiExc1Sticker.m in Sources */,
+				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
 				B16FC68025AF459800E854C1 /* StickerCollectionReusableView.m in Sources */,
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,
 				B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */,

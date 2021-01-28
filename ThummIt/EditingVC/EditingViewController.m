@@ -21,7 +21,6 @@
     
     [PhotoManager.sharedInstance fetchPhassets];
 
-    [self loadItems];
 
     [self basicUIUXSetting];
 
@@ -29,18 +28,16 @@
     
     [self addExtraGestureToButtons];
     
-    [SaveManager.sharedInstance save];
-    
-    
-    
     
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
     
     [self setUpSlider];
 }
 
--(void)viewWillLayoutSubviews{
-
+-(void)viewDidLayoutSubviews{
+    if (!self.itemLoaded) {
+        [self loadItems];
+    }
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
     
@@ -48,7 +45,7 @@
     float inset = 40;
     float bgColorVCHeight = bgColorCollectionCellHeight + inset + self.bgColorVC.cancelButton.frameHeight;
     self.bgColorVC.view.frame = CGRectMake(0, self.view.frameHeight - bgColorVCHeight, self.view.frameWidth, bgColorVCHeight);
-    
+
 }
 
 -(void)setUpSlider{
@@ -127,35 +124,37 @@
 
 -(void)loadItems{
     
+    self.itemLoaded = true;
+    
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
-    float imageViewWidth = self.view.frameWidth;
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
-        [item loadView];
-        if (item.isTemplateItem) {
-            if ([item isKindOfClass:PhotoFrame.class]) {
-                PhotoFrame *photoFrame = (PhotoFrame *)item;
-                photoFrame.plusLabel.hidden = false;
-            }
-            float itemX = imageViewWidth * item.center.x;
-            float itemY = self.view.frameHeight * 0.1 - 4 +imageViewWidth * 9/16*item.center.y;
+        if (item.isTemplateItem || item.isFixedPhotoFrame) {
+            float itemX = self.bgView.frameWidth * item.center.x;
+            float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
-            
             item.center = itemCenter;
-            item.baseView.center = itemCenter;
-            item.isTemplateItem = false;
-            item.baseView.transform = CGAffineTransformMakeRotation(degreesToRadians(item.rotationDegree));
         }
-        if (item.indexInLayer.length != 0) {
-            [self.view insertSubview:item.baseView atIndex:[item.indexInLayer integerValue]];
+        
+        [item loadView];
+
+        if (item.isFixedPhotoFrame) {
+            [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
         } else {
-            [self.view insertSubview:item.baseView belowSubview:self.gestureView];
+            if (item.indexInLayer.length != 0) {
+                [self.view insertSubview:item.baseView atIndex:[item.indexInLayer integerValue]];
+            } else {
+                [self.view insertSubview:item.baseView belowSubview:self.gestureView];
+            }
+            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
         }
-        [self.view insertSubview:self.gestureView belowSubview:self.upperArea];
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+
+        item.isTemplateItem = false;
     }
     
+    [SaveManager.sharedInstance save];
+
 }
 
 -(void)respondToUndoRedo{

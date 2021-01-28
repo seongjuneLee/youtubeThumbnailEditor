@@ -70,6 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) UIImageView *hueImageView;
 @property (strong, nonatomic) UIView *thumbCircleView;
+@property (nonatomic) BOOL itemLoaded;
 
 -(void)loadItems;
 

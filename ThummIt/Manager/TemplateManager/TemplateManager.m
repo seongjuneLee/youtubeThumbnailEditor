@@ -40,8 +40,9 @@
     Template *workManTemplate3 = [WorkManTemplate3 workManTemplate3];
     
     Template *infiniteChallenge1Template = [InfiniteChallenge1Template infiniteChallenge1Template];
+    Template *sinseoyugiTemplate1 = [SinSeoYuGi1Template sinSeoYuGiTemplate1];
 
-    NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, runningMan1Template,runningMan2Template,runningMan3Template,sinseoyugi1Template,sinseoyugi2Template,sinseoyugi3Template, infiniteChallenge1Template, workManTemplate1, workManTemplate2, workManTemplate3];
+    NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, runningMan1Template,runningMan2Template,runningMan3Template,sinseoyugi1Template,sinseoyugi2Template,sinseoyugi3Template, infiniteChallenge1Template, workManTemplate1, workManTemplate2, workManTemplate3,sinseoyugiTemplate1];
 
     
     Template *twoDivisionTemplate = [TwoDivisionTemplate twoDivisionTemplate];

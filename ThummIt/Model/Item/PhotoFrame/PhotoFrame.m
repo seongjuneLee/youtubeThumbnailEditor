@@ -104,11 +104,11 @@
         self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
         self.backgroundImageView.clipsToBounds = true;
     }
+    [self addSubViewsToBaseView];
 
     self.baseView.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(self.rotationDegree), CGAffineTransformMakeScale(self.scale, self.scale));
     self.baseView.center = self.center;
     
-    [self addSubViewsToBaseView];
 
 }
 -(void)makeBaseView{
@@ -118,21 +118,29 @@
 
 -(void)addSubViewsToBaseView{
     
-    self.plusLabel = [[UILabel alloc] init];
-    self.plusLabel.text = NSLocalizedString(@"+ Photo", nil);
-    self.plusLabel.textColor = UIColor.blackColor;
-    self.plusLabel.hidden = true;
-    [self.plusLabel sizeToFit];
-    self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
-    [self.baseView addSubview:self.plusLabel];
+    if (self.isTemplateItem) {
+        self.plusLabel = [[UILabel alloc] init];
+        self.plusLabel.text = NSLocalizedString(@"+ Photo", nil);
+        self.plusLabel.textColor = UIColor.blackColor;
+        [self.plusLabel sizeToFit];
+        self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
+        [self.baseView addSubview:self.plusLabel];
+    }
     
     self.photoImageView = [[UIImageView alloc] init];
-    self.photoImageView.frameSize = self.baseView.frameSize;
-    self.photoImageView.backgroundColor = UIColor.clearColor;
+    self.photoImageView.backgroundColor = UIColor.greenColor;
     self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
     if (self.phAsset) {
         [PhotoManager.sharedInstance getImageFromPHAsset:self.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-            self.photoImageView.image = image;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.photoImageView.image = image;
+                float ratio = image.size.height/image.size.width;
+                float width = self.baseView.frameWidth * 1.2;
+                self.photoImageView.frameSize = CGSizeMake(self.baseView.frameWidth * 1.2, width * ratio);
+                NSLog(@"");
+            });
+
         }];
     }
     [self.baseView addSubview:self.photoImageView];

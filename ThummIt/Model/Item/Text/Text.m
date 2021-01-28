@@ -135,7 +135,6 @@
     if (range.length == 0) {
         range = NSMakeRange(0, self.textView.text.length);
     }
-    NSLog(@"prevRange prevRange %@",NSStringFromRange(range));
     [self applyTypo:typo forRange:range];
     
     self.textView.selectedRange = prevRange;

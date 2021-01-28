@@ -15,4 +15,6 @@
 #import "VerticalHalfRectangle.h"
 #import "QuarterRectangle.h"
 
+#import "FullRectangle.h"
+
 #endif /* BorderHeader_h */

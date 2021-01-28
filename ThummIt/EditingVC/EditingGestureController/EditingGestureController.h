@@ -44,6 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL isPinching;
 
 @property (nonatomic) CGPoint originalPoint;
+@property (nonatomic) CGPoint originalCenter;
 
 @property (nonatomic) float originalScaleRatio;
 @property (nonatomic) float originalPinchDistance;
@@ -69,6 +70,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) GuideLineView *trailing;
 @property (strong, nonatomic) GuideLineView *leading;
 @property (strong, nonatomic, nullable) DashedGuideLineView *rotationDashedLine;
+
+@property (strong, nonatomic) UIView *comparingView;
+
 -(void)addGestureRecognizers;
 
 @end
