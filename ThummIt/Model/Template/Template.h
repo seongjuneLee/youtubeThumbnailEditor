@@ -9,6 +9,7 @@
 #import "PhotoFrameHeader.h"
 #import "TypoHeader.h"
 #import "Sticker.h"
+#import "StickerHeader.h"
 
 #import <UIKit/UIKit.h>
 

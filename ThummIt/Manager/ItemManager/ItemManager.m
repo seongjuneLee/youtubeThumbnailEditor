@@ -77,10 +77,10 @@
     
     InfiniteChallengeLogo *infiniteChallengeLogo = [InfiniteChallengeLogo infiniteChallengeLogo];
     InfiniteChallengeEscapeRoom *infiniteChallengeEscapeRoom = [InfiniteChallengeEscapeRoom infiniteChallengeEscapeRoom];
-    InfiniteChallengeWhite *infiniteChallengeWhite = [InfiniteChallengeWhite infiniteChallengeWhite];
-    InfiniteChallengeBlackGrey *infiniteChallengeBlackGrey = [InfiniteChallengeBlackGrey infiniteChallengeBlackGrey];
-    InfiniteChallengeWhiteBlue *infiniteChallengeWhiteBlue = [InfiniteChallengeWhiteBlue infiniteChallengeWhiteBlue];
-    InfiniteChallengeWhiteOrange *infiniteChallengeWhiteOrange = [InfiniteChallengeWhiteOrange infiniteChallengeWhiteOrange];
+    InfiniteChallengeWhiteTypo *infiniteChallengeWhiteTypo = [InfiniteChallengeWhiteTypo infiniteChallengeWhiteTypo];
+    InfiniteChallengeBlackTypo *infiniteChallengeBlackTypo = [InfiniteChallengeBlackTypo infiniteChallengeBlackTypo];
+    InfiniteChallengeBlueTypo *infiniteChallengeBlueTypo = [InfiniteChallengeBlueTypo infiniteChallengeBlueTypo];
+    InfiniteChallengeOrangeTypo *infiniteChallengeOrangeTypo = [InfiniteChallengeOrangeTypo infiniteChallengeOrangeTypo];
     InfiniteChallengeLegeno *infiniteChallengeLegeno = [InfiniteChallengeLegeno infiniteChallengeLegeno];
     InfiniteChallengeYellowSpeechBoxWhite *infiniteChallengeYellowSpeechBoxWhite = [InfiniteChallengeYellowSpeechBoxWhite infiniteChallengeYellowSpeechBoxWhite];
     InfiniteChallengeYellowSpeechBoxYellow *infiniteChallengeYellowSpeechBoxYellow = [InfiniteChallengeYellowSpeechBoxYellow infiniteChallengeYellowSpeechBoxYellow];
@@ -106,9 +106,6 @@
     VlogStudy *vlogStudy = [VlogStudy vlogStudy];
     Vlog365 *vlog365 = [Vlog365 vlog365];
     
-
-
-
     DDamTypo *ddamTypo = [DDamTypo ddamTypo];
     RedShoutingTypo *redShoutingTypo = [RedShoutingTypo redShoutingTypo];
     YellowGradientTypo *yellowGradientTypo =[YellowGradientTypo yellowGradientTypo];
@@ -125,11 +122,19 @@
     RuleTypo *ruleTypo = [RuleTypo ruleTypo];
 
 
+    VlogLookbookTypo *vlogLookbookTypo = [VlogLookbookTypo vlogLookbookTypo];
+    VlogBrushTypo *vlogBrushTypo = [VlogBrushTypo vlogBrushTypo];
+    VlogSummerTypo *vlogSummerTypo = [VlogSummerTypo vlogSummerTypo];
+    VlogDailyTypo *vlogDailyTypo = [VlogDailyTypo vlogDailyTypo];
+    VlogLogoTagTypo *vlogLogoTagTypo = [VlogLogoTagTypo vlogLogoTagTypo];
+    VlogCookingTypo *vlogCookingTypo = [VlogCookingTypo vlogCookingTypo];
+    VlogHashTagTypo *vlogHashTagTypo = [VlogHashTagTypo vlogHashTagTypo];
+    VlogBMDohyunTypo *vlogBMDohyunTypo = [VlogBMDohyunTypo vlogBMDohyunTypo];
+    VlogMyeongjoTypo *vlogMyeongjoTypo = [VlogMyeongjoTypo vlogMyeongjoTypo];
+    VlogGRWMTypo *vlogGRWMTypo = [VlogGRWMTypo vlogGRWMTypo];
+    VlogNanumSquareTypo *vlogNanumSquareTypo = [VlogNanumSquareTypo vlogNanumSquareTypo];
     
-
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag,workManLeftTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogWebWrite,vlogDesiner,vlogCompany,vlogNewCampus,vlogDog,vlogModel,vlogSummer,vlogOriginal,vlogTrip,vlogInIaly,vlogItaly,vlogLongDance,vlogShortDance,vlogStudy,vlog365];
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, seoYuGiCloudLogoTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhite, infiniteChallengeBlackGrey, infiniteChallengeWhiteBlue, infiniteChallengeWhiteOrange, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox,ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo ,tikiTypo,knockOutTypo,matterTypo,successTypo,whyrealTypo,ruleTypo];
-
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, seoYuGiCloudLogoTypo, inFrontOfGirlTypo, babarimanTypo, cowRiseTypo, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhiteTypo, infiniteChallengeBlackTypo, infiniteChallengeBlueTypo, infiniteChallengeOrangeTypo, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogLookbookTypo, vlogBrushTypo, vlogSummerTypo, vlogDailyTypo, vlogLogoTagTypo, vlogCookingTypo, vlogHashTagTypo, vlogBMDohyunTypo, vlogMyeongjoTypo, vlogGRWMTypo, vlogNanumSquareTypo];
     
     
     return @[typos];
@@ -172,15 +177,23 @@
     
     WorkManAngrySticker *workManAngrySticker  = [WorkManAngrySticker workManAngrySticker];
     workManAngrySticker.backgroundImageName = @"workManAngrySticker";
-    WorkManTalkSticker *workManTalkSticker  = [WorkManTalkSticker workManTalkSticker];
-    workManTalkSticker.backgroundImageName = @"workManTalkSticker";
-    WorkManFiveFingerSticker *workManFiveFingerSticker  = [WorkManFiveFingerSticker workManFiveFingerSticker];
-    workManFiveFingerSticker.backgroundImageName = @"workManFiveFingerSticker";
-    WorkManYellowSticker *workManYellowSticker  = [WorkManYellowSticker workManYellowSticker];
-    workManYellowSticker.backgroundImageName = @"workManYellowSticker";
+
+    WorkManStartleSticker *workManStartleSticker  = [WorkManStartleSticker workManStartleSticker];
+    workManStartleSticker.backgroundImageName = @"workManStartleSticker";
     
+    InfiniteChallengeSkullSticker *infiniteChallengeSkullSticker = [InfiniteChallengeSkullSticker infiniteChallengeSkullSticker];
+    infiniteChallengeSkullSticker.backgroundImageName = @"infiniteChallengeSkullSticker";
     
+    VlogBlinkSticker1 *vlogBlinkSticker1 = [VlogBlinkSticker1 vlogBlinkSticker1];
+    vlogBlinkSticker1.backgroundImageName = @"blinkSticker1";
+    VlogPigtailSticker *vlogPigtailSticker = [VlogPigtailSticker vlogPigtailSticker];
+    vlogPigtailSticker.backgroundImageName = @"pigtailSticker";
+    
+<<<<<<< HEAD
     NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker,runningManExcSticker,runningManQuSticker,sinSeoYuGiExc1Sticker,sinSeoYuGiExc2Sticker,sinSeoYuGiQuSticker,sinSeoYuGiEffectSticker, workManAngrySticker, workManTalkSticker, workManFiveFingerSticker, workManYellowSticker];
+=======
+    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker, workManAngrySticker, workManStartleSticker, infiniteChallengeSkullSticker, vlogBlinkSticker1, vlogPigtailSticker];
+>>>>>>> addTemplatesJH3
     
     return @[basicStickers];
 }

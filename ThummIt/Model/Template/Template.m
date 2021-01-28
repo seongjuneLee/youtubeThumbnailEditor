@@ -19,7 +19,6 @@
         [self setUpPhotoFrame];
         [self setUpTexts];
         [self setUpStickers];
-
     }
     return self;
 }
@@ -42,11 +41,13 @@
 }
 
 -(void)setUpPhotoFrame{
-    
+        
 }
+
 -(void)setUpTexts{
     
 }
+
 -(void)setUpStickers{
     
 }

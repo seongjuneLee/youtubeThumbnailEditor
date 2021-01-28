@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Sticker : Item
 
+@property (nonatomic) BOOL colorChangeBlock;
+
 -(void)addSubViewsToBaseView;
 
 @end

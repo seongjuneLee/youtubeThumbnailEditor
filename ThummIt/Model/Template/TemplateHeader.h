@@ -32,5 +32,6 @@
 #import "WorkManTemplate3.h"
 
 #import "InfiniteChallenge1Template.h"
+#import "InfiniteChallenge2Template.h"
 
 #endif /* TemplateHeader_h */

@@ -13,7 +13,7 @@
 {
     self = [super init];
     if (self) {
-        self.name = NSLocalizedString(@"워크맨",nil);
+        self.name = NSLocalizedString(@"위크맨",nil);
         self.fontName = @"BMDoHyeon-OTF";
         self.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
         self.fontSize = 25;

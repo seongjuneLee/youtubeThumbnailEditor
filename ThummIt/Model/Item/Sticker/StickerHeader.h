@@ -21,6 +21,10 @@
 #import "WorkManTalkSticker.h"
 #import "WorkManFiveFingerSticker.h"
 #import "WorkManYellowSticker.h"
-
+#import "WorkManStartleSticker.h"
+#import "ExclamationMark.h"
+#import "InfiniteChallengeSkullSticker.h"
+#import "VlogBlinkSticker1.h"
+#import "VlogPigtailSticker.h"
 
 #endif /* StickerHeader_h */
