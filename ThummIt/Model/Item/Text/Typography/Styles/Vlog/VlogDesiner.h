@@ -1,5 +1,5 @@
 //
-//  WorkManTag2.h
+//  VlogDesiner.h
 //  ThummIt
 //
 //  Created by 이성준 on 2021/01/28.
@@ -9,9 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WorkManLeftTag : Typography
+@interface VlogDesiner : Typography
 
-+(WorkManLeftTag *)workManLeftTag;
++(VlogDesiner *)vlogDesiner;
 
 @end
 
