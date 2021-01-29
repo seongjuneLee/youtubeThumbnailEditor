@@ -15,6 +15,7 @@
     static dispatch_once_t onceToken; // onceToken = 0
     dispatch_once(&onceToken, ^{
         sharedInstance = [[TemplateManager alloc] init];
+        [sharedInstance templateDatas];
     });
     
     return sharedInstance;
@@ -39,16 +40,23 @@
     Template *workManTemplate2 = [WorkManTemplate2 workManTemplate2];
     Template *workManTemplate3 = [WorkManTemplate3 workManTemplate3];
     
+    
+    
     Template *infiniteChallenge1Template = [InfiniteChallenge1Template infiniteChallenge1Template];
     Template *infiniteChallenge2Template = [InfiniteChallenge2Template infiniteChallenge2Template];
+    
+    Template * fourHeartTemplate= [FourHeartTemplate fourHeartTemplate];
 
     NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, sinseoyugi1Template,runningMan1Template, infiniteChallenge1Template, infiniteChallenge2Template, workManTemplate1, workManTemplate2, workManTemplate3];
+
+    NSArray *entertainTemplatePreviewImages = @[circleTemplate.previewImageName, doubleCircleTemplate.previewImageName, sinseoyugi1Template.previewImageName,runningMan1Template.previewImageName, infiniteChallenge1Template.previewImageName, infiniteChallenge2Template.previewImageName, workManTemplate1.previewImageName, workManTemplate2.previewImageName, workManTemplate3.previewImageName];
 
     
     Template *twoDivisionTemplate = [TwoDivisionTemplate twoDivisionTemplate];
     Template *quarterDivisionTemplate = [QuarterDivisionTemplate quarterDivisionTemplate];
-    NSArray *vlogTemplates = @[twoDivisionTemplate,quarterDivisionTemplate];
-    
+    NSArray *vlogTemplates = @[twoDivisionTemplate,quarterDivisionTemplate,fourHeartTemplate];
+    NSArray *vlogTemplatePreviewImages = @[twoDivisionTemplate.previewImageName,quarterDivisionTemplate.previewImageName,fourHeartTemplate.previewImageName];
+    self.templatePreviewImages = @[entertainTemplatePreviewImages, vlogTemplatePreviewImages];
     NSArray *templates = @[entertainTemplates, vlogTemplates];
     return templates;
 

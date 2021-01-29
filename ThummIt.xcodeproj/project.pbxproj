@@ -174,6 +174,14 @@
 		6EBEB5F825C3207F0017C640 /* UhBee-puding.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB5F325C320410017C640 /* UhBee-puding.otf */; };
 		6EBEB60625C328D10017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB60525C328AE0017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf */; };
 		6EBEB60A25C32A140017C640 /* neodgm_pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB60925C32A030017C640 /* neodgm_pro.otf */; };
+		6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB64225C37A3F0017C640 /* WorkManSecondTitle.m */; };
+		6EBEB64825C428940017C640 /* WorkManFast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB64725C428930017C640 /* WorkManFast.m */; };
+		6EBEB66225C48A2D0017C640 /* FourHeartTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */; };
+		6EBEB66625C48F9B0017C640 /* SDMiSaeng.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB66525C48F6A0017C640 /* SDMiSaeng.otf */; };
+		6EBEB67425C494B10017C640 /* VlogHeartSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67325C494B10017C640 /* VlogHeartSticker1.m */; };
+		6EBEB67925C494C90017C640 /* VlogHeartSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67825C494C90017C640 /* VlogHeartSticker2.m */; };
+		6EBEB67E25C494D40017C640 /* VlogHeartSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67D25C494D40017C640 /* VlogHeartSticker3.m */; };
+		6EBEB68325C494E20017C640 /* VlogHeartSticker4.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB68225C494E20017C640 /* VlogHeartSticker4.m */; };
 		6EC4DFA625A85D860023485C /* Typography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA525A85D860023485C /* Typography.m */; };
 		6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */; };
 		6EC4DFC125A87BEC0023485C /* BGTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBB25A87BEB0023485C /* BGTextAttribute.m */; };
@@ -210,7 +218,6 @@
 		6ED13CA825C1AE8D00012144 /* TikiTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CA725C1AE8D00012144 /* TikiTypo.m */; };
 		6ED13CAF25C1AEF700012144 /* KnockOutTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CAE25C1AEF700012144 /* KnockOutTypo.m */; };
 		6ED13CB425C1B97600012144 /* JejuHallasan.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13CB225C1B97500012144 /* JejuHallasan.otf */; };
-		6ED13CC925C1C57900012144 /* SDMiSaeng.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13CC825C1C57900012144 /* SDMiSaeng.otf */; };
 		6ED13CCF25C1CACB00012144 /* MatterTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CCE25C1CACB00012144 /* MatterTypo.m */; };
 		6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CD525C1CAF700012144 /* SuccessTypo.m */; };
 		6ED13CDB25C1CB1100012144 /* WhyRealTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CDA25C1CB1100012144 /* WhyRealTypo.m */; };
@@ -619,6 +626,21 @@
 		6EBEB5F425C320410017C640 /* UhBee-puding-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UhBee-puding-Bold.otf"; sourceTree = "<group>"; };
 		6EBEB60525C328AE0017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf"; sourceTree = "<group>"; };
 		6EBEB60925C32A030017C640 /* neodgm_pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = neodgm_pro.otf; sourceTree = "<group>"; };
+		6EBEB64125C37A3F0017C640 /* WorkManSecondTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManSecondTitle.h; sourceTree = "<group>"; };
+		6EBEB64225C37A3F0017C640 /* WorkManSecondTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManSecondTitle.m; sourceTree = "<group>"; };
+		6EBEB64625C428930017C640 /* WorkManFast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManFast.h; sourceTree = "<group>"; };
+		6EBEB64725C428930017C640 /* WorkManFast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManFast.m; sourceTree = "<group>"; };
+		6EBEB66025C48A2D0017C640 /* FourHeartTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourHeartTemplate.h; sourceTree = "<group>"; };
+		6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourHeartTemplate.m; sourceTree = "<group>"; };
+		6EBEB66525C48F6A0017C640 /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SDMiSaeng.otf; path = ../../../../../Desktop/SDMiSaeng.otf; sourceTree = "<group>"; };
+		6EBEB67225C494B10017C640 /* VlogHeartSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker1.h; sourceTree = "<group>"; };
+		6EBEB67325C494B10017C640 /* VlogHeartSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHeartSticker1.m; sourceTree = "<group>"; };
+		6EBEB67725C494C80017C640 /* VlogHeartSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker2.h; sourceTree = "<group>"; };
+		6EBEB67825C494C90017C640 /* VlogHeartSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHeartSticker2.m; sourceTree = "<group>"; };
+		6EBEB67C25C494D40017C640 /* VlogHeartSticker3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker3.h; sourceTree = "<group>"; };
+		6EBEB67D25C494D40017C640 /* VlogHeartSticker3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHeartSticker3.m; sourceTree = "<group>"; };
+		6EBEB68125C494E20017C640 /* VlogHeartSticker4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker4.h; sourceTree = "<group>"; };
+		6EBEB68225C494E20017C640 /* VlogHeartSticker4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHeartSticker4.m; sourceTree = "<group>"; };
 		6EC4DFA425A85D860023485C /* Typography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Typography.h; sourceTree = "<group>"; };
 		6EC4DFA525A85D860023485C /* Typography.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Typography.m; sourceTree = "<group>"; };
 		6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewContainer.m; sourceTree = "<group>"; };
@@ -679,7 +701,6 @@
 		6ED13CAD25C1AEF700012144 /* KnockOutTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KnockOutTypo.h; sourceTree = "<group>"; };
 		6ED13CAE25C1AEF700012144 /* KnockOutTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnockOutTypo.m; sourceTree = "<group>"; };
 		6ED13CB225C1B97500012144 /* JejuHallasan.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JejuHallasan.otf; sourceTree = "<group>"; };
-		6ED13CC825C1C57900012144 /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.otf; sourceTree = "<group>"; };
 		6ED13CCD25C1CACB00012144 /* MatterTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatterTypo.h; sourceTree = "<group>"; };
 		6ED13CCE25C1CACB00012144 /* MatterTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatterTypo.m; sourceTree = "<group>"; };
 		6ED13CD425C1CAF700012144 /* SuccessTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuccessTypo.h; sourceTree = "<group>"; };
@@ -1445,6 +1466,8 @@
 				6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */,
 				6E9BE996258A527C00F7F539 /* QuarterDivisionTemplate.h */,
 				6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */,
+				6EBEB66025C48A2D0017C640 /* FourHeartTemplate.h */,
+				6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */,
 			);
 			path = VlogTemplate;
 			sourceTree = "<group>";
@@ -1658,6 +1681,7 @@
 				B1F2B6DE25C1940A0064A044 /* UTOIMAGE_ ChocolatLatte_OTF.otf */,
 				6EBEB5CF25C2F9900017C640 /* SangSangShin.otf */,
 				6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */,
+				6EBEB66525C48F6A0017C640 /* SDMiSaeng.otf */,
 				B1F2B6E425C196E30064A044 /* SCDream9.otf */,
 				6ED13C7A25C11B9700012144 /* TmoneyRoundWindExtraBold.otf */,
 				6ED13C7B25C11B9800012144 /* TmoneyRoundWindRegular.otf */,
@@ -1677,7 +1701,6 @@
 				6E8F99C825C10804005C8071 /* BMDOHYEON_otf.otf */,
 				6ED13C8225C1940300012144 /* BMYEONSUNG_otf.otf */,
 				6ED13CB225C1B97500012144 /* JejuHallasan.otf */,
-				6ED13CC825C1C57900012144 /* SDMiSaeng.otf */,
 				6ED13CDE25C1D12900012144 /* NanumSquareOTF_acB.otf */,
 				6ED13D1B25C2152400012144 /* NanumSquareEB.otf */,
 				B1F2B79E25C2F8810064A044 /* SSShinRegular_otf.otf */,
@@ -1714,6 +1737,10 @@
 				6EBEB52525C191340017C640 /* WorkManRedTitle.m */,
 				6EBEB57925C1E6B30017C640 /* WorkManRightTag.h */,
 				6EBEB57A25C1E6B30017C640 /* WorkManRightTag.m */,
+				6EBEB64125C37A3F0017C640 /* WorkManSecondTitle.h */,
+				6EBEB64225C37A3F0017C640 /* WorkManSecondTitle.m */,
+				6EBEB64625C428930017C640 /* WorkManFast.h */,
+				6EBEB64725C428930017C640 /* WorkManFast.m */,
 			);
 			path = WorkMan1;
 			sourceTree = "<group>";
@@ -2124,6 +2151,14 @@
 				B1F2B7CE25C305C50064A044 /* VlogBlinkSticker1.m */,
 				B1F2B7D425C305D90064A044 /* VlogPigtailSticker.h */,
 				B1F2B7D525C305D90064A044 /* VlogPigtailSticker.m */,
+				6EBEB67225C494B10017C640 /* VlogHeartSticker1.h */,
+				6EBEB67325C494B10017C640 /* VlogHeartSticker1.m */,
+				6EBEB67725C494C80017C640 /* VlogHeartSticker2.h */,
+				6EBEB67825C494C90017C640 /* VlogHeartSticker2.m */,
+				6EBEB67C25C494D40017C640 /* VlogHeartSticker3.h */,
+				6EBEB67D25C494D40017C640 /* VlogHeartSticker3.m */,
+				6EBEB68125C494E20017C640 /* VlogHeartSticker4.h */,
+				6EBEB68225C494E20017C640 /* VlogHeartSticker4.m */,
 			);
 			path = Vlog;
 			sourceTree = "<group>";
@@ -2252,6 +2287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EBEB66625C48F9B0017C640 /* SDMiSaeng.otf in Resources */,
 				6EBEB60A25C32A140017C640 /* neodgm_pro.otf in Resources */,
 				6EBEB60625C328D10017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf in Resources */,
 				6EBEB5F825C3207F0017C640 /* UhBee-puding.otf in Resources */,
@@ -2294,7 +2330,6 @@
 				6E8E7AF525A83C110008C5FF /* TextCollectionViewCell.xib in Resources */,
 				6E8E79ED25921E440008C5FF /* ProjectTableViewCell.xib in Resources */,
 				6ED13CB425C1B97600012144 /* JejuHallasan.otf in Resources */,
-				6ED13CC925C1C57900012144 /* SDMiSaeng.otf in Resources */,
 				6ED13C7C25C11B9800012144 /* TmoneyRoundWindExtraBold.otf in Resources */,
 				6ED13C2225C10E7700012144 /* gabia_solmee.otf in Resources */,
 				6E8E7A6B259C91560008C5FF /* PhotoFrameCollectionViewCell.xib in Resources */,
@@ -2503,6 +2538,7 @@
 				B1F2B6EF25C198DD0064A044 /* InfiniteChallengeWhiteTypo.m in Sources */,
 				6E8F9B4425C35261005C8071 /* HungryTypo.m in Sources */,
 				6E8F9A9625C34582005C8071 /* BasicCirclePhotoFrame.m in Sources */,
+				6EBEB67425C494B10017C640 /* VlogHeartSticker1.m in Sources */,
 				B1F2B6EF25C198DD0064A044 /* InfiniteChallengeWhiteTypo.m in Sources */,
 				6E8F98F425BC551F005C8071 /* GuideLine.m in Sources */,
 				6E4A1898258A138F008578BA /* HomeTableController.m in Sources */,
@@ -2512,6 +2548,7 @@
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
 				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
 				6E28452025C35870008B7A23 /* VlogOriginal.m in Sources */,
+				6EBEB68325C494E20017C640 /* VlogHeartSticker4.m in Sources */,
 				6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */,
 				6EC4DFCC25A87DAF0023485C /* UIColor+patternArchive.m in Sources */,
 				6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */,
@@ -2521,12 +2558,14 @@
 				6EC4DFC225A87BEC0023485C /* AdvancedTextView.m in Sources */,
 				B1836FC925C3370E00A81446 /* WorkManAngrySticker.m in Sources */,
 				B1836FC725C3370E00A81446 /* WorkManTalkSticker.m in Sources */,
+				6EBEB67E25C494D40017C640 /* VlogHeartSticker3.m in Sources */,
 				6E6E5BF025A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m in Sources */,
 				B1F2B74C25C1CB0B0064A044 /* InfiniteChallengeCloudBox.m in Sources */,
 				6E9BE9F4258D0F1C00F7F539 /* EditingModeController.m in Sources */,
 				6E28452425C35870008B7A23 /* VlogSummer.m in Sources */,
 				B1836F6125C32C1800A81446 /* InfiniteChallenge2Template.m in Sources */,
 				B16FC64925ADF90000E854C1 /* BasicCircleSticker.m in Sources */,
+				6EBEB64825C428940017C640 /* WorkManFast.m in Sources */,
 				6E9BEA36258E696F00F7F539 /* SaveManager.m in Sources */,
 				6E28451A25C35870008B7A23 /* VlogLookbookTypo.m in Sources */,
 				6E9BEA46258F0AA300F7F539 /* ThummIt.xcdatamodeld in Sources */,
@@ -2564,6 +2603,7 @@
 				6EC4DFCB25A87DAF0023485C /* UIColor+Additions.m in Sources */,
 				6E8E7A2E259B270E0008C5FF /* PhotoFrameCollectionController.m in Sources */,
 				B1F2B7CF25C305C50064A044 /* VlogBlinkSticker1.m in Sources */,
+				6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				B16FC66025AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m in Sources */,
@@ -2582,6 +2622,7 @@
 				6EBEB55C25C1C6D20017C640 /* WorkmanYelloewTitle.m in Sources */,
 				6E28451C25C35870008B7A23 /* VlogInItaly.m in Sources */,
 				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
+				6EBEB67925C494C90017C640 /* VlogHeartSticker2.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
 				6E28452625C35870008B7A23 /* VlogNewCampus.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
@@ -2620,6 +2661,7 @@
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,
 				B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */,
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
+				6EBEB66225C48A2D0017C640 /* FourHeartTemplate.m in Sources */,
 				6E8E7A24259B26CF0008C5FF /* ItemCollectionViewController.m in Sources */,
 				6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */,
 				6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */,

@@ -34,4 +34,6 @@
 #import "InfiniteChallenge1Template.h"
 #import "InfiniteChallenge2Template.h"
 
+#import "FourHeartTemplate.h"
+
 #endif /* TemplateHeader_h */

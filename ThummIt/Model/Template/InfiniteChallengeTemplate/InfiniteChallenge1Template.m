@@ -83,6 +83,7 @@
     InfiniteChallengeOrangeTypo *orange = [InfiniteChallengeOrangeTypo infiniteChallengeOrangeTypo];
     InfiniteChallengeBlueTypo *blue = [InfiniteChallengeBlueTypo infiniteChallengeBlueTypo];
     InfiniteChallengeBlackTypo *black = [InfiniteChallengeBlackTypo infiniteChallengeBlackTypo];
+
     subTitleText.typoRangeArray = (NSMutableArray *)@[@[orange,@"0-3"], @[blue,@"8-2"], @[black,@"12-5"]];
     
     [subTitleText applyTypo:white];

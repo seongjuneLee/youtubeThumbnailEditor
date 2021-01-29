@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSArray *)templateDatas;
 +(TemplateManager *)sharedInstance;
 
+@property (strong, nonatomic) NSArray *templatePreviewImages;
+
+@property (nonatomic) NSUInteger templateDataCounts;
+@property (nonatomic) NSUInteger templateCounts;
+
 @end
 
 NS_ASSUME_NONNULL_END
