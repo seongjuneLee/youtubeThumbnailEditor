@@ -33,16 +33,13 @@
         Text *text = (Text *)item;
         self.currentItem = text;
         self.currentText = text;
-        [self.modeController setNavigationItemRespondToEditingMode:AddingTextMode];
+        [self.modeController setNavigationItemRespondToEditingMode:EditingTextMode];
         [text.textView becomeFirstResponder];
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
         self.itemCollectionVC.itemType = TextType;
         [self addItemCollectionVC];
-        if (self.recentTypo == nil) {
-            self.recentTypo = [NormalTypo normalTypo];
-        }
-        [self.itemCollectionVC didSelectTypo:self.recentTypo];
+
     }
     else if([item isKindOfClass:Sticker.class]){
         Sticker *sticker = (Sticker *)item;
@@ -161,8 +158,15 @@
             self.deleteButtonContainerView.alpha = 1.0;
             self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
         }];
-    } 
-
+    } else if (self.modeController.editingMode == EditingTextMode){
+        self.underAreaView.hidden = true;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.buttonScrollView.alpha = 0.0;
+            self.deleteButtonContainerView.alpha = 1.0;
+            self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
+        }];
+    }
+    
 }
 
 -(void)deleteImageRespondToCurrentPointY:(float)currentPointY{
