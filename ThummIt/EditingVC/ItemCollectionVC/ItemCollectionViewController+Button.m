@@ -37,6 +37,7 @@
     self.itemButton.alpha = 0.4;
     
     if (self.itemType == PhotoFrameType) {
+        
         editingVC.albumVC.view.frameHeight = self.view.frameHeight - (self.itemButton.frameY + self.itemButton.frameHeight + 10);
         editingVC.albumVC.view.frameY = editingVC.view.frameHeight - editingVC.albumVC.view.frameHeight;
         editingVC.albumVC.view.hidden = false;

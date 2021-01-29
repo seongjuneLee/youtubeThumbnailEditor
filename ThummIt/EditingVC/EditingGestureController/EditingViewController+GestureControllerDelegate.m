@@ -131,11 +131,12 @@
 -(void)didTapTextWhileAdding{
     
     [self.itemCollectionVC contentButtonTapped:self.itemCollectionVC.contentButton];
-    
+
 }
 
 -(void)didTapPhotoFrameWhileAdding{
     
+    [self.modeController setNavigationItemRespondToEditingMode:EditingTextMode];
     [self.itemCollectionVC contentButtonTapped:self.itemCollectionVC.contentButton];
     
 }
@@ -151,14 +152,7 @@
             self.buttonScrollView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
         }];
-    } else if (self.modeController.editingMode == AddingPhotoFrameMode){
-        self.underAreaView.hidden = true;
-        [UIView animateWithDuration:0.2 animations:^{
-            self.buttonScrollView.alpha = 0.0;
-            self.deleteButtonContainerView.alpha = 1.0;
-            self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
-        }];
-    } else if (self.modeController.editingMode == EditingTextMode){
+    } else if (self.modeController.editingMode == AddingPhotoFrameMode || self.modeController.editingMode == AddingTextMode || self.modeController.editingMode == EditingTextMode){
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
             self.buttonScrollView.alpha = 0.0;
