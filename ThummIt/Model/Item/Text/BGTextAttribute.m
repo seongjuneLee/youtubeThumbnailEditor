@@ -97,7 +97,6 @@
     if (text == nil || [text isEqualToString:@""]){
         text = RANDOM_TEXT;
     }
-    
     NSMutableAttributedString* mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:text];
     
     NSRange range = NSMakeRange(0, text.length);

@@ -26,5 +26,10 @@
 #import "InfiniteChallengeSkullSticker.h"
 #import "VlogBlinkSticker1.h"
 #import "VlogPigtailSticker.h"
+#import "VlogHeartSticker1.h"
+#import "VlogHeartSticker2.h"
+#import "VlogHeartSticker3.h"
+#import "VlogHeartSticker4.h"
+
 
 #endif /* StickerHeader_h */

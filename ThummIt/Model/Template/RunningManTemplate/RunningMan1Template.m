@@ -56,7 +56,21 @@
 }
 
 -(void)setUpTexts{
+        //하고싶은말 있는데
+    Text *text2 = [[Text alloc] init];
+    RedShoutingTypo *redshoutingTypo1 = [RedShoutingTypo redShoutingTypo];
+    text2.text = @"하고싶은말 있는데\n해도 되나요?";
+    text2.textView.text = text2.text;
+    [text2.textView setNeedsDisplay];
+    text2.scale =1;
+    text2.center = CGPointMake(0.8, 0.8);
     
+    [text2 applyTypo:redshoutingTypo1];
+    [text2 resize];
+
+    text2.isTemplateItem = true;
+    [self.texts addObject:text2];
+
     //로고
     Text *logoText = [[Text alloc] init];
     RunningManLogoTypo *logo = [RunningManLogoTypo runningManLogoTypo];

@@ -31,7 +31,7 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
     HomeTableViewCell *parentCell = (HomeTableViewCell *)collectionView.superview.superview;
-    NSArray *templates = TemplateManager.sharedInstance.templateDatas[parentCell.tag];
+    NSArray *templates = TemplateManager.sharedInstance.templatePreviewImages[parentCell.tag];
     return templates.count;
 
 }
@@ -42,11 +42,13 @@
     HomeTableViewCell *parentCell = (HomeTableViewCell *)contentView.superview;
     NSUInteger cellTag = parentCell.tag;
     
-    NSArray *currentTemplates = TemplateManager.sharedInstance.templateDatas[cellTag];
+    NSArray *currentTemplates = TemplateManager.sharedInstance.templatePreviewImages[cellTag];
     HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCell" forIndexPath:indexPath];
-    Template *template = currentTemplates[indexPath.row];
+    if (currentTemplates[indexPath.row]) {
+        UIImage *previewImage = [UIImage imageNamed:currentTemplates[indexPath.row]];
+        cell.previewImageView.image = previewImage;
+    }
 
-    cell.previewImageView.image = [UIImage imageNamed:template.previewImageName];
     
     return cell;
 }

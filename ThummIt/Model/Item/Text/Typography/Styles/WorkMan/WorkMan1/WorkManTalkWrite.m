@@ -23,7 +23,7 @@
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
-        bgTextAttribute1.borderWidth = 10;
+        bgTextAttribute1.borderWidth = 13;
         
         self.bgTextAttributes = @[bgTextAttribute1];
 

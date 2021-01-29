@@ -13,8 +13,8 @@
 {
     self = [super init];
     if (self) {
-        self.itemName = @"workManFiveFingerSticker";
-        self.backgroundImageName = @"workManFiveFingerSticker";
+        self.itemName = @"workManStartleSticker";
+        self.backgroundImageName = @"workManStartleSticker";
     }
     return self;
 }

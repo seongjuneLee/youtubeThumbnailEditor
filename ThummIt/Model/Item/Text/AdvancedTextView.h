@@ -24,7 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSObject * parent;
 
--(void)setUpTypography:(Typography *)typo;
 -(void)setUpTypography:(Typography *)typo range:(NSRange)range;
 -(void)setTextSelectedRangeWithPoint:(CGPoint)currentPointInTextView;
 

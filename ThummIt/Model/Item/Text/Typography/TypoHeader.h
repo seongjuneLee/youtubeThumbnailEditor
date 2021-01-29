@@ -19,6 +19,8 @@
 #import "WorkmanYelloewTitle.h"
 #import "WorkManLogo2.h"
 #import "WorkManLeftTag.h"
+#import "WorkManSecondTitle.h"
+#import "WorkManFast.h"
 
 #import "RunningManLogoTypo.h"
 #import "SeoYuGiLogoTypo.h"
