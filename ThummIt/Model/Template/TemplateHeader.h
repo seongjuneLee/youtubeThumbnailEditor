@@ -33,5 +33,6 @@
 
 #import "InfiniteChallenge1Template.h"
 #import "InfiniteChallenge2Template.h"
+#import "InfiniteChallenge3Template.h"
 
 #endif /* TemplateHeader_h */

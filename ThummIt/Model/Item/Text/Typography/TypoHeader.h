@@ -22,12 +22,10 @@
 
 #import "RunningManLogoTypo.h"
 #import "SeoYuGiLogoTypo.h"
-#import "FirstExperienceTypo.h"
+#import "SeoYuGiGagwanTypo.h"
 #import "SeoYuGiCloudLogoTypo.h"
-#import "BabarimanTypo.h"
-#import "CowRiseTypo.h"
-#import "EatRoomTypo.h"
-#import "DawnWatchingTypo.h"
+#import "SeoYuGiCowRiseTypo.h"
+#import "SeoYuGiDawnWatchingTypo.h"
 #import "InfiniteChallengeLogo.h"
 #import "InfiniteChallengeEscapeRoom.h"
 #import "InfiniteChallengeBlackTypo.h"
@@ -89,9 +87,7 @@
 #import "VlogMyeongjoTypo.h"
 #import "VlogGRWMTypo.h"
 #import "VlogNanumSquareTypo.h"
-
-#import "FightManTypo.h"
-#import "InFrontOfGirlTypo.h"
-#import "HungryTypo.h"
+#import "SeoYuGiInFrontOfGirlTypo.h"
+#import "SeoYuGiHungryTypo.h"
 
 #endif /* TypoHeader_h */

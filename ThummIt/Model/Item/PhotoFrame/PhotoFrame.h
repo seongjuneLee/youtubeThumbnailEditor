@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) PHAsset *phAsset;
 
 -(void)addSubViewsToBaseView;
--(void)makeBaseView;
+-(void)setBaseViewFrame;
 
 @end
 

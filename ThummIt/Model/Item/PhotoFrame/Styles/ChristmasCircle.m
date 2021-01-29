@@ -17,19 +17,18 @@
         self.itemName = @"BasicCircle";
         self.backgroundImageName = @"christmasCircle";
         self.isCircle = true;
-        [self makeBaseView];
+        [self setBaseViewFrame];
         
     }
     return self;
     
 }
 
--(void)makeBaseView{
-    [super makeBaseView];
+-(void)setBaseViewFrame{
+    [super setBaseViewFrame];
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
     float circleViewWidth = screenWidth*0.8/2;
     self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);
-    self.baseView.backgroundColor = UIColor.whiteColor;
 }
 
 -(instancetype)initWithCoder:(NSCoder *)decoder{

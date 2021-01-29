@@ -95,14 +95,12 @@
 		6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F995525C084BB005C8071 /* SinSeoYuGi1Template.m */; };
 		6E8F996725C0C037005C8071 /* SeoYuGiLogoTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F996625C0C037005C8071 /* SeoYuGiLogoTypo.m */; };
 		6E8F997025C0C522005C8071 /* 62570-_1_.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8F996F25C0C4F5005C8071 /* 62570-_1_.otf */; };
-		6E8F997725C0D006005C8071 /* FirstExperienceTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F997625C0D006005C8071 /* FirstExperienceTypo.m */; };
+		6E8F997725C0D006005C8071 /* SeoYuGiGagwanTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F997625C0D006005C8071 /* SeoYuGiGagwanTypo.m */; };
 		6E8F997B25C0D3CC005C8071 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8F997A25C0D3B4005C8071 /* NotoSansCJKkr-Bold.otf */; };
 		6E8F998725C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F998625C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m */; };
-		6E8F999325C0DB14005C8071 /* BabarimanTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F999225C0DB14005C8071 /* BabarimanTypo.m */; };
 		6E8F99A225C0E8C9005C8071 /* ELAND-Nice-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8F99A125C0E8C9005C8071 /* ELAND-Nice-M.otf */; };
-		6E8F99B025C0FACD005C8071 /* EatRoomTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99AF25C0FACD005C8071 /* EatRoomTypo.m */; };
-		6E8F99BE25C0FB3D005C8071 /* CowRiseTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99BD25C0FB3D005C8071 /* CowRiseTypo.m */; };
-		6E8F99C525C0FC92005C8071 /* DawnWatchingTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99C425C0FC92005C8071 /* DawnWatchingTypo.m */; };
+		6E8F99BE25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99BD25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m */; };
+		6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99C425C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m */; };
 		6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8F99C825C10804005C8071 /* BMDOHYEON_otf.otf */; };
 		6E8F9A6A25C344EB005C8071 /* PhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9A6925C344EB005C8071 /* PhotoFrame.m */; };
 		6E8F9A9425C34581005C8071 /* FullRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9A7F25C34580005C8071 /* FullRectangle.m */; };
@@ -112,9 +110,8 @@
 		6E8F9A9825C34582005C8071 /* VerticalHalfRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9A8825C34581005C8071 /* VerticalHalfRectangle.m */; };
 		6E8F9B1125C348C9005C8071 /* WorkManStartleSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B0F25C348C9005C8071 /* WorkManStartleSticker.m */; };
 		6E8F9B3A25C3494D005C8071 /* ExclamationMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B3825C3494D005C8071 /* ExclamationMark.m */; };
-		6E8F9B3F25C35214005C8071 /* FightManTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B3E25C35214005C8071 /* FightManTypo.m */; };
-		6E8F9B4425C35261005C8071 /* HungryTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B4225C35261005C8071 /* HungryTypo.m */; };
-		6E8F9B4925C3528A005C8071 /* InFrontOfGirlTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B4725C35289005C8071 /* InFrontOfGirlTypo.m */; };
+		6E8F9B4425C35261005C8071 /* SeoYuGiHungryTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B4225C35261005C8071 /* SeoYuGiHungryTypo.m */; };
+		6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B4725C35289005C8071 /* SeoYuGiInFrontOfGirlTypo.m */; };
 		6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99877B258A2A9D00C8F907 /* TemplateManager.m */; };
 		6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E998794258A300300C8F907 /* HomeCollectionViewCell.m */; };
 		6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */; };
@@ -213,7 +210,6 @@
 		6ED13CC925C1C57900012144 /* SDMiSaeng.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13CC825C1C57900012144 /* SDMiSaeng.otf */; };
 		6ED13CCF25C1CACB00012144 /* MatterTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CCE25C1CACB00012144 /* MatterTypo.m */; };
 		6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CD525C1CAF700012144 /* SuccessTypo.m */; };
-		6ED13CDB25C1CB1100012144 /* WhyRealTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CDA25C1CB1100012144 /* WhyRealTypo.m */; };
 		6ED13CE025C1D12900012144 /* NanumSquareOTF_acB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13CDE25C1D12900012144 /* NanumSquareOTF_acB.otf */; };
 		6ED13CE625C1D16B00012144 /* RuleTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CE525C1D16B00012144 /* RuleTypo.m */; };
 		6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6ED13D1B25C2152400012144 /* NanumSquareEB.otf */; };
@@ -231,6 +227,7 @@
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
 		86BE8E8DCEAF4561F7A9E722 /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B689306FD489C375607E803F /* Pods_ThummIt.framework */; };
+		B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = B12E989825C38DB700F706DD /* InfiniteChallenge3Template.m */; };
 		B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61625ADCC2A00E854C1 /* StickerCollectionController.m */; };
 		B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61D25ADCD9400E854C1 /* StickerCollectionViewCell.m */; };
 		B16FC62025ADCD9400E854C1 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16FC61E25ADCD9400E854C1 /* StickerCollectionViewCell.xib */; };
@@ -484,20 +481,16 @@
 		6E8F996525C0C036005C8071 /* SeoYuGiLogoTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoYuGiLogoTypo.h; sourceTree = "<group>"; };
 		6E8F996625C0C037005C8071 /* SeoYuGiLogoTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiLogoTypo.m; sourceTree = "<group>"; };
 		6E8F996F25C0C4F5005C8071 /* 62570-_1_.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "62570-_1_.otf"; sourceTree = "<group>"; };
-		6E8F997525C0D006005C8071 /* FirstExperienceTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstExperienceTypo.h; sourceTree = "<group>"; };
-		6E8F997625C0D006005C8071 /* FirstExperienceTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstExperienceTypo.m; sourceTree = "<group>"; };
+		6E8F997525C0D006005C8071 /* SeoYuGiGagwanTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoYuGiGagwanTypo.h; sourceTree = "<group>"; };
+		6E8F997625C0D006005C8071 /* SeoYuGiGagwanTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiGagwanTypo.m; sourceTree = "<group>"; };
 		6E8F997A25C0D3B4005C8071 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		6E8F998525C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoYuGiCloudLogoTypo.h; sourceTree = "<group>"; };
 		6E8F998625C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiCloudLogoTypo.m; sourceTree = "<group>"; };
-		6E8F999125C0DB14005C8071 /* BabarimanTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabarimanTypo.h; sourceTree = "<group>"; };
-		6E8F999225C0DB14005C8071 /* BabarimanTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabarimanTypo.m; sourceTree = "<group>"; };
 		6E8F99A125C0E8C9005C8071 /* ELAND-Nice-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ELAND-Nice-M.otf"; sourceTree = "<group>"; };
-		6E8F99AE25C0FACD005C8071 /* EatRoomTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EatRoomTypo.h; sourceTree = "<group>"; };
-		6E8F99AF25C0FACD005C8071 /* EatRoomTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EatRoomTypo.m; sourceTree = "<group>"; };
-		6E8F99BC25C0FB3D005C8071 /* CowRiseTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CowRiseTypo.h; sourceTree = "<group>"; };
-		6E8F99BD25C0FB3D005C8071 /* CowRiseTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CowRiseTypo.m; sourceTree = "<group>"; };
-		6E8F99C325C0FC91005C8071 /* DawnWatchingTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DawnWatchingTypo.h; sourceTree = "<group>"; };
-		6E8F99C425C0FC92005C8071 /* DawnWatchingTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DawnWatchingTypo.m; sourceTree = "<group>"; };
+		6E8F99BC25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoYuGiCowRiseTypo.h; sourceTree = "<group>"; };
+		6E8F99BD25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiCowRiseTypo.m; sourceTree = "<group>"; };
+		6E8F99C325C0FC91005C8071 /* SeoYuGiDawnWatchingTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoYuGiDawnWatchingTypo.h; sourceTree = "<group>"; };
+		6E8F99C425C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiDawnWatchingTypo.m; sourceTree = "<group>"; };
 		6E8F99C825C10804005C8071 /* BMDOHYEON_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMDOHYEON_otf.otf; sourceTree = "<group>"; };
 		6E8F9A6725C344EA005C8071 /* PhotoFrameHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoFrameHeader.h; sourceTree = "<group>"; };
 		6E8F9A6825C344EB005C8071 /* PhotoFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoFrame.h; sourceTree = "<group>"; };
@@ -516,12 +509,10 @@
 		6E8F9B1025C348C9005C8071 /* WorkManStartleSticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkManStartleSticker.h; sourceTree = "<group>"; };
 		6E8F9B3825C3494D005C8071 /* ExclamationMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclamationMark.m; sourceTree = "<group>"; };
 		6E8F9B3925C3494D005C8071 /* ExclamationMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExclamationMark.h; sourceTree = "<group>"; };
-		6E8F9B3D25C35214005C8071 /* FightManTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FightManTypo.h; sourceTree = "<group>"; };
-		6E8F9B3E25C35214005C8071 /* FightManTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightManTypo.m; sourceTree = "<group>"; };
-		6E8F9B4225C35261005C8071 /* HungryTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HungryTypo.m; sourceTree = "<group>"; };
-		6E8F9B4325C35261005C8071 /* HungryTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HungryTypo.h; sourceTree = "<group>"; };
-		6E8F9B4725C35289005C8071 /* InFrontOfGirlTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InFrontOfGirlTypo.m; sourceTree = "<group>"; };
-		6E8F9B4825C3528A005C8071 /* InFrontOfGirlTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InFrontOfGirlTypo.h; sourceTree = "<group>"; };
+		6E8F9B4225C35261005C8071 /* SeoYuGiHungryTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiHungryTypo.m; sourceTree = "<group>"; };
+		6E8F9B4325C35261005C8071 /* SeoYuGiHungryTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeoYuGiHungryTypo.h; sourceTree = "<group>"; };
+		6E8F9B4725C35289005C8071 /* SeoYuGiInFrontOfGirlTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiInFrontOfGirlTypo.m; sourceTree = "<group>"; };
+		6E8F9B4825C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeoYuGiInFrontOfGirlTypo.h; sourceTree = "<group>"; };
 		6E99877A258A2A9D00C8F907 /* TemplateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateManager.h; sourceTree = "<group>"; };
 		6E99877B258A2A9D00C8F907 /* TemplateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateManager.m; sourceTree = "<group>"; };
 		6E998793258A300300C8F907 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -717,6 +708,8 @@
 		6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionController.m; sourceTree = "<group>"; };
 		7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.release.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.release.xcconfig"; sourceTree = "<group>"; };
+		B12E989725C38DB700F706DD /* InfiniteChallenge3Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteChallenge3Template.h; sourceTree = "<group>"; };
+		B12E989825C38DB700F706DD /* InfiniteChallenge3Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteChallenge3Template.m; sourceTree = "<group>"; };
 		B16FC61525ADCC2A00E854C1 /* StickerCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerCollectionController.h; sourceTree = "<group>"; };
 		B16FC61625ADCC2A00E854C1 /* StickerCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickerCollectionController.m; sourceTree = "<group>"; };
 		B16FC61C25ADCD9400E854C1 /* StickerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1329,12 +1322,10 @@
 		6E8F996B25C0C12A005C8071 /* SinSeoYuGi1 */ = {
 			isa = PBXGroup;
 			children = (
-				6E8F9B3D25C35214005C8071 /* FightManTypo.h */,
-				6E8F9B3E25C35214005C8071 /* FightManTypo.m */,
-				6E8F996625C0C037005C8071 /* SeoYuGiLogoTypo.m */,
 				6E8F996525C0C036005C8071 /* SeoYuGiLogoTypo.h */,
-				6E8F997525C0D006005C8071 /* FirstExperienceTypo.h */,
-				6E8F997625C0D006005C8071 /* FirstExperienceTypo.m */,
+				6E8F996625C0C037005C8071 /* SeoYuGiLogoTypo.m */,
+				6E8F997525C0D006005C8071 /* SeoYuGiGagwanTypo.h */,
+				6E8F997625C0D006005C8071 /* SeoYuGiGagwanTypo.m */,
 			);
 			path = SinSeoYuGi1;
 			sourceTree = "<group>";
@@ -1342,12 +1333,10 @@
 		6E8F99A525C0ECEC005C8071 /* SinSeoYuGi2 */ = {
 			isa = PBXGroup;
 			children = (
-				6E8F9B4825C3528A005C8071 /* InFrontOfGirlTypo.h */,
-				6E8F9B4725C35289005C8071 /* InFrontOfGirlTypo.m */,
+				6E8F9B4825C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.h */,
+				6E8F9B4725C35289005C8071 /* SeoYuGiInFrontOfGirlTypo.m */,
 				6E8F998525C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.h */,
 				6E8F998625C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m */,
-				6E8F999125C0DB14005C8071 /* BabarimanTypo.h */,
-				6E8F999225C0DB14005C8071 /* BabarimanTypo.m */,
 			);
 			path = SinSeoYuGi2;
 			sourceTree = "<group>";
@@ -1355,14 +1344,12 @@
 		6E8F99AD25C0FA16005C8071 /* SinSeoYuGi3 */ = {
 			isa = PBXGroup;
 			children = (
-				6E8F99BC25C0FB3D005C8071 /* CowRiseTypo.h */,
-				6E8F99BD25C0FB3D005C8071 /* CowRiseTypo.m */,
-				6E8F99AE25C0FACD005C8071 /* EatRoomTypo.h */,
-				6E8F99AF25C0FACD005C8071 /* EatRoomTypo.m */,
-				6E8F99C325C0FC91005C8071 /* DawnWatchingTypo.h */,
-				6E8F99C425C0FC92005C8071 /* DawnWatchingTypo.m */,
-				6E8F9B4325C35261005C8071 /* HungryTypo.h */,
-				6E8F9B4225C35261005C8071 /* HungryTypo.m */,
+				6E8F99BC25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.h */,
+				6E8F99BD25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m */,
+				6E8F99C325C0FC91005C8071 /* SeoYuGiDawnWatchingTypo.h */,
+				6E8F99C425C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m */,
+				6E8F9B4325C35261005C8071 /* SeoYuGiHungryTypo.h */,
+				6E8F9B4225C35261005C8071 /* SeoYuGiHungryTypo.m */,
 			);
 			path = SinSeoYuGi3;
 			sourceTree = "<group>";
@@ -1405,15 +1392,15 @@
 		6E8F9A7E25C34580005C8071 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				6E8F9A7F25C34580005C8071 /* FullRectangle.m */,
 				6E8F9A8025C34580005C8071 /* BasicCirclePhotoFrame.h */,
-				6E8F9A8125C34580005C8071 /* VerticalHalfRectangle.h */,
-				6E8F9A8225C34580005C8071 /* ChristmasCircle.h */,
-				6E8F9A8325C34580005C8071 /* QuarterRectangle.m */,
-				6E8F9A8425C34580005C8071 /* FullRectangle.h */,
 				6E8F9A8525C34581005C8071 /* BasicCirclePhotoFrame.m */,
-				6E8F9A8625C34581005C8071 /* QuarterRectangle.h */,
+				6E8F9A8225C34580005C8071 /* ChristmasCircle.h */,
 				6E8F9A8725C34581005C8071 /* ChristmasCircle.m */,
+				6E8F9A8425C34580005C8071 /* FullRectangle.h */,
+				6E8F9A7F25C34580005C8071 /* FullRectangle.m */,
+				6E8F9A8625C34581005C8071 /* QuarterRectangle.h */,
+				6E8F9A8325C34580005C8071 /* QuarterRectangle.m */,
+				6E8F9A8125C34580005C8071 /* VerticalHalfRectangle.h */,
 				6E8F9A8825C34581005C8071 /* VerticalHalfRectangle.m */,
 			);
 			path = Styles;
@@ -2104,6 +2091,8 @@
 				B1F2B75A25C1E8250064A044 /* InfiniteChallenge1Template.m */,
 				B1836F5F25C32C1800A81446 /* InfiniteChallenge2Template.h */,
 				B1836F6025C32C1800A81446 /* InfiniteChallenge2Template.m */,
+				B12E989725C38DB700F706DD /* InfiniteChallenge3Template.h */,
+				B12E989825C38DB700F706DD /* InfiniteChallenge3Template.m */,
 			);
 			path = InfiniteChallengeTemplate;
 			sourceTree = "<group>";
@@ -2475,8 +2464,8 @@
 				6ED13C8A25C1ADAA00012144 /* BlueMoonTypo.m in Sources */,
 				6E28452825C35870008B7A23 /* VlogLogoTagTypo.m in Sources */,
 				6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */,
-				6E8F99C525C0FC92005C8071 /* DawnWatchingTypo.m in Sources */,
-				6E8F9B4925C3528A005C8071 /* InFrontOfGirlTypo.m in Sources */,
+				6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */,
+				6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */,
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
 				6ED13CAF25C1AEF700012144 /* KnockOutTypo.m in Sources */,
 				6ED13D2F25C2C73A00012144 /* RunningManExcSticker.m in Sources */,
@@ -2501,13 +2490,12 @@
 				6E9BEA2C258E448700F7F539 /* Project.m in Sources */,
 				6E8E7A9B259CBB470008C5FF /* PhotoFrameCollectionReusableView.m in Sources */,
 				B1F2B6EF25C198DD0064A044 /* InfiniteChallengeWhiteTypo.m in Sources */,
-				6E8F9B4425C35261005C8071 /* HungryTypo.m in Sources */,
+				6E8F9B4425C35261005C8071 /* SeoYuGiHungryTypo.m in Sources */,
 				6E8F9A9625C34582005C8071 /* BasicCirclePhotoFrame.m in Sources */,
 				B1F2B6EF25C198DD0064A044 /* InfiniteChallengeWhiteTypo.m in Sources */,
 				6E8F98F425BC551F005C8071 /* GuideLine.m in Sources */,
 				6E4A1898258A138F008578BA /* HomeTableController.m in Sources */,
 				6E28452A25C35870008B7A23 /* VlogWebWrite.m in Sources */,
-				6E8F999325C0DB14005C8071 /* BabarimanTypo.m in Sources */,
 				6E8F9B1125C348C9005C8071 /* WorkManStartleSticker.m in Sources */,
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
 				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
@@ -2568,7 +2556,7 @@
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				B16FC66025AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m in Sources */,
 				6E8F9A6A25C344EB005C8071 /* PhotoFrame.m in Sources */,
-				6E8F99BE25C0FB3D005C8071 /* CowRiseTypo.m in Sources */,
+				6E8F99BE25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m in Sources */,
 				B1836FC625C3370E00A81446 /* WorkManYellowSticker.m in Sources */,
 				B16FC68725AF76A600E854C1 /* BasicArrowSticker.m in Sources */,
 				6ED13D5E25C2FFA100012144 /* RunningMan2Template.m in Sources */,
@@ -2587,9 +2575,8 @@
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
 				B1F2B73E25C1C4E30064A044 /* InfiniteChallengeHashTag.m in Sources */,
 				6E8F9A9425C34581005C8071 /* FullRectangle.m in Sources */,
-				6E8F99B025C0FACD005C8071 /* EatRoomTypo.m in Sources */,
+				B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */,
 				6E8F9A9725C34582005C8071 /* ChristmasCircle.m in Sources */,
-				6E8F9B3F25C35214005C8071 /* FightManTypo.m in Sources */,
 				6EBEB59625C1EA990017C640 /* WorkManTemplate3.m in Sources */,
 				6E8F998725C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m in Sources */,
 				B1F2B75325C1CFFD0064A044 /* InfiniteChallengeYellowSpeechBoxYellow.m in Sources */,
@@ -2598,7 +2585,7 @@
 				6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */,
 				6E9BEA1C258DDECC00F7F539 /* UIButton+Additions.m in Sources */,
 				6E9BE9DB258CFCFE00F7F539 /* PhotoManager.m in Sources */,
-				6E8F997725C0D006005C8071 /* FirstExperienceTypo.m in Sources */,
+				6E8F997725C0D006005C8071 /* SeoYuGiGagwanTypo.m in Sources */,
 				6E8E799A258F82E80008C5FF /* MigratorJul.swift in Sources */,
 				6E28452225C35870008B7A23 /* VlogLongDance.m in Sources */,
 				6E8E7AF425A83C110008C5FF /* TextCollectionViewCell.m in Sources */,
@@ -2609,7 +2596,6 @@
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
 				6E28452725C35870008B7A23 /* VlogMyeongjoTypo.m in Sources */,
 				6E9BEA4E258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift in Sources */,
-				6ED13CDB25C1CB1100012144 /* WhyRealTypo.m in Sources */,
 				6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,

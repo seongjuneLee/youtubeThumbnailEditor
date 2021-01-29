@@ -135,9 +135,13 @@
             float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             item.center = itemCenter;
+            
+
         }
-        
         [item loadView];
+        if ([item isKindOfClass:PhotoFrame.class]) {
+            NSLog(@"item baseview frame %@",NSStringFromCGRect(item.baseView.frame));
+        }
 
         if (item.isFixedPhotoFrame) {
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];

@@ -15,14 +15,13 @@
         
         self.name = NSLocalizedString(@"블루문",nil);
         self.fontName = @"BMDoHyeon-OTF";
-        self.fontSize = 50;
+        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor colorWithRed:39/255.0 green:238/255.0 blue:244/255.0 alpha:1.0];
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
-        borderAtt.borderWidth = 10;
+        borderAtt.borderWidth = 7;
         self.bgTextAttributes = @[borderAtt];
-        //
       
     }
     return self;

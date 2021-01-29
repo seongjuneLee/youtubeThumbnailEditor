@@ -15,19 +15,17 @@
     if(self){
         
         self.itemName = @"FullRectangle";
-        [self makeBaseView];
         
     }
     return self;
     
 }
 
--(void)makeBaseView{
-    [super makeBaseView];
+-(void)setBaseViewFrame{
+    [super setBaseViewFrame];
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
     float frameWidth = screenWidth;
     self.baseView.frameSize = CGSizeMake(frameWidth, frameWidth * 9/16);
-    self.baseView.backgroundColor = UIColor.whiteColor;
 }
 
 -(instancetype)initWithCoder:(NSCoder *)decoder{

@@ -13,24 +13,46 @@
 -(id)init{
     self = [super init];
     if (self) {
-        self.name = NSLocalizedString(@"아 왜 그래요 진짜!!!",nil);
+        self.name = NSLocalizedString(@"아 왜 그래요 진짜!!!",nil); //italic
         self.fontName = @"NanumGothicOTFBold";
         self.textColor = [UIColor whiteColor];
-        self.fontSize = 30;
+        self.fontSize = TEXT_FONT_SIZE;
+        self.bgImageName = @"fireField";
+        self.bgHeightPadding = 70;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
-        BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor colorWithRed:232/255.0 green:20/255.0 blue:27/255.0 alpha:1.0];
         borderAtt.borderWidth = 8;
-        shadowAtt.shadowColor =[UIColor colorWithRed:109/255.0 green:13/255.0 blue:14/255.0 alpha:1.0];
-        shadowAtt.shadowOffset = CGPointMake(3, 3);
-        self.bgTextAttributes = @[borderAtt, shadowAtt];
         
-        self.bgImageName = @"fireField";
-        self.bgContentMode = UIViewContentModeScaleAspectFit;
-        self.bgCenterYDelta = -5;
+        BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
+        shadowAtt1.shadowColor =[UIColor colorWithRed:109/255.0 green:13/255.0 blue:14/255.0 alpha:1.0];
+        shadowAtt1.shadowOffset = CGPointMake(0.5, 0.5);
+        
+        BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
+        shadowAtt2.shadowColor =[UIColor colorWithRed:109/255.0 green:13/255.0 blue:14/255.0 alpha:1.0];
+        shadowAtt2.shadowOffset = CGPointMake(1, 1);
+        
+        BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
+        shadowAtt3.shadowColor =[UIColor colorWithRed:109/255.0 green:13/255.0 blue:14/255.0 alpha:1.0];
+        shadowAtt3.shadowOffset = CGPointMake(1.5, 1.5);
+        self.bgTextAttributes = @[borderAtt, shadowAtt1, shadowAtt2, shadowAtt3];
+        
+        BGTextAttribute *shadowAtt4 = [[BGTextAttribute alloc] init];
+        shadowAtt4.shadowColor =[UIColor colorWithRed:109/255.0 green:13/255.0 blue:14/255.0 alpha:1.0];
+        shadowAtt4.shadowOffset = CGPointMake(2, 2);
+        
+        BGTextAttribute *shadowAtt5 = [[BGTextAttribute alloc] init];
+        shadowAtt5.shadowColor =[UIColor colorWithRed:109/255.0 green:13/255.0 blue:14/255.0 alpha:1.0];
+        shadowAtt5.shadowOffset = CGPointMake(2.5, 2.5);
+        
+        BGTextAttribute *shadowAtt6 = [[BGTextAttribute alloc] init];
+        shadowAtt6.shadowColor =[UIColor colorWithRed:109/255.0 green:13/255.0 blue:14/255.0 alpha:1.0];
+        shadowAtt6.shadowOffset = CGPointMake(3, 3);
+        
+        self.bgTextAttributes = @[borderAtt, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4, shadowAtt5, shadowAtt6];
+        
     }
-    //기울이기,이미지위치 조정
+    
     return self;
 }
 

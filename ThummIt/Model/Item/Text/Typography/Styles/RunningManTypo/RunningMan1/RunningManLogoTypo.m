@@ -13,9 +13,9 @@
     self = [super init];
     if (self) {
         
-        self.name = NSLocalizedString(@"워킹맨",nil);
+        self.name = NSLocalizedString(@"러닝맨",nil);
         self.fontName = @"BMHANNA11yrsoldOTF";
-        self.fontSize = 50;
+        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor colorWithRed:241/255.0 green:233/255.0 blue:38/255.0 alpha:1.0];
 
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];

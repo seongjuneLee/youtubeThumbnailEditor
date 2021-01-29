@@ -41,9 +41,9 @@
     
     Template *infiniteChallenge1Template = [InfiniteChallenge1Template infiniteChallenge1Template];
     Template *infiniteChallenge2Template = [InfiniteChallenge2Template infiniteChallenge2Template];
-
-    NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, sinseoyugi1Template,runningMan1Template, infiniteChallenge1Template, infiniteChallenge2Template, workManTemplate1, workManTemplate2, workManTemplate3];
-
+//    Template *infiniteChallenge3Template = [InfiniteChallenge3Template infiniteChallenge3Template];
+    
+    NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, sinseoyugi1Template,  sinseoyugi2Template, sinseoyugi3Template, runningMan1Template, runningMan2Template, runningMan3Template, infiniteChallenge1Template, infiniteChallenge2Template, workManTemplate1, workManTemplate2, workManTemplate3];
     
     Template *twoDivisionTemplate = [TwoDivisionTemplate twoDivisionTemplate];
     Template *quarterDivisionTemplate = [QuarterDivisionTemplate quarterDivisionTemplate];

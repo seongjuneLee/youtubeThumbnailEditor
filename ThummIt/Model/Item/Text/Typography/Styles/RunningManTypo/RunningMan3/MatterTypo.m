@@ -14,13 +14,13 @@
     if (self) {
         
         self.name = NSLocalizedString(@"문제를 듣고",nil);
-        self.fontName = @"NanumSquareOTFEB";
-        self.fontSize = 50;
+        self.fontName = @"AppleSDGothicNeo-Bold";
+        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor whiteColor];
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
-        borderAtt.borderWidth = 10;
+        borderAtt.borderWidth = 7;
         self.bgTextAttributes = @[borderAtt];
     }
     return self;
