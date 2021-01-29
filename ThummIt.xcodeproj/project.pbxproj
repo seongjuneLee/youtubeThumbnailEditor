@@ -276,6 +276,7 @@
 		B1F2B7D625C305D90064A044 /* VlogPigtailSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F2B7D525C305D90064A044 /* VlogPigtailSticker.m */; };
 		B1F2B7DC25C30AD30064A044 /* Windy Lavender.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1F2B7DB25C30AD30064A044 /* Windy Lavender.otf */; };
 		B1F2B7F625C316BB0064A044 /* Cafe24Shiningstar.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1F2B7F525C316BB0064A044 /* Cafe24Shiningstar.otf */; };
+		B1F8C68A25C4988E002DDAF8 /* WhyRealTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CDA25C1CB1100012144 /* WhyRealTypo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2461,6 +2462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1F8C68A25C4988E002DDAF8 /* WhyRealTypo.m in Sources */,
 				6ED13C8A25C1ADAA00012144 /* BlueMoonTypo.m in Sources */,
 				6E28452825C35870008B7A23 /* VlogLogoTagTypo.m in Sources */,
 				6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */,
