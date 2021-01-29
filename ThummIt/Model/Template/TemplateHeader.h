@@ -33,6 +33,7 @@
 
 #import "InfiniteChallenge1Template.h"
 #import "InfiniteChallenge2Template.h"
+#import "InfiniteChallenge3Template.h"
 
 #import "FourHeartTemplate.h"
 

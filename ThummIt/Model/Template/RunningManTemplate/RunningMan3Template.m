@@ -32,24 +32,83 @@
     
 }
 
--(void)setUpTexts{
+-(void)setUpPhotoFrame{
     
-    Text *runningText = [[Text alloc] init];
-    DDamTypo *runningManLogo = [DDamTypo ddamTypo];
-    runningText.text = @"(식은땀)";
-    runningText.textView.text = runningText.text;
-    
-    [runningText applyTypo:runningManLogo];
-    [runningText resize];
-    [runningText.textView setNeedsDisplay];
-    runningText.center = CGPointMake(0.7, 0.3);
-    runningText.isTemplateItem = true;
-    [self.texts addObject:runningText];
+    FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
+    fullRectPhotoFrame.isTemplateItem = true;
+    fullRectPhotoFrame.isFixedPhotoFrame = true;
+    fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
+    fullRectPhotoFrame.baseView.backgroundColor = UIColor.lightGrayColor;
+    [self.photoFrames addObject:fullRectPhotoFrame];
     
 }
 
--(void)setUpPhotoFrame{
+-(void)setUpTexts{
     
+    //로고
+    Text *logoText = [[Text alloc] init];
+    RunningManLogoTypo *logo = [RunningManLogoTypo runningManLogoTypo];
+    logoText.text = @"러닝맨";
+    logoText.textView.text = logoText.text;
+    logoText.scale = 2.45;
+    logoText.center = CGPointMake(0.2, 0.78);
+    logoText.isTemplateItem = true;
+    [logoText applyTypo:logo];
+    [self.texts addObject:logoText];
+    
+    //Rule
+    Text *ruleText = [[Text alloc] init];
+    RuleTypo *rule = [RuleTypo ruleTypo];
+    ruleText.text = @"Rule";
+    ruleText.textView.text = ruleText.text;
+    ruleText.scale = 0.57;
+    ruleText.center = CGPointMake(0.46, 0.7);
+    ruleText.isTemplateItem = true;
+    [ruleText applyTypo:rule];
+    [self.texts addObject:ruleText];
+    
+    //문제를 듣고
+    Text *matterText = [[Text alloc] init];
+    MatterTypo *matter = [MatterTypo matterTypo];
+    matterText.text = @"문제를 듣고";
+    matterText.textView.text = matterText.text;
+    matterText.scale = 0.8;
+    matterText.center = CGPointMake(0.62, 0.66);
+    matterText.isTemplateItem = true;
+    [matterText applyTypo:matter];
+    [self.texts addObject:matterText];
+    
+    //먼저 대답하면 성공!
+    Text *successText = [[Text alloc] init];
+    SuccessTypo *successs = [SuccessTypo successTypo];
+    successText.text = @"먼저 대답하면 성공!";
+    successText.textView.text = successText.text;
+    successText.scale = 0.8;
+    successText.center = CGPointMake(0.695, 0.74);
+    successText.isTemplateItem = true;
+    [successText applyTypo:successs];
+    [self.texts addObject:successText];
+    
+    //아 왜그래요 진짜!!
+    Text *whyRealText = [[Text alloc] init];
+    WhyRealTypo *whyReal = [WhyRealTypo whyRealTypo];
+    whyRealText.text = @"아 왜그래요 진짜!!";
+    whyRealText.textView.text = whyRealText.text;
+    whyRealText.scale = 0.75;
+    whyRealText.center = CGPointMake(0.27, 0.34);
+    whyRealText.isTemplateItem = true;
+    [whyRealText applyTypo:whyReal];
+    [self.texts addObject:whyRealText];
+    
+}
+
+-(void)setUpStickers{
+    
+    RunningManQuSticker *runningManQuSticker = [RunningManQuSticker runningManQuSticker];
+    runningManQuSticker.scale = 0.6;
+    runningManQuSticker.isTemplateItem = true;
+    runningManQuSticker.center = CGPointMake(0.75, 0.33);
+    [self.stickers addObject:runningManQuSticker];
     
 }
 

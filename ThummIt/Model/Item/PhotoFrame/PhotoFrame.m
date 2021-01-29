@@ -14,6 +14,10 @@
     
     self = [super init];
     if(self){
+        self.baseView = [[UIView alloc] init];
+        self.baseView.clipsToBounds = true;
+        self.baseView.backgroundColor = UIColor.whiteColor;
+
         // 템플릿에서만 필요
         self.center = CGPointMake(0.5, 0.5);
         self.scale = 1;
@@ -98,7 +102,7 @@
 #pragma mark - helper
 -(void)loadView{
     
-    [self makeBaseView];
+    [self setBaseViewFrame];
     if (self.isCircle) {
         self.baseView.layer.cornerRadius = (self.baseView.frameWidth)/2;
         self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
@@ -111,9 +115,9 @@
     
 
 }
--(void)makeBaseView{
-    self.baseView = [[UIView alloc] init];
-    self.baseView.clipsToBounds = true;
+
+-(void)setBaseViewFrame{
+    
 }
 
 -(void)addSubViewsToBaseView{

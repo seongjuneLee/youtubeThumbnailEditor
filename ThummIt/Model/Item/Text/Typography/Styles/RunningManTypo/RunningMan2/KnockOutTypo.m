@@ -14,15 +14,17 @@
         
         self.name = NSLocalizedString(@"혼절직전",nil);
         self.fontName = @"JejuHallasanOTF";
-        self.fontSize = 50;
+        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor colorWithRed:232/255.0 green:30/255.0 blue:53/255.0 alpha:1.0];
 
         BGTextAttribute *border1Att = [[BGTextAttribute alloc] init];
-        BGTextAttribute *border2Att = [[BGTextAttribute alloc] init];
+        
         border1Att.borderColor = [UIColor blackColor];
-        border1Att.borderWidth = 5;
+        border1Att.borderWidth = 8;
+        
+        BGTextAttribute *border2Att = [[BGTextAttribute alloc] init];
         border2Att.borderColor = [UIColor whiteColor];
-        border2Att.borderWidth = 10;
+        border2Att.borderWidth = 18;
         
         self.bgTextAttributes = @[border1Att, border2Att];
     }

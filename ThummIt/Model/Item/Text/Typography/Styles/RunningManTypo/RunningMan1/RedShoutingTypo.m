@@ -13,23 +13,40 @@
     self = [super init];
     if (self) {
         
-        self.name = NSLocalizedString(@"하고 싶은말 있는데 \n 해도 되나요?",nil);
+        self.name = NSLocalizedString(@"하고 싶은말 있는데 \n 해도 되나요?",nil); // italic
+
         self.fontName = @"BMYEONSUNG-OTF";
-        self.fontSize = 50;
+        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor whiteColor];
-        self.shadowColor = [UIColor blackColor];
-        self.shadowOffset = CGSizeMake(5, 5);
         self.bgImageName = @"talkBalloon";
+        self.bgHeightPadding = 18;
+        self.bgWidthPadding = 30;
+        
+        BGTextAttribute *boldAtt = [[BGTextAttribute alloc] init];
+        boldAtt.borderColor = [UIColor whiteColor];
+        boldAtt.borderWidth = 2;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
-        BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
-        borderAtt.borderWidth = 10;
-        shadowAtt.shadowColor =[UIColor blackColor];
-        shadowAtt.shadowOffset = CGPointMake(3, 3);
+        borderAtt.borderWidth = 8;
         
-        self.bgTextAttributes = @[borderAtt, shadowAtt];
-       //기울이기 필요
+        BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
+        shadowAtt1.shadowColor =[UIColor blackColor];
+        shadowAtt1.shadowOffset = CGPointMake(1, 1);
+        
+        BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
+        shadowAtt2.shadowColor =[UIColor blackColor];
+        shadowAtt2.shadowOffset = CGPointMake(1.5, 1.5);
+        
+        BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
+        shadowAtt3.shadowColor =[UIColor blackColor];
+        shadowAtt3.shadowOffset = CGPointMake(2, 2);
+        
+        BGTextAttribute *shadowAtt4 = [[BGTextAttribute alloc] init];
+        shadowAtt4.shadowColor =[UIColor blackColor];
+        shadowAtt4.shadowOffset = CGPointMake(2.5, 2.5);
+        
+        self.bgTextAttributes = @[boldAtt, borderAtt, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4];
     }
     return self;
 }

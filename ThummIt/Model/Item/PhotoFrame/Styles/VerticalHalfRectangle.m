@@ -15,19 +15,18 @@
     if(self){
         
         self.itemName = @"VerticalHalfRectangle";
-        [self makeBaseView];
+        [self setBaseViewFrame];
         
     }
     return self;
     
 }
 
--(void)makeBaseView{
-    [super makeBaseView];
+-(void)setBaseViewFrame{
+    [super setBaseViewFrame];
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
     float circleViewWidth = screenWidth/2;
     self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth * 9/8);
-    self.baseView.backgroundColor = UIColor.whiteColor;
 }
 
 -(instancetype)initWithCoder:(NSCoder *)decoder{

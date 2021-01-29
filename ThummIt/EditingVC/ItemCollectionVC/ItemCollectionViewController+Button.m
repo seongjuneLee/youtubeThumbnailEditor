@@ -44,7 +44,6 @@
     } else if (self.itemType == TextType){
         
         [editingVC.currentText.textView becomeFirstResponder];
-        
     }
     
 }
