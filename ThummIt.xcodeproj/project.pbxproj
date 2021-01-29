@@ -174,7 +174,6 @@
 		6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB64225C37A3F0017C640 /* WorkManSecondTitle.m */; };
 		6EBEB64825C428940017C640 /* WorkManFast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB64725C428930017C640 /* WorkManFast.m */; };
 		6EBEB66225C48A2D0017C640 /* FourHeartTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */; };
-		6EBEB66625C48F9B0017C640 /* SDMiSaeng.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB66525C48F6A0017C640 /* SDMiSaeng.otf */; };
 		6EBEB67425C494B10017C640 /* VlogHeartSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67325C494B10017C640 /* VlogHeartSticker1.m */; };
 		6EBEB67925C494C90017C640 /* VlogHeartSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67825C494C90017C640 /* VlogHeartSticker2.m */; };
 		6EBEB67E25C494D40017C640 /* VlogHeartSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67D25C494D40017C640 /* VlogHeartSticker3.m */; };
@@ -284,6 +283,7 @@
 		B1F2B7DC25C30AD30064A044 /* Windy Lavender.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1F2B7DB25C30AD30064A044 /* Windy Lavender.otf */; };
 		B1F2B7F625C316BB0064A044 /* Cafe24Shiningstar.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1F2B7F525C316BB0064A044 /* Cafe24Shiningstar.otf */; };
 		B1F8C68A25C4988E002DDAF8 /* WhyRealTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CDA25C1CB1100012144 /* WhyRealTypo.m */; };
+		B1F8C6B225C49C82002DDAF8 /* SDMiSaeng.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1F8C6B125C49C82002DDAF8 /* SDMiSaeng.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -624,7 +624,6 @@
 		6EBEB64725C428930017C640 /* WorkManFast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManFast.m; sourceTree = "<group>"; };
 		6EBEB66025C48A2D0017C640 /* FourHeartTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourHeartTemplate.h; sourceTree = "<group>"; };
 		6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourHeartTemplate.m; sourceTree = "<group>"; };
-		6EBEB66525C48F6A0017C640 /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SDMiSaeng.otf; path = ../../../../../Desktop/SDMiSaeng.otf; sourceTree = "<group>"; };
 		6EBEB67225C494B10017C640 /* VlogHeartSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker1.h; sourceTree = "<group>"; };
 		6EBEB67325C494B10017C640 /* VlogHeartSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHeartSticker1.m; sourceTree = "<group>"; };
 		6EBEB67725C494C80017C640 /* VlogHeartSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker2.h; sourceTree = "<group>"; };
@@ -813,6 +812,7 @@
 		B1F2B7D525C305D90064A044 /* VlogPigtailSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogPigtailSticker.m; sourceTree = "<group>"; };
 		B1F2B7DB25C30AD30064A044 /* Windy Lavender.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Windy Lavender.otf"; sourceTree = "<group>"; };
 		B1F2B7F525C316BB0064A044 /* Cafe24Shiningstar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Shiningstar.otf; sourceTree = "<group>"; };
+		B1F8C6B125C49C82002DDAF8 /* SDMiSaeng.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.ttf; sourceTree = "<group>"; };
 		B689306FD489C375607E803F /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1669,7 +1669,7 @@
 				B1F2B6DE25C1940A0064A044 /* UTOIMAGE_ ChocolatLatte_OTF.otf */,
 				6EBEB5CF25C2F9900017C640 /* SangSangShin.otf */,
 				6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */,
-				6EBEB66525C48F6A0017C640 /* SDMiSaeng.otf */,
+				B1F8C6B125C49C82002DDAF8 /* SDMiSaeng.ttf */,
 				B1F2B6E425C196E30064A044 /* SCDream9.otf */,
 				6ED13C7A25C11B9700012144 /* TmoneyRoundWindExtraBold.otf */,
 				6ED13C7B25C11B9800012144 /* TmoneyRoundWindRegular.otf */,
@@ -2277,7 +2277,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EBEB66625C48F9B0017C640 /* SDMiSaeng.otf in Resources */,
 				6EBEB60A25C32A140017C640 /* neodgm_pro.otf in Resources */,
 				6EBEB60625C328D10017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf in Resources */,
 				6EBEB5F825C3207F0017C640 /* UhBee-puding.otf in Resources */,
@@ -2305,6 +2304,7 @@
 				6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */,
 				6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */,
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
+				B1F8C6B225C49C82002DDAF8 /* SDMiSaeng.ttf in Resources */,
 				B1F2B79425C2F6250064A044 /* UhBee DoolDool Bold.otf in Resources */,
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
