@@ -173,11 +173,21 @@
 		6EBEB60A25C32A140017C640 /* neodgm_pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB60925C32A030017C640 /* neodgm_pro.otf */; };
 		6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB64225C37A3F0017C640 /* WorkManSecondTitle.m */; };
 		6EBEB64825C428940017C640 /* WorkManFast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB64725C428930017C640 /* WorkManFast.m */; };
-		6EBEB66225C48A2D0017C640 /* FourHeartTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */; };
 		6EBEB67425C494B10017C640 /* VlogHeartSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67325C494B10017C640 /* VlogHeartSticker1.m */; };
 		6EBEB67925C494C90017C640 /* VlogHeartSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67825C494C90017C640 /* VlogHeartSticker2.m */; };
 		6EBEB67E25C494D40017C640 /* VlogHeartSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67D25C494D40017C640 /* VlogHeartSticker3.m */; };
 		6EBEB68325C494E20017C640 /* VlogHeartSticker4.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB68225C494E20017C640 /* VlogHeartSticker4.m */; };
+		6EBEB68A25C4AB6D0017C640 /* CraftVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB68925C4AB6D0017C640 /* CraftVlogTemplate.m */; };
+		6EBEB68F25C4B98A0017C640 /* LookBookVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB68E25C4B98A0017C640 /* LookBookVlogTemplate.m */; };
+		6EBEB69425C4C5770017C640 /* StayingHomeVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB69325C4C5770017C640 /* StayingHomeVlogTemplate.m */; };
+		6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB69E25C4D1DD0017C640 /* BabyVlogTemplate.m */; };
+		6EBEB6A425C4D8B10017C640 /* SummerVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB6A325C4D8B10017C640 /* SummerVlogTemplate.m */; };
+		6EBEB6A925C4DFAF0017C640 /* DogVlogTemPlate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB6A825C4DFAF0017C640 /* DogVlogTemPlate.m */; };
+		6EBEB6B725C4F64E0017C640 /* FreshmanVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB6B625C4F64E0017C640 /* FreshmanVlogTemplate.m */; };
+		6EBEB6BC25C4F8FE0017C640 /* VlogFreshmanTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB6BB25C4F8FE0017C640 /* VlogFreshmanTypo.m */; };
+		6EBEB6C125C567420017C640 /* StudentVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB6C025C567420017C640 /* StudentVlogTemplate.m */; };
+		6EBEB6C625C56EA10017C640 /* VlogStudentTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB6C525C56EA10017C640 /* VlogStudentTypo.m */; };
+		6EBEB6CF25C5817E0017C640 /* WebDesignerVlogTemPlate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB6CE25C5817E0017C640 /* WebDesignerVlogTemPlate.m */; };
 		6EC4DFA625A85D860023485C /* Typography.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFA525A85D860023485C /* Typography.m */; };
 		6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */; };
 		6EC4DFC125A87BEC0023485C /* BGTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFBB25A87BEB0023485C /* BGTextAttribute.m */; };
@@ -622,8 +632,6 @@
 		6EBEB64225C37A3F0017C640 /* WorkManSecondTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManSecondTitle.m; sourceTree = "<group>"; };
 		6EBEB64625C428930017C640 /* WorkManFast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManFast.h; sourceTree = "<group>"; };
 		6EBEB64725C428930017C640 /* WorkManFast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManFast.m; sourceTree = "<group>"; };
-		6EBEB66025C48A2D0017C640 /* FourHeartTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourHeartTemplate.h; sourceTree = "<group>"; };
-		6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourHeartTemplate.m; sourceTree = "<group>"; };
 		6EBEB67225C494B10017C640 /* VlogHeartSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker1.h; sourceTree = "<group>"; };
 		6EBEB67325C494B10017C640 /* VlogHeartSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHeartSticker1.m; sourceTree = "<group>"; };
 		6EBEB67725C494C80017C640 /* VlogHeartSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker2.h; sourceTree = "<group>"; };
@@ -632,6 +640,28 @@
 		6EBEB67D25C494D40017C640 /* VlogHeartSticker3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHeartSticker3.m; sourceTree = "<group>"; };
 		6EBEB68125C494E20017C640 /* VlogHeartSticker4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker4.h; sourceTree = "<group>"; };
 		6EBEB68225C494E20017C640 /* VlogHeartSticker4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHeartSticker4.m; sourceTree = "<group>"; };
+		6EBEB68825C4AB6D0017C640 /* CraftVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CraftVlogTemplate.h; sourceTree = "<group>"; };
+		6EBEB68925C4AB6D0017C640 /* CraftVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CraftVlogTemplate.m; sourceTree = "<group>"; };
+		6EBEB68D25C4B98A0017C640 /* LookBookVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LookBookVlogTemplate.h; sourceTree = "<group>"; };
+		6EBEB68E25C4B98A0017C640 /* LookBookVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LookBookVlogTemplate.m; sourceTree = "<group>"; };
+		6EBEB69225C4C5770017C640 /* StayingHomeVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StayingHomeVlogTemplate.h; sourceTree = "<group>"; };
+		6EBEB69325C4C5770017C640 /* StayingHomeVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StayingHomeVlogTemplate.m; sourceTree = "<group>"; };
+		6EBEB69D25C4D1DD0017C640 /* BabyVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyVlogTemplate.h; sourceTree = "<group>"; };
+		6EBEB69E25C4D1DD0017C640 /* BabyVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyVlogTemplate.m; sourceTree = "<group>"; };
+		6EBEB6A225C4D8B10017C640 /* SummerVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummerVlogTemplate.h; sourceTree = "<group>"; };
+		6EBEB6A325C4D8B10017C640 /* SummerVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummerVlogTemplate.m; sourceTree = "<group>"; };
+		6EBEB6A725C4DFAF0017C640 /* DogVlogTemPlate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogVlogTemPlate.h; sourceTree = "<group>"; };
+		6EBEB6A825C4DFAF0017C640 /* DogVlogTemPlate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogVlogTemPlate.m; sourceTree = "<group>"; };
+		6EBEB6B525C4F64E0017C640 /* FreshmanVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshmanVlogTemplate.h; sourceTree = "<group>"; };
+		6EBEB6B625C4F64E0017C640 /* FreshmanVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshmanVlogTemplate.m; sourceTree = "<group>"; };
+		6EBEB6BA25C4F8FD0017C640 /* VlogFreshmanTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogFreshmanTypo.h; sourceTree = "<group>"; };
+		6EBEB6BB25C4F8FE0017C640 /* VlogFreshmanTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogFreshmanTypo.m; sourceTree = "<group>"; };
+		6EBEB6BF25C567420017C640 /* StudentVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentVlogTemplate.h; sourceTree = "<group>"; };
+		6EBEB6C025C567420017C640 /* StudentVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentVlogTemplate.m; sourceTree = "<group>"; };
+		6EBEB6C425C56EA00017C640 /* VlogStudentTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogStudentTypo.h; sourceTree = "<group>"; };
+		6EBEB6C525C56EA10017C640 /* VlogStudentTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogStudentTypo.m; sourceTree = "<group>"; };
+		6EBEB6CD25C5817E0017C640 /* WebDesignerVlogTemPlate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebDesignerVlogTemPlate.h; sourceTree = "<group>"; };
+		6EBEB6CE25C5817E0017C640 /* WebDesignerVlogTemPlate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDesignerVlogTemPlate.m; sourceTree = "<group>"; };
 		6EC4DFA425A85D860023485C /* Typography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Typography.h; sourceTree = "<group>"; };
 		6EC4DFA525A85D860023485C /* Typography.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Typography.m; sourceTree = "<group>"; };
 		6EC4DFBA25A87BEB0023485C /* TextViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewContainer.m; sourceTree = "<group>"; };
@@ -1417,8 +1447,8 @@
 				6E8F9A8025C34580005C8071 /* BasicCirclePhotoFrame.h */,
 				6E8F9A8525C34581005C8071 /* BasicCirclePhotoFrame.m */,
 				6E8F9A8225C34580005C8071 /* ChristmasCircle.h */,
-				6E8F9A8725C34581005C8071 /* ChristmasCircle.m */,
 				6E8F9A8425C34580005C8071 /* FullRectangle.h */,
+				6E8F9A8725C34581005C8071 /* ChristmasCircle.m */,
 				6E8F9A7F25C34580005C8071 /* FullRectangle.m */,
 				6E8F9A8625C34581005C8071 /* QuarterRectangle.h */,
 				6E8F9A8325C34580005C8071 /* QuarterRectangle.m */,
@@ -1454,8 +1484,24 @@
 				6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */,
 				6E9BE996258A527C00F7F539 /* QuarterDivisionTemplate.h */,
 				6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */,
-				6EBEB66025C48A2D0017C640 /* FourHeartTemplate.h */,
-				6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */,
+				6EBEB68825C4AB6D0017C640 /* CraftVlogTemplate.h */,
+				6EBEB68925C4AB6D0017C640 /* CraftVlogTemplate.m */,
+				6EBEB68D25C4B98A0017C640 /* LookBookVlogTemplate.h */,
+				6EBEB68E25C4B98A0017C640 /* LookBookVlogTemplate.m */,
+				6EBEB69225C4C5770017C640 /* StayingHomeVlogTemplate.h */,
+				6EBEB69325C4C5770017C640 /* StayingHomeVlogTemplate.m */,
+				6EBEB69D25C4D1DD0017C640 /* BabyVlogTemplate.h */,
+				6EBEB69E25C4D1DD0017C640 /* BabyVlogTemplate.m */,
+				6EBEB6A225C4D8B10017C640 /* SummerVlogTemplate.h */,
+				6EBEB6A325C4D8B10017C640 /* SummerVlogTemplate.m */,
+				6EBEB6A725C4DFAF0017C640 /* DogVlogTemPlate.h */,
+				6EBEB6A825C4DFAF0017C640 /* DogVlogTemPlate.m */,
+				6EBEB6B525C4F64E0017C640 /* FreshmanVlogTemplate.h */,
+				6EBEB6B625C4F64E0017C640 /* FreshmanVlogTemplate.m */,
+				6EBEB6BF25C567420017C640 /* StudentVlogTemplate.h */,
+				6EBEB6C025C567420017C640 /* StudentVlogTemplate.m */,
+				6EBEB6CD25C5817E0017C640 /* WebDesignerVlogTemPlate.h */,
+				6EBEB6CE25C5817E0017C640 /* WebDesignerVlogTemPlate.m */,
 			);
 			path = VlogTemplate;
 			sourceTree = "<group>";
@@ -1821,6 +1867,10 @@
 				6E2844F525C3586E008B7A23 /* VlogTrip.m */,
 				6E2844E525C3586C008B7A23 /* VlogWebWrite.h */,
 				6E28450D25C35870008B7A23 /* VlogWebWrite.m */,
+				6EBEB6BA25C4F8FD0017C640 /* VlogFreshmanTypo.h */,
+				6EBEB6BB25C4F8FE0017C640 /* VlogFreshmanTypo.m */,
+				6EBEB6C425C56EA00017C640 /* VlogStudentTypo.h */,
+				6EBEB6C525C56EA10017C640 /* VlogStudentTypo.m */,
 			);
 			path = Vlog;
 			sourceTree = "<group>";
@@ -2507,7 +2557,10 @@
 				6ED13CAF25C1AEF700012144 /* KnockOutTypo.m in Sources */,
 				6ED13D2F25C2C73A00012144 /* RunningManExcSticker.m in Sources */,
 				6E28452325C35870008B7A23 /* VlogNanumSquareTypo.m in Sources */,
+				6EBEB6A925C4DFAF0017C640 /* DogVlogTemPlate.m in Sources */,
 				6E7DD4A82584D4490014618E /* AlbumViewController+CollectionViewDelegate.m in Sources */,
+				6EBEB68F25C4B98A0017C640 /* LookBookVlogTemplate.m in Sources */,
+				6EBEB6B725C4F64E0017C640 /* FreshmanVlogTemplate.m in Sources */,
 				6ED13B0425BDA75D00012144 /* UIImageView+Additions.m in Sources */,
 				6EBEB50B25C146300017C640 /* WorkManTalkWrite.m in Sources */,
 				6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */,
@@ -2539,6 +2592,7 @@
 				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
 				6E28452025C35870008B7A23 /* VlogOriginal.m in Sources */,
 				6EBEB68325C494E20017C640 /* VlogHeartSticker4.m in Sources */,
+				6EBEB6CF25C5817E0017C640 /* WebDesignerVlogTemPlate.m in Sources */,
 				6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */,
 				6EC4DFCC25A87DAF0023485C /* UIColor+patternArchive.m in Sources */,
 				6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */,
@@ -2573,6 +2627,7 @@
 				B1F2B6D925C193AF0064A044 /* InfiniteChallengeLogo.m in Sources */,
 				6E7DD51625888C980014618E /* Template.m in Sources */,
 				6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */,
+				6EBEB68A25C4AB6D0017C640 /* CraftVlogTemplate.m in Sources */,
 				6ED13CCF25C1CACB00012144 /* MatterTypo.m in Sources */,
 				6E8E7A38259B2EA40008C5FF /* ItemManager.m in Sources */,
 				B1F2B75B25C1E8260064A044 /* InfiniteChallenge1Template.m in Sources */,
@@ -2595,6 +2650,7 @@
 				B1F2B7CF25C305C50064A044 /* VlogBlinkSticker1.m in Sources */,
 				6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
+				6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				B16FC66025AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m in Sources */,
 				6E8F9A6A25C344EB005C8071 /* PhotoFrame.m in Sources */,
@@ -2614,9 +2670,11 @@
 				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
 				6EBEB67925C494C90017C640 /* VlogHeartSticker2.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
+				6EBEB6A425C4D8B10017C640 /* SummerVlogTemplate.m in Sources */,
 				6E28452625C35870008B7A23 /* VlogNewCampus.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
 				B1F2B73E25C1C4E30064A044 /* InfiniteChallengeHashTag.m in Sources */,
+				6EBEB69425C4C5770017C640 /* StayingHomeVlogTemplate.m in Sources */,
 				6E8F9A9425C34581005C8071 /* FullRectangle.m in Sources */,
 				B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */,
 				6E8F9A9725C34582005C8071 /* ChristmasCircle.m in Sources */,
@@ -2639,6 +2697,7 @@
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
 				6E28452725C35870008B7A23 /* VlogMyeongjoTypo.m in Sources */,
 				6E9BEA4E258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift in Sources */,
+				6EBEB6C625C56EA10017C640 /* VlogStudentTypo.m in Sources */,
 				6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
@@ -2649,7 +2708,6 @@
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,
 				B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */,
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
-				6EBEB66225C48A2D0017C640 /* FourHeartTemplate.m in Sources */,
 				6E8E7A24259B26CF0008C5FF /* ItemCollectionViewController.m in Sources */,
 				6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */,
 				6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */,
@@ -2667,6 +2725,7 @@
 				6E8F98FD25BCE6CC005C8071 /* GuideTarget.m in Sources */,
 				6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */,
 				6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */,
+				6EBEB6BC25C4F8FE0017C640 /* VlogFreshmanTypo.m in Sources */,
 				B1F2B7D625C305D90064A044 /* VlogPigtailSticker.m in Sources */,
 				6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
@@ -2693,6 +2752,7 @@
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6ED13BAA25C08F9000012144 /* RedShoutingTypo.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
+				6EBEB6C125C567420017C640 /* StudentVlogTemplate.m in Sources */,
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6ED1398C25B872F600012144 /* SceneDelegate.swift in Sources */,
 				6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */,

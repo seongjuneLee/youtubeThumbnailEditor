@@ -26,8 +26,8 @@
         BGTextAttribute *attribute1 = [[BGTextAttribute alloc] init];
         BGTextAttribute *attribute2 = [[BGTextAttribute alloc] init];
         BGTextAttribute *attribute3 = [[BGTextAttribute alloc] init];
-        BGTextAttribute *attribute4 = [[BGTextAttribute alloc] init];
-        BGTextAttribute *attribute5 = [[BGTextAttribute alloc] init];
+//        BGTextAttribute *attribute4 = [[BGTextAttribute alloc] init];
+//        BGTextAttribute *attribute5 = [[BGTextAttribute alloc] init];
         
         attribute1.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
                 attribute1.shadowOffset = CGPointMake(1, 1);

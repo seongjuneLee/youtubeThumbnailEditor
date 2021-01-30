@@ -132,7 +132,7 @@
     
     self.stickers = [NSMutableArray new];
     WorkManAngrySticker *angrySticker = [WorkManAngrySticker workManAngrySticker];
-    angrySticker.scale = 0.40;
+    angrySticker.scale = 0.4;
     angrySticker.rotationDegree = -5;
     angrySticker.isTemplateItem = true;
     angrySticker.center = CGPointMake(0.79, 0.365);

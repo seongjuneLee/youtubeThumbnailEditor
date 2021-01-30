@@ -91,5 +91,8 @@
 #import "VlogNanumSquareTypo.h"
 #import "SeoYuGiInFrontOfGirlTypo.h"
 #import "SeoYuGiHungryTypo.h"
+#import "VlogFreshmanTypo.h"
+#import "VlogStudentTypo.h"
+
 
 #endif /* TypoHeader_h */

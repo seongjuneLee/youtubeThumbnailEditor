@@ -14,10 +14,10 @@
     self = [super init];
     if (self) {
         self.name = NSLocalizedString(@"회사 vlog",nil);
-        self.fontName = @"AppleSDGothicNeo-Bold";
+        self.fontName = @"BMJUAOTF";
         self.textColor = [UIColor colorWithRed:(100/255.0) green:(29/255.0) blue:(60/255.0) alpha:1];
-        self.fontSize = 30;
-        self.bgImageName = @"companyVlog";
+        self.fontSize = 35;
+        self.bgImageName = @"webDesignerBG";
         self.bgHeightPadding = 10;
         self.bgWidthPadding = 10;
         

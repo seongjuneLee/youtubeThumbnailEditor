@@ -43,7 +43,16 @@
     Template *infiniteChallenge2Template = [InfiniteChallenge2Template infiniteChallenge2Template];
     Template *infiniteChallenge3Template = [InfiniteChallenge3Template infiniteChallenge3Template];
     
-    Template * fourHeartTemplate= [FourHeartTemplate fourHeartTemplate];
+    Template * craftVlogTemplate= [CraftVlogTemplate craftVlogTemplate];
+    Template * lookBookVlogTemplate= [LookBookVlogTemplate lookBookVlogTemplate];
+    Template * stayingHomeVlogTemplate= [StayingHomeVlogTemplate stayingHomeVlogTemplate];
+    Template * babyVlogTemplate= [BabyVlogTemplate babyVlogTemplate];
+    Template * summerVlogTemplate= [SummerVlogTemplate summerVlogTemplate];
+    Template * dogVlogTemPlate= [DogVlogTemPlate dogVlogTemPlate];
+    Template * freshmanVlogTemplate= [FreshmanVlogTemplate freshmanVlogTemplate];
+    Template * studentVlogTemplate= [StudentVlogTemplate studentVlogTemplate];
+    Template * webDesignerVlogTemPlate= [WebDesignerVlogTemPlate webDesignerVlogTemPlate];
+    
 
     NSArray *entertainTemplates = @[circleTemplate, doubleCircleTemplate, sinseoyugi1Template, sinseoyugi2Template, sinseoyugi3Template, runningMan1Template, runningMan2Template, runningMan3Template, infiniteChallenge1Template, infiniteChallenge2Template, infiniteChallenge3Template, workManTemplate1, workManTemplate2, workManTemplate3];
 
@@ -52,8 +61,8 @@
     
     Template *twoDivisionTemplate = [TwoDivisionTemplate twoDivisionTemplate];
     Template *quarterDivisionTemplate = [QuarterDivisionTemplate quarterDivisionTemplate];
-    NSArray *vlogTemplates = @[twoDivisionTemplate,quarterDivisionTemplate,fourHeartTemplate];
-    NSArray *vlogTemplatePreviewImages = @[twoDivisionTemplate.previewImageName,quarterDivisionTemplate.previewImageName,fourHeartTemplate.previewImageName];
+    NSArray *vlogTemplates = @[twoDivisionTemplate,quarterDivisionTemplate,craftVlogTemplate,lookBookVlogTemplate,stayingHomeVlogTemplate,babyVlogTemplate,summerVlogTemplate,dogVlogTemPlate,freshmanVlogTemplate,studentVlogTemplate,webDesignerVlogTemPlate];
+    NSArray *vlogTemplatePreviewImages =  @[twoDivisionTemplate.previewImageName,quarterDivisionTemplate.previewImageName,craftVlogTemplate.previewImageName,lookBookVlogTemplate.previewImageName,stayingHomeVlogTemplate.previewImageName,babyVlogTemplate.previewImageName,summerVlogTemplate.previewImageName,dogVlogTemPlate.previewImageName,freshmanVlogTemplate.previewImageName,studentVlogTemplate.previewImageName,webDesignerVlogTemPlate.previewImageName];
     self.templatePreviewImages = @[entertainTemplatePreviewImages, vlogTemplatePreviewImages];
     NSArray *templates = @[entertainTemplates, vlogTemplates];
     return templates;
