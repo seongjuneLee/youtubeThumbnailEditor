@@ -59,12 +59,10 @@
     TrapezoidTypo *trapezoidTypo = [TrapezoidTypo trapezoidTypo];
     RunningManLogoTypo *runningManLogoTypo = [RunningManLogoTypo runningManLogoTypo];
     SeoYuGiLogoTypo *seoYuGiLogoTypo = [SeoYuGiLogoTypo seoYuGiLogoTypo];
-    FirstExperienceTypo *firstexperienceTypo = [FirstExperienceTypo firstExperienceTypo];
+    SeoYuGiGagwanTypo *seoYuGiGagwanTypo = [SeoYuGiGagwanTypo seoYuGiGagwanTypo];
     SeoYuGiCloudLogoTypo *seoYuGiCloudLogoTypo = [SeoYuGiCloudLogoTypo seoYuGiCloudLogoTypo];
-    BabarimanTypo *babarimanTypo = [BabarimanTypo babarimanTypo];
-    CowRiseTypo *cowRiseTypo = [CowRiseTypo cowRiseTypo];
-    EatRoomTypo *eatRoomTypo = [EatRoomTypo eatRoomTypo];
-    DawnWatchingTypo *dawnWatchingTypo = [DawnWatchingTypo dawnWatchingTypo];
+    SeoYuGiCowRiseTypo *seoYuGiCowRiseTypo = [SeoYuGiCowRiseTypo seoYuGiCowRiseTypo];
+    SeoYuGiDawnWatchingTypo *seoYuGiDawnWatchingTypo = [SeoYuGiDawnWatchingTypo seoYuGiDawnWatchingTypo];
     
     WorkManLogo *workManLogo = [WorkManLogo workManLogo];
     WorkManHandWrite *workManHandWrite = [WorkManHandWrite workManHandWrite];
@@ -74,6 +72,8 @@
     WorkmanYelloewTitle *workmanYelloewTitle = [WorkmanYelloewTitle workmanYelloewTitle];
     WorkManLogo2 *workManLogo2 = [WorkManLogo2 workManLogo2];
     WorkManLeftTag *workManLeftTag = [WorkManLeftTag workManLeftTag];
+    WorkManSecondTitle *workManSecondTitle = [WorkManSecondTitle workManSecondTitle];
+    WorkManFast *workManFast = [WorkManFast workManFast];
     
     InfiniteChallengeLogo *infiniteChallengeLogo = [InfiniteChallengeLogo infiniteChallengeLogo];
     InfiniteChallengeEscapeRoom *infiniteChallengeEscapeRoom = [InfiniteChallengeEscapeRoom infiniteChallengeEscapeRoom];
@@ -105,11 +105,8 @@
     VlogGRWMTypo *vlogGRWMTypo = [VlogGRWMTypo vlogGRWMTypo];
     VlogNanumSquareTypo *vlogNanumSquareTypo = [VlogNanumSquareTypo vlogNanumSquareTypo];
     
-    
-    FightManTypo *fightManTypo = [FightManTypo fightManTypo];
-    InFrontOfGirlTypo *infrontOfGirlTypo = [InFrontOfGirlTypo inFrontOfGirlTypo];
-    HungryTypo *hungryTypo = [HungryTypo hungryTypo];
-    
+    SeoYuGiInFrontOfGirlTypo *seoYuGiInFrontOfGirlTypo = [SeoYuGiInFrontOfGirlTypo seoYuGiInFrontOfGirlTypo];
+    SeoYuGiHungryTypo *seoYuGiHungryTypo = [SeoYuGiHungryTypo seoYuGiHungryTypo];
     
     VlogDesiner *vlogDesiner = [VlogDesiner vlogDesiner];
     VlogCompany *vlogCompany = [VlogCompany vlogCompany];
@@ -140,8 +137,8 @@
     SuccessTypo *successTypo = [SuccessTypo successTypo];
     WhyRealTypo *whyrealTypo = [WhyRealTypo whyRealTypo];
     RuleTypo *ruleTypo = [RuleTypo ruleTypo];
-
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, firstexperienceTypo, fightManTypo, vlogWebWrite,vlogDesiner,vlogCompany,vlogNewCampus, seoYuGiCloudLogoTypo, infrontOfGirlTypo, babarimanTypo, cowRiseTypo,vlogDog,vlogModel,vlogSummer, vlogOriginal, vlogTrip, vlogInIaly, vlogItaly, vlogLongDance, vlogShortDance, eatRoomTypo, hungryTypo, dawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle,  workManRightTag, workmanYelloewTitle,workManLogo2, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhiteTypo, infiniteChallengeBlackTypo, infiniteChallengeBlueTypo, infiniteChallengeOrangeTypo, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogLookbookTypo, vlogBrushTypo, vlogSummerTypo, vlogDailyTypo, vlogLogoTagTypo, vlogCookingTypo, vlogHashTagTypo, vlogBMDohyunTypo, vlogMyeongjoTypo, vlogGRWMTypo, vlogNanumSquareTypo];
+    
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, seoYuGiGagwanTypo, vlogWebWrite,vlogDesiner,vlogCompany,vlogNewCampus, seoYuGiCloudLogoTypo, seoYuGiInFrontOfGirlTypo, seoYuGiCowRiseTypo,vlogDog,vlogModel,vlogSummer, vlogOriginal, vlogTrip, vlogInIaly, vlogItaly, vlogLongDance, vlogShortDance, vlogStudy, vlog365, seoYuGiHungryTypo, seoYuGiDawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle, workManRightTag, workmanYelloewTitle,workManLogo2, workManLeftTag, workManSecondTitle, workManFast, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhiteTypo, infiniteChallengeBlackTypo, infiniteChallengeBlueTypo, infiniteChallengeOrangeTypo, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogLookbookTypo, vlogBrushTypo, vlogSummerTypo, vlogDailyTypo, vlogLogoTagTypo, vlogCookingTypo, vlogHashTagTypo, vlogBMDohyunTypo, vlogMyeongjoTypo, vlogGRWMTypo, vlogNanumSquareTypo, ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo, tikiTypo, knockOutTypo, matterTypo, successTypo, whyrealTypo, ruleTypo];
     
     
     return @[typos];

@@ -26,6 +26,7 @@
         attribute.shadowOffset = CGPointMake(0, 0);
         attribute.shadowColor = [UIColor colorWithRed:242/255.0 green:231/255.0 blue:105/255.0 alpha:1.0];
         attribute.shadowRadius = 5;
+        
         self.bgTextAttributes = @[attribute, attribute2];
     }
     return self;

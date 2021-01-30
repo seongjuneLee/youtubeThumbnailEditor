@@ -136,15 +136,15 @@
             float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             item.center = itemCenter;
+            
+
         }
-        
         [item loadView];
         
         if ([item isKindOfClass:Text.class]){
             Text *text = (Text *)item;
             text.textView.delegate = self;
         }
-
         if (item.isFixedPhotoFrame) {
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
         } else {

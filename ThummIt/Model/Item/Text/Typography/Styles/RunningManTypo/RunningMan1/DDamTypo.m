@@ -15,11 +15,11 @@
         
         self.name = NSLocalizedString(@"(식은땀)",nil);
         self.fontName = @"TmoneyRoundWind-Regular";
-        self.fontSize = 50;
+        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor whiteColor];
 
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
-        borderAtt.borderWidth = 15;
+        borderAtt.borderWidth = 7;
         borderAtt.borderColor = [UIColor blackColor];
         
         self.bgTextAttributes = @[borderAtt];

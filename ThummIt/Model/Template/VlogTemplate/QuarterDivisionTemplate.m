@@ -60,11 +60,11 @@
     self.texts = [NSMutableArray new];
     Text *trapezoidText = [[Text alloc] init];
     TrapezoidTypo *trapezoid = [TrapezoidTypo trapezoidTypo];
-    [trapezoidText applyTypo:trapezoid];
     trapezoidText.center = CGPointMake(0.5, 0.5);
     trapezoidText.rotationDegree = 3;
     trapezoidText.isTemplateItem = true;
     trapezoidText.text = @"WEEKLY VLOG";
+    [trapezoidText applyTypo:trapezoid];
     [self.texts addObject:trapezoidText];
     
 }

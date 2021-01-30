@@ -141,10 +141,6 @@
 
 #pragma mark - 타이포그래피
 
--(void)setUpTypography:(Typography *)typo{
-    [self setUpTypography:typo range:self.selectedRange];
-}
-
 -(void)setUpTypography:(Typography *)typo range:(NSRange)range{
     
     if (typo == nil) {
@@ -161,12 +157,8 @@
     }
     
     // 1. 타이포그래피 모델대로 텍스트뷰에 적용
-    
     // 1-1. attributedText 세팅
     NSMutableAttributedString* attributedString = [self makeAttributedStringWithTypo:typo range:range];
-    NSRange entireRange = NSMakeRange(0, attributedString.length);// 앞으로 타이핑할 어트리뷰트에도 적용 (-> AdvancedTextView의 기준이 됨)
-    NSDictionary *updatedAttributes = [attributedString attributesAtIndex:0 longestEffectiveRange:&entireRange inRange:entireRange];
-    self.typingAttributes = updatedAttributes; // 앞으로 타이핑할 어트리뷰트에도 적용 (-> AdvancedTextView의 기준이 됨)
     
     if ([attributedString.string isEqualToString:RANDOM_TEXT]) { // typingAttributes 뽑아내고 난 뒤에, 랜덤 텍스트 초기화하기
         attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
@@ -186,7 +178,7 @@
     while (self.backgroundAttributedTexts.count < self.bgTextAttributes.count){
         [self.backgroundAttributedTexts addObject:[self makeAttributedStringWithTypo:typo range:range]];
     }
-    // 적용
+    //
     if (self.selectedRange.length == self.text.length){
         while (typo.bgTextAttributes.count < self.backgroundAttributedTexts.count && self.backgroundAttributedTexts.count > 1){
             [self.backgroundAttributedTexts removeLastObject];
@@ -200,20 +192,8 @@
     for (BGTextAttribute *bgTextAttribute in typo.bgTextAttributes){
         
         NSMutableAttributedString * string = self.backgroundAttributedTexts[[typo.bgTextAttributes indexOfObject:bgTextAttribute]];
-        
         NSRange adjustedRange = NSMakeRange(range.location, range.length);
-        
-        /* 이 코드 왜 있어야 하는지 조사하고 필요없으면 빼기 (빼면 out of range 나면서 튕기는 경우를 발견하긴 함) */
-        if (string.length < range.location + range.length){
-            if (string.length <= range.location){
-                continue;
-            }else{
-                adjustedRange.length = string.length - range.location;
-            }
-        }
-        /* 이 코드 왜 있어야 하는지 조사하고 필요없으면 빼기 (빼면 out of range 나면서 튕기는 경우를 발견하긴 함) */
-        
-        string = [self updateAttributedString:string withFont:nil withTypo:typo withBGTextAttribute:bgTextAttribute atRange:adjustedRange];
+        string = [self updateAttributedString:string withTypo:typo withBGTextAttribute:bgTextAttribute atRange:adjustedRange];
     }
     [self setNeedsDisplay]; // DrawRect 불러주기
 
@@ -245,7 +225,11 @@
         [string addAttribute:NSForegroundColorAttributeName value:typo.textColor range:range];
         
         /* 현재 쓰여있는 텍스트의 색깔을 변경할 뿐만 아니라, 텍스트뷰 자체의 색깔을 변경해두기, 그래야 추가로 글씨 써도 똑같이 적용됨 */
-        self.textColor = typo.textColor;
+        Text *text =  (Text *)(self.parent);
+        if (!text.isTemplateItem) {
+            self.textColor = typo.textColor;
+        }
+        
     }
     
     // 배경 색상
@@ -280,13 +264,9 @@
     
 }
 
--(NSMutableAttributedString*)updateAttributedString:(NSMutableAttributedString*)string withFont:(UIFont*)font withTypo:(Typography*)typo withBGTextAttribute:(BGTextAttribute*)bgTextAttribute atRange:(NSRange)range{
+-(NSMutableAttributedString*)updateAttributedString:(NSMutableAttributedString*)string withTypo:(Typography*)typo withBGTextAttribute:(BGTextAttribute*)bgTextAttribute atRange:(NSRange)range{
     
-    if (font) {
-        [string addAttribute:NSFontAttributeName value:font range:range];
-    } else if (typo) {
-        font = [UIFont fontWithName:typo.fontName size:typo.fontSize];
-    }
+    UIFont *font = [UIFont fontWithName:typo.fontName size:typo.fontSize];
     if (font) {
         [string addAttribute:NSFontAttributeName value:font range:range];
     }
@@ -297,10 +277,6 @@
     }
     
     // 텍스트 색상 (stroke은 음수를 넣어줘서 글자 안쪽으로만 커진다. -> 양수는 Foreground색을 투명하게 한다.)
-    if (bgTextAttribute.textColor) {
-        [string addAttribute:NSForegroundColorAttributeName value:bgTextAttribute.textColor range:range];
-    }
-    
     if (bgTextAttribute.borderColor) {
         [string addAttribute:NSStrokeColorAttributeName value:bgTextAttribute.borderColor range:range];
         [string addAttribute:NSStrokeWidthAttributeName value:@(bgTextAttribute.borderWidth) range:range];

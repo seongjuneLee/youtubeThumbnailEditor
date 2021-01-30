@@ -15,7 +15,7 @@
     if (self) {
         self.name = NSLocalizedString(@"유튜브",nil);
         self.fontName = @"S-CoreDream-9Black";
-        self.textColor = [UIColor colorWithRed:(238/255.0) green:(230/255.0) blue:(50/255.0) alpha:(1)];
+        self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:(1)];
         self.fontSize = TEXT_FONT_SIZE;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];

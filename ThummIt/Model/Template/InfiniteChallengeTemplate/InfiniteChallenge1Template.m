@@ -34,17 +34,16 @@
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
-    FullRectangle *photoFrame = [FullRectangle fullRectangle];
-    photoFrame.isTemplateItem = true;
-    photoFrame.center = CGPointMake(0.5, 0.5);
-    [self.photoFrames addObject:photoFrame];
+    FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
+    fullRectPhotoFrame.isTemplateItem = true;
+    fullRectPhotoFrame.isFixedPhotoFrame = true;
+    fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
+    fullRectPhotoFrame.baseView.backgroundColor = UIColor.lightGrayColor;
+    [self.photoFrames addObject:fullRectPhotoFrame];
 
 }
 
 -(void)setUpTexts{
-    
-    self.texts = [NSMutableArray new];
     
     //방탈출
     Text *escapeRoomText = [[Text alloc] init];
@@ -66,8 +65,6 @@
     logoText.text = @"백만도전";
     logoText.textView.text = @"백만도전";
     [logoText applyTypo:logo];
-    [logoText resize];
-    [logoText.textView setNeedsDisplay];
     [self.texts addObject:logoText];
     
     //자막
@@ -83,6 +80,7 @@
     InfiniteChallengeOrangeTypo *orange = [InfiniteChallengeOrangeTypo infiniteChallengeOrangeTypo];
     InfiniteChallengeBlueTypo *blue = [InfiniteChallengeBlueTypo infiniteChallengeBlueTypo];
     InfiniteChallengeBlackTypo *black = [InfiniteChallengeBlackTypo infiniteChallengeBlackTypo];
+
     subTitleText.typoRangeArray = (NSMutableArray *)@[@[orange,@"0-3"], @[blue,@"8-2"], @[black,@"12-5"]];
     
     [subTitleText applyTypo:white];
@@ -92,9 +90,7 @@
 
 -(void)setUpStickers{
     
-    self.stickers = [NSMutableArray new];
     InfiniteChallengeSkullSticker *skullSticker = [InfiniteChallengeSkullSticker infiniteChallengeSkullSticker];
-    skullSticker.baseView.backgroundColor = [UIColor orangeColor];
     skullSticker.scale = 0.5;
     skullSticker.isTemplateItem = true;
     skullSticker.center = CGPointMake(0.3, 0.4);

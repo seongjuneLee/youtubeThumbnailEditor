@@ -25,13 +25,31 @@
         self.textColor = [UIColor diagonalGradientFromColor:self.textFromColor toColor:self.textToColor withHeight:self.textGradientHeight];
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
-        BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
-        borderAtt.borderWidth = 8;
-        shadowAtt.shadowColor =[UIColor blackColor];
-        shadowAtt.shadowOffset = CGPointMake(5, 5);
-        shadowAtt.shadowRadius = 2.0;
-        self.bgTextAttributes = @[borderAtt, shadowAtt];
+        borderAtt.borderWidth = 5;
+        
+        BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
+        shadowAtt1.shadowColor =[UIColor blackColor];
+        shadowAtt1.shadowOffset = CGPointMake(1, 1);
+        
+        BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
+        shadowAtt2.shadowColor =[UIColor blackColor];
+        shadowAtt2.shadowOffset = CGPointMake(2, 2);
+        
+        BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
+        shadowAtt3.shadowColor =[UIColor blackColor];
+        shadowAtt3.shadowOffset = CGPointMake(3, 3);
+        
+        BGTextAttribute *shadowAtt4 = [[BGTextAttribute alloc] init];
+        shadowAtt4.shadowColor =[UIColor blackColor];
+        shadowAtt4.shadowOffset = CGPointMake(4, 4);
+        
+        BGTextAttribute *shadowAtt5 = [[BGTextAttribute alloc] init];
+        shadowAtt5.shadowColor =[UIColor blackColor];
+        shadowAtt5.shadowOffset = CGPointMake(5, 5);
+        
+        self.bgTextAttributes = @[borderAtt, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4, shadowAtt5];
+        
     }
     return self;
 }

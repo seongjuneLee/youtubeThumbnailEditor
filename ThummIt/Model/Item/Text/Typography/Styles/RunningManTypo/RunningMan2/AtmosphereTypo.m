@@ -13,20 +13,28 @@
     self = [super init];
     if (self) {
         
-        self.name = NSLocalizedString(@"분위기 파악 못해?!",nil);
+        self.name = NSLocalizedString(@"분위기 파악 못해?!",nil); //italic
         self.fontName = @"SDMiSaeng";
-        self.fontSize = 50;
+        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor whiteColor];
         
-        //미완
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
-        BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
         borderAtt.borderWidth = 6;
-        shadowAtt.shadowColor =[UIColor grayColor];
-        shadowAtt.shadowOffset = CGPointMake(3, 3);
-        self.bgTextAttributes = @[borderAtt, shadowAtt];
-        //기울어짐 필요
+        
+        BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
+        shadowAtt1.shadowColor =[UIColor blackColor];
+        shadowAtt1.shadowOffset = CGPointMake(0.5, 0.5);
+        
+        BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
+        shadowAtt2.shadowColor =[UIColor blackColor];
+        shadowAtt2.shadowOffset = CGPointMake(1, 1);
+        
+        BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
+        shadowAtt3.shadowColor =[UIColor blackColor];
+        shadowAtt3.shadowOffset = CGPointMake(1.5, 1.5);
+        
+        self.bgTextAttributes = @[borderAtt, shadowAtt1, shadowAtt2, shadowAtt3];
     }
     return self;
 }
