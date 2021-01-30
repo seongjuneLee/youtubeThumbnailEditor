@@ -173,7 +173,6 @@
 		6EBEB60A25C32A140017C640 /* neodgm_pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBEB60925C32A030017C640 /* neodgm_pro.otf */; };
 		6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB64225C37A3F0017C640 /* WorkManSecondTitle.m */; };
 		6EBEB64825C428940017C640 /* WorkManFast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB64725C428930017C640 /* WorkManFast.m */; };
-		6EBEB66225C48A2D0017C640 /* FourHeartTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */; };
 		6EBEB67425C494B10017C640 /* VlogHeartSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67325C494B10017C640 /* VlogHeartSticker1.m */; };
 		6EBEB67925C494C90017C640 /* VlogHeartSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67825C494C90017C640 /* VlogHeartSticker2.m */; };
 		6EBEB67E25C494D40017C640 /* VlogHeartSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB67D25C494D40017C640 /* VlogHeartSticker3.m */; };
@@ -233,6 +232,21 @@
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
 		86BE8E8DCEAF4561F7A9E722 /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B689306FD489C375607E803F /* Pods_ThummIt.framework */; };
+		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
+		B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */; };
+		B11E0D5425C4F6070050D9F0 /* SixToFourVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5325C4F6070050D9F0 /* SixToFourVlogTemplate.m */; };
+		B11E0D5B25C55FC60050D9F0 /* CookingVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5A25C55FC60050D9F0 /* CookingVlogTemplate.m */; };
+		B11E0D6025C561470050D9F0 /* DailyVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5F25C561470050D9F0 /* DailyVlogTemplate.m */; };
+		B11E0D6525C56CA30050D9F0 /* CebuVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D6425C56CA30050D9F0 /* CebuVlogTemplate.m */; };
+		B11E0D6A25C56D560050D9F0 /* MacaronVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D6925C56D560050D9F0 /* MacaronVlogTemplate.m */; };
+		B11E0D6F25C5751C0050D9F0 /* VlogMacaronTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D6E25C5751C0050D9F0 /* VlogMacaronTypo.m */; };
+		B11E0D7425C576760050D9F0 /* VlogMacaronSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D7325C576760050D9F0 /* VlogMacaronSticker.m */; };
+		B11E0D7925C57B140050D9F0 /* ModelVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D7825C57B140050D9F0 /* ModelVlogTemplate.m */; };
+		B11E0D7E25C57BB90050D9F0 /* KidsVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D7D25C57BB90050D9F0 /* KidsVlogTemplate.m */; };
+		B11E0D8325C58C4D0050D9F0 /* VlogMomTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D8225C58C4D0050D9F0 /* VlogMomTypo.m */; };
+		B11E0D8825C594A10050D9F0 /* HolidayVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D8725C594A10050D9F0 /* HolidayVlogTemplate.m */; };
+		B11E0D8D25C595BF0050D9F0 /* VlogHolidayTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D8C25C595BF0050D9F0 /* VlogHolidayTypo.m */; };
+		B11E0D9325C599410050D9F0 /* SDMiSaeng.otf in Resources */ = {isa = PBXBuildFile; fileRef = B11E0D9225C599410050D9F0 /* SDMiSaeng.otf */; };
 		B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = B12E989825C38DB700F706DD /* InfiniteChallenge3Template.m */; };
 		B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61625ADCC2A00E854C1 /* StickerCollectionController.m */; };
 		B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61D25ADCD9400E854C1 /* StickerCollectionViewCell.m */; };
@@ -283,7 +297,11 @@
 		B1F2B7DC25C30AD30064A044 /* Windy Lavender.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1F2B7DB25C30AD30064A044 /* Windy Lavender.otf */; };
 		B1F2B7F625C316BB0064A044 /* Cafe24Shiningstar.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1F2B7F525C316BB0064A044 /* Cafe24Shiningstar.otf */; };
 		B1F8C68A25C4988E002DDAF8 /* WhyRealTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13CDA25C1CB1100012144 /* WhyRealTypo.m */; };
-		B1F8C6B225C49C82002DDAF8 /* SDMiSaeng.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1F8C6B125C49C82002DDAF8 /* SDMiSaeng.ttf */; };
+		B1F8C6C125C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6C025C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.m */; };
+		B1F8C6C825C4C71C002DDAF8 /* ItalyTripVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6C725C4C71C002DDAF8 /* ItalyTripVlogTemplate.m */; };
+		B1F8C6D825C4CC23002DDAF8 /* VlogMakingFilmTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6D725C4CC23002DDAF8 /* VlogMakingFilmTypo.m */; };
+		B1F8C6DD25C4CD8B002DDAF8 /* VlogVideoSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6DC25C4CD8B002DDAF8 /* VlogVideoSticker.m */; };
+		B1F8C6E225C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6E125C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -622,8 +640,6 @@
 		6EBEB64225C37A3F0017C640 /* WorkManSecondTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManSecondTitle.m; sourceTree = "<group>"; };
 		6EBEB64625C428930017C640 /* WorkManFast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManFast.h; sourceTree = "<group>"; };
 		6EBEB64725C428930017C640 /* WorkManFast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManFast.m; sourceTree = "<group>"; };
-		6EBEB66025C48A2D0017C640 /* FourHeartTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourHeartTemplate.h; sourceTree = "<group>"; };
-		6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourHeartTemplate.m; sourceTree = "<group>"; };
 		6EBEB67225C494B10017C640 /* VlogHeartSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker1.h; sourceTree = "<group>"; };
 		6EBEB67325C494B10017C640 /* VlogHeartSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHeartSticker1.m; sourceTree = "<group>"; };
 		6EBEB67725C494C80017C640 /* VlogHeartSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHeartSticker2.h; sourceTree = "<group>"; };
@@ -729,6 +745,35 @@
 		6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionController.m; sourceTree = "<group>"; };
 		7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.release.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.release.xcconfig"; sourceTree = "<group>"; };
+		B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogBarunGothicTypo.h; sourceTree = "<group>"; };
+		B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogBarunGothicTypo.m; sourceTree = "<group>"; };
+		B11E0D4D25C4EDBD0050D9F0 /* GrwmVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrwmVlogTemplate.h; sourceTree = "<group>"; };
+		B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrwmVlogTemplate.m; sourceTree = "<group>"; };
+		B11E0D5225C4F6070050D9F0 /* SixToFourVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SixToFourVlogTemplate.h; sourceTree = "<group>"; };
+		B11E0D5325C4F6070050D9F0 /* SixToFourVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixToFourVlogTemplate.m; sourceTree = "<group>"; };
+		B11E0D5925C55FC60050D9F0 /* CookingVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingVlogTemplate.h; sourceTree = "<group>"; };
+		B11E0D5A25C55FC60050D9F0 /* CookingVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingVlogTemplate.m; sourceTree = "<group>"; };
+		B11E0D5E25C561470050D9F0 /* DailyVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyVlogTemplate.h; sourceTree = "<group>"; };
+		B11E0D5F25C561470050D9F0 /* DailyVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyVlogTemplate.m; sourceTree = "<group>"; };
+		B11E0D6325C56CA30050D9F0 /* CebuVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CebuVlogTemplate.h; sourceTree = "<group>"; };
+		B11E0D6425C56CA30050D9F0 /* CebuVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CebuVlogTemplate.m; sourceTree = "<group>"; };
+		B11E0D6825C56D560050D9F0 /* MacaronVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacaronVlogTemplate.h; sourceTree = "<group>"; };
+		B11E0D6925C56D560050D9F0 /* MacaronVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacaronVlogTemplate.m; sourceTree = "<group>"; };
+		B11E0D6D25C5751C0050D9F0 /* VlogMacaronTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogMacaronTypo.h; sourceTree = "<group>"; };
+		B11E0D6E25C5751C0050D9F0 /* VlogMacaronTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogMacaronTypo.m; sourceTree = "<group>"; };
+		B11E0D7225C576760050D9F0 /* VlogMacaronSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogMacaronSticker.h; sourceTree = "<group>"; };
+		B11E0D7325C576760050D9F0 /* VlogMacaronSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogMacaronSticker.m; sourceTree = "<group>"; };
+		B11E0D7725C57B140050D9F0 /* ModelVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelVlogTemplate.h; sourceTree = "<group>"; };
+		B11E0D7825C57B140050D9F0 /* ModelVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelVlogTemplate.m; sourceTree = "<group>"; };
+		B11E0D7C25C57BB90050D9F0 /* KidsVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KidsVlogTemplate.h; sourceTree = "<group>"; };
+		B11E0D7D25C57BB90050D9F0 /* KidsVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidsVlogTemplate.m; sourceTree = "<group>"; };
+		B11E0D8125C58C4D0050D9F0 /* VlogMomTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogMomTypo.h; sourceTree = "<group>"; };
+		B11E0D8225C58C4D0050D9F0 /* VlogMomTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogMomTypo.m; sourceTree = "<group>"; };
+		B11E0D8625C594A10050D9F0 /* HolidayVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HolidayVlogTemplate.h; sourceTree = "<group>"; };
+		B11E0D8725C594A10050D9F0 /* HolidayVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HolidayVlogTemplate.m; sourceTree = "<group>"; };
+		B11E0D8B25C595BF0050D9F0 /* VlogHolidayTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHolidayTypo.h; sourceTree = "<group>"; };
+		B11E0D8C25C595BF0050D9F0 /* VlogHolidayTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHolidayTypo.m; sourceTree = "<group>"; };
+		B11E0D9225C599410050D9F0 /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SDMiSaeng.otf; path = ../../../../Downloads/SDMiSaeng.otf; sourceTree = "<group>"; };
 		B12E989725C38DB700F706DD /* InfiniteChallenge3Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteChallenge3Template.h; sourceTree = "<group>"; };
 		B12E989825C38DB700F706DD /* InfiniteChallenge3Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteChallenge3Template.m; sourceTree = "<group>"; };
 		B16FC61525ADCC2A00E854C1 /* StickerCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerCollectionController.h; sourceTree = "<group>"; };
@@ -812,7 +857,16 @@
 		B1F2B7D525C305D90064A044 /* VlogPigtailSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogPigtailSticker.m; sourceTree = "<group>"; };
 		B1F2B7DB25C30AD30064A044 /* Windy Lavender.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Windy Lavender.otf"; sourceTree = "<group>"; };
 		B1F2B7F525C316BB0064A044 /* Cafe24Shiningstar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Shiningstar.otf; sourceTree = "<group>"; };
-		B1F8C6B125C49C82002DDAF8 /* SDMiSaeng.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.ttf; sourceTree = "<group>"; };
+		B1F8C6BF25C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitingCompanyVlogTemplate.h; sourceTree = "<group>"; };
+		B1F8C6C025C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitingCompanyVlogTemplate.m; sourceTree = "<group>"; };
+		B1F8C6C625C4C71C002DDAF8 /* ItalyTripVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItalyTripVlogTemplate.h; sourceTree = "<group>"; };
+		B1F8C6C725C4C71C002DDAF8 /* ItalyTripVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItalyTripVlogTemplate.m; sourceTree = "<group>"; };
+		B1F8C6D625C4CC23002DDAF8 /* VlogMakingFilmTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogMakingFilmTypo.h; sourceTree = "<group>"; };
+		B1F8C6D725C4CC23002DDAF8 /* VlogMakingFilmTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogMakingFilmTypo.m; sourceTree = "<group>"; };
+		B1F8C6DB25C4CD8B002DDAF8 /* VlogVideoSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogVideoSticker.h; sourceTree = "<group>"; };
+		B1F8C6DC25C4CD8B002DDAF8 /* VlogVideoSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogVideoSticker.m; sourceTree = "<group>"; };
+		B1F8C6E025C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogVisitingCompanyTypo.h; sourceTree = "<group>"; };
+		B1F8C6E125C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogVisitingCompanyTypo.m; sourceTree = "<group>"; };
 		B689306FD489C375607E803F /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1454,8 +1508,28 @@
 				6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */,
 				6E9BE996258A527C00F7F539 /* QuarterDivisionTemplate.h */,
 				6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */,
-				6EBEB66025C48A2D0017C640 /* FourHeartTemplate.h */,
-				6EBEB66125C48A2D0017C640 /* FourHeartTemplate.m */,
+				B1F8C6BF25C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.h */,
+				B1F8C6C025C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.m */,
+				B1F8C6C625C4C71C002DDAF8 /* ItalyTripVlogTemplate.h */,
+				B1F8C6C725C4C71C002DDAF8 /* ItalyTripVlogTemplate.m */,
+				B11E0D4D25C4EDBD0050D9F0 /* GrwmVlogTemplate.h */,
+				B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */,
+				B11E0D5225C4F6070050D9F0 /* SixToFourVlogTemplate.h */,
+				B11E0D5325C4F6070050D9F0 /* SixToFourVlogTemplate.m */,
+				B11E0D5925C55FC60050D9F0 /* CookingVlogTemplate.h */,
+				B11E0D5A25C55FC60050D9F0 /* CookingVlogTemplate.m */,
+				B11E0D5E25C561470050D9F0 /* DailyVlogTemplate.h */,
+				B11E0D5F25C561470050D9F0 /* DailyVlogTemplate.m */,
+				B11E0D6325C56CA30050D9F0 /* CebuVlogTemplate.h */,
+				B11E0D6425C56CA30050D9F0 /* CebuVlogTemplate.m */,
+				B11E0D6825C56D560050D9F0 /* MacaronVlogTemplate.h */,
+				B11E0D6925C56D560050D9F0 /* MacaronVlogTemplate.m */,
+				B11E0D7725C57B140050D9F0 /* ModelVlogTemplate.h */,
+				B11E0D7825C57B140050D9F0 /* ModelVlogTemplate.m */,
+				B11E0D7C25C57BB90050D9F0 /* KidsVlogTemplate.h */,
+				B11E0D7D25C57BB90050D9F0 /* KidsVlogTemplate.m */,
+				B11E0D8625C594A10050D9F0 /* HolidayVlogTemplate.h */,
+				B11E0D8725C594A10050D9F0 /* HolidayVlogTemplate.m */,
 			);
 			path = VlogTemplate;
 			sourceTree = "<group>";
@@ -1669,13 +1743,13 @@
 				B1F2B6DE25C1940A0064A044 /* UTOIMAGE_ ChocolatLatte_OTF.otf */,
 				6EBEB5CF25C2F9900017C640 /* SangSangShin.otf */,
 				6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */,
-				B1F8C6B125C49C82002DDAF8 /* SDMiSaeng.ttf */,
 				B1F2B6E425C196E30064A044 /* SCDream9.otf */,
 				6ED13C7A25C11B9700012144 /* TmoneyRoundWindExtraBold.otf */,
 				6ED13C7B25C11B9800012144 /* TmoneyRoundWindRegular.otf */,
 				6ED13C2125C10E7700012144 /* gabia_solmee.otf */,
 				6EBEB5F425C320410017C640 /* UhBee-puding-Bold.otf */,
 				6EBEB5F325C320410017C640 /* UhBee-puding.otf */,
+				B11E0D9225C599410050D9F0 /* SDMiSaeng.otf */,
 				6ED13BB725C0917F00012144 /* BMHANNA_11yrs_otf.otf */,
 				6E8F996F25C0C4F5005C8071 /* 62570-_1_.otf */,
 				6E8F997A25C0D3B4005C8071 /* NotoSansCJKkr-Bold.otf */,
@@ -1789,6 +1863,8 @@
 				6E2844E325C3586B008B7A23 /* VlogGRWMTypo.m */,
 				6E2844FC25C3586E008B7A23 /* VlogHashTagTypo.h */,
 				6E28451125C35870008B7A23 /* VlogHashTagTypo.m */,
+				B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */,
+				B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */,
 				6E2844F625C3586E008B7A23 /* VlogInItaly.h */,
 				6E2844ED25C3586D008B7A23 /* VlogInItaly.m */,
 				6E28450025C3586F008B7A23 /* VlogItaly.h */,
@@ -1799,12 +1875,16 @@
 				6E2844F925C3586E008B7A23 /* VlogLongDance.m */,
 				6E28451025C35870008B7A23 /* VlogLookbookTypo.h */,
 				6E2844EA25C3586C008B7A23 /* VlogLookbookTypo.m */,
+				B1F8C6D625C4CC23002DDAF8 /* VlogMakingFilmTypo.h */,
+				B1F8C6D725C4CC23002DDAF8 /* VlogMakingFilmTypo.m */,
 				6E2844F125C3586D008B7A23 /* VlogModel.h */,
 				6E28450C25C35870008B7A23 /* VlogModel.m */,
 				6E28450125C3586F008B7A23 /* VlogMyeongjoTypo.h */,
 				6E28450A25C3586F008B7A23 /* VlogMyeongjoTypo.m */,
 				6E2844E025C3586B008B7A23 /* VlogNanumSquareTypo.h */,
 				6E2844FB25C3586E008B7A23 /* VlogNanumSquareTypo.m */,
+				B11E0D6D25C5751C0050D9F0 /* VlogMacaronTypo.h */,
+				B11E0D6E25C5751C0050D9F0 /* VlogMacaronTypo.m */,
 				6E2844EC25C3586D008B7A23 /* VlogNewCampus.h */,
 				6E28450925C3586F008B7A23 /* VlogNewCampus.m */,
 				6E28450E25C35870008B7A23 /* VlogOriginal.h */,
@@ -1819,8 +1899,14 @@
 				6E28450625C3586F008B7A23 /* VlogSummerTypo.m */,
 				6E2844FE25C3586F008B7A23 /* VlogTrip.h */,
 				6E2844F525C3586E008B7A23 /* VlogTrip.m */,
+				B1F8C6E025C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.h */,
+				B1F8C6E125C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m */,
 				6E2844E525C3586C008B7A23 /* VlogWebWrite.h */,
 				6E28450D25C35870008B7A23 /* VlogWebWrite.m */,
+				B11E0D8125C58C4D0050D9F0 /* VlogMomTypo.h */,
+				B11E0D8225C58C4D0050D9F0 /* VlogMomTypo.m */,
+				B11E0D8B25C595BF0050D9F0 /* VlogHolidayTypo.h */,
+				B11E0D8C25C595BF0050D9F0 /* VlogHolidayTypo.m */,
 			);
 			path = Vlog;
 			sourceTree = "<group>";
@@ -2149,6 +2235,10 @@
 				6EBEB67D25C494D40017C640 /* VlogHeartSticker3.m */,
 				6EBEB68125C494E20017C640 /* VlogHeartSticker4.h */,
 				6EBEB68225C494E20017C640 /* VlogHeartSticker4.m */,
+				B1F8C6DB25C4CD8B002DDAF8 /* VlogVideoSticker.h */,
+				B1F8C6DC25C4CD8B002DDAF8 /* VlogVideoSticker.m */,
+				B11E0D7225C576760050D9F0 /* VlogMacaronSticker.h */,
+				B11E0D7325C576760050D9F0 /* VlogMacaronSticker.m */,
 			);
 			path = Vlog;
 			sourceTree = "<group>";
@@ -2303,8 +2393,8 @@
 				6ED13C8325C1940400012144 /* BMYEONSUNG_otf.otf in Resources */,
 				6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */,
 				6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */,
+				B11E0D9325C599410050D9F0 /* SDMiSaeng.otf in Resources */,
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
-				B1F8C6B225C49C82002DDAF8 /* SDMiSaeng.ttf in Resources */,
 				B1F2B79425C2F6250064A044 /* UhBee DoolDool Bold.otf in Resources */,
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
@@ -2511,9 +2601,14 @@
 				6ED13B0425BDA75D00012144 /* UIImageView+Additions.m in Sources */,
 				6EBEB50B25C146300017C640 /* WorkManTalkWrite.m in Sources */,
 				6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */,
+				B11E0D5B25C55FC60050D9F0 /* CookingVlogTemplate.m in Sources */,
+				B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */,
 				6EBEB52625C191340017C640 /* WorkManRedTitle.m in Sources */,
+				B1F8C6C825C4C71C002DDAF8 /* ItalyTripVlogTemplate.m in Sources */,
+				B11E0D5425C4F6070050D9F0 /* SixToFourVlogTemplate.m in Sources */,
 				6E8E79D825921D140008C5FF /* ProjectTableController.m in Sources */,
 				6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */,
+				B11E0D8325C58C4D0050D9F0 /* VlogMomTypo.m in Sources */,
 				B1F2B71725C1B2AD0064A044 /* InfiniteChallengeLegeno.m in Sources */,
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
 				6E20BCC025AEF58600BBA540 /* UndoManager.m in Sources */,
@@ -2528,6 +2623,7 @@
 				6E8E7A9B259CBB470008C5FF /* PhotoFrameCollectionReusableView.m in Sources */,
 				B1F2B6EF25C198DD0064A044 /* InfiniteChallengeWhiteTypo.m in Sources */,
 				6E8F9B4425C35261005C8071 /* SeoYuGiHungryTypo.m in Sources */,
+				B1F8C6C125C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.m in Sources */,
 				6E8F9A9625C34582005C8071 /* BasicCirclePhotoFrame.m in Sources */,
 				6EBEB67425C494B10017C640 /* VlogHeartSticker1.m in Sources */,
 				B1F2B6EF25C198DD0064A044 /* InfiniteChallengeWhiteTypo.m in Sources */,
@@ -2537,6 +2633,7 @@
 				6E8F9B1125C348C9005C8071 /* WorkManStartleSticker.m in Sources */,
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
 				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
+				B11E0D6025C561470050D9F0 /* DailyVlogTemplate.m in Sources */,
 				6E28452025C35870008B7A23 /* VlogOriginal.m in Sources */,
 				6EBEB68325C494E20017C640 /* VlogHeartSticker4.m in Sources */,
 				6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */,
@@ -2563,10 +2660,12 @@
 				6ED13D5225C2C88000012144 /* SinSeoYuGiQuSticker.m in Sources */,
 				6ED13BB425C08FC700012144 /* WorkingManNameTypo.m in Sources */,
 				6E8F9B3A25C3494D005C8071 /* ExclamationMark.m in Sources */,
+				B1F8C6E225C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m in Sources */,
 				6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */,
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,
 				6EAD5C9025B767C700C42187 /* AccountViewController.m in Sources */,
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
+				B11E0D6F25C5751C0050D9F0 /* VlogMacaronTypo.m in Sources */,
 				6E28451B25C35870008B7A23 /* VlogItaly.m in Sources */,
 				B1836FCA25C3370E00A81446 /* WorkmanArgry.m in Sources */,
 				B1F2B6F425C1995A0064A044 /* InfiniteChallengeBlackTypo.m in Sources */,
@@ -2614,6 +2713,7 @@
 				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
 				6EBEB67925C494C90017C640 /* VlogHeartSticker2.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
+				B11E0D7925C57B140050D9F0 /* ModelVlogTemplate.m in Sources */,
 				6E28452625C35870008B7A23 /* VlogNewCampus.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
 				B1F2B73E25C1C4E30064A044 /* InfiniteChallengeHashTag.m in Sources */,
@@ -2637,30 +2737,36 @@
 				B1F2B72325C1B5D50064A044 /* InfiniteChallengeYellowSpeechBoxWhite.m in Sources */,
 				B1F2B77125C2C6370064A044 /* InfiniteChallengeSkullSticker.m in Sources */,
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
+				B11E0D8D25C595BF0050D9F0 /* VlogHolidayTypo.m in Sources */,
 				6E28452725C35870008B7A23 /* VlogMyeongjoTypo.m in Sources */,
 				6E9BEA4E258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift in Sources */,
 				6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
+				B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
+				B11E0D8825C594A10050D9F0 /* HolidayVlogTemplate.m in Sources */,
+				B11E0D7E25C57BB90050D9F0 /* KidsVlogTemplate.m in Sources */,
 				6ED13D4625C2C82900012144 /* SinSeoYuGiExc1Sticker.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
 				B16FC68025AF459800E854C1 /* StickerCollectionReusableView.m in Sources */,
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,
 				B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */,
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
-				6EBEB66225C48A2D0017C640 /* FourHeartTemplate.m in Sources */,
+				B11E0D6525C56CA30050D9F0 /* CebuVlogTemplate.m in Sources */,
 				6E8E7A24259B26CF0008C5FF /* ItemCollectionViewController.m in Sources */,
 				6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */,
 				6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */,
 				6EBEB57B25C1E6B30017C640 /* WorkManRightTag.m in Sources */,
 				6ED13CE625C1D16B00012144 /* RuleTypo.m in Sources */,
 				6EAD5C9F25B767E200C42187 /* CustomerFeedbackViewController.m in Sources */,
+				B11E0D6A25C56D560050D9F0 /* MacaronVlogTemplate.m in Sources */,
 				6E28452525C35870008B7A23 /* VlogSummerTypo.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
 				6E28451325C35870008B7A23 /* VlogShortDance.m in Sources */,
 				6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */,
 				6ED13BA525C08F1F00012144 /* DDamTypo.m in Sources */,
+				B11E0D7425C576760050D9F0 /* VlogMacaronSticker.m in Sources */,
 				6E28451D25C35870008B7A23 /* VlogDog.m in Sources */,
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
 				B1F2B72C25C1BF2B0064A044 /* InfiniteChallengeTopOfYellow.m in Sources */,
@@ -2668,6 +2774,7 @@
 				6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */,
 				6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */,
 				B1F2B7D625C305D90064A044 /* VlogPigtailSticker.m in Sources */,
+				B1F8C6D825C4CC23002DDAF8 /* VlogMakingFilmTypo.m in Sources */,
 				6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
 				6E8E7A6A259C91560008C5FF /* PhotoFrameCollectionViewCell.m in Sources */,
@@ -2677,6 +2784,7 @@
 				6E9BE998258A527C00F7F539 /* QuarterDivisionTemplate.m in Sources */,
 				6E8F996725C0C037005C8071 /* SeoYuGiLogoTypo.m in Sources */,
 				6E7DD4AE2584D4540014618E /* AlbumViewController+CollectionViewDataSource.m in Sources */,
+				B1F8C6DD25C4CD8B002DDAF8 /* VlogVideoSticker.m in Sources */,
 				6ED13C9025C1ADFE00012144 /* WhatTypo.m in Sources */,
 				6EC4DFC125A87BEC0023485C /* BGTextAttribute.m in Sources */,
 				B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */,

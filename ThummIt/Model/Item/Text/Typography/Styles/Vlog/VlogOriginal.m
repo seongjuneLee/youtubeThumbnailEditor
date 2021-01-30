@@ -13,15 +13,14 @@
 {
     self = [super init];
     if (self) {
-        self.name = NSLocalizedString(@"youtube originals ",nil);
+        self.name = NSLocalizedString(@"YouTube Originals",nil);
         self.fontName = @"Swagger";
-        self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
-        self.fontSize = 40;
+        self.textColor = UIColor.whiteColor;
+        self.fontSize = TEXT_FONT_SIZE;
 
     }
     return self;
 }
-
 
 +(VlogOriginal *)vlogOriginal{
     VlogOriginal* vlogOriginal = [[self alloc] init];

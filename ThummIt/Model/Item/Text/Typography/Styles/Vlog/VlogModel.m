@@ -15,8 +15,8 @@
     if (self) {
         self.name = NSLocalizedString(@"vlog2",nil);
         self.fontName = @"S-CoreDream-2ExtraLight";
-        self.textColor = [UIColor colorWithRed:(208/255.0) green:(145/255.0) blue:(116/255.0) alpha:1];
-        self.fontSize = 30;
+        self.textColor = UIColor.whiteColor;
+        self.fontSize = TEXT_FONT_SIZE;
     }
     return self;
 }

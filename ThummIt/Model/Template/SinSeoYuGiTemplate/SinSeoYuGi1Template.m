@@ -57,7 +57,7 @@
     logoText.center = CGPointMake(0.5, 0.06);
     logoText.isTemplateItem = true;
     logoText.text = @"서유기";
-    logoText.textView.text = @"서유기";
+    logoText.textView.text = logoText.text;
     
     [logoText applyTypo:logo];
     [self.texts addObject:logoText];
@@ -69,7 +69,7 @@
     scaredText.center = CGPointMake(0.31, 0.71);
     scaredText.isTemplateItem = true;
     scaredText.text = @"와 나 이런거 무서워한다";
-    scaredText.textView.text = @"와 나 이런거 무서워한다";
+    scaredText.textView.text = scaredText.text;
     [scaredText applyTypo:gagwanSmall];
     [self.texts addObject:scaredText];
     
@@ -80,7 +80,7 @@
     gagwanText.center = CGPointMake(0.6, 0.85);
     gagwanText.isTemplateItem = true;
     gagwanText.text = @"가관이네..";
-    gagwanText.textView.text = @"가관이네..";
+    gagwanText.textView.text = gagwanText.text;
     [gagwanText applyTypo:gagwanBig];
     [self.texts addObject:gagwanText];
     

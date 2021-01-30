@@ -57,7 +57,12 @@
 #import "VlogShortDance.h"
 #import "VlogStudy.h"
 #import "Vlog365.h"
-
+#import "VlogMakingFilmTypo.h"
+#import "VlogVisitingCompanyTypo.h"
+#import "VlogBarunGothicTypo.h"
+#import "VlogMacaronTypo.h"
+#import "VlogMomTypo.h"
+#import "VlogHolidayTypo.h"
 
 #import "WorkManRightTag.h"
 #import "WorkmanYelloewTitle.h"
