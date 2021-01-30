@@ -35,6 +35,14 @@
 #import "InfiniteChallenge2Template.h"
 #import "InfiniteChallenge3Template.h"
 
-#import "FourHeartTemplate.h"
+#import "CraftVlogTemplate.h"
+#import "LookBookVlogTemplate.h"
+#import "StayingHomeVlogTemplate.h"
+#import "BabyVlogTemplate.h"
+#import "SummerVlogTemplate.h"
+#import "DogVlogTemPlate.h"
+#import "FreshmanVlogTemplate.h"
+#import "StudentVlogTemplate.h"
+#import "WebDesignerVlogTemPlate.h"
 
 #endif /* TemplateHeader_h */

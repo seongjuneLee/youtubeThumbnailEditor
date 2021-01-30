@@ -1,0 +1,71 @@
+//
+//  LookBookVlogTemplate.m
+//  ThummIt
+//
+//  Created by 이성준 on 2021/01/30.
+//
+
+#import "LookBookVlogTemplate.h"
+
+@implementation LookBookVlogTemplate
+
+-(id)init{
+    
+    self = [super init];
+    if(self){
+        
+        self.previewImageName = @"lookBookVlogPreview";
+        self.category = NSLocalizedString(@"Vlog", nil);
+        self.templateName = @"LookBookVlogTemplate";
+        self.backgroundImageName = @"vlogFrame1";
+        [self setUpPhotoFrame];
+        [self setUpTexts];
+        
+    }
+    return self;
+    
+}
+
++(LookBookVlogTemplate*)lookBookVlogTemplate{
+    
+    LookBookVlogTemplate* lookBookVlogTemplate = [[self alloc] init];
+    
+    return lookBookVlogTemplate;
+    
+}
+
+-(void)setUpPhotoFrame{
+    
+    self.photoFrames = [NSMutableArray new];
+    FullRectangle *photoFrame = [FullRectangle fullRectangle];
+    photoFrame.isTemplateItem = true;
+    photoFrame.center = CGPointMake(0.5, 0.5);
+    [self.photoFrames addObject:photoFrame];
+        
+}
+
+-(void)setUpTexts{
+    
+    Text *vlogText = [[Text alloc] init];
+    VlogLookbookTypo *vlog = [VlogLookbookTypo vlogLookbookTypo];
+    vlogText.scale = 1.1;
+    vlogText.center = CGPointMake(0.77, 0.43);
+    vlogText.isTemplateItem = true;
+    vlogText.text = @"룩북\n브이로그";
+    vlogText.textView.text = @"룩북\n브이로그";
+    [vlogText applyTypo:vlog];
+    
+    [self.texts addObject:vlogText];
+    
+    
+    
+}
+
+-(void)setUpStickers{
+    
+    
+    
+}
+
+
+@end
