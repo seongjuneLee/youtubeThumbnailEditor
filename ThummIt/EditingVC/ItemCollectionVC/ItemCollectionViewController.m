@@ -103,6 +103,15 @@
     
 }
 
+//-(BOOL) isAlreadyAppeared{
+    
+//    if(){
+//        return YES;
+//    }else if(){
+//        return  NO;
+//    }
+//    
+//}
 
 
 @end

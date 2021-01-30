@@ -38,6 +38,7 @@
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
         self.itemCollectionVC.itemType = TextType;
+        
         [self addItemCollectionVC];
 
     }

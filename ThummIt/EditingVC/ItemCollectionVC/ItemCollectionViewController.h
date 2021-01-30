@@ -35,6 +35,9 @@ typedef enum {
 
 @property (weak, nonatomic) UIViewController *editingVC;
 
+//@property (nonatomic) BOOL isAlreadyAppeared;
+
+
 -(void)dismissSelf;
 
 @end

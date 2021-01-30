@@ -80,9 +80,10 @@
         if ([self getCurrentItem:sender]) {
             [self.delegate changeCurrentItem:[self getCurrentItem:sender]];
         }
-    } else if (editingVC.modeController.editingMode == AddingTextMode || editingVC.modeController.editingMode == EditingTextMode){
-        [self.delegate didTapTextWhileAdding];
+    } else if (editingVC.modeController.editingMode == EditingTextMode){
         [self.delegate didSelectItem:self.currentItem];
+    } else if (editingVC.modeController.editingMode == AddingTextMode){
+        [self.delegate didTapTextWhileAdding];
     }
     
 }
