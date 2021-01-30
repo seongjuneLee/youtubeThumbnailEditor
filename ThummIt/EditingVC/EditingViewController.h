@@ -72,6 +72,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIView *thumbCircleView;
 @property (nonatomic) BOOL itemLoaded;
 
+@property (strong, nonatomic, nullable) NSString *originalText;
+@property (strong, nonatomic, nullable) UIColor *originalCursorColor;
+
 -(void)loadItems;
 
 

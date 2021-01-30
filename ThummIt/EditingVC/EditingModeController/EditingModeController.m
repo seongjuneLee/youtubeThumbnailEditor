@@ -72,7 +72,7 @@
             
             [editingVC.leftItem setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
         } completion:nil];
-        editingVC.leftItemWidthConstraint.constant = 60;
+        editingVC.leftItemWidthConstraint.constant = 120;
         [editingVC.rightItem setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
         
     }else if (self.editingMode == AddingStickerMode){

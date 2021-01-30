@@ -8,6 +8,7 @@
 #import "EditingViewController.h"
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "EditingViewController+Buttons.h"
+#import "EditingViewController+Text.h"
 
 @interface EditingViewController ()
 
@@ -139,10 +140,11 @@
 
         }
         [item loadView];
-        if ([item isKindOfClass:PhotoFrame.class]) {
-            NSLog(@"item baseview frame %@",NSStringFromCGRect(item.baseView.frame));
+        
+        if ([item isKindOfClass:Text.class]){
+            Text *text = (Text *)item;
+            text.textView.delegate = self;
         }
-
         if (item.isFixedPhotoFrame) {
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
         } else {
