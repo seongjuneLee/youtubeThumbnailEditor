@@ -125,7 +125,6 @@
 
 -(void)loadItems{
     
-    NSUInteger originalGestureViewIndex = [self.view.subviews indexOfObject:self.gestureView];
     self.itemLoaded = true;
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
@@ -146,7 +145,7 @@
         if (item.isFixedPhotoFrame) {
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
         } else {
-            [self.view insertSubview:item.baseView belowSubview:self.gestureView];
+            [self.view insertSubview:item.baseView aboveSubview:self.backgroundImageView];
         }
 
         item.isTemplateItem = false;
@@ -154,7 +153,9 @@
     
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {
-            [self.view insertSubview:item.baseView atIndex:originalGestureViewIndex + [item.indexInLayer integerValue]];
+            NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.backgroundImageView];
+
+            [self.view insertSubview:item.baseView atIndex:backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
         }
     }
     

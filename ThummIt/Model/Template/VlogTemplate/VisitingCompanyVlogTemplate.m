@@ -51,6 +51,7 @@
     originalsText.scale = 0.75;
     originalsText.center = CGPointMake(0.17, 0.1);
     originalsText.isTemplateItem = true;
+    originalsText.indexInLayer = @"0";
     originalsText.text = @"YouTube Originals";
     originalsText.textView.text = originalsText.text;
     [originalsText applyTypo:originals];
@@ -62,6 +63,7 @@
     makingFilmText.scale = 0.56;
     makingFilmText.center = CGPointMake(0.885, 0.43);
     makingFilmText.isTemplateItem = true;
+    makingFilmText.indexInLayer = @"1";
     makingFilmText.text = @"MAKING\nFILM";
     makingFilmText.textView.text = makingFilmText.text;
     [makingFilmText applyTypo:makingFilm];
@@ -75,6 +77,7 @@
     eunwooText.scale = 1.71;
     eunwooText.center = CGPointMake(0.175, 0.665);
     eunwooText.isTemplateItem = true;
+    eunwooText.indexInLayer = @"2";
     eunwooText.text = @"은우의";
     eunwooText.textView.text = eunwooText.text;
     [eunwooText applyTypo:eunwoo];
@@ -86,6 +89,7 @@
     visitingCompanyText.scale = 1.71;
     visitingCompanyText.center = CGPointMake(0.365, 0.86);
     visitingCompanyText.isTemplateItem = true;
+    visitingCompanyText.indexInLayer = @"3";
     visitingCompanyText.text = @"회사탐방VLOG";
     visitingCompanyText.textView.text = visitingCompanyText.text;
     [visitingCompanyText applyTypo:visitingCompany];
@@ -96,6 +100,7 @@
 -(void)setUpStickers{
 
     VlogVideoSticker *vlogVideoSticker = [VlogVideoSticker vlogVideoSticker];
+    vlogVideoSticker.indexInLayer = @"4";
     vlogVideoSticker.scale = 0.7;
     vlogVideoSticker.isTemplateItem = true;
     vlogVideoSticker.center = CGPointMake(0.93, 0.28);

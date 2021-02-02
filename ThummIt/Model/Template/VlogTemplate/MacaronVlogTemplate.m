@@ -71,6 +71,7 @@
     vlogText.scale = 1.1;
     vlogText.center = CGPointMake(0.465, 0.25);
     vlogText.isTemplateItem = true;
+    vlogText.indexInLayer = @"0";
     vlogText.text = @"vlog";
     vlogText.textView.text = vlogText.text;
     [vlogText applyTypo:vlog];
@@ -82,6 +83,7 @@
     homebakingText.scale = 0.3;
     homebakingText.center = CGPointMake(0.455, 0.35);
     homebakingText.isTemplateItem = true;
+    homebakingText.indexInLayer = @"0";
     homebakingText.text = @"homebaking\n:macaron";
     homebakingText.textView.text = homebakingText.text;
     [homebakingText applyTypo:homebaking];

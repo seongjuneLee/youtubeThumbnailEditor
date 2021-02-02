@@ -82,6 +82,7 @@
     grwmText.scale = 1;
     grwmText.center = CGPointMake(0.42, 0.4);
     grwmText.isTemplateItem = true;
+    grwmText.indexInLayer = @"0";
     grwmText.text = @"GRWM\nVLOG";
     grwmText.textView.text = grwmText.text;
     [grwmText applyTypo:grwm];

@@ -65,6 +65,7 @@
     vlogText.scale = 1.2;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
+    vlogText.indexInLayer = @"0";
     vlogText.text = @"VLOG";
     vlogText.textView.text = vlogText.text;
     [vlogText applyTypo:myeongjo];
