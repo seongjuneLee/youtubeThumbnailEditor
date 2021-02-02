@@ -18,7 +18,7 @@
         self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor blackColor];
         self.bgImageName = @"workManYellowTag";
-        self.bgWidthPadding = 100;
+        self.bgWidthPadding = 60;
     }
     return self;
 }

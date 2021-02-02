@@ -14,8 +14,8 @@
     self = [super init];
     if(self){
         
-        self.templateName = @"workMan3";
-        self.previewImageName = @"workManTemplate3";
+        self.templateName = @"WorkManTemplate3";
+        self.previewImageName = @"workManPreview3";
         self.category = NSLocalizedString(@"Entertain", nil);
         self.backgroundImageName = @"workManFrame3";
         
@@ -28,16 +28,15 @@
 +(WorkManTemplate3*)workManTemplate3{
     
     WorkManTemplate3* workManTemplate3 = [[self alloc] init];
-    
     return workManTemplate3;
     
 }
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
+    photoFrame.isFixedPhotoFrame = true;
     photoFrame.center = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame];
     
@@ -48,8 +47,9 @@
     Text *logoText = [[Text alloc] init];
     WorkManLogo2 *logo = [WorkManLogo2 workManLogo2];
     logoText.scale = 0.68;
-    logoText.center = CGPointMake(0.9, 0.12);
+    logoText.center = CGPointMake(0.92, 0.12);
     logoText.isTemplateItem = true;
+    logoText.indexInLayer = @"0";
     logoText.text = @"위크맨";
     logoText.textView.text = @"위크맨";
     [logoText applyTypo:logo];
@@ -57,9 +57,10 @@
     
     Text *tagText = [[Text alloc] init];
     WorkManLeftTag *tag = [WorkManLeftTag workManLeftTag];
-    tagText.scale = 0.8;
+    tagText.scale = 1;
     tagText.center = CGPointMake(0.1, 0.13);
     tagText.isTemplateItem = true;
+    tagText.indexInLayer = @"1";
     tagText.text = @"기업탐방";
     tagText.textView.text = @"기업탐방";
     [tagText applyTypo:tag];
@@ -67,10 +68,11 @@
     
     Text *howMuchText = [[Text alloc] init];
     WorkManFast*howMuch = [WorkManFast workManFast];
-    howMuchText.scale = 0.42;
+    howMuchText.scale = 0.7;
     howMuchText.rotationDegree = 1;
     howMuchText.center = CGPointMake(0.69, 0.22);
     howMuchText.isTemplateItem = true;
+    howMuchText.indexInLayer = @"2";
     howMuchText.text = @"연봉 얼마까지 알아보고 오셨어요?";
     howMuchText.textView.text = @"연봉 얼마까지 알아보고 오셨어요?";
     [howMuchText applyTypo:howMuch];
@@ -82,6 +84,7 @@
     upYouTube.rotationDegree = 1;
     upYouTube.center = CGPointMake(0.35, 0.12);
     upYouTube.isTemplateItem = true;
+    upYouTube.indexInLayer = @"3";
     upYouTube.text = @">> 유튜브?";
     upYouTube.textView.text = @">> 유튜브";
     [upYouTube applyTypo:up];
@@ -89,9 +92,10 @@
     
     Text *blackText = [[Text alloc] init];
     WorkManLogo2 *center = [WorkManLogo2 workManLogo2];
-    blackText.scale = 0.75;
+    blackText.scale = 0.78;
     blackText.center = CGPointMake(0.255,0.46);
     blackText.isTemplateItem = true;
+    blackText.indexInLayer = @"4";
     blackText.text = @"유튜브 연봉 궁금해?";
     blackText.textView.text = @"유튜브 연봉 궁금해?";
     blackText.typo = center;
@@ -103,9 +107,10 @@
     
     Text *upTitleText = [[Text alloc] init];
     WorkmanYelloewTitle *upTitle = [WorkmanYelloewTitle workmanYelloewTitle];
-    upTitleText.scale = 1.1;
-    upTitleText.center = CGPointMake(0.35,0.72);
+    upTitleText.scale = 1.2;
+    upTitleText.center = CGPointMake(0.355,0.73);
     upTitleText.isTemplateItem = true;
+    upTitleText.indexInLayer = @"5";
     upTitleText.text = @"가자! 유튜브본사로!";
     upTitleText.textView.text = @"가자! 유튜브본사로!";
     upTitleText.typo = upTitle;
@@ -117,9 +122,10 @@
     
     Text *redtitle = [[Text alloc] init];
     WorkManSecondTitle *secondTitle = [WorkManSecondTitle workManSecondTitle];
-    redtitle.scale = 0.8;
-    redtitle.center = CGPointMake(0.22,0.9);
+    redtitle.scale = 0.83;
+    redtitle.center = CGPointMake(0.22,0.87);
     redtitle.isTemplateItem = true;
+    redtitle.indexInLayer = @"6";
     redtitle.text = @"유튜브 탐방";
     redtitle.textView.text = @"유튜브 탐방";
     redtitle.typo = secondTitle;
@@ -128,17 +134,10 @@
     red.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
     redtitle.typoRangeArray = (NSMutableArray *)@[@[red,@"0-3"]];
     [self.texts addObject:redtitle];
-
-   
-    
     
 }
 
-
-
-
 -(void)setUpStickers{
-    
     
 }
 

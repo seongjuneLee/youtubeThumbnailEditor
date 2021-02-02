@@ -18,8 +18,8 @@
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
         self.fontSize = 40;
         self.bgImageName = @"longDanceBG";
-        self.bgHeightPadding = 0;
-        self.bgWidthPadding = 0;    }
+        self.bgHeightPadding = -6;
+        self.bgWidthPadding =55;    }
     return self;
 }
 

@@ -51,7 +51,7 @@
     logoText.center = CGPointMake(0.17, 0.08);
     logoText.isTemplateItem = true;
     logoText.text = @"백만도전";
-    logoText.textView.text = @"백만도전";
+    logoText.textView.text = logoText.text;
     [logoText applyTypo:logo];
     [self.texts addObject:logoText];
 
@@ -63,7 +63,7 @@
     yellowText.rotationDegree = 8;
     yellowText.isTemplateItem = true;
     yellowText.text = @"빨리!!";
-    yellowText.textView.text = @"빨리!!";
+    yellowText.textView.text = yellowText.text;
     [yellowText applyTypo:yellowSpeechBoxYellow];
     [self.texts addObject:yellowText];
     
@@ -74,7 +74,7 @@
     skyBlueText.center = CGPointMake(0.8, 0.57);
     skyBlueText.isTemplateItem = true;
     skyBlueText.text = @"저한테 왜 그러세요..?";
-    skyBlueText.textView.text = @"저한테 왜 그러세요..?";
+    skyBlueText.textView.text = skyBlueText.text;
     [skyBlueText applyTypo:skyBlueBox];
     [self.texts addObject:skyBlueText];
     
@@ -85,7 +85,7 @@
     embarrassedText.center = CGPointMake(0.65, 0.5);
     embarrassedText.isTemplateItem = true;
     embarrassedText.text = @"당황";
-    embarrassedText.textView.text = @"당황";
+    embarrassedText.textView.text = embarrassedText.text;
     [embarrassedText applyTypo:cloudBox];
     [self.texts addObject:embarrassedText];
     

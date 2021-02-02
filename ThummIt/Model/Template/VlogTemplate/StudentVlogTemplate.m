@@ -19,8 +19,6 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StudentVlogTemplate";
         self.backgroundImageName = @"studentVlogFrame";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
         
     }
     return self;
@@ -74,6 +72,7 @@
     firstVlogText.scale = 0.9;
     firstVlogText.center = CGPointMake(0.166, 0.5);
     firstVlogText.isTemplateItem = true;
+    firstVlogText.indexInLayer =@"3";
     firstVlogText.text = @"수업";
     firstVlogText.textView.text = @"수업";
     [firstVlogText applyTypo:firstVlog];
@@ -85,6 +84,7 @@
     secondVlogText.scale = 0.9;
     secondVlogText.center = CGPointMake(0.5, 0.5);
     secondVlogText.isTemplateItem = true;
+    secondVlogText.indexInLayer =@"4";
     secondVlogText.text = @"도서관";
     secondVlogText.textView.text = @"도서관";
     [secondVlogText applyTypo:secondVlog];
@@ -98,6 +98,7 @@
     thirdVlogText.scale = 0.9;
     thirdVlogText.center = CGPointMake(0.834, 0.5);
     thirdVlogText.isTemplateItem = true;
+    thirdVlogText.indexInLayer =@"5";
     thirdVlogText.text = @"학식";
     thirdVlogText.textView.text = @"학식";
     [thirdVlogText applyTypo:thirdVlog];
@@ -110,6 +111,7 @@
     whiteTitleVlogText.scale = 1.2;
     whiteTitleVlogText.center = CGPointMake(0.385, 0.9);
     whiteTitleVlogText.isTemplateItem = true;
+    whiteTitleVlogText.indexInLayer =@"6";
     whiteTitleVlogText.text = @"하루종일 혼자 다녔다";
     whiteTitleVlogText.textView.text = @"하루종일 혼자 다녔다";
     [whiteTitleVlogText applyTypo:whiteTitleVlog];
@@ -122,6 +124,7 @@
     skinVlogText.scale = 0.95;
     skinVlogText.center = CGPointMake(0.18, 0.73);
     skinVlogText.isTemplateItem = true;
+    skinVlogText.indexInLayer =@"7";
     skinVlogText.text = @"대학 복학생";
     skinVlogText.textView.text = @"대학 복학생";
     [skinVlogText applyTypo:skinVlog];
@@ -134,6 +137,7 @@
     greenVlogText.scale = 0.95;
     greenVlogText.center = CGPointMake(0.505, 0.73);
     greenVlogText.isTemplateItem = true;
+    greenVlogText.indexInLayer =@"8";
     greenVlogText.text = @"아싸 Vlog";
     greenVlogText.textView.text = @"아싸 Vlog";
     [greenVlogText applyTypo:greenVlog];

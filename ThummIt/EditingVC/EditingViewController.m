@@ -140,10 +140,8 @@
 
 -(void)loadItems{
     
+    NSUInteger originalGestureViewIndex = [self.view.subviews indexOfObject:self.gestureView];
     self.itemLoaded = true;
-
-    NSUInteger gestureViewIndex = [self.view.subviews indexOfObject:self.gestureView];
-    
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
@@ -163,15 +161,16 @@
         if (item.isFixedPhotoFrame) {
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
         } else {
-            if (item.indexInLayer.length != 0) {
-                [self.view insertSubview:item.baseView atIndex:[item.indexInLayer integerValue]+ gestureViewIndex];
-            } else {
-                [self.view insertSubview:item.baseView belowSubview:self.gestureView];
-            }
-            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+            [self.view insertSubview:item.baseView belowSubview:self.gestureView];
         }
 
         item.isTemplateItem = false;
+    }
+    
+    for (Item *item in project.items) {
+        if (!item.isFixedPhotoFrame) {
+            [self.view insertSubview:item.baseView atIndex:originalGestureViewIndex + [item.indexInLayer integerValue]];
+        }
     }
     
     [SaveManager.sharedInstance save];

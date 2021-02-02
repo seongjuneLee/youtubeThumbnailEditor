@@ -28,7 +28,6 @@
 +(RunningMan2Template*)runningMan2Template{
     
     RunningMan2Template* runningMan2Template = [[self alloc] init];
-    
     return runningMan2Template;
     
 }
@@ -56,6 +55,7 @@
     //로고
     Text *logoText = [[Text alloc] init];
     RunningManLogoTypo *logo = [RunningManLogoTypo runningManLogoTypo];
+    logoText.indexInLayer =@"0";
     logoText.text = @"러닝맨";
     logoText.textView.text = logoText.text;
     logoText.scale = 0.55;
@@ -67,6 +67,7 @@
     //SBC WOW
     Text *SBCLogoText = [[Text alloc] init];
     BlueMoonTypo *blueMoon = [BlueMoonTypo blueMoonTypo];
+    SBCLogoText.indexInLayer =@"1";
     SBCLogoText.text = @"SBC\nWOW";
     SBCLogoText.textView.text = SBCLogoText.text;
     SBCLogoText.scale = 0.6;
@@ -78,6 +79,7 @@
     //환상의 티키타카
     Text *tikitakaText = [[Text alloc] init];
     TikiTypo *tikitaka = [TikiTypo tikiTypo];
+    tikitakaText.indexInLayer =@"2";
     tikitakaText.text = @"환상의 티키타카";
     tikitakaText.textView.text = tikitakaText.text;
     tikitakaText.scale = 0.74;
@@ -89,6 +91,7 @@
     //애드립 모음집
     Text *dripText = [[Text alloc] init];
     WhiteYellowGradientTypo *gradient = [WhiteYellowGradientTypo whiteYellowGradientTypo];
+    dripText.indexInLayer =@"3";
     dripText.text = @"애드립 모음집";
     dripText.textView.text = dripText.text;
     dripText.scale = 0.95;
@@ -100,6 +103,7 @@
     //뭐?
     Text *whatText = [[Text alloc] init];
     WhatTypo *what = [WhatTypo whatTypo];
+    whatText.indexInLayer =@"4";
     whatText.text = @"뭐?";
     whatText.textView.text = whatText.text;
     whatText.scale = 1;
@@ -111,6 +115,7 @@
     //분위기 파악 못해?!
     Text *asmosphereText = [[Text alloc] init];
     AtmosphereTypo *asmosphere = [AtmosphereTypo atmosphereTypo];
+    asmosphereText.indexInLayer =@"5";
     asmosphereText.text = @"분위기 파악 못해?!";
     asmosphereText.textView.text = asmosphereText.text;
     asmosphereText.scale = 0.95;
@@ -128,6 +133,7 @@
     KnockOutTypo *knockOut = [KnockOutTypo knockOutTypo];
     
     Text *knockOutText1 = [[Text alloc] init];
+    knockOutText1.indexInLayer =@"6";
     knockOutText1.text = @"혼";
     knockOutText1.textView.text = knockOutText1.text;
     knockOutText1.scale = 0.92;
@@ -137,6 +143,7 @@
     [self.texts addObject:knockOutText1];
     
     Text *knockOutText2 = [[Text alloc] init];
+    knockOutText2.indexInLayer =@"7";
     knockOutText2.text = @"절";
     knockOutText2.textView.text = knockOutText2.text;
     knockOutText2.scale = 0.92;
@@ -146,6 +153,7 @@
     [self.texts addObject:knockOutText2];
     
     Text *knockOutText3 = [[Text alloc] init];
+    knockOutText3.indexInLayer =@"8";
     knockOutText3.text = @"직";
     knockOutText3.textView.text = knockOutText3.text;
     knockOutText3.scale = 0.92;
@@ -155,6 +163,7 @@
     [self.texts addObject:knockOutText3];
     
     Text *knockOutText4 = [[Text alloc] init];
+    knockOutText4.indexInLayer =@"9";
     knockOutText4.text = @"전";
     knockOutText4.textView.text = knockOutText4.text;
     knockOutText4.scale = 0.92;

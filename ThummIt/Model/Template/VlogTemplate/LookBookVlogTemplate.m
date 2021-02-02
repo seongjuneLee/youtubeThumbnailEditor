@@ -18,8 +18,6 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"LookBookVlogTemplate";
         self.backgroundImageName = @"vlogFrame1";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
         
     }
     return self;
@@ -36,9 +34,9 @@
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
+    photoFrame.isFixedPhotoFrame = true;
     photoFrame.center = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame];
         
@@ -51,21 +49,17 @@
     vlogText.scale = 1.1;
     vlogText.center = CGPointMake(0.77, 0.43);
     vlogText.isTemplateItem = true;
+    vlogText.indexInLayer =@"1";
     vlogText.text = @"룩북\n브이로그";
     vlogText.textView.text = @"룩북\n브이로그";
     [vlogText applyTypo:vlog];
     
     [self.texts addObject:vlogText];
     
-    
-    
 }
 
 -(void)setUpStickers{
     
-    
-    
 }
-
 
 @end

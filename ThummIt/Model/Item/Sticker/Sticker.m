@@ -87,7 +87,15 @@
     self.backgroundImageView.backgroundColor = UIColor.clearColor;
     self.backgroundImageView.clipsToBounds = true;
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
+    UIImage *image = [UIImage imageNamed:self.backgroundImageName];
+    
+    if(self.tintColor){
+        self.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.backgroundImageView.tintColor = self.tintColor;
+    } else {
+        self.backgroundImageView.image = image;
+    }
+    
     [self.baseView addSubview:self.backgroundImageView];
     
 }

@@ -14,12 +14,14 @@
     self = [super init];
     if (self) {
         self.name = NSLocalizedString(@"vlog_Italy ",nil);
-        self.fontName = @"AppleSDGothicNeo-Regular";
+        self.fontName = @"AppleSDGothicNeo-Bold";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
-        self.fontSize = 40;
+        self.fontSize = TEXT_FONT_SIZE;
         self.bgImageName = @"italyBG";
-        self.bgHeightPadding = 200;
-        self.bgWidthPadding = 150;    }
+        self.bgHeightPadding = 100;
+        self.bgWidthPadding = 125;
+        
+    }
     return self;
 }
 

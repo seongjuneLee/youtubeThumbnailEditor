@@ -14,31 +14,29 @@
     self = [super init];
     if(self){
         
-        self.templateName = @"workMan1";
-        self.previewImageName = @"workMantemplate1";
+        self.templateName = @"WorkManTemplate1";
+        self.previewImageName = @"workManPreview1";
         self.category = NSLocalizedString(@"Entertain", nil);
         self.backgroundImageName = @"WorkManFrame1";
-        
     }
     return self;
     
 }
 
-
 +(WorkManTemplate1*)workManTemplate1{
     
     WorkManTemplate1* workManTemplate1 = [[self alloc] init];
-    
     return workManTemplate1;
     
 }
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
     photoFrame.center = CGPointMake(0.5, 0.5);
+    photoFrame.isFixedPhotoFrame = true;
+    
     [self.photoFrames addObject:photoFrame];
 }
 
@@ -49,48 +47,53 @@
     logoText.scale = 0.61;
     logoText.center = CGPointMake(0.11, 0.1);
     logoText.isTemplateItem = true;
+    logoText.indexInLayer = @"0";
     logoText.text = @"위크맨";
     logoText.textView.text = @"위크맨";
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     Text *tagText = [[Text alloc] init];
     WorkManRightTag *tag = [WorkManRightTag workManRightTag];
-    tagText.scale = 0.8;
+    tagText.scale = 1.0;
     tagText.rotationDegree = 45;
-    tagText.center = CGPointMake(0.9,0.19);
+    tagText.center = CGPointMake(0.93,0.15);
     tagText.isTemplateItem = true;
+    tagText.indexInLayer = @"1";
     tagText.text = @"제철알바";
     tagText.textView.text = @"제철알바";
-    [tagText applyTypo:tag];
+    tagText.typo = tag;
     [self.texts addObject:tagText];
     
     Text *handText = [[Text alloc] init];
     WorkManHandWrite *hand = [WorkManHandWrite workManHandWrite];
     handText.scale = 0.7;
-    handText.center = CGPointMake(0.24,0.25);
+    handText.center = CGPointMake(0.23,0.235);
     handText.isTemplateItem = true;
+    handText.indexInLayer = @"2";
     handText.text = @"(무대난입)";
     handText.textView.text = @"(무대난입)";
-    [handText applyTypo:hand];
+    handText.typo = hand;
     [self.texts addObject:handText];
     
     Text *talkWrite = [[Text alloc] init];
     WorkManTalkWrite *talk = [WorkManTalkWrite workManTalkWrite];
-    talkWrite.scale = 0.8;
-    talkWrite.center = CGPointMake(0.52,0.30);
-    talkWrite.rotationDegree = 340;
+    talkWrite.scale = 1.2;
+    talkWrite.center = CGPointMake(0.42,0.28);
+    talkWrite.rotationDegree = 330;
     talkWrite.isTemplateItem = true;
+    talkWrite.indexInLayer = @"3";
     talkWrite.text = @"소리질러!!!!";
     talkWrite.textView.text = @"소리질러!!!!!";
-    [talkWrite applyTypo:talk];
+    talkWrite.typo = talk;
     [self.texts addObject:talkWrite];
     
     Text *redtitle = [[Text alloc] init];
     WorkManSecondTitle *secondTitle = [WorkManSecondTitle workManSecondTitle];
-    redtitle.scale = 0.8;
-    redtitle.center = CGPointMake(0.34,0.71);
+    redtitle.scale = 0.9;
+    redtitle.center = CGPointMake(0.35,0.71);
     redtitle.isTemplateItem = true;
+    redtitle.indexInLayer = @"4";
     redtitle.text = @"행사비 안받을게요";
     redtitle.textView.text = @"행사비 안받을게요";
     redtitle.typo = secondTitle;
@@ -102,9 +105,10 @@
     
     Text *bluetitle = [[Text alloc] init];
     WorkManSecondTitle *secondTitle2 = [WorkManSecondTitle workManSecondTitle];
-    bluetitle.scale = 0.8;
-    bluetitle.center = CGPointMake(0.35,0.87);
+    bluetitle.scale = 0.9;
+    bluetitle.center = CGPointMake(0.36,0.87);
     bluetitle.isTemplateItem = true;
+    bluetitle.indexInLayer = @"5";
     bluetitle.text = @"대학축제 알바 리뷰";
     bluetitle.textView.text = @"대학축제 알바 리뷰";
     bluetitle.typo = secondTitle2;
@@ -116,26 +120,26 @@
     
     Text *fastText = [[Text alloc] init];
     WorkManFast *fast = [WorkManFast workManFast];
-    fastText.scale = 0.8;
-    fastText.center = CGPointMake(0.8,0.55);
+    fastText.scale = 0.85;
+    fastText.rotationDegree = -1;
+    fastText.center = CGPointMake(0.77,0.55);
     fastText.isTemplateItem = true;
+    fastText.indexInLayer = @"6";
     fastText.text = @"끌어내려 빨리!!";
     fastText.textView.text = @"끌어내려 빨리!!";
-    [fastText applyTypo:fast];
+    fastText.typo = fast;
     [self.texts addObject:fastText];
-    
-    
     
 }
 
 -(void)setUpStickers{
     
-    self.stickers = [NSMutableArray new];
     WorkManAngrySticker *angrySticker = [WorkManAngrySticker workManAngrySticker];
     angrySticker.scale = 0.4;
-    angrySticker.rotationDegree = -5;
+    angrySticker.rotationDegree = -0.1;
+    angrySticker.indexInLayer = @"7";
     angrySticker.isTemplateItem = true;
-    angrySticker.center = CGPointMake(0.79, 0.365);
+    angrySticker.center = CGPointMake(0.89, 0.4);
     
     [self.stickers addObject:angrySticker];
     

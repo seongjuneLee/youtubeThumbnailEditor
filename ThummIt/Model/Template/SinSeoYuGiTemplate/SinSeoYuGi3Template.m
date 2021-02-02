@@ -51,8 +51,9 @@
     logoText.scale = 0.52;
     logoText.center = CGPointMake(0.1, 0.15);
     logoText.isTemplateItem = true;
+    logoText.indexInLayer =@"0";
     logoText.text = @"서유기";
-    logoText.textView.text = @"서유기";
+    logoText.textView.text = logoText.text;
     [logoText applyTypo:cloudLogo];
     [self.texts addObject:logoText];
     
@@ -62,8 +63,9 @@
     hungryText.scale = 1;
     hungryText.center = CGPointMake(0.25, 0.7);
     hungryText.isTemplateItem = true;
+    logoText.indexInLayer =@"0";
     hungryText.text = @"※공복주의※";
-    hungryText.textView.text = @"※공복주의※";
+    hungryText.textView.text = hungryText.text;
     [hungryText applyTypo:hungry];
     [self.texts addObject:hungryText];
     
@@ -74,8 +76,9 @@
     mukBangText.scale = 1;
     mukBangText.center = CGPointMake(0.37, 0.87);
     mukBangText.isTemplateItem = true;
+    logoText.indexInLayer =@"0";
     mukBangText.text = @"2020 먹방 모음.zip";
-    mukBangText.textView.text = @"2020 먹방 모음.zip";
+    mukBangText.textView.text = mukBangText.text;
     [mukBangText applyTypo:mukBang];
     [self.texts addObject:mukBangText];
     
@@ -85,8 +88,9 @@
     cowRiseText.scale = 0.88;
     cowRiseText.center = CGPointMake(0.77, 0.5);
     cowRiseText.isTemplateItem = true;
+    logoText.indexInLayer =@"0";
     cowRiseText.text = @"(소오오ㅗ름)";
-    cowRiseText.textView.text = @"(소오오ㅗ름)";
+    cowRiseText.textView.text = cowRiseText.text;
     [cowRiseText applyTypo:cowRise];
     [self.texts addObject:cowRiseText];
     
@@ -97,8 +101,9 @@
     dawnWatchingText.center = CGPointMake(0.53, 0.35);
     dawnWatchingText.rotationDegree = 350;
     dawnWatchingText.isTemplateItem = true;
+    logoText.indexInLayer =@"0";
     dawnWatchingText.text = @"*새벽 시청 금지!!!*";
-    dawnWatchingText.textView.text = @"*새벽 시청 금지!!!*";
+    dawnWatchingText.textView.text = dawnWatchingText.text;
     [dawnWatchingText applyTypo:dawnWatching];
     [self.texts addObject:dawnWatchingText];
     

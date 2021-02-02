@@ -56,8 +56,9 @@
     logoText.scale = 0.45;
     logoText.center = CGPointMake(0.5, 0.06);
     logoText.isTemplateItem = true;
+    logoText.indexInLayer =@"0";
     logoText.text = @"서유기";
-    logoText.textView.text = @"서유기";
+    logoText.textView.text = logoText.text;
     
     [logoText applyTypo:logo];
     [self.texts addObject:logoText];
@@ -68,8 +69,9 @@
     scaredText.scale = 0.7;
     scaredText.center = CGPointMake(0.31, 0.71);
     scaredText.isTemplateItem = true;
+    scaredText.indexInLayer =@"1";
     scaredText.text = @"와 나 이런거 무서워한다";
-    scaredText.textView.text = @"와 나 이런거 무서워한다";
+    scaredText.textView.text = scaredText.text;
     [scaredText applyTypo:gagwanSmall];
     [self.texts addObject:scaredText];
     
@@ -79,8 +81,9 @@
     gagwanText.scale = 0.85;
     gagwanText.center = CGPointMake(0.6, 0.85);
     gagwanText.isTemplateItem = true;
+    gagwanText.indexInLayer =@"2";
     gagwanText.text = @"가관이네..";
-    gagwanText.textView.text = @"가관이네..";
+    gagwanText.textView.text = gagwanText.text;
     [gagwanText applyTypo:gagwanBig];
     [self.texts addObject:gagwanText];
     
@@ -89,6 +92,7 @@
 -(void)setUpStickers{
     
     SinSeoYuGiExc1Sticker *exc1Sticker = [SinSeoYuGiExc1Sticker sinSeoYuGiExc1Sticker];
+    exc1Sticker.indexInLayer =@"3";
     exc1Sticker.scale = 0.75;
     exc1Sticker.isTemplateItem = true;
     exc1Sticker.center = CGPointMake(0.37, 0.4);

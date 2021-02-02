@@ -26,7 +26,6 @@
 +(RunningMan1Template*)runningMan1Template{
     
     RunningMan1Template* runningMan1Template = [[self alloc] init];
-    
     return runningMan1Template;
     
 }
@@ -42,7 +41,6 @@
     photoFrame1.baseView.frameSize = CGSizeMake(frameWidth, screenWidth * 9/16);
     photoFrame1.center = CGPointMake(0.3, 0.5);
     [self.photoFrames addObject:photoFrame1];
-    
     
     PhotoFrame *photoFrame2 = [[PhotoFrame alloc] init];
     photoFrame2.isTemplateItem = true;
@@ -60,6 +58,7 @@
     //로고
     Text *logoText = [[Text alloc] init];
     RunningManLogoTypo *logo = [RunningManLogoTypo runningManLogoTypo];
+    logoText.indexInLayer =@"0";
     logoText.text = @"러닝맨";
     logoText.textView.text = logoText.text;
     logoText.scale = 0.55;
@@ -71,6 +70,7 @@
     //랜덤게임.zip
     Text *randomGameText = [[Text alloc] init];
     YellowGradientTypo *yellowGradientTypo = [YellowGradientTypo yellowGradientTypo];
+    randomGameText.indexInLayer =@"1";
     randomGameText.text = @"랜덤게임.zip";
     randomGameText.textView.text = randomGameText.text;
     randomGameText.scale = 1.45;
@@ -82,6 +82,7 @@
     //러닝맨
     Text *learningManText = [[Text alloc] init];
     WorkingManNameTypo *workingManNameTypo = [WorkingManNameTypo workingManNameTypo];
+    learningManText.indexInLayer =@"2";
     learningManText.text = @"러닝맨";
     learningManText.textView.text = learningManText.text;
     learningManText.scale = 1;
@@ -93,6 +94,7 @@
     //(식은땀)
     Text *ddamText = [[Text alloc] init];
     DDamTypo *ddam = [DDamTypo ddamTypo];
+    ddamText.indexInLayer =@"3";
     ddamText.text = @"(식은땀)";
     ddamText.textView.text = ddamText.text;
     ddamText.scale = 1.05;
@@ -104,6 +106,7 @@
     //하고싶은말 있는데
     Text *redshoutingText1 = [[Text alloc] init];
     RedShoutingTypo *redshoutingTypo1 = [RedShoutingTypo redShoutingTypo];
+    redshoutingText1.indexInLayer =@"4";
     redshoutingText1.text = @"하고싶은말 있는데\n해도 되나요?";
     redshoutingText1.textView.text = redshoutingText1.text;
     redshoutingText1.scale = 0.8;
@@ -116,6 +119,7 @@
     //이 형은 룰을
     Text *redshoutingText2 = [[Text alloc] init];
     RedShoutingTypo *redshoutingTypo2 = [RedShoutingTypo redShoutingTypo];
+    redshoutingText2.indexInLayer =@"5";
     redshoutingText2.text = @"이 형은 룰을\n아예 모르네";
     redshoutingText2.textView.text = redshoutingText2.text;
     redshoutingText2.scale = 0.65;
@@ -130,12 +134,14 @@
 -(void)setUpStickers{
     
     RunningManExcSticker *runningManExcSticker1 = [RunningManExcSticker runningManExcSticker];
+    runningManExcSticker1.indexInLayer =@"6";
     runningManExcSticker1.scale = 0.53;
     runningManExcSticker1.isTemplateItem = true;
     runningManExcSticker1.center = CGPointMake(0.37, 0.36);
     [self.stickers addObject:runningManExcSticker1];
     
     RunningManExcSticker *runningManExcSticker2 = [RunningManExcSticker runningManExcSticker];
+    runningManExcSticker2.indexInLayer =@"7";
     runningManExcSticker2.scale = 0.53;
     runningManExcSticker2.isTemplateItem = true;
     runningManExcSticker2.center = CGPointMake(0.42, 0.36);

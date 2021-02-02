@@ -19,7 +19,6 @@
         self.templateName = @"doubleCircleTemplate";
         self.backgroundColor = UIColor.blackColor;
         self.backgroundImageName = @"";
-        [self setUpPhotoFrame];
         
     }
     return self;
@@ -29,14 +28,12 @@
 +(DoubleCircleTemplate*)doubleCircleTemplate{
     
     DoubleCircleTemplate* doubleCircleTemplate = [[self alloc] init];
-    
     return doubleCircleTemplate;
     
 }
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     PhotoFrame *firstPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     PhotoFrame *secondPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     firstPhotoFrame.baseView.backgroundColor = UIColor.whiteColor;
@@ -51,7 +48,6 @@
     [self.photoFrames addObject:firstPhotoFrame];
     [self.photoFrames addObject:secondPhotoFrame];
 
-    
 }
 
 -(void)setUpTexts{

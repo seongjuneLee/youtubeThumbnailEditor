@@ -27,7 +27,6 @@
 +(RunningMan3Template*)runningMan3Template{
     
     RunningMan3Template* runningMan3Template = [[self alloc] init];
-    
     return runningMan3Template;
     
 }
@@ -48,6 +47,7 @@
     //로고
     Text *logoText = [[Text alloc] init];
     RunningManLogoTypo *logo = [RunningManLogoTypo runningManLogoTypo];
+    logoText.indexInLayer =@"0";
     logoText.text = @"러닝맨";
     logoText.textView.text = logoText.text;
     logoText.scale = 2.45;
@@ -59,6 +59,7 @@
     //Rule
     Text *ruleText = [[Text alloc] init];
     RuleTypo *rule = [RuleTypo ruleTypo];
+    ruleText.indexInLayer =@"1";
     ruleText.text = @"Rule";
     ruleText.textView.text = ruleText.text;
     ruleText.scale = 0.57;
@@ -70,6 +71,7 @@
     //문제를 듣고
     Text *matterText = [[Text alloc] init];
     MatterTypo *matter = [MatterTypo matterTypo];
+    matterText.indexInLayer =@"2";
     matterText.text = @"문제를 듣고";
     matterText.textView.text = matterText.text;
     matterText.scale = 0.8;
@@ -81,6 +83,7 @@
     //먼저 대답하면 성공!
     Text *successText = [[Text alloc] init];
     SuccessTypo *successs = [SuccessTypo successTypo];
+    successText.indexInLayer =@"3";
     successText.text = @"먼저 대답하면 성공!";
     successText.textView.text = successText.text;
     successText.scale = 0.8;
@@ -92,6 +95,7 @@
     //아 왜그래요 진짜!!
     Text *whyRealText = [[Text alloc] init];
     WhyRealTypo *whyReal = [WhyRealTypo whyRealTypo];
+    whyRealText.indexInLayer =@"4";
     whyRealText.text = @"아 왜그래요 진짜!!";
     whyRealText.textView.text = whyRealText.text;
     whyRealText.scale = 0.75;
@@ -105,6 +109,7 @@
 -(void)setUpStickers{
     
     RunningManQuSticker *runningManQuSticker = [RunningManQuSticker runningManQuSticker];
+    runningManQuSticker.indexInLayer =@"5";
     runningManQuSticker.scale = 0.6;
     runningManQuSticker.isTemplateItem = true;
     runningManQuSticker.center = CGPointMake(0.75, 0.33);

@@ -17,8 +17,6 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"quarterDivisionTemplate";
         self.backgroundImageName = @"";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
         
     }
     return self;
@@ -35,7 +33,6 @@
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     QuarterRectangle *firstPhotoFrame = [QuarterRectangle quarterRectangle];
     QuarterRectangle *secondPhotoFrame = [QuarterRectangle quarterRectangle];
     QuarterRectangle *thirdPhotoFrame = [QuarterRectangle quarterRectangle];
@@ -57,7 +54,6 @@
 
 -(void)setUpTexts{
     
-    self.texts = [NSMutableArray new];
     Text *trapezoidText = [[Text alloc] init];
     TrapezoidTypo *trapezoid = [TrapezoidTypo trapezoidTypo];
     trapezoidText.center = CGPointMake(0.5, 0.5);
@@ -68,6 +64,5 @@
     [self.texts addObject:trapezoidText];
     
 }
-
 
 @end
