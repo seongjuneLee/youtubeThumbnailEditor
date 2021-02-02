@@ -51,6 +51,7 @@
     logoText.scale = 0.52;
     logoText.center = CGPointMake(0.14, 0.15);
     logoText.isTemplateItem = true;
+    logoText.indexInLayer =@"0";
     logoText.text = @"서유기";
     logoText.textView.text = logoText.text;
     [logoText applyTypo:cloudLogo];
@@ -62,6 +63,7 @@
     inFrontOfGirlText.scale = 1.15;
     inFrontOfGirlText.center = CGPointMake(0.31, 0.7);
     inFrontOfGirlText.isTemplateItem = true;
+    inFrontOfGirlText.indexInLayer =@"1";
     inFrontOfGirlText.text = @"여사친 앞에서";
     inFrontOfGirlText.textView.text = inFrontOfGirlText.text;
     [inFrontOfGirlText applyTypo:inFrontOfGirl];
@@ -74,6 +76,7 @@
     ssulText.scale = 1.15;
     ssulText.center = CGPointMake(0.41, 0.85);
     ssulText.isTemplateItem = true;
+    ssulText.indexInLayer =@"2";
     ssulText.text = @"상체탈의한 썰.ssul";
     ssulText.textView.text = ssulText.text;
     [ssulText applyTypo:ssul];
@@ -84,6 +87,7 @@
 -(void)setUpStickers{
     
     SinSeoYuGiExc2Sticker *exc2Sticker = [SinSeoYuGiExc2Sticker sinSeoYuGiExc2Sticker];
+    exc2Sticker.indexInLayer =@"3";
     exc2Sticker.scale = 0.55;
     exc2Sticker.isTemplateItem = true;
     exc2Sticker.rotationDegree = degreesToRadians(340);
@@ -91,12 +95,14 @@
     [self.stickers addObject:exc2Sticker];
     
     SinSeoYuGiQuSticker *quSticker = [SinSeoYuGiQuSticker sinSeoYuGiQuSticker];
+    quSticker.indexInLayer =@"4";
     quSticker.scale = 0.65;
     quSticker.isTemplateItem = true;
     quSticker.center = CGPointMake(0.75, 0.37);
     [self.stickers addObject:quSticker];
     
     SinSeoYuGiEffectSticker *effectSticker = [SinSeoYuGiEffectSticker sinSeoYuGiEffectSticker];
+    effectSticker.indexInLayer =@"5";
     effectSticker.scale = 0.52;
     effectSticker.isTemplateItem = true;
     effectSticker.rotationDegree = degreesToRadians(20);

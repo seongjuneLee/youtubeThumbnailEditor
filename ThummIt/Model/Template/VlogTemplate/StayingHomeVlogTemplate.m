@@ -17,7 +17,7 @@
         self.previewImageName = @"stayingHomePreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StayingHomeTemplate";
-//        self.backgroundImageName = @"vlogFrame4";
+        self.backgroundImageName = @"";
         [self setUpPhotoFrame];
         [self setUpTexts];
         
@@ -41,9 +41,15 @@
     VerticalHalfRectangle *firstPhotoFrame = [VerticalHalfRectangle verticalHalfRectangle];
     QuarterRectangle *secondPhotoFrame = [QuarterRectangle quarterRectangle];
     QuarterRectangle *thirdPhotoFrame = [QuarterRectangle quarterRectangle];
+    firstPhotoFrame.indexInLayer =@"0";
+    secondPhotoFrame.indexInLayer =@"1";
+    thirdPhotoFrame.indexInLayer =@"2";
     firstPhotoFrame.isTemplateItem = true;
     secondPhotoFrame.isTemplateItem = true;
     thirdPhotoFrame.isTemplateItem = true;
+    firstPhotoFrame.isFixedPhotoFrame = true;
+    secondPhotoFrame.isFixedPhotoFrame = true;
+    thirdPhotoFrame.isFixedPhotoFrame = true;
     firstPhotoFrame.center = CGPointMake(0.25, 0.5);
     secondPhotoFrame.center = CGPointMake(0.75, 0.25);
     thirdPhotoFrame.center = CGPointMake(0.75, 0.75);
@@ -60,6 +66,7 @@
     stayText.scale = 0.65;
     stayText.center = CGPointMake(0.18, 0.75);
     stayText.isTemplateItem = true;
+    stayText.indexInLayer =@"3";
     stayText.text = @"#Staying Home";
     stayText.textView.text = @"#Staying Home";
     [stayText applyTypo:stay];
@@ -68,8 +75,9 @@
     Text *understayText = [[Text alloc] init];
     VlogBMDohyunTypo *underStay = [VlogBMDohyunTypo vlogBMDohyunTypo];
     understayText.scale = 0.9;
-    understayText.center = CGPointMake(0.23, 0.88);
+    understayText.center = CGPointMake(0.22, 0.88);
     understayText.isTemplateItem = true;
+    understayText.indexInLayer =@"4";
     understayText.text = @"집콕 브이로그";
     understayText.textView.text = @"집콕 브이로그";
     [understayText applyTypo:underStay];

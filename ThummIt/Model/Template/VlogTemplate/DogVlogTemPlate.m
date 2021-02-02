@@ -39,8 +39,8 @@
     QuarterRectangle *firstPhotoFrame = [QuarterRectangle quarterRectangle];
     QuarterRectangle *secondPhotoFrame = [QuarterRectangle quarterRectangle];
 
-    firstPhotoFrame.isTemplateItem = true;
-    secondPhotoFrame.isTemplateItem = true;
+    firstPhotoFrame.isFixedPhotoFrame = true;
+    secondPhotoFrame.isFixedPhotoFrame = true;
     firstPhotoFrame.center = CGPointMake(0.25, 0.25);
     secondPhotoFrame.center = CGPointMake(0.75, 0.25);
     [self.photoFrames addObject:firstPhotoFrame];
@@ -68,6 +68,7 @@
     vlogText.scale = 1.2;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
+    vlogText.indexInLayer =@"3";
     vlogText.text = @"vlog";
     vlogText.textView.text = @"vlog";
     [vlogText applyTypo:vlog];

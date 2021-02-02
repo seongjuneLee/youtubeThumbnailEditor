@@ -68,6 +68,9 @@
 		6E7DD4E02587ABC40014618E /* Editing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7DD4DF2587ABC40014618E /* Editing.storyboard */; };
 		6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD4E52587ABE10014618E /* EditingViewController.m */; };
 		6E7DD51625888C980014618E /* Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD51525888C980014618E /* Template.m */; };
+		6E80770F25C82B060033FF21 /* DanceVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80770E25C82B060033FF21 /* DanceVlogTemplate.m */; };
+		6E80771825C857520033FF21 /* StudyVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80771725C857520033FF21 /* StudyVlogTemplate.m */; };
+		6E80771D25C85FDB0033FF21 /* VlogTapeSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80771C25C85FDB0033FF21 /* VlogTapeSticker.m */; };
 		6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7997258F82E80008C5FF /* Migrator200406.swift */; };
 		6E8E799A258F82E80008C5FF /* MigratorJul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7998258F82E80008C5FF /* MigratorJul.swift */; };
 		6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E79A6258F86A00008C5FF /* NSString+Additions.m */; };
@@ -471,6 +474,12 @@
 		6E7DD4E52587ABE10014618E /* EditingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditingViewController.m; sourceTree = "<group>"; };
 		6E7DD51425888C980014618E /* Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Template.h; sourceTree = "<group>"; };
 		6E7DD51525888C980014618E /* Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Template.m; sourceTree = "<group>"; };
+		6E80770D25C82B060033FF21 /* DanceVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DanceVlogTemplate.h; sourceTree = "<group>"; };
+		6E80770E25C82B060033FF21 /* DanceVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DanceVlogTemplate.m; sourceTree = "<group>"; };
+		6E80771625C857520033FF21 /* StudyVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyVlogTemplate.h; sourceTree = "<group>"; };
+		6E80771725C857520033FF21 /* StudyVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyVlogTemplate.m; sourceTree = "<group>"; };
+		6E80771B25C85FDB0033FF21 /* VlogTapeSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogTapeSticker.h; sourceTree = "<group>"; };
+		6E80771C25C85FDB0033FF21 /* VlogTapeSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogTapeSticker.m; sourceTree = "<group>"; };
 		6E8E7997258F82E80008C5FF /* Migrator200406.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Migrator200406.swift; sourceTree = "<group>"; };
 		6E8E7998258F82E80008C5FF /* MigratorJul.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigratorJul.swift; sourceTree = "<group>"; };
 		6E8E79A5258F86A00008C5FF /* NSString+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
@@ -1201,7 +1210,6 @@
 				6E9BEA30258E448B00F7F539 /* Project */,
 				6E7DD51D25888C9E0014618E /* Template */,
 				6E9BE9BF258B2E7900F7F539 /* Item */,
-				6E698BA325B89CB200CE86FB /* GuideLine */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1218,6 +1226,7 @@
 				6E20BCC725AEF59000BBA540 /* UndoManager */,
 				6EC4DFF625A8952A0023485C /* TypoManager */,
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
+				6E698BA325B89CB200CE86FB /* GuideLine */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1229,8 +1238,8 @@
 				6E7DD51425888C980014618E /* Template.h */,
 				6E7DD51525888C980014618E /* Template.m */,
 				6EBEB57E25C1E9ED0017C640 /* WorkManTemplate */,
-				B1F2B75825C1E7A60064A044 /* InfiniteChallengeTemplate */,
 				6ED13C1925C10DCE00012144 /* RunningManTemplate */,
+				B1F2B75825C1E7A60064A044 /* InfiniteChallengeTemplate */,
 				6ED13D7325C2FFEA00012144 /* SinSeoYuGiTemplate */,
 				6E7DD50425888C290014618E /* CircleTemplate */,
 				6E9BE98F258A517400F7F539 /* VlogTemplate */,
@@ -1581,6 +1590,10 @@
 				6EBEB6C025C567420017C640 /* StudentVlogTemplate.m */,
 				6EBEB6CD25C5817E0017C640 /* WebDesignerVlogTemPlate.h */,
 				6EBEB6CE25C5817E0017C640 /* WebDesignerVlogTemPlate.m */,
+				6E80770D25C82B060033FF21 /* DanceVlogTemplate.h */,
+				6E80770E25C82B060033FF21 /* DanceVlogTemplate.m */,
+				6E80771625C857520033FF21 /* StudyVlogTemplate.h */,
+				6E80771725C857520033FF21 /* StudyVlogTemplate.m */,
 			);
 			path = VlogTemplate;
 			sourceTree = "<group>";
@@ -2290,6 +2303,8 @@
 				6EBEB67D25C494D40017C640 /* VlogHeartSticker3.m */,
 				6EBEB68125C494E20017C640 /* VlogHeartSticker4.h */,
 				6EBEB68225C494E20017C640 /* VlogHeartSticker4.m */,
+				6E80771B25C85FDB0033FF21 /* VlogTapeSticker.h */,
+				6E80771C25C85FDB0033FF21 /* VlogTapeSticker.m */,
 				B1F8C6DB25C4CD8B002DDAF8 /* VlogVideoSticker.h */,
 				B1F8C6DC25C4CD8B002DDAF8 /* VlogVideoSticker.m */,
 				B11E0D7225C576760050D9F0 /* VlogMacaronSticker.h */,
@@ -2721,6 +2736,7 @@
 				6E8F9B3A25C3494D005C8071 /* ExclamationMark.m in Sources */,
 				B1F8C6E225C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m in Sources */,
 				6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */,
+				6E80771D25C85FDB0033FF21 /* VlogTapeSticker.m in Sources */,
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,
 				6EAD5C9025B767C700C42187 /* AccountViewController.m in Sources */,
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
@@ -2799,6 +2815,7 @@
 				6E28451E25C35870008B7A23 /* VlogBMDohyunTypo.m in Sources */,
 				B1F2B72325C1B5D50064A044 /* InfiniteChallengeYellowSpeechBoxWhite.m in Sources */,
 				B1F2B77125C2C6370064A044 /* InfiniteChallengeSkullSticker.m in Sources */,
+				6E80770F25C82B060033FF21 /* DanceVlogTemplate.m in Sources */,
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
 				B11E0D8D25C595BF0050D9F0 /* VlogHolidayTypo.m in Sources */,
 				6E28452725C35870008B7A23 /* VlogMyeongjoTypo.m in Sources */,
@@ -2846,6 +2863,7 @@
 				6EBEB56725C1DD000017C640 /* WorkManLogo2.m in Sources */,
 				6E6E5BFC25AA23F3009821CF /* ItemCollectionViewController+Button.m in Sources */,
 				6EBEB58125C1EA1F0017C640 /* WorkManTemplate1.m in Sources */,
+				6E80771825C857520033FF21 /* StudyVlogTemplate.m in Sources */,
 				6E9BE998258A527C00F7F539 /* QuarterDivisionTemplate.m in Sources */,
 				6E8F996725C0C037005C8071 /* SeoYuGiLogoTypo.m in Sources */,
 				6E7DD4AE2584D4540014618E /* AlbumViewController+CollectionViewDataSource.m in Sources */,

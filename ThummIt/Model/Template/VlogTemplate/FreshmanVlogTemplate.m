@@ -38,7 +38,9 @@
     
     self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
+    photoFrame.indexInLayer =@"0";
     photoFrame.isTemplateItem = true;
+    photoFrame.isFixedPhotoFrame = true;
     photoFrame.center = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame];
         
@@ -51,6 +53,7 @@
     firstVlogText.scale = 1.2;
     firstVlogText.center = CGPointMake(0.83, 0.3);
     firstVlogText.isTemplateItem = true;
+    firstVlogText.indexInLayer =@"1";
     firstVlogText.text = @"새내기의";
     firstVlogText.textView.text = @"새내기의";
     [firstVlogText applyTypo:firstVlog];
@@ -61,6 +64,7 @@
     secondVlogText.scale = 1.2;
     secondVlogText.center = CGPointMake(0.86, 0.5);
     secondVlogText.isTemplateItem = true;
+    secondVlogText.indexInLayer =@"2";
     secondVlogText.text = @"일주일";
     secondVlogText.textView.text = @"일주일";
     [secondVlogText applyTypo:secondVlog];
@@ -71,6 +75,7 @@
     thridVlogText.scale = 1.2;
     thridVlogText.center = CGPointMake(0.87, 0.7);
     thridVlogText.isTemplateItem = true;
+    thridVlogText.indexInLayer =@"3";
     thridVlogText.text = @"vlog";
     thridVlogText.textView.text = @"vlog";
     [thridVlogText applyTypo:thirdVlog];
@@ -81,6 +86,7 @@
     leftVlogText.scale = 0.42;
     leftVlogText.center = CGPointMake(0.065, 0.05);
     leftVlogText.isTemplateItem = true;
+    leftVlogText.indexInLayer =@"4";
     leftVlogText.text = @"Thumm-log";
     leftVlogText.textView.text = @"Thumm-log";
     [leftVlogText applyTypo:leftVlog];
