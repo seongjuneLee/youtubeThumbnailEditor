@@ -89,6 +89,7 @@
     cebuText.scale = 0.6;
     cebuText.center = CGPointMake(0.5, 0.5);
     cebuText.isTemplateItem = true;
+    cebuText.indexInLayer = @"0";
     cebuText.text = @"C\nE\nB\nU\n\n&\n\nB\nO\nH\nO\nL";
     cebuText.textView.text = cebuText.text;
     [cebuText applyTypo:cebu];

@@ -80,6 +80,7 @@
     dailyText.scale = 1.25;
     dailyText.center = CGPointMake(0.5, 0.4);
     dailyText.isTemplateItem = true;
+    dailyText.indexInLayer = @"0";
     dailyText.text = @"MY DAILY VLOG";
     dailyText.textView.text = dailyText.text;
     [dailyText applyTypo:typo];

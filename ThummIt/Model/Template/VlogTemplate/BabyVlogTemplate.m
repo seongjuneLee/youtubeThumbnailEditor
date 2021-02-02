@@ -49,7 +49,7 @@
     vlogText.scale = 0.9;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
-    vlogText.indexInLayer =@"1";
+    vlogText.indexInLayer =@"0";
     vlogText.text = @"돌잔치 브이로그";
     vlogText.textView.text = @"돌잔치 브이로그";
     [vlogText applyTypo:vlog];
