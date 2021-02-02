@@ -20,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [PhotoManager.sharedInstance fetchPhassets];
 
 
     [self basicUIUXSetting];
@@ -33,6 +32,22 @@
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
     
     [self setUpSlider];
+}
+
+-(void)setUpPhotoAlbums{
+    
+    
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
+     {
+         if (status == PHAuthorizationStatusAuthorized)
+         {
+             
+             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+             });
+         }
+    }];
+
 }
 
 -(void)viewDidLayoutSubviews{

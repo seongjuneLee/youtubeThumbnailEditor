@@ -2468,7 +2468,9 @@
 				6ED13C8325C1940400012144 /* BMYEONSUNG_otf.otf in Resources */,
 				6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */,
 				6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */,
+
 				6E80772525C92EDC0033FF21 /* SDMiSaeng.otf in Resources */,
+
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
 				B1F2B79425C2F6250064A044 /* UhBee DoolDool Bold.otf in Resources */,
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,

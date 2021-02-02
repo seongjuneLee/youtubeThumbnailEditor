@@ -18,10 +18,12 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     sticker.baseView.center = editingVC.bgView.center;
     sticker.center = editingVC.bgView.center;
-    sticker.backgroundImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
-    sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    sticker.backgroundImageView.tintColor = [UIColor whiteColor];
+    if (sticker.isChangingColorAvailable) {
+        sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    } else {
+        sticker.backgroundImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
+    }
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지
         sticker.baseView.frame = editingVC.currentItem.baseView.frame;
