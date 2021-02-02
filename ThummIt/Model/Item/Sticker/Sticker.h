@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Sticker : Item
 
-@property (nonatomic) BOOL isColorChangeAvailable;
+@property (nonatomic) BOOL isChangingColorAvailable;
 @property (strong, nonatomic) UIColor* tintColor;
 
 -(void)addSubViewsToBaseView;

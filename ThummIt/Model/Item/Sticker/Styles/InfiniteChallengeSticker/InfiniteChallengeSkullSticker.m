@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"infiniteChallengeskullSticker";
         self.backgroundImageName = @"infiniteChallengeSkullSticker";
-        self.isColorChangeAvailable = true;
+        self.isChangingColorAvailable = true;
         
     }
     return self;

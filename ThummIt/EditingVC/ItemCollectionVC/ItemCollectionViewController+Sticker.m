@@ -19,7 +19,7 @@
     sticker.baseView.center = editingVC.bgView.center;
     sticker.center = editingVC.bgView.center;
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
-    if (sticker.isColorChangeAvailable) {
+    if (sticker.isChangingColorAvailable) {
         sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     } else {
         sticker.backgroundImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
