@@ -125,7 +125,7 @@
 
 -(void)loadItems{
     
-    NSUInteger originalGstureViewIndex = [self.view.subviews indexOfObject:self.gestureView];
+    NSUInteger originalGestureViewIndex = [self.view.subviews indexOfObject:self.gestureView];
     self.itemLoaded = true;
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
@@ -154,7 +154,7 @@
     
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {
-            [self.view insertSubview:item.baseView atIndex:originalGstureViewIndex + [item.indexInLayer integerValue]];
+            [self.view insertSubview:item.baseView atIndex:originalGestureViewIndex + [item.indexInLayer integerValue]];
         }
     }
     

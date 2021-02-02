@@ -15,10 +15,8 @@
 #import "CircleTemplate.h"
 #import "ChristmasCircleTemplate.h"
 #import "DoubleCircleTemplate.h"
-
 #import "TwoDivisionTemplate.h"
 #import "QuarterDivisionTemplate.h"
-
 #import "VisitingCompanyVlogTemplate.h"
 #import "ItalyTripVlogTemplate.h"
 #import "GrwmVlogTemplate.h"
@@ -30,6 +28,17 @@
 #import "ModelVlogTemplate.h"
 #import "KidsVlogTemplate.h"
 #import "HolidayVlogTemplate.h"
+#import "CraftVlogTemplate.h"
+#import "LookBookVlogTemplate.h"
+#import "StayingHomeVlogTemplate.h"
+#import "BabyVlogTemplate.h"
+#import "SummerVlogTemplate.h"
+#import "DogVlogTemPlate.h"
+#import "FreshmanVlogTemplate.h"
+#import "StudentVlogTemplate.h"
+#import "WebDesignerVlogTemPlate.h"
+#import "DanceVlogTemplate.h"
+#import "StudyVlogTemplate.h"
 
 //entertarin
 #import "RunningMan1Template.h"
@@ -47,17 +56,5 @@
 #import "InfiniteChallenge1Template.h"
 #import "InfiniteChallenge2Template.h"
 #import "InfiniteChallenge3Template.h"
-
-#import "CraftVlogTemplate.h"
-#import "LookBookVlogTemplate.h"
-#import "StayingHomeVlogTemplate.h"
-#import "BabyVlogTemplate.h"
-#import "SummerVlogTemplate.h"
-#import "DogVlogTemPlate.h"
-#import "FreshmanVlogTemplate.h"
-#import "StudentVlogTemplate.h"
-#import "WebDesignerVlogTemPlate.h"
-#import "DanceVlogTemplate.h"
-#import "StudyVlogTemplate.h"
 
 #endif /* TemplateHeader_h */
