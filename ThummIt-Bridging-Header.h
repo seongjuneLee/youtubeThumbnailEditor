@@ -6,7 +6,9 @@
 #import "ProjectManager.h"
 #import "SaveManager.h"
 #import "HomeViewController.h"
-
+#import "ThummIt-PrefixHeader.pch"
+#import "UILabel+Additions.h"
+#import "UserManager.h"
 /**
  * Copyright 2015-2017 Kakao Corp.
  *

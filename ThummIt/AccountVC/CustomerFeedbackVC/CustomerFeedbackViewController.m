@@ -24,7 +24,7 @@
 
 - (void)setSendFeedbackTextView {
     
-    self.sendFeedbackTextView.text = @"Please let me know the detailed steps as possible to reproduce the problem.";
+    self.sendFeedbackTextView.text = NSLocalizedString(@"Please let us know the detailed steps as possible to reproduce the problem.", nil);
     self.sendFeedbackTextView.textColor = [UIColor lightGrayColor];
     self.sendFeedbackTextView.delegate = self;
     self.sendFeedbackTextView.layer.cornerRadius = 5;

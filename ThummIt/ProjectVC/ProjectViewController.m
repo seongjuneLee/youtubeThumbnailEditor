@@ -7,6 +7,7 @@
 
 #import "ProjectViewController.h"
 #import "UIImage+Additions.h"
+@import Parse;
 @interface ProjectViewController ()
 
 @end
@@ -20,8 +21,25 @@
 
 }
 
+-(void)showSignInVC{
+    
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+    self.signInVC = (SignInViewController *)[main instantiateViewControllerWithIdentifier:@"SignInViewController"];
+    [self addChildViewController:self.signInVC];
+    [self.view addSubview:self.signInVC.view];
+    
+    
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     
+    
+    if (!PFUser.currentUser) {
+        [self showSignInVC];
+    } else if([self.childViewControllers containsObject:self.signInVC]) {
+        [self.signInVC dismissSelf];
+    }
+
     NSUInteger projectsCount = ProjectManager.sharedInstance.fetchProjectsCount;
     
     if (self.originalCount != projectsCount) {

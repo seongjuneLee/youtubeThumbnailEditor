@@ -18,12 +18,12 @@
     self = [super init];
     if(self){
         
-        NSDictionary *myFolderDict = @{@"My Folder":@"folderImage"}; // 이미지 추가
-        NSDictionary *inviteFriendsDict = @{@"Invite Friends":@"inviteImage"}; // 이미지 추가
-        NSDictionary *customerCenterDict = @{@"Customer Center":@"customerCenterImage"}; // 이미지 추가
-        NSDictionary *pivacyPolicyDict = @{@"Privacy Policy":@"privacyPolicyImage"}; // 이미지 추가
-        NSDictionary *logOutDict = @{@"Log Out":@"logOutImage"}; // 이미지 추가
-        self.datas = @[myFolderDict, inviteFriendsDict, customerCenterDict, pivacyPolicyDict, logOutDict];
+//        NSDictionary *myFolderDict = @{@"My Folder":@"folderImage"}; // 이미지 추가
+        NSDictionary *inviteFriendsDict = @{@"Invite Friends":@"friend"}; // 이미지 추가
+        NSDictionary *customerCenterDict = @{@"Customer Center":@"customerCenter"}; // 이미지 추가
+        NSDictionary *pivacyPolicyDict = @{@"Privacy Policy":@"privacyPolicy"}; // 이미지 추가
+        NSDictionary *logOutDict = @{@"Log Out":@"logOut"}; // 이미지 추가
+        self.datas = @[inviteFriendsDict, customerCenterDict, pivacyPolicyDict, logOutDict];
         self.tableView = tableView;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;

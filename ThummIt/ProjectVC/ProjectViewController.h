@@ -8,12 +8,15 @@
 #import <UIKit/UIKit.h>
 #import "ProjectTableController.h"
 #import "ProjectManager.h"
+#import "ThummIt-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProjectViewController : UIViewController 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) SignInViewController *signInVC;
 @property (strong, nonatomic) ProjectTableController *projectTableController;
 @property (strong, nonatomic) NSMutableArray *projectSnapShots;
 @property (nonatomic) NSUInteger originalCount;
