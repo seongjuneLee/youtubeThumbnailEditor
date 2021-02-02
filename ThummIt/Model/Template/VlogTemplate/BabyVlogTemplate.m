@@ -18,8 +18,6 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"BabyVlogTemplate";
         self.backgroundImageName = @"babyVlogFrame";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
         
     }
     return self;
@@ -36,9 +34,7 @@
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
-    photoFrame.indexInLayer =@"0";
     photoFrame.isTemplateItem = true;
     photoFrame.isFixedPhotoFrame = true;
     photoFrame.center = CGPointMake(0.5, 0.5);

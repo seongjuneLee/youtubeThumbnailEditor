@@ -26,7 +26,6 @@
 +(RunningMan1Template*)runningMan1Template{
     
     RunningMan1Template* runningMan1Template = [[self alloc] init];
-    
     return runningMan1Template;
     
 }
@@ -42,7 +41,6 @@
     photoFrame1.baseView.frameSize = CGSizeMake(frameWidth, screenWidth * 9/16);
     photoFrame1.center = CGPointMake(0.3, 0.5);
     [self.photoFrames addObject:photoFrame1];
-    
     
     PhotoFrame *photoFrame2 = [[PhotoFrame alloc] init];
     photoFrame2.isTemplateItem = true;

@@ -16,16 +16,13 @@
         self.name = NSLocalizedString(@"기업탐방",nil);
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
-        self.fontSize = 25;
+        self.fontSize = TEXT_FONT_SIZE - 10;
         self.bgImageName = @"waveYellowSquare";
-        self.bgHeightPadding = 0;
-        self.bgWidthPadding = 0;
+        self.bgWidthPadding = 25;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
-        
-        bgTextAttribute1.borderWidth = 10;
-        
+        bgTextAttribute1.borderWidth = 7;
         
         self.bgTextAttributes = @[bgTextAttribute1];
     }

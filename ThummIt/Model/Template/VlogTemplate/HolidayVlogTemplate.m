@@ -27,7 +27,6 @@
 +(HolidayVlogTemplate*)holidayVlogTemplate{
     
     HolidayVlogTemplate* holidayVlogTemplate = [[self alloc] init];
-    
     return holidayVlogTemplate;
     
 }
@@ -60,13 +59,14 @@
 }
 
 -(void)setUpStickers{
-//
-//    VlogHeartSticker1 *vlogHeartSticker1 = [VlogHeartSticker1 vlogHeartSticker1];
-//    vlogHeartSticker1.scale = 0.5;
-//    vlogHeartSticker1.rotationDegree = degreesToRadians(0);
-//    vlogHeartSticker1.isTemplateItem = true;
-//    vlogHeartSticker1.center = CGPointMake(0.26, 0.2);
-//    [self.stickers addObject:vlogHeartSticker1];
+
+    VlogHeartSticker1 *vlogHeartSticker1 = [VlogHeartSticker1 vlogHeartSticker1];
+    vlogHeartSticker1.scale = 0.5;
+    vlogHeartSticker1.tintColor = UIColor.blackColor;
+    vlogHeartSticker1.rotationDegree = degreesToRadians(0);
+    vlogHeartSticker1.isTemplateItem = true;
+    vlogHeartSticker1.center = CGPointMake(0.26, 0.2);
+    [self.stickers addObject:vlogHeartSticker1];
     
 }
 

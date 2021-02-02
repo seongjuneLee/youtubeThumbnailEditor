@@ -27,7 +27,6 @@
 +(ModelVlogTemplate*)modelVlogTemplate{
     
     ModelVlogTemplate* modelVlogTemplate = [[self alloc] init];
-    
     return modelVlogTemplate;
     
 }
@@ -98,7 +97,6 @@
 
 -(void)setUpStickers{
     
-
 }
 
 @end

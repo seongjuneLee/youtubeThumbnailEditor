@@ -28,7 +28,6 @@
 +(RunningMan2Template*)runningMan2Template{
     
     RunningMan2Template* runningMan2Template = [[self alloc] init];
-    
     return runningMan2Template;
     
 }

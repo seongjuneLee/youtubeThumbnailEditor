@@ -27,7 +27,6 @@
 +(RunningMan3Template*)runningMan3Template{
     
     RunningMan3Template* runningMan3Template = [[self alloc] init];
-    
     return runningMan3Template;
     
 }

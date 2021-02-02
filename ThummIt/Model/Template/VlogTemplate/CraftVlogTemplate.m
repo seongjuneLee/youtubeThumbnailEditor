@@ -18,8 +18,6 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"FourHeartTemplate";
         self.backgroundImageName = @"vlogFrame4";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
         
     }
     return self;
@@ -29,16 +27,13 @@
 +(CraftVlogTemplate*)craftVlogTemplate{
     
     CraftVlogTemplate* craftVlogTemplate = [[self alloc] init];
-    
     return craftVlogTemplate;
     
 }
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
-    photoFrame.indexInLayer=@"0";
     photoFrame.isTemplateItem = true;
     photoFrame.isFixedPhotoFrame = true;
     photoFrame.center = CGPointMake(0.5, 0.5);
@@ -62,8 +57,6 @@
 }
 
 -(void)setUpStickers{
-    
-    
     
 }
 

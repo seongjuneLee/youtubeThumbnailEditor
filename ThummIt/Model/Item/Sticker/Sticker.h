@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Sticker : Item
 
 @property (nonatomic) BOOL colorChangeBlock;
+@property (strong, nonatomic) UIColor* tintColor;
 
 -(void)addSubViewsToBaseView;
 
