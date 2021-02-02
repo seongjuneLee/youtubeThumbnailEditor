@@ -121,13 +121,13 @@
 
 -(void)setUpStickers{
     
-    WorkManFiveFingerSticker *fingerSticker = [WorkManFiveFingerSticker workManFiveFingerSticker];
-    fingerSticker.indexInLayer = @"6";
-    fingerSticker.scale = 0.45;
-    fingerSticker.isTemplateItem = true;
-    fingerSticker.center = CGPointMake(0.37, 0.305);
+    WorkManStartleSticker *startleSticker = [WorkManStartleSticker workManStartleSticker];
+    startleSticker.indexInLayer = @"6";
+    startleSticker.scale = 0.45;
+    startleSticker.isTemplateItem = true;
+    startleSticker.center = CGPointMake(0.37, 0.305);
     
-    [self.stickers addObject:fingerSticker];
+    [self.stickers addObject:startleSticker];
     
 }
 

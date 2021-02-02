@@ -183,8 +183,6 @@
     SinSeoYuGiEffectSticker* sinSeoYuGiEffectSticker =[SinSeoYuGiEffectSticker sinSeoYuGiEffectSticker];
     sinSeoYuGiEffectSticker.backgroundImageName = @"sinSeoYuGiEffectSticker";
     
-    
-    
     WorkManAngrySticker *workManAngrySticker  = [WorkManAngrySticker workManAngrySticker];
     workManAngrySticker.backgroundImageName = @"workManAngrySticker";
 
@@ -199,14 +197,10 @@
     VlogPigtailSticker *vlogPigtailSticker = [VlogPigtailSticker vlogPigtailSticker];
     vlogPigtailSticker.backgroundImageName = @"pigtailSticker";
     VlogVideoSticker *vlogVideoSticker = [VlogVideoSticker vlogVideoSticker];
-    vlogVideoSticker.backgroundImageName = @"videoSticker";
+    vlogVideoSticker.backgroundImageName = @"vlogVideoSticker";
     VlogMacaronSticker *vlogMacaronSticker = [VlogMacaronSticker vlogMacaronSticker];
-    
-    WorkManTalkSticker *workManTalkSticker = [WorkManTalkSticker workManTalkSticker];
-    WorkManFiveFingerSticker *workManFiveFingerSticker = [WorkManFiveFingerSticker workManFiveFingerSticker];
-    WorkManYellowSticker *workManYellowSticker = [WorkManYellowSticker workManYellowSticker];
 
-    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker,runningManExcSticker,runningManQuSticker,sinSeoYuGiExc1Sticker,sinSeoYuGiExc2Sticker,sinSeoYuGiQuSticker,sinSeoYuGiEffectSticker, workManAngrySticker, workManTalkSticker, workManFiveFingerSticker, workManYellowSticker, vlogVideoSticker, vlogMacaronSticker];
+    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker,runningManExcSticker,runningManQuSticker,sinSeoYuGiExc1Sticker,sinSeoYuGiExc2Sticker,sinSeoYuGiQuSticker,sinSeoYuGiEffectSticker, workManAngrySticker, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker, vlogMacaronSticker];
     
     return @[basicStickers];
 }

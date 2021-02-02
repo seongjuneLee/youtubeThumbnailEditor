@@ -20,14 +20,10 @@
 #import "SinSeoYuGiQuSticker.h"
 #import "SinSeoYuGiEffectSticker.h"
 #import "WorkManAngrySticker.h"
-#import "WorkManTalkSticker.h"
-#import "WorkManFiveFingerSticker.h"
-#import "WorkManYellowSticker.h"
 #import "WorkManStartleSticker.h"
 #import "InfiniteChallengeSkullSticker.h"
 
 //vlog
-#import "ExclamationMark.h"
 #import "VlogBlinkSticker1.h"
 #import "VlogPigtailSticker.h"
 #import "VlogHeartSticker1.h"

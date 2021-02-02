@@ -18,14 +18,13 @@
         self.textColor = [UIColor colorWithRed:(100/255.0) green:(29/255.0) blue:(60/255.0) alpha:1];
         self.fontSize = 35;
         self.bgImageName = @"webDesignerBG";
-        self.bgHeightPadding = 10;
-        self.bgWidthPadding = 10;
+        self.bgHeightPadding = 20;
+        self.bgWidthPadding = 80;
+        self.bgCenterXDelta = 20;
         
            }
     return self;
 }
-
-
 
 +(VlogCompany *)vlogCompany{
     VlogCompany* vlogCompany = [[self alloc] init];

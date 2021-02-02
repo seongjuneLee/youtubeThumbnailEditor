@@ -79,6 +79,8 @@ NS_ASSUME_NONNULL_BEGIN
 //겹겹이 아래에 쌓일 텍스트들
 @property (strong, nonatomic) NSArray* bgTextAttributes;
 
+@property (nonatomic) BOOL isChangingAvailableColor;
+
 - (id)init;
 
 @end

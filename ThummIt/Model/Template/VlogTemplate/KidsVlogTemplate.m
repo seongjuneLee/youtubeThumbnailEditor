@@ -38,7 +38,7 @@
     
     PhotoFrame *smallPhotoFrame1 = [[PhotoFrame alloc] init];
     smallPhotoFrame1.isTemplateItem = true;
-    smallPhotoFrame1.isFixedPhotoFrame = true;\
+    smallPhotoFrame1.isFixedPhotoFrame = true;
     smallPhotoFrame1.baseView.backgroundColor = UIColor.lightGrayColor;
     smallPhotoFrame1.baseView.frameSize = CGSizeMake(screenWidth * 0.5, screenHeight * 0.5);
     smallPhotoFrame1.center = CGPointMake(0.75, 0.25);
