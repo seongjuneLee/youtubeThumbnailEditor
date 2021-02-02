@@ -20,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [PhotoManager.sharedInstance fetchPhassets];
 
 
     [self basicUIUXSetting];
@@ -33,6 +32,22 @@
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
     
     [self setUpSlider];
+}
+
+-(void)setUpPhotoAlbums{
+    
+    
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
+     {
+         if (status == PHAuthorizationStatusAuthorized)
+         {
+             
+             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+             });
+         }
+    }];
+
 }
 
 -(void)viewDidLayoutSubviews{
@@ -125,7 +140,6 @@
 
 -(void)loadItems{
     
-    NSUInteger originalGestureViewIndex = [self.view.subviews indexOfObject:self.gestureView];
     self.itemLoaded = true;
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
@@ -146,7 +160,7 @@
         if (item.isFixedPhotoFrame) {
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
         } else {
-            [self.view insertSubview:item.baseView belowSubview:self.gestureView];
+            [self.view insertSubview:item.baseView aboveSubview:self.backgroundImageView];
         }
 
         item.isTemplateItem = false;
@@ -154,7 +168,9 @@
     
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {
-            [self.view insertSubview:item.baseView atIndex:originalGestureViewIndex + [item.indexInLayer integerValue]];
+            NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.backgroundImageView];
+
+            [self.view insertSubview:item.baseView atIndex:backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
         }
     }
     

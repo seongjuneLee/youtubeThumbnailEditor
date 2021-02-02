@@ -71,6 +71,7 @@
     vlogText.scale = 1.1;
     vlogText.center = CGPointMake(0.465, 0.25);
     vlogText.isTemplateItem = true;
+    vlogText.indexInLayer = @"0";
     vlogText.text = @"vlog";
     vlogText.textView.text = vlogText.text;
     [vlogText applyTypo:vlog];
@@ -82,6 +83,7 @@
     homebakingText.scale = 0.3;
     homebakingText.center = CGPointMake(0.455, 0.35);
     homebakingText.isTemplateItem = true;
+    homebakingText.indexInLayer = @"0";
     homebakingText.text = @"homebaking\n:macaron";
     homebakingText.textView.text = homebakingText.text;
     [homebakingText applyTypo:homebaking];
@@ -94,6 +96,7 @@
     VlogMacaronSticker *vlogMacaronSticker1 = [VlogMacaronSticker vlogMacaronSticker];
     vlogMacaronSticker1.scale = 0.45;
     vlogMacaronSticker1.isTemplateItem = true;
+    vlogMacaronSticker1.isChangingColorAvailable = true;
     vlogMacaronSticker1.rotationDegree = degreesToRadians(350);
     vlogMacaronSticker1.center = CGPointMake(0.1, 0.13);
     [self.stickers addObject:vlogMacaronSticker1];
@@ -101,6 +104,7 @@
     VlogMacaronSticker *vlogMacaronSticker2 = [VlogMacaronSticker vlogMacaronSticker];
     vlogMacaronSticker2.scale = 0.45;
     vlogMacaronSticker2.isTemplateItem = true;
+    vlogMacaronSticker2.isChangingColorAvailable = true;
     vlogMacaronSticker2.rotationDegree = degreesToRadians(350);
     vlogMacaronSticker2.center = CGPointMake(1, 0.99);
     [self.stickers addObject:vlogMacaronSticker2];

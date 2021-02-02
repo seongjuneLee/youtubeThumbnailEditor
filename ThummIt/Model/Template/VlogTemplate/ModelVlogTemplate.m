@@ -45,6 +45,7 @@
     
     PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
     photoFrame1.isTemplateItem = true;
+    photoFrame1.indexInLayer = @"0";
     photoFrame1.backgroundImageName = @"polaroidPhotoFrame";
     photoFrame1.baseView.backgroundColor = UIColor.whiteColor;
     photoFrame1.baseView.frameSize = CGSizeMake(frameWidth, frameWidth);
@@ -55,6 +56,7 @@
     
     PhotoFrame *photoFrame2 = [[PhotoFrame alloc] init];
     photoFrame2.isTemplateItem = true;
+    photoFrame2.indexInLayer = @"1";
     photoFrame2.backgroundImageName = @"polaroidPhotoFrame";
     photoFrame2.baseView.backgroundColor = UIColor.whiteColor;
     photoFrame2.baseView.frameSize = CGSizeMake(frameWidth, frameWidth);
@@ -64,6 +66,7 @@
     
     PhotoFrame *photoFrame3 = [[PhotoFrame alloc] init];
     photoFrame3.isTemplateItem = true;
+    photoFrame3.indexInLayer = @"2";
     photoFrame3.backgroundImageName = @"polaroidPhotoFrame";
     photoFrame3.baseView.backgroundColor = UIColor.whiteColor;
     photoFrame3.baseView.frameSize = CGSizeMake(frameWidth, frameWidth);
@@ -81,6 +84,7 @@
     modelText.scale = 0.88;
     modelText.center = CGPointMake(0.82, 0.44);
     modelText.isTemplateItem = true;
+    modelText.indexInLayer = @"3";
     modelText.text = @"피팅 모델의\n여름 일상\n브이로그";
     modelText.textView.text = modelText.text;
     

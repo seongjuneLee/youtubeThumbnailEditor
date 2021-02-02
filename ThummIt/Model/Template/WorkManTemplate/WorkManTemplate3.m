@@ -78,17 +78,19 @@
     [howMuchText applyTypo:howMuch];
     [self.texts addObject:howMuchText];
     
-    Text *upYouTube = [[Text alloc] init];
-    WorkManLogo2*up = [WorkManLogo2 workManLogo2];
-    upYouTube.scale = 0.6;
-    upYouTube.rotationDegree = 1;
-    upYouTube.center = CGPointMake(0.35, 0.12);
-    upYouTube.isTemplateItem = true;
-    upYouTube.indexInLayer = @"3";
-    upYouTube.text = @">> 유튜브?";
-    upYouTube.textView.text = @">> 유튜브";
-    [upYouTube applyTypo:up];
-    [self.texts addObject:upYouTube];
+    Text *youtubeText = [[Text alloc] init];
+    WorkManYoutube* youtube = [WorkManYoutube workManYoutube];
+    youtubeText.scale = 0.7;
+    youtubeText.rotationDegree = 1;
+    youtubeText.center = CGPointMake(0.3, 0.13);
+    youtubeText.isTemplateItem = true;
+    youtubeText.indexInLayer = @"3";
+    youtubeText.text = @">> 유튜브";
+    youtubeText.textView.text = @">> 유튜브";
+    [youtubeText applyTypo:youtube];
+    [self.texts addObject:youtubeText];
+    
+  
     
     Text *blackText = [[Text alloc] init];
     WorkManLogo2 *center = [WorkManLogo2 workManLogo2];

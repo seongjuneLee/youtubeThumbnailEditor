@@ -49,7 +49,7 @@
     vlogText.scale = 0.8;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
-    vlogText.indexInLayer =@"1";
+    vlogText.indexInLayer =@"0";
     vlogText.text = @"Summer Vlog";
     vlogText.textView.text = @"Summer Vlog";
     [vlogText applyTypo:vlog];

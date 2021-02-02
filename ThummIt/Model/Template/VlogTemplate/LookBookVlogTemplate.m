@@ -17,7 +17,7 @@
         self.previewImageName = @"lookBookVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"LookBookVlogTemplate";
-        self.backgroundImageName = @"vlogFrame1";
+        self.backgroundImageName = @"lookBookVlogFrame";
         
     }
     return self;
@@ -49,7 +49,7 @@
     vlogText.scale = 1.1;
     vlogText.center = CGPointMake(0.77, 0.43);
     vlogText.isTemplateItem = true;
-    vlogText.indexInLayer =@"1";
+    vlogText.indexInLayer =@"0";
     vlogText.text = @"룩북\n브이로그";
     vlogText.textView.text = @"룩북\n브이로그";
     [vlogText applyTypo:vlog];

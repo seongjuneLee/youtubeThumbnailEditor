@@ -58,7 +58,7 @@
     stayText.scale = 0.65;
     stayText.center = CGPointMake(0.18, 0.75);
     stayText.isTemplateItem = true;
-    stayText.indexInLayer =@"3";
+    stayText.indexInLayer =@"0";
     stayText.text = @"#Staying Home";
     stayText.textView.text = @"#Staying Home";
     [stayText applyTypo:stay];
@@ -69,7 +69,7 @@
     understayText.scale = 0.9;
     understayText.center = CGPointMake(0.22, 0.88);
     understayText.isTemplateItem = true;
-    understayText.indexInLayer =@"4";
+    understayText.indexInLayer =@"1";
     understayText.text = @"집콕 브이로그";
     understayText.textView.text = @"집콕 브이로그";
     [understayText applyTypo:underStay];

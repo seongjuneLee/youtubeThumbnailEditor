@@ -17,7 +17,7 @@
         self.previewImageName = @"craftVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"FourHeartTemplate";
-        self.backgroundImageName = @"vlogFrame4";
+        self.backgroundImageName = @"craftVlogFrame";
         
     }
     return self;
@@ -48,7 +48,7 @@
     vlogText.scale = 1.5;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
-    vlogText.indexInLayer = @"1";
+    vlogText.indexInLayer = @"0";
     vlogText.text = @"VLog";
     vlogText.textView.text = @"VLog";
     [vlogText applyTypo:vlog];

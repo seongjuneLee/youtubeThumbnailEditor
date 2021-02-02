@@ -41,6 +41,7 @@
     [self.photoFrames addObject:fullRectPhotoFrame];
     
     PhotoFrame *circlePhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
+    circlePhotoFrame.indexInLayer =@"0";
     circlePhotoFrame.center = CGPointMake(0.72, 0.45);
     circlePhotoFrame.scale = 0.7;
     circlePhotoFrame.isTemplateItem = true;
