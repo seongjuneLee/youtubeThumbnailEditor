@@ -15,7 +15,7 @@
     if(self){
         
         self.templateName = @"WorkManTemplate3";
-        self.previewImageName = @"workManTemplatePreview3";
+        self.previewImageName = @"workManPreview3";
         self.category = NSLocalizedString(@"Entertain", nil);
         self.backgroundImageName = @"workManFrame3";
         

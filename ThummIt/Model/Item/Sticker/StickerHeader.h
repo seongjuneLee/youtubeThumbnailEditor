@@ -11,6 +11,8 @@
 #import "BasicCircleSticker.h"
 #import "BasicArrowSticker.h"
 #import "xSticker.h"
+
+//entertain
 #import "RunningManExcSticker.h"
 #import "RunningManQuSticker.h"
 #import "SinSeoYuGiExc1Sticker.h"
@@ -22,8 +24,10 @@
 #import "WorkManFiveFingerSticker.h"
 #import "WorkManYellowSticker.h"
 #import "WorkManStartleSticker.h"
-#import "ExclamationMark.h"
 #import "InfiniteChallengeSkullSticker.h"
+
+//vlog
+#import "ExclamationMark.h"
 #import "VlogBlinkSticker1.h"
 #import "VlogPigtailSticker.h"
 #import "VlogHeartSticker1.h"
