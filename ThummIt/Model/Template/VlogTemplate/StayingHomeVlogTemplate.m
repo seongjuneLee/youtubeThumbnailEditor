@@ -18,8 +18,6 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StayingHomeTemplate";
         self.backgroundImageName = @"";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
         
     }
     return self;
@@ -29,21 +27,15 @@
 +(StayingHomeVlogTemplate*)stayingHomeVlogTemplate{
     
     StayingHomeVlogTemplate* stayingHomeVlogTemplate = [[self alloc] init];
-    
     return stayingHomeVlogTemplate;
     
 }
 
 -(void)setUpPhotoFrame{
     
-    
-    self.photoFrames = [NSMutableArray new];
     VerticalHalfRectangle *firstPhotoFrame = [VerticalHalfRectangle verticalHalfRectangle];
     QuarterRectangle *secondPhotoFrame = [QuarterRectangle quarterRectangle];
     QuarterRectangle *thirdPhotoFrame = [QuarterRectangle quarterRectangle];
-    firstPhotoFrame.indexInLayer =@"0";
-    secondPhotoFrame.indexInLayer =@"1";
-    thirdPhotoFrame.indexInLayer =@"2";
     firstPhotoFrame.isTemplateItem = true;
     secondPhotoFrame.isTemplateItem = true;
     thirdPhotoFrame.isTemplateItem = true;
@@ -86,8 +78,6 @@
 }
 
 -(void)setUpStickers{
-    
-    
     
 }
 

@@ -18,9 +18,7 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"DanceVlogTemplate";
         self.backgroundImageName = @"danceVlogFrame";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
-        
+
     }
     return self;
     

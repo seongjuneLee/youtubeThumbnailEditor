@@ -28,14 +28,12 @@
 +(WorkManTemplate3*)workManTemplate3{
     
     WorkManTemplate3* workManTemplate3 = [[self alloc] init];
-    
     return workManTemplate3;
     
 }
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
     photoFrame.isFixedPhotoFrame = true;
@@ -59,7 +57,7 @@
     
     Text *tagText = [[Text alloc] init];
     WorkManLeftTag *tag = [WorkManLeftTag workManLeftTag];
-    tagText.scale = 0.8;
+    tagText.scale = 1;
     tagText.center = CGPointMake(0.1, 0.13);
     tagText.isTemplateItem = true;
     tagText.indexInLayer = @"1";
@@ -136,17 +134,10 @@
     red.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
     redtitle.typoRangeArray = (NSMutableArray *)@[@[red,@"0-3"]];
     [self.texts addObject:redtitle];
-
-   
-    
     
 }
 
-
-
-
 -(void)setUpStickers{
-    
     
 }
 

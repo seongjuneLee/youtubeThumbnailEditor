@@ -18,8 +18,6 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"DogVlogTemPlate";
         self.backgroundImageName = @"dogVlogFrame";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
         
     }
     return self;
@@ -55,9 +53,6 @@
     photoFrame1.baseView.frameSize = CGSizeMake(screenheight* 16/9, frameheight);
     photoFrame1.center = CGPointMake(0.5, 0.75);
     [self.photoFrames addObject:photoFrame1];
-  
-    
-
         
 }
 
@@ -77,8 +72,6 @@
 }
 
 -(void)setUpStickers{
-    
-    
     
 }
 

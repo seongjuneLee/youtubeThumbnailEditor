@@ -27,7 +27,6 @@
 +(InfiniteChallenge1Template*)infiniteChallenge1Template{
     
     InfiniteChallenge1Template* infiniteChallenge1Template = [[self alloc] init];
-    
     return infiniteChallenge1Template;
     
 }

@@ -27,7 +27,6 @@
 +(KidsVlogTemplate*)kidsVlogTemplate{
     
     KidsVlogTemplate* kidsVlogTemplate = [[self alloc] init];
-    
     return kidsVlogTemplate;
     
 }
@@ -93,7 +92,6 @@
 
 -(void)setUpStickers{
     
-
 }
 
 @end

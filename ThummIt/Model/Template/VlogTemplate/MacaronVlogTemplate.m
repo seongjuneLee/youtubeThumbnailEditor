@@ -27,7 +27,6 @@
 +(MacaronVlogTemplate*)macaronVlogTemplate{
     
     MacaronVlogTemplate* macaronVlogTemplate = [[self alloc] init];
-    
     return macaronVlogTemplate;
     
 }

@@ -23,18 +23,15 @@
     
 }
 
-
 +(WorkManTemplate1*)workManTemplate1{
     
     WorkManTemplate1* workManTemplate1 = [[self alloc] init];
-    
     return workManTemplate1;
     
 }
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
     photoFrame.center = CGPointMake(0.5, 0.5);
@@ -133,13 +130,10 @@
     fastText.typo = fast;
     [self.texts addObject:fastText];
     
-    
-    
 }
 
 -(void)setUpStickers{
     
-    self.stickers = [NSMutableArray new];
     WorkManAngrySticker *angrySticker = [WorkManAngrySticker workManAngrySticker];
     angrySticker.scale = 0.4;
     angrySticker.rotationDegree = -0.1;

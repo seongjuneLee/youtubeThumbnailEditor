@@ -24,19 +24,15 @@
     
 }
 
-
-
 +(WorkManTemplate2*)workManTemplate2{
     
     WorkManTemplate2* workManTemplate2 = [[self alloc] init];
-    
     return workManTemplate2;
     
 }
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
     photoFrame.isFixedPhotoFrame = true;
@@ -121,14 +117,10 @@
     [howText applyTypo:how];
     [self.texts addObject:howText];
     
-    
-    
-    
 }
 
 -(void)setUpStickers{
     
-    self.stickers = [NSMutableArray new];
     WorkManFiveFingerSticker *fingerSticker = [WorkManFiveFingerSticker workManFiveFingerSticker];
     fingerSticker.indexInLayer = @"6";
     fingerSticker.scale = 0.45;
@@ -138,4 +130,5 @@
     [self.stickers addObject:fingerSticker];
     
 }
+
 @end

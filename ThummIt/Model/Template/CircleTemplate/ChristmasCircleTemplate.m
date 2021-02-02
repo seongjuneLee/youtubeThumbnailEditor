@@ -19,7 +19,6 @@
         self.templateName = @"christmasCircleTemplate";
         self.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:229.0/255.0 blue:205.0/255.0 alpha:1.0];
         self.backgroundImageName = @"";
-        [self setUpPhotoFrame];
         
     }
     return self;
@@ -36,7 +35,6 @@
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     PhotoFrame *firstPhotoFrame = [ChristmasCircle christmasCircle];
     firstPhotoFrame.isTemplateItem = true;
     firstPhotoFrame.baseView.backgroundColor = UIColor.whiteColor;
@@ -44,7 +42,6 @@
     
     [self.photoFrames addObject:firstPhotoFrame];
 
-    
 }
 
 -(void)setUpTexts{

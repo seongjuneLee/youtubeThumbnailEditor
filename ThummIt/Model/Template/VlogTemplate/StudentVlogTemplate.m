@@ -19,8 +19,6 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StudentVlogTemplate";
         self.backgroundImageName = @"studentVlogFrame";
-        [self setUpPhotoFrame];
-        [self setUpTexts];
         
     }
     return self;
@@ -38,7 +36,6 @@
 -(void)setUpPhotoFrame{
     
     PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
-    photoFrame1.indexInLayer = @"0";
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
@@ -49,7 +46,6 @@
     [self.photoFrames addObject:photoFrame1];
 
     PhotoFrame *photoFrame2 = [[PhotoFrame alloc] init];
-    photoFrame2.indexInLayer = @"1";
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
     photoFrame2.baseView.backgroundColor = UIColor.grayColor;
@@ -58,7 +54,6 @@
     [self.photoFrames addObject:photoFrame2];
 
     PhotoFrame *photoFrame3 = [[PhotoFrame alloc] init];
-    photoFrame3.indexInLayer = @"2";
     photoFrame3.isTemplateItem = true;
     photoFrame3.isFixedPhotoFrame = true;
     photoFrame3.baseView.backgroundColor = UIColor.grayColor;

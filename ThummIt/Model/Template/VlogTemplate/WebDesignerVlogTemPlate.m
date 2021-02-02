@@ -35,7 +35,6 @@
 -(void)setUpPhotoFrame{
     
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
-    photoFrame.indexInLayer =@"0";
     photoFrame.isTemplateItem = true;
     photoFrame.isFixedPhotoFrame = true;
     photoFrame.center = CGPointMake(0.5, 0.5);

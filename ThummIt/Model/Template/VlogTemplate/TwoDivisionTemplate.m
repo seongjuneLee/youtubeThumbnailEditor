@@ -18,7 +18,6 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"twoDivisionTemplate";
         self.backgroundImageName = @"";
-        [self setUpPhotoFrame];
         
     }
     return self;
@@ -34,7 +33,7 @@
 }
 
 -(void)setUpPhotoFrame{
-    self.photoFrames = [NSMutableArray new];
+
     VerticalHalfRectangle *firstPhotoFrame = [VerticalHalfRectangle verticalHalfRectangle];
     VerticalHalfRectangle *secondPhotoFrame = [VerticalHalfRectangle verticalHalfRectangle];
     firstPhotoFrame.isTemplateItem = true;
@@ -47,9 +46,6 @@
 
 -(void)setUpTexts{
     
-    
-    
 }
-
 
 @end
