@@ -53,7 +53,7 @@
     escapeRoomText.isTemplateItem = true;
     escapeRoomText.indexInLayer =@"0";
     escapeRoomText.text = @"방탈출";
-    escapeRoomText.textView.text = @"방탈출";
+    escapeRoomText.textView.text = escapeRoomText.text;
     [escapeRoomText applyTypo:escapeRoom];
     [self.texts addObject:escapeRoomText];
     
@@ -65,7 +65,7 @@
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"1";
     logoText.text = @"백만도전";
-    logoText.textView.text = @"백만도전";
+    logoText.textView.text = logoText.text;
     [logoText applyTypo:logo];
     [self.texts addObject:logoText];
     
@@ -78,7 +78,7 @@
     subTitleText.isTemplateItem = true;
     subTitleText.indexInLayer =@"2";
     subTitleText.text = @"멤버들과 함께 비밀을 파헤쳐라!";
-    subTitleText.textView.text = @"멤버들과 함께 비밀을 파헤쳐라!";
+    subTitleText.textView.text = subTitleText.text;
     
     InfiniteChallengeOrangeTypo *orange = [InfiniteChallengeOrangeTypo infiniteChallengeOrangeTypo];
     InfiniteChallengeBlueTypo *blue = [InfiniteChallengeBlueTypo infiniteChallengeBlueTypo];

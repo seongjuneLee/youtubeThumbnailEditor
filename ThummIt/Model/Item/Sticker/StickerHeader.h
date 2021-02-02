@@ -31,5 +31,7 @@
 #import "VlogHeartSticker3.h"
 #import "VlogHeartSticker4.h"
 #import "VlogTapeSticker.h"
+#import "VlogVideoSticker.h"
+#import "VlogMacaronSticker.h"
 
 #endif /* StickerHeader_h */

@@ -58,7 +58,7 @@
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"0";
     logoText.text = @"서유기";
-    logoText.textView.text = @"서유기";
+    logoText.textView.text = logoText.text;
     
     [logoText applyTypo:logo];
     [self.texts addObject:logoText];
@@ -71,7 +71,7 @@
     scaredText.isTemplateItem = true;
     scaredText.indexInLayer =@"1";
     scaredText.text = @"와 나 이런거 무서워한다";
-    scaredText.textView.text = @"와 나 이런거 무서워한다";
+    scaredText.textView.text = scaredText.text;
     [scaredText applyTypo:gagwanSmall];
     [self.texts addObject:scaredText];
     
@@ -83,7 +83,7 @@
     gagwanText.isTemplateItem = true;
     gagwanText.indexInLayer =@"2";
     gagwanText.text = @"가관이네..";
-    gagwanText.textView.text = @"가관이네..";
+    gagwanText.textView.text = gagwanText.text;
     [gagwanText applyTypo:gagwanBig];
     [self.texts addObject:gagwanText];
     
