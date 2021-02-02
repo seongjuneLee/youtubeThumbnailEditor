@@ -65,7 +65,7 @@
     mainTextTop.center = CGPointMake(0.36, 0.73);
     mainTextTop.isTemplateItem = true;
     mainTextTop.text = @"레전드 오브 레게노";
-    mainTextTop.textView.text = @"레전드 오브 레게노";
+    mainTextTop.textView.text = mainTextTop.text;
     [mainTextTop applyTypo:legeno];
     [self.texts addObject:mainTextTop];
     
@@ -76,7 +76,7 @@
     mainTextBottom.center = CGPointMake(0.32, 0.9);
     mainTextBottom.isTemplateItem = true;
     mainTextBottom.text = @"그 대장정의 시작";
-    mainTextBottom.textView.text = @"그 대장정의 시작";
+    mainTextBottom.textView.text = mainTextBottom.text;
     [mainTextBottom applyTypo:longJourney];
     [self.texts addObject:mainTextBottom];
     
@@ -87,7 +87,7 @@
     logoText.center = CGPointMake(0.89, 0.15);
     logoText.isTemplateItem = true;
     logoText.text = @"백만도전";
-    logoText.textView.text = @"백만도전";
+    logoText.textView.text = logoText.text;
     [logoText applyTypo:logo];
     [self.texts addObject:logoText];
 
@@ -98,7 +98,7 @@
     fiveMinutesText.center = CGPointMake(0.15, 0.11);
     fiveMinutesText.isTemplateItem = true;
     fiveMinutesText.text = @"오분순삭";
-    fiveMinutesText.textView.text = @"오분순삭";
+    fiveMinutesText.textView.text = fiveMinutesText.text;
     [fiveMinutesText applyTypo:fiveMinutes];
     [self.texts addObject:fiveMinutesText];
     
@@ -109,7 +109,7 @@
     hashTagText.center = CGPointMake(0.13, 0.19);
     hashTagText.isTemplateItem = true;
     hashTagText.text = @"#예능레전드";
-    hashTagText.textView.text = @"#예능레전드";
+    hashTagText.textView.text = hashTagText.text;
     
     InfiniteChallengeHashTag *hashTagYellow = [InfiniteChallengeHashTag infiniteChallengeHashTag];
     hashTagYellow.textColor = [UIColor colorWithRed:254/255.0 green:216/255.0 blue:60/255.0 alpha:1];
@@ -125,7 +125,7 @@
     muYaHoText.center = CGPointMake(0.3, 0.45);
     muYaHoText.isTemplateItem = true;
     muYaHoText.text = @"무야~호~";
-    muYaHoText.textView.text = @"무야~호~";
+    muYaHoText.textView.text = muYaHoText.text;
     muYaHoText.rotationDegree = 30;
     [muYaHoText applyTypo:yellowSpeechBoxWhite];
     [self.texts addObject:muYaHoText];
@@ -137,7 +137,7 @@
     questionMarkText.center = CGPointMake(0.33, 0.35);
     questionMarkText.isTemplateItem = true;
     questionMarkText.text = @"??";
-    questionMarkText.textView.text = @"??";
+    questionMarkText.textView.text = questionMarkText.text;
     questionMarkText.rotationDegree = 30;
     [questionMarkText applyTypo:topOfYellow];
     [self.texts addObject:questionMarkText];

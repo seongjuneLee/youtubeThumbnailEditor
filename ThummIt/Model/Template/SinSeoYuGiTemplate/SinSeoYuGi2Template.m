@@ -52,7 +52,7 @@
     logoText.center = CGPointMake(0.14, 0.15);
     logoText.isTemplateItem = true;
     logoText.text = @"서유기";
-    logoText.textView.text = @"서유기";
+    logoText.textView.text = logoText.text;
     [logoText applyTypo:cloudLogo];
     [self.texts addObject:logoText];
     
@@ -63,7 +63,7 @@
     inFrontOfGirlText.center = CGPointMake(0.31, 0.7);
     inFrontOfGirlText.isTemplateItem = true;
     inFrontOfGirlText.text = @"여사친 앞에서";
-    inFrontOfGirlText.textView.text = @"여사친 앞에서";
+    inFrontOfGirlText.textView.text = inFrontOfGirlText.text;
     [inFrontOfGirlText applyTypo:inFrontOfGirl];
     [self.texts addObject:inFrontOfGirlText];
     
@@ -75,7 +75,7 @@
     ssulText.center = CGPointMake(0.41, 0.85);
     ssulText.isTemplateItem = true;
     ssulText.text = @"상체탈의한 썰.ssul";
-    ssulText.textView.text = @"상체탈의한 썰.ssul";
+    ssulText.textView.text = ssulText.text;
     [ssulText applyTypo:ssul];
     [self.texts addObject:ssulText];
     
