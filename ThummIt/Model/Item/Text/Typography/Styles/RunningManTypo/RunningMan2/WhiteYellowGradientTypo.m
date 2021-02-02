@@ -23,6 +23,7 @@
         self.textGradientHeight = stringBoundingBox.height + 6;
 
         self.textColor = [UIColor diagonalGradientFromColor:self.textFromColor toColor:self.textToColor withHeight:self.textGradientHeight];
+        self.isChangingAvailableColor = true;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];

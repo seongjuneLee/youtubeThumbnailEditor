@@ -273,6 +273,7 @@
 		B16FC68125AF459800E854C1 /* StickerCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16FC67F25AF459800E854C1 /* StickerCollectionReusableView.xib */; };
 		B16FC68725AF76A600E854C1 /* BasicArrowSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC68625AF76A600E854C1 /* BasicArrowSticker.m */; };
 		B16FC68D25AF7F3900E854C1 /* XSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC68C25AF7F3900E854C1 /* XSticker.m */; };
+		B182049F25C92BBE000B509B /* SDMiSaeng.otf in Resources */ = {isa = PBXBuildFile; fileRef = B182049E25C92BBE000B509B /* SDMiSaeng.otf */; };
 		B1836F6125C32C1800A81446 /* InfiniteChallenge2Template.m in Sources */ = {isa = PBXBuildFile; fileRef = B1836F6025C32C1800A81446 /* InfiniteChallenge2Template.m */; };
 		B1836FC625C3370E00A81446 /* WorkManYellowSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B1836FC025C3370E00A81446 /* WorkManYellowSticker.m */; };
 		B1836FC725C3370E00A81446 /* WorkManTalkSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B1836FBC25C3370D00A81446 /* WorkManTalkSticker.m */; };
@@ -840,6 +841,7 @@
 		B16FC68625AF76A600E854C1 /* BasicArrowSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicArrowSticker.m; sourceTree = "<group>"; };
 		B16FC68B25AF7F3900E854C1 /* XSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSticker.h; sourceTree = "<group>"; };
 		B16FC68C25AF7F3900E854C1 /* XSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSticker.m; sourceTree = "<group>"; };
+		B182049E25C92BBE000B509B /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.otf; sourceTree = "<group>"; };
 		B1836F5F25C32C1800A81446 /* InfiniteChallenge2Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteChallenge2Template.h; sourceTree = "<group>"; };
 		B1836F6025C32C1800A81446 /* InfiniteChallenge2Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteChallenge2Template.m; sourceTree = "<group>"; };
 		B1836FBC25C3370D00A81446 /* WorkManTalkSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManTalkSticker.m; sourceTree = "<group>"; };
@@ -1813,6 +1815,7 @@
 				B1F2B6E425C196E30064A044 /* SCDream9.otf */,
 				6ED13C7A25C11B9700012144 /* TmoneyRoundWindExtraBold.otf */,
 				6ED13C7B25C11B9800012144 /* TmoneyRoundWindRegular.otf */,
+				B182049E25C92BBE000B509B /* SDMiSaeng.otf */,
 				6ED13C2125C10E7700012144 /* gabia_solmee.otf */,
 				6EBEB5F425C320410017C640 /* UhBee-puding-Bold.otf */,
 				6E80772425C92EDC0033FF21 /* SDMiSaeng.otf */,
@@ -2468,9 +2471,7 @@
 				6ED13C8325C1940400012144 /* BMYEONSUNG_otf.otf in Resources */,
 				6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */,
 				6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */,
-
-				6E80772525C92EDC0033FF21 /* SDMiSaeng.otf in Resources */,
-
+				B182049F25C92BBE000B509B /* SDMiSaeng.otf in Resources */,
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
 				B1F2B79425C2F6250064A044 /* UhBee DoolDool Bold.otf in Resources */,
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,

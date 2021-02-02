@@ -36,7 +36,6 @@
     
     QuarterRectangle *firstPhotoFrame = [QuarterRectangle quarterRectangle];
     QuarterRectangle *secondPhotoFrame = [QuarterRectangle quarterRectangle];
- 
     firstPhotoFrame.isTemplateItem = true;
     secondPhotoFrame.isTemplateItem = true;
     firstPhotoFrame.isFixedPhotoFrame = true;
@@ -44,19 +43,18 @@
    
     firstPhotoFrame.center = CGPointMake(0.25, 0.25);
     secondPhotoFrame.center = CGPointMake(0.75, 0.25);
-  
-    
+    [self.photoFrames addObject:firstPhotoFrame];
+    [self.photoFrames addObject:secondPhotoFrame];
+
     PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    float screenwidth = UIScreen.mainScreen.bounds.size.width;
-    float framewidth = screenwidth * 9/16 * 0.5;
+    float screenWidth = UIScreen.mainScreen.bounds.size.width;
+    float screenHeight = screenWidth * 9/16;
     photoFrame1.baseView.backgroundColor = UIColor.grayColor;
-    photoFrame1.baseView.frameSize = CGSizeMake(screenwidth, framewidth);
+    photoFrame1.baseView.frameSize = CGSizeMake(screenWidth, screenHeight * 0.5);
     photoFrame1.center = CGPointMake(0.5, 0.75);
     [self.photoFrames addObject:photoFrame1];
-    [self.photoFrames addObject:firstPhotoFrame];
-    [self.photoFrames addObject:secondPhotoFrame];
 }
 
 -(void)setUpTexts{

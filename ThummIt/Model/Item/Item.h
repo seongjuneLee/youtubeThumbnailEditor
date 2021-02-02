@@ -23,11 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float rotationDegree;
 @property (nonatomic) CGFloat scale;
 @property (nonatomic) BOOL isFixedPhotoFrame;
-
 @property (nonatomic) BOOL isTemplateItem;
+@property (nonatomic) BOOL isChangingColorAvailable;
 
 -(void)loadView;
-
 
 @end
 
