@@ -30,6 +30,6 @@
 #import "VlogHeartSticker2.h"
 #import "VlogHeartSticker3.h"
 #import "VlogHeartSticker4.h"
-
+#import "VlogTapeSticker.h"
 
 #endif /* StickerHeader_h */

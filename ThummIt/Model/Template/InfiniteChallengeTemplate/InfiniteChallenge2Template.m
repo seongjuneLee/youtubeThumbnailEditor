@@ -64,6 +64,7 @@
     mainTextTop.scale = 0.78;
     mainTextTop.center = CGPointMake(0.36, 0.73);
     mainTextTop.isTemplateItem = true;
+    mainTextTop.indexInLayer =@"0";
     mainTextTop.text = @"레전드 오브 레게노";
     mainTextTop.textView.text = @"레전드 오브 레게노";
     [mainTextTop applyTypo:legeno];
@@ -75,6 +76,7 @@
     mainTextBottom.scale = 0.78;
     mainTextBottom.center = CGPointMake(0.32, 0.9);
     mainTextBottom.isTemplateItem = true;
+    mainTextBottom.indexInLayer =@"1";
     mainTextBottom.text = @"그 대장정의 시작";
     mainTextBottom.textView.text = @"그 대장정의 시작";
     [mainTextBottom applyTypo:longJourney];
@@ -86,6 +88,7 @@
     logoText.scale = 0.6;
     logoText.center = CGPointMake(0.89, 0.15);
     logoText.isTemplateItem = true;
+    logoText.indexInLayer =@"2";
     logoText.text = @"백만도전";
     logoText.textView.text = @"백만도전";
     [logoText applyTypo:logo];
@@ -97,6 +100,7 @@
     fiveMinutesText.scale = 0.65;
     fiveMinutesText.center = CGPointMake(0.15, 0.11);
     fiveMinutesText.isTemplateItem = true;
+    fiveMinutesText.indexInLayer =@"3";
     fiveMinutesText.text = @"오분순삭";
     fiveMinutesText.textView.text = @"오분순삭";
     [fiveMinutesText applyTypo:fiveMinutes];
@@ -108,6 +112,7 @@
     hashTagText.scale = 0.56;
     hashTagText.center = CGPointMake(0.13, 0.19);
     hashTagText.isTemplateItem = true;
+    hashTagText.indexInLayer =@"4";
     hashTagText.text = @"#예능레전드";
     hashTagText.textView.text = @"#예능레전드";
     
@@ -124,6 +129,7 @@
     muYaHoText.scale = 0.55;
     muYaHoText.center = CGPointMake(0.3, 0.45);
     muYaHoText.isTemplateItem = true;
+    muYaHoText.indexInLayer =@"5";
     muYaHoText.text = @"무야~호~";
     muYaHoText.textView.text = @"무야~호~";
     muYaHoText.rotationDegree = 30;
@@ -136,6 +142,7 @@
     questionMarkText.scale = 0.63;
     questionMarkText.center = CGPointMake(0.33, 0.35);
     questionMarkText.isTemplateItem = true;
+    questionMarkText.indexInLayer =@"6";
     questionMarkText.text = @"??";
     questionMarkText.textView.text = @"??";
     questionMarkText.rotationDegree = 30;

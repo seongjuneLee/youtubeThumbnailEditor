@@ -20,7 +20,6 @@ import GoogleSignIn
 import FBSDKCoreKit
 
 @UIApplicationMain
-
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     
     

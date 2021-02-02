@@ -39,7 +39,9 @@
     self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
+    photoFrame.isFixedPhotoFrame = true;
     photoFrame.center = CGPointMake(0.5, 0.5);
+    photoFrame.indexInLayer=@"0";
     [self.photoFrames addObject:photoFrame];
         
 }
@@ -51,6 +53,7 @@
     vlogText.scale = 1.1;
     vlogText.center = CGPointMake(0.77, 0.43);
     vlogText.isTemplateItem = true;
+    vlogText.indexInLayer =@"1";
     vlogText.text = @"룩북\n브이로그";
     vlogText.textView.text = @"룩북\n브이로그";
     [vlogText applyTypo:vlog];

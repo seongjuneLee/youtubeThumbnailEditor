@@ -44,5 +44,7 @@
 #import "FreshmanVlogTemplate.h"
 #import "StudentVlogTemplate.h"
 #import "WebDesignerVlogTemPlate.h"
+#import "DanceVlogTemplate.h"
+#import "StudyVlogTemplate.h"
 
 #endif /* TemplateHeader_h */

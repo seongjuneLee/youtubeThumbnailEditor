@@ -14,18 +14,22 @@
     self = [super init];
     if (self) {
         self.name = NSLocalizedString(@"소리질러!!!!!",nil);
-        self.fontName = @"NanumSquareOTFB";
+        self.fontName = @"NanumSquareOTFEB";
         self.textColor = [UIColor whiteColor];
-        self.fontSize = TEXT_FONT_SIZE;
+        self.fontSize = 17;
         self.bgImageName = @"workManTalkBox";
-        self.bgHeightPadding = 30;
-        self.bgWidthPadding = 40;
+        self.bgHeightPadding = 10;
+        self.bgWidthPadding = 0;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
-        bgTextAttribute1.borderWidth = 13;
+        bgTextAttribute1.borderWidth = 8;
         
-        self.bgTextAttributes = @[bgTextAttribute1];
+        BGTextAttribute *attribute1 = [[BGTextAttribute alloc] init];
+        attribute1.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
+                attribute1.shadowOffset = CGPointMake(1, 1);
+        
+        self.bgTextAttributes = @[bgTextAttribute1,attribute1];
 
     }
     return self;
