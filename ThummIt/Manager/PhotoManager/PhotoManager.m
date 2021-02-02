@@ -43,7 +43,6 @@
     // this one is key
     requestOptions.synchronous = YES;
     
-    // Do something with the asset
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         [manager requestImageForAsset:self.phassets.firstObject
                            targetSize:size
@@ -53,6 +52,7 @@
             block(image);
         }];
     });
+            
 }
 
 -(NSMutableArray *)fetchPhassets{

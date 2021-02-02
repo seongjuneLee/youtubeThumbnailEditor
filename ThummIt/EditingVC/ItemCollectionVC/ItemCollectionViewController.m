@@ -54,7 +54,7 @@
 
 - (void)setCollectionViewFlowLayout {
     
-    NSUInteger numberOfColumns = 3;
+    NSUInteger numberOfColumns = 4;
 
     // 칼럼 갯수
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
@@ -103,15 +103,7 @@
     
 }
 
-//-(BOOL) isAlreadyAppeared{
-    
-//    if(){
-//        return YES;
-//    }else if(){
-//        return  NO;
-//    }
-//    
-//}
+
 
 
 @end
