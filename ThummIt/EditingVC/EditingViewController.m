@@ -8,6 +8,7 @@
 #import "EditingViewController.h"
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "EditingViewController+Buttons.h"
+#import "EditingViewController+Text.h"
 
 @interface EditingViewController ()
 
@@ -125,6 +126,8 @@
 -(void)loadItems{
     
     self.itemLoaded = true;
+
+    NSUInteger gestureViewIndex = [self.view.subviews indexOfObject:self.gestureView];
     
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
@@ -135,19 +138,18 @@
             float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             item.center = itemCenter;
-            
-
         }
         [item loadView];
-        if ([item isKindOfClass:PhotoFrame.class]) {
-            NSLog(@"item baseview frame %@",NSStringFromCGRect(item.baseView.frame));
+        
+        if ([item isKindOfClass:Text.class]){
+            Text *text = (Text *)item;
+            text.textView.delegate = self;
         }
-
         if (item.isFixedPhotoFrame) {
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
         } else {
             if (item.indexInLayer.length != 0) {
-                [self.view insertSubview:item.baseView atIndex:[item.indexInLayer integerValue]];
+                [self.view insertSubview:item.baseView atIndex:[item.indexInLayer integerValue]+ gestureViewIndex];
             } else {
                 [self.view insertSubview:item.baseView belowSubview:self.gestureView];
             }

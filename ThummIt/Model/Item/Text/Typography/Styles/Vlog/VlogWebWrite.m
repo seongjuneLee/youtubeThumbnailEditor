@@ -18,8 +18,8 @@
         self.textColor = [UIColor colorWithRed:(217/255.0) green:(191/255.0) blue:(252/255.0) alpha:1];
         self.bgImageName = @"webBG.png";
         self.bgHeightPadding = -30;
-        self.bgWidthPadding = -30;
-        self.fontSize = 50;
+        self.bgWidthPadding = -20;
+        self.fontSize = 40;
     }
     return self;
 }

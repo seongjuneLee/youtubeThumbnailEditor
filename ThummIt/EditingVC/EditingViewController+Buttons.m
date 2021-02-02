@@ -30,9 +30,13 @@
         
         [self cancelEditingPhotoFrame];
         
-    } else if (self.modeController.editingMode == AddingTextMode){
+    } else if (self.modeController.editingMode == AddingTextMode || self.modeController.editingMode == EditingTextMode){
         
         [self cancelAddingText];
+        
+//    } else if (self.modeController.editingMode == EditingTextMode){
+//
+//        [self cancelEditingText];
 
     } else if (self.modeController.editingMode == AddingStickerMode){
         
@@ -98,6 +102,16 @@
 
 }
 
+//-(void)cancelEditingText{
+//
+//    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
+//    [self dismissItemCollectionVC];
+//    [self.currentItem.baseView removeFromSuperview];
+//    self.currentItem = nil;
+//    self.currentText = nil;
+//
+//}
+
 -(void)cancelEditingBGColor{
     
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
@@ -133,7 +147,7 @@
         [self doneAddingPhotoFrame];
     } else if (self.modeController.editingMode == EditingPhotoFrameMode){
         [self doneEditingPhotoFrame];
-    } else if (self.modeController.editingMode == AddingTextMode){
+    } else if (self.modeController.editingMode == AddingTextMode || self.modeController.editingMode == EditingTextMode){
         [self doneAddingText];
     } else if (self.modeController.editingMode == AddingStickerMode){
         [self.modeController setNavigationItemRespondToEditingMode:NormalMode];

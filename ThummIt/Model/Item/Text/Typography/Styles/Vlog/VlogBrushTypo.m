@@ -19,7 +19,8 @@
         self.fontSize = TEXT_FONT_SIZE + 10;
         self.bgImageName = @"brushBox";
         self.bgWidthPadding = 10;
-        self.bgCenterYDelta = -5;
+        self.bgHeightPadding = 15;
+       
 
     }
     return self;
