@@ -260,7 +260,6 @@
 		B11E0D8325C58C4D0050D9F0 /* VlogMomTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D8225C58C4D0050D9F0 /* VlogMomTypo.m */; };
 		B11E0D8825C594A10050D9F0 /* HolidayVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D8725C594A10050D9F0 /* HolidayVlogTemplate.m */; };
 		B11E0D8D25C595BF0050D9F0 /* VlogHolidayTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D8C25C595BF0050D9F0 /* VlogHolidayTypo.m */; };
-		B11E0D9325C599410050D9F0 /* SDMiSaeng.otf in Resources */ = {isa = PBXBuildFile; fileRef = B11E0D9225C599410050D9F0 /* SDMiSaeng.otf */; };
 		B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = B12E989825C38DB700F706DD /* InfiniteChallenge3Template.m */; };
 		B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61625ADCC2A00E854C1 /* StickerCollectionController.m */; };
 		B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC61D25ADCD9400E854C1 /* StickerCollectionViewCell.m */; };
@@ -815,7 +814,6 @@
 		B11E0D8725C594A10050D9F0 /* HolidayVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HolidayVlogTemplate.m; sourceTree = "<group>"; };
 		B11E0D8B25C595BF0050D9F0 /* VlogHolidayTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHolidayTypo.h; sourceTree = "<group>"; };
 		B11E0D8C25C595BF0050D9F0 /* VlogHolidayTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHolidayTypo.m; sourceTree = "<group>"; };
-		B11E0D9225C599410050D9F0 /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SDMiSaeng.otf; path = ../../../../Downloads/SDMiSaeng.otf; sourceTree = "<group>"; };
 		B12E989725C38DB700F706DD /* InfiniteChallenge3Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteChallenge3Template.h; sourceTree = "<group>"; };
 		B12E989825C38DB700F706DD /* InfiniteChallenge3Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteChallenge3Template.m; sourceTree = "<group>"; };
 		B16FC61525ADCC2A00E854C1 /* StickerCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerCollectionController.h; sourceTree = "<group>"; };
@@ -1813,7 +1811,6 @@
 				6ED13C2125C10E7700012144 /* gabia_solmee.otf */,
 				6EBEB5F425C320410017C640 /* UhBee-puding-Bold.otf */,
 				6EBEB5F325C320410017C640 /* UhBee-puding.otf */,
-				B11E0D9225C599410050D9F0 /* SDMiSaeng.otf */,
 				6ED13BB725C0917F00012144 /* BMHANNA_11yrs_otf.otf */,
 				6E8F996F25C0C4F5005C8071 /* 62570-_1_.otf */,
 				6E8F997A25C0D3B4005C8071 /* NotoSansCJKkr-Bold.otf */,
@@ -2463,7 +2460,6 @@
 				6ED13C8325C1940400012144 /* BMYEONSUNG_otf.otf in Resources */,
 				6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */,
 				6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */,
-				B11E0D9325C599410050D9F0 /* SDMiSaeng.otf in Resources */,
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
 				B1F2B79425C2F6250064A044 /* UhBee DoolDool Bold.otf in Resources */,
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,
