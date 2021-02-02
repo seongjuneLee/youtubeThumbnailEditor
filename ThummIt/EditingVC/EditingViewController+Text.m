@@ -10,12 +10,12 @@
 @implementation EditingViewController (Text)
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
-    if([self.currentText.text isEqualToString:self.currentText.typo.name] && !self.currentText.isTypedByUser){
-        
+    
+    if( !self.currentText.isTypedByUser){
         self.originalCursorColor = self.currentText.textView.tintColor;
-        
         self.currentText.textView.tintColor = [UIColor clearColor];
     }
+
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
@@ -29,7 +29,7 @@
 -(void)textViewDidChange:(UITextView *)textView{
     
     
-    if([self.currentText.text isEqualToString:self.currentText.typo.name] && !self.currentText.isTypedByUser){
+    if(!self.currentText.isTypedByUser){
         self.currentText.textView.text = self.originalText;//추가로 입력된 글자만 출력되게
         self.currentText.textView.tintColor = self.originalCursorColor;
     }

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Sticker : Item
 
-@property (nonatomic) BOOL colorChangeBlock;
+@property (nonatomic) BOOL isColorChangeAvailable;
 
 -(void)addSubViewsToBaseView;
 

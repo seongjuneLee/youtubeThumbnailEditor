@@ -271,8 +271,26 @@
 #pragma mark - 포토 프레임 버튼
 
 - (IBAction)photoFrameButtonTapped:(UIButton *)sender {
-    
-    
+
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
+     {
+         if (status == PHAuthorizationStatusAuthorized){
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 if (PhotoManager.sharedInstance.phassets.count == 0) {
+                     PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+                 }
+                 [self taskWhenAuthorized];
+
+             });
+         } else {
+             [self taskWhenDenied];
+         }
+    }];
+
+
+}
+
+-(void)taskWhenAuthorized{
     [self.layerController showTransparentView];
     [self.modeController setNavigationItemRespondToEditingMode:AddingPhotoFrameMode];
     self.itemCollectionVC.itemType = PhotoFrameType;
@@ -280,6 +298,23 @@
     [self showAlbumVC];
     self.albumVC.view.hidden = true;
 
+}
+
+-(void)taskWhenDenied{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *settingAlertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Go to setting", @"#-세팅으로 가기 - #") message:NSLocalizedString(@"You should agree photo access request for this function.", nil) preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        UIAlertAction *goToSetting = [UIAlertAction actionWithTitle:NSLocalizedString(@"Setting", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+        }];
+        
+        [settingAlertController addAction:cancel];
+        [settingAlertController addAction:goToSetting];
+        [self presentViewController:settingAlertController animated:true completion:nil];
+    });
+    
 }
 
 -(void)addItemCollectionVC{
