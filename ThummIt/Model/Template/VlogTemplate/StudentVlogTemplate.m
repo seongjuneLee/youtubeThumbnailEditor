@@ -40,7 +40,6 @@
     photoFrame1.isFixedPhotoFrame = true;
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
     float frameWidth = screenWidth * 0.333;
-    photoFrame1.baseView.backgroundColor = UIColor.grayColor;
     photoFrame1.baseView.frameSize = CGSizeMake(frameWidth, screenWidth * 9/16);
     photoFrame1.center = CGPointMake(0.166, 0.5);
     [self.photoFrames addObject:photoFrame1];
@@ -48,7 +47,6 @@
     PhotoFrame *photoFrame2 = [[PhotoFrame alloc] init];
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
-    photoFrame2.baseView.backgroundColor = UIColor.grayColor;
     photoFrame2.baseView.frameSize = CGSizeMake(frameWidth, screenWidth * 9/16);
     photoFrame2.center = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame2];
@@ -56,12 +54,10 @@
     PhotoFrame *photoFrame3 = [[PhotoFrame alloc] init];
     photoFrame3.isTemplateItem = true;
     photoFrame3.isFixedPhotoFrame = true;
-    photoFrame3.baseView.backgroundColor = UIColor.grayColor;
     photoFrame3.baseView.frameSize = CGSizeMake(frameWidth, screenWidth * 9/16);
     photoFrame3.center = CGPointMake(0.834, 0.5);
     [self.photoFrames addObject:photoFrame3];
-  
-        
+    
 }
 
 -(void)setUpTexts{

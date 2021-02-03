@@ -37,7 +37,6 @@
     fullRectPhotoFrame.isTemplateItem = true;
     fullRectPhotoFrame.isFixedPhotoFrame = true;
     fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
-    fullRectPhotoFrame.baseView.backgroundColor = UIColor.lightGrayColor;
     [self.photoFrames addObject:fullRectPhotoFrame];
     
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
@@ -47,7 +46,6 @@
     photoFrame1.isTemplateItem = true;
     photoFrame1.indexInLayer = @"0";
     photoFrame1.backgroundImageName = @"polaroidPhotoFrame";
-    photoFrame1.baseView.backgroundColor = UIColor.whiteColor;
     photoFrame1.baseView.frameSize = CGSizeMake(frameWidth, frameWidth);
     photoFrame1.rotationDegree = degreesToRadians(350);
     photoFrame1.center = CGPointMake(0.23, 0.21);
@@ -58,7 +56,6 @@
     photoFrame2.isTemplateItem = true;
     photoFrame2.indexInLayer = @"1";
     photoFrame2.backgroundImageName = @"polaroidPhotoFrame";
-    photoFrame2.baseView.backgroundColor = UIColor.whiteColor;
     photoFrame2.baseView.frameSize = CGSizeMake(frameWidth, frameWidth);
     photoFrame2.rotationDegree = degreesToRadians(10);
     photoFrame2.center = CGPointMake(0.13, 0.43);
@@ -68,7 +65,6 @@
     photoFrame3.isTemplateItem = true;
     photoFrame3.indexInLayer = @"2";
     photoFrame3.backgroundImageName = @"polaroidPhotoFrame";
-    photoFrame3.baseView.backgroundColor = UIColor.whiteColor;
     photoFrame3.baseView.frameSize = CGSizeMake(frameWidth, frameWidth);
     photoFrame3.rotationDegree = degreesToRadians(350);
     photoFrame3.center = CGPointMake(0.18, 0.75);

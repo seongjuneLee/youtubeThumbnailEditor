@@ -39,7 +39,6 @@
     PhotoFrame *smallPhotoFrame1 = [[PhotoFrame alloc] init];
     smallPhotoFrame1.isTemplateItem = true;
     smallPhotoFrame1.isFixedPhotoFrame = true;
-    smallPhotoFrame1.baseView.backgroundColor = UIColor.lightGrayColor;
     smallPhotoFrame1.baseView.frameSize = CGSizeMake(screenWidth * 0.5, screenHeight * 0.5);
     smallPhotoFrame1.center = CGPointMake(0.75, 0.25);
     [self.photoFrames addObject:smallPhotoFrame1];
@@ -47,17 +46,22 @@
     PhotoFrame *smallPhotoFrame2 = [[PhotoFrame alloc] init];
     smallPhotoFrame2.isTemplateItem = true;
     smallPhotoFrame2.isFixedPhotoFrame = true;
-    smallPhotoFrame2.baseView.backgroundColor = UIColor.lightGrayColor;
     smallPhotoFrame2.baseView.frameSize = CGSizeMake(screenWidth * 0.4, screenHeight * 0.5);
     smallPhotoFrame2.center = CGPointMake(0.8, 0.75);
     [self.photoFrames addObject:smallPhotoFrame2];
     
     //사다리꼴 윗변 0.5 아랫변 0.68 로
+    UIBezierPath *path = [[UIBezierPath alloc] init];
+    [path moveToPoint:CGPointMake(0, 0)];
+    [path addLineToPoint:CGPointMake(0.5, 0)];
+    [path addLineToPoint:CGPointMake(0.68, 1)];
+    [path addLineToPoint:CGPointMake(0, 1)];
+    [path closePath];
+    
     PhotoFrame *bigPhotoFrame = [[PhotoFrame alloc] init];
     bigPhotoFrame.isTemplateItem = true;
     bigPhotoFrame.isFixedPhotoFrame = true;
-    bigPhotoFrame.baseView.backgroundColor = UIColor.grayColor;
-    bigPhotoFrame.baseView.frameSize = CGSizeMake(screenWidth * 0.68, screenHeight);
+    bigPhotoFrame.baseView.frameSize = CGSizeMake(screenWidth * 0.68, screenHeight);;
     bigPhotoFrame.center = CGPointMake(0.34, 0.5);
     [self.photoFrames addObject:bigPhotoFrame];
     

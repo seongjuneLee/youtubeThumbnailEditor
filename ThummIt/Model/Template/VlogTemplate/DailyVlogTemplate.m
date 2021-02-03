@@ -40,7 +40,6 @@
     PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    photoFrame1.baseView.backgroundColor = UIColor.grayColor;
     photoFrame1.baseView.frameSize = CGSizeMake(screenWidth * 0.32, screenHeight * 0.4);
     photoFrame1.center = CGPointMake(0.16, 0.2);
     [self.photoFrames addObject:photoFrame1];
@@ -49,7 +48,6 @@
     PhotoFrame *photoFrame2 = [[PhotoFrame alloc] init];
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
-    photoFrame2.baseView.backgroundColor = UIColor.lightGrayColor;
     photoFrame2.baseView.frameSize = CGSizeMake(screenWidth * 0.68, screenHeight * 0.4);
     photoFrame2.center = CGPointMake(0.66, 0.2);
     [self.photoFrames addObject:photoFrame2];
@@ -57,7 +55,6 @@
     PhotoFrame *photoFrame3 = [[PhotoFrame alloc] init];
     photoFrame3.isTemplateItem = true;
     photoFrame3.isFixedPhotoFrame = true;
-    photoFrame3.baseView.backgroundColor = UIColor.lightGrayColor;
     photoFrame3.baseView.frameSize = CGSizeMake(screenWidth * 0.64, screenHeight * 0.6);
     photoFrame3.center = CGPointMake(0.32, 0.7);
     [self.photoFrames addObject:photoFrame3];
@@ -65,7 +62,6 @@
     PhotoFrame *photoFrame4 = [[PhotoFrame alloc] init];
     photoFrame4.isTemplateItem = true;
     photoFrame4.isFixedPhotoFrame = true;
-    photoFrame4.baseView.backgroundColor = UIColor.grayColor;
     photoFrame4.baseView.frameSize = CGSizeMake(screenWidth * 0.36, screenHeight * 0.6);
     photoFrame4.center = CGPointMake(0.82, 0.7);
     [self.photoFrames addObject:photoFrame4];

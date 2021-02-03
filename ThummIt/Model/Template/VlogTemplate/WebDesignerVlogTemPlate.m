@@ -66,52 +66,26 @@
     [undertagText applyTypo:undertagvlog];
     [self.texts addObject:undertagText];
     
-    Text *fistTitleVlog = [[Text alloc] init];
-    VlogDesiner *fistTitle = [VlogDesiner vlogDesiner];
-    fistTitleVlog.scale = 0.4;
-    fistTitleVlog.center = CGPointMake(0.06, 0.41);
-    fistTitleVlog.isTemplateItem = true;
-    fistTitleVlog.indexInLayer =@"2";
-    fistTitleVlog.text = @"웹";
-    fistTitleVlog.textView.text = @"웹";
-    [fistTitleVlog applyTypo:fistTitle];
-    [self.texts addObject:fistTitleVlog];
-    
-    Text *secondTitleVlog = [[Text alloc] init];
-    VlogDesiner *secondTitle = [VlogDesiner vlogDesiner];
-    secondTitleVlog.scale = 0.4;
-    secondTitleVlog.center = CGPointMake(0.22, 0.58);
-    secondTitleVlog.isTemplateItem = true;
-    secondTitleVlog.indexInLayer =@"3";
-    secondTitleVlog.text = @"디자이너는";
-    secondTitleVlog.textView.text = @"디자이너는";
-    [secondTitleVlog applyTypo:secondTitle];
+    Text *titleVlog = [[Text alloc] init];
+    VlogDesiner *title = [VlogDesiner vlogDesiner];
+    titleVlog.scale = 0.4;
+    titleVlog.center = CGPointMake(0.22, 0.58);
+    titleVlog.isTemplateItem = true;
+    titleVlog.indexInLayer =@"3";
+    titleVlog.text = @"웹\n디자이너는\n뭐 하지?";
+    titleVlog.textView.text = titleVlog.text;
+    titleVlog.textAlignment = NSTextAlignmentLeft;
+    [titleVlog applyTypo:title];
     
     VlogDesiner *white = [VlogDesiner vlogDesiner];
     white.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1] ;
-    secondTitleVlog.typoRangeArray = (NSMutableArray *)@[@[white,@"4-1"]];
-    
-    [self.texts addObject:secondTitleVlog];
-    
-    Text *thirdTitleVlog = [[Text alloc] init];
-    VlogDesiner *thirdTitle = [VlogDesiner vlogDesiner];
-    thirdTitle.textColor =[UIColor whiteColor];
-    thirdTitleVlog.scale = 0.4;
-    thirdTitleVlog.center = CGPointMake(0.17, 0.75);
-    thirdTitleVlog.isTemplateItem = true;
-    thirdTitleVlog.indexInLayer =@"4";
-    thirdTitleVlog.text = @"뭐 하지?";
-    thirdTitleVlog.textView.text = @"뭐 하지?";
-    [thirdTitleVlog applyTypo:thirdTitle];
-    [self.texts addObject:thirdTitleVlog];
+    titleVlog.typoRangeArray = (NSMutableArray *)@[@[white,@"6-7"]];
+    [self.texts addObject:titleVlog];
     
 }
 
 -(void)setUpStickers{
     
-    
-    
 }
-
 
 @end

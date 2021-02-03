@@ -39,7 +39,6 @@
     PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    photoFrame1.baseView.backgroundColor = UIColor.lightGrayColor;
     photoFrame1.baseView.frameSize = CGSizeMake(screenWidth * 0.54, screenHeight);
     photoFrame1.center = CGPointMake(0.27, 0.5);
     [self.photoFrames addObject:photoFrame1];
@@ -48,7 +47,6 @@
     PhotoFrame *photoFrame2 = [[PhotoFrame alloc] init];
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
-    photoFrame2.baseView.backgroundColor = UIColor.lightGrayColor;
     photoFrame2.baseView.frameSize = CGSizeMake(screenWidth * 0.46, screenHeight * 0.5);
     photoFrame2.center = CGPointMake(0.77, 0.25);
     [self.photoFrames addObject:photoFrame2];
@@ -56,7 +54,6 @@
     PhotoFrame *photoFrame3 = [[PhotoFrame alloc] init];
     photoFrame3.isTemplateItem = true;
     photoFrame3.isFixedPhotoFrame = true;
-    photoFrame3.baseView.backgroundColor = UIColor.lightGrayColor;
     photoFrame3.baseView.frameSize = CGSizeMake(screenWidth * 0.46, screenHeight * 0.5);
     photoFrame3.center = CGPointMake(0.77, 0.75);
     [self.photoFrames addObject:photoFrame3];
@@ -86,6 +83,7 @@
     homebakingText.indexInLayer = @"0";
     homebakingText.text = @"homebaking\n:macaron";
     homebakingText.textView.text = homebakingText.text;
+    homebakingText.textAlignment = NSTextAlignmentLeft;
     [homebakingText applyTypo:homebaking];
     [self.texts addObject:homebakingText];
     
@@ -96,7 +94,7 @@
     VlogMacaronSticker *vlogMacaronSticker1 = [VlogMacaronSticker vlogMacaronSticker];
     vlogMacaronSticker1.scale = 0.45;
     vlogMacaronSticker1.isTemplateItem = true;
-    vlogMacaronSticker1.isChangingColorAvailable = true;
+    vlogMacaronSticker1.cannotChangeColor = true;
     vlogMacaronSticker1.rotationDegree = degreesToRadians(350);
     vlogMacaronSticker1.center = CGPointMake(0.1, 0.13);
     [self.stickers addObject:vlogMacaronSticker1];
@@ -104,7 +102,7 @@
     VlogMacaronSticker *vlogMacaronSticker2 = [VlogMacaronSticker vlogMacaronSticker];
     vlogMacaronSticker2.scale = 0.45;
     vlogMacaronSticker2.isTemplateItem = true;
-    vlogMacaronSticker2.isChangingColorAvailable = true;
+    vlogMacaronSticker2.cannotChangeColor = true;
     vlogMacaronSticker2.rotationDegree = degreesToRadians(350);
     vlogMacaronSticker2.center = CGPointMake(1, 0.99);
     [self.stickers addObject:vlogMacaronSticker2];
