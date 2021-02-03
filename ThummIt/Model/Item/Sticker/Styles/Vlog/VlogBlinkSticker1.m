@@ -15,6 +15,7 @@
     if(self){
         self.itemName = @"blinkSticker1";
         self.backgroundImageName = @"blinkSticker1";
+        self.tintColor = [UIColor colorWithRed:1.0 green:201/255.0 blue:91/255.0 alpha:1.0];
 
     }
     return self;

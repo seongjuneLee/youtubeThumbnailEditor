@@ -27,6 +27,7 @@
         border2Att.borderWidth = 18;
         
         self.bgTextAttributes = @[border1Att, border2Att];
+        self.cannotChangeColor = true;
     }
     return self;
 }

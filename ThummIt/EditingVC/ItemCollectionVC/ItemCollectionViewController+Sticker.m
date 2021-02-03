@@ -22,7 +22,7 @@
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
     if (!sticker.cannotChangeColor) {
         sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        sticker.backgroundImageView.tintColor = [UIColor whiteColor];
+        sticker.backgroundImageView.tintColor = sticker.tintColor;
 
         [UIView animateWithDuration:0.2 animations:^{
             editingVC.hueSlider.alpha = 1.0;

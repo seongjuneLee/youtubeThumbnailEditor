@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"vlogVideoSticker";
         self.backgroundImageName = @"vlogVideoSticker";
-        self.cannotChangeColor = false;
+        self.tintColor = [UIColor colorWithRed:20/255.0 green:179/255.0 blue:215/255.0 alpha:1.0];
 
     }
     return self;
