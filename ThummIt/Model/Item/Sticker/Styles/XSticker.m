@@ -14,7 +14,7 @@
     self = [super init];
     if(self){
         self.itemName = @"xSticker";
-        self.backgroundImageName = @"xStickerRed";
+        self.backgroundImageName = @"xStickerWhite";
     }
     return self;
 }

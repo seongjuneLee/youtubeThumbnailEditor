@@ -18,6 +18,7 @@
         self.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackGreyGC"]];
         self.textColorPatternImageName = @"blackGreyGC";
         self.fontSize = TEXT_FONT_SIZE + 10;
+        self.isChangingAvailableColor = true;
 
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 15;

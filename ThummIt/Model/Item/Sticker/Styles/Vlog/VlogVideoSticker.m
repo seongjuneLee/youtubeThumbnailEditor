@@ -14,7 +14,7 @@
     self = [super init];
     if(self){
         self.itemName = @"vlogVideoSticker";
-        self.backgroundImageName = @"videoSticker";
+        self.backgroundImageName = @"vlogVideoSticker";
 
     }
     return self;

@@ -49,7 +49,7 @@
     tagText.scale = 0.5;
     tagText.center = CGPointMake(0.14, 0.11);
     tagText.isTemplateItem = true;
-    tagText.indexInLayer =@"1";
+    tagText.indexInLayer =@"0";
     tagText.text = @"회사 Vlog";
     tagText.textView.text = @"회사 Vlog";
     [tagText applyTypo:tagvlog];
@@ -60,7 +60,7 @@
     undertagText.scale = 0.5;
     undertagText.center = CGPointMake(0.15, 0.9);
     undertagText.isTemplateItem = true;
-    undertagText.indexInLayer =@"2";
+    undertagText.indexInLayer =@"1";
     undertagText.text = @"웹 디자이너편";
     undertagText.textView.text = @"웹 디자이너편";
     [undertagText applyTypo:undertagvlog];
@@ -71,7 +71,7 @@
     fistTitleVlog.scale = 0.4;
     fistTitleVlog.center = CGPointMake(0.06, 0.41);
     fistTitleVlog.isTemplateItem = true;
-    fistTitleVlog.indexInLayer =@"3";
+    fistTitleVlog.indexInLayer =@"2";
     fistTitleVlog.text = @"웹";
     fistTitleVlog.textView.text = @"웹";
     [fistTitleVlog applyTypo:fistTitle];
@@ -82,7 +82,7 @@
     secondTitleVlog.scale = 0.4;
     secondTitleVlog.center = CGPointMake(0.22, 0.58);
     secondTitleVlog.isTemplateItem = true;
-    secondTitleVlog.indexInLayer =@"4";
+    secondTitleVlog.indexInLayer =@"3";
     secondTitleVlog.text = @"디자이너는";
     secondTitleVlog.textView.text = @"디자이너는";
     [secondTitleVlog applyTypo:secondTitle];
@@ -99,7 +99,7 @@
     thirdTitleVlog.scale = 0.4;
     thirdTitleVlog.center = CGPointMake(0.17, 0.75);
     thirdTitleVlog.isTemplateItem = true;
-    thirdTitleVlog.indexInLayer =@"5";
+    thirdTitleVlog.indexInLayer =@"4";
     thirdTitleVlog.text = @"뭐 하지?";
     thirdTitleVlog.textView.text = @"뭐 하지?";
     [thirdTitleVlog applyTypo:thirdTitle];

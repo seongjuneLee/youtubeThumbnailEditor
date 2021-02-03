@@ -38,7 +38,7 @@
     
     PhotoFrame *smallPhotoFrame1 = [[PhotoFrame alloc] init];
     smallPhotoFrame1.isTemplateItem = true;
-    smallPhotoFrame1.isFixedPhotoFrame = true;\
+    smallPhotoFrame1.isFixedPhotoFrame = true;
     smallPhotoFrame1.baseView.backgroundColor = UIColor.lightGrayColor;
     smallPhotoFrame1.baseView.frameSize = CGSizeMake(screenWidth * 0.5, screenHeight * 0.5);
     smallPhotoFrame1.center = CGPointMake(0.75, 0.25);
@@ -71,6 +71,7 @@
     momVlogText.scale = 0.87;
     momVlogText.center = CGPointMake(0.115, 0.74);
     momVlogText.isTemplateItem = true;
+    momVlogText.indexInLayer = @"0";
     momVlogText.text = @"맘 Vlog";
     momVlogText.textView.text = momVlogText.text;
     [momVlogText applyTypo:mom];
@@ -83,6 +84,7 @@
     dailyText.scale = 1;
     dailyText.center = CGPointMake(0.275, 0.88);
     dailyText.isTemplateItem = true;
+    dailyText.indexInLayer = @"1";
     dailyText.text = @"육아 일상 브이로그";
     dailyText.textView.text = dailyText.text;
     [dailyText applyTypo:daily];

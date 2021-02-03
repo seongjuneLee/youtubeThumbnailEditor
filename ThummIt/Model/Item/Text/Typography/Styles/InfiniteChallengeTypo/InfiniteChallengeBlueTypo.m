@@ -18,7 +18,8 @@
         self.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"whiteBlueGC"]];
         self.textColorPatternImageName = @"whiteBlueGC";
         self.fontSize = TEXT_FONT_SIZE + 10;
-        
+        self.isChangingAvailableColor = true;
+
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 15;
         attribute.borderColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];

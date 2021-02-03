@@ -51,6 +51,7 @@
     italyText.scale = 0.33;
     italyText.center = CGPointMake(0.3, 0.77);
     italyText.isTemplateItem = true;
+    italyText.indexInLayer = @"0";
     italyText.text = @"vlog_italy";
     italyText.textView.text = italyText.text;
     [italyText applyTypo:italy];
@@ -62,6 +63,7 @@
     inItalyText.scale = 1.88;
     inItalyText.center = CGPointMake(0.77, 0.65);
     inItalyText.isTemplateItem = true;
+    inItalyText.indexInLayer = @"1";
     inItalyText.text = @"in Italy";
     inItalyText.textView.text = inItalyText.text;
     [inItalyText applyTypo:inItaly];
@@ -73,6 +75,7 @@
     tripText.scale = 1.3;
     tripText.center = CGPointMake(0.73, 0.37);
     tripText.isTemplateItem = true;
+    tripText.indexInLayer = @"2";
     tripText.text = @"Vlog";
     tripText.textView.text = tripText.text;
     [tripText applyTypo:barun];

@@ -102,5 +102,6 @@
 #import "VlogNanumSquareTypo.h"
 #import "VlogFreshmanTypo.h"
 #import "VlogStudentTypo.h"
+#import "WorkManYoutube.h"
 
 #endif /* TypoHeader_h */
