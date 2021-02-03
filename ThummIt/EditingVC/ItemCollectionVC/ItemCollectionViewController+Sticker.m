@@ -21,6 +21,7 @@
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
     if (!sticker.cannotChangeColor) {
         sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        sticker.backgroundImageView.tintColor = [UIColor whiteColor];
         editingVC.hueSlider.alpha = 1.0;
     } else {
         sticker.backgroundImageView.image = [UIImage imageNamed:sticker.backgroundImageName];

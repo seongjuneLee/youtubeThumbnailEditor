@@ -33,7 +33,7 @@
     text.textViewContainer.center = editingVC.bgView.center;
     text.center = text.textViewContainer.center;
 
-    if (text.typo.isChangingColorAvailable) {
+    if (!text.typo.cannotChangeColor) {
         editingVC.hueSlider.alpha = 1.0;
     } else {
         [editingVC hideAndInitSlider];
