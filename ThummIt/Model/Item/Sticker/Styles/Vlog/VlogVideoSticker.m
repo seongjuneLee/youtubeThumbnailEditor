@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"vlogVideoSticker";
         self.backgroundImageName = @"vlogVideoSticker";
-        self.isChangingColorAvailable = false;
+        self.cannotChangeColor = false;
 
     }
     return self;
