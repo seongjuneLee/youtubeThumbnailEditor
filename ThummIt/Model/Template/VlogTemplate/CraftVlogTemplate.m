@@ -16,7 +16,7 @@
         
         self.previewImageName = @"craftVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
-        self.templateName = @"FourHeartTemplate";
+        self.templateName = @"craftVlogTemplate";
         self.backgroundImageName = @"craftVlogFrame";
         
     }
@@ -33,11 +33,26 @@
 
 -(void)setUpPhotoFrame{
     
-    FullRectangle *photoFrame = [FullRectangle fullRectangle];
-    photoFrame.isTemplateItem = true;
-    photoFrame.isFixedPhotoFrame = true;
-    photoFrame.center = CGPointMake(0.5, 0.5);
-    [self.photoFrames addObject:photoFrame];
+    QuarterRectangle *firstPhotoFrame = [QuarterRectangle quarterRectangle];
+    QuarterRectangle *secondPhotoFrame = [QuarterRectangle quarterRectangle];
+    QuarterRectangle *thirdPhotoFrame = [QuarterRectangle quarterRectangle];
+    QuarterRectangle *fourthPhotoFrame = [QuarterRectangle quarterRectangle];
+    firstPhotoFrame.isTemplateItem = true;
+    secondPhotoFrame.isTemplateItem = true;
+    thirdPhotoFrame.isTemplateItem = true;
+    fourthPhotoFrame.isTemplateItem = true;
+    firstPhotoFrame.isFixedPhotoFrame = true;
+    secondPhotoFrame.isFixedPhotoFrame = true;
+    thirdPhotoFrame.isFixedPhotoFrame = true;
+    fourthPhotoFrame.isFixedPhotoFrame = true;
+    firstPhotoFrame.center = CGPointMake(0.25, 0.25);
+    secondPhotoFrame.center = CGPointMake(0.75, 0.25);
+    thirdPhotoFrame.center = CGPointMake(0.25, 0.75);
+    fourthPhotoFrame.center = CGPointMake(0.75, 0.75);
+    [self.photoFrames addObject:firstPhotoFrame];
+    [self.photoFrames addObject:secondPhotoFrame];
+    [self.photoFrames addObject:thirdPhotoFrame];
+    [self.photoFrames addObject:fourthPhotoFrame];
         
 }
 

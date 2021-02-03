@@ -18,7 +18,7 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"cebuVlogTemplate";
         self.backgroundImageName = @"";
-//        self.backgroundColor = UIColor.whiteColor;
+        self.backgroundColor = UIColor.whiteColor;
         
     }
     return self;

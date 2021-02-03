@@ -14,10 +14,11 @@
     self = [super init];
     if(self){
         
-        self.previewImageName = @"studyVlogPreView";
+        self.previewImageName = @"studyVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StudyVlogTemplate";
         self.backgroundImageName = @"";
+        self.backgroundColor = [UIColor colorWithRed:177/255.0 green:149/255.0 blue:153/255.0 alpha:1];
         
     }
     return self;
