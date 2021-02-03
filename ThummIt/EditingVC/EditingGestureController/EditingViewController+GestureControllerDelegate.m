@@ -11,6 +11,7 @@
 #import "EditingViewController+Buttons.h"
 #import "ItemCollectionViewController+Text.h"
 
+
 @implementation EditingViewController (GestureControllerDelegate)
 
 #pragma mark - 탭
@@ -24,8 +25,23 @@
         self.originalPhotoFrameImage = photoFrame.photoImageView.image;
         self.originalImageViewCenter = photoFrame.photoImageView.center;
         self.originalTransform = photoFrame.photoImageView.transform;
-        [self showAlbumVC];
-        [self setCurrentPhotoSelectedOnAlbumVC];
+        
+        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
+         {
+             if (status == PHAuthorizationStatusAuthorized){
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     if (PhotoManager.sharedInstance.phassets.count == 0) {
+                         PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+                     }
+                     [self taskWhenAuthorized];
+                     [self setCurrentPhotoSelectedOnAlbumVC];
+                 });
+             } else {
+                 [self taskWhenDenied];
+             }
+        }];
+        
+        
         
     }
     else if([item isKindOfClass:Text.class]){

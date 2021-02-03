@@ -1,0 +1,18 @@
+/* 
+  File.strings
+  ThummIt
+
+  Created by 이성준 on 2021/02/03.
+  
+*/
+
+"You should agree photo access request for this function" = "기능에 대한 사진 액세스 요청에 동의해야 합니다.";
+"Go to setting" = "설정으로 가기";
+"Setting" = "설정";
+"Cancel" = "취소";
+"Export" = "완료";
+"Done" = "완료";
+"circle" = "원";
+"basic" = "기본";
+"Entertain" = "예능";
+"Vlog" = "브이로그";

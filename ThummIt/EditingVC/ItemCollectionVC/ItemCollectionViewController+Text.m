@@ -8,6 +8,7 @@
 #import "ItemCollectionViewController+Text.h"
 #import "EditingViewController.h"
 #import "EditingViewController+Text.h"
+#import "EditingViewController+Buttons.h"
 
 @implementation ItemCollectionViewController (Text)
 
@@ -32,6 +33,12 @@
     text.textViewContainer.center = editingVC.bgView.center;
     text.center = text.textViewContainer.center;
 
+    if (text.typo.isChangingColorAvailable) {
+        editingVC.hueSlider.alpha = 1.0;
+    } else {
+        [editingVC hideAndInitSlider];
+        editingVC.hueSlider.alpha = 0.0;
+    }
 
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지
