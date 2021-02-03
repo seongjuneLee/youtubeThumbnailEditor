@@ -12,8 +12,9 @@
 #import "SaveManager.h"
 #import "GuideLine.h"
 #import "DashedGuideLineView.h"
-
+#import "NSString+Additions.h"
 @import Parse;
+
 @interface HomeViewController ()
 
 @end

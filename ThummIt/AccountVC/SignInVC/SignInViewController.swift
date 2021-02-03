@@ -20,7 +20,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var appleSignInView: UIView!
     @IBOutlet weak var googleSignInView: UIView!
     @IBOutlet weak var facebookSignInView: UIView!
-        
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -79,41 +80,66 @@ class SignInViewController: UIViewController {
                             //do something
                             _ = user
                             
-                            let userID = NSString.localizedStringWithFormat("%d", user?.id as! CVarArg)
+                            let userID = String(user!.id)
                             let username = user?.properties?["nickname"]
                             let email = user?.kakaoAccount?.email
-                            UserManager.sharedInstance().signUp(withKakaoTalkUserID: userID as String, withType: "kakao", username: username!, withEmail: email!) { (success) in
-                                if (success) {
-                                    self.dismissSelf()
+                            
+                            UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
+                                if (success){
+                                    self.dismiss(animated: true, completion: nil)
+                                } else {
+                                    
                                 }
                             }
                         }
                     }
-
                 }
             }
-
         }
-        
     }
-    
-    @objc public func dismissSelf(){
-        self.removeFromParent()
-        self.view.removeFromSuperview()
-    }
-    
     
     @IBAction func facebookButtonTapped(_ sender: UIButton) {
+//        FBSDKLoginKit
+//        if (AccessToken.hasGranted("public_profile")) {
+//            <#code#>
+//        }
+        
+//        if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"email"]) {
+//          // TODO: publish content.
+//            [FBSDKProfile loadCurrentProfileWithCompletion:
+//             ^(FBSDKProfile *profile, NSError *error) {
+//               if (profile) {
+//                   NSLog(@"Hello, %@!", profile.firstName);
+//                   NSLog(@"Hello, profile %@!", profile.name);
+//                   NSLog(@"profile.email %@!", profile.email);
+//                   NSLog(@"profile.userID %@!", profile.userID);
+//    //               NSLog(@"Hello, profile %@!", profile.email);
+//    //               NSLog(@"Hello, profile %@!", profile.email);
+//               }
+//             }];
+//        } else {
+//          FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+//            [loginManager logInWithPermissions:@[@"public_profile",@"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult * _Nullable result, NSError * _Nullable error) {
+//                [FBSDKProfile loadCurrentProfileWithCompletion:
+//                 ^(FBSDKProfile *profile, NSError *error) {
+//                   if (profile) {
+//                     NSLog(@"Hello, %@!", profile.firstName);
+//                   }
+//                 }];
+//
+//            }];
+//        }
+
+        
     }
-    
-//    @IBAction func googleButtonTapped(_ sender: GIDSignInButton) {
-//    }
-//
-//
-//    @IBAction func appleButtonTapped(_ sender: UIButton) {
-//    }
-    
+        
     @IBAction func emailButtonTapped(_ sender: UIButton) {
     }
+
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    
     
 }

@@ -11,6 +11,7 @@
 #import "CategoryManager.h"
 #import "TemplateManager.h"
 #import "TemplateHeader.h"
+@import Parse;
 @implementation HomeCollectionController
 
 -(id)init{

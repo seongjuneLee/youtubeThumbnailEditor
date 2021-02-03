@@ -16,7 +16,6 @@ import FirebaseAuth
 import GoogleSignIn
 import FBSDKCoreKit
 
-
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -33,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
         Parse.initialize(with: ParseClientConfiguration(block: { ( configuration :  ParseMutableClientConfiguration) in
             configuration.applicationId = "myappID";
-            configuration.clientKey = "GqkiCN3rEgmX"
-            configuration.server = "http://13.125.246.189/parse";
+            configuration.clientKey = "3IKuPKnRgLwN"
+            configuration.server = "http://3.35.208.70/parse";
         }))
         
         if PFUser.current() != nil {
@@ -77,11 +76,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             annotation: options[UIApplication.OpenURLOptionsKey.annotation]
         )
         
-        if (url.scheme == kakaoURLScheme) {
-            if  AuthApi.isKakaoTalkLoginUrl(url) {
-                return AuthController.handleOpenUrl(url: url)
+//        if (url.scheme == kakaoURLScheme) {
+        if  KOSession.isKakaoAccountLoginCallback(url) {
+                return KOSession.handleOpen(url)
             }
-        }
+//        }
         if (url.scheme == googleURLScheme) {
             if GIDSignIn.sharedInstance().handle(url) {
                 return GIDSignIn.sharedInstance().handle(url)
@@ -92,6 +91,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
     }
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        KOSession.handleDidBecomeActive()
+    }
     
 }
 

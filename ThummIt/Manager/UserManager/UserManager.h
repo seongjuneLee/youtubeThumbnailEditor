@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UserManager : NSObject
 
 
--(void)signUpWithKakaoTalkUserID:(NSString*)thirdPartyID withType:(NSString *)type username:(NSString*)username withEmail:(NSString *)email callback:(void(^)(BOOL)) callback;
+-(void)signUpWithThirdPartyID:(NSString*)thirdPartyID withType:(NSString *)type username:(NSString*)username withEmail:(NSString *)email callback:(void(^)(BOOL)) callback;
 + (UserManager *)sharedInstance;
 
 @end

@@ -20,32 +20,32 @@
     return sharedInstance;
 }
 
--(void)signUpWithKakaoTalkUserID:(NSString*)thirdPartyID withType:(NSString *)type username:(NSString*)username withEmail:(NSString *)email callback:(void(^)(BOOL)) callback{
+-(void)signUpWithThirdPartyID:(NSString*)thirdPartyID withType:(NSString *)type username:(NSString*)username withEmail:(NSString *)email callback:(void(^)(BOOL)) callback{
     PFQuery* userQuery = PFUser.query;
-    NSString* formattedKakaoId = [NSString stringWithFormat:@"%@:%@",type,thirdPartyID];
-    [userQuery whereKey:@"thirdPartyUserID" equalTo:formattedKakaoId];
-    [userQuery getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable user, NSError * _Nullable error) {
+    NSString* formattedId = [NSString stringWithFormat:@"%@:%@",type,thirdPartyID];
+    [userQuery whereKey:@"username" equalTo:username];
+    [userQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        PFUser *user = (PFUser *)objects.firstObject;
         if (user) {
-            // 서버에 비밀번호 요청 후 로그인
-            NSString* fetchedUsername = user[@"username"];
-            [PFCloud callFunctionInBackground:@"getUserForUsername" withParameters:@{@"username":fetchedUsername} block:^(PFUser* _Nullable user, NSError * _Nullable error) {
-                NSString *password = [NSString randomStringWithLength:10];
-                [user setPassword:password];
-                [user save];
-                [PFUser logInWithUsernameInBackground:fetchedUsername password:password block:^(PFUser * _Nullable user, NSError * _Nullable error) {
-                    if (user) {
-                        callback(true);
-                    }
+            [user fetchIfNeededInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+                [PFCloud callFunctionInBackground:@"getPasswordForUsername" withParameters:@{@"username":user.username} block:^(NSString* _Nullable newPassword, NSError * _Nullable error) {
+                    [PFUser logInWithUsernameInBackground:user.username password:newPassword block:^(PFUser * _Nullable user, NSError * _Nullable error) {
+                        if (user) {
+                            callback(true);
+                        } else{
+                            callback(false);
+                        }
+                    }];
                 }];
             }];
+
         } else {
-            // 새로 가입해야함
             NSString* password = [NSString randomStringWithLength:10];
             PFUser* newUser = [PFUser user];
             [self validatedUserName:username withCompletionBlock:^(NSString *validatedUsername) {
                 newUser[@"username"] = validatedUsername;
                 newUser[@"password"] = password;
-                newUser[@"thirdPartyUserID"] = formattedKakaoId;
+                newUser[@"thirdPartyUserID"] = formattedId;
                 newUser[@"email"] = email;
                 
                 // 유저에도 언어, 국가 저장해두기 => 푸시노티 메시지 로컬라이즈를 위해
@@ -62,7 +62,6 @@
                     }
                     
                 }
-                NSLog(@"newUser username %@",newUser[@"username"]);
                 [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     if (succeeded) {
                         
@@ -82,8 +81,10 @@
             }];
 
         }
+
+        
     }];
-    
+         
 }
 
 -(void)validatedUserName:(NSString *)username withCompletionBlock:(void (^)(NSString *validatedUsername))block{

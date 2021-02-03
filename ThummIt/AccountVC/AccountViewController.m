@@ -16,9 +16,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self connectAccountTableController];
-    if (!PFUser.currentUser) {
-        [self connectSignInVC];
-    }
     
 }
 
@@ -28,7 +25,6 @@
 
 -(void)viewDidLayoutSubviews{
     
-    self.signInVC.view.frame = self.view.frame;
     
 }
 
@@ -39,13 +35,5 @@
     [self.accountTableController setAccountVCHeader];
 }
 
--(void)connectSignInVC{
-    
-    UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-    self.signInVC = (SignInViewController *)[main instantiateViewControllerWithIdentifier:@"SignInViewController"];
-    [self addChildViewController:self.signInVC];
-    [self.view addSubview:self.signInVC.view];
-    
-}
 
 @end

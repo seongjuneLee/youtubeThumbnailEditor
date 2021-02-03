@@ -30,7 +30,9 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
-			<array/>
+			<array>
+				<string>fb470445923976829</string>
+			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
@@ -40,7 +42,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>236997214531786</string>
+	<string>470445923976829</string>
 	<key>FacebookDisplayName</key>
 	<string>ThummIt</string>
 	<key>KAKAO_APP_KEY</key>

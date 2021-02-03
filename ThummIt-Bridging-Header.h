@@ -9,6 +9,8 @@
 #import "ThummIt-PrefixHeader.pch"
 #import "UILabel+Additions.h"
 #import "UserManager.h"
+#import "UIView+Additions.h"
+
 /**
  * Copyright 2015-2017 Kakao Corp.
  *

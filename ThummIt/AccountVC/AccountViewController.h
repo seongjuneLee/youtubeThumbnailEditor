@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import "AccountTableController.h"
-#import "ThummIt-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *header;
 @property (weak, nonatomic) IBOutlet UIImageView *accountIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *accountNameLabel;
-@property (strong, nonatomic) SignInViewController *signInVC;
 
 @end
 
