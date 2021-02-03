@@ -18,6 +18,7 @@
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"modelVlogTemplate";
         self.backgroundImageName = @"";
+        self.backgroundColor = [UIColor colorWithRed:121/255.0 green:148/255.0 blue:195/255.0 alpha:1];
         
     }
     return self;
@@ -32,12 +33,6 @@
 }
 
 -(void)setUpPhotoFrame{
-    
-    FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
-    fullRectPhotoFrame.isTemplateItem = true;
-    fullRectPhotoFrame.isFixedPhotoFrame = true;
-    fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
-    [self.photoFrames addObject:fullRectPhotoFrame];
     
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
     float frameWidth = screenWidth * 0.19;
@@ -81,18 +76,29 @@
     modelText.center = CGPointMake(0.82, 0.44);
     modelText.isTemplateItem = true;
     modelText.indexInLayer = @"3";
-    modelText.text = @"피팅 모델의\n여름 일상\n브이로그";
+    modelText.text = @"피팅 모델의\n여름 일상";
     modelText.textView.text = modelText.text;
     
     VlogModel *fitting = [VlogModel vlogModel];
     fitting.textColor = [UIColor colorWithRed:(208/255.0) green:(145/255.0) blue:(116/255.0) alpha:1];
-    VlogModel *thirdLine = [VlogModel vlogModel];
-    thirdLine.fontSize += 16;
     
-    modelText.typoRangeArray = (NSMutableArray *)@[@[fitting,@"0-2"], @[thirdLine,@"13-4"]];
+    modelText.typoRangeArray = (NSMutableArray *)@[@[fitting,@"0-2"]];
     [modelText applyTypo:base];
     [self.texts addObject:modelText];
-    //폰트 크기가 range가 적용 안됨
+    
+    Text *vlogText = [[Text alloc] init];
+    VlogModel *vlog = [VlogModel vlogModel];
+    vlogText.scale = 0.88;
+    vlogText.center = CGPointMake(0.82, 0.64);
+    vlogText.isTemplateItem = true;
+    vlogText.indexInLayer = @"4";
+    vlogText.text = @"브이로그";
+    vlogText.textView.text = vlogText.text;
+    vlog.fontSize += 16;
+    
+    [vlogText applyTypo:vlog];
+    [self.texts addObject:vlogText];
+    
 }
 
 -(void)setUpStickers{
