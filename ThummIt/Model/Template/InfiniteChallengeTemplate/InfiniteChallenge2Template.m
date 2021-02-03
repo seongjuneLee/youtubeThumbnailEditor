@@ -38,7 +38,6 @@
     photoFrame1.isFixedPhotoFrame = true;
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
     float frameWidth = screenWidth * 0.6;
-    photoFrame1.baseView.backgroundColor = UIColor.grayColor;
     photoFrame1.baseView.frameSize = CGSizeMake(frameWidth, screenWidth * 9/16);
     photoFrame1.center = CGPointMake(0.3, 0.5);
     [self.photoFrames addObject:photoFrame1];
@@ -48,7 +47,6 @@
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
     float frameWidth2 = screenWidth * 0.4;
-    photoFrame2.baseView.backgroundColor = UIColor.lightGrayColor;
     photoFrame2.baseView.frameSize = CGSizeMake(frameWidth2, screenWidth * 9/16);
     photoFrame2.center = CGPointMake(0.8, 0.5);
     [self.photoFrames addObject:photoFrame2];

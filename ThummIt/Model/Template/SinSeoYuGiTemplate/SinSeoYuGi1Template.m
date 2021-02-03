@@ -37,7 +37,6 @@
     fullRectPhotoFrame.isTemplateItem = true;
     fullRectPhotoFrame.isFixedPhotoFrame = true;
     fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
-    fullRectPhotoFrame.baseView.backgroundColor = UIColor.lightGrayColor;
     [self.photoFrames addObject:fullRectPhotoFrame];
     
     PhotoFrame *circlePhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];

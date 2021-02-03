@@ -111,7 +111,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="569.5" height="300.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaA-yZ-tJG">
-                                                <rect key="frame" x="0.0" y="75" width="124" height="150.5"/>
+                                                <rect key="frame" x="0.0" y="60" width="124" height="180.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoFrameImage" translatesAutoresizingMaskIntoConstraints="NO" id="nW8-5x-KcO">
                                                         <rect key="frame" x="31.5" y="66.5" width="61.5" height="61.5"/>
@@ -152,7 +152,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DQ-QU-Zk5">
-                                                <rect key="frame" x="124" y="75" width="124.5" height="150.5"/>
+                                                <rect key="frame" x="124" y="60" width="124.5" height="180.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmZ-XO-KM9">
                                                         <rect key="frame" x="48.5" y="72.5" width="28" height="59"/>
@@ -188,10 +188,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yU9-uf-R4L">
-                                                <rect key="frame" x="248.5" y="75" width="124" height="150.5"/>
+                                                <rect key="frame" x="248.5" y="60" width="124" height="180.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stickerImage" translatesAutoresizingMaskIntoConstraints="NO" id="ZLZ-tE-T6Q">
-                                                        <rect key="frame" x="39.5" y="75" width="45" height="44.5"/>
+                                                        <rect key="frame" x="39.5" y="74.5" width="45" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="ZLZ-tE-T6Q" secondAttribute="height" multiplier="1:1" id="whM-0u-4j5"/>
                                                         </constraints>
@@ -225,7 +225,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YP2-Kz-HSN">
-                                                <rect key="frame" x="372.5" y="75" width="124.5" height="150.5"/>
+                                                <rect key="frame" x="372.5" y="60" width="124.5" height="180.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundColorImage" translatesAutoresizingMaskIntoConstraints="NO" id="HVK-Qb-jnt">
                                                         <rect key="frame" x="34.5" y="69" width="55.5" height="56"/>
@@ -266,7 +266,7 @@
                                         <constraints>
                                             <constraint firstItem="4DQ-QU-Zk5" firstAttribute="width" secondItem="MaA-yZ-tJG" secondAttribute="width" id="15T-0e-skf"/>
                                             <constraint firstItem="4DQ-QU-Zk5" firstAttribute="height" secondItem="MaA-yZ-tJG" secondAttribute="height" id="34H-eO-Yio"/>
-                                            <constraint firstItem="MaA-yZ-tJG" firstAttribute="height" secondItem="tp2-GO-AoY" secondAttribute="height" multiplier="0.5" id="A0b-vR-3QW"/>
+                                            <constraint firstItem="MaA-yZ-tJG" firstAttribute="height" secondItem="tp2-GO-AoY" secondAttribute="height" multiplier="0.6" id="A0b-vR-3QW"/>
                                             <constraint firstItem="IR6-qv-FJI" firstAttribute="width" secondItem="kFG-gf-ZDf" secondAttribute="width" id="Ix5-Is-3ya"/>
                                             <constraint firstItem="4DQ-QU-Zk5" firstAttribute="leading" secondItem="MaA-yZ-tJG" secondAttribute="trailing" id="L0x-ML-liT"/>
                                             <constraint firstItem="YP2-Kz-HSN" firstAttribute="leading" secondItem="yU9-uf-R4L" secondAttribute="trailing" id="Muw-U1-56s"/>
@@ -290,6 +290,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="tp2-GO-AoY" firstAttribute="centerY" secondItem="a67-Pd-GYU" secondAttribute="centerY" id="9LW-CL-6UE"/>
                                     <constraint firstAttribute="bottom" secondItem="tp2-GO-AoY" secondAttribute="bottom" id="HUD-dW-bh0"/>
                                     <constraint firstAttribute="trailing" secondItem="tp2-GO-AoY" secondAttribute="trailing" id="QqS-SR-hrT"/>
                                     <constraint firstItem="tp2-GO-AoY" firstAttribute="height" secondItem="a67-Pd-GYU" secondAttribute="height" id="Vvq-Wt-WSA"/>

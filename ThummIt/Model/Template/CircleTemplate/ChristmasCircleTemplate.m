@@ -37,9 +37,7 @@
     
     PhotoFrame *firstPhotoFrame = [ChristmasCircle christmasCircle];
     firstPhotoFrame.isTemplateItem = true;
-    firstPhotoFrame.baseView.backgroundColor = UIColor.whiteColor;
     firstPhotoFrame.center = CGPointMake(0.32, 0.5);
-    
     [self.photoFrames addObject:firstPhotoFrame];
 
 }
