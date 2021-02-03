@@ -15,6 +15,7 @@
     if(self){
         self.itemName = @"sinSeoYuGiEffectSticker";
         self.backgroundImageName = @"sinSeoYuGiEffectSticker";
+        self.tintColor = [UIColor redColor];
     }
     return self;
 }

@@ -15,6 +15,7 @@
     if(self){
         self.itemName = @"exclamationMark";
         self.backgroundImageName = @"exclamationMark";
+        self.cannotChangeColor = true;
     }
     return self;
 }

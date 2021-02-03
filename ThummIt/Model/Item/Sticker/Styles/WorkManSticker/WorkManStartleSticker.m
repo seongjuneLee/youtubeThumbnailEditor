@@ -15,6 +15,7 @@
     if (self) {
         self.itemName = @"workManStartleSticker";
         self.backgroundImageName = @"workManStartleSticker";
+        self.tintColor = [UIColor redColor];
     }
     return self;
 }

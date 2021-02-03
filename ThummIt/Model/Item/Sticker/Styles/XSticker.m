@@ -15,6 +15,7 @@
     if(self){
         self.itemName = @"xSticker";
         self.backgroundImageName = @"xStickerWhite";
+        self.tintColor = [UIColor whiteColor];
     }
     return self;
 }

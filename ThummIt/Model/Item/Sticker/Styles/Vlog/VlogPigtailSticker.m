@@ -15,6 +15,7 @@
     if(self){
         self.itemName = @"pigtailSticker";
         self.backgroundImageName = @"pigtailSticker";
+        self.tintColor = [UIColor colorWithRed:254/255.0 green:214/255.0 blue:141/255.0 alpha:1.0];
 
     }
     return self;

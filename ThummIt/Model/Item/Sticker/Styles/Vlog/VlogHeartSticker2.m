@@ -15,6 +15,7 @@
     if(self){
         self.itemName = @"vlogHeartSticker2";
         self.backgroundImageName = @"vlogHeartSticker2";
+        self.tintColor = [UIColor redColor];
 
     }
     return self;
