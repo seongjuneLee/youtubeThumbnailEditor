@@ -173,8 +173,10 @@
     [UIView animateWithDuration:0.2 animations:^{
         self.hueSlider.alpha = 0.0;
     }];
+    
 
 }
+
 
 -(void)exportThumbnail{
     
@@ -272,25 +274,23 @@
 
 - (IBAction)photoFrameButtonTapped:(UIButton *)sender {
 
-    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
-     {
-         if (status == PHAuthorizationStatusAuthorized){
+        
+         if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
              dispatch_async(dispatch_get_main_queue(), ^{
                  if (PhotoManager.sharedInstance.phassets.count == 0) {
                      PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
                  }
-                 [self taskWhenAuthorized];
+                 [self photoFrameButtonTappedTaskWhenAuthorized];
 
              });
          } else {
              [self taskWhenDenied];
          }
-    }];
 
 
 }
 
--(void)taskWhenAuthorized{
+-(void)photoFrameButtonTappedTaskWhenAuthorized{
     [self.layerController showTransparentView];
     [self.modeController setNavigationItemRespondToEditingMode:AddingPhotoFrameMode];
     self.itemCollectionVC.itemType = PhotoFrameType;

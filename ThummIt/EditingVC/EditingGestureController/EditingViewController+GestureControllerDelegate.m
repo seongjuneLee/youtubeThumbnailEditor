@@ -26,22 +26,14 @@
         self.originalImageViewCenter = photoFrame.photoImageView.center;
         self.originalTransform = photoFrame.photoImageView.transform;
         
-        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
-         {
-             if (status == PHAuthorizationStatusAuthorized){
-                 dispatch_async(dispatch_get_main_queue(), ^{
-                     if (PhotoManager.sharedInstance.phassets.count == 0) {
-                         PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
-                     }
-                     [self taskWhenAuthorized];
-                     [self setCurrentPhotoSelectedOnAlbumVC];
-                 });
-             } else {
-                 [self taskWhenDenied];
-             }
-        }];
-        
-        
+        if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
+                if (PhotoManager.sharedInstance.phassets.count == 0) {
+                    PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+                }
+                [self photoFrameTappedTaskWhenAuthorized];
+        } else {
+            [self taskWhenDenied];
+        }
         
     }
     else if([item isKindOfClass:Text.class]){
@@ -66,6 +58,14 @@
     [self.layerController showTransparentView];
     [self.layerController bringCurrentItemToFront:item];
     
+}
+
+-(void)photoFrameTappedTaskWhenAuthorized{
+    [self.layerController showTransparentView];
+    [self.modeController setNavigationItemRespondToEditingMode:EditingPhotoFrameMode];
+    [self.layerController bringCurrentItemToFront:self.currentItem];
+    [self showAlbumVC];
+    [self setCurrentPhotoSelectedOnAlbumVC];
 }
 
 -(void)changeCurrentItem:(Item *)item{

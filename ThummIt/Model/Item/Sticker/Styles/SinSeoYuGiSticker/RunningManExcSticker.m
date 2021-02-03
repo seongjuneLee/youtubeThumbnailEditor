@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"runningManExcSticker";
         self.backgroundImageName = @"runningManExcSticker";
-        self.isChangingColorAvailable = true;
+        self.isChangingColorAvailable = false;
     }
     return self;
 }

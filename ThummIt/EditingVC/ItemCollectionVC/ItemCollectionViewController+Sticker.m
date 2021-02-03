@@ -7,6 +7,7 @@
 
 #import "ItemCollectionViewController+Sticker.h"
 #import "EditingViewController.h"
+#import "EditingViewController+Buttons.h"
 
 @implementation ItemCollectionViewController (Sticker)
 
@@ -21,16 +22,22 @@
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
     if (sticker.isChangingColorAvailable) {
         sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        editingVC.hueSlider.alpha = 1.0;
-    } else {
+        sticker.backgroundImageView.tintColor = [UIColor whiteColor];
+        [UIView animateWithDuration:0.2 animations:^{
+            editingVC.hueSlider.alpha = 1.0;
+            editingVC.thumbCircleView.alpha = 1.0;
+        }];
+    } else{
         sticker.backgroundImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
-        editingVC.hueSlider.alpha = 0.0;
+        [editingVC hideAndInitSlider];        
+
     }
     if (editingVC.currentItem) {
-        // 위치, 크기,사진 유지
-        sticker.baseView.frame = editingVC.currentItem.baseView.frame;
-        sticker.backgroundImageView.frame = editingVC.currentItem.backgroundImageView.frame;
-        [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
+        
+        sticker.baseView.center = editingVC.currentItem.baseView.center;
+        sticker.baseView.transform = editingVC.currentItem.baseView.transform;
+        [editingVC.currentItem.baseView removeFromSuperview];
+        
     }
     
     [editingVC.layerController bringCurrentItemToFront:sticker];

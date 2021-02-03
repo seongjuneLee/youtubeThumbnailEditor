@@ -34,15 +34,19 @@
     text.center = text.textViewContainer.center;
 
     if (text.typo.isChangingColorAvailable) {
-        editingVC.hueSlider.alpha = 1.0;
-    } else {
+        [UIView animateWithDuration:0.2 animations:^{
+            editingVC.hueSlider.alpha = 1.0;
+            editingVC.thumbCircleView.alpha = 1.0;
+        }];
+    }else {
         [editingVC hideAndInitSlider];
-        editingVC.hueSlider.alpha = 0.0;
     }
 
     if (editingVC.currentItem) {
-        // 위치, 크기,사진 유지
-        [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
+        
+        text.baseView.center = editingVC.currentItem.baseView.center;
+        text.baseView.transform = editingVC.currentItem.baseView.transform;
+        [editingVC.currentItem.baseView removeFromSuperview];
     }
     
     [editingVC.layerController bringCurrentItemToFront:text];

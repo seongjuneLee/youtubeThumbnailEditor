@@ -15,6 +15,7 @@
     if(self){
         self.itemName = @"workManAngrySticker";
         self.backgroundImageName = @"workManAngrySticker";
+        self.isChangingColorAvailable = false;
     }
     return self;
 }

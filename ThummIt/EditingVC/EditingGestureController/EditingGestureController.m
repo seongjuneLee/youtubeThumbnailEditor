@@ -388,12 +388,12 @@
         CGPoint fingerPoint = [sender locationInView:photoFrame.baseView];
         
         CGPoint newCenter  = CGPointMake(fingerPoint.x - (self.originalPoint.x - self.originalCenter.x), fingerPoint.y - (self.originalPoint.y - self.originalCenter.y));
-        CGPoint photoImageViewOrigin = CGPointMake(newCenter.x - photoFrame.photoImageView.frameWidth/2, newCenter.y - photoFrame.photoImageView.frameHeight/2);
-        
-        if (photoImageViewOrigin.x <= 0 && photoFrame.baseView.frameWidth <= newCenter.x + photoFrame.photoImageView.frameWidth/2 ) {
-        }
-        if (photoImageViewOrigin.y <= 0 && photoFrame.baseView.frameHeight/2 <= newCenter.y + photoFrame.photoImageView.frameHeight/2 ) {
-        }
+//        CGPoint photoImageViewOrigin = CGPointMake(newCenter.x - photoFrame.photoImageView.frameWidth/2, newCenter.y - photoFrame.photoImageView.frameHeight/2);
+//
+//        if (photoImageViewOrigin.x <= 0 && photoFrame.baseView.frameWidth <= newCenter.x + photoFrame.photoImageView.frameWidth/2 ) {
+//        }
+//        if (photoImageViewOrigin.y <= 0 && photoFrame.baseView.frameHeight/2 <= newCenter.y + photoFrame.photoImageView.frameHeight/2 ) {
+//        }
         photoFrame.photoImageView.centerX = newCenter.x;
         photoFrame.photoImageView.centerY = newCenter.y;
 
