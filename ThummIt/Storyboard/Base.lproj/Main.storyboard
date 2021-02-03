@@ -21,7 +21,7 @@
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.9669373631477356" green="0.70981663465499878" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="95p-hu-MnO">
                                 <rect key="frame" x="0.0" y="105" width="414" height="708"/>
@@ -41,6 +41,7 @@
                             <constraint firstItem="hYp-WL-McN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XPn-OT-UUW"/>
                             <constraint firstItem="95p-hu-MnO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="YdA-ZQ-RrC"/>
                             <constraint firstItem="95p-hu-MnO" firstAttribute="top" secondItem="hYp-WL-McN" secondAttribute="bottom" constant="20" id="bWQ-oD-W66"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hYp-WL-McN" secondAttribute="trailing" symbolic="YES" id="bzE-NG-IF2"/>
                             <constraint firstItem="hYp-WL-McN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ey1-uk-EKW"/>
                             <constraint firstItem="95p-hu-MnO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vog-lk-794"/>
                         </constraints>

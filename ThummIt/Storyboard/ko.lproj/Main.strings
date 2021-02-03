@@ -38,7 +38,7 @@
 "pbF-kI-UZU.text" = "이메일로 계속하기";
 
 /* Class = "UILabel"; text = "If you continue, you will agree to the terms of uses\n and the privacy policy."; ObjectID = "pnw-el-ieF"; */
-"pnw-el-ieF.text" = "계속하면 사용 약관 및 개인 정보 보호 정책에 동의하게 됩니다.";
+"pnw-el-ieF.text" = "계속하면 사용약관 및 개인정보 보호정책에 동의하게 됩니다.";
 
 /* Class = "UITabBarItem"; title = "Continue"; ObjectID = "pv9-bC-7eM"; */
 "pv9-bC-7eM.title" = "이어하기";
