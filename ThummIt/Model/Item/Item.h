@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL isFixedPhotoFrame;
 
 @property (nonatomic) BOOL isTemplateItem;
-
+@property (nonatomic) BOOL isChangingColorAvailable;
 -(void)loadView;
 
 

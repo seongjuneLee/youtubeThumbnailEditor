@@ -21,8 +21,10 @@
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
     if (sticker.isChangingColorAvailable) {
         sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        editingVC.hueSlider.alpha = 1.0;
     } else {
         sticker.backgroundImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
+        editingVC.hueSlider.alpha = 0.0;
     }
     if (editingVC.currentItem) {
         // 위치, 크기,사진 유지

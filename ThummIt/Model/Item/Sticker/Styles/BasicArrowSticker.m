@@ -15,6 +15,7 @@
     if(self){
         self.itemName = @"basicArrowSticker";
         self.backgroundImageName = @"basicArrowStickerRed";
+        self.isChangingColorAvailable = true;
     }
     return self;
 }

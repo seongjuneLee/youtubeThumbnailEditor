@@ -30,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)bgColorButtonHoldDown;
 -(void)bgColorButtonHoldRelease;
 -(void)addItemCollectionVC;
+-(void)taskWhenAuthorized;
+-(void)taskWhenDenied;
+
+-(void)hideAndInitSlider;
 
 @end
 
