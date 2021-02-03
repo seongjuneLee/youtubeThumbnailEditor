@@ -3,7 +3,7 @@
 "7do-rz-yjx.text" = "페이스북으로 계속하기";
 
 /* Class = "UILabel"; text = "Sign in with Kakao"; ObjectID = "ALG-cK-jac"; */
-"ALG-cK-jac.text" = "카카오로 계속하기";
+"ALG-cK-jac.text" = "카카오톡으로 계속하기";
 
 /* Class = "UILabel"; text = "Submit"; ObjectID = "BPi-hb-YB3"; */
 "BPi-hb-YB3.text" = "완료";
@@ -35,7 +35,7 @@
 "j0n-s3-nYd.text" = "애플로 계속하기";
 
 /* Class = "UILabel"; text = "Sign in with Email"; ObjectID = "pbF-kI-UZU"; */
-"pbF-kI-UZU.text" = "이메일 로그인";
+"pbF-kI-UZU.text" = "이메일로 계속하기";
 
 /* Class = "UILabel"; text = "If you continue, you will agree to the terms of uses\n and the privacy policy."; ObjectID = "pnw-el-ieF"; */
 "pnw-el-ieF.text" = "계속하면 사용 약관 및 개인 정보 보호 정책에 동의하게 됩니다.";

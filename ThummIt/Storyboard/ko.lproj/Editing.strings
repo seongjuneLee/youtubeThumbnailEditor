@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "BG Color"; ObjectID = "1zi-B1-aPg"; */
+"1zi-B1-aPg.text" = "배경색깔";
+
+/* Class = "UILabel"; text = "Delete"; ObjectID = "7dA-xu-yjx"; */
+"7dA-xu-yjx.text" = "삭제";
+
+/* Class = "UIButton"; normalTitle = "Export"; ObjectID = "JmC-6K-MjI"; */
+"JmC-6K-MjI.normalTitle" = "완료";
+
+/* Class = "UINavigationItem"; title = "Album"; ObjectID = "RKB-uI-dlr"; */
+"RKB-uI-dlr.title" = "Album";
+
+/* Class = "UILabel"; text = "PhotoFrame"; ObjectID = "TLd-62-MNS"; */
+"TLd-62-MNS.text" = "갤러리";
+
+/* Class = "UILabel"; text = "Sticker"; ObjectID = "d66-vL-Vag"; */
+"d66-vL-Vag.text" = "스티커";
+
+/* Class = "UILabel"; text = "Text"; ObjectID = "f42-Nn-7mT"; */
+"f42-Nn-7mT.text" = "글자";
+
+/* Class = "UILabel"; text = "BackgroundColor"; ObjectID = "qsY-NY-IDB"; */
+"qsY-NY-IDB.text" = "배경색깔";
+
+/* Class = "UILabel"; text = "T"; ObjectID = "wmZ-XO-KM9"; */
+"wmZ-XO-KM9.text" = "T";
+
+/* Class = "UILabel"; text = "Editing"; ObjectID = "xcS-1G-W8A"; */
+"xcS-1G-W8A.text" = "편집";
