@@ -20,6 +20,7 @@
         self.bgImageName = @"workManTalkBox";
         self.bgHeightPadding = 10;
         self.bgWidthPadding = 0;
+        self.cannotChangeColor = true;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
