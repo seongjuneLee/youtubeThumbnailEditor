@@ -15,7 +15,6 @@
     if(self){
         self.itemName = @"basicCircleSticker";
         self.backgroundImageName = @"basicCircleStickerRed";
-        self.isChangingColorAvailable = true;
     }
     return self;
     

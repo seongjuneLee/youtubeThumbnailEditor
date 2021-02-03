@@ -51,7 +51,6 @@
     photoFrame1.isFixedPhotoFrame = true;
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
     float screenHeight = screenWidth * 9/16;
-    photoFrame1.baseView.backgroundColor = UIColor.grayColor;
     photoFrame1.baseView.frameSize = CGSizeMake(screenWidth, screenHeight * 0.5);
     photoFrame1.center = CGPointMake(0.5, 0.75);
     [self.photoFrames addObject:photoFrame1];

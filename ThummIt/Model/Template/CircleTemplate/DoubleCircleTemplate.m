@@ -36,14 +36,12 @@
     
     PhotoFrame *firstPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     PhotoFrame *secondPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
-    firstPhotoFrame.baseView.backgroundColor = UIColor.whiteColor;
     firstPhotoFrame.center = CGPointMake(0.32, 0.5);
     firstPhotoFrame.isTemplateItem = true;
     
     secondPhotoFrame.center = CGPointMake(0.68, 0.5);
     secondPhotoFrame.scale = 0.9;
     secondPhotoFrame.isTemplateItem = true;
-    secondPhotoFrame.baseView.backgroundColor = UIColor.whiteColor;
 
     [self.photoFrames addObject:firstPhotoFrame];
     [self.photoFrames addObject:secondPhotoFrame];

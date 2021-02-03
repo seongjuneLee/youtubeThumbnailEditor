@@ -20,14 +20,16 @@
     sticker.baseView.center = editingVC.bgView.center;
     sticker.center = editingVC.bgView.center;
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
-    if (sticker.isChangingColorAvailable) {
+    if (!sticker.cannotChangeColor) {
         sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         sticker.backgroundImageView.tintColor = [UIColor whiteColor];
+
         [UIView animateWithDuration:0.2 animations:^{
             editingVC.hueSlider.alpha = 1.0;
             editingVC.thumbCircleView.alpha = 1.0;
         }];
     } else{
+
         sticker.backgroundImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
         [editingVC hideAndInitSlider];        
 

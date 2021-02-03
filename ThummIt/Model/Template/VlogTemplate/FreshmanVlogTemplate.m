@@ -34,7 +34,6 @@
 
 -(void)setUpPhotoFrame{
     
-    self.photoFrames = [NSMutableArray new];
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
     photoFrame.isFixedPhotoFrame = true;
@@ -48,35 +47,36 @@
     Text *firstVlogText = [[Text alloc] init];
     VlogFreshmanTypo *firstVlog = [VlogFreshmanTypo vlogFreshmanTypo];
     firstVlogText.scale = 1.2;
-    firstVlogText.center = CGPointMake(0.83, 0.3);
+    firstVlogText.center = CGPointMake(0.83, 0.48);
     firstVlogText.isTemplateItem = true;
     firstVlogText.indexInLayer =@"0";
-    firstVlogText.text = @"새내기의";
-    firstVlogText.textView.text = @"새내기의";
+    firstVlogText.text = @"새내기의\n일주일\nvlog";
+    firstVlogText.textView.text = @"새내기의\n일주일\nvlog";
+    firstVlogText.textAlignment = NSTextAlignmentRight;
     [firstVlogText applyTypo:firstVlog];
     [self.texts addObject:firstVlogText];
     
-    Text *secondVlogText = [[Text alloc] init];
-    VlogFreshmanTypo *secondVlog = [VlogFreshmanTypo vlogFreshmanTypo];
-    secondVlogText.scale = 1.2;
-    secondVlogText.center = CGPointMake(0.86, 0.5);
-    secondVlogText.isTemplateItem = true;
-    secondVlogText.indexInLayer =@"1";
-    secondVlogText.text = @"일주일";
-    secondVlogText.textView.text = @"일주일";
-    [secondVlogText applyTypo:secondVlog];
-    [self.texts addObject:secondVlogText];
-    
-    Text *thridVlogText = [[Text alloc] init];
-    VlogFreshmanTypo *thirdVlog = [VlogFreshmanTypo vlogFreshmanTypo];
-    thridVlogText.scale = 1.2;
-    thridVlogText.center = CGPointMake(0.87, 0.7);
-    thridVlogText.isTemplateItem = true;
-    thridVlogText.indexInLayer =@"2";
-    thridVlogText.text = @"vlog";
-    thridVlogText.textView.text = @"vlog";
-    [thridVlogText applyTypo:thirdVlog];
-    [self.texts addObject:thridVlogText];
+//    Text *secondVlogText = [[Text alloc] init];
+//    VlogFreshmanTypo *secondVlog = [VlogFreshmanTypo vlogFreshmanTypo];
+//    secondVlogText.scale = 1.2;
+//    secondVlogText.center = CGPointMake(0.86, 0.5);
+//    secondVlogText.isTemplateItem = true;
+//    secondVlogText.indexInLayer =@"1";
+//    secondVlogText.text = @"일주일";
+//    secondVlogText.textView.text = @"일주일";
+//    [secondVlogText applyTypo:secondVlog];
+//    [self.texts addObject:secondVlogText];
+//
+//    Text *thridVlogText = [[Text alloc] init];
+//    VlogFreshmanTypo *thirdVlog = [VlogFreshmanTypo vlogFreshmanTypo];
+//    thridVlogText.scale = 1.2;
+//    thridVlogText.center = CGPointMake(0.87, 0.7);
+//    thridVlogText.isTemplateItem = true;
+//    thridVlogText.indexInLayer =@"2";
+//    thridVlogText.text = @"vlog";
+//    thridVlogText.textView.text = @"vlog";
+//    [thridVlogText applyTypo:thirdVlog];
+//    [self.texts addObject:thridVlogText];
     
     Text *leftVlogText = [[Text alloc] init];
     VlogNewCampus *leftVlog = [VlogNewCampus vlogNewCampus];

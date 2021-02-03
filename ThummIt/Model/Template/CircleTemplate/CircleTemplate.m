@@ -36,7 +36,6 @@
     
     PhotoFrame *photoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     photoFrame.isTemplateItem = true;
-    photoFrame.baseView.backgroundColor = UIColor.whiteColor;
     [self.photoFrames addObject:photoFrame];
     
 }

@@ -33,12 +33,14 @@
     text.textViewContainer.center = editingVC.bgView.center;
     text.center = text.textViewContainer.center;
 
-    if (text.typo.isChangingColorAvailable) {
+
+    if (!text.typo.cannotChangeColor) {
         [UIView animateWithDuration:0.2 animations:^{
             editingVC.hueSlider.alpha = 1.0;
             editingVC.thumbCircleView.alpha = 1.0;
         }];
-    }else {
+    } else {
+
         [editingVC hideAndInitSlider];
     }
 
