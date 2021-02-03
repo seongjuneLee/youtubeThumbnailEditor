@@ -134,7 +134,7 @@
 
 -(void)setUpStickers{
     
-    WorkManAngrySticker *angrySticker = [WorkManAngrySticker workManAngrySticker];
+    AngrySticker1 *angrySticker = [AngrySticker1 angrySticker1];
     angrySticker.scale = 0.4;
     angrySticker.rotationDegree = -0.1;
     angrySticker.indexInLayer = @"7";

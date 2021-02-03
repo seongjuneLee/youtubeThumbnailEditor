@@ -60,7 +60,7 @@
 
 -(void)setUpStickers{
 
-    VlogHeartSticker1 *vlogHeartSticker1 = [VlogHeartSticker1 vlogHeartSticker1];
+    HeartSticker1 *vlogHeartSticker1 = [HeartSticker1 heartSticker1];
     vlogHeartSticker1.scale = 0.35;
     vlogHeartSticker1.tintColor = [UIColor colorWithRed:236/255.0 green:159/255.0 blue:158/255.0 alpha:1];
     vlogHeartSticker1.rotationDegree = degreesToRadians(330);
@@ -69,7 +69,7 @@
     vlogHeartSticker1.indexInLayer = @"0";
     [self.stickers addObject:vlogHeartSticker1];
 
-    VlogHeartSticker1 *vlogHeartSticker2 = [VlogHeartSticker1 vlogHeartSticker1];
+    HeartSticker1 *vlogHeartSticker2 = [HeartSticker1 heartSticker1];
     vlogHeartSticker2.scale = 0.33;
     vlogHeartSticker2.tintColor = [UIColor colorWithRed:254/255.0 green:232/255.0 blue:228/255.0 alpha:1];
     vlogHeartSticker2.rotationDegree = degreesToRadians(340);
@@ -79,7 +79,7 @@
     [self.stickers addObject:vlogHeartSticker2];
     
     
-    VlogHeartSticker1 *vlogHeartSticker3 = [VlogHeartSticker1 vlogHeartSticker1];
+    HeartSticker1 *vlogHeartSticker3 = [HeartSticker1 heartSticker1];
     vlogHeartSticker3.scale = 0.37;
     vlogHeartSticker3.tintColor = [UIColor colorWithRed:236/255.0 green:159/255.0 blue:158/255.0 alpha:1];
     vlogHeartSticker3.rotationDegree = degreesToRadians(330);
@@ -88,7 +88,7 @@
     vlogHeartSticker3.indexInLayer = @"2";
     [self.stickers addObject:vlogHeartSticker3];
 
-    VlogHeartSticker1 *vlogHeartSticker4 = [VlogHeartSticker1 vlogHeartSticker1];
+    HeartSticker1 *vlogHeartSticker4 = [HeartSticker1 heartSticker1];
     vlogHeartSticker4.scale = 0.31;
     vlogHeartSticker4.tintColor = [UIColor colorWithRed:254/255.0 green:232/255.0 blue:228/255.0 alpha:1];
     vlogHeartSticker4.rotationDegree = degreesToRadians(340);
@@ -97,7 +97,7 @@
     vlogHeartSticker4.center = CGPointMake(0.37, 0.23);
     [self.stickers addObject:vlogHeartSticker4];
     
-    VlogHeartSticker1 *vlogHeartSticker5 = [VlogHeartSticker1 vlogHeartSticker1];
+    HeartSticker1 *vlogHeartSticker5 = [HeartSticker1 heartSticker1];
     vlogHeartSticker5.scale = 0.37;
     vlogHeartSticker5.tintColor = [UIColor colorWithRed:236/255.0 green:159/255.0 blue:158/255.0 alpha:1];
     vlogHeartSticker5.rotationDegree = degreesToRadians(10);
@@ -106,7 +106,7 @@
     vlogHeartSticker5.indexInLayer = @"4";
     [self.stickers addObject:vlogHeartSticker5];
 
-    VlogHeartSticker1 *vlogHeartSticker6 = [VlogHeartSticker1 vlogHeartSticker1];
+    HeartSticker1 *vlogHeartSticker6 = [HeartSticker1 heartSticker1];
     vlogHeartSticker6.scale = 0.35;
     vlogHeartSticker6.tintColor = [UIColor colorWithRed:254/255.0 green:232/255.0 blue:228/255.0 alpha:1];
     vlogHeartSticker6.rotationDegree = degreesToRadians(0);
@@ -115,7 +115,7 @@
     vlogHeartSticker6.center = CGPointMake(0.69, 0.28);
     [self.stickers addObject:vlogHeartSticker6];
     
-    VlogHeartSticker1 *vlogHeartSticker7 = [VlogHeartSticker1 vlogHeartSticker1];
+    HeartSticker1 *vlogHeartSticker7 = [HeartSticker1 heartSticker1];
     vlogHeartSticker7.scale = 0.37;
     vlogHeartSticker7.tintColor = [UIColor colorWithRed:236/255.0 green:159/255.0 blue:158/255.0 alpha:1];
     vlogHeartSticker7.rotationDegree = degreesToRadians(30);
@@ -124,7 +124,7 @@
     vlogHeartSticker7.indexInLayer = @"6";
     [self.stickers addObject:vlogHeartSticker7];
 
-    VlogHeartSticker1 *vlogHeartSticker8 = [VlogHeartSticker1 vlogHeartSticker1];
+    HeartSticker1 *vlogHeartSticker8 = [HeartSticker1 heartSticker1];
     vlogHeartSticker8.scale = 0.33;
     vlogHeartSticker8.tintColor = [UIColor colorWithRed:254/255.0 green:232/255.0 blue:228/255.0 alpha:1];
     vlogHeartSticker8.rotationDegree = degreesToRadians(10);

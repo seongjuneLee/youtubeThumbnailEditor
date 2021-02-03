@@ -93,14 +93,14 @@
     exc2Sticker.center = CGPointMake(0.67, 0.37);
     [self.stickers addObject:exc2Sticker];
     
-    SinSeoYuGiQuSticker *quSticker = [SinSeoYuGiQuSticker sinSeoYuGiQuSticker];
+    SinSeoYuGiQu2Sticker *quSticker = [SinSeoYuGiQu2Sticker sinSeoYuGiQu2Sticker];
     quSticker.indexInLayer =@"4";
     quSticker.scale = 0.65;
     quSticker.isTemplateItem = true;
     quSticker.center = CGPointMake(0.75, 0.37);
     [self.stickers addObject:quSticker];
     
-    SinSeoYuGiEffectSticker *effectSticker = [SinSeoYuGiEffectSticker sinSeoYuGiEffectSticker];
+    StartleSticker1 *effectSticker = [StartleSticker1 startleSticker1];
     effectSticker.indexInLayer =@"5";
     effectSticker.scale = 0.52;
     effectSticker.isTemplateItem = true;

@@ -165,12 +165,12 @@
 
 -(NSArray *)stickerDatas{
     
-    BasicCircleSticker *basicCircleSticker = [BasicCircleSticker basicCircleSticker];
-    basicCircleSticker.backgroundImageName = @"basicCircleStickerWhite";
-    BasicArrowSticker *basicArrowSticker  = [BasicArrowSticker basicArrowSticker];
-    basicArrowSticker.backgroundImageName = @"basicArrowStickerWhite";
-    XSticker *xSticker  = [XSticker xSticker];
-    xSticker.backgroundImageName = @"xStickerWhite";
+    CircleSticker1 *circleSticker1 = [CircleSticker1 circleSticker1];
+    circleSticker1.backgroundImageName = @"circleSticker1";
+    ArrowSticker1 *arrowSticker1  = [ArrowSticker1 arrowSticker1];
+    arrowSticker1.backgroundImageName = @"arrowSticker1";
+    XSticker1 *xSticker1  = [XSticker1 xSticker1];
+    xSticker1.backgroundImageName = @"xSticker1";
     RunningManExcSticker* runningManExcSticker =[RunningManExcSticker runningManExcSticker];
     runningManExcSticker.backgroundImageName = @"runningManExcSticker";
     RunningManQuSticker* runningManQuSticker =[RunningManQuSticker runningManQuSticker];
@@ -179,13 +179,14 @@
     sinSeoYuGiExc1Sticker.backgroundImageName = @"sinSeoYuGiExc1Sticker";
     SinSeoYuGiExc2Sticker* sinSeoYuGiExc2Sticker =[SinSeoYuGiExc2Sticker sinSeoYuGiExc2Sticker];
     sinSeoYuGiExc2Sticker.backgroundImageName = @"sinSeoYuGiExc2Sticker";
-    SinSeoYuGiQuSticker* sinSeoYuGiQuSticker =[SinSeoYuGiQuSticker sinSeoYuGiQuSticker];
-    sinSeoYuGiQuSticker.backgroundImageName = @"sinSeoYuGiQuSticker";
-    SinSeoYuGiEffectSticker* sinSeoYuGiEffectSticker =[SinSeoYuGiEffectSticker sinSeoYuGiEffectSticker];
-    sinSeoYuGiEffectSticker.backgroundImageName = @"sinSeoYuGiEffectSticker";
-    
-    WorkManAngrySticker *workManAngrySticker  = [WorkManAngrySticker workManAngrySticker];
-    workManAngrySticker.backgroundImageName = @"workManAngrySticker";
+    SinSeoYuGiQu1Sticker* sinSeoYuGiQu1Sticker =[SinSeoYuGiQu1Sticker sinSeoYuGiQu1Sticker];
+    sinSeoYuGiQu1Sticker.backgroundImageName = @"sinSeoYuGiQu1Sticker";
+    SinSeoYuGiQu2Sticker* sinSeoYuGiQu2Sticker =[SinSeoYuGiQu2Sticker sinSeoYuGiQu2Sticker];
+    sinSeoYuGiQu2Sticker.backgroundImageName = @"sinSeoYuGiQu2Sticker";
+    StartleSticker1* startleSticker1 =[StartleSticker1 startleSticker1];
+    startleSticker1.backgroundImageName = @"startleSticker1";
+    AngrySticker1 *angrySticker1  = [AngrySticker1 angrySticker1];
+    angrySticker1.backgroundImageName = @"angrySticker1";
 
     WorkManStartleSticker *workManStartleSticker  = [WorkManStartleSticker workManStartleSticker];
     workManStartleSticker.backgroundImageName = @"workManStartleSticker";
@@ -193,15 +194,17 @@
     InfiniteChallengeSkullSticker *infiniteChallengeSkullSticker = [InfiniteChallengeSkullSticker infiniteChallengeSkullSticker];
     infiniteChallengeSkullSticker.backgroundImageName = @"infiniteChallengeSkullSticker";
     
-    VlogBlinkSticker1 *vlogBlinkSticker1 = [VlogBlinkSticker1 vlogBlinkSticker1];
-    vlogBlinkSticker1.backgroundImageName = @"blinkSticker1";
-    VlogPigtailSticker *vlogPigtailSticker = [VlogPigtailSticker vlogPigtailSticker];
-    vlogPigtailSticker.backgroundImageName = @"pigtailSticker";
+    BlinkSticker1 *blinkSticker1 = [BlinkSticker1 blinkSticker1];
+    blinkSticker1.backgroundImageName = @"blinkSticker1";
+    PigtailSticker *pigtailSticker = [PigtailSticker pigtailSticker];
+    pigtailSticker.backgroundImageName = @"pigtailSticker";
+    
     VlogVideoSticker *vlogVideoSticker = [VlogVideoSticker vlogVideoSticker];
     vlogVideoSticker.backgroundImageName = @"vlogVideoSticker";
     VlogMacaronSticker *vlogMacaronSticker = [VlogMacaronSticker vlogMacaronSticker];
+    vlogMacaronSticker.backgroundImageName = @"vlogMacaronSticker";
 
-    NSArray *basicStickers = @[basicCircleSticker,basicArrowSticker,xSticker,runningManExcSticker,runningManQuSticker,sinSeoYuGiExc1Sticker,sinSeoYuGiExc2Sticker,sinSeoYuGiQuSticker,sinSeoYuGiEffectSticker, workManAngrySticker, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker, vlogMacaronSticker];
+    NSArray *basicStickers = @[circleSticker1,arrowSticker1,xSticker1,runningManExcSticker,runningManQuSticker,sinSeoYuGiExc1Sticker,sinSeoYuGiExc2Sticker, sinSeoYuGiQu1Sticker,sinSeoYuGiQu2Sticker,startleSticker1, angrySticker1, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker, vlogMacaronSticker];
     
     return @[basicStickers];
 }
