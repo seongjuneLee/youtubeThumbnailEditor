@@ -16,6 +16,7 @@
         self.itemName = @"vlogMacaronSticker";
         self.backgroundImageName = @"vlogMacaronSticker";
         self.cannotChangeColor = true;
+
     }
     return self;
 }

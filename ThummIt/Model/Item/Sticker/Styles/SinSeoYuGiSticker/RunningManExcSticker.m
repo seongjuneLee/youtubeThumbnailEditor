@@ -16,6 +16,7 @@
         self.itemName = @"runningManExcSticker";
         self.backgroundImageName = @"runningManExcSticker";
         self.cannotChangeColor = true;
+
     }
     return self;
 }

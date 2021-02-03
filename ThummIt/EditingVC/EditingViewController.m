@@ -20,6 +20,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
+     {
+        if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (PhotoManager.sharedInstance.phassets.count == 0) {
+                    PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+                }
+            });
+        }
+        
+    }];
 
 
     [self basicUIUXSetting];
