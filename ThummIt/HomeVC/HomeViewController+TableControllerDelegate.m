@@ -17,6 +17,7 @@
     Template *selectedTemplate = templates[collectionIndex];
     Project *project =  [ProjectManager.sharedInstance generateNewProjectWithTemplate:selectedTemplate];
     
+    project.backgroundColor = selectedTemplate.backgroundColor;
     project.backgroundImageName = selectedTemplate.backgroundImageName;
     [SaveManager.sharedInstance applyCurrentProject:project];    
     

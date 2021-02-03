@@ -96,7 +96,7 @@
 //    [self.stickers addObject:heartSticker2];
 //  #b598ce
     
-    VlogHeartSticker3 *heartSticker3 = [VlogHeartSticker3 vlogHeartSticker3];
+    HeartSticker3 *heartSticker3 = [HeartSticker3 heartSticker3];
     heartSticker3.indexInLayer =@"2";
     heartSticker3.scale = 0.6;
     heartSticker3.isTemplateItem = true;
@@ -105,7 +105,7 @@
     [self.stickers addObject:heartSticker3];
 //    #f78d83
     
-    VlogHeartSticker4 *heartSticker4 = [VlogHeartSticker4 vlogHeartSticker4];
+    HeartSticker4 *heartSticker4 = [HeartSticker4 heartSticker4];
     heartSticker4.indexInLayer =@"3";
     heartSticker4.scale = 0.6;
     heartSticker4.isTemplateItem = true;
@@ -113,7 +113,7 @@
 
     [self.stickers addObject:heartSticker4];
 //   #f8f7b7
-    VlogHeartSticker4 *heartStickerUnder = [VlogHeartSticker4 vlogHeartSticker4];
+    HeartSticker4 *heartStickerUnder = [HeartSticker4 heartSticker4];
     heartStickerUnder.indexInLayer =@"4";
     heartStickerUnder.scale = 0.6;
     heartStickerUnder.isTemplateItem = true;

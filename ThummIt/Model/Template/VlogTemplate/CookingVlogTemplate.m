@@ -72,14 +72,14 @@
 
 -(void)setUpStickers{
 
-    VlogBlinkSticker1 *vlogBlinkSticker1 = [VlogBlinkSticker1 vlogBlinkSticker1];
+    BlinkSticker1 *vlogBlinkSticker1 = [BlinkSticker1 blinkSticker1];
     vlogBlinkSticker1.indexInLayer = @"2";
     vlogBlinkSticker1.scale = 0.57;
     vlogBlinkSticker1.isTemplateItem = true;
     vlogBlinkSticker1.center = CGPointMake(0.46, 0.22);
     [self.stickers addObject:vlogBlinkSticker1];
     
-    VlogPigtailSticker *vlogPigtailSticker = [VlogPigtailSticker vlogPigtailSticker];
+    PigtailSticker *vlogPigtailSticker = [PigtailSticker pigtailSticker];
     vlogPigtailSticker.indexInLayer = @"3";
     vlogPigtailSticker.scale = 0.5;
     vlogPigtailSticker.rotationDegree = degreesToRadians(200);
