@@ -351,11 +351,11 @@
     if (self.recentTypo == nil) {
         self.recentTypo = [NormalTypo normalTypo];
     }
-    [self.itemCollectionVC didSelectTypo:self.recentTypo];
     [UIView animateWithDuration:0.2 animations:^{
         self.hueSlider.alpha = 1.0;
         self.thumbCircleView.alpha = 1.0;
     }];
+    [self.itemCollectionVC didSelectTypo:self.recentTypo];
 
 }
 
