@@ -14,7 +14,7 @@
     if(self){
         
         self.templateName = @"circleTemplate";
-        self.previewImageName = @"circleImage";
+        self.previewImageName = @"circleTemplatePreview";
         self.category = NSLocalizedString(@"Entertain", nil);
         self.backgroundColor = UIColor.blackColor;
         self.backgroundImageName = @"";

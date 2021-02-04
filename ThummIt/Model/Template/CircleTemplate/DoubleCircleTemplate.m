@@ -14,7 +14,7 @@
     self = [super init];
     if(self){
         
-        self.previewImageName = @"doubleCircleImage";
+        self.previewImageName = @"doubleCircleTemplatePreview";
         self.category = NSLocalizedString(@"Entertain", nil);
         self.templateName = @"doubleCircleTemplate";
         self.backgroundColor = UIColor.blackColor;
