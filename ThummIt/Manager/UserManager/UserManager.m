@@ -23,7 +23,7 @@
 -(void)signUpWithThirdPartyID:(NSString*)thirdPartyID withType:(NSString *)type username:(NSString*)username withEmail:(NSString *)email callback:(void(^)(BOOL)) callback{
     PFQuery* userQuery = PFUser.query;
     NSString* formattedId = [NSString stringWithFormat:@"%@:%@",type,thirdPartyID];
-    [userQuery whereKey:@"username" equalTo:username];
+    [userQuery whereKey:@"thirdPartyUserID" equalTo:formattedId];
     [userQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         PFUser *user = (PFUser *)objects.firstObject;
         if (user) {
@@ -66,13 +66,14 @@
                     if (succeeded) {
                         
                         [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * _Nullable user, NSError * _Nullable error) {
-                            
-                            [NSUserDefaults.standardUserDefaults setObject:user.username forKey:@"username"];
-                            PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-                            [currentInstallation setObject:user forKey:@"user"];
-                            [currentInstallation saveInBackground];
-                            
-                            callback(succeeded);
+                            [user fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+                                [NSUserDefaults.standardUserDefaults setObject:user.username forKey:@"username"];
+                                PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+                                [currentInstallation setObject:user forKey:@"user"];
+                                [currentInstallation saveInBackground];
+                                
+                                callback(succeeded);
+                            }];
                         }];
                     } else {
                         callback(false);

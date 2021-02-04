@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
-        
+
         KakaoSDKCommon.initSDK(appKey: "4df206455336b6c8a2d990fd54b0bb39")
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
@@ -69,12 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     //facebook_login
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        ApplicationDelegate.shared.application(
-            app,
-            open: url,
-            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-        )
         
 //        if (url.scheme == kakaoURLScheme) {
         if  KOSession.isKakaoAccountLoginCallback(url) {

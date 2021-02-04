@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -139,6 +139,7 @@
 		6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */; };
 		6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */; };
 		6EA7A32725CB1435001041A1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7A32625CB1435001041A1 /* SignInViewController.swift */; };
+		6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA7A35225CB1975001041A1 /* FacebookLogin */; };
 		6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */; };
 		6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */; };
 		6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8A25B767C700C42187 /* AccountTableController.m */; };
@@ -829,6 +830,7 @@
 			files = (
 				6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */,
 				C3AA5AEB200F3BCD30FC7A2B /* Pods_ThummIt.framework in Frameworks */,
+				6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2221,6 +2223,9 @@
 			dependencies = (
 			);
 			name = ThummIt;
+			packageProductDependencies = (
+				6EA7A35225CB1975001041A1 /* FacebookLogin */,
+			);
 			productName = ThumbnailMaker;
 			productReference = 6E1190E12584B163000DD9C0 /* ThummIt.app */;
 			productType = "com.apple.product-type.application";
@@ -2296,6 +2301,9 @@
 				Base,
 			);
 			mainGroup = 6E1190D82584B163000DD9C0;
+			packageReferences = (
+				6EA7A35125CB1975001041A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 6E1190E22584B163000DD9C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -3212,6 +3220,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6EA7A35125CB1975001041A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6EA7A35225CB1975001041A1 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EA7A35125CB1975001041A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6E9BEA44258F0AA300F7F539 /* ThummIt.xcdatamodeld */ = {

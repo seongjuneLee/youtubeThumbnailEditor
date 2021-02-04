@@ -10,7 +10,7 @@
 #import "UILabel+Additions.h"
 #import "UserManager.h"
 #import "UIView+Additions.h"
-
+#import <Toast/UIView+Toast.h>
 /**
  * Copyright 2015-2017 Kakao Corp.
  *

@@ -52,13 +52,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if  KOSession.isKakaoAccountLoginCallback(url) {
             KOSession.handleOpen(url)
         }
+        
         ApplicationDelegate.shared.application(
             UIApplication.shared,
             open: url,
             sourceApplication: nil,
             annotation: [UIApplication.OpenURLOptionsKey.annotation]
         )
-        
+
         
     }
     

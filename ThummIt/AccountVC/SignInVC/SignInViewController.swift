@@ -13,6 +13,8 @@ import FirebaseAuth
 import GoogleSignIn
 import KakaoSDKAuth
 import KakaoSDKUser
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class SignInViewController: UIViewController {
     @IBOutlet weak var kakaoSignInView: UIView!
@@ -32,20 +34,14 @@ class SignInViewController: UIViewController {
     func setUpSignInViewcornerRadius() {
         self.kakaoSignInView.layer.cornerRadius = 5
         self.facebookSignInView.layer.cornerRadius = 5
-        self.googleSignInView.layer.cornerRadius = 5
-        self.appleSignInView.layer.cornerRadius = 5
         self.emailSignInView.layer.cornerRadius = 5
         
         self.kakaoSignInView.layer.borderWidth = 0.5
         self.facebookSignInView.layer.borderWidth = 0.5
-        self.googleSignInView.layer.borderWidth = 0.5
-        self.appleSignInView.layer.borderWidth = 0.5
         self.emailSignInView.layer.borderWidth = 0.5
 
         self.kakaoSignInView.layer.borderColor = UIColor.black.cgColor
         self.facebookSignInView.layer.borderColor = UIColor.black.cgColor
-        self.googleSignInView.layer.borderColor = UIColor.black.cgColor
-        self.appleSignInView.layer.borderColor = UIColor.black.cgColor
         self.emailSignInView.layer.borderColor = UIColor.black.cgColor
     }
     
@@ -57,78 +53,127 @@ class SignInViewController: UIViewController {
     
     @IBAction func kakaoButtonTapped(_ sender: UIButton) {
         
-        if AuthApi.isKakaoTalkLoginAvailable() {
+        if AuthApi.isKakaoTalkLoginAvailable() {            
             
-            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                
-                
+            UserApi.shared.me() {(user, error) in
                 if let error = error {
-                    print("error heree : %@",error)
+                    print(error)
+                    
+                    AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                        
+                        if let error = error {
+                            print("error heree : %@",error)
+                        } else {
+                            //do something
+                            _ = oauthToken
+                            UserApi.shared.me() {(user, error) in
+                                if let error = error {
+                                    print(error)
+                                } else {
+                                    print("me() success.")
+
+                                    //do something
+                                    _ = user
+                                    
+                                    let userID = String(user!.id)
+                                    let username = user?.properties?["nickname"]
+                                    let email = user?.kakaoAccount?.email
+                                    
+                                    self.view.makeToastActivity(CSToastPositionCenter)
+                                    UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
+                                        self.view.hideAllToasts()
+                                        if (success){
+                                            self.dismiss(animated: true, completion: nil)
+                                        } else {
+                                            self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                 } else {
-                    print("loginWithKakaoTalk() success.")
+                    print("me() success.")
 
                     //do something
-                    _ = oauthToken
+                    _ = user
                     
-                    UserApi.shared.me() {(user, error) in
-                        if let error = error {
-                            print(error)
+                    let userID = String(user!.id)
+                    let username = user?.properties?["nickname"]
+                    let email = user?.kakaoAccount?.email
+                    
+                    self.view.makeToastActivity(CSToastPositionCenter)
+                    UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
+                        self.view.hideAllToasts()
+                        if (success){
+                            self.dismiss(animated: true, completion: nil)
+                        } else {
+                            self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
                         }
-                        else {
-                            print("me() success.")
+                    }
+                }
+            }
 
-                            //do something
-                            _ = user
+        }
+    }
+    
+    @IBAction func facebookButtonTapped(_ sender: UIButton) {
+        
+        
+        // Swift override func viewDidLoad() { super.viewDidLoad() if let token = AccessToken.current, !token.isExpired { // User is logged in, do work such as go to next view controller. } }
+        self.view.makeToastActivity(CSToastPositionCenter)
+
+        if ((AccessToken.current?.hasGranted(permission: "email")) == true) {
+            
+            FBSDKCoreKit.Profile.loadCurrentProfile { (profile, error) in
+                if profile != nil {
+                    
+                    let username = profile?.name ?? ""
+                    let email = profile?.email ?? ""
+                    let userID = profile?.userID ?? ""
+                    
+                    UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "facebook", username: username, withEmail: email) { (success) in
+                        self.view.hideAllToasts()
+
+                        if success {
+                            self.dismiss(animated: true, completion: nil)
+                        } else {
+                            self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
+                        }
+                    }
+                    
+                }
+            }
+            
+        } else {
+            
+            let loginManager = LoginManager.init()
+            loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+                if result != nil {
+                    FBSDKCoreKit.Profile.loadCurrentProfile { (profile, error) in
+                        if profile != nil {
                             
-                            let userID = String(user!.id)
-                            let username = user?.properties?["nickname"]
-                            let email = user?.kakaoAccount?.email
+                            let username = profile?.name ?? ""
+                            let email = profile?.email ?? ""
+                            let userID = profile?.userID ?? ""
                             
-                            UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
-                                if (success){
+                            UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "facebook", username: username, withEmail: email) { (success) in
+                                self.view.hideAllToasts()
+
+                                if success {
                                     self.dismiss(animated: true, completion: nil)
                                 } else {
-                                    
+                                    self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
                                 }
                             }
                         }
                     }
                 }
             }
+            
         }
-    }
-    
-    @IBAction func facebookButtonTapped(_ sender: UIButton) {
-//        FBSDKLoginKit
-//        if (AccessToken.hasGranted("public_profile")) {
-//            <#code#>
-//        }
-        
-//        if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"email"]) {
-//          // TODO: publish content.
-//            [FBSDKProfile loadCurrentProfileWithCompletion:
-//             ^(FBSDKProfile *profile, NSError *error) {
-//               if (profile) {
-//                   NSLog(@"Hello, %@!", profile.firstName);
-//                   NSLog(@"Hello, profile %@!", profile.name);
-//                   NSLog(@"profile.email %@!", profile.email);
-//                   NSLog(@"profile.userID %@!", profile.userID);
-//    //               NSLog(@"Hello, profile %@!", profile.email);
-//    //               NSLog(@"Hello, profile %@!", profile.email);
-//               }
-//             }];
-//        } else {
-//          FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
-//            [loginManager logInWithPermissions:@[@"public_profile",@"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult * _Nullable result, NSError * _Nullable error) {
-//                [FBSDKProfile loadCurrentProfileWithCompletion:
-//                 ^(FBSDKProfile *profile, NSError *error) {
-//                   if (profile) {
-//                     NSLog(@"Hello, %@!", profile.firstName);
-//                   }
-//                 }];
-//
-//            }];
-//        }
 
         
     }

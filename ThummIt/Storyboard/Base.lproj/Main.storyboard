@@ -511,7 +511,7 @@ You may submit a request to exercise your right to information, access or deleti
         <!--Sign In View Controller-->
         <scene sceneID="bXj-8b-04u">
             <objects>
-                <viewController storyboardIdentifier="SignInViewController" id="IZe-UG-0Zf" customClass="SignInViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="IZe-UG-0Zf" customClass="SignInViewController" customModule="ThummIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4p0-rf-cBI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -768,7 +768,6 @@ with the design you want.</string>
                     </view>
                     <connections>
                         <outlet property="emailSignInView" destination="yri-bN-KhL" id="GA0-yl-X6Z"/>
-                        <outlet property="facebookButton" destination="g6C-lp-Urq" id="lEI-GS-ETb"/>
                         <outlet property="facebookSignInView" destination="ihg-Ok-LTt" id="aGh-zj-Q4J"/>
                         <outlet property="kakaoSignInView" destination="qc9-r3-acU" id="NM5-mx-wGY"/>
                         <outlet property="titleLabel" destination="xwk-oc-Fct" id="TKe-2Y-y2j"/>
