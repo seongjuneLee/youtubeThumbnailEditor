@@ -19,14 +19,10 @@
         self.textColor = [UIColor whiteColor];
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
-        bgTextAttribute1.borderColor = [UIColor whiteColor];
-        bgTextAttribute1.borderWidth = 3;
-        
-        BGTextAttribute *bgTextAttribute2 = [[BGTextAttribute alloc] init];
-        bgTextAttribute2.borderColor = [UIColor blackColor];
-        bgTextAttribute2.borderWidth = 20;
+        bgTextAttribute1.borderColor = [UIColor blackColor];
+        bgTextAttribute1.borderWidth = 20;
        
-        self.bgTextAttributes = @[bgTextAttribute1, bgTextAttribute2];
+        self.bgTextAttributes = @[bgTextAttribute1];
 
     }
     return self;
