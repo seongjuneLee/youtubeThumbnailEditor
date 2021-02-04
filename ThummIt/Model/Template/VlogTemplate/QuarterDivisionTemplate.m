@@ -13,7 +13,7 @@
     self = [super init];
     if(self){
         
-        self.previewImageName = @"quarterDivision";
+        self.previewImageName = @"quarterDivisionPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"quarterDivisionTemplate";
         self.backgroundImageName = @"";
@@ -41,6 +41,10 @@
     secondPhotoFrame.isTemplateItem = true;
     thirdPhotoFrame.isTemplateItem = true;
     fourthPhotoFrame.isTemplateItem = true;
+    firstPhotoFrame.isFixedPhotoFrame = true;
+    secondPhotoFrame.isFixedPhotoFrame = true;
+    thirdPhotoFrame.isFixedPhotoFrame = true;
+    fourthPhotoFrame.isFixedPhotoFrame = true;
     firstPhotoFrame.center = CGPointMake(0.25, 0.25);
     secondPhotoFrame.center = CGPointMake(0.75, 0.25);
     thirdPhotoFrame.center = CGPointMake(0.25, 0.75);
@@ -57,9 +61,10 @@
     Text *trapezoidText = [[Text alloc] init];
     TrapezoidTypo *trapezoid = [TrapezoidTypo trapezoidTypo];
     trapezoidText.center = CGPointMake(0.5, 0.5);
-    trapezoidText.rotationDegree = 3;
+    trapezoidText.rotationDegree = -3;
     trapezoidText.isTemplateItem = true;
     trapezoidText.text = @"WEEKLY VLOG";
+    trapezoidText.indexInLayer = @"0";
     [trapezoidText applyTypo:trapezoid];
     [self.texts addObject:trapezoidText];
     
