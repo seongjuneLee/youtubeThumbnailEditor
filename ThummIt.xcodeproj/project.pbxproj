@@ -245,6 +245,63 @@
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
 		6EF0C6F625CA328300BE7573 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0C6F825CA328300BE7573 /* Localizable.strings */; };
+		6EF0C7B525CBAA1A00BE7573 /* ArrowSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7B425CBAA1A00BE7573 /* ArrowSticker2.m */; };
+		6EF0C7BA25CBAA2B00BE7573 /* ArrowSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7B925CBAA2B00BE7573 /* ArrowSticker3.m */; };
+		6EF0C7BF25CBAA3600BE7573 /* ArrowSticker4.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7BE25CBAA3600BE7573 /* ArrowSticker4.m */; };
+		6EF0C7C425CBAA3E00BE7573 /* ArrowSticker5.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7C325CBAA3E00BE7573 /* ArrowSticker5.m */; };
+		6EF0C7C925CBAA4C00BE7573 /* ArrowSticker6.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7C825CBAA4C00BE7573 /* ArrowSticker6.m */; };
+		6EF0C7CE25CBAA5900BE7573 /* ArrowSticker7.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7CD25CBAA5900BE7573 /* ArrowSticker7.m */; };
+		6EF0C7D325CBAC8A00BE7573 /* BlinkSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7D225CBAC8A00BE7573 /* BlinkSticker3.m */; };
+		6EF0C7D825CBAC9B00BE7573 /* BulbSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7D725CBAC9B00BE7573 /* BulbSticker.m */; };
+		6EF0C7DD25CBACAF00BE7573 /* BurstSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7DC25CBACAF00BE7573 /* BurstSticker1.m */; };
+		6EF0C7E225CBACBF00BE7573 /* ButtonPauseSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7E125CBACBF00BE7573 /* ButtonPauseSticker.m */; };
+		6EF0C7E725CBACD200BE7573 /* ButtonPlaySticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7E625CBACD200BE7573 /* ButtonPlaySticker.m */; };
+		6EF0C7EC25CBACE200BE7573 /* ButtonStopSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7EB25CBACE200BE7573 /* ButtonStopSticker.m */; };
+		6EF0C7F125CBAE0800BE7573 /* CircleSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7F025CBAE0800BE7573 /* CircleSticker2.m */; };
+		6EF0C7F625CBAE1C00BE7573 /* CloudSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7F525CBAE1C00BE7573 /* CloudSticker1.m */; };
+		6EF0C7FB25CBAE2E00BE7573 /* CloudSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7FA25CBAE2E00BE7573 /* CloudSticker2.m */; };
+		6EF0C80025CBAE3F00BE7573 /* DollarSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C7FF25CBAE3F00BE7573 /* DollarSticker.m */; };
+		6EF0C80525CBB0B500BE7573 /* EffectSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C80425CBB0B500BE7573 /* EffectSticker1.m */; };
+		6EF0C80A25CBB0BE00BE7573 /* EffectSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C80925CBB0BE00BE7573 /* EffectSticker2.m */; };
+		6EF0C80D25CBB0C600BE7573 /* EffectSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C80C25CBB0C600BE7573 /* EffectSticker3.m */; };
+		6EF0C81B25CBC31500BE7573 /* GameSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C81A25CBC31500BE7573 /* GameSticker.m */; };
+		6EF0C82025CBC32600BE7573 /* GlitterSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C81F25CBC32600BE7573 /* GlitterSticker.m */; };
+		6EF0C82525CBC33C00BE7573 /* GoodSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C82425CBC33C00BE7573 /* GoodSticker1.m */; };
+		6EF0C82A25CBC35400BE7573 /* HeartSticker5.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C82925CBC35400BE7573 /* HeartSticker5.m */; };
+		6EF0C82F25CBC35D00BE7573 /* HeartSticker6.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C82E25CBC35D00BE7573 /* HeartSticker6.m */; };
+		6EF0C83425CBC36500BE7573 /* HeartSticker7.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C83325CBC36500BE7573 /* HeartSticker7.m */; };
+		6EF0C83925CBC37400BE7573 /* HeartSticker8.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C83825CBC37400BE7573 /* HeartSticker8.m */; };
+		6EF0C83E25CBC37F00BE7573 /* HeartSticker9.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C83D25CBC37F00BE7573 /* HeartSticker9.m */; };
+		6EF0C84325CBC38900BE7573 /* HeartSticker10.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C84225CBC38900BE7573 /* HeartSticker10.m */; };
+		6EF0C84825CBC3C500BE7573 /* KoreanFlagSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C84725CBC3C500BE7573 /* KoreanFlagSticker.m */; };
+		6EF0C85425CBC7F000BE7573 /* LockSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C85325CBC7F000BE7573 /* LockSticker.m */; };
+		6EF0C85925CBD25400BE7573 /* MedalBronzeSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C85825CBD25400BE7573 /* MedalBronzeSticker.m */; };
+		6EF0C85E25CBD27C00BE7573 /* MedalGoldSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C85D25CBD27C00BE7573 /* MedalGoldSticker.m */; };
+		6EF0C86325CBD29900BE7573 /* MedalSilverSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C86225CBD29900BE7573 /* MedalSilverSticker.m */; };
+		6EF0C86825CBD2A900BE7573 /* NoteSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C86725CBD2A900BE7573 /* NoteSticker1.m */; };
+		6EF0C86D25CBD2BF00BE7573 /* NoteSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C86C25CBD2BF00BE7573 /* NoteSticker2.m */; };
+		6EF0C87225CBD2CB00BE7573 /* NoteSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C87125CBD2CB00BE7573 /* NoteSticker3.m */; };
+		6EF0C87725CBD2E600BE7573 /* NuclearSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C87625CBD2E600BE7573 /* NuclearSticker.m */; };
+		6EF0C87C25CBD2FD00BE7573 /* RspPaperSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C87B25CBD2FD00BE7573 /* RspPaperSticker.m */; };
+		6EF0C88125CBD31200BE7573 /* RspRockSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C88025CBD31200BE7573 /* RspRockSticker.m */; };
+		6EF0C88625CBD32500BE7573 /* RspScissorsSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C88525CBD32500BE7573 /* RspScissorsSticker.m */; };
+		6EF0C88B25CBD33A00BE7573 /* SnowflakeSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C88A25CBD33A00BE7573 /* SnowflakeSticker1.m */; };
+		6EF0C89025CBD34A00BE7573 /* SnowflakeSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C88F25CBD34A00BE7573 /* SnowflakeSticker2.m */; };
+		6EF0C89525CBD36300BE7573 /* SnowmanSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C89425CBD36300BE7573 /* SnowmanSticker.m */; };
+		6EF0C89A25CBDB2500BE7573 /* SpeechBubbleSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C89925CBDB2500BE7573 /* SpeechBubbleSticker1.m */; };
+		6EF0C89F25CBDB3100BE7573 /* SpeechBubbleSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C89E25CBDB3100BE7573 /* SpeechBubbleSticker2.m */; };
+		6EF0C8A425CBDB3E00BE7573 /* SpeechBubbleSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8A325CBDB3E00BE7573 /* SpeechBubbleSticker3.m */; };
+		6EF0C8A925CBDB4A00BE7573 /* SpeechBubbleSticker4.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8A825CBDB4A00BE7573 /* SpeechBubbleSticker4.m */; };
+		6EF0C8AE25CBDB5E00BE7573 /* StainSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8AD25CBDB5E00BE7573 /* StainSticker1.m */; };
+		6EF0C8B325CBDB6B00BE7573 /* StainSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8B225CBDB6B00BE7573 /* StainSticker2.m */; };
+		6EF0C8B825CBDB7E00BE7573 /* StarSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8B725CBDB7E00BE7573 /* StarSticker1.m */; };
+		6EF0C8BD25CBDB8E00BE7573 /* StarSticker2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8BC25CBDB8E00BE7573 /* StarSticker2.m */; };
+		6EF0C8C225CBDB9600BE7573 /* StarSticker3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8C125CBDB9600BE7573 /* StarSticker3.m */; };
+		6EF0C8C725CBDBA400BE7573 /* StarSticker4.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8C625CBDBA400BE7573 /* StarSticker4.m */; };
+		6EF0C8CC25CBDBE000BE7573 /* TagSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8CB25CBDBE000BE7573 /* TagSticker.m */; };
+		6EF0C8D125CBDC2700BE7573 /* TargetSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8D025CBDC2700BE7573 /* TargetSticker.m */; };
+		6EF0C8D625CBDC3A00BE7573 /* TearsSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8D525CBDC3A00BE7573 /* TearsSticker.m */; };
+		6EF0C8E925CBE0B700BE7573 /* TriangleSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8E825CBE0B700BE7573 /* TriangleSticker1.m */; };
 		86BE8E8DCEAF4561F7A9E722 /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B689306FD489C375607E803F /* Pods_ThummIt.framework */; };
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
 		B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */; };
@@ -787,6 +844,120 @@
 		6EF0C6F925CA337100BE7573 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6EF0C6FA25CA337100BE7573 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		6EF0C6FB25CA337200BE7573 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6EF0C7B325CBAA1A00BE7573 /* ArrowSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrowSticker2.h; sourceTree = "<group>"; };
+		6EF0C7B425CBAA1A00BE7573 /* ArrowSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrowSticker2.m; sourceTree = "<group>"; };
+		6EF0C7B825CBAA2B00BE7573 /* ArrowSticker3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrowSticker3.h; sourceTree = "<group>"; };
+		6EF0C7B925CBAA2B00BE7573 /* ArrowSticker3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrowSticker3.m; sourceTree = "<group>"; };
+		6EF0C7BD25CBAA3600BE7573 /* ArrowSticker4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrowSticker4.h; sourceTree = "<group>"; };
+		6EF0C7BE25CBAA3600BE7573 /* ArrowSticker4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrowSticker4.m; sourceTree = "<group>"; };
+		6EF0C7C225CBAA3E00BE7573 /* ArrowSticker5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrowSticker5.h; sourceTree = "<group>"; };
+		6EF0C7C325CBAA3E00BE7573 /* ArrowSticker5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrowSticker5.m; sourceTree = "<group>"; };
+		6EF0C7C725CBAA4C00BE7573 /* ArrowSticker6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrowSticker6.h; sourceTree = "<group>"; };
+		6EF0C7C825CBAA4C00BE7573 /* ArrowSticker6.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrowSticker6.m; sourceTree = "<group>"; };
+		6EF0C7CC25CBAA5900BE7573 /* ArrowSticker7.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrowSticker7.h; sourceTree = "<group>"; };
+		6EF0C7CD25CBAA5900BE7573 /* ArrowSticker7.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrowSticker7.m; sourceTree = "<group>"; };
+		6EF0C7D125CBAC8A00BE7573 /* BlinkSticker3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlinkSticker3.h; sourceTree = "<group>"; };
+		6EF0C7D225CBAC8A00BE7573 /* BlinkSticker3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlinkSticker3.m; sourceTree = "<group>"; };
+		6EF0C7D625CBAC9B00BE7573 /* BulbSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BulbSticker.h; sourceTree = "<group>"; };
+		6EF0C7D725CBAC9B00BE7573 /* BulbSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BulbSticker.m; sourceTree = "<group>"; };
+		6EF0C7DB25CBACAF00BE7573 /* BurstSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BurstSticker1.h; sourceTree = "<group>"; };
+		6EF0C7DC25CBACAF00BE7573 /* BurstSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BurstSticker1.m; sourceTree = "<group>"; };
+		6EF0C7E025CBACBF00BE7573 /* ButtonPauseSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonPauseSticker.h; sourceTree = "<group>"; };
+		6EF0C7E125CBACBF00BE7573 /* ButtonPauseSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonPauseSticker.m; sourceTree = "<group>"; };
+		6EF0C7E525CBACD200BE7573 /* ButtonPlaySticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonPlaySticker.h; sourceTree = "<group>"; };
+		6EF0C7E625CBACD200BE7573 /* ButtonPlaySticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonPlaySticker.m; sourceTree = "<group>"; };
+		6EF0C7EA25CBACE200BE7573 /* ButtonStopSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonStopSticker.h; sourceTree = "<group>"; };
+		6EF0C7EB25CBACE200BE7573 /* ButtonStopSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonStopSticker.m; sourceTree = "<group>"; };
+		6EF0C7EF25CBAE0800BE7573 /* CircleSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleSticker2.h; sourceTree = "<group>"; };
+		6EF0C7F025CBAE0800BE7573 /* CircleSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleSticker2.m; sourceTree = "<group>"; };
+		6EF0C7F425CBAE1C00BE7573 /* CloudSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudSticker1.h; sourceTree = "<group>"; };
+		6EF0C7F525CBAE1C00BE7573 /* CloudSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudSticker1.m; sourceTree = "<group>"; };
+		6EF0C7F925CBAE2E00BE7573 /* CloudSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CloudSticker2.h; sourceTree = "<group>"; };
+		6EF0C7FA25CBAE2E00BE7573 /* CloudSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CloudSticker2.m; sourceTree = "<group>"; };
+		6EF0C7FE25CBAE3F00BE7573 /* DollarSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DollarSticker.h; sourceTree = "<group>"; };
+		6EF0C7FF25CBAE3F00BE7573 /* DollarSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DollarSticker.m; sourceTree = "<group>"; };
+		6EF0C80325CBB0B500BE7573 /* EffectSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EffectSticker1.h; sourceTree = "<group>"; };
+		6EF0C80425CBB0B500BE7573 /* EffectSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EffectSticker1.m; sourceTree = "<group>"; };
+		6EF0C80825CBB0BE00BE7573 /* EffectSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EffectSticker2.h; sourceTree = "<group>"; };
+		6EF0C80925CBB0BE00BE7573 /* EffectSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EffectSticker2.m; sourceTree = "<group>"; };
+		6EF0C80B25CBB0C600BE7573 /* EffectSticker3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EffectSticker3.h; sourceTree = "<group>"; };
+		6EF0C80C25CBB0C600BE7573 /* EffectSticker3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EffectSticker3.m; sourceTree = "<group>"; };
+		6EF0C81925CBC31500BE7573 /* GameSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameSticker.h; sourceTree = "<group>"; };
+		6EF0C81A25CBC31500BE7573 /* GameSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameSticker.m; sourceTree = "<group>"; };
+		6EF0C81E25CBC32600BE7573 /* GlitterSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlitterSticker.h; sourceTree = "<group>"; };
+		6EF0C81F25CBC32600BE7573 /* GlitterSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlitterSticker.m; sourceTree = "<group>"; };
+		6EF0C82325CBC33C00BE7573 /* GoodSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodSticker1.h; sourceTree = "<group>"; };
+		6EF0C82425CBC33C00BE7573 /* GoodSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodSticker1.m; sourceTree = "<group>"; };
+		6EF0C82825CBC35400BE7573 /* HeartSticker5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartSticker5.h; sourceTree = "<group>"; };
+		6EF0C82925CBC35400BE7573 /* HeartSticker5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartSticker5.m; sourceTree = "<group>"; };
+		6EF0C82D25CBC35D00BE7573 /* HeartSticker6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartSticker6.h; sourceTree = "<group>"; };
+		6EF0C82E25CBC35D00BE7573 /* HeartSticker6.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartSticker6.m; sourceTree = "<group>"; };
+		6EF0C83225CBC36500BE7573 /* HeartSticker7.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartSticker7.h; sourceTree = "<group>"; };
+		6EF0C83325CBC36500BE7573 /* HeartSticker7.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartSticker7.m; sourceTree = "<group>"; };
+		6EF0C83725CBC37400BE7573 /* HeartSticker8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartSticker8.h; sourceTree = "<group>"; };
+		6EF0C83825CBC37400BE7573 /* HeartSticker8.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartSticker8.m; sourceTree = "<group>"; };
+		6EF0C83C25CBC37F00BE7573 /* HeartSticker9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartSticker9.h; sourceTree = "<group>"; };
+		6EF0C83D25CBC37F00BE7573 /* HeartSticker9.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartSticker9.m; sourceTree = "<group>"; };
+		6EF0C84125CBC38900BE7573 /* HeartSticker10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartSticker10.h; sourceTree = "<group>"; };
+		6EF0C84225CBC38900BE7573 /* HeartSticker10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartSticker10.m; sourceTree = "<group>"; };
+		6EF0C84625CBC3C500BE7573 /* KoreanFlagSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KoreanFlagSticker.h; sourceTree = "<group>"; };
+		6EF0C84725CBC3C500BE7573 /* KoreanFlagSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KoreanFlagSticker.m; sourceTree = "<group>"; };
+		6EF0C85225CBC7F000BE7573 /* LockSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockSticker.h; sourceTree = "<group>"; };
+		6EF0C85325CBC7F000BE7573 /* LockSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockSticker.m; sourceTree = "<group>"; };
+		6EF0C85725CBD25400BE7573 /* MedalBronzeSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MedalBronzeSticker.h; sourceTree = "<group>"; };
+		6EF0C85825CBD25400BE7573 /* MedalBronzeSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MedalBronzeSticker.m; sourceTree = "<group>"; };
+		6EF0C85C25CBD27C00BE7573 /* MedalGoldSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MedalGoldSticker.h; sourceTree = "<group>"; };
+		6EF0C85D25CBD27C00BE7573 /* MedalGoldSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MedalGoldSticker.m; sourceTree = "<group>"; };
+		6EF0C86125CBD29800BE7573 /* MedalSilverSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MedalSilverSticker.h; sourceTree = "<group>"; };
+		6EF0C86225CBD29900BE7573 /* MedalSilverSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MedalSilverSticker.m; sourceTree = "<group>"; };
+		6EF0C86625CBD2A800BE7573 /* NoteSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteSticker1.h; sourceTree = "<group>"; };
+		6EF0C86725CBD2A900BE7573 /* NoteSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteSticker1.m; sourceTree = "<group>"; };
+		6EF0C86B25CBD2BF00BE7573 /* NoteSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteSticker2.h; sourceTree = "<group>"; };
+		6EF0C86C25CBD2BF00BE7573 /* NoteSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteSticker2.m; sourceTree = "<group>"; };
+		6EF0C87025CBD2CB00BE7573 /* NoteSticker3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteSticker3.h; sourceTree = "<group>"; };
+		6EF0C87125CBD2CB00BE7573 /* NoteSticker3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteSticker3.m; sourceTree = "<group>"; };
+		6EF0C87525CBD2E500BE7573 /* NuclearSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NuclearSticker.h; sourceTree = "<group>"; };
+		6EF0C87625CBD2E600BE7573 /* NuclearSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NuclearSticker.m; sourceTree = "<group>"; };
+		6EF0C87A25CBD2FD00BE7573 /* RspPaperSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RspPaperSticker.h; sourceTree = "<group>"; };
+		6EF0C87B25CBD2FD00BE7573 /* RspPaperSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RspPaperSticker.m; sourceTree = "<group>"; };
+		6EF0C87F25CBD31200BE7573 /* RspRockSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RspRockSticker.h; sourceTree = "<group>"; };
+		6EF0C88025CBD31200BE7573 /* RspRockSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RspRockSticker.m; sourceTree = "<group>"; };
+		6EF0C88425CBD32500BE7573 /* RspScissorsSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RspScissorsSticker.h; sourceTree = "<group>"; };
+		6EF0C88525CBD32500BE7573 /* RspScissorsSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RspScissorsSticker.m; sourceTree = "<group>"; };
+		6EF0C88925CBD33A00BE7573 /* SnowflakeSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnowflakeSticker1.h; sourceTree = "<group>"; };
+		6EF0C88A25CBD33A00BE7573 /* SnowflakeSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowflakeSticker1.m; sourceTree = "<group>"; };
+		6EF0C88E25CBD34A00BE7573 /* SnowflakeSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnowflakeSticker2.h; sourceTree = "<group>"; };
+		6EF0C88F25CBD34A00BE7573 /* SnowflakeSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowflakeSticker2.m; sourceTree = "<group>"; };
+		6EF0C89325CBD36300BE7573 /* SnowmanSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnowmanSticker.h; sourceTree = "<group>"; };
+		6EF0C89425CBD36300BE7573 /* SnowmanSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowmanSticker.m; sourceTree = "<group>"; };
+		6EF0C89825CBDB2500BE7573 /* SpeechBubbleSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechBubbleSticker1.h; sourceTree = "<group>"; };
+		6EF0C89925CBDB2500BE7573 /* SpeechBubbleSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechBubbleSticker1.m; sourceTree = "<group>"; };
+		6EF0C89D25CBDB3100BE7573 /* SpeechBubbleSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechBubbleSticker2.h; sourceTree = "<group>"; };
+		6EF0C89E25CBDB3100BE7573 /* SpeechBubbleSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechBubbleSticker2.m; sourceTree = "<group>"; };
+		6EF0C8A225CBDB3E00BE7573 /* SpeechBubbleSticker3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechBubbleSticker3.h; sourceTree = "<group>"; };
+		6EF0C8A325CBDB3E00BE7573 /* SpeechBubbleSticker3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechBubbleSticker3.m; sourceTree = "<group>"; };
+		6EF0C8A725CBDB4A00BE7573 /* SpeechBubbleSticker4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechBubbleSticker4.h; sourceTree = "<group>"; };
+		6EF0C8A825CBDB4A00BE7573 /* SpeechBubbleSticker4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechBubbleSticker4.m; sourceTree = "<group>"; };
+		6EF0C8AC25CBDB5E00BE7573 /* StainSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StainSticker1.h; sourceTree = "<group>"; };
+		6EF0C8AD25CBDB5E00BE7573 /* StainSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StainSticker1.m; sourceTree = "<group>"; };
+		6EF0C8B125CBDB6B00BE7573 /* StainSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StainSticker2.h; sourceTree = "<group>"; };
+		6EF0C8B225CBDB6B00BE7573 /* StainSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StainSticker2.m; sourceTree = "<group>"; };
+		6EF0C8B625CBDB7E00BE7573 /* StarSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarSticker1.h; sourceTree = "<group>"; };
+		6EF0C8B725CBDB7E00BE7573 /* StarSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarSticker1.m; sourceTree = "<group>"; };
+		6EF0C8BB25CBDB8E00BE7573 /* StarSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarSticker2.h; sourceTree = "<group>"; };
+		6EF0C8BC25CBDB8E00BE7573 /* StarSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarSticker2.m; sourceTree = "<group>"; };
+		6EF0C8C025CBDB9600BE7573 /* StarSticker3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarSticker3.h; sourceTree = "<group>"; };
+		6EF0C8C125CBDB9600BE7573 /* StarSticker3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarSticker3.m; sourceTree = "<group>"; };
+		6EF0C8C525CBDBA400BE7573 /* StarSticker4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarSticker4.h; sourceTree = "<group>"; };
+		6EF0C8C625CBDBA400BE7573 /* StarSticker4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarSticker4.m; sourceTree = "<group>"; };
+		6EF0C8CA25CBDBE000BE7573 /* TagSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagSticker.h; sourceTree = "<group>"; };
+		6EF0C8CB25CBDBE000BE7573 /* TagSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagSticker.m; sourceTree = "<group>"; };
+		6EF0C8CF25CBDC2700BE7573 /* TargetSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TargetSticker.h; sourceTree = "<group>"; };
+		6EF0C8D025CBDC2700BE7573 /* TargetSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TargetSticker.m; sourceTree = "<group>"; };
+		6EF0C8D425CBDC3900BE7573 /* TearsSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TearsSticker.h; sourceTree = "<group>"; };
+		6EF0C8D525CBDC3A00BE7573 /* TearsSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TearsSticker.m; sourceTree = "<group>"; };
+		6EF0C8E725CBE0B700BE7573 /* TriangleSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriangleSticker1.h; sourceTree = "<group>"; };
+		6EF0C8E825CBE0B700BE7573 /* TriangleSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TriangleSticker1.m; sourceTree = "<group>"; };
 		7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.release.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.release.xcconfig"; sourceTree = "<group>"; };
 		B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogBarunGothicTypo.h; sourceTree = "<group>"; };
@@ -2249,6 +2420,120 @@
 				6ED13D5625C2C8B000012144 /* StartleSticker1.m */,
 				B1836FC525C3370E00A81446 /* AngrySticker1.h */,
 				B1836FC125C3370E00A81446 /* AngrySticker1.m */,
+				6EF0C7B325CBAA1A00BE7573 /* ArrowSticker2.h */,
+				6EF0C7B425CBAA1A00BE7573 /* ArrowSticker2.m */,
+				6EF0C7B825CBAA2B00BE7573 /* ArrowSticker3.h */,
+				6EF0C7B925CBAA2B00BE7573 /* ArrowSticker3.m */,
+				6EF0C7BD25CBAA3600BE7573 /* ArrowSticker4.h */,
+				6EF0C7BE25CBAA3600BE7573 /* ArrowSticker4.m */,
+				6EF0C7C225CBAA3E00BE7573 /* ArrowSticker5.h */,
+				6EF0C7C325CBAA3E00BE7573 /* ArrowSticker5.m */,
+				6EF0C7C725CBAA4C00BE7573 /* ArrowSticker6.h */,
+				6EF0C7C825CBAA4C00BE7573 /* ArrowSticker6.m */,
+				6EF0C7CC25CBAA5900BE7573 /* ArrowSticker7.h */,
+				6EF0C7CD25CBAA5900BE7573 /* ArrowSticker7.m */,
+				6EF0C7D125CBAC8A00BE7573 /* BlinkSticker3.h */,
+				6EF0C7D225CBAC8A00BE7573 /* BlinkSticker3.m */,
+				6EF0C7D625CBAC9B00BE7573 /* BulbSticker.h */,
+				6EF0C7D725CBAC9B00BE7573 /* BulbSticker.m */,
+				6EF0C7DB25CBACAF00BE7573 /* BurstSticker1.h */,
+				6EF0C7DC25CBACAF00BE7573 /* BurstSticker1.m */,
+				6EF0C7E025CBACBF00BE7573 /* ButtonPauseSticker.h */,
+				6EF0C7E125CBACBF00BE7573 /* ButtonPauseSticker.m */,
+				6EF0C7E525CBACD200BE7573 /* ButtonPlaySticker.h */,
+				6EF0C7E625CBACD200BE7573 /* ButtonPlaySticker.m */,
+				6EF0C7EA25CBACE200BE7573 /* ButtonStopSticker.h */,
+				6EF0C7EB25CBACE200BE7573 /* ButtonStopSticker.m */,
+				6EF0C7EF25CBAE0800BE7573 /* CircleSticker2.h */,
+				6EF0C7F025CBAE0800BE7573 /* CircleSticker2.m */,
+				6EF0C7F425CBAE1C00BE7573 /* CloudSticker1.h */,
+				6EF0C7F525CBAE1C00BE7573 /* CloudSticker1.m */,
+				6EF0C7F925CBAE2E00BE7573 /* CloudSticker2.h */,
+				6EF0C7FA25CBAE2E00BE7573 /* CloudSticker2.m */,
+				6EF0C7FE25CBAE3F00BE7573 /* DollarSticker.h */,
+				6EF0C7FF25CBAE3F00BE7573 /* DollarSticker.m */,
+				6EF0C80325CBB0B500BE7573 /* EffectSticker1.h */,
+				6EF0C80425CBB0B500BE7573 /* EffectSticker1.m */,
+				6EF0C80825CBB0BE00BE7573 /* EffectSticker2.h */,
+				6EF0C80925CBB0BE00BE7573 /* EffectSticker2.m */,
+				6EF0C80B25CBB0C600BE7573 /* EffectSticker3.h */,
+				6EF0C80C25CBB0C600BE7573 /* EffectSticker3.m */,
+				6EF0C81925CBC31500BE7573 /* GameSticker.h */,
+				6EF0C81A25CBC31500BE7573 /* GameSticker.m */,
+				6EF0C81E25CBC32600BE7573 /* GlitterSticker.h */,
+				6EF0C81F25CBC32600BE7573 /* GlitterSticker.m */,
+				6EF0C82325CBC33C00BE7573 /* GoodSticker1.h */,
+				6EF0C82425CBC33C00BE7573 /* GoodSticker1.m */,
+				6EF0C82825CBC35400BE7573 /* HeartSticker5.h */,
+				6EF0C82925CBC35400BE7573 /* HeartSticker5.m */,
+				6EF0C82D25CBC35D00BE7573 /* HeartSticker6.h */,
+				6EF0C82E25CBC35D00BE7573 /* HeartSticker6.m */,
+				6EF0C83225CBC36500BE7573 /* HeartSticker7.h */,
+				6EF0C83325CBC36500BE7573 /* HeartSticker7.m */,
+				6EF0C83725CBC37400BE7573 /* HeartSticker8.h */,
+				6EF0C83825CBC37400BE7573 /* HeartSticker8.m */,
+				6EF0C83C25CBC37F00BE7573 /* HeartSticker9.h */,
+				6EF0C83D25CBC37F00BE7573 /* HeartSticker9.m */,
+				6EF0C84125CBC38900BE7573 /* HeartSticker10.h */,
+				6EF0C84225CBC38900BE7573 /* HeartSticker10.m */,
+				6EF0C84625CBC3C500BE7573 /* KoreanFlagSticker.h */,
+				6EF0C84725CBC3C500BE7573 /* KoreanFlagSticker.m */,
+				6EF0C85225CBC7F000BE7573 /* LockSticker.h */,
+				6EF0C85325CBC7F000BE7573 /* LockSticker.m */,
+				6EF0C85725CBD25400BE7573 /* MedalBronzeSticker.h */,
+				6EF0C85825CBD25400BE7573 /* MedalBronzeSticker.m */,
+				6EF0C85C25CBD27C00BE7573 /* MedalGoldSticker.h */,
+				6EF0C85D25CBD27C00BE7573 /* MedalGoldSticker.m */,
+				6EF0C86125CBD29800BE7573 /* MedalSilverSticker.h */,
+				6EF0C86225CBD29900BE7573 /* MedalSilverSticker.m */,
+				6EF0C86625CBD2A800BE7573 /* NoteSticker1.h */,
+				6EF0C86725CBD2A900BE7573 /* NoteSticker1.m */,
+				6EF0C86B25CBD2BF00BE7573 /* NoteSticker2.h */,
+				6EF0C86C25CBD2BF00BE7573 /* NoteSticker2.m */,
+				6EF0C87025CBD2CB00BE7573 /* NoteSticker3.h */,
+				6EF0C87125CBD2CB00BE7573 /* NoteSticker3.m */,
+				6EF0C87525CBD2E500BE7573 /* NuclearSticker.h */,
+				6EF0C87625CBD2E600BE7573 /* NuclearSticker.m */,
+				6EF0C87A25CBD2FD00BE7573 /* RspPaperSticker.h */,
+				6EF0C87B25CBD2FD00BE7573 /* RspPaperSticker.m */,
+				6EF0C87F25CBD31200BE7573 /* RspRockSticker.h */,
+				6EF0C88025CBD31200BE7573 /* RspRockSticker.m */,
+				6EF0C88425CBD32500BE7573 /* RspScissorsSticker.h */,
+				6EF0C88525CBD32500BE7573 /* RspScissorsSticker.m */,
+				6EF0C88925CBD33A00BE7573 /* SnowflakeSticker1.h */,
+				6EF0C88A25CBD33A00BE7573 /* SnowflakeSticker1.m */,
+				6EF0C88E25CBD34A00BE7573 /* SnowflakeSticker2.h */,
+				6EF0C88F25CBD34A00BE7573 /* SnowflakeSticker2.m */,
+				6EF0C89325CBD36300BE7573 /* SnowmanSticker.h */,
+				6EF0C89425CBD36300BE7573 /* SnowmanSticker.m */,
+				6EF0C89825CBDB2500BE7573 /* SpeechBubbleSticker1.h */,
+				6EF0C89925CBDB2500BE7573 /* SpeechBubbleSticker1.m */,
+				6EF0C89D25CBDB3100BE7573 /* SpeechBubbleSticker2.h */,
+				6EF0C89E25CBDB3100BE7573 /* SpeechBubbleSticker2.m */,
+				6EF0C8A225CBDB3E00BE7573 /* SpeechBubbleSticker3.h */,
+				6EF0C8A325CBDB3E00BE7573 /* SpeechBubbleSticker3.m */,
+				6EF0C8A725CBDB4A00BE7573 /* SpeechBubbleSticker4.h */,
+				6EF0C8A825CBDB4A00BE7573 /* SpeechBubbleSticker4.m */,
+				6EF0C8AC25CBDB5E00BE7573 /* StainSticker1.h */,
+				6EF0C8AD25CBDB5E00BE7573 /* StainSticker1.m */,
+				6EF0C8B125CBDB6B00BE7573 /* StainSticker2.h */,
+				6EF0C8B225CBDB6B00BE7573 /* StainSticker2.m */,
+				6EF0C8B625CBDB7E00BE7573 /* StarSticker1.h */,
+				6EF0C8B725CBDB7E00BE7573 /* StarSticker1.m */,
+				6EF0C8BB25CBDB8E00BE7573 /* StarSticker2.h */,
+				6EF0C8BC25CBDB8E00BE7573 /* StarSticker2.m */,
+				6EF0C8C025CBDB9600BE7573 /* StarSticker3.h */,
+				6EF0C8C125CBDB9600BE7573 /* StarSticker3.m */,
+				6EF0C8C525CBDBA400BE7573 /* StarSticker4.h */,
+				6EF0C8C625CBDBA400BE7573 /* StarSticker4.m */,
+				6EF0C8CA25CBDBE000BE7573 /* TagSticker.h */,
+				6EF0C8CB25CBDBE000BE7573 /* TagSticker.m */,
+				6EF0C8CF25CBDC2700BE7573 /* TargetSticker.h */,
+				6EF0C8D025CBDC2700BE7573 /* TargetSticker.m */,
+				6EF0C8D425CBDC3900BE7573 /* TearsSticker.h */,
+				6EF0C8D525CBDC3A00BE7573 /* TearsSticker.m */,
+				6EF0C8E725CBE0B700BE7573 /* TriangleSticker1.h */,
+				6EF0C8E825CBE0B700BE7573 /* TriangleSticker1.m */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -2669,10 +2954,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF0C86325CBD29900BE7573 /* MedalSilverSticker.m in Sources */,
 				B1F8C68A25C4988E002DDAF8 /* WhyRealTypo.m in Sources */,
 				6ED13C8A25C1ADAA00012144 /* BlueMoonTypo.m in Sources */,
 				6E28452825C35870008B7A23 /* VlogLogoTagTypo.m in Sources */,
+				6EF0C8B325CBDB6B00BE7573 /* StainSticker2.m in Sources */,
 				6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */,
+				6EF0C7C925CBAA4C00BE7573 /* ArrowSticker6.m in Sources */,
 				6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */,
 				6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */,
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
@@ -2683,22 +2971,28 @@
 				6E7DD4A82584D4490014618E /* AlbumViewController+CollectionViewDelegate.m in Sources */,
 				6EBEB68F25C4B98A0017C640 /* LookBookVlogTemplate.m in Sources */,
 				6EBEB6B725C4F64E0017C640 /* FreshmanVlogTemplate.m in Sources */,
+				6EF0C7BF25CBAA3600BE7573 /* ArrowSticker4.m in Sources */,
 				6ED13B0425BDA75D00012144 /* UIImageView+Additions.m in Sources */,
 				6EBEB50B25C146300017C640 /* WorkManTalkWrite.m in Sources */,
 				6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */,
+				6EF0C7F625CBAE1C00BE7573 /* CloudSticker1.m in Sources */,
 				B11E0D5B25C55FC60050D9F0 /* CookingVlogTemplate.m in Sources */,
 				B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */,
 				6EBEB52625C191340017C640 /* WorkManRedTitle.m in Sources */,
 				B1F8C6C825C4C71C002DDAF8 /* ItalyTripVlogTemplate.m in Sources */,
 				B1D2AC8325CB0DAD00F4630B /* SinSeoYuGiQu2Sticker.m in Sources */,
 				B11E0D5425C4F6070050D9F0 /* SixToFourVlogTemplate.m in Sources */,
+				6EF0C8C225CBDB9600BE7573 /* StarSticker3.m in Sources */,
 				6E8E79D825921D140008C5FF /* ProjectTableController.m in Sources */,
 				6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */,
 				B11E0D8325C58C4D0050D9F0 /* VlogMomTypo.m in Sources */,
+				6EF0C7B525CBAA1A00BE7573 /* ArrowSticker2.m in Sources */,
 				B1F2B71725C1B2AD0064A044 /* InfiniteChallengeLegeno.m in Sources */,
+				6EF0C89F25CBDB3100BE7573 /* SpeechBubbleSticker2.m in Sources */,
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
 				6E20BCC025AEF58600BBA540 /* UndoManager.m in Sources */,
 				6ED13D3425C2C76D00012144 /* RunningManQuSticker.m in Sources */,
+				6EF0C89525CBD36300BE7573 /* SnowmanSticker.m in Sources */,
 				6E28451F25C35870008B7A23 /* VlogCompany.m in Sources */,
 				6E8F98E625BC4B08005C8071 /* GuideLineManager.m in Sources */,
 				6ED13C1C25C10DE400012144 /* RunningMan1Template.m in Sources */,
@@ -2711,21 +3005,25 @@
 				6E8F9B4425C35261005C8071 /* SeoYuGiHungryTypo.m in Sources */,
 				B1F8C6C125C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.m in Sources */,
 				6E8F9A9625C34582005C8071 /* BasicCirclePhotoFrame.m in Sources */,
+				6EF0C8CC25CBDBE000BE7573 /* TagSticker.m in Sources */,
 				6EBEB67425C494B10017C640 /* HeartSticker1.m in Sources */,
 				B1F2B6EF25C198DD0064A044 /* InfiniteChallengeWhiteTypo.m in Sources */,
 				6E8F98F425BC551F005C8071 /* GuideLine.m in Sources */,
 				6E4A1898258A138F008578BA /* HomeTableController.m in Sources */,
 				6E28452A25C35870008B7A23 /* VlogWebWrite.m in Sources */,
 				6E8F9B1125C348C9005C8071 /* WorkManStartleSticker.m in Sources */,
+				6EF0C8AE25CBDB5E00BE7573 /* StainSticker1.m in Sources */,
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
 				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
 				B11E0D6025C561470050D9F0 /* DailyVlogTemplate.m in Sources */,
 				6E28452025C35870008B7A23 /* VlogOriginal.m in Sources */,
 				6EBEB68325C494E20017C640 /* HeartSticker4.m in Sources */,
+				6EF0C82F25CBC35D00BE7573 /* HeartSticker6.m in Sources */,
 				6EBEB6CF25C5817E0017C640 /* WebDesignerVlogTemPlate.m in Sources */,
 				6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */,
 				6EC4DFCC25A87DAF0023485C /* UIColor+patternArchive.m in Sources */,
 				6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */,
+				6EF0C8E925CBE0B700BE7573 /* TriangleSticker1.m in Sources */,
 				6E9BE9CE258B3A5700F7F539 /* EditingViewController+GestureControllerDelegate.m in Sources */,
 				6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */,
 				6E8F9A9525C34581005C8071 /* QuarterRectangle.m in Sources */,
@@ -2733,10 +3031,13 @@
 				B1836FC925C3370E00A81446 /* AngrySticker1.m in Sources */,
 				6EBEB67E25C494D40017C640 /* HeartSticker3.m in Sources */,
 				6E6E5BF025A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m in Sources */,
+				6EF0C87C25CBD2FD00BE7573 /* RspPaperSticker.m in Sources */,
 				B1F2B74C25C1CB0B0064A044 /* InfiniteChallengeCloudBox.m in Sources */,
 				6E9BE9F4258D0F1C00F7F539 /* EditingModeController.m in Sources */,
 				6E28452425C35870008B7A23 /* VlogSummer.m in Sources */,
 				B1836F6125C32C1800A81446 /* InfiniteChallenge2Template.m in Sources */,
+				6EF0C89A25CBDB2500BE7573 /* SpeechBubbleSticker1.m in Sources */,
+				6EF0C80D25CBB0C600BE7573 /* EffectSticker3.m in Sources */,
 				B16FC64925ADF90000E854C1 /* CircleSticker1.m in Sources */,
 				6EBEB64825C428940017C640 /* WorkManFast.m in Sources */,
 				6E9BEA36258E696F00F7F539 /* SaveManager.m in Sources */,
@@ -2745,6 +3046,7 @@
 				6ED13D5725C2C8B000012144 /* StartleSticker1.m in Sources */,
 				6ED13BB425C08FC700012144 /* WorkingManNameTypo.m in Sources */,
 				B1F8C6E225C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m in Sources */,
+				6EF0C88B25CBD33A00BE7573 /* SnowflakeSticker1.m in Sources */,
 				6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */,
 				6E80771D25C85FDB0033FF21 /* VlogTapeSticker.m in Sources */,
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,
@@ -2760,13 +3062,19 @@
 				6ED13CCF25C1CACB00012144 /* MatterTypo.m in Sources */,
 				6E8E7A38259B2EA40008C5FF /* ItemManager.m in Sources */,
 				B1F2B75B25C1E8260064A044 /* InfiniteChallenge1Template.m in Sources */,
+				6EF0C8B825CBDB7E00BE7573 /* StarSticker1.m in Sources */,
 				6E7DD4A22584D3C00014618E /* AlbumViewController.m in Sources */,
+				6EF0C87225CBD2CB00BE7573 /* NoteSticker3.m in Sources */,
 				6ED13C9E25C1AE3B00012144 /* AtmosphereTypo.m in Sources */,
 				6E698BBE25B8A21300CE86FB /* DashedGuideLineView.m in Sources */,
 				B1F2B70625C1ABFC0064A044 /* InfiniteChallengeOrangeTypo.m in Sources */,
+				6EF0C88625CBD32500BE7573 /* RspScissorsSticker.m in Sources */,
+				6EF0C88125CBD31200BE7573 /* RspRockSticker.m in Sources */,
 				6E9BEA22258DECDB00F7F539 /* EditingLayerController.m in Sources */,
+				6EF0C7EC25CBACE200BE7573 /* ButtonStopSticker.m in Sources */,
 				6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */,
 				6EAD5C9E25B767E200C42187 /* CustomerFeedback.m in Sources */,
+				6EF0C81B25CBC31500BE7573 /* GameSticker.m in Sources */,
 				6ED13BAF25C08FA700012144 /* YellowGradientTypo.m in Sources */,
 				6E28452C25C35870008B7A23 /* VlogStudy.m in Sources */,
 				6E28451925C35870008B7A23 /* VlogDesiner.m in Sources */,
@@ -2774,6 +3082,7 @@
 				6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */,
 				6E28451425C35870008B7A23 /* VlogBrushTypo.m in Sources */,
 				6ED13D4D25C2C84400012144 /* SinSeoYuGiExc2Sticker.m in Sources */,
+				6EF0C82A25CBC35400BE7573 /* HeartSticker5.m in Sources */,
 				6EC4DFCB25A87DAF0023485C /* UIColor+Additions.m in Sources */,
 				6E8E7A2E259B270E0008C5FF /* PhotoFrameCollectionController.m in Sources */,
 				B1F2B7CF25C305C50064A044 /* BlinkSticker1.m in Sources */,
@@ -2788,6 +3097,7 @@
 				6ED13D5E25C2FFA100012144 /* RunningMan2Template.m in Sources */,
 				B1F2B70125C1ABC10064A044 /* InfiniteChallengeBlueTypo.m in Sources */,
 				6E28451725C35870008B7A23 /* VlogCookingTypo.m in Sources */,
+				6EF0C8D625CBDC3A00BE7573 /* TearsSticker.m in Sources */,
 				B1F2B70125C1ABC10064A044 /* InfiniteChallengeBlueTypo.m in Sources */,
 				6E8E7B0B25A84F090008C5FF /* Text.m in Sources */,
 				6ED13CA325C1AE7200012144 /* WhiteYellowGradientTypo.m in Sources */,
@@ -2795,10 +3105,12 @@
 				6EBEB55C25C1C6D20017C640 /* WorkmanYelloewTitle.m in Sources */,
 				6E28451C25C35870008B7A23 /* VlogInItaly.m in Sources */,
 				6EC4DFA625A85D860023485C /* Typography.m in Sources */,
+				6EF0C7BA25CBAA2B00BE7573 /* ArrowSticker3.m in Sources */,
 				6EBEB67925C494C90017C640 /* HeartSticker2.m in Sources */,
 				6E9BE9C5258B2E8500F7F539 /* Item.m in Sources */,
 				B11E0D7925C57B140050D9F0 /* ModelVlogTemplate.m in Sources */,
 				6EBEB6A425C4D8B10017C640 /* SummerVlogTemplate.m in Sources */,
+				6EF0C83E25CBC37F00BE7573 /* HeartSticker9.m in Sources */,
 				6E28452625C35870008B7A23 /* VlogNewCampus.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
 				B1F2B73E25C1C4E30064A044 /* InfiniteChallengeHashTag.m in Sources */,
@@ -2808,21 +3120,32 @@
 				6E8F9A9725C34582005C8071 /* ChristmasCircle.m in Sources */,
 				6EBEB59625C1EA990017C640 /* WorkManTemplate3.m in Sources */,
 				6E8F998725C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m in Sources */,
+				6EF0C82525CBC33C00BE7573 /* GoodSticker1.m in Sources */,
+				6EF0C82025CBC32600BE7573 /* GlitterSticker.m in Sources */,
 				B1F2B75325C1CFFD0064A044 /* InfiniteChallengeYellowSpeechBoxYellow.m in Sources */,
 				6E8E79CB25921C830008C5FF /* ProjectViewController.m in Sources */,
+				6EF0C86825CBD2A900BE7573 /* NoteSticker1.m in Sources */,
 				6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */,
+				6EF0C84825CBC3C500BE7573 /* KoreanFlagSticker.m in Sources */,
+				6EF0C86D25CBD2BF00BE7573 /* NoteSticker2.m in Sources */,
 				6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */,
 				6E9BEA1C258DDECC00F7F539 /* UIButton+Additions.m in Sources */,
 				6E9BE9DB258CFCFE00F7F539 /* PhotoManager.m in Sources */,
+				6EF0C7E725CBACD200BE7573 /* ButtonPlaySticker.m in Sources */,
 				6E8F997725C0D006005C8071 /* SeoYuGiGagwanTypo.m in Sources */,
 				6E8E799A258F82E80008C5FF /* MigratorJul.swift in Sources */,
 				6E28452225C35870008B7A23 /* VlogLongDance.m in Sources */,
 				6E8E7AF425A83C110008C5FF /* TextCollectionViewCell.m in Sources */,
+				6EF0C85425CBC7F000BE7573 /* LockSticker.m in Sources */,
+				6EF0C7FB25CBAE2E00BE7573 /* CloudSticker2.m in Sources */,
+				6EF0C8A425CBDB3E00BE7573 /* SpeechBubbleSticker3.m in Sources */,
 				B16FC68D25AF7F3900E854C1 /* XSticker1.m in Sources */,
 				6E28451E25C35870008B7A23 /* VlogBMDohyunTypo.m in Sources */,
 				B1F2B72325C1B5D50064A044 /* InfiniteChallengeYellowSpeechBoxWhite.m in Sources */,
+				6EF0C83425CBC36500BE7573 /* HeartSticker7.m in Sources */,
 				B1F2B77125C2C6370064A044 /* InfiniteChallengeSkullSticker.m in Sources */,
 				6E80770F25C82B060033FF21 /* DanceVlogTemplate.m in Sources */,
+				6EF0C7F125CBAE0800BE7573 /* CircleSticker2.m in Sources */,
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
 				B11E0D8D25C595BF0050D9F0 /* VlogHolidayTypo.m in Sources */,
 				6E28452725C35870008B7A23 /* VlogMyeongjoTypo.m in Sources */,
@@ -2832,14 +3155,21 @@
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
 				B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */,
+				6EF0C87725CBD2E600BE7573 /* NuclearSticker.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
+				6EF0C83925CBC37400BE7573 /* HeartSticker8.m in Sources */,
 				B11E0D8825C594A10050D9F0 /* HolidayVlogTemplate.m in Sources */,
+				6EF0C8A925CBDB4A00BE7573 /* SpeechBubbleSticker4.m in Sources */,
+				6EF0C89025CBD34A00BE7573 /* SnowflakeSticker2.m in Sources */,
 				B11E0D7E25C57BB90050D9F0 /* KidsVlogTemplate.m in Sources */,
 				6ED13D4625C2C82900012144 /* SinSeoYuGiExc1Sticker.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
 				B16FC68025AF459800E854C1 /* StickerCollectionReusableView.m in Sources */,
+				6EF0C80A25CBB0BE00BE7573 /* EffectSticker2.m in Sources */,
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,
+				6EF0C7D825CBAC9B00BE7573 /* BulbSticker.m in Sources */,
 				6E80772A25C960D00033FF21 /* WorkManYoutube.m in Sources */,
+				6EF0C7E225CBACBF00BE7573 /* ButtonPauseSticker.m in Sources */,
 				B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */,
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
 				B11E0D6525C56CA30050D9F0 /* CebuVlogTemplate.m in Sources */,
@@ -2849,6 +3179,7 @@
 				6EBEB57B25C1E6B30017C640 /* WorkManRightTag.m in Sources */,
 				6ED13CE625C1D16B00012144 /* RuleTypo.m in Sources */,
 				6EAD5C9F25B767E200C42187 /* CustomerFeedbackViewController.m in Sources */,
+				6EF0C85925CBD25400BE7573 /* MedalBronzeSticker.m in Sources */,
 				B11E0D6A25C56D560050D9F0 /* MacaronVlogTemplate.m in Sources */,
 				6E28452525C35870008B7A23 /* VlogSummerTypo.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
@@ -2859,9 +3190,11 @@
 				6E28451D25C35870008B7A23 /* VlogDog.m in Sources */,
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
 				B1F2B72C25C1BF2B0064A044 /* InfiniteChallengeTopOfYellow.m in Sources */,
+				6EF0C7CE25CBAA5900BE7573 /* ArrowSticker7.m in Sources */,
 				6E8F98FD25BCE6CC005C8071 /* GuideTarget.m in Sources */,
 				6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */,
 				6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */,
+				6EF0C7D325CBAC8A00BE7573 /* BlinkSticker3.m in Sources */,
 				6EBEB6BC25C4F8FE0017C640 /* VlogFreshmanTypo.m in Sources */,
 				B1F2B7D625C305D90064A044 /* PigtailSticker.m in Sources */,
 				B1F8C6D825C4CC23002DDAF8 /* VlogMakingFilmTypo.m in Sources */,
@@ -2880,23 +3213,30 @@
 				6EC4DFC125A87BEC0023485C /* BGTextAttribute.m in Sources */,
 				B16FC61725ADCC2A00E854C1 /* StickerCollectionController.m in Sources */,
 				6E28452925C35870008B7A23 /* VlogModel.m in Sources */,
+				6EF0C8C725CBDBA400BE7573 /* StarSticker4.m in Sources */,
 				6E28451525C35870008B7A23 /* VlogGRWMTypo.m in Sources */,
 				6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */,
+				6EF0C80025CBAE3F00BE7573 /* DollarSticker.m in Sources */,
 				6E28451625C35870008B7A23 /* VlogDailyTypo.m in Sources */,
 				6ED13CA825C1AE8D00012144 /* TikiTypo.m in Sources */,
+				6EF0C7DD25CBACAF00BE7573 /* BurstSticker1.m in Sources */,
+				6EF0C84325CBC38900BE7573 /* HeartSticker10.m in Sources */,
 				6E28452125C35870008B7A23 /* VlogTrip.m in Sources */,
 				6EBEB4A525C09EEB0017C640 /* WorkManLogo.m in Sources */,
 				6EBEB58825C1EA310017C640 /* WorkManTemplate2.m in Sources */,
 				6ED13BAA25C08F9000012144 /* RedShoutingTypo.m in Sources */,
+				6EF0C8BD25CBDB8E00BE7573 /* StarSticker2.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6ED13BAA25C08F9000012144 /* RedShoutingTypo.m in Sources */,
 				B1D2AC8A25CB0DFB00F4630B /* SinSeoYuGiQu1Sticker.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
+				6EF0C7C425CBAA3E00BE7573 /* ArrowSticker5.m in Sources */,
 				6EBEB6C125C567420017C640 /* StudentVlogTemplate.m in Sources */,
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6ED1398C25B872F600012144 /* SceneDelegate.swift in Sources */,
 				6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */,
+				6EF0C85E25CBD27C00BE7573 /* MedalGoldSticker.m in Sources */,
 				B1F2B6EA25C197230064A044 /* InfiniteChallengeEscapeRoom.m in Sources */,
 				6ED138FA25B8507A00012144 /* AppDelegate.swift in Sources */,
 				6EAD5CA025B767E200C42187 /* CustomerFeedbackVCViewController.m in Sources */,
@@ -2910,7 +3250,9 @@
 				6E4A1885258A1201008578BA /* CategoryManager.m in Sources */,
 				6E8E7AC025A833590008C5FF /* TextCollectionController.m in Sources */,
 				6EBEB56C25C1DFB00017C640 /* WorkManLeftTag.m in Sources */,
+				6EF0C8D125CBDC2700BE7573 /* TargetSticker.m in Sources */,
 				6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */,
+				6EF0C80525CBB0B500BE7573 /* EffectSticker1.m in Sources */,
 				6E698BB825B89DBC00CE86FB /* GuideLineView.m in Sources */,
 				6E9BEA58258F1BA800F7F539 /* ProjectManager.m in Sources */,
 				6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */,
