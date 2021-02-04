@@ -14,6 +14,10 @@
 		6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190F22584B164000DD9C0 /* LaunchScreen.storyboard */; };
 		6E1191012584B165000DD9C0 /* ThummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1191002584B165000DD9C0 /* ThummitTests.m */; };
 		6E11910C2584B165000DD9C0 /* ThummitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11910B2584B165000DD9C0 /* ThummitUITests.m */; };
+		6E1DBCF825CBE240004C0416 /* SignInEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */; };
+		6E1DBCFD25CBE2B5004C0416 /* SignInVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBCFC25CBE2B5004C0416 /* SignInVerificationViewController.m */; };
+		6E1DBD0225CBE2C5004C0416 /* SignInNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */; };
+		6E1DBD0725CBE2D4004C0416 /* SignInPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */; };
 		6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC6625AD78B700BBA540 /* ColorManager.m */; };
 		6E20BC7125AD938000BBA540 /* BGColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC7025AD938000BBA540 /* BGColorViewController.m */; };
 		6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8625AD944B00BBA540 /* BGColorCollectionViewCell.m */; };
@@ -339,6 +343,14 @@
 		6E1191072584B165000DD9C0 /* ThummItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThummItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E11910B2584B165000DD9C0 /* ThummitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThummitUITests.m; sourceTree = "<group>"; };
 		6E11910D2584B165000DD9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E1DBCF625CBE240004C0416 /* SignInEmailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInEmailViewController.h; sourceTree = "<group>"; };
+		6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInEmailViewController.m; sourceTree = "<group>"; };
+		6E1DBCFB25CBE2B5004C0416 /* SignInVerificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInVerificationViewController.h; sourceTree = "<group>"; };
+		6E1DBCFC25CBE2B5004C0416 /* SignInVerificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInVerificationViewController.m; sourceTree = "<group>"; };
+		6E1DBD0025CBE2C5004C0416 /* SignInNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInNameViewController.h; sourceTree = "<group>"; };
+		6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInNameViewController.m; sourceTree = "<group>"; };
+		6E1DBD0525CBE2D4004C0416 /* SignInPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInPasswordViewController.h; sourceTree = "<group>"; };
+		6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInPasswordViewController.m; sourceTree = "<group>"; };
 		6E20BC6525AD78B700BBA540 /* ColorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
 		6E20BC6625AD78B700BBA540 /* ColorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
 		6E20BC6F25AD938000BBA540 /* BGColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGColorViewController.h; sourceTree = "<group>"; };
@@ -994,6 +1006,14 @@
 			isa = PBXGroup;
 			children = (
 				6EA7A32625CB1435001041A1 /* SignInViewController.swift */,
+				6E1DBCF625CBE240004C0416 /* SignInEmailViewController.h */,
+				6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */,
+				6E1DBCFB25CBE2B5004C0416 /* SignInVerificationViewController.h */,
+				6E1DBCFC25CBE2B5004C0416 /* SignInVerificationViewController.m */,
+				6E1DBD0025CBE2C5004C0416 /* SignInNameViewController.h */,
+				6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */,
+				6E1DBD0525CBE2D4004C0416 /* SignInPasswordViewController.h */,
+				6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */,
 			);
 			path = SignInVC;
 			sourceTree = "<group>";
@@ -2613,9 +2633,11 @@
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
 				6E28451B25C35870008B7A23 /* VlogItaly.m in Sources */,
 				B1836FCA25C3370E00A81446 /* WorkmanArgry.m in Sources */,
+				6E1DBCF825CBE240004C0416 /* SignInEmailViewController.m in Sources */,
 				B1F2B6F425C1995A0064A044 /* InfiniteChallengeBlackTypo.m in Sources */,
 				B1F2B6D925C193AF0064A044 /* InfiniteChallengeLogo.m in Sources */,
 				6E7DD51625888C980014618E /* Template.m in Sources */,
+				6E1DBD0225CBE2C5004C0416 /* SignInNameViewController.m in Sources */,
 				6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */,
 				6ED13CCF25C1CACB00012144 /* MatterTypo.m in Sources */,
 				6E8E7A38259B2EA40008C5FF /* ItemManager.m in Sources */,
@@ -2683,6 +2705,7 @@
 				6E28452725C35870008B7A23 /* VlogMyeongjoTypo.m in Sources */,
 				6E9BEA4E258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift in Sources */,
 				6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */,
+				6E1DBCFD25CBE2B5004C0416 /* SignInVerificationViewController.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
@@ -2713,6 +2736,7 @@
 				B1F2B7D625C305D90064A044 /* VlogPigtailSticker.m in Sources */,
 				6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
+				6E1DBD0725CBE2D4004C0416 /* SignInPasswordViewController.m in Sources */,
 				6E8E7A6A259C91560008C5FF /* PhotoFrameCollectionViewCell.m in Sources */,
 				6EBEB56725C1DD000017C640 /* WorkManLogo2.m in Sources */,
 				6E6E5BFC25AA23F3009821CF /* ItemCollectionViewController+Button.m in Sources */,

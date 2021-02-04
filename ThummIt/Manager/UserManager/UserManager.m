@@ -38,7 +38,7 @@
                     }];
                 }];
             }];
-
+            
         } else {
             NSString* password = [NSString randomStringWithLength:10];
             PFUser* newUser = [PFUser user];
@@ -64,26 +64,14 @@
                 }
                 [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     if (succeeded) {
+                        callback(succeeded);
                         
-                        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * _Nullable user, NSError * _Nullable error) {
-                            [user fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
-                                [NSUserDefaults.standardUserDefaults setObject:user.username forKey:@"username"];
-                                PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-                                [currentInstallation setObject:user forKey:@"user"];
-                                [currentInstallation saveInBackground];
-                                
-                                callback(succeeded);
-                            }];
-                        }];
                     } else {
                         callback(false);
                     }
                 }];
             }];
-
         }
-
-        
     }];
          
 }

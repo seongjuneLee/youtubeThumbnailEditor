@@ -71,9 +71,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
 //        if (url.scheme == kakaoURLScheme) {
-        if  KOSession.isKakaoAccountLoginCallback(url) {
-                return KOSession.handleOpen(url)
-            }
+        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+            return AuthController.handleOpenUrl(url: url)
+        }
 //        }
         if (url.scheme == googleURLScheme) {
             if GIDSignIn.sharedInstance().handle(url) {

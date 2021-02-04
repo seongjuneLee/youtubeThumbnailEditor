@@ -16,6 +16,7 @@ import KakaoSDKUser
 import FBSDKLoginKit
 import FBSDKCoreKit
 
+
 class SignInViewController: UIViewController {
     @IBOutlet weak var kakaoSignInView: UIView!
     @IBOutlet weak var emailSignInView: UIView!
@@ -53,71 +54,47 @@ class SignInViewController: UIViewController {
     
     @IBAction func kakaoButtonTapped(_ sender: UIButton) {
         
+        
         if AuthApi.isKakaoTalkLoginAvailable() {            
+            KOSession.shared()?.close()
             
-            UserApi.shared.me() {(user, error) in
+            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                
                 if let error = error {
-                    print(error)
-                    
-                    AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                        
+                    print("error heree : %@",error)
+                } else {
+                    //do something
+                    _ = oauthToken
+                    UserApi.shared.me() {(user, error) in
                         if let error = error {
-                            print("error heree : %@",error)
+                            print(error)
                         } else {
+                            print("me() success.")
+                            
                             //do something
-                            _ = oauthToken
-                            UserApi.shared.me() {(user, error) in
-                                if let error = error {
-                                    print(error)
+                            _ = user
+                            
+                            let userID = String(user!.id)
+                            let username = user?.properties?["nickname"]
+                            let email = user?.kakaoAccount?.email
+                            
+                            self.view.makeToastActivity(CSToastPositionCenter)
+                            UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
+                                self.view.hideAllToasts()
+                                if (success){
+                                    self.dismiss(animated: true, completion: nil)
                                 } else {
-                                    print("me() success.")
-
-                                    //do something
-                                    _ = user
+                                    self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
                                     
-                                    let userID = String(user!.id)
-                                    let username = user?.properties?["nickname"]
-                                    let email = user?.kakaoAccount?.email
-                                    
-                                    self.view.makeToastActivity(CSToastPositionCenter)
-                                    UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
-                                        self.view.hideAllToasts()
-                                        if (success){
-                                            self.dismiss(animated: true, completion: nil)
-                                        } else {
-                                            self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
-
-                                        }
-                                    }
                                 }
                             }
-                        }
-                    }
-
-                } else {
-                    print("me() success.")
-
-                    //do something
-                    _ = user
-                    
-                    let userID = String(user!.id)
-                    let username = user?.properties?["nickname"]
-                    let email = user?.kakaoAccount?.email
-                    
-                    self.view.makeToastActivity(CSToastPositionCenter)
-                    UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
-                        self.view.hideAllToasts()
-                        if (success){
-                            self.dismiss(animated: true, completion: nil)
-                        } else {
-                            self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
-                        }
+                        
                     }
                 }
             }
-
         }
     }
+}
     
     @IBAction func facebookButtonTapped(_ sender: UIButton) {
         
@@ -125,7 +102,7 @@ class SignInViewController: UIViewController {
         // Swift override func viewDidLoad() { super.viewDidLoad() if let token = AccessToken.current, !token.isExpired { // User is logged in, do work such as go to next view controller. } }
         self.view.makeToastActivity(CSToastPositionCenter)
 
-        if ((AccessToken.current?.hasGranted(permission: "email")) == true) {
+        if ((AccessToken.current?.hasGranted(permission: "public_profile")) == true) {
             
             FBSDKCoreKit.Profile.loadCurrentProfile { (profile, error) in
                 if profile != nil {
@@ -179,6 +156,11 @@ class SignInViewController: UIViewController {
     }
         
     @IBAction func emailButtonTapped(_ sender: UIButton) {
+        
+        let main = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let signInEmailVC = main.instantiateViewController(identifier: "SignInEmailViewController")
+        self.navigationController?.pushViewController(signInEmailVC, animated: true)
+        
     }
 
     @IBAction func closeButtonTapped(_ sender: Any) {

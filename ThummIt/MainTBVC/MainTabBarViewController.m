@@ -38,12 +38,15 @@
         if (!PFUser.currentUser) {
             UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
             SignInViewController *signInVC = (SignInViewController *)[main instantiateViewControllerWithIdentifier:@"SignInViewController"];
+            
+            UINavigationController *signInNavVC = (UINavigationController *)[main instantiateViewControllerWithIdentifier:@"signInNavVC"];
+
             if ([viewController isKindOfClass:ProjectViewController.class]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     signInVC.titleLabel.text = NSLocalizedString(@"Sign up for continuing past projects.", nil);
                 });
             }
-            [self presentViewController:signInVC animated:true completion:nil];
+            [self presentViewController:signInNavVC animated:true completion:nil];
             return false;
         }
 

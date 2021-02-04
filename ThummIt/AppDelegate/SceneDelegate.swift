@@ -49,10 +49,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let url = URLContexts.first?.url else {
             return
         }
-        if  KOSession.isKakaoAccountLoginCallback(url) {
-            KOSession.handleOpen(url)
+        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+            _ = AuthController.handleOpenUrl(url: url)
         }
-        
+
         ApplicationDelegate.shared.application(
             UIApplication.shared,
             open: url,

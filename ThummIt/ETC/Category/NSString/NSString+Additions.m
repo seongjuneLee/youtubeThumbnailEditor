@@ -20,4 +20,12 @@
     return randomString;
 }
 
++(BOOL)validateEmailWithstring:(NSString*)mailString
+{
+     NSString *validString = @".+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*";
+     NSPredicate *emailTest=[NSPredicate predicateWithFormat:@"SELF MATCHES %@",validString];
+    return [emailTest evaluateWithObject:mailString];
+}
+
+
 @end

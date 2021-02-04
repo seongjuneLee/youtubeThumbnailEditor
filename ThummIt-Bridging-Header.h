@@ -11,6 +11,7 @@
 #import "UserManager.h"
 #import "UIView+Additions.h"
 #import <Toast/UIView+Toast.h>
+#import "SignInEmailViewController.h"
 /**
  * Copyright 2015-2017 Kakao Corp.
  *
