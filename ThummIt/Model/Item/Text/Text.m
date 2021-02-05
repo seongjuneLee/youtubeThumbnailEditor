@@ -26,7 +26,7 @@
 
         self.center = CGPointMake(0,0);
         self.rotationDegree = 0;
-        self.scale = 1;
+        self.scale = 0.5;
         
         
     }
@@ -209,7 +209,9 @@
 -(AdvancedTextView*)makeTextView{
     
     // 텍스트뷰
-    AdvancedTextView* textView = [[AdvancedTextView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
+    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+    float width = window.frameWidth;
+    AdvancedTextView* textView = [[AdvancedTextView alloc] initWithFrame:CGRectMake(0, 0, width, width*100/375)];
     textView.backgroundColor = UIColor.clearColor;
     textView.keyboardAppearance = UIKeyboardAppearanceDark;
     textView.textAlignment = self.textAlignment;
@@ -316,11 +318,6 @@
     
     // 2. 텍스트뷰컨테이너 세팅
     self.textViewContainer.center = self.center;
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
-    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.scale, self.scale);
-    self.textViewContainer.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-    [self resize]; // 컨테이너뷰가 텍스트뷰 사이즈 따라가도록
-    
     // 3. 배경 이미지뷰 세팅
     if (self.backgroundImageView != nil) {
         [self.textViewContainer addSubview:self.backgroundImageView];
@@ -334,6 +331,14 @@
     // 5. 부분 타이포 적용
     [self setUpTypoRangeArray:self.typoRangeArray];
     self.baseView = self.textViewContainer;
+    
+    
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
+    float width = UIScreen.mainScreen.bounds.size.width;
+    float scale = width/self.baseView.frameWidth;
+    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
+    self.textViewContainer.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
+    
 }
 
 #pragma mark - 리사이즈

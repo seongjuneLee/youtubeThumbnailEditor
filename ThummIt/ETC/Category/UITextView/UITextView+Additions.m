@@ -15,6 +15,7 @@
     CGSize newSize = [self sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
     newBounds.size = newSize;
     self.frame = newBounds;
+    
 }
 
 - (CGRect)boundingRectForCharacterRange:(NSRange)range{

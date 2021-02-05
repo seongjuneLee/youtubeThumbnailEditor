@@ -31,6 +31,10 @@
     return copied;
 }
 
+-(void)loadView{
+    
+}
+
 -(id)initWithCoder:(NSCoder *)decoder{
     if((self = [super init])) {
         

@@ -337,15 +337,15 @@
         }
     }
     
-    for (GuideLine *guideLine in self.itemGuideLines) {
-        if ([self findClosestTargetWithTargets:guideLine]) {
-            if (![editingVC.view.subviews containsObject:guideLine.dashedGuideLineView]) {
-                [editingVC.view addSubview:guideLine.dashedGuideLineView];
-            }
-        } else {
-            [guideLine.dashedGuideLineView removeFromSuperview];
-        }
-    }
+//    for (GuideLine *guideLine in self.itemGuideLines) {
+//        if ([self findClosestTargetWithTargets:guideLine]) {
+//            if (![editingVC.view.subviews containsObject:guideLine.dashedGuideLineView]) {
+//                [editingVC.view addSubview:guideLine.dashedGuideLineView];
+//            }
+//        } else {
+//            [guideLine.dashedGuideLineView removeFromSuperview];
+//        }
+//    }
 
 }
 
