@@ -33,8 +33,8 @@
         self.currentText.textView.text = self.originalText;//추가로 입력된 글자만 출력되게
         self.currentText.textView.tintColor = self.originalCursorColor;
     }
-    NSLog(@"%@",self.currentText.text);
-    NSLog(@"%@",self.currentText.typo.name);
+//    NSLog(@"%@",self.currentText.text);
+//    NSLog(@"%@",self.currentText.typo.name);
     
     self.currentText.text = textView.text;
     self.currentText.isTypedByUser = true;

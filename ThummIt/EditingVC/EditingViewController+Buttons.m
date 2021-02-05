@@ -21,31 +21,27 @@
     if (self.modeController.editingMode == NormalMode) {
         
         [self closeEditingVC];
-        
+//PHOTOFRAME
     } else if (self.modeController.editingMode == AddingPhotoFrameMode || self.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
-        
         [self cancelAddingPhotoFrame];
         
     } else if (self.modeController.editingMode == EditingPhotoFrameMode){
-        
         [self cancelEditingPhotoFrame];
         
-    } else if (self.modeController.editingMode == AddingTextMode || self.modeController.editingMode == EditingTextMode){
-        
+//TEXT
+    } else if (self.modeController.editingMode == AddingTextMode){
         [self cancelAddingText];
-        
-//    } else if (self.modeController.editingMode == EditingTextMode){
-//
-//        [self cancelEditingText];
 
+    } else if (self.modeController.editingMode == EditingTextMode){
+        [self cancelEditingText];
+//STICKER
     } else if (self.modeController.editingMode == AddingStickerMode){
-        
-        [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-        [self dismissItemCollectionVC];
-        [self.currentItem.baseView removeFromSuperview];
-        self.currentItem = nil;
-        self.currentSticker = nil;
-        // 추가 필요
+        [self cancelAddingSticker];
+
+    } else if (self.modeController.editingMode == EditingStickerMode){
+        [self cancelEditingSticker];
+//BGCOLOR
+
     } else if (self.modeController.editingMode == EditingBGColorMode){
         
         [self cancelEditingBGColor];
@@ -102,15 +98,44 @@
 
 }
 
-//-(void)cancelEditingText{
-//
-//    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-//    [self dismissItemCollectionVC];
-//    [self.currentItem.baseView removeFromSuperview];
-//    self.currentItem = nil;
-//    self.currentText = nil;
-//
-//}
+-(void)cancelEditingText{
+    
+    Text *text = (Text *)self.currentItem;
+    text.baseView.center = self.originalImageViewCenter;
+    text.baseView.transform = self.originalTransform;
+    
+    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
+    [self dismissItemCollectionVC];
+    [self.currentText.textView resignFirstResponder];
+    
+    self.currentItem = nil;
+    self.currentText = nil;
+    
+}
+
+-(void)cancelAddingSticker{
+
+    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
+    [self dismissItemCollectionVC];
+    [self.currentItem.baseView removeFromSuperview];
+    self.currentItem = nil;
+    self.currentText = nil;
+
+}
+
+-(void)cancelEditingSticker{
+
+    Sticker *sticker = (Sticker *)self.currentItem;
+    sticker.baseView.center = self.originalImageViewCenter;
+    sticker.baseView.transform = self.originalTransform;
+    
+    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
+    [self dismissItemCollectionVC];
+    
+    self.currentItem = nil;
+    self.currentText = nil;
+
+}
 
 -(void)cancelEditingBGColor{
     
@@ -143,16 +168,23 @@
     
     if (self.modeController.editingMode == NormalMode) {
         [self exportThumbnail];
+//PHOTOFRAME
     } else if (self.modeController.editingMode == AddingPhotoFrameMode || self.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         [self doneAddingPhotoFrame];
     } else if (self.modeController.editingMode == EditingPhotoFrameMode){
         [self doneEditingPhotoFrame];
-    } else if (self.modeController.editingMode == AddingTextMode || self.modeController.editingMode == EditingTextMode){
+//TEXT
+    } else if (self.modeController.editingMode == AddingTextMode){
         [self doneAddingText];
-    } else if (self.modeController.editingMode == AddingStickerMode){
-        [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-        [self doneAddingSticker]; // 추가 필요
-    } else if (self.modeController.editingMode == EditingBGColorMode){
+    } else if (self.modeController.editingMode == EditingTextMode){
+        [self doneEditingText];
+//STICKER
+    }else if (self.modeController.editingMode == AddingStickerMode){
+        [self doneAddingSticker];
+    }else if (self.modeController.editingMode == EditingStickerMode){
+        [self doneEditingSticker];
+//BGCOLOR
+    }else if (self.modeController.editingMode == EditingBGColorMode){
         [self doneEditingBGColor];
     }
     
@@ -184,6 +216,23 @@
     
 }
 
+-(void)doneAddingPhotoFrame{
+    
+    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
+    [self.layerController hideTransparentView];
+    [self.itemCollectionVC dismissSelf];
+    [self.albumVC dismissSelf];
+    [SaveManager.sharedInstance addItem:self.currentItem];
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+    }
+    [SaveManager.sharedInstance save];
+    
+    self.albumVC = nil;
+    self.currentItem = nil;
+    self.currentPhotoFrame = nil;
+}
+
 -(void)doneEditingPhotoFrame{
     
     // 레이어 되돌려 놓기
@@ -202,37 +251,45 @@
     
 }
 
--(void)doneAddingPhotoFrame{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self.layerController hideTransparentView];
-    [self.itemCollectionVC dismissSelf];
-    [self.albumVC dismissSelf];
-    [SaveManager.sharedInstance addItem:self.currentItem];
-    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-    }
-    [SaveManager.sharedInstance save];
-    
-    self.albumVC = nil;
-    self.currentItem = nil;
-    self.currentPhotoFrame = nil;
-}
-
 -(void)doneAddingText{
     
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
     [self.layerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
+    
     if (self.currentText.isTypedByUser) {
+        self.currentText.textView.tintColor = [UIColor clearColor];
         [SaveManager.sharedInstance addItem:self.currentItem];
         for (Item *item in SaveManager.sharedInstance.currentProject.items) {
             item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
         }
-        [SaveManager.sharedInstance save];
-    } else {
-        [self.currentText.baseView removeFromSuperview];
+        [self.currentText.textView resignFirstResponder];
+    } else {// 체크버튼 alpha 0.0
+        [SaveManager.sharedInstance addItem:self.currentItem];
+        for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
     }
+        
+    
+    [SaveManager.sharedInstance save];
+
+    [self.currentText.textView resignFirstResponder];
+    self.currentItem = nil;
+    self.currentText = nil;
+    }
+}
+
+-(void)doneEditingText{
+    
+    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
+    [self.layerController hideTransparentView];
+    [self.itemCollectionVC dismissSelf];
+
+    [SaveManager.sharedInstance addItem:self.currentItem];
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+    item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+    }
+    [SaveManager.sharedInstance save];
 
 
     [self.currentText.textView resignFirstResponder];
@@ -242,6 +299,24 @@
 
 -(void)doneAddingSticker{
     
+    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
+    [self.layerController hideTransparentView];
+    [self.itemCollectionVC dismissSelf];
+    self.currentItem.center = self.currentItem.baseView.center;
+    [SaveManager.sharedInstance addItem:self.currentItem];
+    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+    }
+    [SaveManager.sharedInstance save];
+
+    self.currentItem = nil;
+    self.currentSticker = nil;//일단해둠
+   
+}
+
+-(void)doneEditingSticker{
+    
+    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
     [self.layerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
     self.currentItem.center = self.currentItem.baseView.center;
@@ -253,6 +328,7 @@
 
 
     self.currentItem = nil;
+    self.currentSticker = nil;//일단해둠
 }
 
 -(void)doneEditingBGColor{
@@ -351,12 +427,8 @@
     if (self.recentTypo == nil) {
         self.recentTypo = [NormalTypo normalTypo];
     }
-    [UIView animateWithDuration:0.2 animations:^{
-        self.hueSlider.alpha = 1.0;
-        self.thumbCircleView.alpha = 1.0;
-    }];
     [self.itemCollectionVC didSelectTypo:self.recentTypo];
-
+    
 }
 
 #pragma mark - 스티커 버튼
@@ -368,10 +440,7 @@
     self.itemCollectionVC.itemType = StickerType;
     [self addItemCollectionVC];
     // 추가 필요
-    [UIView animateWithDuration:0.2 animations:^{
-        self.hueSlider.alpha = 1.0;
-        self.thumbCircleView.alpha = 1.0;
-    }];
+   
 }
 
 #pragma mark - 보더칼라 버튼

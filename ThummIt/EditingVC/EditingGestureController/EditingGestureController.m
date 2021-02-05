@@ -81,8 +81,12 @@
             [self.delegate changeCurrentItem:[self getCurrentItem:sender]];
         }
     } else if (editingVC.modeController.editingMode == EditingTextMode){
-        [self.delegate didSelectItem:self.currentItem];
+        [self.delegate didSelectItem:[self getCurrentItem:sender]];
     } else if (editingVC.modeController.editingMode == AddingTextMode){
+        [self.delegate didTapTextWhileAdding];
+    } else if (editingVC.modeController.editingMode == EditingStickerMode){
+        [self.delegate didSelectItem:[self getCurrentItem:sender]];
+    } else if (editingVC.modeController.editingMode == AddingStickerMode){
         [self.delegate didTapTextWhileAdding];
     }
     
@@ -112,7 +116,11 @@
         
         [self gestureViewPannedForMode:AddingStickerMode withSender:sender];
         
-    } else if(editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+    } else if(editingVC.modeController.editingMode == EditingStickerMode){
+        
+        [self gestureViewPannedForMode:EditingStickerMode withSender:sender];
+        
+    }else if(editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
         [self gestureViewPannedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
 
@@ -428,6 +436,10 @@
     } else if (editingVC.modeController.editingMode == AddingStickerMode){
         
         [self gestureViewPinchedForMode:AddingStickerMode withSender:sender];
+
+    } else if (editingVC.modeController.editingMode == EditingStickerMode){
+        
+        [self gestureViewPinchedForMode:EditingStickerMode withSender:sender];
 
     } else if (editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         
