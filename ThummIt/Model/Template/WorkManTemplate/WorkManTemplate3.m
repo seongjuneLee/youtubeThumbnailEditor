@@ -46,8 +46,8 @@
     
     Text *logoText = [[Text alloc] init];
     WorkManLogo2 *logo = [WorkManLogo2 workManLogo2];
-    logoText.scale = 0.68;
-    logoText.center = CGPointMake(0.92, 0.12);
+    logoText.scale = 0.13;
+    logoText.center = CGPointMake(0.905, 0.1);
     logoText.isTemplateItem = true;
     logoText.indexInLayer = @"0";
     logoText.text = @"위크맨";
@@ -57,7 +57,7 @@
     
     Text *tagText = [[Text alloc] init];
     WorkManLeftTag *tag = [WorkManLeftTag workManLeftTag];
-    tagText.scale = 1;
+    tagText.scale = 0.145;
     tagText.center = CGPointMake(0.1, 0.13);
     tagText.isTemplateItem = true;
     tagText.indexInLayer = @"1";
@@ -68,9 +68,9 @@
     
     Text *howMuchText = [[Text alloc] init];
     WorkManFast*howMuch = [WorkManFast workManFast];
-    howMuchText.scale = 0.7;
+    howMuchText.scale = 0.58;
     howMuchText.rotationDegree = 1;
-    howMuchText.center = CGPointMake(0.69, 0.22);
+    howMuchText.center = CGPointMake(0.69, 0.20);
     howMuchText.isTemplateItem = true;
     howMuchText.indexInLayer = @"2";
     howMuchText.text = @"연봉 얼마까지 알아보고 오셨어요?";
@@ -80,9 +80,9 @@
     
     Text *youtubeText = [[Text alloc] init];
     WorkManYoutube* youtube = [WorkManYoutube workManYoutube];
-    youtubeText.scale = 0.7;
+    youtubeText.scale = 0.16;
     youtubeText.rotationDegree = 1;
-    youtubeText.center = CGPointMake(0.3, 0.13);
+    youtubeText.center = CGPointMake(0.28, 0.13);
     youtubeText.isTemplateItem = true;
     youtubeText.indexInLayer = @"3";
     youtubeText.text = @">> 유튜브";
@@ -94,8 +94,8 @@
     
     Text *blackText = [[Text alloc] init];
     WorkManLogo2 *center = [WorkManLogo2 workManLogo2];
-    blackText.scale = 0.78;
-    blackText.center = CGPointMake(0.255,0.46);
+    blackText.scale = 0.47;
+    blackText.center = CGPointMake(0.275,0.46);
     blackText.isTemplateItem = true;
     blackText.indexInLayer = @"4";
     blackText.text = @"유튜브 연봉 궁금해?";
@@ -109,7 +109,7 @@
     
     Text *upTitleText = [[Text alloc] init];
     WorkmanYelloewTitle *upTitle = [WorkmanYelloewTitle workmanYelloewTitle];
-    upTitleText.scale = 1.2;
+    upTitleText.scale = 0.65;
     upTitleText.center = CGPointMake(0.355,0.73);
     upTitleText.isTemplateItem = true;
     upTitleText.indexInLayer = @"5";
@@ -124,7 +124,7 @@
     
     Text *redtitle = [[Text alloc] init];
     WorkManSecondTitle *secondTitle = [WorkManSecondTitle workManSecondTitle];
-    redtitle.scale = 0.83;
+    redtitle.scale = 0.38;
     redtitle.center = CGPointMake(0.22,0.87);
     redtitle.isTemplateItem = true;
     redtitle.indexInLayer = @"6";

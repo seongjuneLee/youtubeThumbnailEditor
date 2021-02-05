@@ -17,7 +17,7 @@
         self.fontName = @"BMJUAOTF";
         self.textColor = [UIColor colorWithRed:(217/255.0) green:(191/255.0) blue:(252/255.0) alpha:1];
         self.bgImageName = @"webBG.png";
-        self.bgHeightPadding = -30;
+        self.bgHeightPadding = 0;
         self.bgWidthPadding = -20;
     }
     return self;
