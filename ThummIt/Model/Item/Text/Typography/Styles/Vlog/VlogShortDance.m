@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"브이로그 ",nil);
         self.fontName = @"UhBeepudingBold";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
-        self.fontSize = 40;
         self.bgImageName = @"shortDance";
         self.bgHeightPadding = -20;
         self.bgWidthPadding = 35;    }

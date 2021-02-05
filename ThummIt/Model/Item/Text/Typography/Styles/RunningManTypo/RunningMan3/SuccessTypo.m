@@ -15,7 +15,6 @@
         
         self.name = NSLocalizedString(@"먼저 대답하면 성공!",nil);
         self.fontName = @"AppleSDGothicNeo-Bold";
-        self.fontSize = TEXT_FONT_SIZE;
         self.textFromColor = [UIColor colorWithRed:246/255.0 green:44/255.0 blue:27/255.0 alpha:1.0];
         self.textToColor = [UIColor colorWithRed:246/255.0 green:206/255.0 blue:56/255.0 alpha:1.0];
         NSDictionary *attr = @{NSFontAttributeName: [UIFont fontWithName:self.fontName size:self.fontSize]};

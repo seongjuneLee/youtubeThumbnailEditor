@@ -14,7 +14,6 @@
     if (self) {
         self.name = NSLocalizedString(@"공복 주의",nil);
         self.fontName = @"BMDoHyeon-OTF";
-        self.fontSize = TEXT_FONT_SIZE + 8;
         self.textColor = [UIColor colorWithRed:249/255.0f green:34/255.0f blue:42/255.0 alpha:1 ];
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];

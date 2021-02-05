@@ -14,7 +14,6 @@
         
         self.name = NSLocalizedString(@"혼절직전",nil);
         self.fontName = @"JejuHallasanOTF";
-        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor colorWithRed:232/255.0 green:30/255.0 blue:53/255.0 alpha:1.0];
         
         BGTextAttribute *border1Att = [[BGTextAttribute alloc] init];

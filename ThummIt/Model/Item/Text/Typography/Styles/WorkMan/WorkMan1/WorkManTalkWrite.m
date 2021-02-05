@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"소리질러!!!!!",nil);
         self.fontName = @"NanumSquareOTFEB";
         self.textColor = [UIColor whiteColor];
-        self.fontSize = 17;
         self.bgImageName = @"workManTalkBox";
         self.bgHeightPadding = 10;
         self.bgWidthPadding = 0;

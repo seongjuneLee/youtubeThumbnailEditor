@@ -19,7 +19,6 @@
         self.bgImageName = @"webBG.png";
         self.bgHeightPadding = -30;
         self.bgWidthPadding = -20;
-        self.fontSize = 40;
     }
     return self;
 }

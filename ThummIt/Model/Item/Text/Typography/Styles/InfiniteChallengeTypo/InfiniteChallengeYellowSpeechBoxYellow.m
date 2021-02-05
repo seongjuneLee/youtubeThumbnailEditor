@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"빨리!!",nil);
         self.fontName = @"777Chocolatlatte-";
         self.textColor = [UIColor colorWithRed:184/255.0 green:3/255.0 blue:23/255.0 alpha:1];
-        self.fontSize = TEXT_FONT_SIZE + 10;
         self.bgImageName = @"infiniteChallengeYellowSpeechBox";
         self.bgWidthPadding = 30;
         self.bgHeightPadding = 30;

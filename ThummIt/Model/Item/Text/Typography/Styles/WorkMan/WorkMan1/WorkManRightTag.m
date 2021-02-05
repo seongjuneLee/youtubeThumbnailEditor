@@ -15,7 +15,6 @@
     if (self) {
         self.name = NSLocalizedString(@"제철알바",nil);
         self.fontName = @"SangSangAnt";
-        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor blackColor];
         self.bgImageName = @"workManYellowTag";
         self.bgWidthPadding = 60;

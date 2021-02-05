@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"YouTube Originals",nil);
         self.fontName = @"Swagger";
         self.textColor = UIColor.whiteColor;
-        self.fontSize = TEXT_FONT_SIZE;
 
     }
     return self;

@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"아 왜 그래요 진짜!!!",nil); //italic
         self.fontName = @"NanumGothicOTFBold";
         self.textColor = [UIColor whiteColor];
-        self.fontSize = TEXT_FONT_SIZE;
         self.bgImageName = @"fireField";
         self.bgHeightPadding = 70;
         
