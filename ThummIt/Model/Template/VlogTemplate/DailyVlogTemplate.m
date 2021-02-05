@@ -73,7 +73,7 @@
     //MY DAILY VLOG
     Text *dailyText = [[Text alloc] init];
     VlogDailyTypo *typo = [VlogDailyTypo vlogDailyTypo];
-    dailyText.scale = 1.25;
+    dailyText.scale = 0.65;
     dailyText.center = CGPointMake(0.5, 0.4);
     dailyText.isTemplateItem = true;
     dailyText.indexInLayer = @"0";

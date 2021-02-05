@@ -47,7 +47,7 @@
     //vlog_italy
     Text *italyText = [[Text alloc] init];
     VlogItaly *italy = [VlogItaly vlogItaly];
-    italyText.scale = 0.33;
+    italyText.scale = 0.09;
     italyText.center = CGPointMake(0.3, 0.77);
     italyText.isTemplateItem = true;
     italyText.indexInLayer = @"0";
@@ -59,7 +59,7 @@
     //in Italy
     Text *inItalyText = [[Text alloc] init];
     VlogInItaly *inItaly = [VlogInItaly vlogInItaly];
-    inItalyText.scale = 1.88;
+    inItalyText.scale = 0.48;
     inItalyText.center = CGPointMake(0.77, 0.65);
     inItalyText.isTemplateItem = true;
     inItalyText.indexInLayer = @"1";
@@ -71,7 +71,7 @@
     //Vlog
     Text *tripText = [[Text alloc] init];
     VlogBarunGothicTypo *barun = [VlogBarunGothicTypo vlogBarunGothicTypo];
-    tripText.scale = 1.3;
+    tripText.scale = 0.28;
     tripText.center = CGPointMake(0.73, 0.37);
     tripText.isTemplateItem = true;
     tripText.indexInLayer = @"2";

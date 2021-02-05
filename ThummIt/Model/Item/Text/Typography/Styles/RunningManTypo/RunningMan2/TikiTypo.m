@@ -23,23 +23,23 @@
         
         BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
         shadowAtt1.shadowColor =[UIColor blackColor];
-        shadowAtt1.shadowOffset = CGPointMake(1, 1);
+        shadowAtt1.shadowOffset = CGPointMake(0.5, 0.5);
         
         BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
         shadowAtt2.shadowColor =[UIColor blackColor];
-        shadowAtt2.shadowOffset = CGPointMake(2, 2);
+        shadowAtt2.shadowOffset = CGPointMake(1, 1);
         
         BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
         shadowAtt3.shadowColor =[UIColor blackColor];
-        shadowAtt3.shadowOffset = CGPointMake(3, 3);
+        shadowAtt3.shadowOffset = CGPointMake(1.5, 1.5);
         
         BGTextAttribute *shadowAtt4 = [[BGTextAttribute alloc] init];
         shadowAtt4.shadowColor =[UIColor blackColor];
-        shadowAtt4.shadowOffset = CGPointMake(4, 4);
+        shadowAtt4.shadowOffset = CGPointMake(2, 2);
         
         BGTextAttribute *shadowAtt5 = [[BGTextAttribute alloc] init];
         shadowAtt5.shadowColor =[UIColor blackColor];
-        shadowAtt5.shadowOffset = CGPointMake(5, 5);
+        shadowAtt5.shadowOffset = CGPointMake(2.5, 2.5);
         
         self.bgTextAttributes = @[borderAtt, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4, shadowAtt5];
     }

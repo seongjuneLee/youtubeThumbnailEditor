@@ -46,7 +46,7 @@
     //방탈출
     Text *escapeRoomText = [[Text alloc] init];
     InfiniteChallengeEscapeRoom *escapeRoom = [InfiniteChallengeEscapeRoom infiniteChallengeEscapeRoom];
-    escapeRoomText.scale = 1.1;
+    escapeRoomText.scale = 0.4;
     escapeRoomText.center = CGPointMake(0.5, 0.85);
     escapeRoomText.isTemplateItem = true;
     escapeRoomText.indexInLayer =@"0";
@@ -58,8 +58,8 @@
     //로고
     Text *logoText = [[Text alloc] init];
     InfiniteChallengeLogo *logo = [InfiniteChallengeLogo infiniteChallengeLogo];
-    logoText.scale = 0.7;
-    logoText.center = CGPointMake(0.89, 0.15);
+    logoText.scale = 0.13;
+    logoText.center = CGPointMake(0.875, 0.15);
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"1";
     logoText.text = @"백만도전";
@@ -71,8 +71,8 @@
     Text *subTitleText = [[Text alloc] init];
     
     InfiniteChallengeWhiteTypo *white = [InfiniteChallengeWhiteTypo infiniteChallengeWhiteTypo];
-    subTitleText.scale = 0.55;
-    subTitleText.center = CGPointMake(0.65, 0.55);
+    subTitleText.scale = 0.69;
+    subTitleText.center = CGPointMake(0.62, 0.55);
     subTitleText.isTemplateItem = true;
     subTitleText.indexInLayer =@"2";
     subTitleText.text = @"멤버들과 함께 비밀을 파헤쳐라!";
@@ -93,9 +93,9 @@
     
     InfiniteChallengeSkullSticker *skullSticker = [InfiniteChallengeSkullSticker infiniteChallengeSkullSticker];
     skullSticker.indexInLayer =@"3";
-    skullSticker.scale = 0.5;
+    skullSticker.scale = 0.19;
     skullSticker.isTemplateItem = true;
-    skullSticker.center = CGPointMake(0.3, 0.4);
+    skullSticker.center = CGPointMake(0.24, 0.4);
     
     [self.stickers addObject:skullSticker];
     

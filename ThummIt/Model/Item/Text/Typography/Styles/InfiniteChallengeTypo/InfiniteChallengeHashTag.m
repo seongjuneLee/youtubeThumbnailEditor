@@ -18,7 +18,7 @@
         self.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
-        attribute.borderWidth = 10;
+        attribute.borderWidth = 9;
         attribute.borderColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
         
         self.bgTextAttributes = @[attribute];
