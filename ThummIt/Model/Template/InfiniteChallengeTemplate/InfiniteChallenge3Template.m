@@ -51,7 +51,7 @@
     logoText.isTemplateItem = true;
     logoText.text = @"백만도전";
     logoText.textView.text = logoText.text;
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
 
     //빨리!!
@@ -63,7 +63,7 @@
     yellowText.isTemplateItem = true;
     yellowText.text = @"빨리!!";
     yellowText.textView.text = yellowText.text;
-    [yellowText applyTypo:yellowSpeechBoxYellow];
+    yellowText.typo = yellowSpeechBoxYellow;
     [self.texts addObject:yellowText];
     
     //저한테 왜 그러세요..?
@@ -74,7 +74,7 @@
     skyBlueText.isTemplateItem = true;
     skyBlueText.text = @"저한테 왜 그러세요..?";
     skyBlueText.textView.text = skyBlueText.text;
-    [skyBlueText applyTypo:skyBlueBox];
+    skyBlueText.typo = skyBlueBox;
     [self.texts addObject:skyBlueText];
     
     //당황
@@ -85,7 +85,7 @@
     embarrassedText.isTemplateItem = true;
     embarrassedText.text = @"당황";
     embarrassedText.textView.text = embarrassedText.text;
-    [embarrassedText applyTypo:cloudBox];
+    embarrassedText.typo = cloudBox;
     [self.texts addObject:embarrassedText];
     
 }

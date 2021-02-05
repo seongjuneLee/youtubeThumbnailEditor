@@ -66,7 +66,7 @@
     vlogText.indexInLayer =@"0";
     vlogText.text = @"vlog";
     vlogText.textView.text = @"vlog";
-    [vlogText applyTypo:vlog];
+    vlogText.typo = vlog;
     [self.texts addObject:vlogText];
     
 }

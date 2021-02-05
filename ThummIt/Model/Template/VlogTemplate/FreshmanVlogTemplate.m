@@ -53,7 +53,7 @@
     firstVlogText.text = @"새내기의\n일주일\nvlog";
     firstVlogText.textView.text = @"새내기의\n일주일\nvlog";
     firstVlogText.textAlignment = NSTextAlignmentRight;
-    [firstVlogText applyTypo:firstVlog];
+    firstVlogText.typo = firstVlog;
     [self.texts addObject:firstVlogText];
     
     Text *leftVlogText = [[Text alloc] init];
@@ -64,7 +64,7 @@
     leftVlogText.indexInLayer =@"3";
     leftVlogText.text = @"Thumm-log";
     leftVlogText.textView.text = @"Thumm-log";
-    [leftVlogText applyTypo:leftVlog];
+    leftVlogText.typo = leftVlog;
     [self.texts addObject:leftVlogText];
     
 }

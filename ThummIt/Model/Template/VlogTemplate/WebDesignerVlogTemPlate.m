@@ -52,7 +52,7 @@
     tagText.indexInLayer =@"0";
     tagText.text = @"회사 Vlog";
     tagText.textView.text = @"회사 Vlog";
-    [tagText applyTypo:tagvlog];
+    tagText.typo = tagvlog;
     [self.texts addObject:tagText];
     
     Text *undertagText = [[Text alloc] init];
@@ -63,7 +63,7 @@
     undertagText.indexInLayer =@"1";
     undertagText.text = @"웹 디자이너편";
     undertagText.textView.text = @"웹 디자이너편";
-    [undertagText applyTypo:undertagvlog];
+    undertagText.typo = undertagvlog;
     [self.texts addObject:undertagText];
     
     Text *titleVlog = [[Text alloc] init];
@@ -75,7 +75,7 @@
     titleVlog.text = @"웹\n디자이너는\n뭐 하지?";
     titleVlog.textView.text = titleVlog.text;
     titleVlog.textAlignment = NSTextAlignmentLeft;
-    [titleVlog applyTypo:title];
+    titleVlog.typo = title;
     
     VlogDesiner *white = [VlogDesiner vlogDesiner];
     white.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1] ;

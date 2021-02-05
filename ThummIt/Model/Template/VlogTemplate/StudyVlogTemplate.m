@@ -56,7 +56,7 @@
     vlogText.indexInLayer =@"0";
     vlogText.text = @"Study With Me";
     vlogText.textView.text = @"Study With Me";
-    [vlogText applyTypo:vlog];
+    vlogText.typo = vlog;
     [self.texts addObject:vlogText];
     
     Text *epVlogText = [[Text alloc] init];
@@ -67,7 +67,7 @@
     epVlogText.indexInLayer =@"1";
     epVlogText.text = @"EP-1";
     epVlogText.textView.text = @"EP-1";
-    [epVlogText applyTypo:epvlog];
+    epVlogText.typo = epvlog;
     [self.texts addObject:epVlogText];
     
     Text *Vlog365Text = [[Text alloc] init];
@@ -78,7 +78,7 @@
     Vlog365Text.indexInLayer =@"2";
     Vlog365Text.text = @"D-365";
     Vlog365Text.textView.text = @"D-365";
-    [Vlog365Text applyTypo:vlog365];
+    Vlog365Text.typo = vlog365;
     [self.texts addObject:Vlog365Text];
     
 }

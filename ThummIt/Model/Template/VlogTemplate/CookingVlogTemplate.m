@@ -53,7 +53,7 @@
     cookingText.indexInLayer = @"0";
     cookingText.text = @"Cooking\nVlog";
     cookingText.textView.text = cookingText.text;
-    [cookingText applyTypo:cooking];
+    cookingText.typo = cooking;
     [self.texts addObject:cookingText];
     
     //ㅎ
@@ -65,7 +65,7 @@
     logoText.indexInLayer = @"1";
     logoText.text = @"ㅎ";
     logoText.textView.text = logoText.text;
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
 }

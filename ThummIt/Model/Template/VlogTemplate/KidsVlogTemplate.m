@@ -109,7 +109,7 @@
     momVlogText.indexInLayer = @"3";
     momVlogText.text = @"맘 Vlog";
     momVlogText.textView.text = momVlogText.text;
-    [momVlogText applyTypo:mom];
+    momVlogText.typo = mom;
     [self.texts addObject:momVlogText];
     
     //육아 일상 브이로그
@@ -122,7 +122,7 @@
     dailyText.indexInLayer = @"4";
     dailyText.text = @"육아 일상 브이로그";
     dailyText.textView.text = dailyText.text;
-    [dailyText applyTypo:daily];
+    dailyText.typo = daily;
     [self.texts addObject:dailyText];
     
 }

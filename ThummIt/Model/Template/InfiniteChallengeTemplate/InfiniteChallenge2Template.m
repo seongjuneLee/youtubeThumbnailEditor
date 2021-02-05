@@ -64,7 +64,7 @@
     mainTextTop.indexInLayer =@"0";
     mainTextTop.text = @"레전드 오브 레게노";
     mainTextTop.textView.text = mainTextTop.text;
-    [mainTextTop applyTypo:legeno];
+    mainTextTop.typo = legeno;
     [self.texts addObject:mainTextTop];
     
     Text *mainTextBottom = [[Text alloc] init];
@@ -76,7 +76,7 @@
     mainTextBottom.indexInLayer =@"1";
     mainTextBottom.text = @"그 대장정의 시작";
     mainTextBottom.textView.text = mainTextBottom.text;
-    [mainTextBottom applyTypo:longJourney];
+    mainTextBottom.typo = longJourney;
     [self.texts addObject:mainTextBottom];
     
     //로고
@@ -88,7 +88,7 @@
     logoText.indexInLayer =@"2";
     logoText.text = @"백만도전";
     logoText.textView.text = logoText.text;
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
 
     //오분순삭
@@ -100,7 +100,7 @@
     fiveMinutesText.indexInLayer =@"3";
     fiveMinutesText.text = @"오분순삭";
     fiveMinutesText.textView.text = fiveMinutesText.text;
-    [fiveMinutesText applyTypo:fiveMinutes];
+    fiveMinutesText.typo = fiveMinutes;
     [self.texts addObject:fiveMinutesText];
     
     //#예능레전드
@@ -117,7 +117,7 @@
     hashTagYellow.textColor = [UIColor colorWithRed:254/255.0 green:216/255.0 blue:60/255.0 alpha:1];
     hashTagText.typoRangeArray = (NSMutableArray *)@[@[hashTagYellow,@"1-2"]];
     
-    [hashTagText applyTypo:hashTag];
+    hashTagText.typo = hashTag;
     [self.texts addObject:hashTagText];
     
     //무야~호~
@@ -130,7 +130,7 @@
     muYaHoText.text = @"무야~호~";
     muYaHoText.textView.text = muYaHoText.text;
     muYaHoText.rotationDegree = 30;
-    [muYaHoText applyTypo:yellowSpeechBoxWhite];
+    muYaHoText.typo = yellowSpeechBoxWhite;
     [self.texts addObject:muYaHoText];
     
     //??
@@ -143,7 +143,7 @@
     questionMarkText.text = @"??";
     questionMarkText.textView.text = questionMarkText.text;
     questionMarkText.rotationDegree = 30;
-    [questionMarkText applyTypo:topOfYellow];
+    questionMarkText.typo = topOfYellow;
     [self.texts addObject:questionMarkText];
     
 }

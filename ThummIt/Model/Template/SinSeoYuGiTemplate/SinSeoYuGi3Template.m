@@ -53,7 +53,7 @@
     logoText.indexInLayer =@"0";
     logoText.text = @"서유기";
     logoText.textView.text = logoText.text;
-    [logoText applyTypo:cloudLogo];
+    logoText.typo = cloudLogo;
     [self.texts addObject:logoText];
     
     //※공복주의※
@@ -65,7 +65,7 @@
     hungryText.indexInLayer =@"1";
     hungryText.text = @"※공복주의※";
     hungryText.textView.text = hungryText.text;
-    [hungryText applyTypo:hungry];
+    hungryText.typo = hungry;
     [self.texts addObject:hungryText];
     
     //2020 먹방 모음.zip
@@ -78,7 +78,7 @@
     mukBangText.indexInLayer =@"2";
     mukBangText.text = @"2020 먹방 모음.zip";
     mukBangText.textView.text = mukBangText.text;
-    [mukBangText applyTypo:mukBang];
+    mukBangText.typo = mukBang;
     [self.texts addObject:mukBangText];
     
     //(소오오ㅗ름)
@@ -90,7 +90,7 @@
     cowRiseText.indexInLayer =@"3";
     cowRiseText.text = @"(소오오ㅗ름)";
     cowRiseText.textView.text = cowRiseText.text;
-    [cowRiseText applyTypo:cowRise];
+    cowRiseText.typo = cowRise;
     [self.texts addObject:cowRiseText];
     
     //*새벽 시청 금지!!!*
@@ -103,7 +103,7 @@
     dawnWatchingText.indexInLayer =@"4";
     dawnWatchingText.text = @"*새벽 시청 금지!!!*";
     dawnWatchingText.textView.text = dawnWatchingText.text;
-    [dawnWatchingText applyTypo:dawnWatching];
+    dawnWatchingText.typo = dawnWatching;
     [self.texts addObject:dawnWatchingText];
     
 }

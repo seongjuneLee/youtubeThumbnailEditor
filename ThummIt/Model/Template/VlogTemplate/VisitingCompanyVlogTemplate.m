@@ -53,7 +53,7 @@
     originalsText.indexInLayer = @"0";
     originalsText.text = @"YouTube Originals";
     originalsText.textView.text = originalsText.text;
-    [originalsText applyTypo:originals];
+    originalsText.typo = originals;
     [self.texts addObject:originalsText];
     
     //MAKING FILM
@@ -65,7 +65,7 @@
     makingFilmText.indexInLayer = @"1";
     makingFilmText.text = @"MAKING\nFILM";
     makingFilmText.textView.text = makingFilmText.text;
-    [makingFilmText applyTypo:makingFilm];
+    makingFilmText.typo = makingFilm;
     [self.texts addObject:makingFilmText];
     
     //은우의
@@ -79,7 +79,7 @@
     eunwooText.indexInLayer = @"2";
     eunwooText.text = @"은우의";
     eunwooText.textView.text = eunwooText.text;
-    [eunwooText applyTypo:eunwoo];
+    eunwooText.typo = eunwoo;
     [self.texts addObject:eunwooText];
     
     //회사탐방 VLOG
@@ -91,7 +91,7 @@
     visitingCompanyText.indexInLayer = @"3";
     visitingCompanyText.text = @"회사탐방VLOG";
     visitingCompanyText.textView.text = visitingCompanyText.text;
-    [visitingCompanyText applyTypo:visitingCompany];
+    visitingCompanyText.typo = visitingCompany;
     [self.texts addObject:visitingCompanyText];
     
 }

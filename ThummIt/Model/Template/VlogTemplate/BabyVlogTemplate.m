@@ -52,7 +52,7 @@
     vlogText.indexInLayer =@"0";
     vlogText.text = @"돌잔치 브이로그";
     vlogText.textView.text = @"돌잔치 브이로그";
-    [vlogText applyTypo:vlog];
+    vlogText.typo = vlog;
     [self.texts addObject:vlogText];
     
 }

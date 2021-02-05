@@ -66,7 +66,7 @@
     trapezoidText.isTemplateItem = true;
     trapezoidText.text = @"WEEKLY VLOG";
     trapezoidText.indexInLayer = @"0";
-    [trapezoidText applyTypo:trapezoid];
+    trapezoidText.typo = trapezoid;
     [self.texts addObject:trapezoidText];
     
 }

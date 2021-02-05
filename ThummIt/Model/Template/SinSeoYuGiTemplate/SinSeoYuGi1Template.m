@@ -60,7 +60,7 @@
     logoText.text = @"서유기";
     logoText.textView.text = logoText.text;
     
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     //와 나 이런거 무서워한다
@@ -72,7 +72,7 @@
     scaredText.indexInLayer =@"1";
     scaredText.text = @"와 나 이런거 무서워한다";
     scaredText.textView.text = scaredText.text;
-    [scaredText applyTypo:gagwanSmall];
+    scaredText.typo = gagwanSmall;
     [self.texts addObject:scaredText];
     
     //가관이네..
@@ -84,7 +84,7 @@
     gagwanText.indexInLayer =@"2";
     gagwanText.text = @"가관이네..";
     gagwanText.textView.text = gagwanText.text;
-    [gagwanText applyTypo:gagwanBig];
+    gagwanText.typo = gagwanBig;
     [self.texts addObject:gagwanText];
     
 }
