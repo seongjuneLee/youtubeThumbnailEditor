@@ -86,7 +86,7 @@
     self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
     self.backgroundImageView.backgroundColor = UIColor.clearColor;
     self.backgroundImageView.clipsToBounds = true;
-    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     UIImage *image = [UIImage imageNamed:self.backgroundImageName];
     
     if(self.tintColor){

@@ -20,7 +20,6 @@
         self.bgImageName = @"infiniteChallengeYellowSpeechBox";
         self.bgWidthPadding = 30;
         self.bgHeightPadding = 30;
-        self.bgCenterYDelta = 5;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 15;
