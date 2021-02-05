@@ -15,21 +15,21 @@
     if (self) {
         self.name = NSLocalizedString(@"소리질러!!!!!",nil);
         self.fontName = @"NanumSquareOTFEB";
-        self.textColor = [UIColor whiteColor];
+        self.textColor = UIColor.whiteColor;
         self.bgImageName = @"workManTalkBox";
-        self.bgHeightPadding = 10;
-        self.bgWidthPadding = 0;
+        self.bgHeightPadding = 30;
+        self.bgWidthPadding = 30;
         self.cannotChangeColor = true;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
-        bgTextAttribute1.borderColor = [UIColor blackColor];
+        bgTextAttribute1.borderColor = UIColor.blackColor;
         bgTextAttribute1.borderWidth = 8;
         
-        BGTextAttribute *attribute1 = [[BGTextAttribute alloc] init];
-        attribute1.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
-                attribute1.shadowOffset = CGPointMake(1, 1);
+        BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
+        shadowAtt.shadowColor = UIColor.blackColor;
+        shadowAtt.shadowOffset = CGPointMake(1.5, 1.5);
         
-        self.bgTextAttributes = @[bgTextAttribute1,attribute1];
+        self.bgTextAttributes = @[bgTextAttribute1, shadowAtt];
 
     }
     return self;

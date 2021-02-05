@@ -56,8 +56,8 @@
     Text *tagText = [[Text alloc] init];
     WorkManRightTag *tag = [WorkManRightTag workManRightTag];
     tagText.scale = 0.20;
-    tagText.rotationDegree = 45;
-    tagText.center = CGPointMake(0.93,0.15);
+    tagText.rotationDegree = 40;
+    tagText.center = CGPointMake(0.91,0.14);
     tagText.isTemplateItem = true;
     tagText.indexInLayer = @"1";
     tagText.text = @"제철알바";
@@ -78,9 +78,9 @@
     
     Text *talkWrite = [[Text alloc] init];
     WorkManTalkWrite *talk = [WorkManTalkWrite workManTalkWrite];
-    talkWrite.scale = 0.2;
+    talkWrite.scale = 0.27;
     talkWrite.center = CGPointMake(0.42,0.28);
-    talkWrite.rotationDegree = 330;
+    talkWrite.rotationDegree = -25;
     talkWrite.isTemplateItem = true;
     talkWrite.indexInLayer = @"3";
     talkWrite.text = @"소리질러!!!!";
