@@ -61,7 +61,7 @@
     stayText.indexInLayer =@"0";
     stayText.text = @"#Staying Home";
     stayText.textView.text = @"#Staying Home";
-    [stayText applyTypo:stay];
+    stayText.typo = stay;
     [self.texts addObject:stayText];
     
     Text *understayText = [[Text alloc] init];
@@ -72,7 +72,7 @@
     understayText.indexInLayer =@"1";
     understayText.text = @"집콕 브이로그";
     understayText.textView.text = @"집콕 브이로그";
-    [understayText applyTypo:underStay];
+    understayText.typo = underStay;
     [self.texts addObject:understayText];
     
 }

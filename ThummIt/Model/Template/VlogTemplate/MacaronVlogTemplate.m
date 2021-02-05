@@ -71,7 +71,7 @@
     vlogText.indexInLayer = @"0";
     vlogText.text = @"vlog";
     vlogText.textView.text = vlogText.text;
-    [vlogText applyTypo:vlog];
+    vlogText.typo = vlog;
     [self.texts addObject:vlogText];
     
     //homebaking\n:macaron
@@ -84,7 +84,7 @@
     homebakingText.text = @"homebaking\n:macaron";
     homebakingText.textView.text = homebakingText.text;
     homebakingText.textAlignment = NSTextAlignmentLeft;
-    [homebakingText applyTypo:homebaking];
+    homebakingText.typo = homebaking;
     [self.texts addObject:homebakingText];
     
 }

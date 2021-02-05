@@ -62,7 +62,7 @@
     yellowTitle.indexInLayer = @"1";
     yellowTitle.text = @"유튜브";
     yellowTitle.textView.text = @"유튜브";
-    [yellowTitle applyTypo:yellow];
+    yellowTitle.typo = yellow;
     WorkmanYelloewTitle *yellowcolor = [WorkmanYelloewTitle workmanYelloewTitle];
     yellowcolor.textColor = [UIColor colorWithRed:(238/255.0) green:(230/255.0) blue:(50/255.0) alpha:(1)] ;
     yellowTitle.typoRangeArray = (NSMutableArray *)@[@[yellowcolor,@"0-3"]];
@@ -78,7 +78,6 @@
     whiteTitle.text = @"비하인드";
     whiteTitle.textView.text = @"비하인드";
     whiteTitle.typo = secondTitle2;
-    [whiteTitle applyTypo:secondTitle2];
     [self.texts addObject:whiteTitle];
 
     
@@ -90,7 +89,7 @@
     handText.indexInLayer = @"3";
     handText.text = @"(당황)";
     handText.textView.text = @"(당황)";
-    [handText applyTypo:hand];
+    handText.typo = hand;
     [self.texts addObject:handText];
     
     Text *whyText = [[Text alloc] init];
@@ -102,7 +101,7 @@
     whyText.indexInLayer = @"4";
     whyText.text = @"네?!?";
     whyText.textView.text = @"네?!?";
-    [whyText applyTypo:why];
+    whyText.typo = why;
     [self.texts addObject:whyText];
     
     Text *howText = [[Text alloc] init];
@@ -114,7 +113,7 @@
     howText.indexInLayer = @"5";
     howText.text = @"이렇게 하는거 맞죠?";
     howText.textView.text = @"이렇게 하는거 맞죠?";
-    [howText applyTypo:how];
+    howText.typo = how;
     [self.texts addObject:howText];
     
 }

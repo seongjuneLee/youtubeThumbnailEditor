@@ -52,7 +52,7 @@
     escapeRoomText.indexInLayer =@"0";
     escapeRoomText.text = @"방탈출";
     escapeRoomText.textView.text = escapeRoomText.text;
-    [escapeRoomText applyTypo:escapeRoom];
+    escapeRoomText.typo = escapeRoom;
     [self.texts addObject:escapeRoomText];
     
     //로고
@@ -64,7 +64,7 @@
     logoText.indexInLayer =@"1";
     logoText.text = @"백만도전";
     logoText.textView.text = logoText.text;
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     //자막
@@ -84,7 +84,7 @@
 
     subTitleText.typoRangeArray = (NSMutableArray *)@[@[orange,@"0-3"], @[blue,@"8-2"], @[black,@"12-5"]];
     
-    [subTitleText applyTypo:white];
+    subTitleText.typo = white;
     [self.texts addObject:subTitleText];
 
 }

@@ -62,7 +62,7 @@
     logoText.scale = 0.09;
     logoText.center = CGPointMake(0.09, 0.13);
     logoText.isTemplateItem = true;
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     //랜덤게임.zip
@@ -74,7 +74,7 @@
     randomGameText.scale = 0.5;
     randomGameText.center = CGPointMake(0.25, 0.89);
     randomGameText.isTemplateItem = true;
-    [randomGameText applyTypo:yellowGradientTypo];
+    randomGameText.typo = yellowGradientTypo;
     [self.texts addObject:randomGameText];
     
     //러닝맨
@@ -86,7 +86,7 @@
     learningManText.scale = 0.19;
     learningManText.center = CGPointMake(0.1, 0.75);
     learningManText.isTemplateItem = true;
-    [learningManText applyTypo:workingManNameTypo];
+    learningManText.typo = workingManNameTypo;
     [self.texts addObject:learningManText];
     
     //(식은땀)
@@ -98,7 +98,7 @@
     ddamText.scale = 0.24;
     ddamText.center = CGPointMake(0.71, 0.21);
     ddamText.isTemplateItem = true;
-    [ddamText applyTypo:ddam];
+    ddamText.typo = ddam;
     [self.texts addObject:ddamText];
     
     //하고싶은말 있는데
@@ -111,7 +111,7 @@
     redshoutingText1.rotationDegree = 355;
     redshoutingText1.center = CGPointMake(0.75, 0.72);
     redshoutingText1.isTemplateItem = true;
-    [redshoutingText1 applyTypo:redshoutingTypo1];
+    redshoutingText1.typo = redshoutingTypo1;
     [self.texts addObject:redshoutingText1];
     
     //이 형은 룰을
@@ -124,7 +124,7 @@
     redshoutingText2.rotationDegree = 355;
     redshoutingText2.center = CGPointMake(0.35, 0.52);
     redshoutingText2.isTemplateItem = true;
-    [redshoutingText2 applyTypo:redshoutingTypo2];
+    redshoutingText2.typo = redshoutingTypo2;
     [self.texts addObject:redshoutingText2];
     
 }

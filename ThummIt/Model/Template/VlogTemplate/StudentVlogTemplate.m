@@ -71,7 +71,7 @@
     firstVlogText.indexInLayer =@"0";
     firstVlogText.text = @"수업";
     firstVlogText.textView.text = @"수업";
-    [firstVlogText applyTypo:firstVlog];
+    firstVlogText.typo = firstVlog;
     [self.texts addObject:firstVlogText];
     
     Text *secondVlogText = [[Text alloc] init];
@@ -83,7 +83,7 @@
     secondVlogText.indexInLayer =@"1";
     secondVlogText.text = @"도서관";
     secondVlogText.textView.text = @"도서관";
-    [secondVlogText applyTypo:secondVlog];
+    secondVlogText.typo = secondVlog;
     
     
     [self.texts addObject:secondVlogText];
@@ -97,7 +97,7 @@
     thirdVlogText.indexInLayer =@"2";
     thirdVlogText.text = @"학식";
     thirdVlogText.textView.text = @"학식";
-    [thirdVlogText applyTypo:thirdVlog];
+    thirdVlogText.typo = thirdVlog;
     
     [self.texts addObject:thirdVlogText];
     
@@ -110,7 +110,7 @@
     whiteTitleVlogText.indexInLayer =@"3";
     whiteTitleVlogText.text = @"하루종일 혼자 다녔다";
     whiteTitleVlogText.textView.text = @"하루종일 혼자 다녔다";
-    [whiteTitleVlogText applyTypo:whiteTitleVlog];
+    whiteTitleVlogText.typo = whiteTitleVlog;
     
     [self.texts addObject:whiteTitleVlogText];
     
@@ -123,7 +123,7 @@
     skinVlogText.indexInLayer =@"4";
     skinVlogText.text = @"대학 복학생";
     skinVlogText.textView.text = @"대학 복학생";
-    [skinVlogText applyTypo:skinVlog];
+    skinVlogText.typo = skinVlog;
     
     [self.texts addObject:skinVlogText];
     
@@ -136,7 +136,7 @@
     greenVlogText.indexInLayer =@"5";
     greenVlogText.text = @"아싸 Vlog";
     greenVlogText.textView.text = @"아싸 Vlog";
-    [greenVlogText applyTypo:greenVlog];
+    greenVlogText.typo = greenVlog;
     
     [self.texts addObject:greenVlogText];
     

@@ -53,7 +53,7 @@
     italyText.indexInLayer = @"0";
     italyText.text = @"vlog_italy";
     italyText.textView.text = italyText.text;
-    [italyText applyTypo:italy];
+    italyText.typo = italy;
     [self.texts addObject:italyText];
     
     //in Italy
@@ -65,7 +65,7 @@
     inItalyText.indexInLayer = @"1";
     inItalyText.text = @"in Italy";
     inItalyText.textView.text = inItalyText.text;
-    [inItalyText applyTypo:inItaly];
+    inItalyText.typo = inItaly;
     [self.texts addObject:inItalyText];
     
     //Vlog
@@ -77,7 +77,7 @@
     tripText.indexInLayer = @"2";
     tripText.text = @"Vlog";
     tripText.textView.text = tripText.text;
-    [tripText applyTypo:barun];
+    tripText.typo = barun;
     [self.texts addObject:tripText];
     
 }

@@ -79,7 +79,7 @@
     dailyText.indexInLayer = @"0";
     dailyText.text = @"MY DAILY VLOG";
     dailyText.textView.text = dailyText.text;
-    [dailyText applyTypo:typo];
+    dailyText.typo = typo;
     [self.texts addObject:dailyText];
     
 }

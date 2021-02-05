@@ -81,7 +81,7 @@
     grwmText.indexInLayer = @"0";
     grwmText.text = @"GRWM\nVLOG";
     grwmText.textView.text = grwmText.text;
-    [grwmText applyTypo:grwm];
+    grwmText.typo = grwm;
     [self.texts addObject:grwmText];
     
 }

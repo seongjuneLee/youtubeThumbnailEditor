@@ -52,7 +52,7 @@
     logoText.indexInLayer = @"0";
     logoText.text = @"위크맨";
     logoText.textView.text = @"위크맨";
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     Text *tagText = [[Text alloc] init];
@@ -63,7 +63,7 @@
     tagText.indexInLayer = @"1";
     tagText.text = @"기업탐방";
     tagText.textView.text = @"기업탐방";
-    [tagText applyTypo:tag];
+    tagText.typo = tag;
     [self.texts addObject:tagText];
     
     Text *howMuchText = [[Text alloc] init];
@@ -75,7 +75,7 @@
     howMuchText.indexInLayer = @"2";
     howMuchText.text = @"연봉 얼마까지 알아보고 오셨어요?";
     howMuchText.textView.text = @"연봉 얼마까지 알아보고 오셨어요?";
-    [howMuchText applyTypo:howMuch];
+    howMuchText.typo = howMuch;
     [self.texts addObject:howMuchText];
     
     Text *youtubeText = [[Text alloc] init];
@@ -87,7 +87,7 @@
     youtubeText.indexInLayer = @"3";
     youtubeText.text = @">> 유튜브";
     youtubeText.textView.text = @">> 유튜브";
-    [youtubeText applyTypo:youtube];
+    youtubeText.typo = youtube;
     [self.texts addObject:youtubeText];
     
   

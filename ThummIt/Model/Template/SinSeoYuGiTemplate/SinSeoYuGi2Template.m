@@ -53,7 +53,7 @@
     logoText.indexInLayer =@"0";
     logoText.text = @"서유기";
     logoText.textView.text = logoText.text;
-    [logoText applyTypo:cloudLogo];
+    logoText.typo = cloudLogo;
     [self.texts addObject:logoText];
     
     //여사친 앞에서
@@ -65,7 +65,7 @@
     inFrontOfGirlText.indexInLayer =@"1";
     inFrontOfGirlText.text = @"여사친 앞에서";
     inFrontOfGirlText.textView.text = inFrontOfGirlText.text;
-    [inFrontOfGirlText applyTypo:inFrontOfGirl];
+    inFrontOfGirlText.typo = inFrontOfGirl;
     [self.texts addObject:inFrontOfGirlText];
     
     //상체탈의한 썰.ssul
@@ -78,7 +78,7 @@
     ssulText.indexInLayer =@"2";
     ssulText.text = @"상체탈의한 썰.ssul";
     ssulText.textView.text = ssulText.text;
-    [ssulText applyTypo:ssul];
+    ssulText.typo = ssul;
     [self.texts addObject:ssulText];
     
 }

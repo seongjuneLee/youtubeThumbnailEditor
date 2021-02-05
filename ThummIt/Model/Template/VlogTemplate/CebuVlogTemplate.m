@@ -88,7 +88,7 @@
     cebuText.indexInLayer = @"0";
     cebuText.text = @"C\nE\nB\nU\n\n&\n\nB\nO\nH\nO\nL";
     cebuText.textView.text = cebuText.text;
-    [cebuText applyTypo:cebu];
+    cebuText.typo = cebu;
     [self.texts addObject:cebuText];
     
 }

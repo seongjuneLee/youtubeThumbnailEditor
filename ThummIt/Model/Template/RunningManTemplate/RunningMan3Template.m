@@ -52,7 +52,7 @@
     logoText.scale = 0.42;
     logoText.center = CGPointMake(0.2, 0.78);
     logoText.isTemplateItem = true;
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     //Rule
@@ -64,7 +64,7 @@
     ruleText.scale = 0.08;
     ruleText.center = CGPointMake(0.46, 0.7);
     ruleText.isTemplateItem = true;
-    [ruleText applyTypo:rule];
+    ruleText.typo = rule;
     [self.texts addObject:ruleText];
     
     //문제를 듣고
@@ -76,7 +76,7 @@
     matterText.scale = 0.24;
     matterText.center = CGPointMake(0.62, 0.66);
     matterText.isTemplateItem = true;
-    [matterText applyTypo:matter];
+    matterText.typo = matter;
     [self.texts addObject:matterText];
     
     //먼저 대답하면 성공!
@@ -88,7 +88,7 @@
     successText.scale = 0.385;
     successText.center = CGPointMake(0.695, 0.74);
     successText.isTemplateItem = true;
-    [successText applyTypo:successs];
+    successText.typo = successs;
     [self.texts addObject:successText];
     
     //아 왜그래요 진짜!!
@@ -100,7 +100,7 @@
     whyRealText.scale = 0.35;
     whyRealText.center = CGPointMake(0.27, 0.34);
     whyRealText.isTemplateItem = true;
-    [whyRealText applyTypo:whyReal];
+    whyRealText.typo = whyReal;
     [self.texts addObject:whyRealText];
     
 }

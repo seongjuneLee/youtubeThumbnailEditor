@@ -86,7 +86,7 @@
     fitting.textColor = [UIColor colorWithRed:(208/255.0) green:(145/255.0) blue:(116/255.0) alpha:1];
     
     modelText.typoRangeArray = (NSMutableArray *)@[@[fitting,@"0-2"]];
-    [modelText applyTypo:base];
+    modelText.typo = base;
     [self.texts addObject:modelText];
     
     //브이로그
@@ -100,7 +100,7 @@
     vlogText.textView.text = vlogText.text;
     vlog.fontSize += 16;
     
-    [vlogText applyTypo:vlog];
+    vlogText.typo = vlog;
     [self.texts addObject:vlogText];
     
 }

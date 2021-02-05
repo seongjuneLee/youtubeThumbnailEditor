@@ -62,7 +62,7 @@
     logoText.scale = 0.09;
     logoText.center = CGPointMake(0.09, 0.13);
     logoText.isTemplateItem = true;
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     //SBC WOW
@@ -74,7 +74,7 @@
     SBCLogoText.scale = 0.11;
     SBCLogoText.center = CGPointMake(0.925, 0.13);
     SBCLogoText.isTemplateItem = true;
-    [SBCLogoText applyTypo:blueMoon];
+    SBCLogoText.typo = blueMoon;
     [self.texts addObject:SBCLogoText];
     
     //환상의 티키타카
@@ -86,7 +86,7 @@
     tikitakaText.scale = 0.57;
     tikitakaText.center = CGPointMake(0.32, 0.67);
     tikitakaText.isTemplateItem = true;
-    [tikitakaText applyTypo:tikitaka];
+    tikitakaText.typo = tikitaka;
     [self.texts addObject:tikitakaText];
     
     //애드립 모음집
@@ -98,7 +98,7 @@
     dripText.scale = 0.65;
     dripText.center = CGPointMake(0.35, 0.83);
     dripText.isTemplateItem = true;
-    [dripText applyTypo:gradient];
+    dripText.typo = gradient;
     [self.texts addObject:dripText];
     
     //뭐?
@@ -110,7 +110,7 @@
     whatText.scale = 0.05;
     whatText.center = CGPointMake(0.64, 0.36);
     whatText.isTemplateItem = true;
-    [whatText applyTypo:what];
+    whatText.typo = what;
     [self.texts addObject:whatText];
     
     //분위기 파악 못해?!
@@ -122,7 +122,7 @@
     asmosphereText.scale = 0.3;
     asmosphereText.center = CGPointMake(0.75, 0.43);
     asmosphereText.isTemplateItem = true;
-    [asmosphereText applyTypo:asmosphere];
+    asmosphereText.typo = asmosphere;
     [self.texts addObject:asmosphereText];
     
     //혼절직전
@@ -141,7 +141,7 @@
     knockOutText1.scale = scale;
     knockOutText1.center = CGPointMake(xCenter1, yCenter1);
     knockOutText1.isTemplateItem = true;
-    [knockOutText1 applyTypo:knockOut];
+    knockOutText1.typo = knockOut;
     [self.texts addObject:knockOutText1];
     
     Text *knockOutText2 = [[Text alloc] init];
@@ -151,7 +151,7 @@
     knockOutText2.scale = scale;
     knockOutText2.center = CGPointMake(xCenter2, yCenter1);
     knockOutText2.isTemplateItem = true;
-    [knockOutText2 applyTypo:knockOut];
+    knockOutText2.typo = knockOut;
     [self.texts addObject:knockOutText2];
     
     Text *knockOutText3 = [[Text alloc] init];
@@ -161,7 +161,7 @@
     knockOutText3.scale = scale;
     knockOutText3.center = CGPointMake(xCenter1, yCenter2);
     knockOutText3.isTemplateItem = true;
-    [knockOutText3 applyTypo:knockOut];
+    knockOutText3.typo = knockOut;
     [self.texts addObject:knockOutText3];
     
     Text *knockOutText4 = [[Text alloc] init];
@@ -171,7 +171,7 @@
     knockOutText4.scale = scale;
     knockOutText4.center = CGPointMake(xCenter2, yCenter2);
     knockOutText4.isTemplateItem = true;
-    [knockOutText4 applyTypo:knockOut];
+    knockOutText4.typo = knockOut;
     [self.texts addObject:knockOutText4];
     
 }
