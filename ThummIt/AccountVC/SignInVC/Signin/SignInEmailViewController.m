@@ -6,7 +6,7 @@
 //
 
 #import "SignInEmailViewController.h"
-#import "SignInUsernameViewController.h"
+#import "ForgotPasswordViewController.h"
 #import "SignInNameViewController.h"
 #import "NSString+Additions.h"
 #import "UserManager.h"

@@ -67,6 +67,18 @@
 #import "InfiniteChallengeSkyBlueBox.h"
 #import "InfiniteChallengeCloudBox.h"
 
+#import "DinggoSmileTypo.h"
+#import "DinggoBigEdit.h"
+#import "DinggoBingoTypo.h"
+#import "DinggoPotatoTypo.h"
+#import "DinggoGoodTalk.h"
+#import "DinggoStarWarsTypo.h"
+#import "DinggoBehindTypo.h"
+#import "DinggoWinkTypo.h"
+#import "DinggoMurder.h"
+#import "DinggoKpopTypo.h"
+
+
 //vlog
 #import "VlogWebWrite.h"
 #import "VlogDesiner.h"

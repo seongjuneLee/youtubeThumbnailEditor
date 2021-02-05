@@ -103,6 +103,9 @@
     Text *text = (Text *)self.currentItem;
     text.baseView.center = self.originalImageViewCenter;
     text.baseView.transform = self.originalTransform;
+    text.textView.text = self.originalText;
+    text.text = self.originalText;
+    [text applyTypo:self.originalTypo];
     
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
     [self dismissItemCollectionVC];
@@ -128,6 +131,7 @@
     Sticker *sticker = (Sticker *)self.currentItem;
     sticker.baseView.center = self.originalImageViewCenter;
     sticker.baseView.transform = self.originalTransform;
+    sticker.backgroundImageView.image = [UIImage imageNamed:self.originalStickerImageName];
     
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
     [self dismissItemCollectionVC];

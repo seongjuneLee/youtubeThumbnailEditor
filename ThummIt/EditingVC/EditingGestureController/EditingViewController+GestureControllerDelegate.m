@@ -45,7 +45,8 @@
         
         self.originalImageViewCenter = text.baseView.center;
         self.originalTransform = text.baseView.transform;
-        
+        self.originalTypo = text.typo;
+        self.originalText = text.text;
         
         [text.textView becomeFirstResponder];
         [self.layerController showTransparentView];
@@ -62,6 +63,7 @@
         
         self.originalImageViewCenter = sticker.baseView.center;
         self.originalTransform = sticker.baseView.transform;
+        self.originalStickerImageName = sticker.backgroundImageName;
         
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
