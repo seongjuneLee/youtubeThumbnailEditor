@@ -310,6 +310,21 @@
 		6EF0C8D125CBDC2700BE7573 /* TargetSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8D025CBDC2700BE7573 /* TargetSticker.m */; };
 		6EF0C8D625CBDC3A00BE7573 /* TearsSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8D525CBDC3A00BE7573 /* TearsSticker.m */; };
 		6EF0C8E925CBE0B700BE7573 /* TriangleSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8E825CBE0B700BE7573 /* TriangleSticker1.m */; };
+
+		6EF0C91625CD21C600BE7573 /* BinggraeⅡ-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0C91125CD207D00BE7573 /* BinggraeⅡ-Bold.otf */; };
+		6EF0C91925CD21CE00BE7573 /* NEXON Lv2 Gothic OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0C91025CD207C00BE7573 /* NEXON Lv2 Gothic OTF.otf */; };
+		6EF0C92525CD232900BE7573 /* DinggoSmileTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C92425CD232900BE7573 /* DinggoSmileTypo.m */; };
+		6EF0C92A25CD266600BE7573 /* DinggoBigEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C92925CD266600BE7573 /* DinggoBigEdit.m */; };
+		6EF0C93625CD29D700BE7573 /* DinggoBingoTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C93525CD29D700BE7573 /* DinggoBingoTypo.m */; };
+		6EF0C93D25CD2B7800BE7573 /* DinggoPotatoTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C93C25CD2B7800BE7573 /* DinggoPotatoTypo.m */; };
+		6EF0C94225CD2CB000BE7573 /* DinggoGoodTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C94125CD2CB000BE7573 /* DinggoGoodTalk.m */; };
+		6EF0C94B25CD45F100BE7573 /* DinggoStarWarsTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C94A25CD45F100BE7573 /* DinggoStarWarsTypo.m */; };
+		6EF0C95025CD4F4100BE7573 /* DinggoBehindTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C94F25CD4F4100BE7573 /* DinggoBehindTypo.m */; };
+		6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */; };
+		6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95925CD513000BE7573 /* DinggoMurder.m */; };
+		6EF0C95F25CD528C00BE7573 /* DinggoKpopTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95E25CD528C00BE7573 /* DinggoKpopTypo.m */; };
+		86BE8E8DCEAF4561F7A9E722 /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B689306FD489C375607E803F /* Pods_ThummIt.framework */; };
+
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
 		B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */; };
 		B11E0D5425C4F6070050D9F0 /* SixToFourVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5325C4F6070050D9F0 /* SixToFourVlogTemplate.m */; };
@@ -980,8 +995,30 @@
 		6EF0C8D525CBDC3A00BE7573 /* TearsSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TearsSticker.m; sourceTree = "<group>"; };
 		6EF0C8E725CBE0B700BE7573 /* TriangleSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriangleSticker1.h; sourceTree = "<group>"; };
 		6EF0C8E825CBE0B700BE7573 /* TriangleSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TriangleSticker1.m; sourceTree = "<group>"; };
-		7E646DA7CD8F58DBF2FB52D4 /* Pods_ThummItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		91BBD74E08615FB9095F71B1 /* Pods-ThummIt-ThummItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.release.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6EF0C91025CD207C00BE7573 /* NEXON Lv2 Gothic OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NEXON Lv2 Gothic OTF.otf"; sourceTree = "<group>"; };
+		6EF0C91125CD207D00BE7573 /* BinggraeⅡ-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BinggraeⅡ-Bold.otf"; sourceTree = "<group>"; };
+		6EF0C92325CD232900BE7573 /* DinggoSmileTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoSmileTypo.h; sourceTree = "<group>"; };
+		6EF0C92425CD232900BE7573 /* DinggoSmileTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoSmileTypo.m; sourceTree = "<group>"; };
+		6EF0C92825CD266600BE7573 /* DinggoBigEdit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoBigEdit.h; sourceTree = "<group>"; };
+		6EF0C92925CD266600BE7573 /* DinggoBigEdit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoBigEdit.m; sourceTree = "<group>"; };
+		6EF0C93425CD29D700BE7573 /* DinggoBingoTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoBingoTypo.h; sourceTree = "<group>"; };
+		6EF0C93525CD29D700BE7573 /* DinggoBingoTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoBingoTypo.m; sourceTree = "<group>"; };
+		6EF0C93B25CD2B7800BE7573 /* DinggoPotatoTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoPotatoTypo.h; sourceTree = "<group>"; };
+		6EF0C93C25CD2B7800BE7573 /* DinggoPotatoTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoPotatoTypo.m; sourceTree = "<group>"; };
+		6EF0C94025CD2CB000BE7573 /* DinggoGoodTalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoGoodTalk.h; sourceTree = "<group>"; };
+		6EF0C94125CD2CB000BE7573 /* DinggoGoodTalk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoGoodTalk.m; sourceTree = "<group>"; };
+		6EF0C94925CD45F100BE7573 /* DinggoStarWarsTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoStarWarsTypo.h; sourceTree = "<group>"; };
+		6EF0C94A25CD45F100BE7573 /* DinggoStarWarsTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoStarWarsTypo.m; sourceTree = "<group>"; };
+		6EF0C94E25CD4F4100BE7573 /* DinggoBehindTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoBehindTypo.h; sourceTree = "<group>"; };
+		6EF0C94F25CD4F4100BE7573 /* DinggoBehindTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoBehindTypo.m; sourceTree = "<group>"; };
+		6EF0C95325CD503400BE7573 /* DinggoWinkTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoWinkTypo.h; sourceTree = "<group>"; };
+		6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoWinkTypo.m; sourceTree = "<group>"; };
+		6EF0C95825CD513000BE7573 /* DinggoMurder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoMurder.h; sourceTree = "<group>"; };
+		6EF0C95925CD513000BE7573 /* DinggoMurder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoMurder.m; sourceTree = "<group>"; };
+		6EF0C95D25CD528C00BE7573 /* DinggoKpopTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoKpopTypo.h; sourceTree = "<group>"; };
+		6EF0C95E25CD528C00BE7573 /* DinggoKpopTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoKpopTypo.m; sourceTree = "<group>"; };
+		7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.release.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.release.xcconfig"; sourceTree = "<group>"; };
 		B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogBarunGothicTypo.h; sourceTree = "<group>"; };
 		B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogBarunGothicTypo.m; sourceTree = "<group>"; };
 		B11E0D4D25C4EDBD0050D9F0 /* GrwmVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrwmVlogTemplate.h; sourceTree = "<group>"; };
@@ -2047,6 +2084,8 @@
 				6EBEB51425C14FE90017C640 /* AnyConv.com__NanumGothic.otf */,
 				6EBEB5DD25C30BFD0017C640 /* KCC김훈체(MAC용).otf */,
 				6EBEB5DC25C30BFD0017C640 /* Recipekorea 레코체 FONT.otf */,
+				6EF0C91125CD207D00BE7573 /* BinggraeⅡ-Bold.otf */,
+				6EF0C91025CD207C00BE7573 /* NEXON Lv2 Gothic OTF.otf */,
 				6EBEB50E25C14C1E0017C640 /* NanumSquareOTFBold.otf */,
 				6EBEB60525C328AE0017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf */,
 				6EBEB5D825C308B10017C640 /* SDSwagger.otf */,
@@ -2288,6 +2327,7 @@
 				6EBEB4A225C0974E0017C640 /* WorkMan */,
 				B1F2B6D625C193710064A044 /* InfiniteChallengeTypo */,
 				6ED13B8225C0898900012144 /* RunningManTypo */,
+				6EF0C92225CD22CC00BE7573 /* Dinggo */,
 				6E8F996A25C0C0A4005C8071 /* SinSeoYuGiTypo */,
 			);
 			path = Styles;
@@ -2407,6 +2447,49 @@
 				6EF0C6F825CA328300BE7573 /* Localizable.strings */,
 			);
 			path = LocalizationFile;
+			sourceTree = "<group>";
+		};
+		6EF0C92225CD22CC00BE7573 /* Dinggo */ = {
+			isa = PBXGroup;
+			children = (
+				6EF0C94725CD437200BE7573 /* DinggoCricleTypo */,
+				6EF0C94825CD43A100BE7573 /* DinggoDubleCricleTypo */,
+			);
+			path = Dinggo;
+			sourceTree = "<group>";
+		};
+		6EF0C94725CD437200BE7573 /* DinggoCricleTypo */ = {
+			isa = PBXGroup;
+			children = (
+				6EF0C92325CD232900BE7573 /* DinggoSmileTypo.h */,
+				6EF0C92425CD232900BE7573 /* DinggoSmileTypo.m */,
+				6EF0C92825CD266600BE7573 /* DinggoBigEdit.h */,
+				6EF0C92925CD266600BE7573 /* DinggoBigEdit.m */,
+				6EF0C93425CD29D700BE7573 /* DinggoBingoTypo.h */,
+				6EF0C93525CD29D700BE7573 /* DinggoBingoTypo.m */,
+				6EF0C93B25CD2B7800BE7573 /* DinggoPotatoTypo.h */,
+				6EF0C93C25CD2B7800BE7573 /* DinggoPotatoTypo.m */,
+				6EF0C94025CD2CB000BE7573 /* DinggoGoodTalk.h */,
+				6EF0C94125CD2CB000BE7573 /* DinggoGoodTalk.m */,
+			);
+			path = DinggoCricleTypo;
+			sourceTree = "<group>";
+		};
+		6EF0C94825CD43A100BE7573 /* DinggoDubleCricleTypo */ = {
+			isa = PBXGroup;
+			children = (
+				6EF0C94925CD45F100BE7573 /* DinggoStarWarsTypo.h */,
+				6EF0C94A25CD45F100BE7573 /* DinggoStarWarsTypo.m */,
+				6EF0C94E25CD4F4100BE7573 /* DinggoBehindTypo.h */,
+				6EF0C94F25CD4F4100BE7573 /* DinggoBehindTypo.m */,
+				6EF0C95325CD503400BE7573 /* DinggoWinkTypo.h */,
+				6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */,
+				6EF0C95825CD513000BE7573 /* DinggoMurder.h */,
+				6EF0C95925CD513000BE7573 /* DinggoMurder.m */,
+				6EF0C95D25CD528C00BE7573 /* DinggoKpopTypo.h */,
+				6EF0C95E25CD528C00BE7573 /* DinggoKpopTypo.m */,
+			);
+			path = DinggoDubleCricleTypo;
 			sourceTree = "<group>";
 		};
 		B16FC61125ADCA9000E854C1 /* StickerCollectionController */ = {
@@ -2817,6 +2900,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF0C91925CD21CE00BE7573 /* NEXON Lv2 Gothic OTF.otf in Resources */,
+				6EF0C91625CD21C600BE7573 /* BinggraeⅡ-Bold.otf in Resources */,
 				6EBEB60A25C32A140017C640 /* neodgm_pro.otf in Resources */,
 				6EBEB60625C328D10017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf in Resources */,
 				6EBEB5F825C3207F0017C640 /* UhBee-puding.otf in Resources */,
@@ -3049,6 +3134,7 @@
 				6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */,
 				6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */,
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
+				6EF0C92A25CD266600BE7573 /* DinggoBigEdit.m in Sources */,
 				6ED13CAF25C1AEF700012144 /* KnockOutTypo.m in Sources */,
 				6ED13D2F25C2C73A00012144 /* RunningManExcSticker.m in Sources */,
 				6E28452325C35870008B7A23 /* VlogNanumSquareTypo.m in Sources */,
@@ -3062,6 +3148,7 @@
 				6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */,
 				6EF0C7F625CBAE1C00BE7573 /* CloudSticker1.m in Sources */,
 				B11E0D5B25C55FC60050D9F0 /* CookingVlogTemplate.m in Sources */,
+				6EF0C92525CD232900BE7573 /* DinggoSmileTypo.m in Sources */,
 				B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */,
 				6EBEB52625C191340017C640 /* WorkManRedTitle.m in Sources */,
 				B1F8C6C825C4C71C002DDAF8 /* ItalyTripVlogTemplate.m in Sources */,
@@ -3087,6 +3174,7 @@
 				6E9BEA2C258E448700F7F539 /* Project.m in Sources */,
 				6E8E7A9B259CBB470008C5FF /* PhotoFrameCollectionReusableView.m in Sources */,
 				B1F2B6EF25C198DD0064A044 /* InfiniteChallengeWhiteTypo.m in Sources */,
+				6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */,
 				6E8F9B4425C35261005C8071 /* SeoYuGiHungryTypo.m in Sources */,
 				B1F8C6C125C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.m in Sources */,
 				6E8F9A9625C34582005C8071 /* BasicCirclePhotoFrame.m in Sources */,
@@ -3096,12 +3184,14 @@
 				6E8F98F425BC551F005C8071 /* GuideLine.m in Sources */,
 				6E4A1898258A138F008578BA /* HomeTableController.m in Sources */,
 				6E28452A25C35870008B7A23 /* VlogWebWrite.m in Sources */,
+				6EF0C93625CD29D700BE7573 /* DinggoBingoTypo.m in Sources */,
 				6E8F9B1125C348C9005C8071 /* WorkManStartleSticker.m in Sources */,
 				6EF0C8AE25CBDB5E00BE7573 /* StainSticker1.m in Sources */,
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
 				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
 				B11E0D6025C561470050D9F0 /* DailyVlogTemplate.m in Sources */,
 				6E28452025C35870008B7A23 /* VlogOriginal.m in Sources */,
+				6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */,
 				6EBEB68325C494E20017C640 /* HeartSticker4.m in Sources */,
 				6EF0C82F25CBC35D00BE7573 /* HeartSticker6.m in Sources */,
 				6EBEB6CF25C5817E0017C640 /* WebDesignerVlogTemPlate.m in Sources */,
@@ -3176,6 +3266,7 @@
 				6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */,
+				6EF0C94B25CD45F100BE7573 /* DinggoStarWarsTypo.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				B16FC66025AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m in Sources */,
 				6E8F9A6A25C344EB005C8071 /* PhotoFrame.m in Sources */,
@@ -3199,10 +3290,12 @@
 				6EBEB6A425C4D8B10017C640 /* SummerVlogTemplate.m in Sources */,
 				6EF0C83E25CBC37F00BE7573 /* HeartSticker9.m in Sources */,
 				6E28452625C35870008B7A23 /* VlogNewCampus.m in Sources */,
+				6EF0C95025CD4F4100BE7573 /* DinggoBehindTypo.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
 				B1F2B73E25C1C4E30064A044 /* InfiniteChallengeHashTag.m in Sources */,
 				6EBEB69425C4C5770017C640 /* StayingHomeVlogTemplate.m in Sources */,
 				6E8F9A9425C34581005C8071 /* FullRectangle.m in Sources */,
+				6EF0C95F25CD528C00BE7573 /* DinggoKpopTypo.m in Sources */,
 				B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */,
 				6E8F9A9725C34582005C8071 /* ChristmasCircle.m in Sources */,
 				6EBEB59625C1EA990017C640 /* WorkManTemplate3.m in Sources */,
@@ -3232,6 +3325,7 @@
 				6EF0C83425CBC36500BE7573 /* HeartSticker7.m in Sources */,
 				B1F2B77125C2C6370064A044 /* InfiniteChallengeSkullSticker.m in Sources */,
 				6E80770F25C82B060033FF21 /* DanceVlogTemplate.m in Sources */,
+				6EF0C93D25CD2B7800BE7573 /* DinggoPotatoTypo.m in Sources */,
 				6EF0C7F125CBAE0800BE7573 /* CircleSticker2.m in Sources */,
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
 				B11E0D8D25C595BF0050D9F0 /* VlogHolidayTypo.m in Sources */,
@@ -3258,6 +3352,7 @@
 				6EF0C7D825CBAC9B00BE7573 /* BulbSticker.m in Sources */,
 				6E80772A25C960D00033FF21 /* WorkManYoutube.m in Sources */,
 				6EF0C7E225CBACBF00BE7573 /* ButtonPauseSticker.m in Sources */,
+				6EF0C94225CD2CB000BE7573 /* DinggoGoodTalk.m in Sources */,
 				B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */,
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
 				B11E0D6525C56CA30050D9F0 /* CebuVlogTemplate.m in Sources */,
