@@ -18,9 +18,8 @@
         self.textColor = [UIColor colorWithRed:70/255.0 green:52/255.0 blue:52/255.0 alpha:1];
         self.fontSize = TEXT_FONT_SIZE - 5;
         self.bgImageName = @"infiniteChallengeLogoBox";
-        self.bgWidthPadding = 45;
-        self.bgHeightPadding = 45;
-        self.bgCenterXDelta = 7;
+        self.bgWidthPadding = 70;
+        self.bgHeightPadding = 50;
 
     }
     return self;

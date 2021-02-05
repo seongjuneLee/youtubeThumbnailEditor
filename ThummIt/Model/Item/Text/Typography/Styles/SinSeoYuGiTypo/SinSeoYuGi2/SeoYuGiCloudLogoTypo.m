@@ -16,7 +16,7 @@
         self.fontName = @"a2570";
         self.textColor = [UIColor colorWithRed:248/255.0f green:74/255.0f blue:30/255.0 alpha:1 ];
         self.fontSize = 30;
-        self.bgImageName = @"SeoYUGiCloudLogo";
+        self.bgImageName = @"seoYUGiCloudLogo";
         self.bgWidthPadding = 5;
         self.cannotChangeColor = true;
         
