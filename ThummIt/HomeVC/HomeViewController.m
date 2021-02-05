@@ -12,6 +12,8 @@
 #import "SaveManager.h"
 #import "GuideLine.h"
 #import "DashedGuideLineView.h"
+#import "NSString+Additions.h"
+@import Parse;
 
 @interface HomeViewController ()
 
@@ -21,13 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    for (NSString *familyName in UIFont.familyNames) {
-            NSLog(@"familyName : %@",familyName);
-            for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
-                NSLog(@"fontName : %@",fontName);
-            }
-        }
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:NSBundle.mainBundle] forCellReuseIdentifier:@"HomeTableViewCell"];
     [self connectHomeTableController];

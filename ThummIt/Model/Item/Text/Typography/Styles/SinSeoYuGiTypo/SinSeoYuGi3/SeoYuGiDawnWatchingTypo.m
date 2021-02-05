@@ -14,8 +14,7 @@
     if (self) {
         self.name = NSLocalizedString(@"새벽 시청 금지!!!",nil);
         self.fontName = @"NotoSansKannada-Bold";
-        self.bgImageName = @"SeoYuGiFlame";
-        self.fontSize = TEXT_FONT_SIZE;
+        self.bgImageName = @"seoYuGiFlame";
         self.textColor = [UIColor whiteColor];
         self.bgHeightPadding = 110;
         

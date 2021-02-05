@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"in Italy ",nil);
         self.fontName = @"KCC-Kimhoon-Regular";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
-        self.fontSize = TEXT_FONT_SIZE;
         self.bgImageName = @"inItalyBG";
     }
     return self;

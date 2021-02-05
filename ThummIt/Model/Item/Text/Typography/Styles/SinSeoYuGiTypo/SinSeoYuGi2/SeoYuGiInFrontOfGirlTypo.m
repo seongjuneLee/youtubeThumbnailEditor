@@ -14,7 +14,6 @@
     if (self) {
         self.name = NSLocalizedString(@"여사친 앞에서",nil);
         self.fontName = @"ELANDNiceM";
-        self.fontSize = 30;
         self.textColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0 alpha:1 ];
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];

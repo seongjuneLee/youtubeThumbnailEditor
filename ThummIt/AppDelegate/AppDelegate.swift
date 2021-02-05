@@ -14,33 +14,46 @@ import KakaoSDKCommon
 import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
-
-
-
 import FBSDKCoreKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
+
+class AppDelegate: UIResponder, UIApplicationDelegate{
     
     
     
     var window: UIWindow?
     
-    func applicationDidFinishLaunching(_ application: UIApplication) {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         
         
         MigratorJul.shared().migrateIfNeeded()
         
         Parse.initialize(with: ParseClientConfiguration(block: { ( configuration :  ParseMutableClientConfiguration) in
             configuration.applicationId = "myappID";
-            configuration.clientKey = "BcwGJj2vgmdM"
-            configuration.server = "http://3.34.137.65/parse";
+            configuration.clientKey = "3IKuPKnRgLwN"
+            configuration.server = "http://3.35.208.70/parse";
         }))
         
+        if PFUser.current() != nil {
+            let defaultACL = PFACL.init()
+            defaultACL.setReadAccess(true, for: PFUser.current()!)
+            PFACL.setDefault(defaultACL, withAccessForCurrentUser: true)
+        }
+
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
+
+        KakaoSDKCommon.initSDK(appKey: "4df206455336b6c8a2d990fd54b0bb39")
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+
+        // Override point for customization after application launch.
+        return true
     }
-    
-    
-    
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration.init(name: "Default Configuration", sessionRole: connectingSceneSession.role)
@@ -53,68 +66,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         //        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
         
     }
-    
-    //kakao_login
-    
-    
-        
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
-        if let error = error {
-            // ...
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        // ...
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
-    
     //facebook_login
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        ApplicationDelegate.shared.application(
-            app,
-            open: url,
-            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-        )
-        
+//        if (url.scheme == kakaoURLScheme) {
         if (AuthApi.isKakaoTalkLoginUrl(url)) {
             return AuthController.handleOpenUrl(url: url)
         }
-        
-        if GIDSignIn.sharedInstance().handle(url) {
-            return GIDSignIn.sharedInstance().handle(url)
+//        }
+        if (url.scheme == googleURLScheme) {
+            if GIDSignIn.sharedInstance().handle(url) {
+                return GIDSignIn.sharedInstance().handle(url)
+            }
         }
+
         return false;
-    }
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        ApplicationDelegate.shared.application(
-            application,
-            didFinishLaunchingWithOptions: launchOptions
-        )
-        
-        KakaoSDKCommon.initSDK(appKey: "NATIVE_APP_KEY")
-        
-        FirebaseApp.configure()
-        
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-
-        return true
 
     }
     
-    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        KOSession.handleDidBecomeActive()
+    }
     
 }
 

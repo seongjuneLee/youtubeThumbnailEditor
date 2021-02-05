@@ -18,9 +18,10 @@
         self.shadowColor = UIColor.clearColor;
         self.shadowOffset = CGSizeMake(3, 3);
         self.shadowRadius = 0;
-        self.bgContentMode = UIViewContentModeScaleToFill;
+        self.bgContentMode = UIViewContentModeScaleAspectFit;
         self.category = NSLocalizedString(@"Jolly", nil);
         self.alpha = 1;
+        self.fontSize = TEXT_FONT_SIZE;
         
     }
     return self;

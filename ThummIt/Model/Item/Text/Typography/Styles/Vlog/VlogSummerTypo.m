@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"Summer Story",nil);
         self.fontName = @"SangSangShinOTF";
         self.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
-        self.fontSize = TEXT_FONT_SIZE + 10;
 
     }
     return self;

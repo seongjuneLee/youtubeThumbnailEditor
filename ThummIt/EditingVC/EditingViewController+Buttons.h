@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)taskWhenDenied;
 
 -(void)hideAndInitSlider;
-
+-(void)dismissItemCollectionVC;
 @end
 
 NS_ASSUME_NONNULL_END

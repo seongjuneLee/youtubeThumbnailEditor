@@ -15,7 +15,6 @@
         
         self.name = NSLocalizedString(@"분위기 파악 못해?!",nil); //italic
         self.fontName = @"SDMiSaeng";
-        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor whiteColor];
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];

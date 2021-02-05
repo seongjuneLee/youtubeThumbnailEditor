@@ -15,7 +15,6 @@
         self.name = NSLocalizedString(@"룩북",nil);
         self.fontName = @"BMJUAOTF";
         self.textColor = [UIColor colorWithRed:62/255.0 green:50/255.0 blue:37/255.0 alpha:1];
-        self.fontSize = TEXT_FONT_SIZE;
     }
     return self; 
 }

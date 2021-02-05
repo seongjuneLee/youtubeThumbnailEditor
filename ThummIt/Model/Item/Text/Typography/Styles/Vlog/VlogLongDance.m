@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"댄스 동아리 연습 ",nil);
         self.fontName = @"UhBeepudingBold";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
-        self.fontSize = 40;
         self.bgImageName = @"longDanceBG";
         self.bgHeightPadding = -6;
         self.bgWidthPadding =55;    }

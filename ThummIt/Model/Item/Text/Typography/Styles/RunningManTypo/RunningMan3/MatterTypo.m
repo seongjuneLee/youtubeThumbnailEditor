@@ -15,7 +15,6 @@
         
         self.name = NSLocalizedString(@"문제를 듣고",nil);
         self.fontName = @"AppleSDGothicNeo-Bold";
-        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor whiteColor];
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];

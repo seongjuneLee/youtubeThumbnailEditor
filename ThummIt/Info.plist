@@ -23,7 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakao7d796ccb0943d83c4721fe5d3ff85e1c</string>
+				<string>kakao4df206455336b6c8a2d990fd54b0bb39</string>
 			</array>
 		</dict>
 		<dict>
@@ -31,19 +31,22 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.341329154400-fobhjj6a2mdfr87l6defo62o5brefpo2</string>
-				<string>fb236997214531786</string>
+				<string>fb470445923976829</string>
 			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>KAKAO_APP_KEY</key>
-	<string>7d796ccb0943d83c4721fe5d3ff85e1c</string>
 	<key>FacebookAppID</key>
-	<string>236997214531786</string>
+	<string>470445923976829</string>
 	<key>FacebookDisplayName</key>
 	<string>ThummIt</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>7d796ccb0943d83c4721fe5d3ff85e1c</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakao7d796ccb0943d83c4721fe5d3ff85e1c</string>

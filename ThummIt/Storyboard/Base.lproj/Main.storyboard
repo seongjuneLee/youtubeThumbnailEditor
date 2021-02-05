@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871" y="-280"/>
+            <point key="canvasLocation" x="1869.5652173913045" y="-280.58035714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7zI-pf-NUu">
@@ -154,6 +154,202 @@
             </objects>
             <point key="canvasLocation" x="2735" y="384"/>
         </scene>
+        <!--Privacy Policy View Controller-->
+        <scene sceneID="F82-Ta-Laa">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyPolicyViewController" id="kSG-k4-bVo" customClass="PrivacyPolicyViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hRl-0B-EUw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-kj-Twb">
+                                <rect key="frame" x="15" y="54" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ayC-kj-Twb" secondAttribute="height" multiplier="1:1" id="5HT-jk-k7r"/>
+                                    <constraint firstAttribute="width" constant="25" id="g5W-4D-KDG"/>
+                                </constraints>
+                                <state key="normal" image="leftBlack"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="kSG-k4-bVo" eventType="touchUpInside" id="1O8-Tb-BY1"/>
+                                    <action selector="closeButtonTapped:" destination="Gow-D6-lwO" eventType="touchUpInside" id="ZTS-S1-ye8"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2j-7x-0Vx">
+                                <rect key="frame" x="0.0" y="89" width="414" height="773"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">PRIVACY POLICY
+
+Visual Supply Company (“ThummIt,” “we,” or “us”) provides this Privacy Policy to explain our practices regarding the collection, use, and disclosure of information in connection with our website and mobile app (collectively, our “Service”) and other activities described in this Privacy Policy, as well as your choices regarding the collection and use of information. This Privacy Policy applies only to the practices of companies we own, control, or are united with under common control. By accessing or using our Service, you signify that you have read, understood and agree to our collection, storage, use and disclosure of your personal information as described in this Privacy Policy.
+Click on the links below to jump to each section:
+1. How we collect and use information
+2. Sharing of your information
+3. How we store and protect your information
+4. Your choices about your information
+5. Children’s privacy
+6. Links to other websites and services
+7. How to contact us
+8. Changes to our Privacy Policy
+9. Important Information Regarding Europe
+10. Important Information for California Residents
+1. HOW WE COLLECT AND USE YOUR INFORMATION
+We collect the following types of information about you:
+Information you provide us directly — We ask for certain information such as your name, e-mail address or phone number if you register for an account with the Service, or if you correspond with us (in which case we will also retain our responses). If you purchase products or services or sign up for a subscription, then we may also ask for additional information, such as your credit card number and billing address. We may also retain any messages you send through the Service, and may collect information you provide in content you post, publish, submit, upload, transmit, or otherwise make available on the Service, such as profile pictures or information, photos, images, music, videos, information, comments, questions, messages, works of authorship and other content or information, as well as associated metadata (“User Content”). If you sign up for our email mailing list, we will collect your name and e-mail address. We use this information to operate, maintain, and provide to you the features and functionality of the Service.
+Information we may receive from third parties — We may receive information about you from third parties. For example, if you access our websites or Service through a third-party connection or log-in, for example, through Facebook Connect, by “following,” “liking,” adding the ThummIt application, linking your account to the Service, etc., that third party may pass certain information about your use of its service to ThummIt. This information could include, but is not limited to, any information that you have permitted the third party to share with us, and any information you have made public in connection with that service. We may use this information to find your contacts on the Service, to let you know what your contacts are doing on the Service, and to let your contacts know what you are doing on the Service. We may also use it to suggest additional users or friends you may want to follow or connect with. You should always review, and if necessary, adjust your privacy settings on third-party websites and services before linking or connecting them to ThummIt’s websites or Service. You may also unlink your third party account from the Service by adjusting your settings on the third party service.
+Inviting a third party to use our Service — You have the option to sync your contacts list on your mobile device with the Service so that you can invite your contacts to join the Service via email or text message. You choose which contacts to invite, and you send the invitations from your own email or text messaging app. We do not share your contact list with third party marketers or send messages to your contacts directly unless and until they register for the Service. Your invitees may contact us at any time to request that we remove his or her information from our database using this form.
+Metadata — We may collect metadata associated with User Content. Metadata typically consists of how, when, where and by whom a piece of User Content was collected and how that content has been formatted. Users can add or may have added metadata added to their User Content including keywords posted with a photo or video, including names, geographical or location information, comments or other data. This makes your data more searchable and more interactive. However, the metadata may be accessible to others if you share the User Content with others or on third party social media sites.
+
+We use this information to operate, maintain, and provide to you the features and functionality of the Service. We may also use this information to communicate directly with you. We may send you emails containing newsletters, promotions and special offers. If you do not want to receive such email messages, you will be given the option to opt out or change your preferences. We may also use your information to send you Service-related emails (e.g., account verification, purchase and billing confirmations and reminders, changes/updates to features of the Service, technical and security notices). You may not opt out of Service-related e-mails.
+Use of cookies, software development kits (“SDKs”), and other technology to collect information. We automatically collect certain types of usage information when you visit our website or use our Service.
+Analytics information — We may directly collect analytics data, or use third-party analytics tools to help us measure traffic and usage trends for the Service. These tools collect information sent by your browser as part of a web page request, including the web pages you visit, your browser add-ons, your browser’s width and height, and other information that assists us in improving the Service. We may collect and use this analytics information in aggregate form such that it cannot reasonably be manipulated to identify any particular individual user.
+Cookies information — When you visit the Service, we and our third party partners may send one or more cookies — a small text file containing a string of alphanumeric characters — to your computer that uniquely identifies your browser and lets ThummIt help you log in faster and enhance your navigation through the site. A cookie may also convey information to us about how you use the Service (e.g., the pages you view, the links you click and other actions you take on the Service), and allow us or our business partners to track your usage of the Service over time. You can reset your web browser to refuse all cookies or to indicate when a cookie is being sent. However, some features of the Service may not function properly if the ability to accept cookies is disabled. You can find out more about our use of cookies and similar technologies in our Cookie Policy.
+Software development kits (“SDKs”) – We use SDKs to incorporate third party computer code into our app, which allows us, and our business partners, service providers and advertising partners to collect data directly from the app for various purposes, including to understand and improve the Service, monitor and provide support for the Service, provide us with analytics regarding the use of the app, enable interaction with social media platforms, add features or functionality to our app, or facilitate online advertising on other websites or services.
+Log file information — Log file information is automatically reported by your browser each time you access a web page. When you use our Service, our servers automatically record certain log file information. These server logs may include anonymous information such as your web request, Internet Protocol (“IP”) address, browser type, referring / exit pages and URLs, number of clicks and how you interact with links on the Service, domain names, landing pages, pages viewed, and other such information.
+Clear gifs/web beacons information — When you use the Service, we may employ clear gifs (also known as web beacons) which are used to anonymously track the online usage patterns of our users anonymously. In addition, we may also use clear gifs in HTML-based emails sent to our users to track which emails are opened and which links are clicked by recipients. The information is allows for more accurate reporting and improvement of the Service.
+Device identifiers — When you access the Service by or through a mobile device (including but not limited to smart-phones or tablets) or computer, we may access, collect, monitor and/or remotely store one or more “device identifiers.” Device identifiers are small data files or similar data structures stored on or associated with your mobile device, which uniquely identify your mobile device. A device identifier may be data stored in connection with the device hardware, data stored in connection with the device’s operating system or other software, or data sent to the device by ThummIt. A device identifier may convey information to us about how you browse and use the Service. A device identifier may remain persistently on your device, to help you log in faster and enhance your navigation through the Service. Some features of the Service may not function properly if use or availability of device identifiers is impaired or disabled.
+Location data — When you access the Service by or through a mobile device, we may access, collect, monitor and/or remotely store “location data,” which may include GPS coordinates (e.g. latitude and/or longitude) or similar information regarding the location of your mobile device. Location data may convey to us information about how you browse and use the Service. Some features of the Service, particularly location-based services, may not function properly if use or availability of location data is impaired or disabled.
+Ads — We may permit third party online advertising networks to collect information about your use of our website over time so that they may play or display ads that may be relevant to your interests on other websites or services. Typically, these third party ad servers or ad networks use cookies and other tracking technology to compile information about your browser’s or device’s visits and usage patterns on the Service and on other sites around the Web, to send you the ads that, to measure the effectiveness of their ads and to personalize the advertising content. The ThummIt Privacy Policy does not apply to, and we cannot control the activities of, third-party advertisers. For more information about your choices regarding the use of your personal information for online advertising, please see our Cookie Policy.
+We use or may use the data collected through cookies, SDKs, log files, device identifiers, location data and clear gifs information to: (a) remember information so that you will not have to re-enter it during your visit or the next time you visit the site; (b) provide custom, personalized content and information, including advertising on other websites or services; (c) to provide and monitor the effectiveness of our Service; (d) monitor aggregate metrics such as total number of visitors, traffic, and demographic patterns; (e) diagnose or fix technology problems; (f) help you efficiently access your information after you sign in; and (h) track User Content and users to the extent necessary to comply as a service provider with the Digital Millennium Copyright Act. Although we do our best to honor the privacy preferences of our visitors, we are not able to respond to Do Not Track signals from your browser at this time.
+2. SHARING OF YOUR INFORMATION
+We may share your information with third parties outside the ThummIt and its controlled subsidiaries and affiliates in the instances described below. For further information, see the “Your Choices Regarding Your Information” section below.
+Who we may share your information with — We may share your information with third-party business partners, consultants and service providers that perform services on our behalf for the purpose of providing the Service to you (e.g., email providers, advertising networks, content or service fulfillment, analytics companies, etc.). Those business partners will be given limited access to your information that is reasonably necessary to deliver the Service. We may also share your information with our business partners who offer a service to you jointly with us, for example, when running a co-sponsored contest or promotion. From time to time, we may share your information with third parties who we think may offer you products or services you may enjoy.
+Who you may choose to share your information with — Any information or User Content that you voluntarily disclose for posting to the Service, such as your public profile, photos or images and associated metadata, and comments, becomes available to other ThummIt users and to the public, as controlled by any applicable privacy settings. If you remove information that you posted to the Service, copies may remain viewable in cached and archived pages of the Service, or if other users have copied or saved that information. You may also choose to share your information with friends through email or various social media sites.
+What happens in the event of a change of control — We may buy or sell/divest/transfer the company (including any shares in the company), or any combination of its products, services, assets and/or businesses. Your information such as customer names and email addresses, User Content, and other user information related to the Service will likely be among the items transferred in these types of transactions. We may also transfer or assign such information in the course of corporate divestitures, mergers, acquisitions, bankruptcies, dissolutions or similar transactions or proceedings. We may also sell, assign or otherwise transfer such information in the course of corporate divestitures, mergers, acquisitions, bankruptcies, dissolutions, reorganizations, liquidations, similar transactions or proceedings involving all or a portion of the company.
+Instances where we are required to share your information — ThummIt will disclose your information where required to do so by law or subpoena or if we reasonably believe that such action is necessary to (a) comply with the law and the reasonable requests of law enforcement; (b) to enforce our Terms of Use, or to protect the security or integrity of our Service; and/or (c) to exercise or protect the rights, property, or personal safety of ThummIt, our users or others.
+
+We may also share information with others in an aggregated and anonymous form that does not reasonably identify you directly as an individual.
+3. HOW WE STORE AND PROTECT YOUR INFORMATION
+Storage and Processing — Your information collected through the Service may be stored and processed in the United States or any other country in which ThummIt or its subsidiaries, affiliates or service providers maintain facilities. ThummIt may transfer information that we collect about you, including personal information, to affiliated entities, or to other third parties across borders and from your country or jurisdiction to other countries or jurisdictions around the world. If you are located in the European Union or other regions with laws governing data collection and use that may differ from U.S. law, please note that we may transfer information, including personal information, to a country and jurisdiction that does not have the same data protection laws as your jurisdiction, and you consent to the transfer of information to the U.S. or any other country in which ThummIt or its subsidiaries, affiliates or service providers maintain facilities and the use and disclosure of information about you as described in this Privacy Policy.
+Data Retention -We will retain your information for as long as your account is active or as needed to provide you services. You may deactivate your account in your profile settings. Please contact us if you wish to delete your account permanently from our systems. Please be aware that we will not be able to delete any content you have shared with others or with social media sites.
+Deleting or Anonymizing Your Content - If you are under 18 years of age, you may request that the content that you posted to the Service be deleted or anonymized such that your personal information will not be identifiable publicly on our Service by contacting us. While we will use all commercially reasonable efforts to delete or anonymize your user content upon request, please be aware that due to the social nature of our Service, you may not be able to completely remove all of your personally identifiable user content if, for example, that content has been stored, republished, or reposted by another user or a third party. We may also maintain your information in identifiable form for our internal use, even if your personal data is no longer visible to the public on our Service.
+Keeping your information safe — ThummIt cares about the security of your information, and uses commercially reasonable safeguards to preserve the integrity and security of all information collected through the Service. However, ThummIt cannot ensure or warrant the security of any information you transmit to ThummIt or guarantee that information on the Service may not be accessed, disclosed, altered, or destroyed. Your privacy settings may also be affected by changes to the functionality of ThummIt’s distributors, such as social networks. ThummIt is not responsible for the functionality or security measures of any third party.
+Compromise of information — In the event that any information under our control is compromised as a result of a breach of security, ThummIt will take reasonable steps to investigate the situation and where appropriate, notify those individuals whose information may have been compromised and take other steps, in accordance with any applicable laws and regulations.
+4. YOUR CHOICES ABOUT YOUR INFORMATION
+You control your account information and settings — You may update your profile information at any time by logging in to your account and editing your profile. You can also stop receiving promotional email communications from us by clicking on the “unsubscribe link” provided in such communications. As noted above, you may not opt out of Service-related communications (e.g., account verification, purchase and billing confirmations and reminders, changes/updates to features of the Service, technical and security notices). If you have any questions about reviewing or modifying your account information, you can contact us.
+Your choices regarding the collection of your information for online advertising: As discussed above, we permit third party advertising networks or similar third party partners to collect information about your browsing activities over time and across websites when you use our site or Service. Typically, this information is collected through cookies or similar technologies, which recognize the device you are using and are used to display ads to our visitors on other websites or services. If you would like to disable cookies, limit advertising that utilizes cookies or similar technologies, find out more about cookies and how to manage their use in connection with advertising, please read our Cookie Policy.
+5. CHILDREN’S PRIVACY
+ThummIt does not knowingly collect or solicit personal information from anyone under the age of 13. The Service and its content are not directed at children under the age of 13. In the event that we learn that we have inadvertently collected personal information from a child under age 13, we will delete that information as quickly as possible. If you believe that we might have any information from or about a child under 13, please contact us.
+6. LINKS TO OTHER WEBSITES AND SERVICES
+We are not responsible for the practices employed by websites or services linked to or from the Service, including the information or content contained therein. Please remember that when you use a link to go from the Service to another website, our Privacy Policy does not apply to third-party websites or services. Your browsing and interaction on any third-party website or service, including those that have a link on our website, are subject to that third party’s own rules and policies. In addition, you agree that we are not responsible and we do not exercise control over any third-parties that you authorize to access your User Content. If you are using a third party website or service (like Facebook or Twitter) and you allow such a third party access to your User Content, you do so at your own risk. This Privacy Policy does not apply to information we collect by other means (including offline) and from other sources other than through the Service.
+7. HOW TO CONTACT US
+If you have any questions about this Privacy Policy or the Service, please contact us.
+    1500 Broadway, Suite #300
+    Oakland, CA 94612
+  
+Please note that we do not offer phone support, but if you have questions regarding our products or your order, please visit our Support page, or you may contact our Support team here.
+8. CHANGES TO OUR PRIVACY POLICY
+ThummIt may, in its sole discretion, modify or update this Privacy Policy from time to time. The “last updated” date at the top of this Privacy Policy indicates when this Privacy Policy was last revised. Any changes to the Privacy Policy will become effective when we post the revised Privacy Policy on the Services (or as otherwise indicated at the time of posting). Your use of the Service after those changes become effective means that you accept the revised Privacy Policy.
+9. IMPORTANT INFORMATION REGARDING EUROPE
+This section applies to individuals in the European Economic Area and the United Kingdom.
+Controller. Visual Supply Company is the controller of the personal data that we have about you and can be reached at: 1500 Broadway, Suite 300, Oakland, CA 94612 or through email.
+Your rights. You may ask us to take the following actions:
+* Access. Provide you with information about our processing of your personal data and give you access to it.
+* Correct. Update or correct inaccuracies in your personal data.
+* Delete. Delete your personal data.
+* Export. Export a machine-readable copy of your personal data that you can use with a different service.
+* Restrict. Restrict the processing of your personal data.
+* Object. Object to our reliance on our legitimate interests as the legal basis of processing your personal data if that processing adversely impacts your legal rights.
+To request one of these actions, contact us. We may request information from you to help us confirm your identity and process your request. Applicable law may require or permit us to decline your request. If we decline your request, we will tell you why, subject to legal restrictions.
+Marketing emails. You can always opt out of our marketing emails by following the unsubscribe prompt in the message. You may still receive administrative or other non-marketing messages.
+Legal bases. We generally process your personal data on the following legal bases:
+* Contractual necessity. You have entered a contract with us and we need to use some of your personal data to provide services you have requested or take steps that you request prior to providing services. For example, we cannot create an account for you if you do not provide required information like your email address or phone number. If you do not provide information indicated as required or mandatory within our service, or that is otherwise necessary to provide a requested service or feature within the service, it will not be available to you.
+* Compliance with law. We may have to process or share your personal data to comply with legal obligations, such as to comply with a subpoena or legal process.
+* Legitimate interests. We process your personal data for purposes that constitute our legitimate interests, such as fraud prevention and safety; protecting our, your or others’ property rights; exercising or defending legal claims; investigating violations of and enforcing our Terms of Use; analyzing and improving our services; and marketing and advertising.
+* Consent. In some cases, we may process your personal data based on your consent, such as where we request access to data on your mobile device through the prompts in your device’s operating system. Where we rely on your consent you have the right to withdraw it anytime in the manner indicated at the time consent is requested.
+Updates. Privacy laws are undergoing significant changes in Europe and we may need to further update our Privacy Policy as laws take effect and regulators provide additional guidance. While we will always notify you of any material updates, we encourage you to revisit our Privacy Policy from time to keep current with any changes.
+Questions, concerns, complaints. If you have any questions or concerns, please contact us. In addition, you can always submit a complaint to your data protection regulator. You can find your data protection regulator here.
+10. IMPORTANT INFORMATION FOR CALIFORNIA RESIDENTS
+Scope. This addendum supplements our Privacy Policy and applies only to California residents and the Personal Information we collect about them as a “business,” as defined under the California Consumer Privacy Act of 2018 (“CCPA”). For purposes of this section, “Personal Information” has the meaning given in the CCPA but does not include information exempted from the scope of the CCPA. Additionally, this section does not apply to information we collect from you in the course of communicating with you in your capacity as an employee, controlling owner, director, officer or contractor of an organization (i.e., company, partnership, sole proprietorship, non-profit or government agency) while we are providing or receiving products or services to or from, or performing due diligence on, that organization.
+Collection, use and disclosure of your Personal Information. For each category of data described above in Section 1 of this Privacy Policy, the following list describes the corresponding statutory categories of Personal Information specified by the CCPA in California Civil Code § 1798.140(o), the sources of that Personal Information, and the business/commercial purposes for collecting that Personal Information, as further described in Section 1:
+* Information you provide us directly (such as name, e-mail address, payment/billing information, correspondence you send to us, your photos and other User Content)
+    * CCPA category: identifiers; financial information; online identifiers; visual information
+    * Sources: you
+    * Purposes: to operate, maintain, and provide to you the features and functionality of the Service and our business
+* Information from third parties (such as information about your use of a third party service like Facebook)
+    * CCPA category: identifiers; online identifiers
+    * Sources: third parties
+    * Purposes: for functionality related to the specific third party; for example, you can log-in to the Service with Facebook and post your User Content to your social media platforms
+* Data about others (such as another person’s phone number that you submit to us through our invitation service)
+    * CCPA category: identifiers; online identifiers
+    * Sources: you
+    * Purposes: to operate, maintain, and provide the invitation service
+* Metadata (such as data about how, when, where, and by whom a piece of User Content was collected and how that content has been formatted)
+    * CCPA category: internet or network information
+    * Sources: you
+    * Purposes: to operate, maintain, and provide to you the features and functionality of the Service; to communicate with you; to send Service-related communications
+* Analytics information (such as traffic and usage information for the Service)
+    * CCPA category: commercial information; internet or network information
+    * Sources: automatic collection
+    * Purposes: understand and improve the Service
+* Cookies and similar technologies (which reveal information such as how you use the Service)
+    * CCPA category: commercial information; internet or network information
+    * Sources: automatic collection
+    * Purposes: enable log-ins; enhance your navigation on our site; allow us or our business partners to track usage of the Service; save information you previously entered; personalize your experience on the Service; monitor and provide support for the Service; comply with the Digital Millennium Copyright Act; provide interest-based advertising on other sites
+* Software development kit information (which reveals information regarding your use of the Service)
+    * CCPA category: commercial information; internet or network information
+    * Sources: automatic collection
+    * Purposes: allow us, our business partners, service providers or advertising partners to understand and improve the Service; track usage of the Service; personalize your experience on the Service; monitor and provide support for the Service; comply with the Digital Millennium Copyright Act; provide interest-based advertising on other websites or services
+* Log file information (such as your web request, IP address, browser type, referring / exit pages and URLs, and how you interact with the Service)
+    * CCPA category: internet or network information; online identifiers
+    * Sources: automatic collection
+    * Purposes: operate, maintain, and provide to you the features and functionality of the Service; save information you previously entered; personalize your experience on the site and Service; monitor and provide support for the Service; enhance your navigation on the Service; comply with the Digital Millennium Copyright Act; provide interest-based advertising on other websites or services
+* Clear gifs/web beacons information
+    * CCPA category: internet or network information; online identifiers
+    * Sources: automatic collection
+    * Purposes: track how you interact with our site and communications to report on and improve the Service; save information you previously entered; personalize your experience on the Service; monitor and provide support for the Service; enhance your navigation on the Service; comply with the Digital Millennium Copyright Act; provide interest-based advertising on other websites or services
+* Device identifiers
+    * CCPA category: internet or network information; online identifiers
+    * Sources: automatic collection
+    * Purposes: enhance your log in and navigation on the Service; save information you previously entered; personalize your experience on the Service; monitor and provide support for the Service; comply with the Digital Millennium Copyright Act; provide interest-based advertising on other websites or services
+* Location Data (such as your GPS coordinates or similar information)
+    * CCPA category: geolocation data; internet or network information
+    * Sources: automatic collection
+    * Purposes: operate, maintain, and provide to you the features and functionality of the Service; save information you previously entered; personalize your experience on the Service; monitor and provide support for the Service; enhance your navigation on the Service; comply with the Digital Millennium Copyright Act; provide interest-based advertising on other websites or services
+We describe the categories of third parties to whom we disclose your Personal Information in Section 2 of our Privacy Policy (Sharing of Your Information). We may draw inferences about user preferences and behavior from the information described above when analyzing it and use them to deliver and improve the Service. We may also use and share the information described above as otherwise described in this Privacy Policy. The foregoing describes our practices for the 12 months preceding the ‘last updated’ date at the top of this Privacy Policy.
+California ‘Do Not Sell My Personal Info’ Notice. Like many companies online, we use advertising services that use information collected from cookies and similar technologies to try to make the ads you see on other websites more relevant to your interests. This is called interest-based advertising. See the section of our Privacy Policy entitled Use of Cookies and Other Technology to Collect Information for details. Although we do not sell your information to these companies for money, our use of these services may constitute a “sale” of Personal Information from which you have the right to opt-out for purposes of the CCPA. You can opt-out of the use of your information for interest-based advertising by:
+* Browser settings. Blocking third party cookies in your web browser settings.
+* Privacy browsers/plug-ins. Using privacy browsers or ad-blocking browser plug-ins that let you block advertising trackers.
+* Ad industry tools. Opting-out of interest-based ads from companies participating in the following industry opt-out programs:
+    * Network Advertising Initiative: https://www.networkadvertising.org/managing/opt_out.aspx
+    * Digital Advertising Alliance:
+        * Opt-out (optout.aboutads.info), which will allow you to opt-out of interest based ads served by on websites by participating members.
+        * AppChoices mobile app (available at https://www.youradchoices.com/appchoices), which will allow you to opt-out of interest-based ads in mobile apps served by participating members.
+* Mobile settings. Using your mobile device settings to limit use of the advertising ID associated with your mobile device for interest-based advertising purposes.
+We recommend that you take all of these steps if you want to prevent collection of your information for interest-based ads. You will need to apply these opt-out settings on each device from which you wish to opt-out. Not all companies that serve interest-based ads participate in these opt-out programs, so even after opting-out, you may still receive cookies and interest-based ads from other companies. If you opt-out, you will still see advertisements online but they may be less relevant to you.
+Your right to information, access and deletion. You have the following rights under the CCPA:
+* Information. You can request the following information about how we have collected and used your Personal Information during the past 12 months:
+    * The categories of Personal Information that we have collected.
+    * The categories of sources from which we collected the Personal Information.
+    * The categories of third parties with whom we share the Personal Information.
+    * The categories of Personal Information that we sold or disclosed for a business purpose.
+    * The categories of third parties to whom the Personal Information was sold or disclosed for a business purpose.
+    * The business or commercial purpose for collecting and/or selling Personal Information.
+* Access. You can request a copy of the Personal Information that we have collected about you during the past 12 months.
+* Deletion. You can ask us to delete the Personal Information that we have collected from you.
+* Nondiscrimination. You are entitled to exercise the rights described above free from discriminatory treatment prohibited by the CCPA.
+You may submit a request to exercise your right to information, access or deletion by contacting us at account tap. Government-issued identification may be required. You may designate an authorized agent to make a request on your behalf by providing a valid power of attorney or other proof of authority acceptable to us in our reasonable discretion. Government-issued identification may be required for both the requester and the authorized agent. We cannot process your request if you do not provide us with sufficient information to allow us to understand and respond to it. As email is not a secure communication channel, you should not email government-issued identification to us. In certain cases we may decline your request as permitted by law.
+</string>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Do2-1m-PWp"/>
+                        <color key="backgroundColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ayC-kj-Twb" firstAttribute="width" secondItem="ayC-kj-Twb" secondAttribute="height" multiplier="1:1" id="DBX-3z-49K"/>
+                            <constraint firstItem="ayC-kj-Twb" firstAttribute="top" secondItem="Do2-1m-PWp" secondAttribute="top" constant="10" id="Gxu-r9-kM3"/>
+                            <constraint firstItem="ayC-kj-Twb" firstAttribute="leading" secondItem="Do2-1m-PWp" secondAttribute="leading" constant="15" id="KfN-P4-gEt"/>
+                            <constraint firstItem="B2j-7x-0Vx" firstAttribute="width" secondItem="hRl-0B-EUw" secondAttribute="width" id="hiX-Fk-Ej2"/>
+                            <constraint firstItem="B2j-7x-0Vx" firstAttribute="top" secondItem="ayC-kj-Twb" secondAttribute="bottom" constant="10" id="sMu-At-5Qy"/>
+                            <constraint firstItem="B2j-7x-0Vx" firstAttribute="centerX" secondItem="Do2-1m-PWp" secondAttribute="centerX" id="voW-Am-FqI"/>
+                            <constraint firstItem="Do2-1m-PWp" firstAttribute="bottom" secondItem="B2j-7x-0Vx" secondAttribute="bottom" id="wyO-OB-Zmk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTL-Tw-0iL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="1802"/>
+        </scene>
         <!--Account-->
         <scene sceneID="bGm-Ox-Agm">
             <objects>
@@ -176,15 +372,15 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fca-tQ-sL2">
-                                            <rect key="frame" x="40" y="32" width="64" height="64"/>
+                                            <rect key="frame" x="15" y="32" width="64" height="64"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Fca-tQ-sL2" secondAttribute="height" multiplier="1:1" id="ohx-hy-rcu"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emy-d4-HYP" userLabel="Account Name Label">
-                                            <rect key="frame" x="124" y="32" width="38.5" height="64"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="99" y="32" width="46" height="64"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                            <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -195,254 +391,27 @@
                                         <constraint firstItem="Emy-d4-HYP" firstAttribute="height" secondItem="Xxw-vk-PoO" secondAttribute="height" multiplier="0.5" id="3kd-Fy-vcT"/>
                                         <constraint firstItem="Emy-d4-HYP" firstAttribute="centerY" secondItem="Xxw-vk-PoO" secondAttribute="centerY" id="PGd-ax-cZz"/>
                                         <constraint firstItem="Emy-d4-HYP" firstAttribute="leading" secondItem="Fca-tQ-sL2" secondAttribute="trailing" constant="20" id="m3G-zC-KqN"/>
-                                        <constraint firstItem="Fca-tQ-sL2" firstAttribute="leading" secondItem="Xxw-vk-PoO" secondAttribute="leading" constant="40" id="s9D-xD-j3U"/>
+                                        <constraint firstItem="Fca-tQ-sL2" firstAttribute="leading" secondItem="Xxw-vk-PoO" secondAttribute="leading" constant="15" id="s9D-xD-j3U"/>
                                     </constraints>
                                 </view>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1d-9b-E7H" userLabel="Sign In View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvi-B9-hvp" userLabel="Sign In View Label">
-                                        <rect key="frame" x="33.5" y="129" width="347" height="67.5"/>
-                                        <string key="text">Create a YouTube thumbnail 
-with the design you want.</string>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6f1-hg-H8d" userLabel="Kakao Sign In View">
-                                        <rect key="frame" x="20.5" y="308.5" width="373" height="49"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Kakao" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALG-cK-jac">
-                                                <rect key="frame" x="119.5" y="14.5" width="134" height="20"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakaoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zJZ-Ql-GeX">
-                                                <rect key="frame" x="15" y="12.5" width="24.5" height="24"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="zJZ-Ql-GeX" secondAttribute="height" multiplier="1:1" id="YDg-X8-QEP"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="zJZ-Ql-GeX" firstAttribute="leading" secondItem="6f1-hg-H8d" secondAttribute="leading" constant="15" id="1gv-sq-EvV"/>
-                                            <constraint firstItem="ALG-cK-jac" firstAttribute="centerX" secondItem="6f1-hg-H8d" secondAttribute="centerX" id="8Q2-nw-eQ3"/>
-                                            <constraint firstItem="ALG-cK-jac" firstAttribute="centerY" secondItem="6f1-hg-H8d" secondAttribute="centerY" id="BQd-FH-fXB"/>
-                                            <constraint firstItem="zJZ-Ql-GeX" firstAttribute="centerY" secondItem="6f1-hg-H8d" secondAttribute="centerY" id="WTH-FO-hcJ"/>
-                                            <constraint firstItem="zJZ-Ql-GeX" firstAttribute="height" secondItem="6f1-hg-H8d" secondAttribute="height" multiplier="0.5" id="YIx-HN-xKf"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cad-WO-oP3" userLabel="Kakao Sign In Button">
-                                        <rect key="frame" x="20.5" y="308.5" width="373" height="49"/>
-                                        <connections>
-                                            <action selector="kakaoSignInButton:" destination="J4R-UV-EGf" eventType="touchUpInside" id="bIr-ll-nGr"/>
-                                        </connections>
-                                    </button>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEw-PO-a4G" userLabel="Facebook Sign In View">
-                                        <rect key="frame" x="20.5" y="372.5" width="373" height="48.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7do-rz-yjx">
-                                                <rect key="frame" x="107" y="14" width="159" height="20.5"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Q3o-ac-2ai">
-                                                <rect key="frame" x="15" y="12" width="24.5" height="24.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Q3o-ac-2ai" secondAttribute="height" multiplier="1:1" id="3yo-zX-aAB"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="7do-rz-yjx" firstAttribute="centerX" secondItem="vEw-PO-a4G" secondAttribute="centerX" id="C6g-d5-PHG"/>
-                                            <constraint firstItem="Q3o-ac-2ai" firstAttribute="leading" secondItem="vEw-PO-a4G" secondAttribute="leading" constant="15" id="G1Z-cA-GDr"/>
-                                            <constraint firstItem="7do-rz-yjx" firstAttribute="centerY" secondItem="vEw-PO-a4G" secondAttribute="centerY" id="cyW-Fn-Br3"/>
-                                            <constraint firstItem="Q3o-ac-2ai" firstAttribute="height" secondItem="vEw-PO-a4G" secondAttribute="height" multiplier="0.5" id="dCQ-SX-m0q"/>
-                                            <constraint firstItem="Q3o-ac-2ai" firstAttribute="centerY" secondItem="vEw-PO-a4G" secondAttribute="centerY" id="ggZ-Tu-c8P"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohj-JL-ZZF" userLabel="Facebook Sign In Button">
-                                        <rect key="frame" x="20.5" y="372.5" width="373" height="48.5"/>
-                                        <connections>
-                                            <action selector="facebookSignInButton:" destination="J4R-UV-EGf" eventType="touchUpInside" id="O86-2p-Hrr"/>
-                                        </connections>
-                                    </button>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vda-qq-IYP" userLabel="Google Sign In View">
-                                        <rect key="frame" x="20.5" y="436" width="373" height="49"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Google" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9p-ub-uni">
-                                                <rect key="frame" x="116" y="14" width="141" height="21"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="googleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Gia-Wh-zX8">
-                                                <rect key="frame" x="15" y="12.5" width="24.5" height="24"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Gia-Wh-zX8" secondAttribute="height" multiplier="1:1" id="2k7-Ry-mEB"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="q9p-ub-uni" firstAttribute="centerX" secondItem="Vda-qq-IYP" secondAttribute="centerX" id="0S9-ai-xCZ"/>
-                                            <constraint firstItem="q9p-ub-uni" firstAttribute="centerY" secondItem="Vda-qq-IYP" secondAttribute="centerY" id="1UW-Db-xJC"/>
-                                            <constraint firstItem="Gia-Wh-zX8" firstAttribute="leading" secondItem="Vda-qq-IYP" secondAttribute="leading" constant="15" id="38F-wi-jeW"/>
-                                            <constraint firstItem="Gia-Wh-zX8" firstAttribute="height" secondItem="Vda-qq-IYP" secondAttribute="height" multiplier="0.5" id="FUy-xX-Bvm"/>
-                                            <constraint firstItem="Gia-Wh-zX8" firstAttribute="centerY" secondItem="Vda-qq-IYP" secondAttribute="centerY" id="nhn-8V-8Sa"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIp-9c-AcC" userLabel="Google Sign In Button">
-                                        <rect key="frame" x="20.5" y="436" width="373" height="49"/>
-                                        <connections>
-                                            <action selector="googleSignInButtonTapped:" destination="J4R-UV-EGf" eventType="touchUpInside" id="2OC-ZV-RzH"/>
-                                        </connections>
-                                    </button>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAl-MI-wvB" userLabel="Apple Sign In View">
-                                        <rect key="frame" x="20.5" y="500" width="373" height="48.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0n-s3-nYd">
-                                                <rect key="frame" x="120.5" y="14" width="132" height="21"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="vp6-bZ-Rss">
-                                                <rect key="frame" x="15" y="12" width="24.5" height="24.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="vp6-bZ-Rss" secondAttribute="height" multiplier="1:1" id="gh1-bi-TCk"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="j0n-s3-nYd" firstAttribute="centerY" secondItem="oAl-MI-wvB" secondAttribute="centerY" id="8Ur-ys-NwG"/>
-                                            <constraint firstItem="j0n-s3-nYd" firstAttribute="centerX" secondItem="oAl-MI-wvB" secondAttribute="centerX" id="Tji-JB-fdR"/>
-                                            <constraint firstItem="vp6-bZ-Rss" firstAttribute="leading" secondItem="oAl-MI-wvB" secondAttribute="leading" constant="15" id="v2v-Wj-3Gp"/>
-                                            <constraint firstItem="vp6-bZ-Rss" firstAttribute="height" secondItem="oAl-MI-wvB" secondAttribute="height" multiplier="0.5" id="ya4-W4-vKA"/>
-                                            <constraint firstItem="vp6-bZ-Rss" firstAttribute="centerY" secondItem="oAl-MI-wvB" secondAttribute="centerY" id="yvB-28-QyJ"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yg7-I2-gJA" userLabel="Apple Sign In Button">
-                                        <rect key="frame" x="20.5" y="500" width="373" height="48.5"/>
-                                    </button>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-xW-3rg" userLabel="Email Sign In View">
-                                        <rect key="frame" x="20.5" y="588.5" width="373" height="49"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbF-kI-UZU">
-                                                <rect key="frame" x="121.5" y="14" width="130" height="21"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="pbF-kI-UZU" firstAttribute="centerY" secondItem="Jat-xW-3rg" secondAttribute="centerY" id="ptj-0H-ylt"/>
-                                            <constraint firstItem="pbF-kI-UZU" firstAttribute="centerX" secondItem="Jat-xW-3rg" secondAttribute="centerX" id="vlN-Mv-CgM"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3u-A6-z4y" userLabel="Email Sign In Button">
-                                        <rect key="frame" x="20.5" y="588.5" width="373" height="49"/>
-                                    </button>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnw-el-ieF" userLabel="Privacy Policy Label">
-                                        <rect key="frame" x="100.5" y="647.5" width="213.5" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="fO3-sK-aDw"/>
-                                        </constraints>
-                                        <string key="text">If you continue, you will agree to the terms of uses
- and the privacy policy.</string>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="10"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Cad-WO-oP3" firstAttribute="width" secondItem="6f1-hg-H8d" secondAttribute="width" id="082-AG-GOL"/>
-                                    <constraint firstItem="o3u-A6-z4y" firstAttribute="centerY" secondItem="Jat-xW-3rg" secondAttribute="centerY" id="1fV-Vz-KhD"/>
-                                    <constraint firstItem="Jat-xW-3rg" firstAttribute="width" secondItem="6f1-hg-H8d" secondAttribute="width" id="2mW-jl-nKm"/>
-                                    <constraint firstItem="Jat-xW-3rg" firstAttribute="top" secondItem="oAl-MI-wvB" secondAttribute="bottom" constant="40" id="3LP-i7-726"/>
-                                    <constraint firstItem="6f1-hg-H8d" firstAttribute="height" secondItem="o1d-9b-E7H" secondAttribute="height" multiplier="0.06" id="4Bh-Q0-MfX"/>
-                                    <constraint firstItem="ohj-JL-ZZF" firstAttribute="centerY" secondItem="vEw-PO-a4G" secondAttribute="centerY" id="5ZY-T5-qXa"/>
-                                    <constraint firstItem="Jvi-B9-hvp" firstAttribute="centerX" secondItem="o1d-9b-E7H" secondAttribute="centerX" id="6T9-P7-TpM"/>
-                                    <constraint firstItem="Cad-WO-oP3" firstAttribute="centerX" secondItem="6f1-hg-H8d" secondAttribute="centerX" id="A2E-I8-fJm"/>
-                                    <constraint firstItem="vEw-PO-a4G" firstAttribute="height" secondItem="6f1-hg-H8d" secondAttribute="height" id="Byb-cZ-AGq"/>
-                                    <constraint firstItem="Jat-xW-3rg" firstAttribute="height" secondItem="6f1-hg-H8d" secondAttribute="height" id="Fd9-1K-F8k"/>
-                                    <constraint firstItem="mIp-9c-AcC" firstAttribute="width" secondItem="Vda-qq-IYP" secondAttribute="width" id="GD6-1E-sgV"/>
-                                    <constraint firstItem="ohj-JL-ZZF" firstAttribute="width" secondItem="vEw-PO-a4G" secondAttribute="width" id="GIY-fr-ww8"/>
-                                    <constraint firstItem="ohj-JL-ZZF" firstAttribute="centerX" secondItem="vEw-PO-a4G" secondAttribute="centerX" id="HPX-pv-Ex8"/>
-                                    <constraint firstItem="oAl-MI-wvB" firstAttribute="height" secondItem="6f1-hg-H8d" secondAttribute="height" id="K6R-8p-R8Y"/>
-                                    <constraint firstItem="oAl-MI-wvB" firstAttribute="top" secondItem="Vda-qq-IYP" secondAttribute="bottom" constant="15" id="Nn8-qq-Ih6"/>
-                                    <constraint firstItem="Vda-qq-IYP" firstAttribute="top" secondItem="vEw-PO-a4G" secondAttribute="bottom" constant="15" id="OW5-tr-5gC"/>
-                                    <constraint firstItem="mIp-9c-AcC" firstAttribute="centerX" secondItem="Vda-qq-IYP" secondAttribute="centerX" id="Ocz-sI-D49"/>
-                                    <constraint firstItem="vEw-PO-a4G" firstAttribute="top" secondItem="6f1-hg-H8d" secondAttribute="bottom" constant="15" id="S1R-yP-Afs"/>
-                                    <constraint firstItem="oAl-MI-wvB" firstAttribute="width" secondItem="6f1-hg-H8d" secondAttribute="width" id="S2V-3F-j4w"/>
-                                    <constraint firstItem="Yg7-I2-gJA" firstAttribute="width" secondItem="oAl-MI-wvB" secondAttribute="width" id="SkN-Rh-hXN"/>
-                                    <constraint firstItem="Jat-xW-3rg" firstAttribute="centerX" secondItem="o1d-9b-E7H" secondAttribute="centerX" id="VHO-oX-SEd"/>
-                                    <constraint firstItem="o3u-A6-z4y" firstAttribute="centerX" secondItem="Jat-xW-3rg" secondAttribute="centerX" id="X60-vb-9xi"/>
-                                    <constraint firstItem="mIp-9c-AcC" firstAttribute="centerY" secondItem="Vda-qq-IYP" secondAttribute="centerY" id="XYu-TK-ajW"/>
-                                    <constraint firstItem="vEw-PO-a4G" firstAttribute="centerX" secondItem="o1d-9b-E7H" secondAttribute="centerX" id="c2u-ls-Fes"/>
-                                    <constraint firstItem="oAl-MI-wvB" firstAttribute="centerX" secondItem="o1d-9b-E7H" secondAttribute="centerX" id="d2y-aA-hvE"/>
-                                    <constraint firstItem="Jvi-B9-hvp" firstAttribute="centerY" secondItem="o1d-9b-E7H" secondAttribute="centerY" multiplier="0.4" id="dSp-0k-Cgd"/>
-                                    <constraint firstItem="Yg7-I2-gJA" firstAttribute="centerY" secondItem="oAl-MI-wvB" secondAttribute="centerY" id="dgF-Wn-aCJ"/>
-                                    <constraint firstItem="pnw-el-ieF" firstAttribute="centerX" secondItem="o1d-9b-E7H" secondAttribute="centerX" id="edm-x3-uMX"/>
-                                    <constraint firstAttribute="bottom" secondItem="pnw-el-ieF" secondAttribute="bottom" multiplier="1.2" id="glz-wl-zcL"/>
-                                    <constraint firstItem="Yg7-I2-gJA" firstAttribute="height" secondItem="oAl-MI-wvB" secondAttribute="height" id="hfo-8H-74k"/>
-                                    <constraint firstItem="Cad-WO-oP3" firstAttribute="centerY" secondItem="6f1-hg-H8d" secondAttribute="centerY" id="iYm-3r-O9T"/>
-                                    <constraint firstItem="Yg7-I2-gJA" firstAttribute="centerX" secondItem="oAl-MI-wvB" secondAttribute="centerX" id="ktP-mZ-5wb"/>
-                                    <constraint firstItem="ohj-JL-ZZF" firstAttribute="height" secondItem="vEw-PO-a4G" secondAttribute="height" id="m8p-Cl-kCZ"/>
-                                    <constraint firstItem="o3u-A6-z4y" firstAttribute="width" secondItem="Jat-xW-3rg" secondAttribute="width" id="mbg-dn-YN9"/>
-                                    <constraint firstItem="pnw-el-ieF" firstAttribute="top" secondItem="Jat-xW-3rg" secondAttribute="bottom" constant="10" id="njH-cL-LR3"/>
-                                    <constraint firstItem="Cad-WO-oP3" firstAttribute="height" secondItem="6f1-hg-H8d" secondAttribute="height" id="og6-CU-VTa"/>
-                                    <constraint firstItem="o3u-A6-z4y" firstAttribute="height" secondItem="Jat-xW-3rg" secondAttribute="height" id="paV-TJ-iZ9"/>
-                                    <constraint firstItem="vEw-PO-a4G" firstAttribute="width" secondItem="6f1-hg-H8d" secondAttribute="width" id="qKI-lB-gcZ"/>
-                                    <constraint firstItem="Vda-qq-IYP" firstAttribute="centerX" secondItem="o1d-9b-E7H" secondAttribute="centerX" id="rEb-Ma-2Bp"/>
-                                    <constraint firstItem="Vda-qq-IYP" firstAttribute="height" secondItem="6f1-hg-H8d" secondAttribute="height" id="rgM-Rj-htT"/>
-                                    <constraint firstItem="mIp-9c-AcC" firstAttribute="height" secondItem="Vda-qq-IYP" secondAttribute="height" id="sSV-CR-kwq"/>
-                                    <constraint firstItem="Vda-qq-IYP" firstAttribute="width" secondItem="6f1-hg-H8d" secondAttribute="width" id="sXI-IL-Qfe"/>
-                                    <constraint firstItem="6f1-hg-H8d" firstAttribute="width" secondItem="o1d-9b-E7H" secondAttribute="width" multiplier="0.9" id="sdY-yR-t5H"/>
-                                    <constraint firstItem="6f1-hg-H8d" firstAttribute="centerX" secondItem="o1d-9b-E7H" secondAttribute="centerX" id="wwu-5m-3ii"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ruT-sf-Npz"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="52V-P2-H6C" firstAttribute="width" secondItem="iLz-Z4-jeT" secondAttribute="width" id="7eY-nG-bc8"/>
-                            <constraint firstAttribute="top" secondItem="o1d-9b-E7H" secondAttribute="top" id="Iof-gq-3LL"/>
                             <constraint firstItem="52V-P2-H6C" firstAttribute="centerX" secondItem="ruT-sf-Npz" secondAttribute="centerX" id="XZe-Hf-HWU"/>
                             <constraint firstItem="RQI-lA-6vT" firstAttribute="leading" secondItem="ruT-sf-Npz" secondAttribute="leading" constant="20" id="gBd-5l-6Ts"/>
                             <constraint firstItem="RQI-lA-6vT" firstAttribute="top" secondItem="ruT-sf-Npz" secondAttribute="top" constant="10" id="gjh-MB-kFt"/>
-                            <constraint firstItem="o1d-9b-E7H" firstAttribute="bottom" secondItem="ruT-sf-Npz" secondAttribute="bottom" id="lZE-Kt-eqw"/>
-                            <constraint firstItem="o1d-9b-E7H" firstAttribute="width" secondItem="iLz-Z4-jeT" secondAttribute="width" id="le5-eS-zO7"/>
                             <constraint firstItem="52V-P2-H6C" firstAttribute="top" secondItem="RQI-lA-6vT" secondAttribute="bottom" constant="10" id="oIw-cm-lgT"/>
-                            <constraint firstItem="o1d-9b-E7H" firstAttribute="centerX" secondItem="ruT-sf-Npz" secondAttribute="centerX" id="r30-Lt-gra"/>
                             <constraint firstItem="52V-P2-H6C" firstAttribute="bottom" secondItem="ruT-sf-Npz" secondAttribute="bottom" id="saL-lv-LP8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="accountImage" id="t0J-sO-HyD"/>
                     <connections>
-                        <outlet property="SignInView" destination="o1d-9b-E7H" id="GdR-MX-9E9"/>
                         <outlet property="accountIconImageView" destination="Fca-tQ-sL2" id="46B-0b-2rk"/>
                         <outlet property="accountNameLabel" destination="Emy-d4-HYP" id="oph-qQ-lRd"/>
-                        <outlet property="appleSignInButton" destination="Yg7-I2-gJA" id="1YC-4O-pPr"/>
-                        <outlet property="appleSignInView" destination="oAl-MI-wvB" id="H88-8W-cqM"/>
-                        <outlet property="emailSignInButton" destination="o3u-A6-z4y" id="dm1-yU-RWm"/>
-                        <outlet property="emailSignInView" destination="Jat-xW-3rg" id="eAW-80-SMV"/>
-                        <outlet property="facebookSignInButton" destination="ohj-JL-ZZF" id="Adt-5T-5Cp"/>
-                        <outlet property="facebookSignInView" destination="vEw-PO-a4G" id="80O-Pi-jR1"/>
-                        <outlet property="googleSignInButton" destination="mIp-9c-AcC" id="gmU-u5-kxg"/>
-                        <outlet property="googleSignInView" destination="Vda-qq-IYP" id="9ep-4u-kpC"/>
                         <outlet property="header" destination="Xxw-vk-PoO" id="F8g-kr-6Di"/>
-                        <outlet property="kakaoSignInButton" destination="Cad-WO-oP3" id="Qsg-4a-wXS"/>
-                        <outlet property="kakaoSignInView" destination="6f1-hg-H8d" id="HVd-YC-YSG"/>
-                        <outlet property="privacyPolicyLabel" destination="pnw-el-ieF" id="dA3-Dv-aMp"/>
                         <outlet property="tableView" destination="52V-P2-H6C" id="sEh-z8-2XZ"/>
                     </connections>
                 </viewController>
@@ -459,25 +428,25 @@ with the design you want.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1c-2k-F8e">
-                                <rect key="frame" x="10" y="66" width="25" height="30"/>
+                                <rect key="frame" x="10" y="66" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="U1c-2k-F8e" secondAttribute="height" multiplier="5:6" id="JPe-Ao-2Dn"/>
+                                    <constraint firstAttribute="width" secondItem="U1c-2k-F8e" secondAttribute="height" multiplier="1:1" id="JPe-Ao-2Dn"/>
                                     <constraint firstAttribute="width" constant="25" id="R81-4A-bea"/>
                                 </constraints>
-                                <state key="normal" image="closeButtonBlack"/>
+                                <state key="normal" image="leftBlack"/>
                                 <connections>
                                     <action selector="closeButtonTapped:" destination="Gow-D6-lwO" eventType="touchUpInside" id="PUW-5L-Qno"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please explain your problem." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXB-fr-iJj">
-                                <rect key="frame" x="30" y="114" width="241" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please explain your problem or request." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXB-fr-iJj">
+                                <rect key="frame" x="30" y="114" width="333" height="24"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWd-ma-LZP">
                                 <rect key="frame" x="30" y="158" width="354" height="224"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -502,7 +471,7 @@ with the design you want.</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5Wm-pD-SRk"/>
                                     <constraint firstItem="qkE-ti-GaK" firstAttribute="centerX" secondItem="LJK-Jq-oMg" secondAttribute="centerX" id="Nx8-9o-wrE"/>
@@ -515,7 +484,7 @@ with the design you want.</string>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F8F-7M-Y3L"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="F8F-7M-Y3L" firstAttribute="trailing" secondItem="KWd-ma-LZP" secondAttribute="trailing" constant="30" id="BxA-hs-g2d"/>
                             <constraint firstItem="KWd-ma-LZP" firstAttribute="height" secondItem="Vhh-9m-7FX" secondAttribute="height" multiplier="0.25" id="Epw-4C-oj6"/>
@@ -540,6 +509,764 @@ with the design you want.</string>
             </objects>
             <point key="canvasLocation" x="2761" y="1126"/>
         </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="bXj-8b-04u">
+            <objects>
+                <viewController storyboardIdentifier="SignInViewController" id="IZe-UG-0Zf" customClass="SignInViewController" customModule="ThummIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4p0-rf-cBI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQ4-vK-OnZ" userLabel="Sign In View">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwk-oc-Fct" userLabel="Sign In View Label">
+                                        <rect key="frame" x="10" y="145.5" width="394" height="67.5"/>
+                                        <string key="text">Create a YouTube thumbnail 
+with the design you want.</string>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="28"/>
+                                        <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qc9-r3-acU" userLabel="Kakao Sign In View">
+                                        <rect key="frame" x="20.5" y="480" width="373" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Kakao" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9u-1L-Jyk">
+                                                <rect key="frame" x="119.5" y="17" width="134" height="20"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="highlightedColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakaoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="A0g-uh-pw5">
+                                                <rect key="frame" x="15" y="13.5" width="27" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="A0g-uh-pw5" secondAttribute="height" multiplier="1:1" id="F4Y-yA-R1L"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="N9u-1L-Jyk" firstAttribute="centerX" secondItem="qc9-r3-acU" secondAttribute="centerX" id="4Wa-Zp-aeD"/>
+                                            <constraint firstItem="A0g-uh-pw5" firstAttribute="centerY" secondItem="qc9-r3-acU" secondAttribute="centerY" id="FTk-8v-cZv"/>
+                                            <constraint firstItem="A0g-uh-pw5" firstAttribute="height" secondItem="qc9-r3-acU" secondAttribute="height" multiplier="0.5" id="P8m-W6-HFO"/>
+                                            <constraint firstItem="A0g-uh-pw5" firstAttribute="leading" secondItem="qc9-r3-acU" secondAttribute="leading" constant="15" id="f01-91-9si"/>
+                                            <constraint firstItem="N9u-1L-Jyk" firstAttribute="centerY" secondItem="qc9-r3-acU" secondAttribute="centerY" id="k1c-kQ-G1L"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fl-rI-lBB" userLabel="Kakao Sign In Button">
+                                        <rect key="frame" x="20.5" y="480" width="373" height="54"/>
+                                        <connections>
+                                            <action selector="kakaoButtonTapped:" destination="IZe-UG-0Zf" eventType="touchUpInside" id="cdS-Zt-X7y"/>
+                                        </connections>
+                                    </button>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihg-Ok-LTt" userLabel="Facebook Sign In View">
+                                        <rect key="frame" x="20.5" y="549" width="373" height="53.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6K-e7-iVe">
+                                                <rect key="frame" x="107" y="16.5" width="159" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="x2i-NQ-gRI">
+                                                <rect key="frame" x="15" y="13.5" width="27" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="x2i-NQ-gRI" secondAttribute="height" multiplier="1:1" id="bJ7-AW-XyC"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Y6K-e7-iVe" firstAttribute="centerY" secondItem="ihg-Ok-LTt" secondAttribute="centerY" id="G8B-TC-3y5"/>
+                                            <constraint firstItem="x2i-NQ-gRI" firstAttribute="leading" secondItem="ihg-Ok-LTt" secondAttribute="leading" constant="15" id="RvW-hW-dlL"/>
+                                            <constraint firstItem="x2i-NQ-gRI" firstAttribute="height" secondItem="ihg-Ok-LTt" secondAttribute="height" multiplier="0.5" id="Tx0-QE-g5i"/>
+                                            <constraint firstItem="x2i-NQ-gRI" firstAttribute="centerY" secondItem="ihg-Ok-LTt" secondAttribute="centerY" id="fyK-1w-9ur"/>
+                                            <constraint firstItem="Y6K-e7-iVe" firstAttribute="centerX" secondItem="ihg-Ok-LTt" secondAttribute="centerX" id="uiG-6c-LNV"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6C-lp-Urq" userLabel="Facebook Sign In Button">
+                                        <rect key="frame" x="20.5" y="549" width="373" height="53.5"/>
+                                        <connections>
+                                            <action selector="facebookButtonTapped:" destination="IZe-UG-0Zf" eventType="touchUpInside" id="OQC-qE-F2l"/>
+                                        </connections>
+                                    </button>
+                                    <view hidden="YES" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yog-xZ-NMo" userLabel="Google Sign In View">
+                                        <rect key="frame" x="20.5" y="490.5" width="373" height="53.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in with Google" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibh-IQ-T2J">
+                                                <rect key="frame" x="116" y="16.5" width="141" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="googleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="XC7-Qh-JGd">
+                                                <rect key="frame" x="15" y="13.5" width="27" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTv-hp-A9g" userLabel="Google Sign In Button">
+                                        <rect key="frame" x="20.5" y="490.5" width="373" height="53.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
+                                    <view hidden="YES" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-P0-m35" userLabel="Apple Sign In View">
+                                        <rect key="frame" x="20.5" y="559" width="373" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in with Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-Nu-5AB">
+                                                <rect key="frame" x="120.5" y="16.5" width="132" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BM2-wd-ZmS">
+                                                <rect key="frame" x="15" y="13.5" width="27" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKQ-cw-Jqe" userLabel="Apple Sign In Button">
+                                        <rect key="frame" x="20.5" y="559" width="373" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yri-bN-KhL" userLabel="Email Sign In View">
+                                        <rect key="frame" x="20.5" y="612.5" width="373" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70X-Rj-zFr">
+                                                <rect key="frame" x="121.5" y="16.5" width="130" height="21"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="70X-Rj-zFr" firstAttribute="centerY" secondItem="yri-bN-KhL" secondAttribute="centerY" id="YmY-e7-ruQ"/>
+                                            <constraint firstItem="70X-Rj-zFr" firstAttribute="centerX" secondItem="yri-bN-KhL" secondAttribute="centerX" id="e1j-vH-nVu"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUT-ek-J4J" userLabel="Email Sign In Button">
+                                        <rect key="frame" x="20.5" y="612.5" width="373" height="54"/>
+                                        <connections>
+                                            <action selector="emailButtonTapped:" destination="IZe-UG-0Zf" eventType="touchUpInside" id="cCs-vd-dmf"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QnJ-yj-3xK">
+                                        <rect key="frame" x="124" y="766.5" width="166" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="x5T-cU-0nB"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with ThummIt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c46-ac-37y">
+                                        <rect key="frame" x="124" y="773" width="123" height="17"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                        <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBz-LS-iza">
+                                        <rect key="frame" x="257" y="767" width="33" height="29"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                        <state key="normal" title="LogIn"/>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="IZe-UG-0Zf" eventType="touchUpInside" id="uEo-yz-oNh"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9In-nM-ggd">
+                                        <rect key="frame" x="206.5" y="837" width="1" height="10"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="RBp-Gx-Ohd"/>
+                                            <constraint firstAttribute="height" constant="10" id="SV1-xm-r9O"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4I7-ZI-Fnm">
+                                        <rect key="frame" x="217.5" y="827.5" width="79" height="29"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                        <state key="normal" title="TermsOfUses">
+                                            <color key="titleColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkI-tf-NMY">
+                                        <rect key="frame" x="119.5" y="827.5" width="77" height="29"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                        <state key="normal" title="PrivacyPolicy">
+                                            <color key="titleColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMw-b6-6RN">
+                                        <rect key="frame" x="15" y="69" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="66i-o4-AkY"/>
+                                            <constraint firstAttribute="height" constant="25" id="jN7-XG-Mdm"/>
+                                        </constraints>
+                                        <state key="normal" image="closeButtonBlack"/>
+                                        <connections>
+                                            <action selector="closeButtonTapped:" destination="IZe-UG-0Zf" eventType="touchUpInside" id="duz-zq-Lo6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qc9-r3-acU" firstAttribute="centerX" secondItem="bQ4-vK-OnZ" secondAttribute="centerX" id="2OS-Xg-hBY"/>
+                                    <constraint firstItem="9In-nM-ggd" firstAttribute="leading" secondItem="CkI-tf-NMY" secondAttribute="trailing" constant="10" id="4Xh-gS-mWF"/>
+                                    <constraint firstItem="1fl-rI-lBB" firstAttribute="centerX" secondItem="qc9-r3-acU" secondAttribute="centerX" id="5Re-sQ-In8"/>
+                                    <constraint firstItem="4I7-ZI-Fnm" firstAttribute="centerY" secondItem="9In-nM-ggd" secondAttribute="centerY" id="Ell-e9-5Mi"/>
+                                    <constraint firstItem="ihg-Ok-LTt" firstAttribute="top" secondItem="qc9-r3-acU" secondAttribute="bottom" constant="15" id="IO4-gT-PgE"/>
+                                    <constraint firstItem="xwk-oc-Fct" firstAttribute="centerY" secondItem="bQ4-vK-OnZ" secondAttribute="centerY" multiplier="0.4" id="Jfm-MZ-D7A"/>
+                                    <constraint firstItem="g6C-lp-Urq" firstAttribute="centerY" secondItem="ihg-Ok-LTt" secondAttribute="centerY" id="Jk8-Bp-41m"/>
+                                    <constraint firstItem="yri-bN-KhL" firstAttribute="centerX" secondItem="bQ4-vK-OnZ" secondAttribute="centerX" id="LdD-X5-vUS"/>
+                                    <constraint firstItem="yri-bN-KhL" firstAttribute="height" secondItem="qc9-r3-acU" secondAttribute="height" id="RV8-Rj-Zil"/>
+                                    <constraint firstItem="ihg-Ok-LTt" firstAttribute="centerX" secondItem="bQ4-vK-OnZ" secondAttribute="centerX" id="S0n-oJ-qFj"/>
+                                    <constraint firstItem="yri-bN-KhL" firstAttribute="top" secondItem="ihg-Ok-LTt" secondAttribute="bottom" constant="10" id="S7P-aA-pdH"/>
+                                    <constraint firstItem="hUT-ek-J4J" firstAttribute="centerY" secondItem="yri-bN-KhL" secondAttribute="centerY" id="TBG-qx-fbC"/>
+                                    <constraint firstItem="g6C-lp-Urq" firstAttribute="width" secondItem="ihg-Ok-LTt" secondAttribute="width" id="VYn-OC-1RX"/>
+                                    <constraint firstItem="CkI-tf-NMY" firstAttribute="centerY" secondItem="9In-nM-ggd" secondAttribute="centerY" id="XXC-5l-sqC"/>
+                                    <constraint firstItem="xwk-oc-Fct" firstAttribute="leading" secondItem="bQ4-vK-OnZ" secondAttribute="leading" constant="10" id="YpM-Pu-AZk"/>
+                                    <constraint firstItem="qc9-r3-acU" firstAttribute="width" secondItem="bQ4-vK-OnZ" secondAttribute="width" multiplier="0.9" id="any-5z-5rU"/>
+                                    <constraint firstItem="hUT-ek-J4J" firstAttribute="height" secondItem="yri-bN-KhL" secondAttribute="height" id="bgx-d7-N9g"/>
+                                    <constraint firstItem="QnJ-yj-3xK" firstAttribute="top" secondItem="hUT-ek-J4J" secondAttribute="bottom" constant="100" id="bo4-CE-JeD"/>
+                                    <constraint firstItem="c46-ac-37y" firstAttribute="leading" secondItem="QnJ-yj-3xK" secondAttribute="leading" id="cUK-Un-8Yw"/>
+                                    <constraint firstItem="hUT-ek-J4J" firstAttribute="width" secondItem="yri-bN-KhL" secondAttribute="width" id="dZ3-Ki-9hy"/>
+                                    <constraint firstItem="c46-ac-37y" firstAttribute="centerY" secondItem="QnJ-yj-3xK" secondAttribute="centerY" id="egk-c9-yrm"/>
+                                    <constraint firstItem="9In-nM-ggd" firstAttribute="top" secondItem="QnJ-yj-3xK" secondAttribute="bottom" constant="40.5" id="fgR-ra-fQ8"/>
+                                    <constraint firstItem="g6C-lp-Urq" firstAttribute="height" secondItem="ihg-Ok-LTt" secondAttribute="height" id="gRl-hL-oRK"/>
+                                    <constraint firstAttribute="trailing" secondItem="xwk-oc-Fct" secondAttribute="trailing" constant="10" id="iCD-nn-L3k"/>
+                                    <constraint firstItem="qc9-r3-acU" firstAttribute="height" secondItem="bQ4-vK-OnZ" secondAttribute="height" multiplier="0.06" id="iMQ-Hv-yFk"/>
+                                    <constraint firstItem="uBz-LS-iza" firstAttribute="trailing" secondItem="QnJ-yj-3xK" secondAttribute="trailing" id="iOR-Qx-O19"/>
+                                    <constraint firstItem="1fl-rI-lBB" firstAttribute="height" secondItem="qc9-r3-acU" secondAttribute="height" id="iU5-ot-HCb"/>
+                                    <constraint firstItem="1fl-rI-lBB" firstAttribute="centerY" secondItem="qc9-r3-acU" secondAttribute="centerY" id="iuc-Qx-VNn"/>
+                                    <constraint firstItem="QnJ-yj-3xK" firstAttribute="centerX" secondItem="bQ4-vK-OnZ" secondAttribute="centerX" id="j0e-cR-tUa"/>
+                                    <constraint firstItem="uBz-LS-iza" firstAttribute="centerY" secondItem="c46-ac-37y" secondAttribute="centerY" id="klB-7p-rfC"/>
+                                    <constraint firstItem="hUT-ek-J4J" firstAttribute="centerX" secondItem="yri-bN-KhL" secondAttribute="centerX" id="lXn-77-LRT"/>
+                                    <constraint firstItem="ihg-Ok-LTt" firstAttribute="height" secondItem="qc9-r3-acU" secondAttribute="height" id="nkX-lE-vFu"/>
+                                    <constraint firstItem="ihg-Ok-LTt" firstAttribute="width" secondItem="qc9-r3-acU" secondAttribute="width" id="qR7-do-eUP"/>
+                                    <constraint firstItem="yri-bN-KhL" firstAttribute="width" secondItem="qc9-r3-acU" secondAttribute="width" id="t50-Lk-KQb"/>
+                                    <constraint firstItem="xMw-b6-6RN" firstAttribute="leading" secondItem="bQ4-vK-OnZ" secondAttribute="leading" constant="15" id="uYm-sK-i2T"/>
+                                    <constraint firstItem="g6C-lp-Urq" firstAttribute="centerX" secondItem="ihg-Ok-LTt" secondAttribute="centerX" id="vlX-J5-3Fo"/>
+                                    <constraint firstItem="1fl-rI-lBB" firstAttribute="width" secondItem="qc9-r3-acU" secondAttribute="width" id="yRh-w8-9UU"/>
+                                    <constraint firstItem="uBz-LS-iza" firstAttribute="leading" secondItem="c46-ac-37y" secondAttribute="trailing" constant="10" id="ywg-jI-2hW"/>
+                                    <constraint firstItem="4I7-ZI-Fnm" firstAttribute="leading" secondItem="9In-nM-ggd" secondAttribute="trailing" constant="10" id="zOH-hb-zeF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pTC-ky-5rQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pTC-ky-5rQ" firstAttribute="bottom" secondItem="9In-nM-ggd" secondAttribute="bottom" constant="10" id="Azk-NY-Vmu"/>
+                            <constraint firstItem="bQ4-vK-OnZ" firstAttribute="centerX" secondItem="pTC-ky-5rQ" secondAttribute="centerX" id="NcL-fU-FLI"/>
+                            <constraint firstItem="9In-nM-ggd" firstAttribute="centerX" secondItem="pTC-ky-5rQ" secondAttribute="centerX" id="Q0d-LC-Pn6"/>
+                            <constraint firstItem="bQ4-vK-OnZ" firstAttribute="height" secondItem="4p0-rf-cBI" secondAttribute="height" id="a53-mP-tVv"/>
+                            <constraint firstItem="xMw-b6-6RN" firstAttribute="top" secondItem="pTC-ky-5rQ" secondAttribute="top" constant="30" id="ngH-A9-bxT"/>
+                            <constraint firstItem="bQ4-vK-OnZ" firstAttribute="width" secondItem="4p0-rf-cBI" secondAttribute="width" id="pct-v2-RzV"/>
+                            <constraint firstItem="bQ4-vK-OnZ" firstAttribute="centerY" secondItem="pTC-ky-5rQ" secondAttribute="centerY" id="rQG-sf-hJK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5g6-9Y-Hel"/>
+                    <connections>
+                        <outlet property="emailSignInView" destination="yri-bN-KhL" id="GA0-yl-X6Z"/>
+                        <outlet property="facebookSignInView" destination="ihg-Ok-LTt" id="aGh-zj-Q4J"/>
+                        <outlet property="kakaoSignInView" destination="qc9-r3-acU" id="NM5-mx-wGY"/>
+                        <outlet property="titleLabel" destination="xwk-oc-Fct" id="TKe-2Y-y2j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8HA-6x-Njf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5231.884057971015" y="1125.6696428571429"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="WLJ-yC-f6f">
+            <objects>
+                <viewController storyboardIdentifier="LogInViewController" id="hSi-Zj-h3L" customClass="LogInViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="taU-RO-4I1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv9-eV-Ork">
+                                <rect key="frame" x="174" y="119" width="66.5" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwU-dt-eeu">
+                                <rect key="frame" x="15" y="74" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="mR8-ql-mRN"/>
+                                    <constraint firstAttribute="height" constant="25" id="qss-ZR-pC1"/>
+                                </constraints>
+                                <state key="normal" image="leftBlack"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="KTe-w8-d58" eventType="touchUpInside" id="nYl-KV-Dnp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BrQ-Gj-hp9">
+                                <rect key="frame" x="20.5" y="223" width="373" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" clipsSubviews="YES" alpha="0.40000000596046448" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-9F-jZh">
+                                <rect key="frame" x="20.5" y="287" width="373" height="45"/>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.61228764820000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="DbF-Ah-hEI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInButtonTapped:" destination="hSi-Zj-h3L" eventType="touchUpInside" id="AsY-OR-gm1"/>
+                                    <action selector="nextButtonTapped:" destination="KTe-w8-d58" eventType="touchUpInside" id="gYt-I0-fbU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HuR-k5-mlO">
+                                <rect key="frame" x="20.5" y="169" width="373" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardAppearance="alert"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Z2c-kf-fFp"/>
+                        <color key="backgroundColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9gD-9F-jZh" firstAttribute="top" secondItem="BrQ-Gj-hp9" secondAttribute="bottom" constant="30" id="Dpf-MU-saG"/>
+                            <constraint firstItem="HuR-k5-mlO" firstAttribute="top" secondItem="uv9-eV-Ork" secondAttribute="bottom" constant="20" id="HjP-6y-qA1"/>
+                            <constraint firstItem="BrQ-Gj-hp9" firstAttribute="width" secondItem="taU-RO-4I1" secondAttribute="width" multiplier="0.9" id="JRT-Rt-IHW"/>
+                            <constraint firstItem="HuR-k5-mlO" firstAttribute="width" secondItem="taU-RO-4I1" secondAttribute="width" multiplier="0.9" id="LE2-Zh-UVk"/>
+                            <constraint firstItem="BrQ-Gj-hp9" firstAttribute="top" secondItem="HuR-k5-mlO" secondAttribute="bottom" constant="20" id="MtL-Au-Ycn"/>
+                            <constraint firstItem="9gD-9F-jZh" firstAttribute="width" secondItem="BrQ-Gj-hp9" secondAttribute="width" id="R5n-Vf-xVc"/>
+                            <constraint firstItem="9gD-9F-jZh" firstAttribute="centerX" secondItem="BrQ-Gj-hp9" secondAttribute="centerX" id="Rw6-Dn-thn"/>
+                            <constraint firstItem="HuR-k5-mlO" firstAttribute="centerX" secondItem="Z2c-kf-fFp" secondAttribute="centerX" id="agw-GJ-Q3E"/>
+                            <constraint firstItem="uv9-eV-Ork" firstAttribute="top" secondItem="xwU-dt-eeu" secondAttribute="bottom" constant="20" id="hEZ-pl-ROm"/>
+                            <constraint firstItem="xwU-dt-eeu" firstAttribute="top" secondItem="Z2c-kf-fFp" secondAttribute="top" constant="30" id="l8n-vC-vdu"/>
+                            <constraint firstItem="uv9-eV-Ork" firstAttribute="centerX" secondItem="Z2c-kf-fFp" secondAttribute="centerX" id="mUq-DE-sjz"/>
+                            <constraint firstItem="BrQ-Gj-hp9" firstAttribute="centerX" secondItem="Z2c-kf-fFp" secondAttribute="centerX" id="njJ-W5-FrI"/>
+                            <constraint firstItem="xwU-dt-eeu" firstAttribute="leading" secondItem="Z2c-kf-fFp" secondAttribute="leading" constant="15" id="scl-qh-nXO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="HuR-k5-mlO" id="vq7-rC-XOF"/>
+                        <outlet property="logInButton" destination="9gD-9F-jZh" id="xPV-Kr-nGe"/>
+                        <outlet property="passwordTextField" destination="BrQ-Gj-hp9" id="uJo-9e-tUz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XkX-O4-wLe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5232" y="1801"/>
+        </scene>
+        <!--Sign In Email View Controller-->
+        <scene sceneID="gqI-8y-B8Q">
+            <objects>
+                <viewController storyboardIdentifier="SignInEmailViewController" id="ZZm-Fw-DHO" customClass="SignInEmailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FtK-6k-ugb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOP-J4-doZ">
+                                <rect key="frame" x="15" y="74" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="hpw-Sj-WsR"/>
+                                    <constraint firstAttribute="width" constant="25" id="otH-yi-cEN"/>
+                                </constraints>
+                                <state key="normal" image="leftBlack"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="ZZm-Fw-DHO" eventType="touchUpInside" id="EtK-rJ-c1h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLd-6X-clF">
+                                <rect key="frame" x="102" y="119" width="210" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IA1-4V-S9n">
+                                <rect key="frame" x="20.5" y="199" width="373" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
+                            </textField>
+                            <button opaque="NO" clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfI-2t-FKs">
+                                <rect key="frame" x="20.5" y="263" width="373" height="45"/>
+                                <color key="backgroundColor" red="0.052872128779999999" green="0.61228764824701321" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="WUZ-R6-KnL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="ZZm-Fw-DHO" eventType="touchUpInside" id="gzg-JW-VoU"/>
+                                    <segue destination="KTe-w8-d58" kind="show" id="ocv-fM-KpU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email will be used when you forget password." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiV-2U-V1y">
+                                <rect key="frame" x="35" y="159" width="344" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDw-ZG-ycA">
+                                <rect key="frame" x="20.5" y="238" width="27" height="15"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BIo-f5-mnu"/>
+                        <color key="backgroundColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eiV-2U-V1y" firstAttribute="top" secondItem="wLd-6X-clF" secondAttribute="bottom" constant="10" id="1VE-3k-M64"/>
+                            <constraint firstItem="iOP-J4-doZ" firstAttribute="top" secondItem="BIo-f5-mnu" secondAttribute="top" constant="30" id="6ar-lV-8gP"/>
+                            <constraint firstItem="LDw-ZG-ycA" firstAttribute="leading" secondItem="IA1-4V-S9n" secondAttribute="leading" id="FiT-bh-Uio"/>
+                            <constraint firstItem="YfI-2t-FKs" firstAttribute="top" secondItem="IA1-4V-S9n" secondAttribute="bottom" constant="30" id="HFc-iG-V85"/>
+                            <constraint firstItem="wLd-6X-clF" firstAttribute="top" secondItem="iOP-J4-doZ" secondAttribute="bottom" constant="20" id="HO3-hl-bsl"/>
+                            <constraint firstItem="IA1-4V-S9n" firstAttribute="width" secondItem="FtK-6k-ugb" secondAttribute="width" multiplier="0.9" id="L9R-bh-X1g"/>
+                            <constraint firstItem="LDw-ZG-ycA" firstAttribute="top" secondItem="IA1-4V-S9n" secondAttribute="bottom" constant="5" id="MPg-fj-UCY"/>
+                            <constraint firstItem="iOP-J4-doZ" firstAttribute="leading" secondItem="BIo-f5-mnu" secondAttribute="leading" constant="15" id="Mqz-SI-MtS"/>
+                            <constraint firstItem="YfI-2t-FKs" firstAttribute="width" secondItem="FtK-6k-ugb" secondAttribute="width" multiplier="0.9" id="Oav-oB-AJj"/>
+                            <constraint firstItem="IA1-4V-S9n" firstAttribute="top" secondItem="wLd-6X-clF" secondAttribute="bottom" constant="50" id="Ypo-IQ-4JQ"/>
+                            <constraint firstItem="wLd-6X-clF" firstAttribute="centerX" secondItem="BIo-f5-mnu" secondAttribute="centerX" id="t5l-Tj-ZnU"/>
+                            <constraint firstItem="IA1-4V-S9n" firstAttribute="centerX" secondItem="BIo-f5-mnu" secondAttribute="centerX" id="uw1-5L-ZDm"/>
+                            <constraint firstItem="eiV-2U-V1y" firstAttribute="centerX" secondItem="wLd-6X-clF" secondAttribute="centerX" id="v2R-FX-uDR"/>
+                            <constraint firstItem="YfI-2t-FKs" firstAttribute="centerX" secondItem="BIo-f5-mnu" secondAttribute="centerX" id="vB5-Ia-dRA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="89q-iz-kOd"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="IA1-4V-S9n" id="JpT-6B-gV3"/>
+                        <outlet property="nextButton" destination="YfI-2t-FKs" id="nmy-JP-3Ai"/>
+                        <outlet property="warningLabel" destination="LDw-ZG-ycA" id="sM7-ZQ-QFh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3B-wb-Znx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7562.3188405797109" y="1125.6696428571429"/>
+        </scene>
+        <!--Sign In Verification View Controller-->
+        <scene sceneID="17A-zd-cme">
+            <objects>
+                <viewController storyboardIdentifier="SignInVerificationViewController" id="yVw-dG-E83" customClass="SignInVerificationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B39-t0-WTb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJl-Vn-S4v">
+                                <rect key="frame" x="123" y="99" width="168" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-N7-lGv">
+                                <rect key="frame" x="15" y="54" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="bQb-LS-ata"/>
+                                    <constraint firstAttribute="height" constant="25" id="ij3-Fl-AWg"/>
+                                </constraints>
+                                <state key="normal" image="leftBlack"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="yVw-dG-E83" eventType="touchUpInside" id="7R4-t0-lGX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input username for using in ThummIt." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gv-Mz-pIw">
+                                <rect key="frame" x="80" y="153" width="254" height="19.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="verification code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iTh-JB-vs4">
+                                <rect key="frame" x="20.5" y="192.5" width="373" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24W-x9-G3d">
+                                <rect key="frame" x="20.5" y="256.5" width="373" height="45"/>
+                                <color key="backgroundColor" red="0.052872128779999999" green="0.61228764824701321" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="lG3-i5-EUh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="yVw-dG-E83" eventType="touchUpInside" id="8wE-nR-gV5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o25-l4-jUo"/>
+                        <color key="backgroundColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iTh-JB-vs4" firstAttribute="top" secondItem="5Gv-Mz-pIw" secondAttribute="bottom" constant="20" id="0qh-kP-Ecx"/>
+                            <constraint firstItem="24W-x9-G3d" firstAttribute="centerX" secondItem="o25-l4-jUo" secondAttribute="centerX" id="CUh-Ii-GF4"/>
+                            <constraint firstItem="5Gv-Mz-pIw" firstAttribute="centerX" secondItem="WJl-Vn-S4v" secondAttribute="centerX" id="CvE-IY-hgx"/>
+                            <constraint firstItem="7b9-N7-lGv" firstAttribute="leading" secondItem="o25-l4-jUo" secondAttribute="leading" constant="15" id="Mhi-HY-51i"/>
+                            <constraint firstItem="5Gv-Mz-pIw" firstAttribute="top" secondItem="WJl-Vn-S4v" secondAttribute="bottom" constant="24" id="cMF-J2-Dgj"/>
+                            <constraint firstItem="WJl-Vn-S4v" firstAttribute="top" secondItem="7b9-N7-lGv" secondAttribute="bottom" constant="20" id="cu0-J2-dHu"/>
+                            <constraint firstItem="24W-x9-G3d" firstAttribute="top" secondItem="iTh-JB-vs4" secondAttribute="bottom" constant="30" id="dfq-7z-iki"/>
+                            <constraint firstItem="iTh-JB-vs4" firstAttribute="width" secondItem="B39-t0-WTb" secondAttribute="width" multiplier="0.9" id="ioG-cm-DbQ"/>
+                            <constraint firstItem="24W-x9-G3d" firstAttribute="width" secondItem="B39-t0-WTb" secondAttribute="width" multiplier="0.9" id="led-wK-Z9d"/>
+                            <constraint firstItem="iTh-JB-vs4" firstAttribute="centerX" secondItem="o25-l4-jUo" secondAttribute="centerX" id="rHf-LR-Mbg"/>
+                            <constraint firstItem="WJl-Vn-S4v" firstAttribute="centerX" secondItem="o25-l4-jUo" secondAttribute="centerX" id="vKl-Lr-wqB"/>
+                            <constraint firstItem="7b9-N7-lGv" firstAttribute="top" secondItem="o25-l4-jUo" secondAttribute="top" constant="10" id="w1d-bb-gaD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zJE-pO-lva"/>
+                    <connections>
+                        <outlet property="explanationLabel" destination="5Gv-Mz-pIw" id="wQl-uA-TVl"/>
+                        <outlet property="nextButton" destination="24W-x9-G3d" id="4GV-cL-gRs"/>
+                        <outlet property="verificationCodeTextField" destination="iTh-JB-vs4" id="77f-f1-J3H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ufo-D9-9HJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8401" y="72"/>
+        </scene>
+        <!--Sign In Name View Controller-->
+        <scene sceneID="073-Ez-RQL">
+            <objects>
+                <viewController storyboardIdentifier="SignInNameViewController" id="KTe-w8-d58" customClass="SignInNameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mMl-2p-XEL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmd-GL-3jN">
+                                <rect key="frame" x="128" y="119" width="158" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naf-4J-hFX">
+                                <rect key="frame" x="15" y="74" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="Cq4-90-juA"/>
+                                    <constraint firstAttribute="height" constant="25" id="gTh-Cb-2we"/>
+                                </constraints>
+                                <state key="normal" image="leftBlack"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="KTe-w8-d58" eventType="touchUpInside" id="nbw-Jh-hn8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input username for using in ThummIt." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrK-QE-Fxi">
+                                <rect key="frame" x="65" y="159" width="284.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7H-oA-934">
+                                <rect key="frame" x="20.5" y="199.5" width="373" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardAppearance="alert"/>
+                            </textField>
+                            <button opaque="NO" clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gh-ec-cD1">
+                                <rect key="frame" x="20.5" y="263.5" width="373" height="45"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.61228764824701321" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="03J-40-6oZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="KTe-w8-d58" eventType="touchUpInside" id="3IU-1t-tTG"/>
+                                    <segue destination="U0w-SV-3To" kind="show" id="X9e-8T-69f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="invalid username : aleady exist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huZ-a2-SE6">
+                                <rect key="frame" x="20.5" y="238.5" width="154" height="15"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BJc-55-M3n"/>
+                        <color key="backgroundColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="huZ-a2-SE6" firstAttribute="leading" secondItem="L7H-oA-934" secondAttribute="leading" id="1mc-Qq-J0f"/>
+                            <constraint firstItem="9Gh-ec-cD1" firstAttribute="width" secondItem="mMl-2p-XEL" secondAttribute="width" multiplier="0.9" id="5dJ-yW-OTw"/>
+                            <constraint firstItem="huZ-a2-SE6" firstAttribute="top" secondItem="L7H-oA-934" secondAttribute="bottom" constant="5" id="IcM-fQ-ame"/>
+                            <constraint firstItem="naf-4J-hFX" firstAttribute="top" secondItem="BJc-55-M3n" secondAttribute="top" constant="30" id="QnH-wf-xlB"/>
+                            <constraint firstItem="L7H-oA-934" firstAttribute="centerX" secondItem="BJc-55-M3n" secondAttribute="centerX" id="R8S-E3-msj"/>
+                            <constraint firstItem="Fmd-GL-3jN" firstAttribute="centerX" secondItem="BJc-55-M3n" secondAttribute="centerX" id="TMP-Px-neO"/>
+                            <constraint firstItem="naf-4J-hFX" firstAttribute="leading" secondItem="BJc-55-M3n" secondAttribute="leading" constant="15" id="dHJ-DK-lg1"/>
+                            <constraint firstItem="Fmd-GL-3jN" firstAttribute="top" secondItem="naf-4J-hFX" secondAttribute="bottom" constant="20" id="hi4-dR-1Ba"/>
+                            <constraint firstItem="L7H-oA-934" firstAttribute="width" secondItem="mMl-2p-XEL" secondAttribute="width" multiplier="0.9" id="jfc-gf-fxy"/>
+                            <constraint firstItem="DrK-QE-Fxi" firstAttribute="centerX" secondItem="Fmd-GL-3jN" secondAttribute="centerX" id="ntr-si-pWq"/>
+                            <constraint firstItem="DrK-QE-Fxi" firstAttribute="top" secondItem="Fmd-GL-3jN" secondAttribute="bottom" constant="10" id="oH9-wf-ya5"/>
+                            <constraint firstItem="9Gh-ec-cD1" firstAttribute="top" secondItem="L7H-oA-934" secondAttribute="bottom" constant="30" id="peW-mZ-32I"/>
+                            <constraint firstItem="L7H-oA-934" firstAttribute="top" secondItem="DrK-QE-Fxi" secondAttribute="bottom" constant="20" id="w3B-oF-10h"/>
+                            <constraint firstItem="9Gh-ec-cD1" firstAttribute="centerX" secondItem="BJc-55-M3n" secondAttribute="centerX" id="yab-yC-HbE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EW9-QR-rPy"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="L7H-oA-934" id="atG-tT-xsv"/>
+                        <outlet property="nextButton" destination="9Gh-ec-cD1" id="h78-2e-nIb"/>
+                        <outlet property="warningLabel" destination="huZ-a2-SE6" id="8uA-PY-B9w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8HO-lv-fL2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8400" y="1126"/>
+        </scene>
+        <!--Sign In Password View Controller-->
+        <scene sceneID="j8O-XW-iJa">
+            <objects>
+                <viewController storyboardIdentifier="SignInPasswordViewController" id="U0w-SV-3To" customClass="SignInPasswordViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ov-Oj-dBN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMx-cM-vIe">
+                                <rect key="frame" x="131" y="119" width="152.5" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYs-cB-KVk">
+                                <rect key="frame" x="15" y="74" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="4B0-bG-TeL"/>
+                                    <constraint firstAttribute="width" constant="25" id="pGU-3j-DJr"/>
+                                </constraints>
+                                <state key="normal" image="leftBlack"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="U0w-SV-3To" eventType="touchUpInside" id="RUL-Ef-75i"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input password for using in ThummIt." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYU-gV-Wd2">
+                                <rect key="frame" x="66" y="159" width="282" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Gy-ud-HrF">
+                                <rect key="frame" x="20.5" y="199.5" width="373" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password must be over 6 under 15, contains english and numbers." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="OAt-in-6iG">
+                                <rect key="frame" x="20.5" y="238.5" width="332" height="15"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGF-xn-Zdm">
+                                <rect key="frame" x="20.5" y="337.5" width="373" height="45"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.61228764824701321" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ij4-eq-Oi3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="U0w-SV-3To" eventType="touchUpInside" id="G0Z-L4-xqy"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="re-enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-m9-hfa">
+                                <rect key="frame" x="20.5" y="273.5" width="373" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="does not match with password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebg-vd-x6a">
+                                <rect key="frame" x="20.5" y="312.5" width="155.5" height="15"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="99g-o9-LvV"/>
+                        <color key="backgroundColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lYs-cB-KVk" firstAttribute="leading" secondItem="99g-o9-LvV" secondAttribute="leading" constant="15" id="06Y-7N-FKO"/>
+                            <constraint firstItem="99g-o9-LvV" firstAttribute="trailing" secondItem="OAt-in-6iG" secondAttribute="trailing" constant="61.5" id="5mg-te-sqq"/>
+                            <constraint firstItem="7Gy-ud-HrF" firstAttribute="top" secondItem="eYU-gV-Wd2" secondAttribute="bottom" constant="20" id="7o9-Uh-mzk"/>
+                            <constraint firstItem="7Gy-ud-HrF" firstAttribute="centerX" secondItem="99g-o9-LvV" secondAttribute="centerX" id="BKC-QT-agp"/>
+                            <constraint firstItem="eYU-gV-Wd2" firstAttribute="top" secondItem="IMx-cM-vIe" secondAttribute="bottom" constant="10" id="HYI-zr-WYM"/>
+                            <constraint firstItem="eyb-m9-hfa" firstAttribute="top" secondItem="OAt-in-6iG" secondAttribute="bottom" constant="20" id="Hlu-kT-5kL"/>
+                            <constraint firstItem="fGF-xn-Zdm" firstAttribute="centerX" secondItem="99g-o9-LvV" secondAttribute="centerX" id="LYj-u7-GH0"/>
+                            <constraint firstItem="ebg-vd-x6a" firstAttribute="leading" secondItem="eyb-m9-hfa" secondAttribute="leading" id="Qv9-tA-DKI"/>
+                            <constraint firstItem="OAt-in-6iG" firstAttribute="top" secondItem="7Gy-ud-HrF" secondAttribute="bottom" constant="5" id="XAm-HA-shK"/>
+                            <constraint firstItem="IMx-cM-vIe" firstAttribute="top" secondItem="lYs-cB-KVk" secondAttribute="bottom" constant="20" id="XwK-pi-nj4"/>
+                            <constraint firstItem="eyb-m9-hfa" firstAttribute="centerX" secondItem="7Gy-ud-HrF" secondAttribute="centerX" id="Y5n-6V-Mwz"/>
+                            <constraint firstItem="fGF-xn-Zdm" firstAttribute="width" secondItem="2ov-Oj-dBN" secondAttribute="width" multiplier="0.9" id="fWC-2r-ydT"/>
+                            <constraint firstItem="lYs-cB-KVk" firstAttribute="top" secondItem="99g-o9-LvV" secondAttribute="top" constant="30" id="gP2-XG-ako"/>
+                            <constraint firstItem="ebg-vd-x6a" firstAttribute="top" secondItem="eyb-m9-hfa" secondAttribute="bottom" constant="5" id="hju-CX-Bgz"/>
+                            <constraint firstItem="IMx-cM-vIe" firstAttribute="centerX" secondItem="99g-o9-LvV" secondAttribute="centerX" id="mxG-2l-g4w"/>
+                            <constraint firstItem="eYU-gV-Wd2" firstAttribute="centerX" secondItem="IMx-cM-vIe" secondAttribute="centerX" id="t2C-By-cTN"/>
+                            <constraint firstItem="OAt-in-6iG" firstAttribute="leading" secondItem="7Gy-ud-HrF" secondAttribute="leading" id="v2l-Qh-nBo"/>
+                            <constraint firstItem="eyb-m9-hfa" firstAttribute="width" secondItem="7Gy-ud-HrF" secondAttribute="width" id="xls-WT-pKx"/>
+                            <constraint firstItem="7Gy-ud-HrF" firstAttribute="width" secondItem="2ov-Oj-dBN" secondAttribute="width" multiplier="0.9" id="yLq-9R-qUI"/>
+                            <constraint firstItem="fGF-xn-Zdm" firstAttribute="top" secondItem="eyb-m9-hfa" secondAttribute="bottom" constant="30" id="zc5-sd-aJq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pz8-V1-0LA"/>
+                    <connections>
+                        <outlet property="nextButton" destination="fGF-xn-Zdm" id="XTO-Ti-lDZ"/>
+                        <outlet property="passwordTextField" destination="7Gy-ud-HrF" id="apj-OG-ba1"/>
+                        <outlet property="passwordWarningLabel" destination="OAt-in-6iG" id="EKX-yb-jqj"/>
+                        <outlet property="reEnterTextField" destination="eyb-m9-hfa" id="3by-Je-t0A"/>
+                        <outlet property="reenterWarningLabel" destination="ebg-vd-x6a" id="NGl-L3-Pq0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Bv-dD-oKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9206" y="1126"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ThZ-HU-p3S">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JYK-dy-UGp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dvk-h9-Vfv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wuO-iB-0gp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZZm-Fw-DHO" kind="relationship" relationship="rootViewController" id="oiv-Er-GDL"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="6650.7246376811599" y="1125.6696428571429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h3b-jF-zzM">
+            <objects>
+                <navigationController storyboardIdentifier="signInNavVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gvm-lN-yZW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KeU-t7-Ina">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IZe-UG-0Zf" kind="relationship" relationship="rootViewController" id="fo7-Ya-IOH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eki-HO-AmW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4321.739130434783" y="1125.6696428571429"/>
+        </scene>
     </scenes>
     <resources>
         <image name="accountImage" width="66.666664123535156" height="66.666664123535156"/>
@@ -550,6 +1277,7 @@ with the design you want.</string>
         <image name="googleLogo" width="341.33334350585938" height="341.33334350585938"/>
         <image name="homeTabBarImage" width="26.666666030883789" height="26.666666030883789"/>
         <image name="kakaoLogo" width="100" height="100"/>
+        <image name="leftBlack" width="208" height="208"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -558,6 +1286,9 @@ with the design you want.</string>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

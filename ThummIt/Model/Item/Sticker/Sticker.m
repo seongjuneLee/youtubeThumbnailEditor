@@ -15,7 +15,7 @@
         
         // 템플릿에서만 필요
         self.center = CGPointMake(0.5, 0.5);
-        self.scale = 1;
+        self.scale = 0.5;
         self.rotationDegree = 0;
         
     }
@@ -75,7 +75,11 @@
     self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);
     self.baseView.backgroundColor = UIColor.clearColor;
     
-    self.baseView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(self.scale, self.scale), CGAffineTransformMakeRotation(self.rotationDegree));
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
+    float width = UIScreen.mainScreen.bounds.size.width;
+    float scale = width/self.baseView.frameWidth;
+    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
+    self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
     self.baseView.center = self.center;
 }
 
@@ -86,7 +90,7 @@
     self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
     self.backgroundImageView.backgroundColor = UIColor.clearColor;
     self.backgroundImageView.clipsToBounds = true;
-    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     UIImage *image = [UIImage imageNamed:self.backgroundImageName];
     
     if(self.tintColor){

@@ -167,6 +167,7 @@
         if ([item isKindOfClass:Text.class]){
             Text *text = (Text *)item;
             text.textView.delegate = self;
+            text.isTypedByUser = true;
         }
         if (item.isFixedPhotoFrame) {
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
