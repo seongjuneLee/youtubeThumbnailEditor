@@ -16,11 +16,9 @@
         self.name = NSLocalizedString(@"돌잔치 브이로그",nil);
         self.fontName = @"UhBeeDoolDoolBold";
         self.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
-        self.fontSize = TEXT_FONT_SIZE + 10;
         self.bgImageName = @"brushBox";
         self.bgWidthPadding = 10;
         self.bgHeightPadding = 15;
-       
 
     }
     return self;

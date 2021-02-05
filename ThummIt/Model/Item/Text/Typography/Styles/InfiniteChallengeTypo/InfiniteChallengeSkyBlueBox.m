@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"저한테 왜 그러세요..?",nil);
         self.fontName = @"NanumBarunGothicOTFBold";
         self.textColor = [UIColor colorWithRed:42/255.0 green:54/255.0 blue:158/255.0 alpha:1];
-        self.fontSize = TEXT_FONT_SIZE;
         self.bgImageName = @"infiniteChallengeSkyBlueBox";
         self.bgWidthPadding = 60;
         self.bgHeightPadding = 40;

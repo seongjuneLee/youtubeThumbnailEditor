@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"Vlog ",nil);
         self.fontName = @"OTRecipekoreaM";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
-        self.fontSize = 40;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.shadowOffset = CGPointMake(0, 0);

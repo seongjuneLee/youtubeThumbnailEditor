@@ -15,7 +15,6 @@
         
         self.name = NSLocalizedString(@"애드립 모음집",nil);
         self.fontName = @"BMHANNA11yrsoldOTF";
-        self.fontSize = 50;
         self.textFromColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
         self.textToColor = [UIColor colorWithRed:249/255.0 green:203/255.0 blue:50/255.0 alpha:1.0];
         NSDictionary *attr = @{NSFontAttributeName: [UIFont fontWithName:self.fontName size:self.fontSize]};

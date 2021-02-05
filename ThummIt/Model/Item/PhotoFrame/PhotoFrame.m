@@ -16,7 +16,7 @@
     if(self){
         self.baseView = [[UIView alloc] init];
         self.baseView.clipsToBounds = true;
-        self.baseView.backgroundColor = UIColor.whiteColor;
+        self.baseView.backgroundColor = UIColor.lightGrayColor;
 
         // 템플릿에서만 필요
         self.center = CGPointMake(0.5, 0.5);

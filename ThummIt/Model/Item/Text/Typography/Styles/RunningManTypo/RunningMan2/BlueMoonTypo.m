@@ -15,7 +15,6 @@
         
         self.name = NSLocalizedString(@"SBC\nWOW",nil);
         self.fontName = @"NanumSquareOTFEB";
-        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor whiteColor];
         self.bgImageName = @"blueMoon";
         

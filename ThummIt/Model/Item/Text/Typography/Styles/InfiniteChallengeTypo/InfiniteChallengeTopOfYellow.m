@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"??",nil);
         self.fontName = @"NanumGothicOTFExtraBold";
         self.textColor = [UIColor colorWithRed:184/255.0 green:33/255.0 blue:23/255.0 alpha:1.0];
-        self.fontSize = TEXT_FONT_SIZE + 20;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 5;

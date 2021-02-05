@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"방탈출",nil);
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
-        self.fontSize = TEXT_FONT_SIZE + 20;
                 
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 10;

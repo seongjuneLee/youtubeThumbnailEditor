@@ -14,7 +14,6 @@
     if (self) {
         self.name = NSLocalizedString(@"가관이네..",nil);
         self.fontName = @"NotoSansKannada-Bold";
-        self.fontSize = 35;
         self.textColor = [UIColor colorWithRed:253/255.0f green:242/255.0f blue:95/255.0 alpha:1 ];
        
         

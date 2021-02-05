@@ -15,11 +15,11 @@
         
         self.name = NSLocalizedString(@"랜덤게임.zip",nil);
         self.fontName = @"BMDoHyeon-OTF";
-        self.fontSize = TEXT_FONT_SIZE;
         self.textFromColor = [UIColor colorWithRed:248/255.0 green:233/255.0 blue:104/255.0 alpha:1.0];
         self.textToColor = [UIColor colorWithRed:233/255.0 green:174/255.0 blue:83/255.0 alpha:1.0];
         NSDictionary *attr = @{NSFontAttributeName: [UIFont fontWithName:self.fontName size:self.fontSize]};
         CGSize stringBoundingBox = [@"랜덤게임.zip" sizeWithAttributes:attr];
+        
         self.textGradientHeight = stringBoundingBox.height + 15;
 
         self.textColor = [UIColor diagonalGradientFromColor:self.textFromColor toColor:self.textToColor withHeight:self.textGradientHeight];
