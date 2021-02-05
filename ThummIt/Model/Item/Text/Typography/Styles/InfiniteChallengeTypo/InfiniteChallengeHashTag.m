@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"#예능레전드",nil);
         self.fontName = @"NanumBarunGothicOTF";
         self.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
-        self.fontSize = TEXT_FONT_SIZE;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 10;

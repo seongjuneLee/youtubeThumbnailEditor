@@ -15,7 +15,6 @@
         
         self.name = NSLocalizedString(@"Rule",nil); //italic
         self.fontName = @"NanumSquareOTFEB";
-        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor colorWithRed:249/255.0 green:253/255.0 blue:92/255.0 alpha:1.0];
         self.bgImageName = @"Rule";
         self.bgWidthPadding = 7;

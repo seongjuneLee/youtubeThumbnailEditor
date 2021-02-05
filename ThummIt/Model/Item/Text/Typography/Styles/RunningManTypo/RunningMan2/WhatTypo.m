@@ -15,7 +15,6 @@
         
         self.name = NSLocalizedString(@"뭐?",nil); //italic
         self.fontName = @"NanumGothicOTFBold";
-        self.fontSize = TEXT_FONT_SIZE;
         self.textColor = [UIColor colorWithRed:244/255.0 green:185/255.0 blue:46/255.0 alpha:1.0];
         self.bgImageName = @"What";
         self.bgWidthPadding = 5;

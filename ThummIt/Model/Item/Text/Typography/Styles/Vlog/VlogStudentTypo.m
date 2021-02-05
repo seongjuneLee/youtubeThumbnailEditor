@@ -13,10 +13,9 @@
 {
     self = [super init];
     if (self) {
-        self.name = NSLocalizedString(@"새내기의",nil);
+        self.name = NSLocalizedString(@"복학생",nil);
         self.fontName = @"NanumSquareOTFEB";
         self.textColor = [UIColor colorWithRed:(224/255.0) green:(230/255.0) blue:(190/255.0) alpha:1];
-        self.fontSize = 30;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:1];

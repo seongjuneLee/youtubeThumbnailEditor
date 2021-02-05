@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"맘 Vlog",nil); //italic
         self.fontName = @"BMDoHyeon-OTF";
         self.textColor = [UIColor colorWithRed:246/255.0 green:101/255.0 blue:113/255.0 alpha:1];
-        self.fontSize = TEXT_FONT_SIZE;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderColor = UIColor.blackColor;

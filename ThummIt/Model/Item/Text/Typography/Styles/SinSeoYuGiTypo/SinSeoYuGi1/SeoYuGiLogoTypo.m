@@ -13,9 +13,8 @@
     self = [super init];
     if (self) {
         
-        self.name = NSLocalizedString(@"서유기",nil);
+        self.name = NSLocalizedString(@"서유기",nil); //italic
         self.fontName = @"a2570";
-        self.fontSize = 35;
         self.textColor = [UIColor colorWithRed:248/255.0f green:74/255.0f blue:30/255.0 alpha:1 ];
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
@@ -23,7 +22,6 @@
         borderAtt.borderWidth = 10;
         self.bgTextAttributes = @[borderAtt];
        
-        //기울이기
     }
     return self;
 }

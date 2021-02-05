@@ -16,7 +16,6 @@
         self.name = NSLocalizedString(@"NormalTypo",nil);
         self.fontName = @"HelveticaNeue-Bold";
         self.textColor = [UIColor whiteColor];
-        self.fontSize = TEXT_FONT_SIZE;
         self.cannotChangeColor = true;
     }
     return self;

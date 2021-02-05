@@ -14,10 +14,8 @@
     if (self) {
         
         self.name = NSLocalizedString(@"하고 싶은말 있는데\n해도 되나요?",nil); // italic
-
         self.fontName = @"BMYEONSUNG-OTF";
-        self.fontSize = TEXT_FONT_SIZE;
-        self.textColor = [UIColor whiteColor];
+        self.textColor = UIColor.whiteColor;
         self.bgImageName = @"talkBalloon";
         self.bgHeightPadding = 18;
         self.bgWidthPadding = 30;
