@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E3DF43CE000686E4455BE28 /* Pods_ThummItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E646DA7CD8F58DBF2FB52D4 /* Pods_ThummItTests.framework */; };
+		3E3DF43CE000686E4455BE28 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190EB2584B163000DD9C0 /* HomeViewController.m */; };
 		6E1190EF2584B163000DD9C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190ED2584B163000DD9C0 /* Main.storyboard */; };
 		6E1190F12584B164000DD9C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190F02584B164000DD9C0 /* Assets.xcassets */; };
@@ -310,7 +310,6 @@
 		6EF0C8D125CBDC2700BE7573 /* TargetSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8D025CBDC2700BE7573 /* TargetSticker.m */; };
 		6EF0C8D625CBDC3A00BE7573 /* TearsSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8D525CBDC3A00BE7573 /* TearsSticker.m */; };
 		6EF0C8E925CBE0B700BE7573 /* TriangleSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C8E825CBE0B700BE7573 /* TriangleSticker1.m */; };
-
 		6EF0C91625CD21C600BE7573 /* BinggraeⅡ-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0C91125CD207D00BE7573 /* BinggraeⅡ-Bold.otf */; };
 		6EF0C91925CD21CE00BE7573 /* NEXON Lv2 Gothic OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0C91025CD207C00BE7573 /* NEXON Lv2 Gothic OTF.otf */; };
 		6EF0C92525CD232900BE7573 /* DinggoSmileTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C92425CD232900BE7573 /* DinggoSmileTypo.m */; };
@@ -323,8 +322,6 @@
 		6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */; };
 		6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95925CD513000BE7573 /* DinggoMurder.m */; };
 		6EF0C95F25CD528C00BE7573 /* DinggoKpopTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95E25CD528C00BE7573 /* DinggoKpopTypo.m */; };
-		86BE8E8DCEAF4561F7A9E722 /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B689306FD489C375607E803F /* Pods_ThummIt.framework */; };
-
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
 		B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */; };
 		B11E0D5425C4F6070050D9F0 /* SixToFourVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5325C4F6070050D9F0 /* SixToFourVlogTemplate.m */; };
@@ -578,6 +575,7 @@
 		6E80772425C92EDC0033FF21 /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.otf; sourceTree = "<group>"; };
 		6E80772825C960D00033FF21 /* WorkManYoutube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManYoutube.h; sourceTree = "<group>"; };
 		6E80772925C960D00033FF21 /* WorkManYoutube.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManYoutube.m; sourceTree = "<group>"; };
+		6E88302C25CD73BC0025B8A5 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		6E8E7997258F82E80008C5FF /* Migrator200406.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Migrator200406.swift; sourceTree = "<group>"; };
 		6E8E7998258F82E80008C5FF /* MigratorJul.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigratorJul.swift; sourceTree = "<group>"; };
 		6E8E79A5258F86A00008C5FF /* NSString+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
@@ -879,7 +877,6 @@
 		6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionController.m; sourceTree = "<group>"; };
 		6EF0C6F725CA328300BE7573 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6EF0C6F925CA337100BE7573 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		6EF0C6FA25CA337100BE7573 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		6EF0C6FB25CA337200BE7573 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6EF0C7B325CBAA1A00BE7573 /* ArrowSticker2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrowSticker2.h; sourceTree = "<group>"; };
 		6EF0C7B425CBAA1A00BE7573 /* ArrowSticker2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrowSticker2.m; sourceTree = "<group>"; };
@@ -1017,8 +1014,6 @@
 		6EF0C95925CD513000BE7573 /* DinggoMurder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoMurder.m; sourceTree = "<group>"; };
 		6EF0C95D25CD528C00BE7573 /* DinggoKpopTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoKpopTypo.h; sourceTree = "<group>"; };
 		6EF0C95E25CD528C00BE7573 /* DinggoKpopTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoKpopTypo.m; sourceTree = "<group>"; };
-		7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.release.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.release.xcconfig"; sourceTree = "<group>"; };
 		B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogBarunGothicTypo.h; sourceTree = "<group>"; };
 		B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogBarunGothicTypo.m; sourceTree = "<group>"; };
 		B11E0D4D25C4EDBD0050D9F0 /* GrwmVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrwmVlogTemplate.h; sourceTree = "<group>"; };
@@ -1159,7 +1154,7 @@
 				6ED13A8125B9A92C00012144 /* FBSDKLoginKit.framework in Frameworks */,
 				6ED13A8325B9A92C00012144 /* FBSDKCoreKit.framework in Frameworks */,
 				6ED13A8225B9A92C00012144 /* FBSDKShareKit.framework in Frameworks */,
-				3E3DF43CE000686E4455BE28 /* Pods_ThummItTests.framework in Frameworks */,
+				3E3DF43CE000686E4455BE28 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1951,7 +1946,6 @@
 				6E9BEA3F258F099300F7F539 /* CoreData.framework */,
 				6EA70909105CF786CC44E691 /* Pods_ThummIt.framework */,
 				BB1B7F0FA57312CBE3447BC7 /* Pods_ThummIt_ThummItUITests.framework */,
-				7E646DA7CD8F58DBF2FB52D4 /* Pods_ThummItTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2775,7 +2769,6 @@
 				0A49A04B80956AB489C19EA8 /* Pods-ThummIt.debug.xcconfig */,
 				6848F671EA96C0057F163426 /* Pods-ThummIt.release.xcconfig */,
 				48179A1DED6ABC517C58F9F4 /* Pods-ThummIt-ThummItUITests.debug.xcconfig */,
-				91BBD74E08615FB9095F71B1 /* Pods-ThummIt-ThummItUITests.release.xcconfig */,
 				574966F2CC7EDC18C77FCE53 /* Pods-ThummItTests.debug.xcconfig */,
 				2D79B06C60C4BDCBBE135243 /* Pods-ThummItTests.release.xcconfig */,
 			);
@@ -3480,7 +3473,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6E1190EE2584B163000DD9C0 /* Base */,
-				6EF0C6FA25CA337100BE7573 /* ko */,
+				6E88302C25CD73BC0025B8A5 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -3868,7 +3861,6 @@
 		};
 		6E1191182584B165000DD9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91BBD74E08615FB9095F71B1 /* Pods-ThummIt-ThummItUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
