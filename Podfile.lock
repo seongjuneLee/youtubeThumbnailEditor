@@ -6,16 +6,6 @@ PODS:
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
   - Bolts/Tasks (1.9.1)
-  - FBSDKCoreKit (9.0.0):
-    - FBSDKCoreKit/Basics (= 9.0.0)
-    - FBSDKCoreKit/Core (= 9.0.0)
-  - FBSDKCoreKit/Basics (9.0.0)
-  - FBSDKCoreKit/Core (9.0.0):
-    - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (9.0.0):
-    - FBSDKLoginKit/Login (= 9.0.0)
-  - FBSDKLoginKit/Login (9.0.0):
-    - FBSDKCoreKit (~> 9.0.0)
   - Firebase/Analytics (6.34.0):
     - Firebase/Core
   - Firebase/Auth (6.34.0):
@@ -88,41 +78,41 @@ PODS:
   - GTMAppAuth (1.1.0):
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher (~> 1.4)
-  - GTMSessionFetcher (1.5.0):
-    - GTMSessionFetcher/Full (= 1.5.0)
-  - GTMSessionFetcher/Core (1.5.0)
-  - GTMSessionFetcher/Full (1.5.0):
-    - GTMSessionFetcher/Core (= 1.5.0)
-  - KakaoSDK (2.2.0):
-    - KakaoSDKAuth (= 2.2.0)
-    - KakaoSDKCommon (= 2.2.0)
-    - KakaoSDKLink (= 2.2.0)
-    - KakaoSDKNavi (= 2.2.0)
-    - KakaoSDKStory (= 2.2.0)
-    - KakaoSDKTalk (= 2.2.0)
-    - KakaoSDKTemplate (= 2.2.0)
-    - KakaoSDKUser (= 2.2.0)
-  - KakaoSDKAuth (2.2.0):
-    - KakaoSDKCommon (= 2.2.0)
-  - KakaoSDKCommon (2.2.0):
+  - GTMSessionFetcher (1.4.0):
+    - GTMSessionFetcher/Full (= 1.4.0)
+  - GTMSessionFetcher/Core (1.4.0)
+  - GTMSessionFetcher/Full (1.4.0):
+    - GTMSessionFetcher/Core (= 1.4.0)
+  - KakaoSDK (2.3.0):
+    - KakaoSDKAuth (= 2.3.0)
+    - KakaoSDKCommon (= 2.3.0)
+    - KakaoSDKLink (= 2.3.0)
+    - KakaoSDKNavi (= 2.3.0)
+    - KakaoSDKStory (= 2.3.0)
+    - KakaoSDKTalk (= 2.3.0)
+    - KakaoSDKTemplate (= 2.3.0)
+    - KakaoSDKUser (= 2.3.0)
+  - KakaoSDKAuth (2.3.0):
+    - KakaoSDKCommon (= 2.3.0)
+  - KakaoSDKCommon (2.3.0):
     - Alamofire (~> 5.1)
-  - KakaoSDKLink (2.2.0):
-    - KakaoSDKCommon (= 2.2.0)
-    - KakaoSDKTemplate (= 2.2.0)
-  - KakaoSDKNavi (2.2.0):
-    - KakaoSDKCommon (= 2.2.0)
-  - KakaoSDKStory (2.2.0):
-    - KakaoSDKAuth (= 2.2.0)
-    - KakaoSDKCommon (= 2.2.0)
-  - KakaoSDKTalk (2.2.0):
-    - KakaoSDKAuth (= 2.2.0)
-    - KakaoSDKCommon (= 2.2.0)
-    - KakaoSDKTemplate (= 2.2.0)
-  - KakaoSDKTemplate (2.2.0):
-    - KakaoSDKCommon (= 2.2.0)
-  - KakaoSDKUser (2.2.0):
-    - KakaoSDKAuth (= 2.2.0)
-    - KakaoSDKCommon (= 2.2.0)
+  - KakaoSDKLink (2.3.0):
+    - KakaoSDKCommon (= 2.3.0)
+    - KakaoSDKTemplate (= 2.3.0)
+  - KakaoSDKNavi (2.3.0):
+    - KakaoSDKCommon (= 2.3.0)
+  - KakaoSDKStory (2.3.0):
+    - KakaoSDKAuth (= 2.3.0)
+    - KakaoSDKCommon (= 2.3.0)
+  - KakaoSDKTalk (2.3.0):
+    - KakaoSDKAuth (= 2.3.0)
+    - KakaoSDKCommon (= 2.3.0)
+    - KakaoSDKTemplate (= 2.3.0)
+  - KakaoSDKTemplate (2.3.0):
+    - KakaoSDKCommon (= 2.3.0)
+  - KakaoSDKUser (2.3.0):
+    - KakaoSDKAuth (= 2.3.0)
+    - KakaoSDKCommon (= 2.3.0)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -136,7 +126,6 @@ PODS:
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - FBSDKLoginKit
   - Firebase/Analytics
   - Firebase/Auth
   - GoogleSignIn
@@ -149,8 +138,6 @@ SPEC REPOS:
     - Alamofire
     - AppAuth
     - Bolts
-    - FBSDKCoreKit
-    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -181,8 +168,6 @@ SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
-  FBSDKCoreKit: ac6cc500b8e104bb9a4dd20b1527b5d199123c2e
-  FBSDKLoginKit: e9b6542fdee322333502ab497f628b011dce7d78
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
   FirebaseAuth: c92d49ada7948d1a23466e3db17bc4c2039dddc3
@@ -194,21 +179,21 @@ SPEC CHECKSUMS:
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
-  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
-  KakaoSDK: 765114e9655a12d751d83c544161eca02a3ed481
-  KakaoSDKAuth: a6fa63eb1a6a4e03de55d87da597a2976aad9cbf
-  KakaoSDKCommon: 90adb38b946ff42f26d70aadb67e679f79fe139c
-  KakaoSDKLink: 9aaf7e8e77a473c09c0b0630a1b899b1eee9cdd8
-  KakaoSDKNavi: 1b337b35afe748472c9f85274cc5e31614ee665d
-  KakaoSDKStory: 35ff1797d622ba7a90cfe6fb3404986eaae84eda
-  KakaoSDKTalk: cf4ce154335c4decfcba71cb68cd84761d691bda
-  KakaoSDKTemplate: ddf20dd6bb4e0dd08ffc86e94b0df4b7f2ae2b20
-  KakaoSDKUser: b5ddfcdaf4adce40f172cafc9d4864d1a8b4f938
+  GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  KakaoSDK: 329343ad9cf335a133cf7365b550190a3d0ae0ae
+  KakaoSDKAuth: 9fc76923cb19492c47eb1cf8380e54f475caa4fe
+  KakaoSDKCommon: 402f06f364ff3a6d6c3a2a745b41095b2242a535
+  KakaoSDKLink: 050ba28a7a431e3bad5ff77ea65d2db6238853f2
+  KakaoSDKNavi: adb36c8e5ef7cd9d23ef90a45674f3322b07acc0
+  KakaoSDKStory: 53f5daa883f8d15c9207b8efe9684a42765853bd
+  KakaoSDKTalk: 4a7de85c47ad249ab3b1de1bb9133550b8356563
+  KakaoSDKTemplate: 0aa0612695fb38efb07a63ad3a0a97818e1d4a45
+  KakaoSDKUser: 8dd2336b805e355b34faf5db27132c8e42f53748
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   Parse: 0fb5c7cc7ee5900f2434e24607d0496155b8d04f
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 110c2267dfa1b366f7e473637c6455a58157c8cd
+PODFILE CHECKSUM: 6744201c3cf5c948d9f3b3f8ea2c887e8350e237
 
 COCOAPODS: 1.10.1

@@ -7,6 +7,7 @@
 
 #import "ProjectViewController.h"
 #import "UIImage+Additions.h"
+@import Parse;
 @interface ProjectViewController ()
 
 @end

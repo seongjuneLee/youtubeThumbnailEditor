@@ -11,6 +11,7 @@
 #import "SaveManager.h"
 #import "ProjectTableViewCell.h"
 #import <Toast/Toast.h>
+@import Parse;
 @implementation ProjectTableController
 
 -(instancetype)init{ 

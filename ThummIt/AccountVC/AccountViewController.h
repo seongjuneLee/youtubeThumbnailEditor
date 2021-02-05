@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AccountTableController.h"
-@import GoogleSignIn;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AccountViewController : UIViewController
@@ -18,29 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *header;
 @property (weak, nonatomic) IBOutlet UIImageView *accountIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *accountNameLabel;
-
-// sign In View
-@property (weak, nonatomic) IBOutlet UIView *signInView;
-
-@property (weak, nonatomic) IBOutlet UIView *kakaoSignInView;
-@property (weak, nonatomic) IBOutlet UIView *facebookSignInView;
-@property (weak, nonatomic) IBOutlet UIView *googleSignInView;
-@property (weak, nonatomic) IBOutlet UIView *appleSignInView;
-@property (weak, nonatomic) IBOutlet UIView *emailSignInView;
-
-@property (weak, nonatomic) IBOutlet UIButton *kakaoSignInButton;
-@property (weak, nonatomic) IBOutlet UIButton *facebookSignInButton;
-@property (weak, nonatomic) IBOutlet GIDSignInButton *googleSignInButton;
-
-@property (weak, nonatomic) IBOutlet UIButton *appleSignInButton;
-@property (weak, nonatomic) IBOutlet UIButton *emailSignInButton;
-
-@property (weak, nonatomic) IBOutlet UILabel *privacyPolicyLabel;
-
-
-- (IBAction)kakaoSignInButton:(id)sender;
-- (IBAction)googleSignInButtonTapped:(id)sender;
-- (IBAction)facebookSignInButton:(id)sender;
 
 @end
 

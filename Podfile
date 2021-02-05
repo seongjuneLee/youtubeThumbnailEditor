@@ -12,8 +12,6 @@ target 'ThummIt' do
 
   pod 'Firebase/Analytics'
   
-  pod 'FBSDKLoginKit'
-  
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   

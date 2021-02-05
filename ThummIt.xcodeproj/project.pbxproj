@@ -3,16 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E3DF43CE000686E4455BE28 /* Pods_ThummItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E646DA7CD8F58DBF2FB52D4 /* Pods_ThummItTests.framework */; };
 		6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190EB2584B163000DD9C0 /* HomeViewController.m */; };
 		6E1190EF2584B163000DD9C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190ED2584B163000DD9C0 /* Main.storyboard */; };
 		6E1190F12584B164000DD9C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190F02584B164000DD9C0 /* Assets.xcassets */; };
 		6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190F22584B164000DD9C0 /* LaunchScreen.storyboard */; };
 		6E1191012584B165000DD9C0 /* ThummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1191002584B165000DD9C0 /* ThummitTests.m */; };
 		6E11910C2584B165000DD9C0 /* ThummitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11910B2584B165000DD9C0 /* ThummitUITests.m */; };
+		6E1DBCF825CBE240004C0416 /* SignInEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */; };
+		6E1DBCFD25CBE2B5004C0416 /* SignInUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBCFC25CBE2B5004C0416 /* SignInUsernameViewController.m */; };
+		6E1DBD0225CBE2C5004C0416 /* SignInNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */; };
+		6E1DBD0725CBE2D4004C0416 /* SignInPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */; };
+		6E1DBD1725CD1A72004C0416 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD1625CD1A72004C0416 /* LogInViewController.m */; };
 		6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC6625AD78B700BBA540 /* ColorManager.m */; };
 		6E20BC7125AD938000BBA540 /* BGColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC7025AD938000BBA540 /* BGColorViewController.m */; };
 		6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8625AD944B00BBA540 /* BGColorCollectionViewCell.m */; };
@@ -46,6 +52,8 @@
 		6E28452A25C35870008B7A23 /* VlogWebWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28450D25C35870008B7A23 /* VlogWebWrite.m */; };
 		6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28451125C35870008B7A23 /* VlogHashTagTypo.m */; };
 		6E28452C25C35870008B7A23 /* VlogStudy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28451225C35870008B7A23 /* VlogStudy.m */; };
+		6E2845B125C5FCC4008B7A23 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845B025C5FCC4008B7A23 /* UserManager.m */; };
+		6E2845CB25C98990008B7A23 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */; };
 		6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17EA25888FFA008578BA /* CircleTemplate.m */; };
 		6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17F42588A518008578BA /* UIView+Additions.m */; };
 		6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A18602589F7BD008578BA /* EditingViewController+Buttons.m */; };
@@ -138,13 +146,13 @@
 		6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA60258F26B600F7F539 /* CoreDataStack.swift */; };
 		6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */; };
 		6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */; };
+		6EA7A32725CB1435001041A1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7A32625CB1435001041A1 /* SignInViewController.swift */; };
+		6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA7A35225CB1975001041A1 /* FacebookLogin */; };
 		6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */; };
 		6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */; };
 		6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8A25B767C700C42187 /* AccountTableController.m */; };
 		6EAD5C9025B767C700C42187 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8B25B767C700C42187 /* AccountViewController.m */; };
-		6EAD5C9E25B767E200C42187 /* CustomerFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C9B25B767E200C42187 /* CustomerFeedback.m */; };
 		6EAD5C9F25B767E200C42187 /* CustomerFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C9C25B767E200C42187 /* CustomerFeedbackViewController.m */; };
-		6EAD5CA025B767E200C42187 /* CustomerFeedbackVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C9D25B767E200C42187 /* CustomerFeedbackVCViewController.m */; };
 		6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */; };
 		6EAFD5B625B876D400B193AB /* KOTRA_BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */; };
 		6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */; };
@@ -371,6 +379,9 @@
 		B1F8C6D825C4CC23002DDAF8 /* VlogMakingFilmTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6D725C4CC23002DDAF8 /* VlogMakingFilmTypo.m */; };
 		B1F8C6DD25C4CD8B002DDAF8 /* VlogVideoSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6DC25C4CD8B002DDAF8 /* VlogVideoSticker.m */; };
 		B1F8C6E225C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6E125C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m */; };
+		B1F8C6B225C49C82002DDAF8 /* SDMiSaeng.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1F8C6B125C49C82002DDAF8 /* SDMiSaeng.ttf */; };
+		C3AA5AEB200F3BCD30FC7A2B /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA70909105CF786CC44E691 /* Pods_ThummIt.framework */; };
+		EB2B94A808AA44862A06F2C6 /* Pods_ThummIt_ThummItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1B7F0FA57312CBE3447BC7 /* Pods_ThummIt_ThummItUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -404,10 +415,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B5232F300C748E7F6E41853 /* Pods-ThummIt-ThummItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.release.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.release.xcconfig"; sourceTree = "<group>"; };
-		2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.release.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.release.xcconfig"; sourceTree = "<group>"; };
-		2E4BF45F5F93A7594C289CF9 /* Pods-ThummIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.debug.xcconfig"; sourceTree = "<group>"; };
-		3B1E7C592EC1CAD320FCA65C /* Pods-ThummItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.debug.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0A49A04B80956AB489C19EA8 /* Pods-ThummIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.debug.xcconfig"; sourceTree = "<group>"; };
+		2D79B06C60C4BDCBBE135243 /* Pods-ThummItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.release.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.release.xcconfig"; sourceTree = "<group>"; };
+		48179A1DED6ABC517C58F9F4 /* Pods-ThummIt-ThummItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		574966F2CC7EDC18C77FCE53 /* Pods-ThummItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.debug.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6848F671EA96C0057F163426 /* Pods-ThummIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.release.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.release.xcconfig"; sourceTree = "<group>"; };
 		6E1190E12584B163000DD9C0 /* ThummIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThummIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1190EA2584B163000DD9C0 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		6E1190EB2584B163000DD9C0 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -421,6 +433,16 @@
 		6E1191072584B165000DD9C0 /* ThummItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThummItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E11910B2584B165000DD9C0 /* ThummitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThummitUITests.m; sourceTree = "<group>"; };
 		6E11910D2584B165000DD9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E1DBCF625CBE240004C0416 /* SignInEmailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInEmailViewController.h; sourceTree = "<group>"; };
+		6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInEmailViewController.m; sourceTree = "<group>"; };
+		6E1DBCFB25CBE2B5004C0416 /* SignInUsernameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInUsernameViewController.h; sourceTree = "<group>"; };
+		6E1DBCFC25CBE2B5004C0416 /* SignInUsernameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInUsernameViewController.m; sourceTree = "<group>"; };
+		6E1DBD0025CBE2C5004C0416 /* SignInNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInNameViewController.h; sourceTree = "<group>"; };
+		6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInNameViewController.m; sourceTree = "<group>"; };
+		6E1DBD0525CBE2D4004C0416 /* SignInPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInPasswordViewController.h; sourceTree = "<group>"; };
+		6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInPasswordViewController.m; sourceTree = "<group>"; };
+		6E1DBD1525CD1A72004C0416 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		6E1DBD1625CD1A72004C0416 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		6E20BC6525AD78B700BBA540 /* ColorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
 		6E20BC6625AD78B700BBA540 /* ColorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
 		6E20BC6F25AD938000BBA540 /* BGColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGColorViewController.h; sourceTree = "<group>"; };
@@ -486,6 +508,10 @@
 		6E28451025C35870008B7A23 /* VlogLookbookTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VlogLookbookTypo.h; sourceTree = "<group>"; };
 		6E28451125C35870008B7A23 /* VlogHashTagTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VlogHashTagTypo.m; sourceTree = "<group>"; };
 		6E28451225C35870008B7A23 /* VlogStudy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VlogStudy.m; sourceTree = "<group>"; };
+		6E2845AF25C5FCC4008B7A23 /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		6E2845B025C5FCC4008B7A23 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		6E2845C925C98990008B7A23 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
+		6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		6E4A17E925888FFA008578BA /* CircleTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleTemplate.h; sourceTree = "<group>"; };
 		6E4A17EA25888FFA008578BA /* CircleTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleTemplate.m; sourceTree = "<group>"; };
 		6E4A17EF258891D7008578BA /* TemplateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateHeader.h; sourceTree = "<group>"; };
@@ -658,6 +684,8 @@
 		6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileManager.swift; sourceTree = "<group>"; };
 		6E9BEA77258F51BA00F7F539 /* NSDate+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		6EA70909105CF786CC44E691 /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA7A32625CB1435001041A1 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		6EAD5C8525B767C700C42187 /* AccountTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableController.h; sourceTree = "<group>"; };
 		6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
 		6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
@@ -665,12 +693,8 @@
 		6EAD5C8A25B767C700C42187 /* AccountTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableController.m; sourceTree = "<group>"; };
 		6EAD5C8B25B767C700C42187 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		6EAD5C8C25B767C700C42187 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
-		6EAD5C9825B767E200C42187 /* CustomerFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerFeedback.h; sourceTree = "<group>"; };
-		6EAD5C9925B767E200C42187 /* CustomerFeedbackVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerFeedbackVCViewController.h; sourceTree = "<group>"; };
 		6EAD5C9A25B767E200C42187 /* CustomerFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerFeedbackViewController.h; sourceTree = "<group>"; };
-		6EAD5C9B25B767E200C42187 /* CustomerFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerFeedback.m; sourceTree = "<group>"; };
 		6EAD5C9C25B767E200C42187 /* CustomerFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerFeedbackViewController.m; sourceTree = "<group>"; };
-		6EAD5C9D25B767E200C42187 /* CustomerFeedbackVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerFeedbackVCViewController.m; sourceTree = "<group>"; };
 		6EAD5CA425B7699F00C42187 /* UILabel+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
 		6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Additions.m"; sourceTree = "<group>"; };
 		6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KOTRA_BOLD.otf; sourceTree = "<group>"; };
@@ -988,6 +1012,8 @@
 		B11E0D8725C594A10050D9F0 /* HolidayVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HolidayVlogTemplate.m; sourceTree = "<group>"; };
 		B11E0D8B25C595BF0050D9F0 /* VlogHolidayTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogHolidayTypo.h; sourceTree = "<group>"; };
 		B11E0D8C25C595BF0050D9F0 /* VlogHolidayTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogHolidayTypo.m; sourceTree = "<group>"; };
+		7E646DA7CD8F58DBF2FB52D4 /* Pods_ThummItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91BBD74E08615FB9095F71B1 /* Pods-ThummIt-ThummItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.release.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B12E989725C38DB700F706DD /* InfiniteChallenge3Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteChallenge3Template.h; sourceTree = "<group>"; };
 		B12E989825C38DB700F706DD /* InfiniteChallenge3Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteChallenge3Template.m; sourceTree = "<group>"; };
 		B16FC61525ADCC2A00E854C1 /* StickerCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerCollectionController.h; sourceTree = "<group>"; };
@@ -1079,6 +1105,8 @@
 		B1F8C6E025C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogVisitingCompanyTypo.h; sourceTree = "<group>"; };
 		B1F8C6E125C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogVisitingCompanyTypo.m; sourceTree = "<group>"; };
 		B689306FD489C375607E803F /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1F8C6B125C49C82002DDAF8 /* SDMiSaeng.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.ttf; sourceTree = "<group>"; };
+		BB1B7F0FA57312CBE3447BC7 /* Pods_ThummIt_ThummItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt_ThummItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1086,8 +1114,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86BE8E8DCEAF4561F7A9E722 /* Pods_ThummIt.framework in Frameworks */,
 				6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */,
+				C3AA5AEB200F3BCD30FC7A2B /* Pods_ThummIt.framework in Frameworks */,
+				6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1099,6 +1128,7 @@
 				6ED13A8125B9A92C00012144 /* FBSDKLoginKit.framework in Frameworks */,
 				6ED13A8325B9A92C00012144 /* FBSDKCoreKit.framework in Frameworks */,
 				6ED13A8225B9A92C00012144 /* FBSDKShareKit.framework in Frameworks */,
+				3E3DF43CE000686E4455BE28 /* Pods_ThummItTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1106,6 +1136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2B94A808AA44862A06F2C6 /* Pods_ThummIt_ThummItUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1143,6 +1174,7 @@
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
 				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E4A18AC258A15F6008578BA /* Storyboard */,
+				6E8E79C22591F9600008C5FF /* MainTBVC */,
 				6E11912C2584D118000DD9C0 /* HomeVC */,
 				6E7DD4EA2587ABEA0014618E /* EditingVC */,
 				6E8E79D225921C8B0008C5FF /* ProjectVC */,
@@ -1182,7 +1214,6 @@
 				6E1190EA2584B163000DD9C0 /* HomeViewController.h */,
 				6E1190EB2584B163000DD9C0 /* HomeViewController.m */,
 				6E9BE99C258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.h */,
-				6E8E79C22591F9600008C5FF /* MainTBVC */,
 				6E9BE99D258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m */,
 			);
 			path = HomeVC;
@@ -1200,6 +1231,30 @@
 				6E7DD4C92584E0160014618E /* AlbumCollectionViewCell */,
 			);
 			path = AlbumVC;
+			sourceTree = "<group>";
+		};
+		6E1DBD0F25CD1A4B004C0416 /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				6E1DBCF625CBE240004C0416 /* SignInEmailViewController.h */,
+				6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */,
+				6E1DBD0025CBE2C5004C0416 /* SignInNameViewController.h */,
+				6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */,
+				6E1DBD0525CBE2D4004C0416 /* SignInPasswordViewController.h */,
+				6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */,
+				6E1DBCFB25CBE2B5004C0416 /* SignInUsernameViewController.h */,
+				6E1DBCFC25CBE2B5004C0416 /* SignInUsernameViewController.m */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		6E1DBD1225CD1A59004C0416 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6E1DBD1525CD1A72004C0416 /* LogInViewController.h */,
+				6E1DBD1625CD1A72004C0416 /* LogInViewController.m */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		6E20BC6B25AD78BB00BBA540 /* ColorManager */ = {
@@ -1243,6 +1298,25 @@
 				6E20BCBF25AEF58600BBA540 /* UndoManager.m */,
 			);
 			path = UndoManager;
+			sourceTree = "<group>";
+		};
+		6E28453B25C4CD88008B7A23 /* SignInVC */ = {
+			isa = PBXGroup;
+			children = (
+				6EA7A32625CB1435001041A1 /* SignInViewController.swift */,
+				6E1DBD1225CD1A59004C0416 /* Login */,
+				6E1DBD0F25CD1A4B004C0416 /* Signin */,
+			);
+			path = SignInVC;
+			sourceTree = "<group>";
+		};
+		6E2845B425C88640008B7A23 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E2845AF25C5FCC4008B7A23 /* UserManager.h */,
+				6E2845B025C5FCC4008B7A23 /* UserManager.m */,
+			);
+			path = UserManager;
 			sourceTree = "<group>";
 		};
 		6E4A17FA2588A521008578BA /* UIVIew */ = {
@@ -1396,6 +1470,7 @@
 				6EC4DFF625A8952A0023485C /* TypoManager */,
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
 				6E698BA325B89CB200CE86FB /* GuideLine */,
+				6E2845B425C88640008B7A23 /* UserManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1843,7 +1918,9 @@
 				6ED13A7F25B9A92B00012144 /* FBSDKShareKit.framework */,
 				6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */,
 				6E9BEA3F258F099300F7F539 /* CoreData.framework */,
-				B689306FD489C375607E803F /* Pods_ThummIt.framework */,
+				6EA70909105CF786CC44E691 /* Pods_ThummIt.framework */,
+				BB1B7F0FA57312CBE3447BC7 /* Pods_ThummIt_ThummItUITests.framework */,
+				7E646DA7CD8F58DBF2FB52D4 /* Pods_ThummItTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1888,6 +1965,15 @@
 			path = NSDate;
 			sourceTree = "<group>";
 		};
+		6EA7A2F925CAA97A001041A1 /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				6E2845C925C98990008B7A23 /* PrivacyPolicyViewController.h */,
+				6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
 		6EAD5C8325B767C700C42187 /* AccountVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1895,6 +1981,8 @@
 				6EAD5C8425B767C700C42187 /* AccountTableController */,
 				6EAD5C8C25B767C700C42187 /* AccountViewController.h */,
 				6EAD5C8B25B767C700C42187 /* AccountViewController.m */,
+				6E28453B25C4CD88008B7A23 /* SignInVC */,
+				6EA7A2F925CAA97A001041A1 /* PrivacyPolicy */,
 			);
 			path = AccountVC;
 			sourceTree = "<group>";
@@ -1922,12 +2010,8 @@
 		6EAD5C9725B767E200C42187 /* CustomerFeedbackVC */ = {
 			isa = PBXGroup;
 			children = (
-				6EAD5C9825B767E200C42187 /* CustomerFeedback.h */,
-				6EAD5C9B25B767E200C42187 /* CustomerFeedback.m */,
-				6EAD5C9925B767E200C42187 /* CustomerFeedbackVCViewController.h */,
 				6EAD5C9C25B767E200C42187 /* CustomerFeedbackViewController.m */,
 				6EAD5C9A25B767E200C42187 /* CustomerFeedbackViewController.h */,
-				6EAD5C9D25B767E200C42187 /* CustomerFeedbackVCViewController.m */,
 			);
 			path = CustomerFeedbackVC;
 			sourceTree = "<group>";
@@ -2611,12 +2695,12 @@
 		D7497D01466F91BCF058B268 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2E4BF45F5F93A7594C289CF9 /* Pods-ThummIt.debug.xcconfig */,
-				97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */,
-				7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */,
-				0B5232F300C748E7F6E41853 /* Pods-ThummIt-ThummItUITests.release.xcconfig */,
-				3B1E7C592EC1CAD320FCA65C /* Pods-ThummItTests.debug.xcconfig */,
-				2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */,
+				0A49A04B80956AB489C19EA8 /* Pods-ThummIt.debug.xcconfig */,
+				6848F671EA96C0057F163426 /* Pods-ThummIt.release.xcconfig */,
+				48179A1DED6ABC517C58F9F4 /* Pods-ThummIt-ThummItUITests.debug.xcconfig */,
+				91BBD74E08615FB9095F71B1 /* Pods-ThummIt-ThummItUITests.release.xcconfig */,
+				574966F2CC7EDC18C77FCE53 /* Pods-ThummItTests.debug.xcconfig */,
+				2D79B06C60C4BDCBBE135243 /* Pods-ThummItTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2628,19 +2712,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E1191102584B165000DD9C0 /* Build configuration list for PBXNativeTarget "ThummIt" */;
 			buildPhases = (
-				197D7E0C9E0107CB8F5E52AF /* [CP] Check Pods Manifest.lock */,
+				13784F1782A0617343F4ABF1 /* [CP] Check Pods Manifest.lock */,
 				6E1190DD2584B163000DD9C0 /* Sources */,
 				6E1190DE2584B163000DD9C0 /* Frameworks */,
 				6E1190DF2584B163000DD9C0 /* Resources */,
-				5FC21CE4CB254EEFA61CE10B /* [CP] Embed Pods Frameworks */,
 				6ED138EC25B82BF900012144 /* Embed Frameworks */,
-				39B05FA6F26833BB1537F049 /* [CP] Copy Pods Resources */,
+				5382FD38E426137BAC86DE7D /* [CP] Embed Pods Frameworks */,
+				06C3707C3E7963BD46EC44A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ThummIt;
+			packageProductDependencies = (
+				6EA7A35225CB1975001041A1 /* FacebookLogin */,
+			);
 			productName = ThumbnailMaker;
 			productReference = 6E1190E12584B163000DD9C0 /* ThummIt.app */;
 			productType = "com.apple.product-type.application";
@@ -2649,7 +2736,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E1191132584B165000DD9C0 /* Build configuration list for PBXNativeTarget "ThummItTests" */;
 			buildPhases = (
-				D7888AFFC5E9CB625C78B155 /* [CP] Check Pods Manifest.lock */,
+				7295E40E6192861C9E63A66A /* [CP] Check Pods Manifest.lock */,
 				6E1190F82584B165000DD9C0 /* Sources */,
 				6E1190F92584B165000DD9C0 /* Frameworks */,
 				6E1190FA2584B165000DD9C0 /* Resources */,
@@ -2668,12 +2755,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E1191162584B165000DD9C0 /* Build configuration list for PBXNativeTarget "ThummItUITests" */;
 			buildPhases = (
-				B6606DE7A5CAD71E30D443E6 /* [CP] Check Pods Manifest.lock */,
+				68866F48FF07B78E9601D7D0 /* [CP] Check Pods Manifest.lock */,
 				6E1191032584B165000DD9C0 /* Sources */,
 				6E1191042584B165000DD9C0 /* Frameworks */,
 				6E1191052584B165000DD9C0 /* Resources */,
-				FD808F0A78E1AC52137FC0A5 /* [CP] Embed Pods Frameworks */,
-				74D1CF64DDC014EEB7C42D04 /* [CP] Copy Pods Resources */,
+				62EAF2B10285FF51C06A4A4D /* [CP] Embed Pods Frameworks */,
+				80CB73F8F55224D067446044 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2717,6 +2804,9 @@
 				ko,
 			);
 			mainGroup = 6E1190D82584B163000DD9C0;
+			packageReferences = (
+				6EA7A35125CB1975001041A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 6E1190E22584B163000DD9C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2813,7 +2903,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		197D7E0C9E0107CB8F5E52AF /* [CP] Check Pods Manifest.lock */ = {
+		06C3707C3E7963BD46EC44A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13784F1782A0617343F4ABF1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2835,24 +2942,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		39B05FA6F26833BB1537F049 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5FC21CE4CB254EEFA61CE10B /* [CP] Embed Pods Frameworks */ = {
+		5382FD38E426137BAC86DE7D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2869,24 +2959,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		74D1CF64DDC014EEB7C42D04 /* [CP] Copy Pods Resources */ = {
+		62EAF2B10285FF51C06A4A4D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6606DE7A5CAD71E30D443E6 /* [CP] Check Pods Manifest.lock */ = {
+		68866F48FF07B78E9601D7D0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2908,7 +2998,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D7888AFFC5E9CB625C78B155 /* [CP] Check Pods Manifest.lock */ = {
+		7295E40E6192861C9E63A66A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2930,21 +3020,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD808F0A78E1AC52137FC0A5 /* [CP] Embed Pods Frameworks */ = {
+		80CB73F8F55224D067446044 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2957,6 +3047,7 @@
 				6EF0C86325CBD29900BE7573 /* MedalSilverSticker.m in Sources */,
 				B1F8C68A25C4988E002DDAF8 /* WhyRealTypo.m in Sources */,
 				6ED13C8A25C1ADAA00012144 /* BlueMoonTypo.m in Sources */,
+				6E1DBD1725CD1A72004C0416 /* LogInViewController.m in Sources */,
 				6E28452825C35870008B7A23 /* VlogLogoTagTypo.m in Sources */,
 				6EF0C8B325CBDB6B00BE7573 /* StainSticker2.m in Sources */,
 				6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */,
@@ -3047,6 +3138,8 @@
 				6ED13BB425C08FC700012144 /* WorkingManNameTypo.m in Sources */,
 				B1F8C6E225C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m in Sources */,
 				6EF0C88B25CBD33A00BE7573 /* SnowflakeSticker1.m in Sources */,
+				6E2845B125C5FCC4008B7A23 /* UserManager.m in Sources */,
+				6E8F9B3A25C3494D005C8071 /* ExclamationMark.m in Sources */,
 				6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */,
 				6E80771D25C85FDB0033FF21 /* VlogTapeSticker.m in Sources */,
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,
@@ -3054,9 +3147,12 @@
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
 				B11E0D6F25C5751C0050D9F0 /* VlogMacaronTypo.m in Sources */,
 				6E28451B25C35870008B7A23 /* VlogItaly.m in Sources */,
+				B1836FCA25C3370E00A81446 /* WorkmanArgry.m in Sources */,
+				6E1DBCF825CBE240004C0416 /* SignInEmailViewController.m in Sources */,
 				B1F2B6F425C1995A0064A044 /* InfiniteChallengeBlackTypo.m in Sources */,
 				B1F2B6D925C193AF0064A044 /* InfiniteChallengeLogo.m in Sources */,
 				6E7DD51625888C980014618E /* Template.m in Sources */,
+				6E1DBD0225CBE2C5004C0416 /* SignInNameViewController.m in Sources */,
 				6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */,
 				6EBEB68A25C4AB6D0017C640 /* CraftVlogTemplate.m in Sources */,
 				6ED13CCF25C1CACB00012144 /* MatterTypo.m in Sources */,
@@ -3152,6 +3248,7 @@
 				6E9BEA4E258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift in Sources */,
 				6EBEB6C625C56EA10017C640 /* VlogStudentTypo.m in Sources */,
 				6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */,
+				6E1DBCFD25CBE2B5004C0416 /* SignInUsernameViewController.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
 				B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */,
@@ -3200,6 +3297,7 @@
 				B1F8C6D825C4CC23002DDAF8 /* VlogMakingFilmTypo.m in Sources */,
 				6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
+				6E1DBD0725CBE2D4004C0416 /* SignInPasswordViewController.m in Sources */,
 				6E8E7A6A259C91560008C5FF /* PhotoFrameCollectionViewCell.m in Sources */,
 				6EBEB56725C1DD000017C640 /* WorkManLogo2.m in Sources */,
 				6E6E5BFC25AA23F3009821CF /* ItemCollectionViewController+Button.m in Sources */,
@@ -3239,15 +3337,16 @@
 				6EF0C85E25CBD27C00BE7573 /* MedalGoldSticker.m in Sources */,
 				B1F2B6EA25C197230064A044 /* InfiniteChallengeEscapeRoom.m in Sources */,
 				6ED138FA25B8507A00012144 /* AppDelegate.swift in Sources */,
-				6EAD5CA025B767E200C42187 /* CustomerFeedbackVCViewController.m in Sources */,
 				6EC4DFD525A885970023485C /* UITextView+Additions.m in Sources */,
 				B1F2B74725C1CA070064A044 /* InfiniteChallengeSkyBlueBox.m in Sources */,
 				6E8E79B82591F9570008C5FF /* MainTabBarViewController.m in Sources */,
 				6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */,
+				6E2845CB25C98990008B7A23 /* PrivacyPolicyViewController.m in Sources */,
 				B1F2B73925C1C4A50064A044 /* InfiniteChallengeFiveMinutes.m in Sources */,
 				6ED13D6325C2FFB000012144 /* RunningMan3Template.m in Sources */,
 				6E8F9A9825C34582005C8071 /* VerticalHalfRectangle.m in Sources */,
 				6E4A1885258A1201008578BA /* CategoryManager.m in Sources */,
+				6EA7A32725CB1435001041A1 /* SignInViewController.swift in Sources */,
 				6E8E7AC025A833590008C5FF /* TextCollectionController.m in Sources */,
 				6EBEB56C25C1DFB00017C640 /* WorkManLeftTag.m in Sources */,
 				6EF0C8D125CBDC2700BE7573 /* TargetSticker.m in Sources */,
@@ -3446,7 +3545,7 @@
 		};
 		6E1191112584B165000DD9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E4BF45F5F93A7594C289CF9 /* Pods-ThummIt.debug.xcconfig */;
+			baseConfigurationReference = 0A49A04B80956AB489C19EA8 /* Pods-ThummIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3529,7 +3628,7 @@
 		};
 		6E1191122584B165000DD9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97A6D1EE0DD78C9FAC9E802A /* Pods-ThummIt.release.xcconfig */;
+			baseConfigurationReference = 6848F671EA96C0057F163426 /* Pods-ThummIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3611,7 +3710,7 @@
 		};
 		6E1191142584B165000DD9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B1E7C592EC1CAD320FCA65C /* Pods-ThummItTests.debug.xcconfig */;
+			baseConfigurationReference = 574966F2CC7EDC18C77FCE53 /* Pods-ThummItTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -3637,7 +3736,7 @@
 		};
 		6E1191152584B165000DD9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BD798B115A5A234E60012D7 /* Pods-ThummItTests.release.xcconfig */;
+			baseConfigurationReference = 2D79B06C60C4BDCBBE135243 /* Pods-ThummItTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -3663,7 +3762,7 @@
 		};
 		6E1191172584B165000DD9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FDC1A08D83712B8BF14E8FA /* Pods-ThummIt-ThummItUITests.debug.xcconfig */;
+			baseConfigurationReference = 48179A1DED6ABC517C58F9F4 /* Pods-ThummIt-ThummItUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -3683,7 +3782,7 @@
 		};
 		6E1191182584B165000DD9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B5232F300C748E7F6E41853 /* Pods-ThummIt-ThummItUITests.release.xcconfig */;
+			baseConfigurationReference = 91BBD74E08615FB9095F71B1 /* Pods-ThummIt-ThummItUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -3741,6 +3840,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6EA7A35125CB1975001041A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6EA7A35225CB1975001041A1 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EA7A35125CB1975001041A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6E9BEA44258F0AA300F7F539 /* ThummIt.xcdatamodeld */ = {

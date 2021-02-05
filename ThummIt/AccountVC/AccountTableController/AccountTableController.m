@@ -9,7 +9,8 @@
 #import "AccountTableViewCell.h"
 #import "AccountViewController.h"
 #import "CustomerFeedbackViewController.h"
-
+#import "PrivacyPolicyViewController.h"
+@import Parse;
 
 @implementation AccountTableController
 
@@ -18,12 +19,12 @@
     self = [super init];
     if(self){
         
-        NSDictionary *myFolderDict = @{@"My Folder":@"folderImage"}; // 이미지 추가
-        NSDictionary *inviteFriendsDict = @{@"Invite Friends":@"inviteImage"}; // 이미지 추가
-        NSDictionary *customerCenterDict = @{@"Customer Center":@"customerCenterImage"}; // 이미지 추가
-        NSDictionary *pivacyPolicyDict = @{@"Privacy Policy":@"privacyPolicyImage"}; // 이미지 추가
-        NSDictionary *logOutDict = @{@"Log Out":@"logOutImage"}; // 이미지 추가
-        self.datas = @[myFolderDict, inviteFriendsDict, customerCenterDict, pivacyPolicyDict, logOutDict];
+//        NSDictionary *myFolderDict = @{@"My Folder":@"folderImage"}; // 이미지 추가
+//        NSDictionary *inviteFriendsDict = @{@"Invite Friends":@"friend"}; // 이미지 추가
+        NSDictionary *customerCenterDict = @{@"Customer Center":@"customerCenter"}; // 이미지 추가
+        NSDictionary *pivacyPolicyDict = @{@"Privacy Policy":@"privacyPolicy"}; // 이미지 추가
+        NSDictionary *logOutDict = @{@"Log Out":@"logOut"}; // 이미지 추가
+        self.datas = @[customerCenterDict, pivacyPolicyDict, logOutDict];
         self.tableView = tableView;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
@@ -72,13 +73,19 @@
     
     if(indexPath.row == 0){
         
+        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+        CustomerFeedbackViewController *CustomerFeedbackVC = (CustomerFeedbackViewController *)[main instantiateViewControllerWithIdentifier:@"CustomerFeedbackViewController"];
+        [self.accountVC.navigationController pushViewController:CustomerFeedbackVC animated:true];
+
     }else if (indexPath.row == 1){
+        
+        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+        PrivacyPolicyViewController *privacyVC = (PrivacyPolicyViewController *)[main instantiateViewControllerWithIdentifier:@"PrivacyPolicyViewController"];
+        [self.accountVC.navigationController pushViewController:privacyVC animated:true];
         
     }else if (indexPath.row == 2){
         
-        UIStoryboard *CustomerFeedback = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-        CustomerFeedbackViewController *CustomerFeedbackVC = (CustomerFeedbackViewController *)[CustomerFeedback instantiateViewControllerWithIdentifier:@"CustomerFeedbackViewController"];
-        [self.accountVC.navigationController pushViewController:CustomerFeedbackVC animated:true];
+        [self showLogOutAction];
         
     }else if (indexPath.row == 3){
         
@@ -87,7 +94,27 @@
     }
 }
 
+-(void)showLogOutAction{
 
+    AccountViewController *accountVC = (AccountViewController *)self.accountVC;
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Logout", nil) message:NSLocalizedString(@"Do you want to logout?", nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    UIAlertAction *logOut = [UIAlertAction actionWithTitle:NSLocalizedString(@"Logout", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
+        [PFUser logOut];
+        [accountVC.tabBarController setSelectedIndex:0];
+        
+    }];
+
+    [controller addAction:cancel];
+    [controller addAction:logOut];
+    
+    [accountVC presentViewController:controller animated:true completion:nil];
+    
+}
 
 
 
