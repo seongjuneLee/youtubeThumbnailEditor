@@ -60,7 +60,7 @@
     
     Text *vlogText = [[Text alloc] init];
     VlogDog *vlog = [VlogDog vlogDog];
-    vlogText.scale = 1.2;
+    vlogText.scale = 0.23;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer =@"0";

@@ -59,8 +59,8 @@
     logoText.indexInLayer =@"0";
     logoText.text = @"러닝맨";
     logoText.textView.text = logoText.text;
-    logoText.scale = 0.55;
-    logoText.center = CGPointMake(0.08, 0.13);
+    logoText.scale = 0.09;
+    logoText.center = CGPointMake(0.09, 0.13);
     logoText.isTemplateItem = true;
     [logoText applyTypo:logo];
     [self.texts addObject:logoText];
@@ -71,7 +71,7 @@
     randomGameText.indexInLayer =@"1";
     randomGameText.text = @"랜덤게임.zip";
     randomGameText.textView.text = randomGameText.text;
-    randomGameText.scale = 1.45;
+    randomGameText.scale = 0.5;
     randomGameText.center = CGPointMake(0.25, 0.89);
     randomGameText.isTemplateItem = true;
     [randomGameText applyTypo:yellowGradientTypo];
@@ -83,7 +83,7 @@
     learningManText.indexInLayer =@"2";
     learningManText.text = @"러닝맨";
     learningManText.textView.text = learningManText.text;
-    learningManText.scale = 1;
+    learningManText.scale = 0.19;
     learningManText.center = CGPointMake(0.1, 0.75);
     learningManText.isTemplateItem = true;
     [learningManText applyTypo:workingManNameTypo];
@@ -95,7 +95,7 @@
     ddamText.indexInLayer =@"3";
     ddamText.text = @"(식은땀)";
     ddamText.textView.text = ddamText.text;
-    ddamText.scale = 1.05;
+    ddamText.scale = 0.24;
     ddamText.center = CGPointMake(0.71, 0.21);
     ddamText.isTemplateItem = true;
     [ddamText applyTypo:ddam];
@@ -107,7 +107,7 @@
     redshoutingText1.indexInLayer =@"4";
     redshoutingText1.text = @"하고싶은말 있는데\n해도 되나요?";
     redshoutingText1.textView.text = redshoutingText1.text;
-    redshoutingText1.scale = 0.8;
+    redshoutingText1.scale = 0.3;
     redshoutingText1.rotationDegree = 355;
     redshoutingText1.center = CGPointMake(0.75, 0.72);
     redshoutingText1.isTemplateItem = true;
@@ -120,7 +120,7 @@
     redshoutingText2.indexInLayer =@"5";
     redshoutingText2.text = @"이 형은 룰을\n아예 모르네";
     redshoutingText2.textView.text = redshoutingText2.text;
-    redshoutingText2.scale = 0.65;
+    redshoutingText2.scale = 0.17;
     redshoutingText2.rotationDegree = 355;
     redshoutingText2.center = CGPointMake(0.35, 0.52);
     redshoutingText2.isTemplateItem = true;
@@ -130,17 +130,17 @@
 }
 
 -(void)setUpStickers{
-    
+        
     RunningManExcSticker *runningManExcSticker1 = [RunningManExcSticker runningManExcSticker];
     runningManExcSticker1.indexInLayer =@"6";
-    runningManExcSticker1.scale = 0.53;
+    runningManExcSticker1.scale = 0.2;
     runningManExcSticker1.isTemplateItem = true;
     runningManExcSticker1.center = CGPointMake(0.37, 0.36);
     [self.stickers addObject:runningManExcSticker1];
     
     RunningManExcSticker *runningManExcSticker2 = [RunningManExcSticker runningManExcSticker];
     runningManExcSticker2.indexInLayer =@"7";
-    runningManExcSticker2.scale = 0.53;
+    runningManExcSticker2.scale = 0.2;
     runningManExcSticker2.isTemplateItem = true;
     runningManExcSticker2.center = CGPointMake(0.42, 0.36);
     [self.stickers addObject:runningManExcSticker2];

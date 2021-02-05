@@ -103,7 +103,7 @@
     //맘Vlog
     Text *momVlogText = [[Text alloc] init];
     VlogMomTypo *mom = [VlogMomTypo vlogMomTypo];
-    momVlogText.scale = 0.87;
+    momVlogText.scale = 0.185;
     momVlogText.center = CGPointMake(0.115, 0.74);
     momVlogText.isTemplateItem = true;
     momVlogText.indexInLayer = @"3";
@@ -116,7 +116,7 @@
     Text *dailyText = [[Text alloc] init];
     VlogMomTypo *daily = [VlogMomTypo vlogMomTypo];
     daily.textColor = UIColor.whiteColor;
-    dailyText.scale = 1;
+    dailyText.scale = 0.51;
     dailyText.center = CGPointMake(0.275, 0.88);
     dailyText.isTemplateItem = true;
     dailyText.indexInLayer = @"4";

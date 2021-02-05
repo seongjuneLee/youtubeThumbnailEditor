@@ -14,14 +14,15 @@
     if (self) {
         self.name = NSLocalizedString(@"여사친 앞에서",nil);
         self.fontName = @"ELANDNiceM";
-        self.textColor = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0 alpha:1 ];
+        self.textColor = UIColor.whiteColor;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
-        BGTextAttribute *bgTextAttribute2 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor colorWithRed:84/255.0f green:8/255.0f blue:8/255.0f alpha:1];
+        bgTextAttribute1.borderWidth = 9;
+        
+        BGTextAttribute *bgTextAttribute2 = [[BGTextAttribute alloc] init];
         bgTextAttribute2.borderColor = [UIColor colorWithRed:145/255.0f green:69/255.0f blue:34/255.0f alpha:1];
-        bgTextAttribute1.borderWidth = 8;
-        bgTextAttribute2.borderWidth = 16;
+        bgTextAttribute2.borderWidth = 17;
         
         self.bgTextAttributes = @[bgTextAttribute1 , bgTextAttribute2];
     }

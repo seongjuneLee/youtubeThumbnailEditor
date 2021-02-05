@@ -58,7 +58,7 @@
     //메인 텍스트
     Text *mainTextTop = [[Text alloc] init];
     InfiniteChallengeLegeno *legeno = [InfiniteChallengeLegeno infiniteChallengeLegeno];
-    mainTextTop.scale = 0.78;
+    mainTextTop.scale = 0.7;
     mainTextTop.center = CGPointMake(0.36, 0.73);
     mainTextTop.isTemplateItem = true;
     mainTextTop.indexInLayer =@"0";
@@ -70,7 +70,7 @@
     Text *mainTextBottom = [[Text alloc] init];
     InfiniteChallengeLegeno *longJourney = [InfiniteChallengeLegeno infiniteChallengeLegeno];
     longJourney.textColor = [UIColor colorWithRed:254/255.0 green:208/255.0 blue:254/255.0 alpha:1];
-    mainTextBottom.scale = 0.78;
+    mainTextBottom.scale = 0.62;
     mainTextBottom.center = CGPointMake(0.32, 0.9);
     mainTextBottom.isTemplateItem = true;
     mainTextBottom.indexInLayer =@"1";
@@ -82,8 +82,8 @@
     //로고
     Text *logoText = [[Text alloc] init];
     InfiniteChallengeLogo *logo = [InfiniteChallengeLogo infiniteChallengeLogo];
-    logoText.scale = 0.6;
-    logoText.center = CGPointMake(0.89, 0.15);
+    logoText.scale = 0.1;
+    logoText.center = CGPointMake(0.885, 0.14);
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"2";
     logoText.text = @"백만도전";
@@ -94,7 +94,7 @@
     //오분순삭
     Text *fiveMinutesText = [[Text alloc] init];
     InfiniteChallengeFiveMinutes *fiveMinutes = [InfiniteChallengeFiveMinutes infiniteChallengeFiveMinutes];
-    fiveMinutesText.scale = 0.65;
+    fiveMinutesText.scale = 0.24;
     fiveMinutesText.center = CGPointMake(0.15, 0.11);
     fiveMinutesText.isTemplateItem = true;
     fiveMinutesText.indexInLayer =@"3";
@@ -106,8 +106,8 @@
     //#예능레전드
     Text *hashTagText = [[Text alloc] init];
     InfiniteChallengeHashTag *hashTag = [InfiniteChallengeHashTag infiniteChallengeHashTag];
-    hashTagText.scale = 0.56;
-    hashTagText.center = CGPointMake(0.13, 0.19);
+    hashTagText.scale = 0.18;
+    hashTagText.center = CGPointMake(0.135, 0.195);
     hashTagText.isTemplateItem = true;
     hashTagText.indexInLayer =@"4";
     hashTagText.text = @"#예능레전드";
@@ -123,7 +123,7 @@
     //무야~호~
     Text *muYaHoText = [[Text alloc] init];
     InfiniteChallengeYellowSpeechBoxWhite *yellowSpeechBoxWhite = [InfiniteChallengeYellowSpeechBoxWhite infiniteChallengeYellowSpeechBoxWhite];
-    muYaHoText.scale = 0.55;
+    muYaHoText.scale = 0.15;
     muYaHoText.center = CGPointMake(0.3, 0.45);
     muYaHoText.isTemplateItem = true;
     muYaHoText.indexInLayer =@"5";
@@ -136,7 +136,7 @@
     //??
     Text *questionMarkText = [[Text alloc] init];
     InfiniteChallengeTopOfYellow *topOfYellow = [InfiniteChallengeTopOfYellow infiniteChallengeTopOfYellow];
-    questionMarkText.scale = 0.63;
+    questionMarkText.scale = 0.1;
     questionMarkText.center = CGPointMake(0.33, 0.35);
     questionMarkText.isTemplateItem = true;
     questionMarkText.indexInLayer =@"6";

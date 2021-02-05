@@ -46,7 +46,7 @@
     
     Text *vlogText = [[Text alloc] init];
     VlogBrushTypo *vlog = [VlogBrushTypo vlogBrushTypo];
-    vlogText.scale = 0.9;
+    vlogText.scale = 0.38;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer =@"0";

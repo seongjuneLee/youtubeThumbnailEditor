@@ -46,7 +46,7 @@
     
     Text *vlogText = [[Text alloc] init];
     VlogSummerTypo *vlog = [VlogSummerTypo vlogSummerTypo];
-    vlogText.scale = 0.8;
+    vlogText.scale = 0.4;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer =@"0";

@@ -19,11 +19,11 @@
         
         BGTextAttribute *borderAtt1 = [[BGTextAttribute alloc] init];
         borderAtt1.borderColor = [UIColor colorWithRed:253/255.0f green:242/255.0f blue:95/255.0 alpha:1 ];
-        borderAtt1.borderWidth = 5;
+        borderAtt1.borderWidth = 3;
         
         BGTextAttribute *borderAtt2 = [[BGTextAttribute alloc] init];
         borderAtt2.borderColor = [UIColor colorWithRed:133/255.0f green:54/255.0f blue:16/255.0f alpha:1];
-        borderAtt2.borderWidth = 15;
+        borderAtt2.borderWidth = 12;
         
         BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
         shadowAtt1.shadowColor =[UIColor colorWithRed:208/255.0f green:68/255.0f blue:25/255.0f alpha:1];
@@ -31,21 +31,17 @@
         
         BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
         shadowAtt2.shadowColor =[UIColor colorWithRed:208/255.0f green:68/255.0f blue:25/255.0f alpha:1];
-        shadowAtt2.shadowOffset = CGPointMake(2, 2);
+        shadowAtt2.shadowOffset = CGPointMake(1.5, 1.5);
         
         BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
         shadowAtt3.shadowColor =[UIColor colorWithRed:208/255.0f green:68/255.0f blue:25/255.0f alpha:1];
-        shadowAtt3.shadowOffset = CGPointMake(3, 3);
+        shadowAtt3.shadowOffset = CGPointMake(2, 2);
         
         BGTextAttribute *shadowAtt4 = [[BGTextAttribute alloc] init];
         shadowAtt4.shadowColor =[UIColor colorWithRed:208/255.0f green:68/255.0f blue:25/255.0f alpha:1];
-        shadowAtt4.shadowOffset = CGPointMake(4, 4);
+        shadowAtt4.shadowOffset = CGPointMake(2.5, 2.5);
         
-        BGTextAttribute *shadowAtt5 = [[BGTextAttribute alloc] init];
-        shadowAtt5.shadowColor =[UIColor colorWithRed:208/255.0f green:68/255.0f blue:25/255.0f alpha:1];
-        shadowAtt5.shadowOffset = CGPointMake(5, 5);
-        
-        self.bgTextAttributes = @[borderAtt1, borderAtt2, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4, shadowAtt5];
+        self.bgTextAttributes = @[borderAtt1, borderAtt2, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4];
     }
         //기울이기
     return self;
