@@ -34,14 +34,19 @@
         } else {
             [self taskWhenDenied];
         }
+        [self.layerController showTransparentView];
         
-    }
-    else if([item isKindOfClass:Text.class]){
+    } else if([item isKindOfClass:Text.class]){
         
         Text *text = (Text *)item;
         self.currentItem = text;
         self.currentText = text;
         [self.modeController setNavigationItemRespondToEditingMode:EditingTextMode];
+        
+        self.originalImageViewCenter = text.baseView.center;
+        self.originalTransform = text.baseView.transform;
+        
+        
         [text.textView becomeFirstResponder];
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
@@ -49,14 +54,22 @@
         
         [self addItemCollectionVC];
 
-    }
-    else if([item isKindOfClass:Sticker.class]){
+    } else if([item isKindOfClass:Sticker.class]){
+        
         Sticker *sticker = (Sticker *)item;
-        self.currentItem = sticker;
-//        [self.modeController setNavigationItemRespondToEditingMode:editingsticker];
+        self.currentItem = sticker; // currentsicker가 null이라 Currentitem으로 받음일단
+        [self.modeController setNavigationItemRespondToEditingMode:EditingStickerMode];
+        
+        self.originalImageViewCenter = sticker.baseView.center;
+        self.originalTransform = sticker.baseView.transform;
+        
+        [self.layerController showTransparentView];
+        [self.layerController bringCurrentItemToFront:self.currentItem];
+        self.itemCollectionVC.itemType = StickerType;
+        
+        [self addItemCollectionVC];
+
     }
-    [self.layerController showTransparentView];
-    [self.layerController bringCurrentItemToFront:item];
     
 }
 
@@ -169,7 +182,7 @@
             self.buttonScrollView.alpha = 0.0;
             self.deleteButtonContainerView.alpha = 1.0;
         }];
-    } else if (self.modeController.editingMode == AddingPhotoFrameMode || self.modeController.editingMode == AddingTextMode || self.modeController.editingMode == EditingTextMode){
+    } else if (self.modeController.editingMode == AddingPhotoFrameMode || self.modeController.editingMode == AddingTextMode || self.modeController.editingMode == EditingTextMode || self.modeController.editingMode == AddingStickerMode|| self.modeController.editingMode == EditingStickerMode){
         self.underAreaView.hidden = true;
         [UIView animateWithDuration:0.2 animations:^{
             self.buttonScrollView.alpha = 0.0;
@@ -181,8 +194,8 @@
 }
 
 -(void)deleteImageRespondToCurrentPointY:(float)currentPointY{
-    float iamgeViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
-    if (currentPointY >= iamgeViewBottomY) {
+    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
+    if (currentPointY >= imageViewBottomY) {
         [UIView animateWithDuration:0.2 animations:^{
             self.deleteButtonContainerView.alpha = 0.4;
             self.currentItem.baseView.alpha = 0.4;
@@ -198,14 +211,19 @@
 -(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint{
     
     self.underAreaView.hidden = false;
-    float iamgeViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
-    if (fingerPoint.y >= iamgeViewBottomY) {
+    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
+    if (fingerPoint.y >= imageViewBottomY) {
         [ItemManager.sharedInstance deleteItem:item];
         for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+            if (!item.isFixedPhotoFrame) {
+                item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+            }
         }
+        item.baseView.center = CGPointMake(self.bgView.frameWidth/2, self.bgView.frameY + self.bgView.frameHeight/2);
+        [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
+        [self dismissItemCollectionVC];
     }
-
+    
     [UIView animateWithDuration:0.2 animations:^{
         self.buttonScrollView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;

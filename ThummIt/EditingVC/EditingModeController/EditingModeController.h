@@ -16,7 +16,8 @@ typedef enum {
     AddingTextMode = 4,
     EditingTextMode = 5,
     AddingStickerMode = 6,
-    EditingBGColorMode = 7,
+    EditingStickerMode = 7,
+    EditingBGColorMode = 8,
 } EditingMode;
 
 @protocol EditingModeControllerDelegate <NSObject>
