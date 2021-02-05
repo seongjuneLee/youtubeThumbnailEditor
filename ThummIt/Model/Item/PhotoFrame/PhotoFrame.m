@@ -110,7 +110,19 @@
     }
     [self addSubViewsToBaseView];
 
-    self.baseView.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(self.rotationDegree), CGAffineTransformMakeScale(self.scale, self.scale));
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
+    CGAffineTransform scaleTransform;
+
+    float width = UIScreen.mainScreen.bounds.size.width;
+    float scale = width/self.baseView.frameWidth;
+
+    if (self.isFixedPhotoFrame) {
+        scaleTransform = CGAffineTransformMakeScale(self.scale,self.scale);
+
+    } else {
+        scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
+    }
+    self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
     self.baseView.center = self.center;
     
 

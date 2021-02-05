@@ -43,7 +43,7 @@
     PhotoFrame *circlePhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     circlePhotoFrame.indexInLayer =@"0";
     circlePhotoFrame.center = CGPointMake(0.82, 0.5);
-    circlePhotoFrame.scale = 0.7;
+    circlePhotoFrame.scale = 0.3;
     circlePhotoFrame.backgroundImageName = @"runningManCircle";
     circlePhotoFrame.isTemplateItem = true;
     [self.photoFrames addObject:circlePhotoFrame];
