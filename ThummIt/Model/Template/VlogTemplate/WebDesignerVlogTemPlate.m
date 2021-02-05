@@ -46,8 +46,8 @@
     
     Text *tagText = [[Text alloc] init];
     VlogCompany *tagvlog = [VlogCompany vlogCompany];
-    tagText.scale = 0.5;
-    tagText.center = CGPointMake(0.14, 0.11);
+    tagText.scale = 0.17;
+    tagText.center = CGPointMake(0.15, 0.11);
     tagText.isTemplateItem = true;
     tagText.indexInLayer =@"0";
     tagText.text = @"회사 Vlog";
@@ -57,8 +57,8 @@
     
     Text *undertagText = [[Text alloc] init];
     VlogWebWrite *undertagvlog = [VlogWebWrite vlogWebWrite];
-    undertagText.scale = 0.5;
-    undertagText.center = CGPointMake(0.15, 0.9);
+    undertagText.scale = 0.26;
+    undertagText.center = CGPointMake(0.155, 0.91);
     undertagText.isTemplateItem = true;
     undertagText.indexInLayer =@"1";
     undertagText.text = @"웹 디자이너편";
@@ -68,8 +68,8 @@
     
     Text *titleVlog = [[Text alloc] init];
     VlogDesiner *title = [VlogDesiner vlogDesiner];
-    titleVlog.scale = 0.4;
-    titleVlog.center = CGPointMake(0.22, 0.58);
+    titleVlog.scale = 0.44;
+    titleVlog.center = CGPointMake(0.23, 0.55);
     titleVlog.isTemplateItem = true;
     titleVlog.indexInLayer =@"3";
     titleVlog.text = @"웹\n디자이너는\n뭐 하지?";

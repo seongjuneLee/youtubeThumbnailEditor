@@ -36,11 +36,12 @@
     
     PhotoFrame *firstPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     PhotoFrame *secondPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
-    firstPhotoFrame.center = CGPointMake(0.32, 0.5);
+    firstPhotoFrame.center = CGPointMake(0.31, 0.5);
+    firstPhotoFrame.scale = 0.5;
     firstPhotoFrame.isTemplateItem = true;
-    
-    secondPhotoFrame.center = CGPointMake(0.68, 0.5);
-    secondPhotoFrame.scale = 0.9;
+
+    secondPhotoFrame.center = CGPointMake(0.75, 0.5);
+    secondPhotoFrame.scale = 0.4;
     secondPhotoFrame.isTemplateItem = true;
     firstPhotoFrame.indexInLayer = @"0";
     secondPhotoFrame.indexInLayer = @"1";
@@ -54,8 +55,8 @@
     
     Text *starWarsTypo = [[Text alloc] init];
     DinggoStarWarsTypo *starsWas = [DinggoStarWarsTypo dinggoStarWarsTypo];
-    starWarsTypo.scale = 0.8;
-    starWarsTypo.center = CGPointMake(0.6, 0.6);
+    starWarsTypo.scale = 0.185;
+    starWarsTypo.center = CGPointMake(0.11, 0.08);
     starWarsTypo.isTemplateItem = true;
     starWarsTypo.indexInLayer = @"2";
     starWarsTypo.text = @"스타월드";
@@ -65,8 +66,8 @@
 
     Text *behindTypo = [[Text alloc] init];
     DinggoBehindTypo *behind = [DinggoBehindTypo dinggoBehindTypo];
-    behindTypo.scale = 0.8;
-    behindTypo.center = CGPointMake(0.6, 0.6);
+    behindTypo.scale = 0.15;
+    behindTypo.center = CGPointMake(0.11, 0.15);
     behindTypo.isTemplateItem = true;
     behindTypo.indexInLayer = @"3";
     behindTypo.text = @"[비하인드]";
@@ -76,8 +77,8 @@
 
     Text *winkTypo = [[Text alloc] init];
     DinggoWinkTypo *wink = [DinggoWinkTypo dinggoWinkTypo];
-    winkTypo.scale = 0.8;
-    winkTypo.center = CGPointMake(0.6, 0.6);
+    winkTypo.scale = 0.185;
+    winkTypo.center = CGPointMake(0.47, 0.13);
     winkTypo.isTemplateItem = true;
     winkTypo.indexInLayer = @"4";
     winkTypo.text = @"윙크발사?!";
@@ -87,8 +88,8 @@
 
     Text *murdertypo = [[Text alloc] init];
     DinggoMurder *murder = [DinggoMurder dinggoMurder];
-    murdertypo.scale = 0.8;
-    murdertypo.center = CGPointMake(0.6, 0.6);
+    murdertypo.scale = 0.2;
+    murdertypo.center = CGPointMake(0.75, 0.12);
     murdertypo.isTemplateItem = true;
     murdertypo.indexInLayer = @"3";
     murdertypo.text = @"살인미소?!";
@@ -98,8 +99,8 @@
 
     Text *binggoTypo = [[Text alloc] init];
     DinggoBingoTypo *binggo = [DinggoBingoTypo dinggoBingoTypo];
-    binggoTypo.scale = 0.8;
-    binggoTypo.center = CGPointMake(0.4, 0.4);
+    binggoTypo.scale = 0.13;
+    binggoTypo.center = CGPointMake(0.92, 0.06);
     binggoTypo.isTemplateItem = true;
     binggoTypo.indexInLayer = @"4";
     binggoTypo.text = @"bingo";
@@ -109,8 +110,8 @@
     
     Text *kpopTyop = [[Text alloc] init];
     DinggoKpopTypo *kpop = [DinggoKpopTypo dinggoKpopTypo];
-    kpopTyop.scale = 0.9;
-    kpopTyop.center = CGPointMake(0.36,0.87);
+    kpopTyop.scale = 0.58;
+    kpopTyop.center = CGPointMake(0.5,0.75);
     kpopTyop.isTemplateItem = true;
     kpopTyop.indexInLayer = @"5";
     kpopTyop.text = @"케이팝 넘버원";
@@ -125,8 +126,8 @@
 
     Text *kpopTypo2 = [[Text alloc] init];
     DinggoKpopTypo *kpop2 = [DinggoKpopTypo dinggoKpopTypo];
-    kpopTypo2.scale = 0.8;
-    kpopTypo2.center = CGPointMake(0.9, 0.6);
+    kpopTypo2.scale = 0.82;
+    kpopTypo2.center = CGPointMake(0.5, 0.9);
     kpopTypo2.isTemplateItem = true;
     kpopTypo2.indexInLayer = @"6";
     kpopTypo2.text = @"승부욕 그룹 납자친구";

@@ -62,7 +62,7 @@
     
     Text *dacevlogText = [[Text alloc] init];
     VlogLongDance *dancevlog = [VlogLongDance vlogLongDance];
-    dacevlogText.scale = 0.6;
+    dacevlogText.scale = 0.3;
     dacevlogText.center = CGPointMake(0.5, 0.41);
     dacevlogText.isTemplateItem = true;
     dacevlogText.indexInLayer =@"0";
@@ -73,7 +73,7 @@
     
     Text *vlogText = [[Text alloc] init];
     VlogShortDance *vlog = [VlogShortDance vlogShortDance];
-    vlogText.scale = 0.6;
+    vlogText.scale = 0.17;
     vlogText.center = CGPointMake(0.5, 0.59);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer =@"1";
@@ -88,36 +88,37 @@
 -(void)setUpStickers{
     
     
-//    VlogHeartSticker2 *heartSticker2 = [VlogHeartSticker2 vlogHeartSticker2];
-//    heartSticker2.scale = 0.6;
-//    heartSticker2.isTemplateItem = true;
-//    heartSticker2.center = CGPointMake(0.1, 0.99);
-//
-//    [self.stickers addObject:heartSticker2];
-//  #b598ce
+    HeartSticker10 *heartSticker10 = [HeartSticker10 heartSticker10];
+    heartSticker10.scale = 0.25;
+    heartSticker10.isTemplateItem = true;
+    heartSticker10.center = CGPointMake(0.18, 0.28);
+
+    [self.stickers addObject:heartSticker10];
+
     
     HeartSticker3 *heartSticker3 = [HeartSticker3 heartSticker3];
     heartSticker3.indexInLayer =@"2";
-    heartSticker3.scale = 0.6;
+    heartSticker3.scale = 0.22;
     heartSticker3.isTemplateItem = true;
     heartSticker3.center = CGPointMake(0.8, 0.35);
+
 
     [self.stickers addObject:heartSticker3];
 //    #f78d83
     
     HeartSticker4 *heartSticker4 = [HeartSticker4 heartSticker4];
     heartSticker4.indexInLayer =@"3";
-    heartSticker4.scale = 0.6;
+    heartSticker4.scale = 0.25;
     heartSticker4.isTemplateItem = true;
     heartSticker4.center = CGPointMake(0.97, 0.58);
 
     [self.stickers addObject:heartSticker4];
 //   #f8f7b7
-    HeartSticker4 *heartStickerUnder = [HeartSticker4 heartSticker4];
+    HeartSticker5 *heartStickerUnder = [HeartSticker5 heartSticker5];
     heartStickerUnder.indexInLayer =@"4";
-    heartStickerUnder.scale = 0.6;
+    heartStickerUnder.scale = 0.23;
     heartStickerUnder.isTemplateItem = true;
-    heartStickerUnder.center = CGPointMake(0.25, 0.75);
+    heartStickerUnder.center = CGPointMake(0.085, 0.98);
 
     [self.stickers addObject:heartStickerUnder];
     
