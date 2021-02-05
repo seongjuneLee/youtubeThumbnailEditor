@@ -833,6 +833,14 @@ with the design you want.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardAppearance="alert"/>
                             </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvC-aH-Ypa">
+                                <rect key="frame" x="150.5" y="362" width="113" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <state key="normal" title="Forgot password?"/>
+                                <connections>
+                                    <segue destination="yVw-dG-E83" kind="show" id="dOB-xm-5Tj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z2c-kf-fFp"/>
                         <color key="backgroundColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -840,6 +848,7 @@ with the design you want.</string>
                             <constraint firstItem="9gD-9F-jZh" firstAttribute="top" secondItem="BrQ-Gj-hp9" secondAttribute="bottom" constant="30" id="Dpf-MU-saG"/>
                             <constraint firstItem="HuR-k5-mlO" firstAttribute="top" secondItem="uv9-eV-Ork" secondAttribute="bottom" constant="20" id="HjP-6y-qA1"/>
                             <constraint firstItem="BrQ-Gj-hp9" firstAttribute="width" secondItem="taU-RO-4I1" secondAttribute="width" multiplier="0.9" id="JRT-Rt-IHW"/>
+                            <constraint firstItem="hvC-aH-Ypa" firstAttribute="top" secondItem="9gD-9F-jZh" secondAttribute="bottom" constant="30" id="JXn-rc-F49"/>
                             <constraint firstItem="HuR-k5-mlO" firstAttribute="width" secondItem="taU-RO-4I1" secondAttribute="width" multiplier="0.9" id="LE2-Zh-UVk"/>
                             <constraint firstItem="BrQ-Gj-hp9" firstAttribute="top" secondItem="HuR-k5-mlO" secondAttribute="bottom" constant="20" id="MtL-Au-Ycn"/>
                             <constraint firstItem="9gD-9F-jZh" firstAttribute="width" secondItem="BrQ-Gj-hp9" secondAttribute="width" id="R5n-Vf-xVc"/>
@@ -847,6 +856,7 @@ with the design you want.</string>
                             <constraint firstItem="HuR-k5-mlO" firstAttribute="centerX" secondItem="Z2c-kf-fFp" secondAttribute="centerX" id="agw-GJ-Q3E"/>
                             <constraint firstItem="uv9-eV-Ork" firstAttribute="top" secondItem="xwU-dt-eeu" secondAttribute="bottom" constant="20" id="hEZ-pl-ROm"/>
                             <constraint firstItem="xwU-dt-eeu" firstAttribute="top" secondItem="Z2c-kf-fFp" secondAttribute="top" constant="30" id="l8n-vC-vdu"/>
+                            <constraint firstItem="hvC-aH-Ypa" firstAttribute="centerX" secondItem="9gD-9F-jZh" secondAttribute="centerX" id="lTQ-vD-AVB"/>
                             <constraint firstItem="uv9-eV-Ork" firstAttribute="centerX" secondItem="Z2c-kf-fFp" secondAttribute="centerX" id="mUq-DE-sjz"/>
                             <constraint firstItem="BrQ-Gj-hp9" firstAttribute="centerX" secondItem="Z2c-kf-fFp" secondAttribute="centerX" id="njJ-W5-FrI"/>
                             <constraint firstItem="xwU-dt-eeu" firstAttribute="leading" secondItem="Z2c-kf-fFp" secondAttribute="leading" constant="15" id="scl-qh-nXO"/>
@@ -952,56 +962,56 @@ with the design you want.</string>
             </objects>
             <point key="canvasLocation" x="7562.3188405797109" y="1125.6696428571429"/>
         </scene>
-        <!--Sign In Verification View Controller-->
+        <!--Forgot Password View Controller-->
         <scene sceneID="17A-zd-cme">
             <objects>
-                <viewController storyboardIdentifier="SignInVerificationViewController" id="yVw-dG-E83" customClass="SignInVerificationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordViewController" id="yVw-dG-E83" customClass="ForgotPasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B39-t0-WTb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJl-Vn-S4v">
-                                <rect key="frame" x="123" y="99" width="168" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJl-Vn-S4v">
+                                <rect key="frame" x="147" y="75" width="120.5" height="30"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-N7-lGv">
-                                <rect key="frame" x="15" y="54" width="25" height="25"/>
+                                <rect key="frame" x="15" y="30" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="bQb-LS-ata"/>
                                     <constraint firstAttribute="height" constant="25" id="ij3-Fl-AWg"/>
                                 </constraints>
                                 <state key="normal" image="leftBlack"/>
                                 <connections>
-                                    <action selector="backButtonTapped:" destination="yVw-dG-E83" eventType="touchUpInside" id="7R4-t0-lGX"/>
+                                    <action selector="backButtonTapped:" destination="yVw-dG-E83" eventType="touchUpInside" id="G3c-tl-3x5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input username for using in ThummIt." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gv-Mz-pIw">
-                                <rect key="frame" x="80" y="153" width="254" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input email to send resetting password link." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gv-Mz-pIw">
+                                <rect key="frame" x="60.5" y="129" width="293.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="verification code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iTh-JB-vs4">
-                                <rect key="frame" x="20.5" y="192.5" width="373" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iTh-JB-vs4">
+                                <rect key="frame" x="20.5" y="168.5" width="373" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24W-x9-G3d">
-                                <rect key="frame" x="20.5" y="256.5" width="373" height="45"/>
+                                <rect key="frame" x="20.5" y="232.5" width="373" height="45"/>
                                 <color key="backgroundColor" red="0.052872128779999999" green="0.61228764824701321" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="lG3-i5-EUh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <state key="normal" title="Next">
+                                <state key="normal" title="Send">
                                     <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButtonTapped:" destination="yVw-dG-E83" eventType="touchUpInside" id="8wE-nR-gV5"/>
+                                    <action selector="sendButtonTapped:" destination="yVw-dG-E83" eventType="touchUpInside" id="Sgj-uH-9SV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1019,19 +1029,18 @@ with the design you want.</string>
                             <constraint firstItem="24W-x9-G3d" firstAttribute="width" secondItem="B39-t0-WTb" secondAttribute="width" multiplier="0.9" id="led-wK-Z9d"/>
                             <constraint firstItem="iTh-JB-vs4" firstAttribute="centerX" secondItem="o25-l4-jUo" secondAttribute="centerX" id="rHf-LR-Mbg"/>
                             <constraint firstItem="WJl-Vn-S4v" firstAttribute="centerX" secondItem="o25-l4-jUo" secondAttribute="centerX" id="vKl-Lr-wqB"/>
-                            <constraint firstItem="7b9-N7-lGv" firstAttribute="top" secondItem="o25-l4-jUo" secondAttribute="top" constant="10" id="w1d-bb-gaD"/>
+                            <constraint firstItem="7b9-N7-lGv" firstAttribute="top" secondItem="o25-l4-jUo" secondAttribute="top" constant="30" id="w1d-bb-gaD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zJE-pO-lva"/>
                     <connections>
-                        <outlet property="explanationLabel" destination="5Gv-Mz-pIw" id="wQl-uA-TVl"/>
-                        <outlet property="nextButton" destination="24W-x9-G3d" id="4GV-cL-gRs"/>
-                        <outlet property="verificationCodeTextField" destination="iTh-JB-vs4" id="77f-f1-J3H"/>
+                        <outlet property="emailTextField" destination="iTh-JB-vs4" id="ljP-dr-1W8"/>
+                        <outlet property="sendButton" destination="24W-x9-G3d" id="2Mt-zK-8MS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ufo-D9-9HJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8401" y="72"/>
+            <point key="canvasLocation" x="6283" y="1801"/>
         </scene>
         <!--Sign In Name View Controller-->
         <scene sceneID="073-Ez-RQL">
@@ -1181,7 +1190,7 @@ with the design you want.</string>
                                     <action selector="nextButtonTapped:" destination="U0w-SV-3To" eventType="touchUpInside" id="G0Z-L4-xqy"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="re-enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-m9-hfa">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password confirmation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-m9-hfa">
                                 <rect key="frame" x="20.5" y="273.5" width="373" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
