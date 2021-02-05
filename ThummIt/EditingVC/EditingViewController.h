@@ -43,6 +43,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) PHAsset *originalPHAsset;
 @property (nonatomic) CGPoint originalImageViewCenter;
 @property (nonatomic) CGAffineTransform originalTransform;
+@property (strong, nonatomic) Typography *originalTypo;
+@property (strong, nonatomic) NSString *originalText;
+@property (strong, nonatomic) NSString *originalStickerImageName;
 
 @property (weak, nonatomic) IBOutlet UIView *upperArea;
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
@@ -72,7 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIView *thumbCircleView;
 @property (nonatomic) BOOL itemLoaded;
 
-@property (strong, nonatomic, nullable) NSString *originalText;
+@property (strong, nonatomic, nullable) NSString *justTyped;
 @property (strong, nonatomic, nullable) UIColor *originalCursorColor;
 
 -(void)loadItems;
