@@ -402,8 +402,10 @@
 //        }
 //        if (photoImageViewOrigin.y <= 0 && photoFrame.baseView.frameHeight/2 <= newCenter.y + photoFrame.photoImageView.frameHeight/2 ) {
 //        }
-        photoFrame.photoImageView.centerX = newCenter.x;
-        photoFrame.photoImageView.centerY = newCenter.y;
+        if (!self.isPinching) {
+            photoFrame.photoImageView.centerX = newCenter.x;
+            photoFrame.photoImageView.centerY = newCenter.y;
+        }
 
         photoFrame.photoCenter = photoFrame.photoImageView.center;
         
@@ -508,10 +510,20 @@
         editingVC.currentItem.baseView.transform = CGAffineTransformConcat(scaleTransform, rotationTransform);
         editingVC.currentItem.rotationDegree = self.currentRotation;
         editingVC.currentItem.scale = self.originalScaleRatio*changeScale;
+        
+        // 중심값 이동
+        CGPoint newPinchCenter = [sender locationInView:editingVC.view];
+        float translationX = newPinchCenter.x - self.originalPinchCenter.x;
+        float translationY = newPinchCenter.y - self.originalPinchCenter.y;
+        
+        // 센터가이드 적용
+        CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
+        editingVC.currentItem.baseView.center = changedPoint;
+        editingVC.currentItem.center = changedPoint;
 
         [self showDegreeGuideLineWithMagnetWithDeltaDegree:self.currentRotation withScaleTransform:scaleTransform];
         
-    } else if (sender.state == UIGestureRecognizerStateEnded){
+    } else if (sender.state == UIGestureRecognizerStateEnded && sender.numberOfTouches == 2){
         if (editingVC.currentItem.isFixedPhotoFrame) {
             return;
         }
@@ -720,9 +732,15 @@
             [foundItems addObject:item];
         }
     }
-    NSSortDescriptor *valueDescriptor = [[NSSortDescriptor alloc] initWithKey:@"indexInLayer" ascending:YES];
-    NSArray *descriptors = [NSArray arrayWithObject:valueDescriptor];
-    NSArray *sortedArray = [foundItems sortedArrayUsingDescriptors:descriptors];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    NSArray *sortedArray = [foundItems sortedArrayUsingComparator:^NSComparisonResult(Item *a, Item *b) {
+        NSNumber *first = [formatter numberFromString:a.indexInLayer];
+        NSNumber *second = [formatter numberFromString:b.indexInLayer];
+        return [first compare:second];
+    }];
+
+    
     return sortedArray.lastObject;
 }
 
