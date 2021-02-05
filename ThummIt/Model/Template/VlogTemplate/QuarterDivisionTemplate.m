@@ -62,6 +62,7 @@
     TrapezoidTypo *trapezoid = [TrapezoidTypo trapezoidTypo];
     trapezoidText.center = CGPointMake(0.5, 0.5);
     trapezoidText.rotationDegree = -3;
+    trapezoidText.scale = 0.45;
     trapezoidText.isTemplateItem = true;
     trapezoidText.text = @"WEEKLY VLOG";
     trapezoidText.indexInLayer = @"0";

@@ -15,7 +15,7 @@
 		6E1191012584B165000DD9C0 /* ThummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1191002584B165000DD9C0 /* ThummitTests.m */; };
 		6E11910C2584B165000DD9C0 /* ThummitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11910B2584B165000DD9C0 /* ThummitUITests.m */; };
 		6E1DBCF825CBE240004C0416 /* SignInEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */; };
-		6E1DBCFD25CBE2B5004C0416 /* SignInUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBCFC25CBE2B5004C0416 /* SignInUsernameViewController.m */; };
+		6E1DBCFD25CBE2B5004C0416 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBCFC25CBE2B5004C0416 /* ForgotPasswordViewController.m */; };
 		6E1DBD0225CBE2C5004C0416 /* SignInNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */; };
 		6E1DBD0725CBE2D4004C0416 /* SignInPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */; };
 		6E1DBD1725CD1A72004C0416 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD1625CD1A72004C0416 /* LogInViewController.m */; };
@@ -447,8 +447,8 @@
 		6E11910D2584B165000DD9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E1DBCF625CBE240004C0416 /* SignInEmailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInEmailViewController.h; sourceTree = "<group>"; };
 		6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInEmailViewController.m; sourceTree = "<group>"; };
-		6E1DBCFB25CBE2B5004C0416 /* SignInUsernameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInUsernameViewController.h; sourceTree = "<group>"; };
-		6E1DBCFC25CBE2B5004C0416 /* SignInUsernameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInUsernameViewController.m; sourceTree = "<group>"; };
+		6E1DBCFB25CBE2B5004C0416 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		6E1DBCFC25CBE2B5004C0416 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		6E1DBD0025CBE2C5004C0416 /* SignInNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInNameViewController.h; sourceTree = "<group>"; };
 		6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInNameViewController.m; sourceTree = "<group>"; };
 		6E1DBD0525CBE2D4004C0416 /* SignInPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInPasswordViewController.h; sourceTree = "<group>"; };
@@ -1272,8 +1272,8 @@
 				6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */,
 				6E1DBD0525CBE2D4004C0416 /* SignInPasswordViewController.h */,
 				6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */,
-				6E1DBCFB25CBE2B5004C0416 /* SignInUsernameViewController.h */,
-				6E1DBCFC25CBE2B5004C0416 /* SignInUsernameViewController.m */,
+				6E1DBCFB25CBE2B5004C0416 /* ForgotPasswordViewController.h */,
+				6E1DBCFC25CBE2B5004C0416 /* ForgotPasswordViewController.m */,
 			);
 			path = Signin;
 			sourceTree = "<group>";
@@ -3334,7 +3334,7 @@
 				6E9BEA4E258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift in Sources */,
 				6EBEB6C625C56EA10017C640 /* VlogStudentTypo.m in Sources */,
 				6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */,
-				6E1DBCFD25CBE2B5004C0416 /* SignInUsernameViewController.m in Sources */,
+				6E1DBCFD25CBE2B5004C0416 /* ForgotPasswordViewController.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
 				B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */,

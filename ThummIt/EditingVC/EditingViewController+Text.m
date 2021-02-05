@@ -20,7 +20,7 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     
-    self.originalText = text;
+    self.justTyped = text;
     
     return YES;
 }
@@ -30,7 +30,7 @@
     
     
     if(!self.currentText.isTypedByUser){
-        self.currentText.textView.text = self.originalText;//추가로 입력된 글자만 출력되게
+        self.currentText.textView.text = self.justTyped;//추가로 입력된 글자만 출력되게
         self.currentText.textView.tintColor = self.originalCursorColor;
     }
 //    NSLog(@"%@",self.currentText.text);

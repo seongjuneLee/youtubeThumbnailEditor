@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -527,9 +528,6 @@
                                 <state key="normal" image="textImage">
                                     <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="itemButtonTapped:" destination="TdZ-if-u2J" eventType="touchUpInside" id="Uxe-7Q-mdD"/>
-                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttm-yg-W6I">
                                 <rect key="frame" x="364" y="54" width="40" height="40"/>
@@ -541,9 +539,28 @@
                                 <state key="normal" image="keyboardImage">
                                     <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="contentButtonTapped:" destination="TdZ-if-u2J" eventType="touchUpInside" id="9lg-NV-gAo"/>
-                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qof-TW-rch" userLabel="Cancel Button">
+                                <rect key="frame" x="15" y="54" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Trt-7o-Joo"/>
+                                    <constraint firstAttribute="height" constant="40" id="V0N-kN-sP3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large" renderingMode="original"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0A-Jy-exy" userLabel="Check Button">
+                                <rect key="frame" x="65" y="54" width="40" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="checkmark" catalog="system" symbolScale="large" renderingMode="original"/>
+                                </state>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6d4-Tq-A1X">
                                 <rect key="frame" x="0.0" y="104" width="414" height="596"/>
@@ -560,20 +577,28 @@
                         <viewLayoutGuide key="safeArea" id="dPu-Qs-fs0"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Qof-TW-rch" firstAttribute="leading" secondItem="dPu-Qs-fs0" secondAttribute="leading" constant="15" id="1b1-fy-cbD"/>
                             <constraint firstItem="W0g-2H-65O" firstAttribute="width" secondItem="ttm-yg-W6I" secondAttribute="width" id="35y-jy-GHT"/>
+                            <constraint firstItem="p0A-Jy-exy" firstAttribute="height" secondItem="Qof-TW-rch" secondAttribute="height" id="5xT-c7-z7I"/>
                             <constraint firstItem="dPu-Qs-fs0" firstAttribute="trailing" secondItem="ttm-yg-W6I" secondAttribute="trailing" constant="10" id="HyQ-kj-wwO"/>
                             <constraint firstItem="ttm-yg-W6I" firstAttribute="top" secondItem="dPu-Qs-fs0" secondAttribute="top" constant="10" id="Kmv-p6-VT3"/>
                             <constraint firstItem="6d4-Tq-A1X" firstAttribute="width" secondItem="EnA-7z-EXH" secondAttribute="width" id="WxG-cH-fvc"/>
+                            <constraint firstItem="p0A-Jy-exy" firstAttribute="width" secondItem="Qof-TW-rch" secondAttribute="width" id="XRd-cc-mZa"/>
                             <constraint firstItem="W0g-2H-65O" firstAttribute="centerY" secondItem="ttm-yg-W6I" secondAttribute="centerY" id="d7x-Si-Xc7"/>
+                            <constraint firstItem="Qof-TW-rch" firstAttribute="bottom" secondItem="6d4-Tq-A1X" secondAttribute="top" constant="-10" id="dKn-dv-BfA"/>
                             <constraint firstItem="ttm-yg-W6I" firstAttribute="leading" secondItem="W0g-2H-65O" secondAttribute="trailing" constant="15" id="dfI-WJ-aAD"/>
+                            <constraint firstItem="p0A-Jy-exy" firstAttribute="centerY" secondItem="Qof-TW-rch" secondAttribute="centerY" id="etj-se-MVB"/>
                             <constraint firstItem="6d4-Tq-A1X" firstAttribute="centerX" secondItem="dPu-Qs-fs0" secondAttribute="centerX" id="k1o-LJ-7s5"/>
                             <constraint firstItem="6d4-Tq-A1X" firstAttribute="top" secondItem="W0g-2H-65O" secondAttribute="bottom" constant="10" id="nH0-gx-Hj2"/>
                             <constraint firstItem="6d4-Tq-A1X" firstAttribute="bottom" secondItem="dPu-Qs-fs0" secondAttribute="bottom" id="txR-am-tv8"/>
                             <constraint firstItem="W0g-2H-65O" firstAttribute="height" secondItem="ttm-yg-W6I" secondAttribute="height" id="uKL-Bd-SuR"/>
+                            <constraint firstItem="p0A-Jy-exy" firstAttribute="leading" secondItem="Qof-TW-rch" secondAttribute="trailing" constant="10" id="zqS-qv-wzC"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="700"/>
                     <connections>
+                        <outlet property="cancelButton" destination="Qof-TW-rch" id="Hc9-Pg-6yI"/>
+                        <outlet property="checkButton" destination="p0A-Jy-exy" id="OxA-dB-ONI"/>
                         <outlet property="collectionView" destination="6d4-Tq-A1X" id="puw-st-sYr"/>
                         <outlet property="contentButton" destination="ttm-yg-W6I" id="aEr-qp-Ibs"/>
                         <outlet property="itemButton" destination="W0g-2H-65O" id="fHm-uU-RJR"/>
@@ -581,7 +606,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4M-PB-4Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677" y="-645"/>
+            <point key="canvasLocation" x="676.81159420289862" y="-645.53571428571422"/>
         </scene>
         <!--Album-->
         <scene sceneID="6V7-1L-aym">

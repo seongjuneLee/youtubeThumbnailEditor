@@ -16,6 +16,7 @@
         self.itemName = @"circleSticker1";
         self.backgroundImageName = @"circleSticker1";
         self.tintColor = [UIColor redColor];
+//        self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return self;
     
