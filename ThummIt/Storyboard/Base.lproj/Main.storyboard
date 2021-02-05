@@ -520,7 +520,7 @@ You may submit a request to exercise your right to information, access or deleti
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQ4-vK-OnZ" userLabel="Sign In View">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwk-oc-Fct" userLabel="Sign In View Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwk-oc-Fct" userLabel="Sign In View Label">
                                         <rect key="frame" x="10" y="145.5" width="394" height="67.5"/>
                                         <string key="text">Create a YouTube thumbnail 
 with the design you want.</string>
@@ -1236,7 +1236,6 @@ with the design you want.</string>
         <!--Navigation Controller-->
         <scene sceneID="ThZ-HU-p3S">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JYK-dy-UGp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="dvk-h9-Vfv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wuO-iB-0gp">
@@ -1247,6 +1246,7 @@ with the design you want.</string>
                         <segue destination="ZZm-Fw-DHO" kind="relationship" relationship="rootViewController" id="oiv-Er-GDL"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JYK-dy-UGp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6650.7246376811599" y="1125.6696428571429"/>
         </scene>
