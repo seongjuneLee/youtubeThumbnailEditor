@@ -47,12 +47,12 @@
     
     Text *smileTypo = [[Text alloc] init];
     DinggoSmileTypo *smile = [DinggoSmileTypo dinggoSmileTypo];
-    smileTypo.scale = 0.3;
-    smileTypo.center = CGPointMake(0.6, 0.5);
+    smileTypo.scale = 0.345;
+    smileTypo.center = CGPointMake(0.75, 0.5);
     smileTypo.isTemplateItem = true;
     smileTypo.indexInLayer = @"1";
-    smileTypo.text = @"일딴 웃어~!!!";
-    smileTypo.textView.text = @"일딴 웃어~!!!";
+    smileTypo.text = @"일단 웃어~!!!";
+    smileTypo.textView.text = smileTypo.text;
     smileTypo.typo = smile;
     [self.texts addObject:smileTypo];
     

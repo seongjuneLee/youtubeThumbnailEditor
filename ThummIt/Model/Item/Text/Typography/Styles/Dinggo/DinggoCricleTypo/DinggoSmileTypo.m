@@ -18,9 +18,7 @@
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1] ;
         self.fontSize = TEXT_FONT_SIZE;
         self.bgImageName = @"DinggoTalkBox";
-        self.bgHeightPadding = 50;
-        self.bgWidthPadding = 100;
-        
+        self.bgHeightPadding = 10;        
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         
@@ -34,7 +32,7 @@
                 attribute1.shadowOffset = CGPointMake(1, 1);
         
         attribute2.shadowColor = [UIColor colorWithRed:44/255.0 green:252/255.0 blue:220/255.0 alpha:1.0];
-                attribute2.shadowOffset = CGPointMake(2, 2);
+                attribute2.shadowOffset = CGPointMake(1.5, 1.5);
         
         self.bgTextAttributes = @[borderAtt,attribute1,attribute2];
     }
