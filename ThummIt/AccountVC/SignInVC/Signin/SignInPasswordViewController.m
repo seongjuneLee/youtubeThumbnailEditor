@@ -6,7 +6,9 @@
 //
 
 #import "SignInPasswordViewController.h"
-
+#import "UserManager.h"
+#import "NSString+Additions.h"
+@import Parse;
 @interface SignInPasswordViewController ()
 
 @end
@@ -40,36 +42,80 @@
 
 -(void)passwordTextFieldidChange:(UITextField *)textField{
     
-    NSLog(@"textFieldtextField %@",textField.text);
-    BOOL validate = true;
+    BOOL validate = [NSString isValidPassword:textField.text];
     if (validate) {
-        self.nextButton.enabled = true;
-        self.nextButton.alpha = 1.0;
-
+        [UIView animateWithDuration:0.2 animations:^{
+            self.passwordWarningLabel.alpha = 0.0;
+        }];
     } else {
-        self.nextButton.enabled = false;
-        self.nextButton.alpha = 0.4;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.passwordWarningLabel.alpha = 1.0;
+        }];
     }
     
+    if (textField.text.length == 0) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.reenterWarningLabel.alpha = 0.0;
+        }];
+    }
 
+    
 }
 
 -(void)reEnterTextFieldDidChange:(UITextField *)textField{
     
-    NSLog(@"textFieldtextField %@",textField.text);
-    BOOL validate = true;
+    BOOL validate = [self isReenterPasswordValid] && [NSString isValidPassword:self.passwordTextField.text];
     if (validate) {
         self.nextButton.enabled = true;
         self.nextButton.alpha = 1.0;
-
+        [UIView animateWithDuration:0.2 animations:^{
+            self.reenterWarningLabel.alpha = 0.0;
+        }];
     } else {
         self.nextButton.enabled = false;
         self.nextButton.alpha = 0.4;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.reenterWarningLabel.alpha = 1.0;
+        }];
     }
+    if (textField.text.length == 0) {
+        self.nextButton.enabled = false;
+        self.nextButton.alpha = 0.4;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.reenterWarningLabel.alpha = 0.0;
+        }];
+    }
+
+    
+}
+
+-(BOOL)isReenterPasswordValid{
+    
+    if ([self.reEnterTextField.text isEqualToString:self.passwordTextField.text]) {
+        return true;
+    }
+    
+    return false;
     
 }
 
 - (IBAction)nextButtonTapped:(id)sender {
+    
+    PFUser *newUser = [PFUser user];
+    newUser[@"username"] = UserManager.sharedInstance.email;
+    newUser[@"email"] = UserManager.sharedInstance.email;
+    newUser[@"nickname"] = UserManager.sharedInstance.nickname;
+    newUser[@"password"] = self.passwordTextField.text;
+    
+    [self.view makeToastActivity:CSToastPositionCenter];
+    [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            [self.navigationController dismissViewControllerAnimated:true completion:nil];
+            [self.view hideAllToasts];
+        }
+    }];
+    
+    
 }
 
 - (IBAction)backButtonTapped:(id)sender {

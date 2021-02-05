@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <UIKit/UINavigationController.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SignInEmailViewController : UIViewController <UITextFieldDelegate>
@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 - (IBAction)backButtonTapped:(id)sender;
 - (IBAction)nextButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *warningLabel;
 
 @end
 

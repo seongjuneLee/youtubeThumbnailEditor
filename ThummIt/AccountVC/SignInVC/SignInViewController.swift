@@ -20,8 +20,6 @@ import FBSDKCoreKit
 class SignInViewController: UIViewController {
     @IBOutlet weak var kakaoSignInView: UIView!
     @IBOutlet weak var emailSignInView: UIView!
-    @IBOutlet weak var appleSignInView: UIView!
-    @IBOutlet weak var googleSignInView: UIView!
     @IBOutlet weak var facebookSignInView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -48,7 +46,9 @@ class SignInViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
-        
+        let main = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let logInVC = main.instantiateViewController(identifier: "LogInViewController")
+        self.navigationController?.pushViewController(logInVC, animated: true)
         
     }
     
@@ -166,7 +166,6 @@ class SignInViewController: UIViewController {
     @IBAction func closeButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
     
     
 }

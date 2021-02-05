@@ -5,13 +5,14 @@
 //  Created by 이성준 on 2021/02/04.
 //
 
-#import "SignInVerificationViewController.h"
+#import "SignInUsernameViewController.h"
+#import "SignInNameViewController.h"
 
-@interface SignInVerificationViewController ()
+@interface SignInUsernameViewController ()
 
 @end
 
-@implementation SignInVerificationViewController
+@implementation SignInUsernameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

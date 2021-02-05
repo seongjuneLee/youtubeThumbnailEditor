@@ -44,6 +44,7 @@
             PFUser* newUser = [PFUser user];
             [self validatedUserName:username withCompletionBlock:^(NSString *validatedUsername) {
                 newUser[@"username"] = validatedUsername;
+                newUser[@"nickname"] = validatedUsername;
                 newUser[@"password"] = password;
                 newUser[@"thirdPartyUserID"] = formattedId;
                 newUser[@"email"] = email;
@@ -85,7 +86,13 @@
         
     }];
 
+}
+
+-(void)startSignUpWithInApp{
     
+    self.email = @"";
+    self.nickname = @"";
+    self.password = @"";
     
 }
 

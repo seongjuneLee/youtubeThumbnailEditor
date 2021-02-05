@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)signUpWithThirdPartyID:(NSString*)thirdPartyID withType:(NSString *)type username:(NSString*)username withEmail:(NSString *)email callback:(void(^)(BOOL)) callback;
 + (UserManager *)sharedInstance;
+-(void)startSignUpWithInApp;
+
+@property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSString *nickname;
+@property (strong, nonatomic) NSString *password;
 
 @end
 

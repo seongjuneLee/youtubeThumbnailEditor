@@ -13,10 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *reEnterTextField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
-@property (weak, nonatomic) IBOutlet UIImageView *exclaimMarkImageView;
 - (IBAction)backButtonTapped:(id)sender;
 - (IBAction)nextButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *reenterWarningLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *passwordWarningLabel;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,5 +1,5 @@
 //
-//  SignInVerificationViewController.h
+//  SignInNameViewController.h
 //  ThummIt
 //
 //  Created by 이성준 on 2021/02/04.
@@ -9,12 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SignInVerificationViewController : UIViewController <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *verificationCodeTextField;
+@interface SignInNameViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
-@property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 - (IBAction)backButtonTapped:(id)sender;
 - (IBAction)nextButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *warningLabel;
 
 @end
 

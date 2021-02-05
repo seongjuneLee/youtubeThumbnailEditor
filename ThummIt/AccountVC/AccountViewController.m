@@ -20,7 +20,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.accountNameLabel.text = PFUser.currentUser.username;
+    self.accountNameLabel.text = PFUser.currentUser[@"nickname"];
 }
 
 -(void)viewDidLayoutSubviews{
