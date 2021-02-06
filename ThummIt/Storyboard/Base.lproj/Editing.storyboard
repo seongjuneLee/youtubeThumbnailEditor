@@ -81,17 +81,17 @@
                                     <action selector="redoButtonTapped:" destination="9gy-MH-RR0" eventType="touchUpInside" id="2Pi-LM-Yla"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmC-6K-MjI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmC-6K-MjI" userLabel="Right Item">
                                 <rect key="frame" x="352" y="59" width="52" height="34"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <state key="normal" title="Export">
                                     <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="rightItemTapped:" destination="9gy-MH-RR0" eventType="touchUpInside" id="1Sk-Jp-FUk"/>
+                                    <action selector="rightItemTapped:" destination="9gy-MH-RR0" eventType="touchUpInside" id="zzM-u3-qzZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2a-Qa-wOL">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2a-Qa-wOL" userLabel="Left Item">
                                 <rect key="frame" x="10" y="63.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="hm7-V8-h9d"/>
@@ -102,7 +102,7 @@
                                     <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="leftItemTapped:" destination="9gy-MH-RR0" eventType="touchUpInside" id="Lge-A4-VdB"/>
+                                    <action selector="leftItemTapped:" destination="9gy-MH-RR0" eventType="touchUpInside" id="ubb-e4-3Rb"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a67-Pd-GYU">
@@ -407,12 +407,11 @@
                         <outlet property="deleteButtonContainerView" destination="wc0-ej-qTW" id="tWS-ud-jZS"/>
                         <outlet property="gestureView" destination="zeV-pp-6xL" id="eFT-Gp-vQG"/>
                         <outlet property="hueSlider" destination="dNB-8m-B4w" id="pLl-pE-Mot"/>
-                        <outlet property="leftItem" destination="i2a-Qa-wOL" id="BCc-k9-lwq"/>
-                        <outlet property="leftItemWidthConstraint" destination="hm7-V8-h9d" id="w3w-EG-UTM"/>
+                        <outlet property="leftItem" destination="i2a-Qa-wOL" id="HV2-ck-yN3"/>
                         <outlet property="photoFrameButton" destination="kFG-gf-ZDf" id="8Av-8f-9oo"/>
                         <outlet property="photoFrameButtonContainerView" destination="MaA-yZ-tJG" id="ZmA-HC-BW4"/>
                         <outlet property="redoButton" destination="hyI-hU-5Mx" id="A3S-Ua-REa"/>
-                        <outlet property="rightItem" destination="JmC-6K-MjI" id="vEH-9O-8xp"/>
+                        <outlet property="rightItem" destination="JmC-6K-MjI" id="iJv-fw-kR5"/>
                         <outlet property="stickerButton" destination="S58-zA-LLk" id="x7v-dK-Qe6"/>
                         <outlet property="stickerButtonContainerView" destination="yU9-uf-R4L" id="eFt-h0-1nx"/>
                         <outlet property="textButton" destination="IR6-qv-FJI" id="VHX-kA-5XZ"/>
@@ -522,24 +521,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0g-2H-65O">
-                                <rect key="frame" x="309" y="54" width="40" height="40"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <state key="normal" image="textImage">
-                                    <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttm-yg-W6I">
-                                <rect key="frame" x="364" y="54" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="Lfp-bW-nlq"/>
-                                    <constraint firstAttribute="height" constant="40" id="RrN-dz-2aC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <state key="normal" image="keyboardImage">
-                                    <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qof-TW-rch" userLabel="Cancel Button">
                                 <rect key="frame" x="15" y="54" width="40" height="40"/>
                                 <constraints>
@@ -550,17 +531,23 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large" renderingMode="original"/>
+                                    <imageReference key="image" image="closeButton" symbolScale="large" renderingMode="original"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="TdZ-if-u2J" eventType="touchUpInside" id="BVf-ao-yWX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0A-Jy-exy" userLabel="Check Button">
-                                <rect key="frame" x="65" y="54" width="40" height="40"/>
+                                <rect key="frame" x="364" y="54" width="40" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <imageReference key="image" image="checkmark" catalog="system" symbolScale="large" renderingMode="original"/>
+                                    <imageReference key="image" image="downArrow" symbolScale="large" renderingMode="original"/>
                                 </state>
+                                <connections>
+                                    <action selector="checkButtonTapped:" destination="TdZ-if-u2J" eventType="touchUpInside" id="u2y-w1-vod"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6d4-Tq-A1X">
                                 <rect key="frame" x="0.0" y="104" width="414" height="596"/>
@@ -578,21 +565,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qof-TW-rch" firstAttribute="leading" secondItem="dPu-Qs-fs0" secondAttribute="leading" constant="15" id="1b1-fy-cbD"/>
-                            <constraint firstItem="W0g-2H-65O" firstAttribute="width" secondItem="ttm-yg-W6I" secondAttribute="width" id="35y-jy-GHT"/>
                             <constraint firstItem="p0A-Jy-exy" firstAttribute="height" secondItem="Qof-TW-rch" secondAttribute="height" id="5xT-c7-z7I"/>
-                            <constraint firstItem="dPu-Qs-fs0" firstAttribute="trailing" secondItem="ttm-yg-W6I" secondAttribute="trailing" constant="10" id="HyQ-kj-wwO"/>
-                            <constraint firstItem="ttm-yg-W6I" firstAttribute="top" secondItem="dPu-Qs-fs0" secondAttribute="top" constant="10" id="Kmv-p6-VT3"/>
+                            <constraint firstItem="Qof-TW-rch" firstAttribute="top" secondItem="dPu-Qs-fs0" secondAttribute="top" constant="10" id="GWT-bo-jKn"/>
                             <constraint firstItem="6d4-Tq-A1X" firstAttribute="width" secondItem="EnA-7z-EXH" secondAttribute="width" id="WxG-cH-fvc"/>
                             <constraint firstItem="p0A-Jy-exy" firstAttribute="width" secondItem="Qof-TW-rch" secondAttribute="width" id="XRd-cc-mZa"/>
-                            <constraint firstItem="W0g-2H-65O" firstAttribute="centerY" secondItem="ttm-yg-W6I" secondAttribute="centerY" id="d7x-Si-Xc7"/>
                             <constraint firstItem="Qof-TW-rch" firstAttribute="bottom" secondItem="6d4-Tq-A1X" secondAttribute="top" constant="-10" id="dKn-dv-BfA"/>
-                            <constraint firstItem="ttm-yg-W6I" firstAttribute="leading" secondItem="W0g-2H-65O" secondAttribute="trailing" constant="15" id="dfI-WJ-aAD"/>
                             <constraint firstItem="p0A-Jy-exy" firstAttribute="centerY" secondItem="Qof-TW-rch" secondAttribute="centerY" id="etj-se-MVB"/>
                             <constraint firstItem="6d4-Tq-A1X" firstAttribute="centerX" secondItem="dPu-Qs-fs0" secondAttribute="centerX" id="k1o-LJ-7s5"/>
-                            <constraint firstItem="6d4-Tq-A1X" firstAttribute="top" secondItem="W0g-2H-65O" secondAttribute="bottom" constant="10" id="nH0-gx-Hj2"/>
                             <constraint firstItem="6d4-Tq-A1X" firstAttribute="bottom" secondItem="dPu-Qs-fs0" secondAttribute="bottom" id="txR-am-tv8"/>
-                            <constraint firstItem="W0g-2H-65O" firstAttribute="height" secondItem="ttm-yg-W6I" secondAttribute="height" id="uKL-Bd-SuR"/>
-                            <constraint firstItem="p0A-Jy-exy" firstAttribute="leading" secondItem="Qof-TW-rch" secondAttribute="trailing" constant="10" id="zqS-qv-wzC"/>
+                            <constraint firstItem="p0A-Jy-exy" firstAttribute="trailing" secondItem="dPu-Qs-fs0" secondAttribute="trailing" constant="-10" id="zqS-qv-wzC"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="700"/>
@@ -600,8 +581,6 @@
                         <outlet property="cancelButton" destination="Qof-TW-rch" id="Hc9-Pg-6yI"/>
                         <outlet property="checkButton" destination="p0A-Jy-exy" id="OxA-dB-ONI"/>
                         <outlet property="collectionView" destination="6d4-Tq-A1X" id="puw-st-sYr"/>
-                        <outlet property="contentButton" destination="ttm-yg-W6I" id="aEr-qp-Ibs"/>
-                        <outlet property="itemButton" destination="W0g-2H-65O" id="fHm-uU-RJR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4M-PB-4Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -675,11 +654,10 @@
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="closeButton" width="168" height="168"/>
         <image name="deleteImage" width="116.66666412353516" height="116.66666412353516"/>
-        <image name="keyboardImage" width="216.66667175292969" height="216.66667175292969"/>
+        <image name="downArrow" width="216.66667175292969" height="216.66667175292969"/>
         <image name="photoFrameImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="redoImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="stickerImage" width="216.66667175292969" height="216.66667175292969"/>
-        <image name="textImage" width="250" height="216.66667175292969"/>
         <image name="undoImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>

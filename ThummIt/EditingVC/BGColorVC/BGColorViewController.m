@@ -8,6 +8,8 @@
 #import "BGColorViewController.h"
 #import "EditingViewController.h"
 #import "EditingViewController+Buttons.h"
+#import "ItemCollectionViewController.h"
+#import "ItemCollectionViewController+Button.h"
 
 @interface BGColorViewController ()
 
@@ -47,15 +49,14 @@
 - (IBAction)doneButtonTapped:(UIButton *)sender {
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    [editingVC rightItemTapped:editingVC.rightItem];
-    
+    [editingVC doneEditingBGColor];
 }
 
 - (IBAction)cancelButtonTapped:(UIButton *)sender {
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    [editingVC leftItemTapped:editingVC.leftItem];
-    
+    [editingVC cancelEditingBGColor];
+
 }
 
 @end

@@ -162,15 +162,38 @@
 
 -(void)didTapTextWhileAdding{
     
-    [self.itemCollectionVC contentButtonTapped:self.itemCollectionVC.contentButton];
+    ItemCollectionViewController *itemcollectionVC = (ItemCollectionViewController *)self.itemCollectionVC;
+    
+    if (itemcollectionVC.itemType == PhotoFrameType) {
+        
+        self.albumVC.view.frameHeight = itemcollectionVC.view.frameHeight - (itemcollectionVC.cancelButton.frameY + itemcollectionVC.cancelButton.frameHeight + 10);
+        self.albumVC.view.frameY = self.view.frameHeight - self.albumVC.view.frameHeight;
+        self.albumVC.view.hidden = false;
+        self.modeController.editingMode = EditingPhotoFrameModeWhileAddingPhotoFrameMode;
+    } else if (itemcollectionVC.itemType == TextType){
+        
+        [self.currentText.textView becomeFirstResponder];
+    }
 
 }
 
 -(void)didTapPhotoFrameWhileAdding{
     
     [self.modeController setNavigationItemRespondToEditingMode:EditingTextMode];
-    [self.itemCollectionVC contentButtonTapped:self.itemCollectionVC.contentButton];
     
+    ItemCollectionViewController *itemcollectionVC = (ItemCollectionViewController *)self.itemCollectionVC;
+    
+    if (itemcollectionVC.itemType == PhotoFrameType) {
+        
+        self.albumVC.view.frameHeight = itemcollectionVC.view.frameHeight - (itemcollectionVC.cancelButton.frameY + itemcollectionVC.cancelButton.frameHeight + 10);
+        self.albumVC.view.frameY = self.view.frameHeight - self.albumVC.view.frameHeight;
+        self.albumVC.view.hidden = false;
+        self.modeController.editingMode = EditingPhotoFrameModeWhileAddingPhotoFrameMode;
+    } else if (itemcollectionVC.itemType == TextType){
+        
+        [self.currentText.textView becomeFirstResponder];
+    }
+
 }
 
 #pragma mark - 팬

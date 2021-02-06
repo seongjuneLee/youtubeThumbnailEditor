@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ItemCollectionViewController (Button)
 
-- (IBAction)itemButtonTapped:(UIButton *)sender;
-- (IBAction)contentButtonTapped:(UIButton *)sender;
+- (IBAction)cancelButtonTapped:(UIButton *)sender;
+- (IBAction)checkButtonTapped:(UIButton *)sender;
 
 @end
 

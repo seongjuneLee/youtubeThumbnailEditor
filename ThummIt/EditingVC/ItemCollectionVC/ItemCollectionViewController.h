@@ -24,8 +24,6 @@ typedef enum {
 @interface ItemCollectionViewController : UIViewController 
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIButton *itemButton;
-@property (weak, nonatomic) IBOutlet UIButton *contentButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
 
@@ -36,8 +34,6 @@ typedef enum {
 @property (strong, nonatomic) StickerCollectionController *stickerCollectionController;
 
 @property (weak, nonatomic) UIViewController *editingVC;
-
-
 
 -(void)dismissSelf;
 

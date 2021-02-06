@@ -10,6 +10,7 @@
 #import "ItemCollectionViewController+Text.h"
 #import "ItemCollectionViewController+Sticker.h"
 #import "EditingViewController.h"
+#import "ItemCollectionViewController+Button.h"
 @interface ItemCollectionViewController ()
 
 @end
@@ -32,14 +33,13 @@
 
 -(void)viewWillLayoutSubviews{
     
-    
 }
 
 -(void)dismissSelf{
     
     float screenHeight = UIScreen.mainScreen.bounds.size.height;
     [UIView animateWithDuration:0.2 animations:^{
-        self.itemButton.alpha = self.contentButton.alpha = 0;
+        self.cancelButton.alpha = self.checkButton.alpha = 0;
     }completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
             self.collectionView.frameY = screenHeight;
@@ -51,6 +51,7 @@
     }];
 
 }
+
 
 - (void)setCollectionViewFlowLayout {
     
@@ -79,24 +80,18 @@
 
 -(void)connectCollectionController{
     
-    self.itemButton.selected = true;
-    self.contentButton.selected = false;
-    
+
     if (self.itemType == PhotoFrameType) {
         self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
         self.photoFrameCollectionController.delegate = self;
-        [self.itemButton setImage:[UIImage imageNamed:@"photoFrameImage"] forState:UIControlStateNormal];
-        [self.contentButton setImage:[UIImage imageNamed:@"photoAlbum"] forState:UIControlStateNormal];
+        
     } else if (self.itemType == TextType){
         self.textCollectionController = [[TextCollectionController alloc] initWithCollectionView:self.collectionView];
         self.textCollectionController.delegate = self;
-        [self.itemButton setImage:[UIImage imageNamed:@"textImage"] forState:UIControlStateNormal];
-        [self.contentButton setImage:[UIImage imageNamed:@"keyboardImage"] forState:UIControlStateNormal];
+      
     }else if (self.itemType == StickerType){
         self.stickerCollectionController = [[StickerCollectionController alloc] initWithCollectionView:self.collectionView];
         self.stickerCollectionController.delegate = self;
-        [self.itemButton setImage:nil forState:UIControlStateNormal];
-        [self.contentButton setImage:nil forState:UIControlStateNormal];
         // 추가 필요
     }
     

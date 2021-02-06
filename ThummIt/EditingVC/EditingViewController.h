@@ -49,9 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIView *upperArea;
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
-@property (weak, nonatomic) IBOutlet UIButton *leftItem;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftItemWidthConstraint;
-@property (weak, nonatomic) IBOutlet UIButton *rightItem;
 @property (weak, nonatomic) IBOutlet UIView *photoFrameButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *deleteButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *underAreaView;
@@ -69,7 +66,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *redoButton;
 @property (weak, nonatomic) IBOutlet UISlider *hueSlider;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
-
+@property (weak, nonatomic) IBOutlet UIButton *leftItem;
+@property (weak, nonatomic) IBOutlet UIButton *rightItem;
 
 @property (strong, nonatomic) UIImageView *hueImageView;
 @property (strong, nonatomic) UIView *thumbCircleView;
@@ -79,6 +77,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) UIColor *originalCursorColor;
 
 -(void)loadItems;
+
+
 
 
 @end
