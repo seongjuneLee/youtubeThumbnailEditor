@@ -46,10 +46,14 @@
     [self.currentText.textView setNeedsDisplay];
     
     
+    // 부분 타이포 적용
     for (NSMutableAttributedString* attributedText in self.currentText.backgroundAttributedTexts) {
         attributedText.mutableString.string = textView.text;
     }
-
+    NSRange prevRange = self.currentText.textView.selectedRange;
+    [self.currentText applyTypo:self.currentText.typo];
+    [self.currentText.textViewContainer setNeedsLayout];
+    self.currentText.textView.selectedRange = prevRange;
 }
 
 @end

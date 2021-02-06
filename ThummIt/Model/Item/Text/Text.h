@@ -37,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)updateBackgroundImageViewFrame:(Typography *)typo;
 +(UIImageView*)makePlaceHolderWithTypo:(Typography*)typo;
 -(id)initWithTypo:(Typography *)typo;
+-(void)applyTypo:(Typography *)typo;
 
 
 @end

@@ -73,10 +73,7 @@
     float ratio = image.size.height/image.size.width;
     if (isnan(ratio)) {
         ratio = 1;
-        NSLog(@"ratio is nan");
-        NSLog(@"imageimageimageimage %@",image);
     }
-    NSLog(@"ratio %f",ratio);
     self.baseView = [[UIView alloc] init];
     self.baseView.clipsToBounds = true;
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
@@ -88,7 +85,6 @@
     float width = UIScreen.mainScreen.bounds.size.width;
     float scale = width/self.baseView.frameWidth;
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
-    NSLog(@"scale * self.scale %f",scale * self.scale);
     self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
     self.baseView.center = self.center;
 }
