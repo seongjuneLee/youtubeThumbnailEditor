@@ -71,6 +71,12 @@
     
     UIImage *image = [UIImage imageNamed:self.backgroundImageName];
     float ratio = image.size.height/image.size.width;
+    if (isnan(ratio)) {
+        ratio = 1;
+        NSLog(@"ratio is nan");
+        NSLog(@"imageimageimageimage %@",image);
+    }
+    NSLog(@"ratio %f",ratio);
     self.baseView = [[UIView alloc] init];
     self.baseView.clipsToBounds = true;
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
