@@ -11,8 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EditingViewController (Buttons)
 
-- (IBAction)leftItemTapped:(id)sender;
-- (IBAction)rightItemTapped:(id)sender;
 - (IBAction)photoFrameButtonTapped:(id)sender;
 - (IBAction)textButtonTapped:(UIButton *)sender;
 - (IBAction)stickerButtonTapped:(id)sender;
@@ -20,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)undoButtonTapped:(UIButton *)sender;
 - (IBAction)redoButtonTapped:(UIButton *)sender;
 - (IBAction)sliderValueChanged:(UISlider *)sender;
+- (IBAction)leftItemTapped:(id)sender;
+- (IBAction)rightItemTapped:(id)sender;
 
 -(void)photoFrameButtonHoldDown;
 -(void)photoFrameButtonHoldRelease;
@@ -33,8 +33,27 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)taskWhenAuthorized;
 -(void)taskWhenDenied;
 
--(void)hideAndInitSlider;
+-(void)cancelAddingPhotoFrame;
+-(void)cancelEditingPhotoFrame;
+-(void)cancelAddingText;
+-(void)cancelEditingText;
+-(void)cancelAddingSticker;
+-(void)cancelEditingSticker;
+-(void)cancelEditingBGColor;
+-(void)dismissAlbumVC;
 -(void)dismissItemCollectionVC;
+-(void)closeEditingVC;
+-(void)hideAndInitSlider;
+-(void)exportThumbnail;
+-(void)doneAddingPhotoFrame;
+-(void)doneEditingPhotoFrame;
+-(void)doneAddingText;
+-(void)doneEditingText;
+-(void)doneAddingSticker;
+-(void)doneEditingSticker;
+-(void)doneEditingBGColor;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

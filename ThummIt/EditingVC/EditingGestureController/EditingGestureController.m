@@ -85,7 +85,7 @@
     } else if (editingVC.modeController.editingMode == AddingTextMode){
         [self.delegate didTapTextWhileAdding];
     } else if (editingVC.modeController.editingMode == EditingStickerMode){
-        [self.delegate didSelectItem:[self getCurrentItem:sender]];
+        [self.delegate didSelectItem:self.currentItem];
     } else if (editingVC.modeController.editingMode == AddingStickerMode){
         [self.delegate didTapTextWhileAdding];
     }
@@ -95,38 +95,27 @@
 -(void)gestureViewPanned:(UIPanGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-
+//NORMAL
     if (editingVC.modeController.editingMode == NormalMode) {
-            
         [self gestureViewPannedForMode:NormalMode withSender:sender];
-        
+//PHOTOFRAME
     } else if (editingVC.modeController.editingMode == AddingPhotoFrameMode){
-        
         [self gestureViewPannedForMode:AddingPhotoFrameMode withSender:sender];
-        
-    } else if(editingVC.modeController.editingMode == AddingTextMode){
-        
-        [self gestureViewPannedForMode:AddingTextMode withSender:sender];
-        
-    } else if(editingVC.modeController.editingMode == EditingTextMode){
-        
-        [self gestureViewPannedForMode:EditingTextMode withSender:sender];
-        
-    } else if(editingVC.modeController.editingMode == AddingStickerMode){
-        
-        [self gestureViewPannedForMode:AddingStickerMode withSender:sender];
-        
-    } else if(editingVC.modeController.editingMode == EditingStickerMode){
-        
-        [self gestureViewPannedForMode:EditingStickerMode withSender:sender];
-        
-    }else if(editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
-        
-        [self gestureViewPannedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
-
+    } else if(editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+        [self gestureViewPannedForEditingPhotoMode:
+         EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
     } else if(editingVC.modeController.editingMode == EditingPhotoFrameMode){
-        
         [self gestureViewPannedForEditingPhotoMode:EditingPhotoFrameMode withSender:sender];
+//TEXT
+    }else if(editingVC.modeController.editingMode == AddingTextMode){
+        [self gestureViewPannedForMode:AddingTextMode withSender:sender];
+    } else if(editingVC.modeController.editingMode == EditingTextMode){
+        [self gestureViewPannedForMode:EditingTextMode withSender:sender];
+//STICKER
+    } else if(editingVC.modeController.editingMode == AddingStickerMode){
+        [self gestureViewPannedForMode:AddingStickerMode withSender:sender];
+    } else if(editingVC.modeController.editingMode == EditingStickerMode){
+        [self gestureViewPannedForMode:EditingStickerMode withSender:sender];
         
     }
     

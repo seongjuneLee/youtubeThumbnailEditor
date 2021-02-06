@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) BGColorCollectionController *collectionController;
 @property (strong, nonatomic) UIViewController *editingVC;
+@property (strong, nonatomic) UIViewController *itemCollectionVC;
 @property (strong, nonatomic) UIColor *selectedColor;
 
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;

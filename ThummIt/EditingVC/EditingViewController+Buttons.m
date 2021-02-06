@@ -14,46 +14,14 @@
 
 @implementation EditingViewController (Buttons)
 
-#pragma mark - left item 탭
+- (IBAction)rightItemTapped:(id)sender {
+    
+    [self exportThumbnail];
+}
 
 - (IBAction)leftItemTapped:(id)sender {
     
-    if (self.modeController.editingMode == NormalMode) {
-        
-        [self closeEditingVC];
-//PHOTOFRAME
-    } else if (self.modeController.editingMode == AddingPhotoFrameMode || self.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
-        [self cancelAddingPhotoFrame];
-        
-    } else if (self.modeController.editingMode == EditingPhotoFrameMode){
-        [self cancelEditingPhotoFrame];
-        
-//TEXT
-    } else if (self.modeController.editingMode == AddingTextMode){
-        [self cancelAddingText];
-
-    } else if (self.modeController.editingMode == EditingTextMode){
-        [self cancelEditingText];
-//STICKER
-    } else if (self.modeController.editingMode == AddingStickerMode){
-        [self cancelAddingSticker];
-
-    } else if (self.modeController.editingMode == EditingStickerMode){
-        [self cancelEditingSticker];
-//BGCOLOR
-
-    } else if (self.modeController.editingMode == EditingBGColorMode){
-        
-        [self cancelEditingBGColor];
-        
-    }
-    [self hideAndInitSlider];
-}
-
--(void)closeEditingVC{
-    
-    [self.navigationController popViewControllerAnimated:true];
-
+    [self closeEditingVC];
 }
 
 -(void)cancelAddingPhotoFrame{
@@ -144,7 +112,11 @@
 -(void)cancelEditingBGColor{
     
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self dismissItemCollectionVC];
+    // scrollView 가려주기
+    [UIView animateWithDuration:0.2 animations:^{
+        self.buttonScrollView.alpha = 1.0;
+    }];
+    [self.bgColorVC dismissSelf];
     self.bgView.backgroundColor = self.originalColor;
     
 }
@@ -166,35 +138,12 @@
     
 }
 
-#pragma mark - right item 탭
-
-- (IBAction)rightItemTapped:(id)sender {
+-(void)closeEditingVC{
     
-    if (self.modeController.editingMode == NormalMode) {
-        [self exportThumbnail];
-//PHOTOFRAME
-    } else if (self.modeController.editingMode == AddingPhotoFrameMode || self.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
-        [self doneAddingPhotoFrame];
-    } else if (self.modeController.editingMode == EditingPhotoFrameMode){
-        [self doneEditingPhotoFrame];
-//TEXT
-    } else if (self.modeController.editingMode == AddingTextMode){
-        [self doneAddingText];
-    } else if (self.modeController.editingMode == EditingTextMode){
-        [self doneEditingText];
-//STICKER
-    }else if (self.modeController.editingMode == AddingStickerMode){
-        [self doneAddingSticker];
-    }else if (self.modeController.editingMode == EditingStickerMode){
-        [self doneEditingSticker];
-//BGCOLOR
-    }else if (self.modeController.editingMode == EditingBGColorMode){
-        [self doneEditingBGColor];
-    }
-    
-    [self hideAndInitSlider];
+    [self.navigationController popViewControllerAnimated:true];
 
 }
+
 
 -(void)hideAndInitSlider{
     
@@ -215,8 +164,6 @@
 
 
 -(void)exportThumbnail{
-    
-    
     
 }
 
@@ -405,15 +352,15 @@
     self.itemCollectionVC.collectionView.frameY = self.view.frameHeight;
     self.itemCollectionVC.blurView.frameY = self.view.frameHeight;
     
-    self.itemCollectionVC.itemButton.alpha = 0;
-    self.itemCollectionVC.contentButton.alpha = 0;
+    self.itemCollectionVC.checkButton.alpha = 0;
+    self.itemCollectionVC.cancelButton.alpha = 0;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.itemCollectionVC.collectionView.frameY = 0;
         self.itemCollectionVC.blurView.frameY = 0;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
-            self.itemCollectionVC.itemButton.alpha = 0.8;
-            self.itemCollectionVC.contentButton.alpha = 0.4;
+            self.itemCollectionVC.checkButton.alpha = 0.8;
+            self.itemCollectionVC.cancelButton.alpha = 0.8;
         }];
     }];
     

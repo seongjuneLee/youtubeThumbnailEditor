@@ -7,46 +7,61 @@
 
 #import "ItemCollectionViewController+Button.h"
 #import "EditingViewController.h"
+#import "EditingViewController+Buttons.h"
+
 @implementation ItemCollectionViewController (Button)
 
-- (IBAction)itemButtonTapped:(UIButton *)sender {
+
+- (IBAction)cancelButtonTapped:(UIButton *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
-    sender.selected = true;
-    self.contentButton.selected = false;
-    sender.alpha = 0.8;
-    self.contentButton.alpha = 0.4;
-    
-    if (self.itemType == PhotoFrameType) {
-        editingVC.albumVC.view.hidden = true;
-        editingVC.modeController.editingMode = AddingPhotoFrameMode;
-    } else if (self.itemType == TextType){
-        [editingVC.currentText.textView resignFirstResponder];
+    if (editingVC.modeController.editingMode == AddingPhotoFrameMode || editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+        [editingVC cancelAddingPhotoFrame];
+        
+    } else if (editingVC.modeController.editingMode == EditingPhotoFrameMode){
+        [editingVC cancelEditingPhotoFrame];
+        
+//TEXT
+    } else if (editingVC.modeController.editingMode == AddingTextMode){
+        [editingVC cancelAddingText];
+    } else if (editingVC.modeController.editingMode == EditingTextMode){
+        [editingVC cancelEditingText];
+//STICKER
+    } else if (editingVC.modeController.editingMode == AddingStickerMode){
+        [editingVC cancelAddingSticker];
+    } else if (editingVC.modeController.editingMode == EditingStickerMode){
+        [editingVC cancelEditingSticker];
     }
-
-    
+    [editingVC hideAndInitSlider];
+    [editingVC.modeController setNavigationItemRespondToEditingMode:NormalMode];
 }
 
-- (IBAction)contentButtonTapped:(UIButton *)sender {
+- (IBAction)checkButtonTapped:(UIButton *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    sender.selected = true;
-    self.itemButton.selected = false;
-    sender.alpha = 0.8;
-    self.itemButton.alpha = 0.4;
-    
-    if (self.itemType == PhotoFrameType) {
-        
-        editingVC.albumVC.view.frameHeight = self.view.frameHeight - (self.itemButton.frameY + self.itemButton.frameHeight + 10);
-        editingVC.albumVC.view.frameY = editingVC.view.frameHeight - editingVC.albumVC.view.frameHeight;
-        editingVC.albumVC.view.hidden = false;
-        editingVC.modeController.editingMode = EditingPhotoFrameModeWhileAddingPhotoFrameMode;
-    } else if (self.itemType == TextType){
-        
-        [editingVC.currentText.textView becomeFirstResponder];
+    if (editingVC.modeController.editingMode == AddingPhotoFrameMode || editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
+        [editingVC doneAddingPhotoFrame];
+    } else if (editingVC.modeController.editingMode == EditingPhotoFrameMode){
+        [editingVC doneEditingPhotoFrame];
+//TEXT
+    } else if (editingVC.modeController.editingMode == AddingTextMode){
+        [editingVC doneAddingText];
+    } else if (editingVC.modeController.editingMode == EditingTextMode){
+        [editingVC doneEditingText];
+//STICKER
+    }else if (editingVC.modeController.editingMode == AddingStickerMode){
+        [editingVC doneAddingSticker];
+    }else if (editingVC.modeController.editingMode == EditingStickerMode){
+        [editingVC doneEditingSticker];
+//BGCOLOR
+    }else if (editingVC.modeController.editingMode == EditingBGColorMode){
+        [editingVC doneEditingBGColor];
     }
     
+    [editingVC hideAndInitSlider];
+    [editingVC.modeController setNavigationItemRespondToEditingMode:NormalMode];
+
 }
 
 @end

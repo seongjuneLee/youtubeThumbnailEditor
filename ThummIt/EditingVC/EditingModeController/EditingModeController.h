@@ -30,6 +30,7 @@ typedef enum {
 @property (weak, nonatomic) id<EditingModeControllerDelegate> delegate;
 @property (nonatomic) EditingMode editingMode;
 @property (weak, nonatomic) UIViewController *editingVC;
+@property (strong, nonatomic) UIViewController *itemCollectionVC;
 
 -(void)setNavigationItemRespondToEditingMode:(EditingMode)editingMode;
 
