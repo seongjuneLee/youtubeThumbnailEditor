@@ -14,7 +14,7 @@
     self = [super init];
     if(self){
         
-        self.previewImageName = @"studyVlogPreview";
+        self.previewImageName = @"studyVlogPreView";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StudyVlogTemplate";
         self.backgroundImageName = @"";
@@ -50,35 +50,35 @@
     
     Text *vlogText = [[Text alloc] init];
     VlogStudy *vlog = [VlogStudy vlogStudy];
-    vlogText.scale = 0.65;
+    vlogText.scale = 0.30;
     vlogText.center = CGPointMake(0.5, 0.93);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer =@"0";
     vlogText.text = @"Study With Me";
     vlogText.textView.text = @"Study With Me";
-    [vlogText applyTypo:vlog];
+    vlogText.typo = vlog;
     [self.texts addObject:vlogText];
     
     Text *epVlogText = [[Text alloc] init];
     VlogStudy *epvlog = [VlogStudy vlogStudy];
-    epVlogText.scale = 0.65;
+    epVlogText.scale = 0.09;
     epVlogText.center = CGPointMake(0.5, 0.07);
     epVlogText.isTemplateItem = true;
     epVlogText.indexInLayer =@"1";
     epVlogText.text = @"EP-1";
     epVlogText.textView.text = @"EP-1";
-    [epVlogText applyTypo:epvlog];
+    epVlogText.typo = epvlog;
     [self.texts addObject:epVlogText];
     
     Text *Vlog365Text = [[Text alloc] init];
     Vlog365 *vlog365 = [Vlog365 vlog365];
-    Vlog365Text.scale = 0.8;
-    Vlog365Text.center = CGPointMake(0.9, 0.05);
+    Vlog365Text.scale = 0.12;
+    Vlog365Text.center = CGPointMake(0.93, 0.05);
     Vlog365Text.isTemplateItem = true;
     Vlog365Text.indexInLayer =@"2";
     Vlog365Text.text = @"D-365";
     Vlog365Text.textView.text = @"D-365";
-    [Vlog365Text applyTypo:vlog365];
+    Vlog365Text.typo = vlog365;
     [self.texts addObject:Vlog365Text];
     
 }
@@ -87,7 +87,7 @@
     
     VlogTapeSticker *upTapeSticker = [VlogTapeSticker vlogTapeSticker];
     upTapeSticker.indexInLayer =@"3";
-    upTapeSticker.scale = 0.7;
+    upTapeSticker.scale = 0.3;
     upTapeSticker.isTemplateItem = true;
     upTapeSticker.center = CGPointMake(0.21, 0.23);
 
@@ -95,7 +95,7 @@
     
     VlogTapeSticker *underTapeSticker = [VlogTapeSticker vlogTapeSticker];
     underTapeSticker.indexInLayer =@"4";
-    underTapeSticker.scale = 0.7;
+    underTapeSticker.scale = 0.3;
     underTapeSticker.isTemplateItem = true;
     underTapeSticker.center = CGPointMake(0.87, 0.9);
 

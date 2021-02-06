@@ -42,7 +42,7 @@
     PhotoFrame *circlePhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     circlePhotoFrame.indexInLayer =@"0";
     circlePhotoFrame.center = CGPointMake(0.72, 0.45);
-    circlePhotoFrame.scale = 0.7;
+    circlePhotoFrame.scale = 0.28;
     circlePhotoFrame.isTemplateItem = true;
     [self.photoFrames addObject:circlePhotoFrame];
     
@@ -53,38 +53,38 @@
     //로고
     Text *logoText = [[Text alloc] init];
     SeoYuGiLogoTypo *logo = [SeoYuGiLogoTypo seoYuGiLogoTypo];
-    logoText.scale = 0.45;
+    logoText.scale = 0.13;
     logoText.center = CGPointMake(0.5, 0.06);
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"0";
     logoText.text = @"서유기";
     logoText.textView.text = logoText.text;
     
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     //와 나 이런거 무서워한다
     Text *scaredText = [[Text alloc] init];
     SeoYuGiGagwanTypo *gagwanSmall = [SeoYuGiGagwanTypo seoYuGiGagwanTypo];
-    scaredText.scale = 0.7;
+    scaredText.scale = 0.58;
     scaredText.center = CGPointMake(0.31, 0.71);
     scaredText.isTemplateItem = true;
     scaredText.indexInLayer =@"1";
     scaredText.text = @"와 나 이런거 무서워한다";
     scaredText.textView.text = scaredText.text;
-    [scaredText applyTypo:gagwanSmall];
+    scaredText.typo = gagwanSmall;
     [self.texts addObject:scaredText];
     
     //가관이네..
     Text *gagwanText = [[Text alloc] init];
     SeoYuGiGagwanTypo *gagwanBig = [SeoYuGiGagwanTypo seoYuGiGagwanTypo];
-    gagwanText.scale = 0.85;
-    gagwanText.center = CGPointMake(0.6, 0.85);
+    gagwanText.scale = 0.32;
+    gagwanText.center = CGPointMake(0.58, 0.85);
     gagwanText.isTemplateItem = true;
     gagwanText.indexInLayer =@"2";
     gagwanText.text = @"가관이네..";
     gagwanText.textView.text = gagwanText.text;
-    [gagwanText applyTypo:gagwanBig];
+    gagwanText.typo = gagwanBig;
     [self.texts addObject:gagwanText];
     
 }
@@ -93,7 +93,8 @@
     
     SinSeoYuGiExc1Sticker *exc1Sticker = [SinSeoYuGiExc1Sticker sinSeoYuGiExc1Sticker];
     exc1Sticker.indexInLayer =@"3";
-    exc1Sticker.scale = 0.75;
+    exc1Sticker.scale = 0.28;
+    exc1Sticker.rotationDegree = 355;
     exc1Sticker.isTemplateItem = true;
     exc1Sticker.center = CGPointMake(0.37, 0.4);
     

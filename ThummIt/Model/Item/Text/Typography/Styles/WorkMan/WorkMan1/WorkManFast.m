@@ -15,25 +15,18 @@
     if (self) {
         self.name = NSLocalizedString(@"끌어내려 빨리!!",nil);
         self.fontName = @"NanumSquareOTFEB";
-        self.textColor = [UIColor whiteColor];    
+        self.textColor = UIColor.whiteColor;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
-        bgTextAttribute1.borderColor = [UIColor blackColor];
-        bgTextAttribute1.borderWidth = 5;
+        bgTextAttribute1.borderColor = UIColor.blackColor;
+        bgTextAttribute1.borderWidth = 8;
+    
+        BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
+        shadowAtt.shadowColor = UIColor.blackColor;
+        shadowAtt.shadowOffset = CGPointMake(1.5, 1.5);
         
-        BGTextAttribute *attribute1 = [[BGTextAttribute alloc] init];
-        BGTextAttribute *attribute2 = [[BGTextAttribute alloc] init];
+        self.bgTextAttributes = @[bgTextAttribute1, shadowAtt];
         
-        attribute1.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
-                attribute1.shadowOffset = CGPointMake(1, 1);
-        
-        attribute2.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
-                attribute2.shadowOffset = CGPointMake(2, 2);
-        
-        self.bgTextAttributes = @[bgTextAttribute1,attribute1,attribute2];
-        
-        
-
     }
     return self;
 }

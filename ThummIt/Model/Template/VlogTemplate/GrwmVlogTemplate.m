@@ -75,13 +75,13 @@
     //GRWM VLOG
     Text *grwmText = [[Text alloc] init];
     VlogGRWMTypo *grwm = [VlogGRWMTypo vlogGRWMTypo];
-    grwmText.scale = 1;
+    grwmText.scale = 0.2;
     grwmText.center = CGPointMake(0.42, 0.4);
     grwmText.isTemplateItem = true;
     grwmText.indexInLayer = @"0";
     grwmText.text = @"GRWM\nVLOG";
     grwmText.textView.text = grwmText.text;
-    [grwmText applyTypo:grwm];
+    grwmText.typo = grwm;
     [self.texts addObject:grwmText];
     
 }

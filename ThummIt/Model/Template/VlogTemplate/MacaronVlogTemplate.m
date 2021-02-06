@@ -65,26 +65,26 @@
     //vlog
     Text *vlogText = [[Text alloc] init];
     VlogMacaronTypo *vlog = [VlogMacaronTypo vlogMacaronTypo];
-    vlogText.scale = 1.1;
+    vlogText.scale = 0.16;
     vlogText.center = CGPointMake(0.465, 0.25);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer = @"0";
     vlogText.text = @"vlog";
     vlogText.textView.text = vlogText.text;
-    [vlogText applyTypo:vlog];
+    vlogText.typo = vlog;
     [self.texts addObject:vlogText];
     
     //homebaking\n:macaron
     Text *homebakingText = [[Text alloc] init];
     VlogMacaronTypo *homebaking = [VlogMacaronTypo vlogMacaronTypo];
-    homebakingText.scale = 0.3;
+    homebakingText.scale = 0.115;
     homebakingText.center = CGPointMake(0.455, 0.35);
     homebakingText.isTemplateItem = true;
     homebakingText.indexInLayer = @"0";
     homebakingText.text = @"homebaking\n:macaron";
     homebakingText.textView.text = homebakingText.text;
     homebakingText.textAlignment = NSTextAlignmentLeft;
-    [homebakingText applyTypo:homebaking];
+    homebakingText.typo = homebaking;
     [self.texts addObject:homebakingText];
     
 }
@@ -92,18 +92,18 @@
 -(void)setUpStickers{
     
     VlogMacaronSticker *vlogMacaronSticker1 = [VlogMacaronSticker vlogMacaronSticker];
-    vlogMacaronSticker1.scale = 0.45;
+    vlogMacaronSticker1.scale = 0.19;
     vlogMacaronSticker1.isTemplateItem = true;
     vlogMacaronSticker1.cannotChangeColor = true;
-    vlogMacaronSticker1.rotationDegree = degreesToRadians(350);
+    vlogMacaronSticker1.rotationDegree = -10;
     vlogMacaronSticker1.center = CGPointMake(0.1, 0.13);
     [self.stickers addObject:vlogMacaronSticker1];
 
     VlogMacaronSticker *vlogMacaronSticker2 = [VlogMacaronSticker vlogMacaronSticker];
-    vlogMacaronSticker2.scale = 0.45;
+    vlogMacaronSticker2.scale = 0.19;
     vlogMacaronSticker2.isTemplateItem = true;
     vlogMacaronSticker2.cannotChangeColor = true;
-    vlogMacaronSticker2.rotationDegree = degreesToRadians(350);
+    vlogMacaronSticker2.rotationDegree = -10;
     vlogMacaronSticker2.center = CGPointMake(1, 0.99);
     [self.stickers addObject:vlogMacaronSticker2];
 

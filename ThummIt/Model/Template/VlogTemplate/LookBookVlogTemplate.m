@@ -46,13 +46,13 @@
     
     Text *vlogText = [[Text alloc] init];
     VlogLookbookTypo *vlog = [VlogLookbookTypo vlogLookbookTypo];
-    vlogText.scale = 1.1;
+    vlogText.scale = 0.27;
     vlogText.center = CGPointMake(0.77, 0.43);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer =@"0";
     vlogText.text = @"룩북\n브이로그";
     vlogText.textView.text = @"룩북\n브이로그";
-    [vlogText applyTypo:vlog];
+    vlogText.typo = vlog;
     
     [self.texts addObject:vlogText];
     

@@ -55,24 +55,24 @@
     
     Text *stayText = [[Text alloc] init];
     VlogHashTagTypo *stay = [VlogHashTagTypo vlogHashTagTypo];
-    stayText.scale = 0.65;
-    stayText.center = CGPointMake(0.18, 0.75);
+    stayText.scale = 0.24;
+    stayText.center = CGPointMake(0.155, 0.78);
     stayText.isTemplateItem = true;
     stayText.indexInLayer =@"0";
     stayText.text = @"#Staying Home";
     stayText.textView.text = @"#Staying Home";
-    [stayText applyTypo:stay];
+    stayText.typo = stay;
     [self.texts addObject:stayText];
     
     Text *understayText = [[Text alloc] init];
     VlogBMDohyunTypo *underStay = [VlogBMDohyunTypo vlogBMDohyunTypo];
-    understayText.scale = 0.9;
-    understayText.center = CGPointMake(0.22, 0.88);
+    understayText.scale = 0.38;
+    understayText.center = CGPointMake(0.2, 0.9);
     understayText.isTemplateItem = true;
     understayText.indexInLayer =@"1";
     understayText.text = @"집콕 브이로그";
     understayText.textView.text = @"집콕 브이로그";
-    [understayText applyTypo:underStay];
+    understayText.typo = underStay;
     [self.texts addObject:understayText];
     
 }

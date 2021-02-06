@@ -46,47 +46,25 @@
     
     Text *firstVlogText = [[Text alloc] init];
     VlogFreshmanTypo *firstVlog = [VlogFreshmanTypo vlogFreshmanTypo];
-    firstVlogText.scale = 1.2;
+    firstVlogText.scale = 0.27;
     firstVlogText.center = CGPointMake(0.83, 0.48);
     firstVlogText.isTemplateItem = true;
     firstVlogText.indexInLayer =@"0";
     firstVlogText.text = @"새내기의\n일주일\nvlog";
     firstVlogText.textView.text = @"새내기의\n일주일\nvlog";
     firstVlogText.textAlignment = NSTextAlignmentRight;
-    [firstVlogText applyTypo:firstVlog];
+    firstVlogText.typo = firstVlog;
     [self.texts addObject:firstVlogText];
-    
-//    Text *secondVlogText = [[Text alloc] init];
-//    VlogFreshmanTypo *secondVlog = [VlogFreshmanTypo vlogFreshmanTypo];
-//    secondVlogText.scale = 1.2;
-//    secondVlogText.center = CGPointMake(0.86, 0.5);
-//    secondVlogText.isTemplateItem = true;
-//    secondVlogText.indexInLayer =@"1";
-//    secondVlogText.text = @"일주일";
-//    secondVlogText.textView.text = @"일주일";
-//    [secondVlogText applyTypo:secondVlog];
-//    [self.texts addObject:secondVlogText];
-//
-//    Text *thridVlogText = [[Text alloc] init];
-//    VlogFreshmanTypo *thirdVlog = [VlogFreshmanTypo vlogFreshmanTypo];
-//    thridVlogText.scale = 1.2;
-//    thridVlogText.center = CGPointMake(0.87, 0.7);
-//    thridVlogText.isTemplateItem = true;
-//    thridVlogText.indexInLayer =@"2";
-//    thridVlogText.text = @"vlog";
-//    thridVlogText.textView.text = @"vlog";
-//    [thridVlogText applyTypo:thirdVlog];
-//    [self.texts addObject:thridVlogText];
     
     Text *leftVlogText = [[Text alloc] init];
     VlogNewCampus *leftVlog = [VlogNewCampus vlogNewCampus];
-    leftVlogText.scale = 0.42;
+    leftVlogText.scale = 0.12;
     leftVlogText.center = CGPointMake(0.065, 0.05);
     leftVlogText.isTemplateItem = true;
     leftVlogText.indexInLayer =@"3";
     leftVlogText.text = @"Thumm-log";
     leftVlogText.textView.text = @"Thumm-log";
-    [leftVlogText applyTypo:leftVlog];
+    leftVlogText.typo = leftVlog;
     [self.texts addObject:leftVlogText];
     
 }

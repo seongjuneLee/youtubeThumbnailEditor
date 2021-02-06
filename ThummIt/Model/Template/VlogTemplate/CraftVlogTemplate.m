@@ -60,13 +60,13 @@
     
     Text *vlogText = [[Text alloc] init];
     VlogNanumSquareTypo *vlog = [VlogNanumSquareTypo vlogNanumSquareTypo];
-    vlogText.scale = 1.5;
+    vlogText.scale = 0.26;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer = @"0";
-    vlogText.text = @"VLog";
-    vlogText.textView.text = @"VLog";
-    [vlogText applyTypo:vlog];
+    vlogText.text = @"VLOG";
+    vlogText.textView.text = vlogText.text;
+    vlogText.typo = vlog;
     [self.texts addObject:vlogText];
     
 }
@@ -74,6 +74,5 @@
 -(void)setUpStickers{
     
 }
-
 
 @end

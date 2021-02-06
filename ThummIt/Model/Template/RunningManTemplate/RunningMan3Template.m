@@ -49,10 +49,10 @@
     logoText.indexInLayer =@"0";
     logoText.text = @"러닝맨";
     logoText.textView.text = logoText.text;
-    logoText.scale = 2.45;
+    logoText.scale = 0.42;
     logoText.center = CGPointMake(0.2, 0.78);
     logoText.isTemplateItem = true;
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     //Rule
@@ -61,10 +61,10 @@
     ruleText.indexInLayer =@"1";
     ruleText.text = @"Rule";
     ruleText.textView.text = ruleText.text;
-    ruleText.scale = 0.57;
+    ruleText.scale = 0.08;
     ruleText.center = CGPointMake(0.46, 0.7);
     ruleText.isTemplateItem = true;
-    [ruleText applyTypo:rule];
+    ruleText.typo = rule;
     [self.texts addObject:ruleText];
     
     //문제를 듣고
@@ -73,10 +73,10 @@
     matterText.indexInLayer =@"2";
     matterText.text = @"문제를 듣고";
     matterText.textView.text = matterText.text;
-    matterText.scale = 0.8;
+    matterText.scale = 0.24;
     matterText.center = CGPointMake(0.62, 0.66);
     matterText.isTemplateItem = true;
-    [matterText applyTypo:matter];
+    matterText.typo = matter;
     [self.texts addObject:matterText];
     
     //먼저 대답하면 성공!
@@ -85,22 +85,22 @@
     successText.indexInLayer =@"3";
     successText.text = @"먼저 대답하면 성공!";
     successText.textView.text = successText.text;
-    successText.scale = 0.8;
+    successText.scale = 0.385;
     successText.center = CGPointMake(0.695, 0.74);
     successText.isTemplateItem = true;
-    [successText applyTypo:successs];
+    successText.typo = successs;
     [self.texts addObject:successText];
     
     //아 왜그래요 진짜!!
     Text *whyRealText = [[Text alloc] init];
     WhyRealTypo *whyReal = [WhyRealTypo whyRealTypo];
     whyRealText.indexInLayer =@"4";
-    whyRealText.text = @"아 왜그래요 진짜!!";
+    whyRealText.text = @"아 왜 그래요 진짜!!";
     whyRealText.textView.text = whyRealText.text;
-    whyRealText.scale = 0.75;
+    whyRealText.scale = 0.35;
     whyRealText.center = CGPointMake(0.27, 0.34);
     whyRealText.isTemplateItem = true;
-    [whyRealText applyTypo:whyReal];
+    whyRealText.typo = whyReal;
     [self.texts addObject:whyRealText];
     
 }
@@ -109,7 +109,7 @@
     
     RunningManQuSticker *runningManQuSticker = [RunningManQuSticker runningManQuSticker];
     runningManQuSticker.indexInLayer =@"5";
-    runningManQuSticker.scale = 0.6;
+    runningManQuSticker.scale = 0.24;
     runningManQuSticker.isTemplateItem = true;
     runningManQuSticker.center = CGPointMake(0.75, 0.33);
     [self.stickers addObject:runningManQuSticker];

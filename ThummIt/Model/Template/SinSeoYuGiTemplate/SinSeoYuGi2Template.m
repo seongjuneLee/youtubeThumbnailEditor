@@ -47,38 +47,38 @@
     //서유기
     Text *logoText = [[Text alloc] init];
     SeoYuGiCloudLogoTypo *cloudLogo = [SeoYuGiCloudLogoTypo seoYuGiCloudLogoTypo];
-    logoText.scale = 0.52;
+    logoText.scale = 0.115;
     logoText.center = CGPointMake(0.14, 0.15);
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"0";
     logoText.text = @"서유기";
     logoText.textView.text = logoText.text;
-    [logoText applyTypo:cloudLogo];
+    logoText.typo = cloudLogo;
     [self.texts addObject:logoText];
     
     //여사친 앞에서
     Text *inFrontOfGirlText = [[Text alloc] init];
     SeoYuGiInFrontOfGirlTypo *inFrontOfGirl = [SeoYuGiInFrontOfGirlTypo seoYuGiInFrontOfGirlTypo];
-    inFrontOfGirlText.scale = 1.15;
+    inFrontOfGirlText.scale = 0.5;
     inFrontOfGirlText.center = CGPointMake(0.31, 0.7);
     inFrontOfGirlText.isTemplateItem = true;
     inFrontOfGirlText.indexInLayer =@"1";
     inFrontOfGirlText.text = @"여사친 앞에서";
     inFrontOfGirlText.textView.text = inFrontOfGirlText.text;
-    [inFrontOfGirlText applyTypo:inFrontOfGirl];
+    inFrontOfGirlText.typo = inFrontOfGirl;
     [self.texts addObject:inFrontOfGirlText];
     
     //상체탈의한 썰.ssul
     Text *ssulText = [[Text alloc] init];
     SeoYuGiInFrontOfGirlTypo *ssul = [SeoYuGiInFrontOfGirlTypo seoYuGiInFrontOfGirlTypo];
     ssul.textColor = [UIColor colorWithRed:253/255.0f green:169/255.0f blue:41/255.0 alpha:1];
-    ssulText.scale = 1.15;
+    ssulText.scale = 0.7;
     ssulText.center = CGPointMake(0.41, 0.85);
     ssulText.isTemplateItem = true;
     ssulText.indexInLayer =@"2";
     ssulText.text = @"상체탈의한 썰.ssul";
     ssulText.textView.text = ssulText.text;
-    [ssulText applyTypo:ssul];
+    ssulText.typo = ssul;
     [self.texts addObject:ssulText];
     
 }
@@ -87,24 +87,24 @@
     
     SinSeoYuGiExc2Sticker *exc2Sticker = [SinSeoYuGiExc2Sticker sinSeoYuGiExc2Sticker];
     exc2Sticker.indexInLayer =@"3";
-    exc2Sticker.scale = 0.55;
+    exc2Sticker.scale = 0.21;
     exc2Sticker.isTemplateItem = true;
-    exc2Sticker.rotationDegree = degreesToRadians(340);
-    exc2Sticker.center = CGPointMake(0.67, 0.37);
+    exc2Sticker.rotationDegree = 340;
+    exc2Sticker.center = CGPointMake(0.68, 0.35);
     [self.stickers addObject:exc2Sticker];
     
     SinSeoYuGiQu2Sticker *quSticker = [SinSeoYuGiQu2Sticker sinSeoYuGiQu2Sticker];
     quSticker.indexInLayer =@"4";
-    quSticker.scale = 0.65;
+    quSticker.scale = 0.25;
     quSticker.isTemplateItem = true;
     quSticker.center = CGPointMake(0.75, 0.37);
     [self.stickers addObject:quSticker];
     
     StartleSticker1 *effectSticker = [StartleSticker1 startleSticker1];
     effectSticker.indexInLayer =@"5";
-    effectSticker.scale = 0.52;
+    effectSticker.scale = 0.2;
     effectSticker.isTemplateItem = true;
-    effectSticker.rotationDegree = degreesToRadians(20);
+    effectSticker.rotationDegree = 20;
     effectSticker.center = CGPointMake(0.31, 0.38);
     [self.stickers addObject:effectSticker];
     

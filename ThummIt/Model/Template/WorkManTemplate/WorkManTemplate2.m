@@ -45,24 +45,24 @@
     
     Text *logoText = [[Text alloc] init];
     WorkManLogo *logo = [WorkManLogo workManLogo];
-    logoText.scale = 0.61;
-    logoText.center = CGPointMake(0.11, 0.1);
+    logoText.scale = 0.13;
+    logoText.center = CGPointMake(0.095, 0.1);
     logoText.isTemplateItem = true;
     logoText.indexInLayer = @"0";
     logoText.text = @"위크맨";
     logoText.textView.text = @"위크맨";
-    [logoText applyTypo:logo];
+    logoText.typo = logo;
     [self.texts addObject:logoText];
     
     Text *yellowTitle = [[Text alloc] init];
     WorkmanYelloewTitle *yellow = [WorkmanYelloewTitle workmanYelloewTitle];
-    yellowTitle.scale = 1.5;
-    yellowTitle.center = CGPointMake(0.5, 0.67);
+    yellowTitle.scale = 0.3;
+    yellowTitle.center = CGPointMake(0.5, 0.69);
     yellowTitle.isTemplateItem = true;
     yellowTitle.indexInLayer = @"1";
     yellowTitle.text = @"유튜브";
     yellowTitle.textView.text = @"유튜브";
-    [yellowTitle applyTypo:yellow];
+    yellowTitle.typo = yellow;
     WorkmanYelloewTitle *yellowcolor = [WorkmanYelloewTitle workmanYelloewTitle];
     yellowcolor.textColor = [UIColor colorWithRed:(238/255.0) green:(230/255.0) blue:(50/255.0) alpha:(1)] ;
     yellowTitle.typoRangeArray = (NSMutableArray *)@[@[yellowcolor,@"0-3"]];
@@ -71,50 +71,49 @@
     
     Text *whiteTitle = [[Text alloc] init];
     WorkmanYelloewTitle *secondTitle2 = [WorkmanYelloewTitle workmanYelloewTitle];
-    whiteTitle.scale = 1.5;
+    whiteTitle.scale = 0.4;
     whiteTitle.center = CGPointMake(0.5,0.87);
     whiteTitle.isTemplateItem = true;
     whiteTitle.indexInLayer = @"2";
     whiteTitle.text = @"비하인드";
     whiteTitle.textView.text = @"비하인드";
     whiteTitle.typo = secondTitle2;
-    [whiteTitle applyTypo:secondTitle2];
     [self.texts addObject:whiteTitle];
 
     
     Text *handText = [[Text alloc] init];
     WorkManHandWrite *hand = [WorkManHandWrite workManHandWrite];
-    handText.scale = 0.7;
-    handText.center = CGPointMake(0.17,0.245);
+    handText.scale = 0.125;
+    handText.center = CGPointMake(0.13,0.230);
     handText.isTemplateItem = true;
     handText.indexInLayer = @"3";
     handText.text = @"(당황)";
     handText.textView.text = @"(당황)";
-    [handText applyTypo:hand];
+    handText.typo = hand;
     [self.texts addObject:handText];
     
     Text *whyText = [[Text alloc] init];
     WorkManFast *why = [WorkManFast workManFast];
-    whyText.scale = 0.8;
+    whyText.scale = 0.15;
     whyText.rotationDegree = -20;
     whyText.center = CGPointMake(0.34,0.44);
     whyText.isTemplateItem = true;
     whyText.indexInLayer = @"4";
     whyText.text = @"네?!?";
     whyText.textView.text = @"네?!?";
-    [whyText applyTypo:why];
+    whyText.typo = why;
     [self.texts addObject:whyText];
     
     Text *howText = [[Text alloc] init];
     WorkManFast *how = [WorkManFast workManFast];
-    howText.scale = 0.85;
+    howText.scale = 0.41;
     howText.rotationDegree = 10;
     howText.center = CGPointMake(0.7,0.3);
     howText.isTemplateItem = true;
     howText.indexInLayer = @"5";
     howText.text = @"이렇게 하는거 맞죠?";
     howText.textView.text = @"이렇게 하는거 맞죠?";
-    [howText applyTypo:how];
+    howText.typo = how;
     [self.texts addObject:howText];
     
 }
@@ -123,9 +122,9 @@
     
     WorkManStartleSticker *startleSticker = [WorkManStartleSticker workManStartleSticker];
     startleSticker.indexInLayer = @"6";
-    startleSticker.scale = 0.45;
+    startleSticker.scale = 0.17;
     startleSticker.isTemplateItem = true;
-    startleSticker.center = CGPointMake(0.37, 0.305);
+    startleSticker.center = CGPointMake(0.34, 0.32);
     
     [self.stickers addObject:startleSticker];
     

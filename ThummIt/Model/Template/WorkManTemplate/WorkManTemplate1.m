@@ -44,8 +44,8 @@
         
     Text *logoText = [[Text alloc] init];
     WorkManLogo *logo = [WorkManLogo workManLogo];
-    logoText.scale = 0.61;
-    logoText.center = CGPointMake(0.11, 0.1);
+    logoText.scale = 0.13;
+    logoText.center = CGPointMake(0.095, 0.1);
     logoText.isTemplateItem = true;
     logoText.indexInLayer = @"0";
     logoText.text = @"위크맨";
@@ -55,9 +55,9 @@
     
     Text *tagText = [[Text alloc] init];
     WorkManRightTag *tag = [WorkManRightTag workManRightTag];
-    tagText.scale = 1.0;
-    tagText.rotationDegree = 45;
-    tagText.center = CGPointMake(0.93,0.15);
+    tagText.scale = 0.20;
+    tagText.rotationDegree = 40;
+    tagText.center = CGPointMake(0.91,0.14);
     tagText.isTemplateItem = true;
     tagText.indexInLayer = @"1";
     tagText.text = @"제철알바";
@@ -67,8 +67,8 @@
     
     Text *handText = [[Text alloc] init];
     WorkManHandWrite *hand = [WorkManHandWrite workManHandWrite];
-    handText.scale = 0.7;
-    handText.center = CGPointMake(0.23,0.235);
+    handText.scale = 0.21;
+    handText.center = CGPointMake(0.21,0.225);
     handText.isTemplateItem = true;
     handText.indexInLayer = @"2";
     handText.text = @"(무대난입)";
@@ -78,9 +78,9 @@
     
     Text *talkWrite = [[Text alloc] init];
     WorkManTalkWrite *talk = [WorkManTalkWrite workManTalkWrite];
-    talkWrite.scale = 1.2;
+    talkWrite.scale = 0.27;
     talkWrite.center = CGPointMake(0.42,0.28);
-    talkWrite.rotationDegree = 330;
+    talkWrite.rotationDegree = -25;
     talkWrite.isTemplateItem = true;
     talkWrite.indexInLayer = @"3";
     talkWrite.text = @"소리질러!!!!";
@@ -90,8 +90,8 @@
     
     Text *redtitle = [[Text alloc] init];
     WorkManSecondTitle *secondTitle = [WorkManSecondTitle workManSecondTitle];
-    redtitle.scale = 0.9;
-    redtitle.center = CGPointMake(0.35,0.71);
+    redtitle.scale = 0.6;
+    redtitle.center = CGPointMake(0.33,0.72);
     redtitle.isTemplateItem = true;
     redtitle.indexInLayer = @"4";
     redtitle.text = @"행사비 안받을게요";
@@ -105,8 +105,8 @@
     
     Text *bluetitle = [[Text alloc] init];
     WorkManSecondTitle *secondTitle2 = [WorkManSecondTitle workManSecondTitle];
-    bluetitle.scale = 0.9;
-    bluetitle.center = CGPointMake(0.36,0.87);
+    bluetitle.scale = 0.62;
+    bluetitle.center = CGPointMake(0.34,0.87);
     bluetitle.isTemplateItem = true;
     bluetitle.indexInLayer = @"5";
     bluetitle.text = @"대학축제 알바 리뷰";
@@ -120,8 +120,8 @@
     
     Text *fastText = [[Text alloc] init];
     WorkManFast *fast = [WorkManFast workManFast];
-    fastText.scale = 0.85;
-    fastText.rotationDegree = -1;
+    fastText.scale = 0.35;
+    fastText.rotationDegree = -2;
     fastText.center = CGPointMake(0.77,0.55);
     fastText.isTemplateItem = true;
     fastText.indexInLayer = @"6";
@@ -135,8 +135,8 @@
 -(void)setUpStickers{
     
     AngrySticker1 *angrySticker = [AngrySticker1 angrySticker1];
-    angrySticker.scale = 0.4;
-    angrySticker.rotationDegree = -0.1;
+    angrySticker.scale = 0.17;
+    angrySticker.rotationDegree = -10;
     angrySticker.indexInLayer = @"7";
     angrySticker.isTemplateItem = true;
     angrySticker.center = CGPointMake(0.89, 0.4);

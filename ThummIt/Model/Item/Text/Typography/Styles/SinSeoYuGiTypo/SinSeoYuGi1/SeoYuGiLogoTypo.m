@@ -19,7 +19,7 @@
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor colorWithRed:59/255.0f green:4/255.0f blue:1/255.0f alpha:1];
-        borderAtt.borderWidth = 10;
+        borderAtt.borderWidth = 5;
         self.bgTextAttributes = @[borderAtt];
        
     }

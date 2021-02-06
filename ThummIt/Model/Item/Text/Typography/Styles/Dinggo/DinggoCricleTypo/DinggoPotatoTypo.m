@@ -22,8 +22,8 @@
         BGTextAttribute *bgTextAttribute2 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
         bgTextAttribute2.borderColor = [UIColor colorWithRed:(238/255.0) green:(200/255.0) blue:(87/255.0) alpha:1];
-        bgTextAttribute1.borderWidth = 10;
-        bgTextAttribute2.borderWidth = 16;
+        bgTextAttribute1.borderWidth = 6;
+        bgTextAttribute2.borderWidth = 13;
        
         self.bgTextAttributes = @[bgTextAttribute1 , bgTextAttribute2];
         

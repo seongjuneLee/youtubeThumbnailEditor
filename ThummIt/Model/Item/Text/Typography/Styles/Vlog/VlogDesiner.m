@@ -20,7 +20,7 @@
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         
         attribute.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
-                attribute.shadowOffset = CGPointMake(1, 1);
+                attribute.shadowOffset = CGPointMake(0.3, 0.3);
         
         
         self.bgTextAttributes = @[attribute];

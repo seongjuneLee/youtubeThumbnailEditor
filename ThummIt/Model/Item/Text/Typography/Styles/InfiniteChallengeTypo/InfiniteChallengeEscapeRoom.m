@@ -13,7 +13,7 @@
     self = [super init];
     if (self) {
         
-        self.name = NSLocalizedString(@"방탈출",nil);
+        self.name = NSLocalizedString(@"방탈출",nil); //italic
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
                 

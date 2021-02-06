@@ -58,13 +58,13 @@
     //VLOG
     Text *vlogText = [[Text alloc] init];
     VlogMyeongjoTypo *myeongjo = [VlogMyeongjoTypo vlogMyeongjoTypo];
-    vlogText.scale = 1.2;
+    vlogText.scale = 0.25;
     vlogText.center = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer = @"0";
     vlogText.text = @"VLOG";
     vlogText.textView.text = vlogText.text;
-    [vlogText applyTypo:myeongjo];
+    vlogText.typo = myeongjo;
     [self.texts addObject:vlogText];
     
 }

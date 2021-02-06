@@ -16,11 +16,11 @@
         self.name = NSLocalizedString(@"스타월드",nil);
         self.fontName = @"BMDoHyeon-OTF";
         self.fontSize = TEXT_FONT_SIZE;
-        self.textFromColor = [UIColor colorWithRed:251/255.0 green:203/255.0 blue:46/255.0 alpha:1.0];
-        self.textToColor = [UIColor colorWithRed:253/255.0 green:245/255.0 blue:54/255.0 alpha:1.0];
+        self.textFromColor = [UIColor colorWithRed:251/255.0 green:160/255.0 blue:0/255.0 alpha:1.0];
+        self.textToColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:0/255.0 alpha:1.0];
         NSDictionary *attr = @{NSFontAttributeName: [UIFont fontWithName:self.fontName size:self.fontSize]};
         CGSize stringBoundingBox = [@"스타월드" sizeWithAttributes:attr];
-        self.textGradientHeight = stringBoundingBox.height + 6;
+        self.textGradientHeight = stringBoundingBox.height;
 
         self.textColor = [UIColor diagonalGradientFromColor:self.textFromColor toColor:self.textToColor withHeight:self.textGradientHeight];
         self.cannotChangeColor = true;
