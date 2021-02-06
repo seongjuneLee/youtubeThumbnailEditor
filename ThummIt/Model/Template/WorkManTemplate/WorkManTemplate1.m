@@ -88,36 +88,55 @@
     talkWrite.typo = talk;
     [self.texts addObject:talkWrite];
     
+    Text *secondTitle = [[Text alloc] init];
+    WorkManSecondTitle *secondTitleTypo = [WorkManSecondTitle workManSecondTitle];
+    secondTitle.scale = 0.4;
+    secondTitle.center = CGPointMake(0.48,0.72);
+    secondTitle.isTemplateItem = true;
+    secondTitle.indexInLayer = @"4";
+    secondTitle.text = @"안받을게요";
+    secondTitle.textView.text = @"안받을게요";
+    secondTitle.typo = secondTitleTypo;
+    
     Text *redtitle = [[Text alloc] init];
-    WorkManSecondTitle *secondTitle = [WorkManSecondTitle workManSecondTitle];
-    redtitle.scale = 0.6;
-    redtitle.center = CGPointMake(0.33,0.72);
-    redtitle.isTemplateItem = true;
-    redtitle.indexInLayer = @"4";
-    redtitle.text = @"행사비 안받을게요";
-    redtitle.textView.text = @"행사비 안받을게요";
-    redtitle.typo = secondTitle;
-    
     WorkManRedTitle *red = [WorkManRedTitle workManRedTitle];
-    redtitle.typoRangeArray = (NSMutableArray *)@[@[red,@"0-3"]];
+    redtitle.scale = 0.26;
+    redtitle.center = CGPointMake(0.17,0.72);
+    redtitle.isTemplateItem = true;
+    redtitle.indexInLayer = @"5";
+    redtitle.text = @"행사비";
+    redtitle.textView.text = @"행사비";
+    redtitle.typo = red;
+
     [self.texts addObject:redtitle];
+    [self.texts addObject:secondTitle];
+
     
-    
-    Text *bluetitle = [[Text alloc] init];
-    WorkManSecondTitle *secondTitle2 = [WorkManSecondTitle workManSecondTitle];
-    bluetitle.scale = 0.62;
-    bluetitle.center = CGPointMake(0.34,0.87);
-    bluetitle.isTemplateItem = true;
-    bluetitle.indexInLayer = @"5";
-    bluetitle.text = @"대학축제 알바 리뷰";
-    bluetitle.textView.text = @"대학축제 알바 리뷰";
-    bluetitle.typo = secondTitle2;
-    
+    Text *albaText = [[Text alloc] init];
     WorkManRedTitle *blue = [WorkManRedTitle workManRedTitle];
     blue.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
-    bluetitle.typoRangeArray = (NSMutableArray *)@[@[blue,@"0-7"]];
-    [self.texts addObject:bluetitle];
+    albaText.scale = 0.5;
+    albaText.center = CGPointMake(0.28,0.87);
+    albaText.isTemplateItem = true;
+    albaText.indexInLayer = @"5";
+    albaText.text = @"대학축제 알바";
+    albaText.textView.text = @"대학축제 알바";
+    albaText.typo = blue;
+
+    Text *reviewText = [[Text alloc] init];
+    WorkManSecondTitle *secondTitle2 = [WorkManSecondTitle workManSecondTitle];
+    reviewText.scale = 0.18;
+    reviewText.center = CGPointMake(0.6,0.87);
+    reviewText.isTemplateItem = true;
+    reviewText.indexInLayer = @"5";
+    reviewText.text = @"리뷰";
+    reviewText.textView.text = @"리뷰";
+    reviewText.typo = secondTitle2;
     
+    
+    [self.texts addObject:reviewText];
+    [self.texts addObject:albaText];
+
     Text *fastText = [[Text alloc] init];
     WorkManFast *fast = [WorkManFast workManFast];
     fastText.scale = 0.35;

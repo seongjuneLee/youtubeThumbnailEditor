@@ -225,10 +225,7 @@
         [string addAttribute:NSForegroundColorAttributeName value:typo.textColor range:range];
         
         /* 현재 쓰여있는 텍스트의 색깔을 변경할 뿐만 아니라, 텍스트뷰 자체의 색깔을 변경해두기, 그래야 추가로 글씨 써도 똑같이 적용됨 */
-        Text *text =  (Text *)(self.parent);
-        if (!text.isTemplateItem) {
-            self.textColor = typo.textColor;
-        }
+        self.textColor = typo.textColor;
         
     }
     

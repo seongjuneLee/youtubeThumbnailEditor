@@ -104,22 +104,42 @@
     [self.texts addObject:fiveMinutesText];
     
     //#예능레전드
-    Text *hashTagText = [[Text alloc] init];
-    InfiniteChallengeHashTag *hashTag = [InfiniteChallengeHashTag infiniteChallengeHashTag];
-    hashTagText.scale = 0.18;
-    hashTagText.center = CGPointMake(0.135, 0.195);
-    hashTagText.isTemplateItem = true;
-    hashTagText.indexInLayer =@"4";
-    hashTagText.text = @"#예능레전드";
-    hashTagText.textView.text = hashTagText.text;
+    Text *hashtagText = [[Text alloc] init];
+    InfiniteChallengeHashTag *legend = [InfiniteChallengeHashTag infiniteChallengeHashTag];
+    hashtagText.scale = 0.03;
+    hashtagText.center = CGPointMake(0.06, 0.195);
+    hashtagText.isTemplateItem = true;
+    hashtagText.indexInLayer =@"4";
+    hashtagText.text = @"#";
+    hashtagText.textView.text = @"#";
+    hashtagText.typo = legend;
     
+    Text *entertainText = [[Text alloc] init];
     InfiniteChallengeHashTag *hashTagYellow = [InfiniteChallengeHashTag infiniteChallengeHashTag];
     hashTagYellow.textColor = [UIColor colorWithRed:254/255.0 green:216/255.0 blue:60/255.0 alpha:1];
-    hashTagText.typoRangeArray = (NSMutableArray *)@[@[hashTagYellow,@"1-2"]];
+    entertainText.scale = 0.065;
+    entertainText.center = CGPointMake(0.1, 0.195);
+    entertainText.isTemplateItem = true;
+    entertainText.indexInLayer =@"4";
+    entertainText.text = @"예능";
+    entertainText.textView.text = @"예능";
+    entertainText.typo = hashTagYellow;
+
+
+    Text *legendText = [[Text alloc] init];
+    InfiniteChallengeHashTag *hashTag = [InfiniteChallengeHashTag infiniteChallengeHashTag];
+    legendText.scale = 0.09;
+    legendText.center = CGPointMake(0.17, 0.195);
+    legendText.isTemplateItem = true;
+    legendText.indexInLayer =@"4";
+    legendText.text = @"레전드";
+    legendText.textView.text = @"레전드";
+    legendText.typo = hashTag;
     
-    hashTagText.typo = hashTag;
-    [self.texts addObject:hashTagText];
-    
+    [self.texts addObject:entertainText];
+    [self.texts addObject:legendText];
+    [self.texts addObject:hashtagText];
+
     //무야~호~
     Text *muYaHoText = [[Text alloc] init];
     InfiniteChallengeYellowSpeechBoxWhite *yellowSpeechBoxWhite = [InfiniteChallengeYellowSpeechBoxWhite infiniteChallengeYellowSpeechBoxWhite];

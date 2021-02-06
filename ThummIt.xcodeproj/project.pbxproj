@@ -19,6 +19,7 @@
 		6E1DBD0225CBE2C5004C0416 /* SignInNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */; };
 		6E1DBD0725CBE2D4004C0416 /* SignInPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */; };
 		6E1DBD1725CD1A72004C0416 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD1625CD1A72004C0416 /* LogInViewController.m */; };
+		6E1DBDBC25CEF492004C0416 /* LongRectangleSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBDBB25CEF492004C0416 /* LongRectangleSticker.m */; };
 		6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC6625AD78B700BBA540 /* ColorManager.m */; };
 		6E20BC7125AD938000BBA540 /* BGColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC7025AD938000BBA540 /* BGColorViewController.m */; };
 		6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8625AD944B00BBA540 /* BGColorCollectionViewCell.m */; };
@@ -323,7 +324,7 @@
 		6EF0C95025CD4F4100BE7573 /* DinggoBehindTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C94F25CD4F4100BE7573 /* DinggoBehindTypo.m */; };
 		6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */; };
 		6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95925CD513000BE7573 /* DinggoMurder.m */; };
-		6EF0C95F25CD528C00BE7573 /* DinggoKpopTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95E25CD528C00BE7573 /* DinggoKpopTypo.m */; };
+		6EF0C95F25CD528C00BE7573 /* DigitalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */; };
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
 		B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */; };
 		B11E0D5425C4F6070050D9F0 /* SixToFourVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5325C4F6070050D9F0 /* SixToFourVlogTemplate.m */; };
@@ -455,6 +456,8 @@
 		6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInPasswordViewController.m; sourceTree = "<group>"; };
 		6E1DBD1525CD1A72004C0416 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		6E1DBD1625CD1A72004C0416 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		6E1DBDBA25CEF492004C0416 /* LongRectangleSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongRectangleSticker.h; sourceTree = "<group>"; };
+		6E1DBDBB25CEF492004C0416 /* LongRectangleSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongRectangleSticker.m; sourceTree = "<group>"; };
 		6E20BC6525AD78B700BBA540 /* ColorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
 		6E20BC6625AD78B700BBA540 /* ColorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
 		6E20BC6F25AD938000BBA540 /* BGColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGColorViewController.h; sourceTree = "<group>"; };
@@ -1016,8 +1019,8 @@
 		6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoWinkTypo.m; sourceTree = "<group>"; };
 		6EF0C95825CD513000BE7573 /* DinggoMurder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoMurder.h; sourceTree = "<group>"; };
 		6EF0C95925CD513000BE7573 /* DinggoMurder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoMurder.m; sourceTree = "<group>"; };
-		6EF0C95D25CD528C00BE7573 /* DinggoKpopTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DinggoKpopTypo.h; sourceTree = "<group>"; };
-		6EF0C95E25CD528C00BE7573 /* DinggoKpopTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoKpopTypo.m; sourceTree = "<group>"; };
+		6EF0C95D25CD528C00BE7573 /* DigitalTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalTypo.h; sourceTree = "<group>"; };
+		6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalTypo.m; sourceTree = "<group>"; };
 		B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogBarunGothicTypo.h; sourceTree = "<group>"; };
 		B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogBarunGothicTypo.m; sourceTree = "<group>"; };
 		B11E0D4D25C4EDBD0050D9F0 /* GrwmVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrwmVlogTemplate.h; sourceTree = "<group>"; };
@@ -2486,8 +2489,8 @@
 				6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */,
 				6EF0C95825CD513000BE7573 /* DinggoMurder.h */,
 				6EF0C95925CD513000BE7573 /* DinggoMurder.m */,
-				6EF0C95D25CD528C00BE7573 /* DinggoKpopTypo.h */,
-				6EF0C95E25CD528C00BE7573 /* DinggoKpopTypo.m */,
+				6EF0C95D25CD528C00BE7573 /* DigitalTypo.h */,
+				6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */,
 			);
 			path = DinggoDubleCricleTypo;
 			sourceTree = "<group>";
@@ -2695,6 +2698,8 @@
 				6EF0C8D525CBDC3A00BE7573 /* TearsSticker.m */,
 				6EF0C8E725CBE0B700BE7573 /* TriangleSticker1.h */,
 				6EF0C8E825CBE0B700BE7573 /* TriangleSticker1.m */,
+				6E1DBDBA25CEF492004C0416 /* LongRectangleSticker.h */,
+				6E1DBDBB25CEF492004C0416 /* LongRectangleSticker.m */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -3296,7 +3301,7 @@
 				B1F2B73E25C1C4E30064A044 /* InfiniteChallengeHashTag.m in Sources */,
 				6EBEB69425C4C5770017C640 /* StayingHomeVlogTemplate.m in Sources */,
 				6E8F9A9425C34581005C8071 /* FullRectangle.m in Sources */,
-				6EF0C95F25CD528C00BE7573 /* DinggoKpopTypo.m in Sources */,
+				6EF0C95F25CD528C00BE7573 /* DigitalTypo.m in Sources */,
 				B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */,
 				6E8F9A9725C34582005C8071 /* ChristmasCircle.m in Sources */,
 				6EBEB59625C1EA990017C640 /* WorkManTemplate3.m in Sources */,
@@ -3428,6 +3433,7 @@
 				B1F2B74725C1CA070064A044 /* InfiniteChallengeSkyBlueBox.m in Sources */,
 				6E8E79B82591F9570008C5FF /* MainTabBarViewController.m in Sources */,
 				6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */,
+				6E1DBDBC25CEF492004C0416 /* LongRectangleSticker.m in Sources */,
 				6E2845CB25C98990008B7A23 /* PrivacyPolicyViewController.m in Sources */,
 				B1F2B73925C1C4A50064A044 /* InfiniteChallengeFiveMinutes.m in Sources */,
 				6ED13D6325C2FFB000012144 /* RunningMan3Template.m in Sources */,

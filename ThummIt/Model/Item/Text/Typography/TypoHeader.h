@@ -76,7 +76,7 @@
 #import "DinggoBehindTypo.h"
 #import "DinggoWinkTypo.h"
 #import "DinggoMurder.h"
-#import "DinggoKpopTypo.h"
+#import "DigitalTypo.h"
 
 
 //vlog

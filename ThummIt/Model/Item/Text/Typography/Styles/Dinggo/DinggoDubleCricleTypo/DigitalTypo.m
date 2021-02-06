@@ -1,13 +1,13 @@
 //
-//  DinggoKpopTypo.m
+//  digitalTypo.m
 //  ThummIt
 //
 //  Created by 이성준 on 2021/02/05.
 //
 
-#import "DinggoKpopTypo.h"
+#import "DigitalTypo.h"
 
-@implementation DinggoKpopTypo
+@implementation DigitalTypo
 
 -(id)init{
     self = [super init];
@@ -17,7 +17,6 @@
         self.fontName = @"NeoDunggeunmoPro-Regular";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1] ;
         self.fontSize = TEXT_FONT_SIZE;
-        self.bgImageName = @"DinggoTitleLongBG";
         self.bgHeightPadding = -26;
         self.bgWidthPadding = -50;
         
@@ -34,10 +33,10 @@
     return self;
 }
 
-+(DinggoKpopTypo*)dinggoKpopTypo{
++(DigitalTypo*)digitalTypo{
     
-    DinggoKpopTypo* dinggoKpopTypo = [[self alloc] init];
-    return dinggoKpopTypo;
+    DigitalTypo* digitalTypo = [[self alloc] init];
+    return digitalTypo;
     
 }
 

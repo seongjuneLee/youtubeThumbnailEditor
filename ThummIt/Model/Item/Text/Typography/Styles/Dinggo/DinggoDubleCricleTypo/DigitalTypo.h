@@ -1,5 +1,5 @@
 //
-//  DinggoKpopTypo.h
+//  digitalTypo.h
 //  ThummIt
 //
 //  Created by 이성준 on 2021/02/05.
@@ -9,9 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DinggoKpopTypo : Typography
+@interface DigitalTypo : Typography
 
-+(DinggoKpopTypo*)dinggoKpopTypo;
++(DigitalTypo*)digitalTypo;
 
 @end
 

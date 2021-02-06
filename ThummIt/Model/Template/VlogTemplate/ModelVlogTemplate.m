@@ -74,26 +74,36 @@
     
     //피팅 모델의
     Text *modelText = [[Text alloc] init];
-    VlogModel *base = [VlogModel vlogModel];
-    modelText.scale = 0.29;
-    modelText.center = CGPointMake(0.82, 0.44);
-    modelText.isTemplateItem = true;
-    modelText.indexInLayer = @"3";
-    modelText.text = @"피팅 모델의\n여름 일상";
-    modelText.textView.text = modelText.text;
-    
     VlogModel *fitting = [VlogModel vlogModel];
     fitting.textColor = [UIColor colorWithRed:(208/255.0) green:(145/255.0) blue:(116/255.0) alpha:1];
+
+    modelText.scale = 0.13;
+    modelText.center = CGPointMake(0.7, 0.37);
+    modelText.isTemplateItem = true;
+    modelText.indexInLayer = @"3";
+    modelText.text = @"피팅";
+    modelText.textView.text = modelText.text;
+    modelText.typo = fitting;
+
+    Text *dailySummer = [[Text alloc] init];
+    VlogModel *base = [VlogModel vlogModel];
+
+    dailySummer.scale = 0.27;
+    dailySummer.center = CGPointMake(0.82, 0.44);
+    dailySummer.isTemplateItem = true;
+    dailySummer.indexInLayer = @"3";
+    dailySummer.text = @"   모델의\n여름 일상";
+    dailySummer.textView.text = dailySummer.text;
+    dailySummer.typo = base;
     
-    modelText.typoRangeArray = (NSMutableArray *)@[@[fitting,@"0-2"]];
-    modelText.typo = base;
     [self.texts addObject:modelText];
-    
+    [self.texts addObject:dailySummer];
+
     //브이로그
     Text *vlogText = [[Text alloc] init];
     VlogModel *vlog = [VlogModel vlogModel];
     vlogText.scale = 0.34;
-    vlogText.center = CGPointMake(0.82, 0.64);
+    vlogText.center = CGPointMake(0.785, 0.64);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer = @"4";
     vlogText.text = @"브이로그";

@@ -68,24 +68,63 @@
     [self.texts addObject:logoText];
     
     //자막
-    Text *subTitleText = [[Text alloc] init];
-    
-    InfiniteChallengeWhiteTypo *white = [InfiniteChallengeWhiteTypo infiniteChallengeWhiteTypo];
-    subTitleText.scale = 0.69;
-    subTitleText.center = CGPointMake(0.62, 0.55);
-    subTitleText.isTemplateItem = true;
-    subTitleText.indexInLayer =@"2";
-    subTitleText.text = @"멤버들과 함께 비밀을 파헤쳐라!";
-    subTitleText.textView.text = subTitleText.text;
-    
+    Text *memberText = [[Text alloc] init];
     InfiniteChallengeOrangeTypo *orange = [InfiniteChallengeOrangeTypo infiniteChallengeOrangeTypo];
-    InfiniteChallengeBlueTypo *blue = [InfiniteChallengeBlueTypo infiniteChallengeBlueTypo];
-    InfiniteChallengeBlackTypo *black = [InfiniteChallengeBlackTypo infiniteChallengeBlackTypo];
+    memberText.scale = 0.18;
+    memberText.center = CGPointMake(0.25, 0.55);
+    memberText.isTemplateItem = true;
+    memberText.indexInLayer =@"2";
+    memberText.text = @"멤버들";
+    memberText.textView.text = memberText.text;
+    memberText.typo = orange;
 
-    subTitleText.typoRangeArray = (NSMutableArray *)@[@[orange,@"0-3"], @[blue,@"8-2"], @[black,@"12-5"]];
+    Text *withText = [[Text alloc] init];
+    InfiniteChallengeWhiteTypo *white = [InfiniteChallengeWhiteTypo infiniteChallengeWhiteTypo];
+    withText.scale = 0.2;
+    withText.center = CGPointMake(0.48, 0.55);
+    withText.isTemplateItem = true;
+    withText.indexInLayer =@"2";
+    withText.text = @"과 함께";
+    withText.textView.text = memberText.text;
+    withText.typo = white;
     
-    subTitleText.typo = white;
-    [self.texts addObject:subTitleText];
+    Text *secreteText = [[Text alloc] init];
+    InfiniteChallengeBlueTypo *blue = [InfiniteChallengeBlueTypo infiniteChallengeBlueTypo];
+    secreteText.scale = 0.13;
+    secreteText.center = CGPointMake(0.658, 0.55);
+    secreteText.isTemplateItem = true;
+    secreteText.indexInLayer =@"2";
+    secreteText.text = @"비밀";
+    secreteText.textView.text = memberText.text;
+    secreteText.typo = blue;
+
+    Text *eulText = [[Text alloc] init];
+    InfiniteChallengeWhiteTypo *white2 = [InfiniteChallengeWhiteTypo infiniteChallengeWhiteTypo];
+
+    eulText.scale = 0.09;
+    eulText.center = CGPointMake(0.68, 0.55);
+    eulText.isTemplateItem = true;
+    eulText.indexInLayer =@"2";
+    eulText.text = @"을";
+    eulText.textView.text = memberText.text;
+    eulText.typo = white2;
+
+    Text *digingText = [[Text alloc] init];
+    InfiniteChallengeBlackTypo *black = [InfiniteChallengeBlackTypo infiniteChallengeBlackTypo];
+    digingText.scale = 0.25;
+    digingText.center = CGPointMake(0.8, 0.55);
+    digingText.isTemplateItem = true;
+    digingText.indexInLayer =@"2";
+    digingText.text = @"파헤쳐라!";
+    digingText.textView.text = memberText.text;
+    digingText.typo = black;
+
+    
+    [self.texts addObject:memberText];
+    [self.texts addObject:secreteText];
+    [self.texts addObject:withText];
+    [self.texts addObject:eulText];
+    [self.texts addObject:digingText];
 
 }
 

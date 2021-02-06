@@ -94,6 +94,7 @@
     
     Text *blackText = [[Text alloc] init];
     WorkManLogo2 *center = [WorkManLogo2 workManLogo2];
+    center.textColor = [UIColor colorWithRed:(0/255.0) green:(0/255.0) blue:(0/255.0) alpha:1];
     blackText.scale = 0.47;
     blackText.center = CGPointMake(0.275,0.46);
     blackText.isTemplateItem = true;
@@ -101,42 +102,67 @@
     blackText.text = @"유튜브 연봉 궁금해?";
     blackText.textView.text = @"유튜브 연봉 궁금해?";
     blackText.typo = center;
-    
-    WorkManLogo2 *black = [WorkManLogo2 workManLogo2];
-    black.textColor = [UIColor colorWithRed:(0/255.0) green:(0/255.0) blue:(0/255.0) alpha:1] ;
-    blackText.typoRangeArray = (NSMutableArray *)@[@[black,@"0-11"]];
     [self.texts addObject:blackText];
     
-    Text *upTitleText = [[Text alloc] init];
+    Text *letsGoText = [[Text alloc] init];
     WorkmanYelloewTitle *upTitle = [WorkmanYelloewTitle workmanYelloewTitle];
-    upTitleText.scale = 0.65;
-    upTitleText.center = CGPointMake(0.355,0.73);
-    upTitleText.isTemplateItem = true;
-    upTitleText.indexInLayer = @"5";
-    upTitleText.text = @"가자! 유튜브본사로!";
-    upTitleText.textView.text = @"가자! 유튜브본사로!";
-    upTitleText.typo = upTitle;
+    letsGoText.scale = 0.2;
+    letsGoText.center = CGPointMake(0.12,0.73);
+    letsGoText.isTemplateItem = true;
+    letsGoText.indexInLayer = @"5";
+    letsGoText.text = @"가자! ";
+    letsGoText.textView.text = @"가자! ";
+    letsGoText.typo = upTitle;
     
+    Text *youtubeText2 = [[Text alloc] init];
     WorkmanYelloewTitle *yellow = [WorkmanYelloewTitle workmanYelloewTitle];
     yellow.textColor = [UIColor colorWithRed:(238/255.0) green:(230/255.0) blue:(50/255.0) alpha:1] ;
-    upTitleText.typoRangeArray = (NSMutableArray *)@[@[yellow,@"4-3"]];
-    [self.texts addObject:upTitleText];
+    youtubeText2.scale = 0.23;
+    youtubeText2.center = CGPointMake(0.32,0.73);
+    youtubeText2.isTemplateItem = true;
+    youtubeText2.indexInLayer = @"5";
+    youtubeText2.text = @"유튜브";
+    youtubeText2.textView.text = @"유튜브";
+    youtubeText2.typo = yellow;
+
+    Text *headquatersText = [[Text alloc] init];
+    headquatersText.scale = 0.24;
+    headquatersText.center = CGPointMake(0.53,0.73);
+    headquatersText.isTemplateItem = true;
+    headquatersText.indexInLayer = @"5";
+    headquatersText.text = @"본사로!";
+    headquatersText.textView.text = @"본사로!";
+    headquatersText.typo = upTitle;
+
     
-    Text *redtitle = [[Text alloc] init];
+    [self.texts addObject:youtubeText2];
+    [self.texts addObject:letsGoText];
+    [self.texts addObject:headquatersText];
+
+    Text *blueYoutube = [[Text alloc] init];
+    WorkManRedTitle *blueTypo = [WorkManRedTitle workManRedTitle];
+    blueTypo.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
+    blueYoutube.scale = 0.21;
+    blueYoutube.center = CGPointMake(0.13,0.87);
+    blueYoutube.isTemplateItem = true;
+    blueYoutube.indexInLayer = @"6";
+    blueYoutube.text = @"유튜브";
+    blueYoutube.textView.text = @"유튜브";
+    blueYoutube.typo = blueTypo;
+    
+    Text *visitingText = [[Text alloc] init];
     WorkManSecondTitle *secondTitle = [WorkManSecondTitle workManSecondTitle];
-    redtitle.scale = 0.38;
-    redtitle.center = CGPointMake(0.22,0.87);
-    redtitle.isTemplateItem = true;
-    redtitle.indexInLayer = @"6";
-    redtitle.text = @"유튜브 탐방";
-    redtitle.textView.text = @"유튜브 탐방";
-    redtitle.typo = secondTitle;
-    
-    WorkManRedTitle *red = [WorkManRedTitle workManRedTitle];
-    red.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
-    redtitle.typoRangeArray = (NSMutableArray *)@[@[red,@"0-3"]];
-    [self.texts addObject:redtitle];
-    
+    visitingText.scale = 0.15;
+    visitingText.center = CGPointMake(0.31,0.87);
+    visitingText.isTemplateItem = true;
+    visitingText.indexInLayer = @"6";
+    visitingText.text = @"탐방";
+    visitingText.textView.text = @"탐방";
+    visitingText.typo = secondTitle;
+
+    [self.texts addObject:blueYoutube];
+    [self.texts addObject:visitingText];
+
 }
 
 -(void)setUpStickers{

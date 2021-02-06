@@ -62,11 +62,7 @@
     yellowTitle.indexInLayer = @"1";
     yellowTitle.text = @"유튜브";
     yellowTitle.textView.text = @"유튜브";
-    yellowTitle.typo = yellow;
-    WorkmanYelloewTitle *yellowcolor = [WorkmanYelloewTitle workmanYelloewTitle];
-    yellowcolor.textColor = [UIColor colorWithRed:(238/255.0) green:(230/255.0) blue:(50/255.0) alpha:(1)] ;
-    yellowTitle.typoRangeArray = (NSMutableArray *)@[@[yellowcolor,@"0-3"]];
-    
+    yellowTitle.typo = yellow;    
     [self.texts addObject:yellowTitle];
     
     Text *whiteTitle = [[Text alloc] init];

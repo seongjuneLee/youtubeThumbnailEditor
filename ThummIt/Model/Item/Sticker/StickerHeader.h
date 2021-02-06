@@ -25,6 +25,7 @@
 #import "VlogMacaronSticker.h"
 
 //ETC
+#import "LongRectangleSticker.h"
 #import "AngrySticker1.h"
 #import "BlinkSticker1.h"
 #import "PigtailSticker.h"
