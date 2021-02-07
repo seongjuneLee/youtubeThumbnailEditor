@@ -543,7 +543,7 @@
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <imageReference key="image" image="downArrow" symbolScale="large" renderingMode="original"/>
+                                    <imageReference key="image" image="checkButton" symbolScale="large" renderingMode="original"/>
                                 </state>
                                 <connections>
                                     <action selector="checkButtonTapped:" destination="TdZ-if-u2J" eventType="touchUpInside" id="u2y-w1-vod"/>
@@ -596,7 +596,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NS3-zs-gzl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="10" maxY="40"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2UR-uH-DlT">
@@ -611,19 +611,52 @@
                                     <outlet property="delegate" destination="jtH-J7-PzA" id="R5k-tr-XNa"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEB-vj-E2v" userLabel="Album Done Button">
+                                <rect key="frame" x="354" y="44" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tEB-vj-E2v" secondAttribute="height" multiplier="1:1" id="WkT-BT-hVI"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="checkButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="albumDoneButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="EjB-lP-A9j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXj-Ea-sHk" userLabel="Album Cancel Button">
+                                <rect key="frame" x="0.0" y="44" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cXj-Ea-sHk" secondAttribute="height" multiplier="1:1" id="T0O-ZR-CDo"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="closeButton"/>
+                                <connections>
+                                    <action selector="albumCancelButtonTapped:" destination="jtH-J7-PzA" eventType="touchUpInside" id="sfg-CA-ezh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s83-aq-wQs"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cXj-Ea-sHk" firstAttribute="bottom" secondItem="NS3-zs-gzl" secondAttribute="top" id="173-uF-TpD"/>
+                            <constraint firstItem="tEB-vj-E2v" firstAttribute="height" secondItem="cXj-Ea-sHk" secondAttribute="height" id="5e5-bv-fLN"/>
                             <constraint firstItem="NS3-zs-gzl" firstAttribute="centerX" secondItem="s83-aq-wQs" secondAttribute="centerX" id="FKG-sM-15C"/>
-                            <constraint firstItem="NS3-zs-gzl" firstAttribute="top" secondItem="s83-aq-wQs" secondAttribute="top" id="JVs-75-17L"/>
+                            <constraint firstItem="NS3-zs-gzl" firstAttribute="top" secondItem="s83-aq-wQs" secondAttribute="top" constant="60" id="JVs-75-17L"/>
                             <constraint firstItem="NS3-zs-gzl" firstAttribute="bottom" secondItem="s83-aq-wQs" secondAttribute="bottom" id="Vv8-IK-DsY"/>
+                            <constraint firstItem="cXj-Ea-sHk" firstAttribute="centerY" secondItem="tEB-vj-E2v" secondAttribute="centerY" id="cnv-kv-p6Y"/>
+                            <constraint firstItem="cXj-Ea-sHk" firstAttribute="leading" secondItem="s83-aq-wQs" secondAttribute="leading" id="pNW-Z0-S89"/>
+                            <constraint firstItem="cXj-Ea-sHk" firstAttribute="top" secondItem="s83-aq-wQs" secondAttribute="top" id="won-Oq-Yfk"/>
                             <constraint firstItem="NS3-zs-gzl" firstAttribute="width" secondItem="Jfk-Wl-q0s" secondAttribute="width" id="xX0-6A-5K3"/>
+                            <constraint firstItem="s83-aq-wQs" firstAttribute="trailing" secondItem="tEB-vj-E2v" secondAttribute="trailing" id="yfX-yj-XDQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Album" id="RKB-uI-dlr"/>
                     <connections>
+                        <outlet property="cancelButton" destination="cXj-Ea-sHk" id="HU0-cR-8qf"/>
                         <outlet property="collectionView" destination="NS3-zs-gzl" id="3he-4Z-LR9"/>
+                        <outlet property="collectionViewTopConstraint" destination="JVs-75-17L" id="3GH-Jw-zV2"/>
+                        <outlet property="doneButton" destination="tEB-vj-E2v" id="yfb-01-xGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RE-7d-2PL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -651,10 +684,10 @@
     <resources>
         <image name="ItemCircle" width="200" height="200"/>
         <image name="backgroundColorImage" width="233.33332824707031" height="233.33332824707031"/>
+        <image name="checkButton" width="166.66667175292969" height="166.66667175292969"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="closeButton" width="168" height="168"/>
         <image name="deleteImage" width="116.66666412353516" height="116.66666412353516"/>
-        <image name="downArrow" width="216.66667175292969" height="216.66667175292969"/>
         <image name="photoFrameImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="redoImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="stickerImage" width="216.66667175292969" height="216.66667175292969"/>

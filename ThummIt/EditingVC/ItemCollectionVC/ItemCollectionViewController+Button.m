@@ -18,10 +18,6 @@
     
     if (editingVC.modeController.editingMode == AddingPhotoFrameMode || editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         [editingVC cancelAddingPhotoFrame];
-        
-    } else if (editingVC.modeController.editingMode == EditingPhotoFrameMode){
-        [editingVC cancelEditingPhotoFrame];
-        
 //TEXT
     } else if (editingVC.modeController.editingMode == AddingTextMode){
         [editingVC cancelAddingText];

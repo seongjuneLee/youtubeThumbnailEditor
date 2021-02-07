@@ -138,23 +138,22 @@
 -(void)showAlbumVC{
     
     if (!self.albumVC) {
-
         UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
         self.albumVC = (AlbumViewController *)[editing instantiateViewControllerWithIdentifier:@"AlbumViewController"];
-
+        self.albumVC.editingVC = self;
+        NSLog(@"self.albumVC.editingVC시발1 주소 %@",self.albumVC.editingVC);
         [self addChildViewController:self.albumVC];
         [self.view addSubview:self.albumVC.view];
         
         float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
-        self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
+        self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY );
         self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY);
 
         self.albumVC.delegate = self;
         self.albumVC.collectionView.frameY = self.view.frameHeight;
-        
+
         [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             self.albumVC.collectionView.frameY = self.albumVC.view.frameY;
-            
         } completion:nil];
     }
     
