@@ -43,6 +43,11 @@
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
     
     [self setUpSlider];
+    
+    NSLog(@"self.albumVC.editingVC시발3 주소 %@",self.albumVC.editingVC );
+    NSLog(@"self.albumVC.editingVC시발2 주소 %@",self.albumVC );
+    NSLog(@"self.albumVC.editingVC시발1 주소 %@",self );
+
 }
 
 -(void)setUpPhotoAlbums{

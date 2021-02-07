@@ -6,6 +6,8 @@
 //
 
 #import "AlbumViewController.h"
+#import "EditingViewController.h"
+#import "EditingViewController+Buttons.h"
 
 @interface AlbumViewController ()
 
@@ -24,7 +26,7 @@
     self.phAssets = PhotoManager.sharedInstance.phassets;
     [self.collectionView reloadData];
     [self makeViewBlurred];
-    
+
 }
 
 -(void)makeViewBlurred{
@@ -40,11 +42,15 @@
 
 -(void)dismissSelf{
     
-    float screenHeight = UIScreen.mainScreen.bounds.size.height;
+    self.cancelButton.hidden = true;
+    self.doneButton.hidden = true;
     [UIView animateWithDuration:0.4 animations:^{
-        self.blurView.frameY = screenHeight;
-        self.collectionView.frameY = screenHeight;
+        self.blurView.frameY = self.view.frameHeight;
+        self.collectionViewTopConstraint.constant = self.view.frameHeight;
+        [self.view layoutIfNeeded];
     }completion:^(BOOL finished) {
+        self.cancelButton.hidden = false;
+        self.doneButton.hidden = false;
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
     }];
@@ -66,6 +72,21 @@
     flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth);
     
 }
+    
+- (IBAction)albumCancelButtonTapped:(id)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    [editingVC cancelEditingPhotoFrame];
+    
+}
+
+- (IBAction)albumDoneButtonTapped:(id)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    [editingVC doneEditingPhotoFrame];
+    
+}
+
 
 
 @end
