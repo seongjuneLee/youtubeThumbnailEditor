@@ -150,6 +150,9 @@
         [self.delegate readyUIForPanning];
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
         self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
+        if(!editingVC.currentItem.cannotChangeColor){
+            editingVC.hueSlider.alpha=0.0;
+        }
 
     } else if (sender.state == UIGestureRecognizerStateChanged){
         
@@ -172,7 +175,6 @@
         [self showGuideLineForSituation];
 
         self.isMagneting = false;
-
 
     } else if (sender.state == UIGestureRecognizerStateEnded){
         if (!editingVC.currentItem) {
@@ -198,6 +200,9 @@
         }
         self.isMagneting = false;
 
+        if(!editingVC.currentItem.cannotChangeColor){
+            [self deleteHueSliderRespondToCurrentPointY:currentPoint.y];
+        }
     }
 
 }
@@ -711,6 +716,24 @@
 
 
 #pragma mark - Helper
+
+-(void)deleteHueSliderRespondToCurrentPointY:(float)currentPointY{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    float imageViewBottomY = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
+    if (currentPointY >= imageViewBottomY) {
+        [UIView animateWithDuration:0.2 animations:^{
+            editingVC.hueSlider.alpha = 0.0;
+        }];
+    } else {
+        [UIView animateWithDuration:0.2 animations:^{
+            editingVC.hueSlider.alpha = 1.0;
+        }];
+    }
+}
+
+
 
 -(Item *)getCurrentItem:(UIGestureRecognizer*)sender{
     

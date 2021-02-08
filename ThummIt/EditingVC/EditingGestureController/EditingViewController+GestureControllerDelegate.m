@@ -231,7 +231,6 @@
         }];
     }
 }
-
 -(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint{
     
     self.underAreaView.hidden = false;

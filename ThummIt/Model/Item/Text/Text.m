@@ -130,6 +130,7 @@
 
 -(void)applyTypo:(Typography *)typo{
     
+    self.cannotChangeColor = typo.cannotChangeColor;
     NSRange prevRange = self.textView.selectedRange;
     NSRange range = NSMakeRange(prevRange.location, prevRange.length);
     if (range.length == 0) {

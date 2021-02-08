@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 노멀 모드 팬제스쳐
 -(void)readyUIForPanning;
 -(void)deleteImageRespondToCurrentPointY:(float)currentPointY;
+-(void)deleteHueSliderRespondToCurrentPointY:(float)currentPointY;
 -(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint;
 
 @end
