@@ -145,24 +145,6 @@
 }
 
 
--(void)hideAndInitSlider{
-    
-    [self.hueSlider setValue:0];
-
-    CGRect trackRect = [self.hueSlider trackRectForBounds:self.hueSlider.bounds];
-    CGRect thumbRect = [self.hueSlider thumbRectForBounds:self.hueSlider.bounds trackRect:trackRect value:self.hueSlider.value];
-    CGPoint thumbCenter = CGPointMake(thumbRect.origin.x + 15.5, 15);
-    self.thumbCircleView.alpha = 0.0;
-
-    self.thumbCircleView.center = [self.view convertPoint:thumbCenter fromView:self.hueSlider];
-    [UIView animateWithDuration:0.2 animations:^{
-        self.hueSlider.alpha = 0.0;
-    }];
-    
-
-}
-
-
 -(void)exportThumbnail{
     
 }
@@ -531,15 +513,34 @@
     
     if ([self.currentItem isKindOfClass:Text.class]){
         self.currentText.textView.textColor = currentPointColor;
-
+        if(self.currentText.typo.backgroundColorAlsoChange){
+            UIImage *image = [UIImage imageNamed:self.currentText.typo.bgImageName];
+            self.currentText.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            [self.currentText.backgroundImageView setTintColor:currentPointColor];
+        }
     } else if ([self.currentItem isKindOfClass:Sticker.class]){
         [self.currentItem.backgroundImageView setTintColor:currentPointColor];
     };
     self.thumbCircleView.backgroundColor = currentPointColor;
-   
+    
 };
+    
+-(void)hideAndInitSlider{
+    
+    [self.hueSlider setValue:0];
 
+    CGRect trackRect = [self.hueSlider trackRectForBounds:self.hueSlider.bounds];
+    CGRect thumbRect = [self.hueSlider thumbRectForBounds:self.hueSlider.bounds trackRect:trackRect value:self.hueSlider.value];
+    CGPoint thumbCenter = CGPointMake(thumbRect.origin.x + 15.5, 15);
+    self.thumbCircleView.alpha = 0.0;
 
+    self.thumbCircleView.center = [self.view convertPoint:thumbCenter fromView:self.hueSlider];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.hueSlider.alpha = 0.0;
+    }];
+    
+
+}
 
 
 @end

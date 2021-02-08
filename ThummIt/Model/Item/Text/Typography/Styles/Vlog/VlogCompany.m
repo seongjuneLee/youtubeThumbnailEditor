@@ -19,8 +19,9 @@
         self.bgImageName = @"webDesignerBG";
         self.bgHeightPadding = 5;
         self.bgWidthPadding = 40;
-        
-           }
+        self.backgroundColorAlsoChange = true;
+
+    }
     return self;
 }
 

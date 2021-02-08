@@ -80,6 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSArray* bgTextAttributes;
 
 @property (nonatomic) BOOL cannotChangeColor;
+@property (nonatomic) BOOL backgroundColorAlsoChange;
 
 - (id)init;
 
