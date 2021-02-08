@@ -40,7 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) UIViewController *editingVC;
 @property (weak, nonatomic) UIView *gestureView;
 
-@property (weak, nonatomic) Item *currentItem;
 @property (nonatomic) BOOL isPinching;
 
 @property (nonatomic) CGPoint originalPoint;

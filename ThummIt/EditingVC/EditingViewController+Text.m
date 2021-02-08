@@ -31,6 +31,15 @@
     if(!self.currentText.isTypedByUser){
         self.currentText.textView.text = self.justTyped;//추가로 입력된 글자만 출력되게
         self.currentText.textView.tintColor = self.originalCursorColor;
+        self.itemCollectionVC.checkButton.enabled = false;
+        self.itemCollectionVC.checkButton.alpha = 0.4;
+    }
+    if (textView.text.length == 0) {
+        self.itemCollectionVC.checkButton.enabled = false;
+        self.itemCollectionVC.checkButton.alpha = 0.4;
+    } else {
+        self.itemCollectionVC.checkButton.enabled = true;
+        self.itemCollectionVC.checkButton.alpha = 1.0;
     }
 //    NSLog(@"%@",self.currentText.text);
 //    NSLog(@"%@",self.currentText.typo.name);

@@ -36,6 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) PhotoFrame *currentPhotoFrame;
 @property (strong, nonatomic, nullable) Sticker *currentSticker;
 @property (strong, nonatomic, nullable) Typography *recentTypo;
+@property (strong, nonatomic, nullable) PhotoFrame *recentPhotoFrame;
+@property (strong, nonatomic, nullable) Sticker *recentSticker;
 
 // 아이템 변경전 기본값
 @property (strong, nonatomic, nullable) UIColor *originalColor;

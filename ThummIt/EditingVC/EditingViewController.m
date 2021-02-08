@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
      {
         if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
@@ -44,10 +44,6 @@
     
     [self setUpSlider];
     
-    NSLog(@"self.albumVC.editingVC시발3 주소 %@",self.albumVC.editingVC );
-    NSLog(@"self.albumVC.editingVC시발2 주소 %@",self.albumVC );
-    NSLog(@"self.albumVC.editingVC시발1 주소 %@",self );
-
 }
 
 -(void)setUpPhotoAlbums{
@@ -133,7 +129,6 @@
     self.gestureController = [[EditingGestureController alloc] init];
     self.gestureController.editingVC = self;
     self.gestureController.delegate = self;
-    self.gestureController.currentItem = self.currentItem;
     [self.gestureController addGestureRecognizers];
     
 }

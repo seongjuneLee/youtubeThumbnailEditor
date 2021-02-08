@@ -6,9 +6,6 @@
 //
 
 #import "ItemCollectionViewController.h"
-#import "ItemCollectionViewController+PhotoFrame.h"
-#import "ItemCollectionViewController+Text.h"
-#import "ItemCollectionViewController+Sticker.h"
 #import "EditingViewController.h"
 #import "ItemCollectionViewController+Button.h"
 @interface ItemCollectionViewController ()
@@ -38,18 +35,16 @@
 -(void)dismissSelf{
     
     float screenHeight = UIScreen.mainScreen.bounds.size.height;
-    [UIView animateWithDuration:0.2 animations:^{
+    
+    [UIView animateWithDuration:0.4 animations:^{
         self.cancelButton.alpha = self.checkButton.alpha = 0;
+        self.containerView.frameY = screenHeight;
+        self.blurView.frameY = screenHeight;
     }completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.2 animations:^{
-            self.collectionView.frameY = screenHeight;
-            self.blurView.frameY = screenHeight;
-        }completion:^(BOOL finished) {
-            [self.view removeFromSuperview];
-            [self removeFromParentViewController];
-        }];
+        [self.view removeFromSuperview];
+        [self removeFromParentViewController];
     }];
-
+    
 }
 
 
@@ -83,16 +78,19 @@
 
     if (self.itemType == PhotoFrameType) {
         self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
-        self.photoFrameCollectionController.delegate = self;
-        
+        self.photoFrameCollectionController.editingVC = self.editingVC;
+        self.photoFrameScrollContanerView.hidden = false;
+        self.textScrollContainerView.hidden = true;
     } else if (self.itemType == TextType){
         self.textCollectionController = [[TextCollectionController alloc] initWithCollectionView:self.collectionView];
-        self.textCollectionController.delegate = self;
-      
+        self.textCollectionController.editingVC = self.editingVC;
+        self.photoFrameScrollContanerView.hidden = true;
+        self.textScrollContainerView.hidden = false;
     }else if (self.itemType == StickerType){
         self.stickerCollectionController = [[StickerCollectionController alloc] initWithCollectionView:self.collectionView];
-        self.stickerCollectionController.delegate = self;
-        // 추가 필요
+        self.stickerCollectionController.editingVC = self.editingVC;
+        self.photoFrameScrollContanerView.hidden = true;
+        self.textScrollContainerView.hidden = true;
     }
     
     

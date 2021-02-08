@@ -20,7 +20,6 @@
 
         // 템플릿에서만 필요
         self.center = CGPointMake(0.5, 0.5);
-        self.scale = 1;
         self.rotationDegree = 0;
         self.photoScale = 1;
         self.photoRotationDegree = 0;
@@ -125,7 +124,6 @@
     self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
     self.baseView.center = self.center;
     
-
 }
     
 -(void)setBaseViewFrame{

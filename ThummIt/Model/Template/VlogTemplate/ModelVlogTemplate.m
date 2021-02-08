@@ -108,7 +108,7 @@
     vlogText.indexInLayer = @"4";
     vlogText.text = @"브이로그";
     vlogText.textView.text = vlogText.text;
-    vlog.fontSize += 16;
+    vlog.fontSize = 16;
     
     vlogText.typo = vlog;
     [self.texts addObject:vlogText];

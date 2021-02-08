@@ -12,7 +12,7 @@ typedef enum {
     NormalMode = 0,
     AddingPhotoFrameMode = 1,
     EditingPhotoFrameModeWhileAddingPhotoFrameMode = 2,
-    EditingPhotoFrameMode = 3,
+    EditingPhotoInsidePhotoFrameMode = 3,
     AddingTextMode = 4,
     EditingTextMode = 5,
     AddingStickerMode = 6,

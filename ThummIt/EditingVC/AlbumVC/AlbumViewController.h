@@ -22,19 +22,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) id<AlbumViewControllerDelegate> delegate;
 @property (strong, nonatomic) NSMutableArray *phAssets;
 @property (strong, nonatomic) NSIndexPath *selectedIndexPath;
-@property (strong, nonatomic) UIVisualEffectView *blurView;
 @property (strong, nonatomic) UIViewController *editingVC;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-- (IBAction)albumCancelButtonTapped:(id)sender;
-- (IBAction)albumDoneButtonTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewTopConstraint;
-@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
-@property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
+-(void)showWithAnimation;
+-(void)hideWithAnimation;
 -(void)dismissSelf;
 
 @end

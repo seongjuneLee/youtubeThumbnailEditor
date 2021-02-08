@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)cancelButtonTapped:(UIButton *)sender;
 - (IBAction)checkButtonTapped:(UIButton *)sender;
 
+- (IBAction)photoFrameStyleTapped:(id)sender;
+- (IBAction)photoButtonTapped:(id)sender;
+- (IBAction)textButtonTapped:(id)sender;
+- (IBAction)typoButtonTapped:(id)sender;
+
 @end
 
 NS_ASSUME_NONNULL_END

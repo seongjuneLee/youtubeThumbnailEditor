@@ -10,18 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol StickerCollectionControllerDelegate <NSObject>
-
--(void)didSelectSticker:(Sticker *)sticker;
-
-@end
-
 @interface StickerCollectionController : NSObject <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
-@property (weak, nonatomic) id<StickerCollectionControllerDelegate> delegate;
 @property (weak, nonatomic) UICollectionView *collectionView;
+@property (weak, nonatomic) UIViewController *editingVC;
 
 -(id)initWithCollectionView:(UICollectionView *)collectionView;
+-(void)didSelectSticker:(Sticker *)sticker;
 
 @end
 

@@ -26,9 +26,9 @@
 
         self.center = CGPointMake(0,0);
         self.rotationDegree = 0;
-        self.scale = 0.5;
-        
-        
+        self.textAlignment = NSTextAlignmentCenter;
+        self.textView.textAlignment = NSTextAlignmentCenter;
+
     }
     return self;
 }
@@ -209,9 +209,7 @@
 -(AdvancedTextView*)makeTextView{
     
     // 텍스트뷰
-    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
-    float width = window.frameWidth;
-    AdvancedTextView* textView = [[AdvancedTextView alloc] initWithFrame:CGRectMake(0, 0, width, width*100/375)];
+    AdvancedTextView* textView = [[AdvancedTextView alloc] initWithFrame:CGRectMake(0, 0, 375, 100)];
     textView.backgroundColor = UIColor.clearColor;
     textView.keyboardAppearance = UIKeyboardAppearanceDark;
     textView.textAlignment = self.textAlignment;
@@ -238,15 +236,9 @@
 +(UIImageView*)makePlaceHolderWithTypo:(Typography*)typo{
     
     Text * placeHolderText = [[Text alloc] init];
-    placeHolderText.textView.text = typo.name;
     placeHolderText.text = typo.name;
-    placeHolderText.textAlignment = NSTextAlignmentCenter;
-    placeHolderText.textView.textAlignment = NSTextAlignmentCenter;
-
-    [placeHolderText applyTypo:typo];
-    [placeHolderText resize];
-    
-    [placeHolderText.textView setNeedsDisplay];
+    placeHolderText.typo = typo;
+    [placeHolderText loadView];
     UIImageView * imgView = [placeHolderText makePlaceholderImageView];
     
     return imgView;
@@ -337,7 +329,7 @@
     float width = UIScreen.mainScreen.bounds.size.width;
     float scale = width/self.baseView.frameWidth;
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
-    self.textViewContainer.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
+    self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
     
 }
 

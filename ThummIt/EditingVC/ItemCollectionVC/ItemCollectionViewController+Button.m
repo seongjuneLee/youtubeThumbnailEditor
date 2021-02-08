@@ -18,13 +18,14 @@
     
     if (editingVC.modeController.editingMode == AddingPhotoFrameMode || editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         [editingVC cancelAddingPhotoFrame];
-//TEXT
-    } else if (editingVC.modeController.editingMode == AddingTextMode){
+        [self photoFrameStyleTapped:self.photoFrameStyleButton];
+
+    } else if (editingVC.modeController.editingMode == AddingTextMode){ //TEXT
         [editingVC cancelAddingText];
     } else if (editingVC.modeController.editingMode == EditingTextMode){
         [editingVC cancelEditingText];
-//STICKER
-    } else if (editingVC.modeController.editingMode == AddingStickerMode){
+
+    } else if (editingVC.modeController.editingMode == AddingStickerMode){ //STICKER
         [editingVC cancelAddingSticker];
     } else if (editingVC.modeController.editingMode == EditingStickerMode){
         [editingVC cancelEditingSticker];
@@ -38,20 +39,20 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     if (editingVC.modeController.editingMode == AddingPhotoFrameMode || editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         [editingVC doneAddingPhotoFrame];
-    } else if (editingVC.modeController.editingMode == EditingPhotoFrameMode){
+    } else if (editingVC.modeController.editingMode == EditingPhotoInsidePhotoFrameMode){
         [editingVC doneEditingPhotoFrame];
-//TEXT
-    } else if (editingVC.modeController.editingMode == AddingTextMode){
+
+    } else if (editingVC.modeController.editingMode == AddingTextMode){ //TEXT
         [editingVC doneAddingText];
     } else if (editingVC.modeController.editingMode == EditingTextMode){
         [editingVC doneEditingText];
-//STICKER
-    }else if (editingVC.modeController.editingMode == AddingStickerMode){
+
+    }else if (editingVC.modeController.editingMode == AddingStickerMode){ //STICKER
         [editingVC doneAddingSticker];
     }else if (editingVC.modeController.editingMode == EditingStickerMode){
         [editingVC doneEditingSticker];
-//BGCOLOR
-    }else if (editingVC.modeController.editingMode == EditingBGColorMode){
+
+    }else if (editingVC.modeController.editingMode == EditingBGColorMode){ //BGCOLOR
         [editingVC doneEditingBGColor];
     }
     
@@ -59,5 +60,71 @@
     [editingVC.modeController setNavigationItemRespondToEditingMode:NormalMode];
 
 }
+
+#pragma mark - 아이템 버튼
+
+- (IBAction)typoButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        self.textButton.selected = false;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.typoButton.alpha = 1.0;
+            self.textButton.alpha = 0.4;
+        }];
+        [editingVC.currentText.textView resignFirstResponder];
+    }
+    
+}
+
+- (IBAction)textButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        self.typoButton.selected = false;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.typoButton.alpha = 0.4;
+            self.textButton.alpha = 1.0;
+        }];
+        [editingVC.currentText.textView becomeFirstResponder];
+    }
+
+}
+
+- (IBAction)photoButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        self.photoFrameStyleButton.selected = false;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.photoButton.alpha = 1.0;
+            self.photoFrameStyleButton.alpha = 0.4;
+        }];
+        [editingVC.albumVC showWithAnimation];
+        editingVC.modeController.editingMode = EditingPhotoInsidePhotoFrameMode;
+    }
+
+
+}
+
+- (IBAction)photoFrameStyleTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        self.photoButton.selected = false;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.photoButton.alpha = 0.4;
+            self.photoFrameStyleButton.alpha = 1.0;
+        }];
+        [editingVC.albumVC hideWithAnimation];
+        editingVC.modeController.editingMode = AddingPhotoFrameMode;
+    }
+
+}
+
 
 @end

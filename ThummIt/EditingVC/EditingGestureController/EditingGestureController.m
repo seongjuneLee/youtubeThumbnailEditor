@@ -7,6 +7,8 @@
 
 #import "EditingGestureController.h"
 #import "EditingViewController.h"
+#import "EditingViewController+GestureControllerDelegate.h"
+#import "ItemCollectionViewController+Button.h"
 #import "PhotoFrame.h"
 #import "ItemManager.h"
 #import "SaveManager.h"
@@ -70,26 +72,38 @@
 -(void)gestureViewTapped:(UITapGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.modeController.editingMode == NormalMode) {
+    
+    if (editingVC.currentItem) { // 애딩 또는 에디팅 모드일 때 컨텐트 모드 진입
+        
+        BOOL didTappedCurrentItem = [self didTappedCurrentItem:sender];
+        
+        if (didTappedCurrentItem) { // 현재 아이템을 탭함
+            if ([editingVC.currentItem isKindOfClass:Text.class]) {
+                [editingVC.itemCollectionVC textButtonTapped:editingVC.itemCollectionVC.textButton];
+            } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
+                if (PhotoManager.sharedInstance.phassets.count == 0) {
+                    PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+                }
+                [editingVC.itemCollectionVC photoButtonTapped:editingVC.itemCollectionVC.photoButton];
+            }else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
+               // 해줄 것 없음.
+            }
+        } else { // 다른 아이템 탭 함.
+            if ([editingVC.currentItem isKindOfClass:Text.class]) {
+                
+            } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
+                
+            } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
+                
+            }
+        }
+        
+    } else { // 에디팅 모드 진입
         if ([self getCurrentItem:sender]) {
             [self.delegate didSelectItem:[self getCurrentItem:sender]];
         }
-    } else if (editingVC.modeController.editingMode == AddingPhotoFrameMode) {
-        [self.delegate didTapPhotoFrameWhileAdding];
-    } else if (editingVC.modeController.editingMode == EditingPhotoFrameMode) {
-        if ([self getCurrentItem:sender]) {
-            [self.delegate changeCurrentItem:[self getCurrentItem:sender]];
-        }
-    } else if (editingVC.modeController.editingMode == EditingTextMode){
-        [self.delegate didSelectItem:[self getCurrentItem:sender]];
-    } else if (editingVC.modeController.editingMode == AddingTextMode){
-        [self.delegate didTapTextWhileAdding];
-    } else if (editingVC.modeController.editingMode == EditingStickerMode){
-        [self.delegate didSelectItem:self.currentItem];
-    } else if (editingVC.modeController.editingMode == AddingStickerMode){
-        [self.delegate didTapTextWhileAdding];
     }
-    
+
 }
 
 -(void)gestureViewPanned:(UIPanGestureRecognizer *)sender{
@@ -104,8 +118,8 @@
     } else if(editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
         [self gestureViewPannedForEditingPhotoMode:
          EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
-    } else if(editingVC.modeController.editingMode == EditingPhotoFrameMode){
-        [self gestureViewPannedForEditingPhotoMode:EditingPhotoFrameMode withSender:sender];
+    } else if(editingVC.modeController.editingMode == EditingPhotoInsidePhotoFrameMode){
+        [self gestureViewPannedForEditingPhotoMode:EditingPhotoInsidePhotoFrameMode withSender:sender];
 //TEXT
     }else if(editingVC.modeController.editingMode == AddingTextMode){
         [self gestureViewPannedForMode:AddingTextMode withSender:sender];
@@ -166,7 +180,6 @@
         editingVC.currentItem.baseView.centerY += deltaPoint.y;
         [self.delegate deleteImageRespondToCurrentPointY:currentPoint.y];
         self.originalPoint = [sender locationInView:editingVC.gestureView];
-        editingVC.currentItem.center = editingVC.currentItem.baseView.center;
         
         [self guideWithDeltaPoint:deltaPoint];
         [self showGuideLineForSituation];
@@ -437,9 +450,9 @@
         [self gestureViewPinchedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
         
     }
-    else if (editingVC.modeController.editingMode == EditingPhotoFrameMode){
+    else if (editingVC.modeController.editingMode == EditingPhotoInsidePhotoFrameMode){
         
-        [self gestureViewPinchedForEditingPhotoMode:EditingPhotoFrameMode withSender:sender];
+        [self gestureViewPinchedForEditingPhotoMode:EditingPhotoInsidePhotoFrameMode withSender:sender];
 
     }
     
@@ -508,7 +521,6 @@
         // 센터가이드 적용
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
         editingVC.currentItem.baseView.center = changedPoint;
-        editingVC.currentItem.center = changedPoint;
 
         [self showDegreeGuideLineWithMagnetWithDeltaDegree:self.currentRotation withScaleTransform:scaleTransform];
         
@@ -711,6 +723,17 @@
 
 
 #pragma mark - Helper
+
+-(BOOL)didTappedCurrentItem:(UIGestureRecognizer *)sender{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    CGPoint tappedLocation = [sender locationInView:self.gestureView];
+    if (CGRectContainsPoint(editingVC.currentItem.baseView.frame, tappedLocation)) {
+        return true;
+    }
+    
+    return false;
+}
 
 -(Item *)getCurrentItem:(UIGestureRecognizer*)sender{
     

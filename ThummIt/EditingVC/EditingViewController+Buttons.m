@@ -7,7 +7,9 @@
 
 #import "EditingViewController+Buttons.h"
 #import "EditingViewController+GestureControllerDelegate.h"
-#import "ItemCollectionViewController+Text.h"
+#import "TextCollectionController.h"
+#import "PhotoFrameCollectionController.h"
+#import "StickerCollectionController.h"
 #import "UIColor+Additions.h"
 #import "TypoHeader.h"
 #import "UndoManager.h"
@@ -215,19 +217,17 @@
             item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
         }
         [self.currentText.textView resignFirstResponder];
-    } else {// 체크버튼 alpha 0.0
         [SaveManager.sharedInstance addItem:self.currentItem];
         for (Item *item in SaveManager.sharedInstance.currentProject.items) {
             item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-    }
+        }
+        [SaveManager.sharedInstance save];
         
-    
-    [SaveManager.sharedInstance save];
-
-    [self.currentText.textView resignFirstResponder];
-    self.currentItem = nil;
-    self.currentText = nil;
+        [self.currentText.textView resignFirstResponder];
+        self.currentItem = nil;
+        self.currentText = nil;
     }
+    
 }
 
 -(void)doneEditingText{
@@ -253,7 +253,6 @@
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
     [self.layerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
-    self.currentItem.center = self.currentItem.baseView.center;
     [SaveManager.sharedInstance addItem:self.currentItem];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
@@ -270,7 +269,6 @@
     [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
     [self.layerController hideTransparentView];
     [self.itemCollectionVC dismissSelf];
-    self.currentItem.center = self.currentItem.baseView.center;
     [SaveManager.sharedInstance addItem:self.currentItem];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
@@ -322,9 +320,11 @@
     [self.modeController setNavigationItemRespondToEditingMode:AddingPhotoFrameMode];
     self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];
+    if (self.recentPhotoFrame == nil) {
+        self.recentPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
+    }
+    [self.itemCollectionVC.photoFrameCollectionController didSelectPhotoFrame:self.recentPhotoFrame];
     [self showAlbumVC];
-    self.albumVC.view.hidden = true;
-
 }
 
 -(void)taskWhenDenied{
@@ -349,18 +349,20 @@
     [self addChildViewController:self.itemCollectionVC];
     [self.view addSubview:self.itemCollectionVC.view];
     
-    self.itemCollectionVC.collectionView.frameY = self.view.frameHeight;
+    self.itemCollectionVC.containerView.frameY = self.view.frameHeight;
     self.itemCollectionVC.blurView.frameY = self.view.frameHeight;
     
     self.itemCollectionVC.checkButton.alpha = 0;
     self.itemCollectionVC.cancelButton.alpha = 0;
+    self.itemCollectionVC.scrollView.alpha = 0;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.itemCollectionVC.collectionView.frameY = 0;
+        self.itemCollectionVC.containerView.frameY = 0;
         self.itemCollectionVC.blurView.frameY = 0;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
-            self.itemCollectionVC.checkButton.alpha = 0.8;
-            self.itemCollectionVC.cancelButton.alpha = 0.8;
+            self.itemCollectionVC.checkButton.alpha = 1.0;
+            self.itemCollectionVC.cancelButton.alpha = 1.0;
+            self.itemCollectionVC.scrollView.alpha = 1.0;
         }];
     }];
     
@@ -378,7 +380,11 @@
     if (self.recentTypo == nil) {
         self.recentTypo = [NormalTypo normalTypo];
     }
-    [self.itemCollectionVC didSelectTypo:self.recentTypo];
+    self.itemCollectionVC.typoButton.selected = true;
+    self.itemCollectionVC.typoButton.alpha = 1.0;
+    self.itemCollectionVC.textButton.selected = false;
+    self.itemCollectionVC.textButton.alpha = 0.4;
+    [self.itemCollectionVC.textCollectionController didSelectTypo:self.recentTypo];
     
 }
 
