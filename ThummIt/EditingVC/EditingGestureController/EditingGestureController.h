@@ -16,25 +16,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol EditingGestureControllerDelegate <NSObject>
-
--(void)didSelectItem:(Item *)item;
--(void)changeCurrentItem:(Item *)item;
--(void)didTapPhotoFrameWhileAdding;
--(void)didTapTextWhileAdding;
-
-// 노멀 모드 팬제스쳐
--(void)readyUIForPanning;
--(void)deleteImageRespondToCurrentPointY:(float)currentPointY;
--(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint;
-
-@end
-
 @interface EditingGestureController : NSObject <UIGestureRecognizerDelegate>
 
 -(id)initWithView:(UIView *)view;
-
-@property (weak, nonatomic) id<EditingGestureControllerDelegate> delegate;
 
 @property (nonatomic) EditingMode editingMode;
 @property (weak, nonatomic) UIViewController *editingVC;

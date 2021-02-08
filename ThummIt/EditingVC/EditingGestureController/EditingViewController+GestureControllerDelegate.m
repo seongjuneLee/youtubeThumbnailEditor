@@ -16,14 +16,20 @@
 #pragma mark - 탭
 -(void)didSelectItem:(Item *)item{
     
+    self.modeController.editingMode = ItemMode;
+    
     if ([item isKindOfClass:PhotoFrame.class]) {
         
         PhotoFrame *photoFrame = (PhotoFrame *)item;
         self.currentItem = photoFrame;
-        [self.modeController setNavigationItemRespondToEditingMode:EditingPhotoInsidePhotoFrameMode];
+        [self hideNavigationItems];
+        
+        self.originalCenter = photoFrame.baseView.center;
+        self.originalTransform = photoFrame.baseView.transform;
+        
         self.originalPhotoFrameImage = photoFrame.photoImageView.image;
-        self.originalImageViewCenter = photoFrame.photoImageView.center;
-        self.originalTransform = photoFrame.photoImageView.transform;
+        self.originalPhotoImageViewCenter = photoFrame.photoImageView.center;
+        self.originalPhotoImageTransform = photoFrame.photoImageView.transform;
         
         if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
                 if (PhotoManager.sharedInstance.phassets.count == 0) {
@@ -40,9 +46,9 @@
         Text *text = (Text *)item;
         self.currentItem = text;
         self.currentText = text;
-        [self.modeController setNavigationItemRespondToEditingMode:EditingTextMode];
+        [self hideNavigationItems];
         
-        self.originalImageViewCenter = text.baseView.center;
+        self.originalCenter = text.baseView.center;
         self.originalTransform = text.baseView.transform;
         self.originalTypo = text.typo;
         self.originalText = text.text;
@@ -63,9 +69,9 @@
         
         Sticker *sticker = (Sticker *)item;
         self.currentItem = sticker; // currentsicker가 null이라 Currentitem으로 받음일단
-        [self.modeController setNavigationItemRespondToEditingMode:EditingStickerMode];
+        [self hideNavigationItems];
         
-        self.originalImageViewCenter = sticker.baseView.center;
+        self.originalCenter = sticker.baseView.center;
         self.originalTransform = sticker.baseView.transform;
         self.originalStickerImageName = sticker.backgroundImageName;
         
@@ -81,34 +87,13 @@
 
 -(void)photoFrameTappedTaskWhenAuthorized{
     [self.layerController showTransparentView];
-    [self.modeController setNavigationItemRespondToEditingMode:EditingPhotoInsidePhotoFrameMode];
+    [self hideNavigationItems];
     [self.layerController bringCurrentItemToFront:self.currentItem];
-    [self showAlbumVC];
+    self.itemCollectionVC.itemType = PhotoFrameType;
+    [self addItemCollectionVC];
+    [self addAlbumVC];
     [self setCurrentPhotoSelectedOnAlbumVC];
 }
-
--(void)changeCurrentItem:(Item *)item{
-    
-    if (self.currentItem != item) {
-        if ([item isKindOfClass:PhotoFrame.class]) {
-            PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
-            photoFrame.photoImageView.image = self.originalPhotoFrameImage;
-            photoFrame.photoImageView.center = self.originalImageViewCenter;
-            [self.layerController recoverOriginalLayer];
-            [self.layerController bringCurrentItemToFront:item];
-            
-            self.currentItem = item;
-            self.originalPhotoFrameImage = photoFrame.photoImageView.image;
-            [self setCurrentPhotoSelectedOnAlbumVC];
-            photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
-            photoFrame.photoCenter = photoFrame.photoImageView.center;
-        } else if ([item isKindOfClass:Text.class]){
-            
-        }
-    }
-    
-}
-
 
 -(void)setCurrentPhotoSelectedOnAlbumVC{
     PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
@@ -131,7 +116,6 @@
             photoFrame.photoImageView.frameSize = photoFrame.baseView.frameSize;
             photoFrame.photoImageView.transform = CGAffineTransformMakeRotation(degreesToRadians(0));
             photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2,photoFrame.baseView.frameHeight/2);
-            photoFrame.photoCenter = photoFrame.photoImageView.center;
 
             photoFrame.photoImageView.image = image;
         }];
@@ -139,82 +123,20 @@
     
 }
 
--(void)showAlbumVC{
-    
-    if (!self.albumVC) {
-        UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
-        self.albumVC = (AlbumViewController *)[editing instantiateViewControllerWithIdentifier:@"AlbumViewController"];
-        self.albumVC.editingVC = self;
-        [self addChildViewController:self.albumVC];
-        [self.view addSubview:self.albumVC.view];
-        
-        float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
-        self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY - self.itemCollectionVC.collectionView.frameY);
-        self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY + self.itemCollectionVC.collectionView.frameY);
-        NSLog(@"self.albumVC.viewframheithg %f",self.albumVC.view.frameHeight);
-        NSLog(@"self.itemcollectionvc.viewframheithg %f",self.itemCollectionVC.view.frameHeight);
 
-        self.albumVC.delegate = self;
-        self.albumVC.collectionViewTopConstraint.constant = self.albumVC.view.frameHeight;
-    }    
-}
-
--(void)didTapTextWhileAdding{
-    
-    ItemCollectionViewController *itemcollectionVC = (ItemCollectionViewController *)self.itemCollectionVC;
-    
-    if (itemcollectionVC.itemType == PhotoFrameType) {
-        
-        self.albumVC.view.frameHeight = itemcollectionVC.view.frameHeight - (itemcollectionVC.cancelButton.frameY + itemcollectionVC.cancelButton.frameHeight + 10);
-        self.albumVC.view.frameY = self.view.frameHeight - self.albumVC.view.frameHeight;
-        self.albumVC.view.hidden = false;
-        self.modeController.editingMode = EditingPhotoFrameModeWhileAddingPhotoFrameMode;
-    } else if (itemcollectionVC.itemType == TextType){
-        
-        [self.currentText.textView becomeFirstResponder];
-    }
-
-}
-
--(void)didTapPhotoFrameWhileAdding{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:EditingTextMode];
-    
-    ItemCollectionViewController *itemcollectionVC = (ItemCollectionViewController *)self.itemCollectionVC;
-    
-    if (itemcollectionVC.itemType == PhotoFrameType) {
-        
-        self.albumVC.view.frameHeight = itemcollectionVC.view.frameHeight - (itemcollectionVC.cancelButton.frameY + itemcollectionVC.cancelButton.frameHeight + 10);
-        self.albumVC.view.frameY = self.view.frameHeight - self.albumVC.view.frameHeight;
-        self.albumVC.view.hidden = false;
-        self.modeController.editingMode = EditingPhotoFrameModeWhileAddingPhotoFrameMode;
-    } else if (itemcollectionVC.itemType == TextType){
-        
-        [self.currentText.textView becomeFirstResponder];
-    }
-
-}
 
 #pragma mark - 팬
 
 // 팬 제스쳐 노멀 모드
 -(void)readyUIForPanning{
     
-    if (self.modeController.editingMode == NormalMode) {
-        self.underAreaView.hidden = true;
-        [UIView animateWithDuration:0.2 animations:^{
-            self.buttonScrollView.alpha = 0.0;
-            self.deleteButtonContainerView.alpha = 1.0;
-        }];
-    } else if (self.modeController.editingMode == AddingPhotoFrameMode || self.modeController.editingMode == AddingTextMode || self.modeController.editingMode == EditingTextMode || self.modeController.editingMode == AddingStickerMode|| self.modeController.editingMode == EditingStickerMode){
-        self.underAreaView.hidden = true;
-        [UIView animateWithDuration:0.2 animations:^{
-            self.buttonScrollView.alpha = 0.0;
-            self.deleteButtonContainerView.alpha = 1.0;
-            self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
-        }];
-    }
-    
+    self.underAreaView.hidden = true;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.buttonScrollView.alpha = 0.0;
+        self.deleteButtonContainerView.alpha = 1.0;
+        self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
+    }];
+
 }
 
 -(void)deleteImageRespondToCurrentPointY:(float)currentPointY{
@@ -244,8 +166,9 @@
             }
         }
         item.baseView.center = CGPointMake(self.bgView.frameWidth/2, self.bgView.frameY + self.bgView.frameHeight/2);
-        [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-        [self dismissItemCollectionVC];
+        [self showNavigationItems];
+        [self.layerController hideTransparentView];
+        [self.itemCollectionVC dismissSelf];
     }
     
     [UIView animateWithDuration:0.2 animations:^{

@@ -43,8 +43,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) UIColor *originalColor;
 @property (strong, nonatomic, nullable) UIImage *originalPhotoFrameImage;
 @property (strong, nonatomic, nullable) PHAsset *originalPHAsset;
-@property (nonatomic) CGPoint originalImageViewCenter;
+@property (nonatomic) CGPoint originalPhotoImageViewCenter;
+@property (nonatomic) CGPoint originalCenter;
 @property (nonatomic) CGAffineTransform originalTransform;
+@property (nonatomic) CGAffineTransform originalPhotoImageTransform;
 @property (strong, nonatomic) Typography *originalTypo;
 @property (strong, nonatomic) NSString *originalText;
 @property (strong, nonatomic) NSString *originalStickerImageName;
@@ -79,8 +81,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) UIColor *originalCursorColor;
 
 -(void)loadItems;
-
-
+-(void)showNavigationItems;
+-(void)hideNavigationItems;
 
 
 @end

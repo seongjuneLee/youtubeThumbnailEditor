@@ -287,4 +287,12 @@
     
 }
 
+-(BOOL)isAddingItem:(Item *)item{
+    
+    if ([SaveManager.sharedInstance.currentProject.items containsObject:item]) {
+        return false;
+    }
+    return true;
+}
+
 @end

@@ -48,15 +48,41 @@
 
 - (IBAction)doneButtonTapped:(UIButton *)sender {
     
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    [editingVC doneEditingBGColor];
+    [self doneEditingBGColor];
 }
 
 - (IBAction)cancelButtonTapped:(UIButton *)sender {
     
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    [editingVC cancelEditingBGColor];
+    [self cancelEditingBGColor];
 
 }
+-(void)doneEditingBGColor{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    [editingVC showNavigationItems];
+    [editingVC.layerController hideTransparentView];
+    [UIView animateWithDuration:0.2 animations:^{
+        editingVC.buttonScrollView.alpha = 1.0;
+    }];
+    [editingVC.bgColorVC dismissSelf];
+    SaveManager.sharedInstance.currentProject.backgroundColor = editingVC.bgView.backgroundColor;
+    [SaveManager.sharedInstance save];
+
+}
+
+-(void)cancelEditingBGColor{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    [editingVC showNavigationItems];
+    // scrollView 가려주기
+    [UIView animateWithDuration:0.2 animations:^{
+        editingVC.buttonScrollView.alpha = 1.0;
+    }];
+    [editingVC.bgColorVC dismissSelf];
+    editingVC.bgView.backgroundColor = editingVC.originalColor;
+    
+}
+
+
 
 @end

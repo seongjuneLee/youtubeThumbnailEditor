@@ -69,10 +69,14 @@
     
 }
 
+#pragma mark - 탭
+
 -(void)gestureViewTapped:(UITapGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    
+    if (editingVC.modeController.editingMode == BGColorMode) {
+        return;
+    }
     if (editingVC.currentItem) { // 애딩 또는 에디팅 모드일 때 컨텐트 모드 진입
         
         BOOL didTappedCurrentItem = [self didTappedCurrentItem:sender];
@@ -81,9 +85,6 @@
             if ([editingVC.currentItem isKindOfClass:Text.class]) {
                 [editingVC.itemCollectionVC textButtonTapped:editingVC.itemCollectionVC.textButton];
             } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
-                if (PhotoManager.sharedInstance.phassets.count == 0) {
-                    PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
-                }
                 [editingVC.itemCollectionVC photoButtonTapped:editingVC.itemCollectionVC.photoButton];
             }else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
                // 해줄 것 없음.
@@ -100,68 +101,47 @@
         
     } else { // 에디팅 모드 진입
         if ([self getCurrentItem:sender]) {
-            [self.delegate didSelectItem:[self getCurrentItem:sender]];
+            [editingVC didSelectItem:[self getCurrentItem:sender]];
         }
     }
 
 }
 
+#pragma mark - 팬
+
 -(void)gestureViewPanned:(UIPanGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-//NORMAL
-    if (editingVC.modeController.editingMode == NormalMode) {
-        [self gestureViewPannedForMode:NormalMode withSender:sender];
-//PHOTOFRAME
-    } else if (editingVC.modeController.editingMode == AddingPhotoFrameMode){
-        [self gestureViewPannedForMode:AddingPhotoFrameMode withSender:sender];
-    } else if(editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
-        [self gestureViewPannedForEditingPhotoMode:
-         EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
-    } else if(editingVC.modeController.editingMode == EditingPhotoInsidePhotoFrameMode){
-        [self gestureViewPannedForEditingPhotoMode:EditingPhotoInsidePhotoFrameMode withSender:sender];
-//TEXT
-    }else if(editingVC.modeController.editingMode == AddingTextMode){
-        [self gestureViewPannedForMode:AddingTextMode withSender:sender];
-    } else if(editingVC.modeController.editingMode == EditingTextMode){
-        [self gestureViewPannedForMode:EditingTextMode withSender:sender];
-//STICKER
-    } else if(editingVC.modeController.editingMode == AddingStickerMode){
-        [self gestureViewPannedForMode:AddingStickerMode withSender:sender];
-    } else if(editingVC.modeController.editingMode == EditingStickerMode){
-        [self gestureViewPannedForMode:EditingStickerMode withSender:sender];
-        
+    if (editingVC.modeController.editingMode == BGColorMode) {
+        return;
     }
-    
+
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+        [self gestureViewPannedForEditingPhotoModeWithSender:sender];
+    } else {
+        [self gestureViewPannedForModeWithSender:sender];
+    }
+
 }
 
--(void)gestureViewPannedForMode:(EditingMode)editingMode withSender:(UIPanGestureRecognizer *)sender{
+-(void)gestureViewPannedForModeWithSender:(UIPanGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     // 일반 상태
     CGPoint currentPoint = [sender locationInView:editingVC.gestureView];
     CGPoint deltaPoint = CGPointZero;
-
     if (sender.state == UIGestureRecognizerStateBegan) {
         self.originalPoint = [sender locationInView:editingVC.gestureView];
-
-        if (editingMode == NormalMode) {
-            if ([self getCurrentItem:sender]) {
-                editingVC.currentItem =[self getCurrentItem:sender];
-            } else {
-                return;
-            }
-        } else {
-            if (!editingVC.currentItem) {
-                return;
-            }
+        
+        if (!editingVC.currentItem && [self getCurrentItem:sender]) {
+            editingVC.currentItem = [self getCurrentItem:sender];
         }
-        if (editingVC.currentItem.isFixedPhotoFrame) {
+        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
             return;
         }
+        [editingVC readyUIForPanning];
         [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
-        [self.delegate readyUIForPanning];
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
         self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
 
@@ -178,7 +158,7 @@
         
         editingVC.currentItem.baseView.centerX += deltaPoint.x;
         editingVC.currentItem.baseView.centerY += deltaPoint.y;
-        [self.delegate deleteImageRespondToCurrentPointY:currentPoint.y];
+        [editingVC deleteImageRespondToCurrentPointY:currentPoint.y];
         self.originalPoint = [sender locationInView:editingVC.gestureView];
         
         [self guideWithDeltaPoint:deltaPoint];
@@ -195,8 +175,9 @@
             return;
         }
 
-        [self.delegate panGestureEndedForItem:editingVC.currentItem withFingerPoint:currentPoint];
-        if (editingMode == NormalMode) {
+        [editingVC panGestureEndedForItem:editingVC.currentItem withFingerPoint:currentPoint];
+        
+        if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
         if (!self.isPinching) {
@@ -380,7 +361,7 @@
 }
 
 
--(void)gestureViewPannedForEditingPhotoMode:(EditingMode)editingMode withSender:(UIPanGestureRecognizer *)sender{
+-(void)gestureViewPannedForEditingPhotoModeWithSender:(UIPanGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentItem;
     
@@ -407,10 +388,7 @@
         if (!self.isPinching) {
             photoFrame.photoImageView.centerX = newCenter.x;
             photoFrame.photoImageView.centerY = newCenter.y;
-        }
-
-        photoFrame.photoCenter = photoFrame.photoImageView.center;
-        
+        }        
         
         
     } else if (sender.state == UIGestureRecognizerStateEnded){
@@ -419,41 +397,20 @@
     
 }
 
-
+#pragma mark - 핀치
 
 -(void)gestureViewPinched:(UIPinchGestureRecognizer *)sender{
     
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-
-    if (editingVC.modeController.editingMode == NormalMode) {
-        
-        [self gestureViewPinchedForMode:NormalMode withSender:sender];
-        
-    } else if (editingVC.modeController.editingMode == AddingPhotoFrameMode){
-        
-        [self gestureViewPinchedForMode:AddingPhotoFrameMode withSender:sender];
-
-    } else if (editingVC.modeController.editingMode == AddingTextMode || editingVC.modeController.editingMode == EditingTextMode){
-        
-        [self gestureViewPinchedForMode:AddingTextMode withSender:sender];
-
-    } else if (editingVC.modeController.editingMode == AddingStickerMode){
-        
-        [self gestureViewPinchedForMode:AddingStickerMode withSender:sender];
-
-    } else if (editingVC.modeController.editingMode == EditingStickerMode){
-        
-        [self gestureViewPinchedForMode:EditingStickerMode withSender:sender];
-
-    } else if (editingVC.modeController.editingMode == EditingPhotoFrameModeWhileAddingPhotoFrameMode){
-        
-        [self gestureViewPinchedForEditingPhotoMode:EditingPhotoFrameModeWhileAddingPhotoFrameMode withSender:sender];
-        
+    if (editingVC.modeController.editingMode == BGColorMode) {
+        return;
     }
-    else if (editingVC.modeController.editingMode == EditingPhotoInsidePhotoFrameMode){
-        
-        [self gestureViewPinchedForEditingPhotoMode:EditingPhotoInsidePhotoFrameMode withSender:sender];
 
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+        [self gestureViewPinchedForEditingPhotoModeWithSender:sender];
+    } else {
+        [self gestureViewPinchedForMode:NormalMode withSender:sender];
     }
     
 }
@@ -463,18 +420,11 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     if (sender.state == UIGestureRecognizerStateBegan && sender.numberOfTouches ==2) {
-        if (editingMode == NormalMode) {
-            if ([self getCurrentItem:sender]) {
-                editingVC.currentItem =[self getCurrentItem:sender];
-            } else {
-                return;
-            }
-        } else {
-            if (!editingVC.currentItem) {
-                return;
-            }
+        
+        if (!editingVC.currentItem && [self getCurrentItem:sender]) {
+            editingVC.currentItem = [self getCurrentItem:sender];
         }
-        if (editingVC.currentItem.isFixedPhotoFrame) {
+        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
             return;
         }
         self.isPinching = true;
@@ -529,7 +479,7 @@
             return;
         }
 
-        if (editingMode == NormalMode) {
+        if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
         [SaveManager.sharedInstance save];
@@ -645,7 +595,7 @@
 }
 
 
--(void)gestureViewPinchedForEditingPhotoMode:(EditingMode)editingMode withSender:(UIPinchGestureRecognizer *)sender{
+-(void)gestureViewPinchedForEditingPhotoModeWithSender:(UIPinchGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentItem;
@@ -681,19 +631,6 @@
         
         self.comparingView.transform = scaleTransform;
         
-        float comparingViewTop = self.comparingView.frameY;
-        float comparingViewLeft = self.comparingView.frameX;
-        float comparingViewRight = self.comparingView.frameX + self.comparingView.frameWidth;
-        float comparingViewBottom = self.comparingView.frameY + self.comparingView.frameHeight;
-        if (comparingViewTop <= 0 && comparingViewLeft <= 0 && photoFrame.baseView.frameWidth <= comparingViewRight && photoFrame.baseView.frameHeight <= comparingViewBottom) {
-            NSLog(@"comparingViewTop: %f",comparingViewTop);
-            NSLog(@"comparingViewLeft: %f",comparingViewLeft);
-            NSLog(@"comparingViewRight: %f",comparingViewRight);
-            NSLog(@"comparingViewBottom: %f",comparingViewBottom);
-            NSLog(@"photoFrame.baseView.frameWidth %f",photoFrame.baseView.frameWidth);
-            NSLog(@"photoFrame.baseView.frameHeight %f",photoFrame.baseView.frameHeight);
-
-        }
         photoFrame.photoImageView.transform = scaleTransform;
 
         

@@ -33,7 +33,6 @@
     PhotoFrame *copied = [super copyWithZone:zone];
     
     copied.photoScale = self.photoScale;
-    copied.photoCenter = self.photoCenter;
     copied.photoRotationDegree = self.photoRotationDegree;
     copied.isCircle = self.isCircle;
     
@@ -76,7 +75,7 @@
                 self.phAsset = phAsset;
             }
         }
-        self.photoCenter = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
+        self.photoImageView.center = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
         self.photoRotationDegree = [[decoder decodeObjectForKey:@"photoRotationDegree"] floatValue];
         self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
         self.isCircle = [[decoder decodeObjectForKey:@"isCircle"] boolValue];
@@ -92,7 +91,7 @@
     [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.photoRotationDegree] forKey:@"photoRotationDegree"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.photoScale] forKey:@"photoScale"];
-    [encoder encodeObject:[NSValue valueWithCGPoint:self.photoCenter] forKey:@"photoCenter"];
+    [encoder encodeObject:[NSValue valueWithCGPoint:self.photoImageView.center] forKey:@"photoCenter"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.isCircle] forKey:@"isCircle"];
 
 }

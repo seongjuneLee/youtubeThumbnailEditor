@@ -119,6 +119,9 @@
     self.itemCollectionVC = (ItemCollectionViewController *)[editing instantiateViewControllerWithIdentifier:@"ItemCollectionViewController"];
     self.itemCollectionVC.editingVC = self;
 
+    self.albumVC = (AlbumViewController *)[editing instantiateViewControllerWithIdentifier:@"AlbumViewController"];
+    self.albumVC.editingVC = self;
+    
     self.bgColorVC = (BGColorViewController *)[editing instantiateViewControllerWithIdentifier:@"BGColorViewController"];
     self.bgColorVC.editingVC = self;
 
@@ -128,7 +131,6 @@
     
     self.gestureController = [[EditingGestureController alloc] init];
     self.gestureController.editingVC = self;
-    self.gestureController.delegate = self;
     [self.gestureController addGestureRecognizers];
     
 }
@@ -195,6 +197,23 @@
     self.undoButton.enabled = UndoManager.sharedInstance.isUndoRemains;
     self.redoButton.enabled = UndoManager.sharedInstance.isRedoRemains;
     
+}
+
+-(void)showNavigationItems{
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.leftItem.alpha
+        = self.rightItem.alpha = 1.0;
+    }];
+
+}
+-(void)hideNavigationItems{
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.leftItem.alpha
+        = self.rightItem.alpha = 0;
+    }];
+
 }
 
 -(void)addExtraGestureToButtons{

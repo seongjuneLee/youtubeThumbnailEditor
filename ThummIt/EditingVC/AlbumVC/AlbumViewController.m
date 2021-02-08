@@ -29,7 +29,7 @@
 
 
 -(void)showWithAnimation{
-    
+    self.view.hidden = false;
     self.collectionViewTopConstraint.constant = self.view.frameHeight;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.collectionViewTopConstraint.constant = 0;
@@ -39,6 +39,7 @@
 }
 
 -(void)hideWithAnimation{
+    self.view.hidden = true;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.collectionViewTopConstraint.constant = self.view.frameHeight;
         [self.view layoutIfNeeded];
@@ -73,21 +74,6 @@
     flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth);
     
 }
-    
-- (IBAction)albumCancelButtonTapped:(id)sender {
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    [editingVC cancelEditingPhotoFrame];
-    
-}
-
-- (IBAction)albumDoneButtonTapped:(id)sender {
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    [editingVC doneEditingPhotoFrame];
-    
-}
-
 
 
 @end
