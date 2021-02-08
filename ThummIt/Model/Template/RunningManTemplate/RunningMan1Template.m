@@ -133,14 +133,14 @@
         
     RunningManExcSticker *runningManExcSticker1 = [RunningManExcSticker runningManExcSticker];
     runningManExcSticker1.indexInLayer =@"6";
-    runningManExcSticker1.scale = 0.2;
+    runningManExcSticker1.scale = 0.1;
     runningManExcSticker1.isTemplateItem = true;
     runningManExcSticker1.center = CGPointMake(0.37, 0.36);
     [self.stickers addObject:runningManExcSticker1];
     
     RunningManExcSticker *runningManExcSticker2 = [RunningManExcSticker runningManExcSticker];
     runningManExcSticker2.indexInLayer =@"7";
-    runningManExcSticker2.scale = 0.2;
+    runningManExcSticker2.scale = 0.1;
     runningManExcSticker2.isTemplateItem = true;
     runningManExcSticker2.center = CGPointMake(0.42, 0.36);
     [self.stickers addObject:runningManExcSticker2];

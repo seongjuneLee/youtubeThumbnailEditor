@@ -63,34 +63,35 @@
 -(void)loadView{
     
     [self makeBaseView];
-    [self addBackgroundImageView];
     
 }
 
 -(void)makeBaseView{
     
     UIImage *image = [UIImage imageNamed:self.backgroundImageName];
-    float ratio = image.size.height/image.size.width;
-    if (isnan(ratio)) {
-        ratio = 1;
+    float screenWidth = UIScreen.mainScreen.bounds.size.width;
+
+    float imageWidth = 300;
+    float imageHeight = 300;
+    if (image) {
+        imageWidth = image.size.width * image.scale;
+        imageHeight = image.size.height * image.scale;
     }
     self.baseView = [[UIView alloc] init];
     self.baseView.clipsToBounds = true;
-    float screenWidth = UIScreen.mainScreen.bounds.size.width;
-    float circleViewWidth = screenWidth*0.8/2;
-    self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth * ratio);
+    self.baseView.frameSize = CGSizeMake(imageWidth, imageHeight);
     self.baseView.backgroundColor = UIColor.clearColor;
     
+    [self addBackgroundImageView];
+
     CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
-    float width = UIScreen.mainScreen.bounds.size.width;
-    float scale = width/self.baseView.frameWidth;
+    float scale = screenWidth/self.baseView.frameWidth;
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
     self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
     self.baseView.center = self.center;
 }
 
 -(void)addBackgroundImageView{
-    
     self.backgroundImageView = [[UIImageView alloc] init];
     self.backgroundImageView.frameSize = self.baseView.frameSize;
     self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
