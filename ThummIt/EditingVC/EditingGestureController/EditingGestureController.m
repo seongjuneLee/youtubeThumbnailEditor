@@ -13,6 +13,7 @@
 #import "GuideLineManager.h"
 #import "GuideLine.h"
 #import "GuideTarget.h"
+#import "EditingViewController+Buttons.h"
 @implementation EditingGestureController
 
 -(id)init{
@@ -151,7 +152,7 @@
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
         self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
         if(!editingVC.currentItem.cannotChangeColor){
-            editingVC.hueSlider.alpha=0.0;
+            [editingVC hideAndInitSlider];
         }
 
     } else if (sender.state == UIGestureRecognizerStateChanged){
@@ -724,7 +725,7 @@
     float imageViewBottomY = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
     if (currentPointY >= imageViewBottomY) {
         [UIView animateWithDuration:0.2 animations:^{
-            editingVC.hueSlider.alpha = 0.0;
+            [editingVC hideAndInitSlider];
         }];
     } else {
         [UIView animateWithDuration:0.2 animations:^{
