@@ -108,7 +108,7 @@
     redshoutingText1.text = @"하고싶은말 있는데\n해도 되나요?";
     redshoutingText1.textView.text = redshoutingText1.text;
     redshoutingText1.scale = 0.3;
-    redshoutingText1.rotationDegree = 355;
+    redshoutingText1.rotationDegree = degreesToRadians(-5);
     redshoutingText1.center = CGPointMake(0.75, 0.72);
     redshoutingText1.isTemplateItem = true;
     redshoutingText1.typo = redshoutingTypo1;
@@ -121,7 +121,7 @@
     redshoutingText2.text = @"이 형은 룰을\n아예 모르네";
     redshoutingText2.textView.text = redshoutingText2.text;
     redshoutingText2.scale = 0.17;
-    redshoutingText2.rotationDegree = 355;
+    redshoutingText2.rotationDegree = degreesToRadians(355);
     redshoutingText2.center = CGPointMake(0.35, 0.52);
     redshoutingText2.isTemplateItem = true;
     redshoutingText2.typo = redshoutingTypo2;

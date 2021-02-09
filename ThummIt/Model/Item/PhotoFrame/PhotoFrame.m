@@ -43,7 +43,7 @@
     copiedBaseView.layer.cornerRadius = self.baseView.layer.cornerRadius;
     
     copiedBaseView.transform = self.baseView.transform;
-    copiedBaseView.center = self.center;
+    copiedBaseView.center = self.baseView.center;
     
     copied.baseView = copiedBaseView;
     
@@ -153,12 +153,10 @@
                 float ratio = image.size.height/image.size.width;
                 float width = self.baseView.frameWidth * 1.2;
                 self.photoImageView.frameSize = CGSizeMake(self.baseView.frameWidth * 1.2, width * ratio);
-                NSLog(@"self.photoImageView frame %@",NSStringFromCGRect(self.photoImageView.frame));
-                [self.baseView addSubview:self.photoImageView];
             });
         }];
     }
-    
+    [self.baseView addSubview:self.photoImageView];
     if (self.backgroundImageName) {
         self.backgroundImageView = [[UIImageView alloc] init];
         self.backgroundImageView.frameSize = self.baseView.frameSize;

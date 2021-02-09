@@ -89,7 +89,7 @@
     exc2Sticker.indexInLayer =@"3";
     exc2Sticker.scale = 0.17;
     exc2Sticker.isTemplateItem = true;
-    exc2Sticker.rotationDegree = 340;
+    exc2Sticker.rotationDegree = degreesToRadians(-20);
     exc2Sticker.center = CGPointMake(0.63, 0.32);
     [self.stickers addObject:exc2Sticker];
     
@@ -104,7 +104,7 @@
     effectSticker.indexInLayer =@"5";
     effectSticker.scale = 0.15;
     effectSticker.isTemplateItem = true;
-    effectSticker.rotationDegree = 17;
+    effectSticker.rotationDegree = degreesToRadians(17);
     effectSticker.center = CGPointMake(0.29, 0.31);
     [self.stickers addObject:effectSticker];
     

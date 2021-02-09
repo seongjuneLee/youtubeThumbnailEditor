@@ -9,7 +9,7 @@
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "EditingViewController+Buttons.h"
 #import "EditingViewController+Text.h"
-
+#import "UIImage+Additions.h"
 @interface EditingViewController ()
 
 @end
@@ -183,11 +183,13 @@
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {
             NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.backgroundImageView];
-
-            [self.view insertSubview:item.baseView atIndex:backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
+            item.indexInLayer = [NSString stringWithFormat:@"%ld",backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
+            [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
         }
     }
     
+    UIImage *viewImage = [self.view toImage];
+    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:self.bgView.frame];
     [SaveManager.sharedInstance save];
 
 }

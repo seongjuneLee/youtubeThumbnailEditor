@@ -270,12 +270,11 @@
     [editingVC showNavigationItems];
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentItem;
     photoFrame.phAsset = PhotoManager.sharedInstance.phassets[editingVC.albumVC.selectedIndexPath.item];
+    NSUInteger originalIndex = [editingVC.view.subviews indexOfObject:editingVC.originalPhotoFrame.baseView];
+    photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",originalIndex];
+    [editingVC.view insertSubview:photoFrame.baseView atIndex:originalIndex];
+
     [ItemManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
-    [ItemManager.sharedInstance addItem:photoFrame];
-    [editingVC.view insertSubview:photoFrame.baseView atIndex:[editingVC.originalPhotoFrame.indexInLayer integerValue]];
-    UIImage *viewImage = [editingVC.view toImage];
-    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-    [SaveManager.sharedInstance save];
 
     // albumVC 없애주기
     [editingVC.itemCollectionVC dismissSelf];
@@ -283,7 +282,10 @@
     
     editingVC.originalPhotoFrameImage = nil;
     editingVC.currentItem = nil;
-    
+    UIImage *viewImage = [editingVC.view toImage];
+    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
+    [ItemManager.sharedInstance addItem:photoFrame];
+
 }
 
 -(void)doneAddingText{

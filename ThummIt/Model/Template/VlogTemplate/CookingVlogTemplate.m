@@ -82,7 +82,7 @@
     PigtailSticker *vlogPigtailSticker = [PigtailSticker pigtailSticker];
     vlogPigtailSticker.indexInLayer = @"3";
     vlogPigtailSticker.scale = 0.18;
-    vlogPigtailSticker.rotationDegree = 200;
+    vlogPigtailSticker.rotationDegree = degreesToRadians(-160);
     vlogPigtailSticker.isTemplateItem = true;
     vlogPigtailSticker.center = CGPointMake(0.26, 0.8);
     [self.stickers addObject:vlogPigtailSticker];

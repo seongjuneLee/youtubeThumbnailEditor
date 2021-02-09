@@ -325,8 +325,8 @@
     [self setUpTypoRangeArray:self.typoRangeArray];
     self.baseView = self.textViewContainer;
     
-    
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
+    NSLog(@"self.rotationDegree %f",self.rotationDegree);
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
     float width = UIScreen.mainScreen.bounds.size.width;
     float scale = width/self.baseView.frameWidth;
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);

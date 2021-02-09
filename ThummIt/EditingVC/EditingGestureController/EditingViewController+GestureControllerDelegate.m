@@ -79,7 +79,8 @@
     self.currentItem = [photoFrame copy];
     self.originalPhotoFrame = photoFrame;
     self.originalPhotoFrame.baseView.hidden = true;
-    
+    NSLog(@"self.current item %@",self.currentItem.indexInLayer);
+    NSLog(@"self.originalPhotoFrame item %@",self.originalPhotoFrame.indexInLayer);
     self.originalCenter = photoFrame.baseView.center;
     self.originalTransform = photoFrame.baseView.transform;
     

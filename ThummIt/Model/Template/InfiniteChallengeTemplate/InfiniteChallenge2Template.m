@@ -149,7 +149,7 @@
     muYaHoText.indexInLayer =@"5";
     muYaHoText.text = @"무야~호~";
     muYaHoText.textView.text = muYaHoText.text;
-    muYaHoText.rotationDegree = 30;
+    muYaHoText.rotationDegree = degreesToRadians(30);
     muYaHoText.typo = yellowSpeechBoxWhite;
     [self.texts addObject:muYaHoText];
     
@@ -162,7 +162,7 @@
     questionMarkText.indexInLayer =@"6";
     questionMarkText.text = @"??";
     questionMarkText.textView.text = questionMarkText.text;
-    questionMarkText.rotationDegree = 30;
+    questionMarkText.rotationDegree = degreesToRadians(30);
     questionMarkText.typo = topOfYellow;
     [self.texts addObject:questionMarkText];
     

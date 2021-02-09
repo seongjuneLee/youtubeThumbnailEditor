@@ -42,7 +42,7 @@
     photoFrame1.indexInLayer = @"0";
     photoFrame1.backgroundImageName = @"polaroidPhotoFrame";
     photoFrame1.baseView.frameSize = CGSizeMake(frameWidth, frameWidth);
-    photoFrame1.rotationDegree = -10;
+    photoFrame1.rotationDegree = degreesToRadians(-10);
     photoFrame1.center = CGPointMake(0.23, 0.21);
     photoFrame1.scale = 0.19;
     [self.photoFrames addObject:photoFrame1];
@@ -53,7 +53,7 @@
     photoFrame2.indexInLayer = @"1";
     photoFrame2.backgroundImageName = @"polaroidPhotoFrame";
     photoFrame2.baseView.frameSize = CGSizeMake(frameWidth, frameWidth);
-    photoFrame2.rotationDegree = 10;
+    photoFrame2.rotationDegree = degreesToRadians(10);
     photoFrame2.center = CGPointMake(0.13, 0.43);
     photoFrame2.scale = 0.2;
     [self.photoFrames addObject:photoFrame2];
@@ -63,7 +63,7 @@
     photoFrame3.indexInLayer = @"2";
     photoFrame3.backgroundImageName = @"polaroidPhotoFrame";
     photoFrame3.baseView.frameSize = CGSizeMake(frameWidth, frameWidth);
-    photoFrame3.rotationDegree = -10;
+    photoFrame3.rotationDegree = degreesToRadians(-10);
     photoFrame3.center = CGPointMake(0.18, 0.75);
     photoFrame3.scale = 0.2;
     [self.photoFrames addObject:photoFrame3];

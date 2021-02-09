@@ -98,7 +98,7 @@
     SeoYuGiDawnWatchingTypo *dawnWatching = [SeoYuGiDawnWatchingTypo seoYuGiDawnWatchingTypo];
     dawnWatchingText.scale = 0.4;
     dawnWatchingText.center = CGPointMake(0.53, 0.35);
-    dawnWatchingText.rotationDegree = 345;
+    dawnWatchingText.rotationDegree = degreesToRadians(-15);
     dawnWatchingText.isTemplateItem = true;
     dawnWatchingText.indexInLayer =@"4";
     dawnWatchingText.text = @"*새벽 시청 금지!!!*";
