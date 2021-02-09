@@ -109,9 +109,9 @@
     
     RunningManQuSticker *runningManQuSticker = [RunningManQuSticker runningManQuSticker];
     runningManQuSticker.indexInLayer =@"5";
-    runningManQuSticker.scale = 0.24;
+    runningManQuSticker.scale = 0.17;
     runningManQuSticker.isTemplateItem = true;
-    runningManQuSticker.center = CGPointMake(0.75, 0.33);
+    runningManQuSticker.center = CGPointMake(0.68, 0.23);
     [self.stickers addObject:runningManQuSticker];
     
 }

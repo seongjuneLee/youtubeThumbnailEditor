@@ -70,8 +70,8 @@
     //자막
     Text *memberText = [[Text alloc] init];
     InfiniteChallengeOrangeTypo *orange = [InfiniteChallengeOrangeTypo infiniteChallengeOrangeTypo];
-    memberText.scale = 0.18;
-    memberText.center = CGPointMake(0.25, 0.55);
+    memberText.scale = 0.15;
+    memberText.center = CGPointMake(0.345, 0.55);
     memberText.isTemplateItem = true;
     memberText.indexInLayer =@"2";
     memberText.text = @"멤버들";
@@ -80,8 +80,8 @@
 
     Text *withText = [[Text alloc] init];
     InfiniteChallengeWhiteTypo *white = [InfiniteChallengeWhiteTypo infiniteChallengeWhiteTypo];
-    withText.scale = 0.2;
-    withText.center = CGPointMake(0.48, 0.55);
+    withText.scale = 0.165;
+    withText.center = CGPointMake(0.495, 0.55);
     withText.isTemplateItem = true;
     withText.indexInLayer =@"2";
     withText.text = @"과 함께";
@@ -90,8 +90,8 @@
     
     Text *secreteText = [[Text alloc] init];
     InfiniteChallengeBlueTypo *blue = [InfiniteChallengeBlueTypo infiniteChallengeBlueTypo];
-    secreteText.scale = 0.13;
-    secreteText.center = CGPointMake(0.658, 0.55);
+    secreteText.scale = 0.105;
+    secreteText.center = CGPointMake(0.635, 0.55);
     secreteText.isTemplateItem = true;
     secreteText.indexInLayer =@"2";
     secreteText.text = @"비밀";
@@ -101,8 +101,8 @@
     Text *eulText = [[Text alloc] init];
     InfiniteChallengeWhiteTypo *white2 = [InfiniteChallengeWhiteTypo infiniteChallengeWhiteTypo];
 
-    eulText.scale = 0.09;
-    eulText.center = CGPointMake(0.68, 0.55);
+    eulText.scale = 0.06;
+    eulText.center = CGPointMake(0.71, 0.55);
     eulText.isTemplateItem = true;
     eulText.indexInLayer =@"2";
     eulText.text = @"을";
@@ -111,8 +111,8 @@
 
     Text *digingText = [[Text alloc] init];
     InfiniteChallengeBlackTypo *black = [InfiniteChallengeBlackTypo infiniteChallengeBlackTypo];
-    digingText.scale = 0.25;
-    digingText.center = CGPointMake(0.8, 0.55);
+    digingText.scale = 0.23;
+    digingText.center = CGPointMake(0.86, 0.55);
     digingText.isTemplateItem = true;
     digingText.indexInLayer =@"2";
     digingText.text = @"파헤쳐라!";
@@ -132,9 +132,9 @@
     
     InfiniteChallengeSkullSticker *skullSticker = [InfiniteChallengeSkullSticker infiniteChallengeSkullSticker];
     skullSticker.indexInLayer =@"3";
-    skullSticker.scale = 0.19;
+    skullSticker.scale = 0.09;
     skullSticker.isTemplateItem = true;
-    skullSticker.center = CGPointMake(0.24, 0.4);
+    skullSticker.center = CGPointMake(0.19, 0.32);
     
     [self.stickers addObject:skullSticker];
     

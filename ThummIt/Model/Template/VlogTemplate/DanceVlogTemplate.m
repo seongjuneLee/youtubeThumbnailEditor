@@ -89,18 +89,19 @@
     
     
     HeartSticker10 *heartSticker10 = [HeartSticker10 heartSticker10];
-    heartSticker10.scale = 0.25;
+    heartSticker10.indexInLayer =@"5";
+    heartSticker10.scale = 0.18;
     heartSticker10.isTemplateItem = true;
-    heartSticker10.center = CGPointMake(0.18, 0.28);
+    heartSticker10.center = CGPointMake(0.13, 0.2);
 
     [self.stickers addObject:heartSticker10];
 
     
     HeartSticker3 *heartSticker3 = [HeartSticker3 heartSticker3];
     heartSticker3.indexInLayer =@"2";
-    heartSticker3.scale = 0.22;
+    heartSticker3.scale = 0.11;
     heartSticker3.isTemplateItem = true;
-    heartSticker3.center = CGPointMake(0.8, 0.35);
+    heartSticker3.center = CGPointMake(0.76, 0.28);
 
 
     [self.stickers addObject:heartSticker3];
@@ -108,17 +109,17 @@
     
     HeartSticker4 *heartSticker4 = [HeartSticker4 heartSticker4];
     heartSticker4.indexInLayer =@"3";
-    heartSticker4.scale = 0.25;
+    heartSticker4.scale = 0.13;
     heartSticker4.isTemplateItem = true;
-    heartSticker4.center = CGPointMake(0.97, 0.58);
+    heartSticker4.center = CGPointMake(0.89, 0.51);
 
     [self.stickers addObject:heartSticker4];
 //   #f8f7b7
     HeartSticker5 *heartStickerUnder = [HeartSticker5 heartSticker5];
     heartStickerUnder.indexInLayer =@"4";
-    heartStickerUnder.scale = 0.23;
+    heartStickerUnder.scale = 0.13;
     heartStickerUnder.isTemplateItem = true;
-    heartStickerUnder.center = CGPointMake(0.085, 0.98);
+    heartStickerUnder.center = CGPointMake(0.045, 0.93);
 
     [self.stickers addObject:heartStickerUnder];
     

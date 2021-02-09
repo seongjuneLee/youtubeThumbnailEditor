@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"vlogTapeSticker";
         self.backgroundImageName = @"vlogTapeSticker";
-        self.tintColor = [UIColor colorWithRed:165/255.0 green:155/255.0 blue:148/255.0 alpha:1.0];
+        self.tintColor = [UIColor colorWithRed:191/255.0 green:171/255.0 blue:167/255.0 alpha:1.0];
 
     }
     return self;

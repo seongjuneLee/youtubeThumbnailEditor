@@ -93,10 +93,10 @@
     
     SinSeoYuGiExc1Sticker *exc1Sticker = [SinSeoYuGiExc1Sticker sinSeoYuGiExc1Sticker];
     exc1Sticker.indexInLayer =@"3";
-    exc1Sticker.scale = 0.28;
+    exc1Sticker.scale = 0.23;
     exc1Sticker.rotationDegree = 355;
     exc1Sticker.isTemplateItem = true;
-    exc1Sticker.center = CGPointMake(0.37, 0.4);
+    exc1Sticker.center = CGPointMake(0.35, 0.37);
     
     [self.stickers addObject:exc1Sticker];
     

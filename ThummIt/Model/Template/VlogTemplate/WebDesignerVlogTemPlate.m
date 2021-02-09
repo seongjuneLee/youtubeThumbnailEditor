@@ -58,7 +58,7 @@
     Text *undertagText = [[Text alloc] init];
     VlogWebWrite *undertagvlog = [VlogWebWrite vlogWebWrite];
     undertagText.scale = 0.26;
-    undertagText.center = CGPointMake(0.155, 0.91);
+    undertagText.center = CGPointMake(0.17, 0.91);
     undertagText.isTemplateItem = true;
     undertagText.indexInLayer =@"1";
     undertagText.text = @"웹 디자이너편";
@@ -68,8 +68,8 @@
     
     Text *titleVlog = [[Text alloc] init];
     VlogDesiner *title = [VlogDesiner vlogDesiner];
-    titleVlog.scale = 0.3;
-    titleVlog.center = CGPointMake(0.2, 0.47);
+    titleVlog.scale = 0.35;
+    titleVlog.center = CGPointMake(0.19, 0.47);
     titleVlog.isTemplateItem = true;
     titleVlog.indexInLayer =@"3";
     titleVlog.text = @"웹\n디자이너";
@@ -80,8 +80,8 @@
     Text *whatToDo = [[Text alloc] init];
     VlogDesiner *white = [VlogDesiner vlogDesiner];
     white.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1] ;
-    whatToDo.scale = 0.38;
-    whatToDo.center = CGPointMake(0.24, 0.65);
+    whatToDo.scale = 0.43;
+    whatToDo.center = CGPointMake(0.23, 0.675);
     whatToDo.isTemplateItem = true;
     whatToDo.indexInLayer =@"3";
     whatToDo.text = @"             는\n뭐 하지?";

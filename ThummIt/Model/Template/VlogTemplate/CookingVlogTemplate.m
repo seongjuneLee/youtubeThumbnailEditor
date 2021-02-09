@@ -48,7 +48,7 @@
     Text *cookingText = [[Text alloc] init];
     VlogCookingTypo *cooking = [VlogCookingTypo vlogCookingTypo];
     cookingText.scale = 0.25;
-    cookingText.center = CGPointMake(0.25, 0.3);
+    cookingText.center = CGPointMake(0.25, 0.33);
     cookingText.isTemplateItem = true;
     cookingText.indexInLayer = @"0";
     cookingText.text = @"Cooking\nVlog";
@@ -74,17 +74,17 @@
 
     BlinkSticker1 *vlogBlinkSticker1 = [BlinkSticker1 blinkSticker1];
     vlogBlinkSticker1.indexInLayer = @"2";
-    vlogBlinkSticker1.scale = 0.23;
+    vlogBlinkSticker1.scale = 0.15;
     vlogBlinkSticker1.isTemplateItem = true;
-    vlogBlinkSticker1.center = CGPointMake(0.46, 0.22);
+    vlogBlinkSticker1.center = CGPointMake(0.42, 0.15);
     [self.stickers addObject:vlogBlinkSticker1];
     
     PigtailSticker *vlogPigtailSticker = [PigtailSticker pigtailSticker];
     vlogPigtailSticker.indexInLayer = @"3";
-    vlogPigtailSticker.scale = 0.21;
+    vlogPigtailSticker.scale = 0.18;
     vlogPigtailSticker.rotationDegree = 200;
     vlogPigtailSticker.isTemplateItem = true;
-    vlogPigtailSticker.center = CGPointMake(0.26, 0.7);
+    vlogPigtailSticker.center = CGPointMake(0.26, 0.8);
     [self.stickers addObject:vlogPigtailSticker];
     
 }

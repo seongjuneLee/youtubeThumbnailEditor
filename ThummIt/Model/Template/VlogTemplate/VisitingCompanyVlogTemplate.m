@@ -100,9 +100,9 @@
 
     VlogVideoSticker *vlogVideoSticker = [VlogVideoSticker vlogVideoSticker];
     vlogVideoSticker.indexInLayer = @"4";
-    vlogVideoSticker.scale = 0.28;
+    vlogVideoSticker.scale = 0.2;
     vlogVideoSticker.isTemplateItem = true;
-    vlogVideoSticker.center = CGPointMake(0.93, 0.28);
+    vlogVideoSticker.center = CGPointMake(0.895, 0.2);
     [self.stickers addObject:vlogVideoSticker];
     
 }
