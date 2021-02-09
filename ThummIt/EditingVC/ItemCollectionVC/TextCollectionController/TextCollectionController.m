@@ -7,6 +7,9 @@
 
 #import "TextCollectionController.h"
 #import "TextCollectionViewCell.h"
+#import "EditingViewController.h"
+#import "EditingViewController+Text.h"
+#import "EditingViewController+Buttons.h"
 #import "TypoManager.h"
 #import "ItemManager.h"
 #import "Typography.h"
@@ -68,7 +71,75 @@
     
     NSArray *typos = ItemManager.sharedInstance.typoDatas[indexPath.section];
     Typography *typo = typos[indexPath.item];
-    [self.delegate didSelectTypo:typo];
+    [self didSelectTypo:typo];
+    
+}
+
+-(void)didSelectTypo:(Typography *)typo{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    
+    Text *text = [[Text alloc] init];
+    
+    
+    if (editingVC.currentItem) {
+        text = (Text *)editingVC.currentItem;
+        if (editingVC.currentText.isTypedByUser) {
+            text.text = editingVC.currentText.text;
+            text.textView.text = editingVC.currentText.text;
+            editingVC.itemCollectionVC.checkButton.enabled = true;
+            editingVC.itemCollectionVC.checkButton.alpha = 1;
+        } else {
+            text.text = typo.name;
+            text.textView.text = typo.name;
+            editingVC.itemCollectionVC.checkButton.enabled = false;
+            editingVC.itemCollectionVC.checkButton.alpha = 0.4;
+        }
+        text.isTypedByUser = editingVC.currentText.isTypedByUser;
+        text.baseView.center = editingVC.currentText.baseView.center;
+        text.baseView.transform = editingVC.currentText.baseView.transform;
+    } else {
+        editingVC.itemCollectionVC.checkButton.enabled = false;
+        editingVC.itemCollectionVC.checkButton.alpha = 0.4;
+        
+        text.textView.delegate = editingVC;
+
+        text.text = typo.name;
+        text.textView.text = typo.name;
+        [text.textView setNeedsDisplay];
+
+        text.textViewContainer.center = editingVC.bgView.center;
+        [editingVC.layerController bringCurrentItemToFront:text];
+    }
+    
+    [text applyTypo:typo];
+    [text resize];
+    [text scaleItem];
+
+    
+    editingVC.currentItem = text;
+    editingVC.currentText = text;
+    editingVC.recentTypo = typo;
+    
+    
+    // 칼라 바
+    if (!text.typo.cannotChangeColor) {
+        [UIView animateWithDuration:0.2 animations:^{
+            editingVC.hueSlider.alpha = 1.0;
+            editingVC.thumbCircleView.alpha = 1.0;
+        }];
+    } else {
+        [editingVC hideAndInitSlider];
+    }
+}
+
+-(void)showPlaceHolderOfText:(Text *)text withTypo:(Typography *)typo{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    text.placeholderImageView = [Text makePlaceHolderWithTypo:typo];
+    text.textViewContainer.frameSize = text.placeholderImageView.frameSize;
+    text.textView.frameSize = text.textViewContainer.frameSize;
+    [text.textViewContainer insertSubview:text.placeholderImageView belowSubview:text.textView];
+    text.textViewContainer.center = editingVC.bgView.center;
     
 }
 

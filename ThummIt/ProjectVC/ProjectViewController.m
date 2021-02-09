@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self connectProjectTableController];
+    self.projectTableController.snapShots = [NSMutableArray array];
 
 }
 
@@ -30,7 +31,12 @@
         if (projectsCount >= 10) {
             self.projectTableController.offset = projectsCount - 10;
         }
-        self.projectTableController.snapShots = [ProjectManager.sharedInstance loadProjectSnapshots:self.projectTableController.offset];
+        NSArray *projects = [ProjectManager.sharedInstance getRecentTenProjectsFromCoreDataWithOffset:self.projectTableController.offset];
+        for (Project *project in projects) {
+            NSLog(@"project.previewImage %@",project.previewImage);
+            NSLog(@"project item count %ld",project.items.count);
+            [self.projectTableController.snapShots addObject:project.previewImage];
+        }
         [self.tableView reloadData];
     }
     

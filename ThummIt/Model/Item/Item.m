@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.indexInLayer = @"";
+        self.scale = 0.4;
     }
     return self;
     
@@ -30,7 +31,14 @@
     
     return copied;
 }
-
+-(void)scaleItem{
+    
+    float width = UIScreen.mainScreen.bounds.size.width;
+    float scale = width/self.baseView.frameWidth;
+    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
+    self.baseView.transform = CGAffineTransformConcat(self.baseView.transform, scaleTransform);
+    
+}
 -(void)loadView{
     
 }
@@ -58,7 +66,7 @@
     [encoder encodeObject:self.indexInLayer forKey:@"indexInLayer"];
     [encoder encodeObject:self.backgroundImageView forKey:@"backgroundImageView"];
     [encoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
-    [encoder encodeObject:[NSValue valueWithCGPoint:self.center] forKey:@"center"];
+    [encoder encodeObject:[NSValue valueWithCGPoint:self.baseView.center] forKey:@"center"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotationDegree"];
     

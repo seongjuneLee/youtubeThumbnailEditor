@@ -6,6 +6,7 @@
 //
 
 #import "ProjectManager.h"
+#import "PhotoManager.h"
 #import "ThummIt-Swift.h"
 #import "NSDate+Additions.h"
 #import "UIImage+Additions.h"
@@ -28,7 +29,6 @@
     project.photoFrames = selectedTemplate.photoFrames;
     project.texts = selectedTemplate.texts;
     project.stickers = selectedTemplate.stickers;
-    NSLog(@"selectedTemplate.texts %@",selectedTemplate.texts);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
     NSString *stringDate = [dateFormatter stringFromDate:[NSDate date]];
@@ -253,13 +253,16 @@
         for (Item *item in project.items) {
             [indexes addObject:[NSNumber numberWithInteger:[item.indexInLayer integerValue]]];
         }
+        
+        float bgViewFrameY = UIScreen.mainScreen.bounds.size.height * 0.15;
+        
         NSNumber* smallest = [indexes valueForKeyPath:@"@min.self"];
         for (Item *item  in project.items) {
             
             [item loadView];
-            item.baseView.centerY -= 100;
-            
-            [imageView insertSubview:item.baseView atIndex:[item.indexInLayer integerValue] - [smallest integerValue]];
+            item.baseView.centerY -= bgViewFrameY;
+
+            [imageView insertSubview:item.baseView atIndex:[item.indexInLayer integerValue] - [smallest integerValue] + 1];
             
         }
         
@@ -267,6 +270,28 @@
         [self.projectSnapShots addObject:snapShot];
     }
     return self.projectSnapShots;
+}
+
+-(void)fetchImage{
+    NSArray *projects = [ProjectManager.sharedInstance getAllProjectsFromCoreData];
+    self.photoImageDict = [NSMutableArray array];
+    for (Project *project in projects) {
+        for (PhotoFrame *photoFrame in project.photoFrames) {
+            if (photoFrame.phAsset) {
+                [PhotoManager.sharedInstance getImageFromPHAsset:photoFrame.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        photoFrame.photoImage = image;
+                        NSDictionary *dict = @{photoFrame.phAsset.localIdentifier : image};
+                        [self.photoImageDict addObject:dict];
+                        
+                    });
+                }];
+            }
+
+        }
+    }
+    
 }
 
 @end

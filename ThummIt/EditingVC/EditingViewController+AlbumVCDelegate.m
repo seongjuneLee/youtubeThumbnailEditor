@@ -15,15 +15,10 @@
     PHAsset *selectedPHAsset = self.albumVC.phAssets[self.albumVC.selectedIndexPath.item];
     if (!self.originalPhotoFrameImage) {
         photoFrame.phAsset = selectedPHAsset;
-//        photoFrame.photoImageView.transform = CGAffineTransformMakeRotation(degreesToRadians(0));
-//        photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2,photoFrame.baseView.frameHeight/2);
-//        photoFrame.photoCenter = photoFrame.photoImageView.center;
-//        photoFrame.photoImageView.frameSize = photoFrame.baseView.frameSize;
     }
     
     photoFrame.photoImageView.transform = CGAffineTransformMakeRotation(degreesToRadians(0));
     photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2,photoFrame.baseView.frameHeight/2);
-    photoFrame.photoCenter = photoFrame.photoImageView.center;
     photoFrame.photoImageView.frameSize = photoFrame.baseView.frameSize;
 
     [PhotoManager.sharedInstance getImageFromPHAsset:selectedPHAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920,1080) WithCompletionBlock:^(UIImage * _Nonnull image) {

@@ -26,6 +26,15 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
+@property (weak, nonatomic) IBOutlet UIView *textScrollContainerView;
+@property (weak, nonatomic) IBOutlet UIView *photoFrameScrollContanerView;
+@property (weak, nonatomic) IBOutlet UIView *stickerScrollContainerView;
+@property (weak, nonatomic) IBOutlet UIButton *textButton;
+@property (weak, nonatomic) IBOutlet UIButton *typoButton;
+@property (weak, nonatomic) IBOutlet UIButton *photoFrameStyleButton;
+@property (weak, nonatomic) IBOutlet UIButton *photoButton;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic) ItemType itemType;
 @property (strong, nonatomic) UIVisualEffectView *blurView;

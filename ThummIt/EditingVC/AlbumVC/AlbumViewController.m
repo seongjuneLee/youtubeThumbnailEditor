@@ -25,32 +25,34 @@
     [self setCollectionViewFlowLayout];
     self.phAssets = PhotoManager.sharedInstance.phassets;
     [self.collectionView reloadData];
-    [self makeViewBlurred];
+}
+
+
+-(void)showWithAnimation{
+    self.view.hidden = false;
+    self.collectionViewTopConstraint.constant = self.view.frameHeight;
+    [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.collectionViewTopConstraint.constant = 0;
+        [self.view layoutIfNeeded];
+    } completion:nil];
 
 }
 
--(void)makeViewBlurred{
-    
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
-    self.blurView = [[UIVisualEffectView alloc] init];
-    self.blurView.frameSize = self.view.frameSize;
-    self.blurView.effect = blurEffect;
-    [self.view insertSubview:self.blurView atIndex:0];
-    
+-(void)hideWithAnimation{
+    self.view.hidden = true;
+    [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.collectionViewTopConstraint.constant = self.view.frameHeight;
+        [self.view layoutIfNeeded];
+    } completion:nil];
 }
 
 
 -(void)dismissSelf{
     
-    self.cancelButton.hidden = true;
-    self.doneButton.hidden = true;
     [UIView animateWithDuration:0.4 animations:^{
-        self.blurView.frameY = self.view.frameHeight;
         self.collectionViewTopConstraint.constant = self.view.frameHeight;
         [self.view layoutIfNeeded];
     }completion:^(BOOL finished) {
-        self.cancelButton.hidden = false;
-        self.doneButton.hidden = false;
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
     }];
@@ -72,21 +74,6 @@
     flowLayout.itemSize = CGSizeMake(cellWidth, cellWidth);
     
 }
-    
-- (IBAction)albumCancelButtonTapped:(id)sender {
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    [editingVC cancelEditingPhotoFrame];
-    
-}
-
-- (IBAction)albumDoneButtonTapped:(id)sender {
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    [editingVC doneEditingPhotoFrame];
-    
-}
-
 
 
 @end

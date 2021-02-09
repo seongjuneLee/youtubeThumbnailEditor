@@ -20,13 +20,13 @@
 -(void)bringCurrentItemToFront:(Item *)currentItem{
     
     self.currentItem = currentItem;
-
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     self.originalIndex = [editingVC.view.subviews indexOfObject:self.currentItem.baseView];
     [editingVC.view insertSubview:self.currentItem.baseView belowSubview:editingVC.gestureView];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }
+    
 }
 
 -(void)showTransparentView{

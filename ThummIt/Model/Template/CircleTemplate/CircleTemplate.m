@@ -37,8 +37,8 @@
     PhotoFrame *photoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     photoFrame.isTemplateItem = true;
     photoFrame.indexInLayer = @"0";
-    photoFrame.scale = 0.52;
-   photoFrame.center = CGPointMake(0.34, 0.53);
+    photoFrame.scale = 0.48;
+    photoFrame.center = CGPointMake(0.34, 0.53);
     [self.photoFrames addObject:photoFrame];
     
 }

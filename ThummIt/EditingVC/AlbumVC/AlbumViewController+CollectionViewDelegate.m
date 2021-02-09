@@ -14,7 +14,6 @@
     self.selectedIndexPath = indexPath;
     [self.delegate didSelectPhoto];
     [collectionView reloadData];
-    self.nextButton.hidden = false;
     
 }
 

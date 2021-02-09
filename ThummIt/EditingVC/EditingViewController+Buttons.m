@@ -7,7 +7,9 @@
 
 #import "EditingViewController+Buttons.h"
 #import "EditingViewController+GestureControllerDelegate.h"
-#import "ItemCollectionViewController+Text.h"
+#import "TextCollectionController.h"
+#import "PhotoFrameCollectionController.h"
+#import "StickerCollectionController.h"
 #import "UIColor+Additions.h"
 #import "TypoHeader.h"
 #import "UndoManager.h"
@@ -19,123 +21,13 @@
     [self exportThumbnail];
 }
 
+-(void)exportThumbnail{
+    
+}
+
 - (IBAction)leftItemTapped:(id)sender {
     
     [self closeEditingVC];
-}
-
--(void)cancelAddingPhotoFrame{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self dismissItemCollectionVC];
-    [self.albumVC dismissSelf];
-    [self.currentItem.baseView removeFromSuperview];
-    self.currentItem = nil;
-    self.currentPhotoFrame = nil;
-    self.albumVC = nil;
-
-}
-
--(void)cancelEditingPhotoFrame{
-    
-    
-    // 변경 취소하고, 원래 이미지 다시 넣어주기.
-    PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
-    photoFrame.photoImageView.image = self.originalPhotoFrameImage;
-    // 취소시 이미지 뷰 센터 다시 돌려놓기.
-    photoFrame.photoImageView.center = self.originalImageViewCenter;
-    photoFrame.photoCenter = self.originalImageViewCenter;
-    photoFrame.photoImageView.transform = self.originalTransform;
-    
-    // 레이어 되돌려 놓기
-    [self.layerController recoverOriginalLayer];
-
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self dismissAlbumVC];
-
-}
-
--(void)cancelAddingText{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self dismissItemCollectionVC];
-    [self.currentItem.baseView removeFromSuperview];
-    [self.currentText.textView resignFirstResponder];
-    self.currentItem = nil;
-    self.currentText = nil;
-
-}
-
--(void)cancelEditingText{
-    
-    Text *text = (Text *)self.currentItem;
-    text.baseView.center = self.originalImageViewCenter;
-    text.baseView.transform = self.originalTransform;
-    text.textView.text = self.originalText;
-    text.text = self.originalText;
-    [text applyTypo:self.originalTypo];
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self dismissItemCollectionVC];
-    [self.currentText.textView resignFirstResponder];
-    
-    self.currentItem = nil;
-    self.currentText = nil;
-    
-}
-
--(void)cancelAddingSticker{
-
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self dismissItemCollectionVC];
-    [self.currentItem.baseView removeFromSuperview];
-    self.currentItem = nil;
-    self.currentText = nil;
-
-}
-
--(void)cancelEditingSticker{
-
-    Sticker *sticker = (Sticker *)self.currentItem;
-    sticker.baseView.center = self.originalImageViewCenter;
-    sticker.baseView.transform = self.originalTransform;
-    sticker.backgroundImageView.image = [UIImage imageNamed:self.originalStickerImageName];
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self dismissItemCollectionVC];
-    
-    self.currentItem = nil;
-    self.currentText = nil;
-
-}
-
--(void)cancelEditingBGColor{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    // scrollView 가려주기
-    [UIView animateWithDuration:0.2 animations:^{
-        self.buttonScrollView.alpha = 1.0;
-    }];
-    [self.bgColorVC dismissSelf];
-    self.bgView.backgroundColor = self.originalColor;
-    
-}
-
--(void)dismissAlbumVC{
-    
-    // albumVC 없애주기
-    [self.albumVC dismissSelf];
-    self.currentItem = nil;
-    self.albumVC = nil;
-
-}
-
--(void)dismissItemCollectionVC{
-    
-    [self.layerController hideTransparentView];
-    [self.itemCollectionVC dismissSelf];
-
-    
 }
 
 -(void)closeEditingVC{
@@ -144,169 +36,43 @@
 
 }
 
-
--(void)exportThumbnail{
-    
-}
-
--(void)doneAddingPhotoFrame{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self.layerController hideTransparentView];
-    [self.itemCollectionVC dismissSelf];
-    [self.albumVC dismissSelf];
-    [SaveManager.sharedInstance addItem:self.currentItem];
-    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-    }
-    [SaveManager.sharedInstance save];
-    
-    self.albumVC = nil;
-    self.currentItem = nil;
-    self.currentPhotoFrame = nil;
-}
-
--(void)doneEditingPhotoFrame{
-    
-    // 레이어 되돌려 놓기
-    [self.layerController recoverOriginalLayer];
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    PhotoFrame *photoFrame = (PhotoFrame *)self.currentItem;
-    photoFrame.phAsset = PhotoManager.sharedInstance.phassets[self.albumVC.selectedIndexPath.item];
-    [SaveManager.sharedInstance save];
-    
-    // albumVC 없애주기
-    [self.albumVC dismissSelf];
-    self.albumVC = nil;
-
-    self.originalPhotoFrameImage = nil;
-    self.currentItem = nil;
-    
-}
-
--(void)doneAddingText{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self.layerController hideTransparentView];
-    [self.itemCollectionVC dismissSelf];
-    
-    if (self.currentText.isTypedByUser) {
-        self.currentText.textView.tintColor = [UIColor clearColor];
-        [SaveManager.sharedInstance addItem:self.currentItem];
-        for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-        }
-        [self.currentText.textView resignFirstResponder];
-    } else {// 체크버튼 alpha 0.0
-        [SaveManager.sharedInstance addItem:self.currentItem];
-        for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-    }
-        
-    
-    [SaveManager.sharedInstance save];
-
-    [self.currentText.textView resignFirstResponder];
-    self.currentItem = nil;
-    self.currentText = nil;
-    }
-}
-
--(void)doneEditingText{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self.layerController hideTransparentView];
-    [self.itemCollectionVC dismissSelf];
-
-    [SaveManager.sharedInstance addItem:self.currentItem];
-    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-    item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-    }
-    [SaveManager.sharedInstance save];
-
-
-    [self.currentText.textView resignFirstResponder];
-    self.currentItem = nil;
-    self.currentText = nil;
-}
-
--(void)doneAddingSticker{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self.layerController hideTransparentView];
-    [self.itemCollectionVC dismissSelf];
-    self.currentItem.center = self.currentItem.baseView.center;
-    [SaveManager.sharedInstance addItem:self.currentItem];
-    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-    }
-    [SaveManager.sharedInstance save];
-
-    self.currentItem = nil;
-    self.currentSticker = nil;//일단해둠
-   
-}
-
--(void)doneEditingSticker{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self.layerController hideTransparentView];
-    [self.itemCollectionVC dismissSelf];
-    self.currentItem.center = self.currentItem.baseView.center;
-    [SaveManager.sharedInstance addItem:self.currentItem];
-    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-    }
-    [SaveManager.sharedInstance save];
-
-
-    self.currentItem = nil;
-    self.currentSticker = nil;//일단해둠
-}
-
--(void)doneEditingBGColor{
-    
-    [self.modeController setNavigationItemRespondToEditingMode:NormalMode];
-    [self.layerController hideTransparentView];
-    [UIView animateWithDuration:0.2 animations:^{
-        self.buttonScrollView.alpha = 1.0;
-    }];
-    [self.bgColorVC dismissSelf];
-    SaveManager.sharedInstance.currentProject.backgroundColor = self.bgView.backgroundColor;
-    [SaveManager.sharedInstance save];
-
-}
-
-#pragma mark - 아이템 버튼
-
 #pragma mark - 포토 프레임 버튼
 
 - (IBAction)photoFrameButtonTapped:(UIButton *)sender {
-
-        
-         if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 if (PhotoManager.sharedInstance.phassets.count == 0) {
-                     PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
-                 }
-                 [self photoFrameButtonTappedTaskWhenAuthorized];
-
-             });
-         } else {
-             [self taskWhenDenied];
-         }
-
-
+    
+    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (PhotoManager.sharedInstance.phassets.count == 0) {
+                PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+            }
+            [self photoFrameButtonTappedTaskWhenAuthorized];
+            self.modeController.editingMode = AddingItemMode;
+        });
+    } else {
+        [self taskWhenDenied];
+    }
+    
+    
 }
 
 -(void)photoFrameButtonTappedTaskWhenAuthorized{
     [self.layerController showTransparentView];
-    [self.modeController setNavigationItemRespondToEditingMode:AddingPhotoFrameMode];
+    [self hideNavigationItems];
     self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];
-    [self showAlbumVC];
-    self.albumVC.view.hidden = true;
-
+    [self addAlbumVC];
+    
+    PhotoFrame *recentPhotoFrame;
+    for (NSArray *photoFrames in ItemManager.sharedInstance.photoFrameDatas) {
+        for (PhotoFrame *photoFrame in photoFrames) {
+            if ([photoFrame isKindOfClass:self.recentPhotoFrame.class]) {
+                recentPhotoFrame = photoFrame;
+            }
+        }
+    }
+    
+    [self.itemCollectionVC.photoFrameCollectionController didSelectPhotoFrame:recentPhotoFrame];
+    
 }
 
 -(void)taskWhenDenied{
@@ -331,36 +97,60 @@
     [self addChildViewController:self.itemCollectionVC];
     [self.view addSubview:self.itemCollectionVC.view];
     
-    self.itemCollectionVC.collectionView.frameY = self.view.frameHeight;
+    self.itemCollectionVC.containerView.frameY = self.view.frameHeight;
     self.itemCollectionVC.blurView.frameY = self.view.frameHeight;
     
     self.itemCollectionVC.checkButton.alpha = 0;
     self.itemCollectionVC.cancelButton.alpha = 0;
+    self.itemCollectionVC.scrollView.alpha = 0;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.itemCollectionVC.collectionView.frameY = 0;
+        self.itemCollectionVC.containerView.frameY = 0;
         self.itemCollectionVC.blurView.frameY = 0;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
-            self.itemCollectionVC.checkButton.alpha = 0.8;
-            self.itemCollectionVC.cancelButton.alpha = 0.8;
+            self.itemCollectionVC.checkButton.alpha = 1.0;
+            self.itemCollectionVC.cancelButton.alpha = 1.0;
+            self.itemCollectionVC.scrollView.alpha = 1.0;
         }];
     }];
     
     
 }
 
+-(void)addAlbumVC{
+    
+    self.albumVC.view.hidden = true;
+    [self addChildViewController:self.albumVC];
+    [self.view addSubview:self.albumVC.view];
+    
+    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
+    self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY - self.itemCollectionVC.collectionView.frameY);
+    self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY + self.itemCollectionVC.collectionView.frameY);
+    
+    self.albumVC.delegate = self;
+    self.albumVC.collectionViewTopConstraint.constant = self.albumVC.view.frameHeight;
+    
+}
+
+
+
 #pragma mark - 텍스트 버튼
 
 - (IBAction)textButtonTapped:(UIButton *)sender {
     
+    self.modeController.editingMode = AddingItemMode;
     [self.layerController showTransparentView];
-    [self.modeController setNavigationItemRespondToEditingMode:AddingTextMode];
+    [self hideNavigationItems];
     self.itemCollectionVC.itemType = TextType;
     [self addItemCollectionVC];
     if (self.recentTypo == nil) {
         self.recentTypo = [NormalTypo normalTypo];
     }
-    [self.itemCollectionVC didSelectTypo:self.recentTypo];
+    self.itemCollectionVC.typoButton.selected = true;
+    self.itemCollectionVC.typoButton.alpha = 1.0;
+    self.itemCollectionVC.textButton.selected = false;
+    self.itemCollectionVC.textButton.alpha = 0.4;
+    [self.itemCollectionVC.textCollectionController didSelectTypo:self.recentTypo];
     
 }
 
@@ -368,8 +158,9 @@
 
 - (IBAction)stickerButtonTapped:(UIButton *)sender {
     
+    self.modeController.editingMode = AddingItemMode;
     [self.layerController showTransparentView];
-    [self.modeController setNavigationItemRespondToEditingMode:AddingStickerMode];
+    [self hideNavigationItems];
     self.itemCollectionVC.itemType = StickerType;
     [self addItemCollectionVC];
     // 추가 필요
@@ -380,8 +171,7 @@
 
 - (IBAction)bgColorButtonTapped:(id)sender {
     
-    [self.modeController setNavigationItemRespondToEditingMode:EditingBGColorMode];
-    
+    [self hideNavigationItems];
     self.originalColor = self.bgView.backgroundColor;
     
     // scrollView 가려주기
@@ -538,8 +328,6 @@
     [UIView animateWithDuration:0.2 animations:^{
         self.hueSlider.alpha = 0.0;
     }];
-    
-
 }
 
 

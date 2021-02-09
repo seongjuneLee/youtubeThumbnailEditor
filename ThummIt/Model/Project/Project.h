@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray *texts;
 @property (strong, nonatomic) NSMutableArray *stickers;
 @property (strong, atomic) CoreDataProject* coreDataStorage;
+@property (strong, nonatomic) UIImage * previewImage;
 
 -(NSMutableArray *)items;
 -(id)initWithProjectID:(NSString *)projectID;

@@ -36,16 +36,24 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) PhotoFrame *currentPhotoFrame;
 @property (strong, nonatomic, nullable) Sticker *currentSticker;
 @property (strong, nonatomic, nullable) Typography *recentTypo;
+@property (strong, nonatomic, nullable) PhotoFrame *recentPhotoFrame;
+@property (strong, nonatomic, nullable) Sticker *recentSticker;
 
 // 아이템 변경전 기본값
-@property (strong, nonatomic, nullable) UIColor *originalColor;
-@property (strong, nonatomic, nullable) UIImage *originalPhotoFrameImage;
-@property (strong, nonatomic, nullable) PHAsset *originalPHAsset;
-@property (nonatomic) CGPoint originalImageViewCenter;
+@property (nonatomic) CGPoint originalCenter;
 @property (nonatomic) CGAffineTransform originalTransform;
-@property (strong, nonatomic) Typography *originalTypo;
+
+@property (nonatomic) CGPoint originalPhotoImageViewCenter; // photoFrame
+@property (nonatomic) CGAffineTransform originalPhotoImageTransform;
+@property (strong, nonatomic, nullable) UIImage *originalPhotoFrameImage;
+@property (strong, nonatomic, nullable) PhotoFrame *originalPhotoFrame;
+
+@property (strong, nonatomic) Typography *originalTypo; // text
 @property (strong, nonatomic) NSString *originalText;
-@property (strong, nonatomic) NSString *originalStickerImageName;
+
+@property (strong, nonatomic) NSString *originalStickerImageName; // sticker
+
+@property (strong, nonatomic, nullable) UIColor *originalColor; // bgColor
 
 @property (weak, nonatomic) IBOutlet UIView *upperArea;
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
@@ -77,8 +85,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) UIColor *originalCursorColor;
 
 -(void)loadItems;
-
-
+-(void)showNavigationItems;
+-(void)hideNavigationItems;
 
 
 @end

@@ -9,19 +9,14 @@
 #import "PhotoFrame.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@protocol PhotoFrameCollectionControllerDelegate <NSObject>
-
--(void)didSelectPhotoFrame:(PhotoFrame *)photoFrame;
-
-@end
-
 @interface PhotoFrameCollectionController : NSObject <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
-@property (weak, nonatomic) id<PhotoFrameCollectionControllerDelegate> delegate;
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UIImage *firstPhoto;
+@property (weak, nonatomic) UIViewController *editingVC;
 
 -(id)initWithCollectionView:(UICollectionView *)collectionView;
+-(void)didSelectPhotoFrame:(PhotoFrame *)photoFrame;
 
 @end
 

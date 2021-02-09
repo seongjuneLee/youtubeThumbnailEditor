@@ -9,9 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EditingViewController (GestureControllerDelegate) <EditingGestureControllerDelegate>
+@interface EditingViewController (GestureControllerDelegate)
 
--(void)showAlbumVC;
+
+-(void)didSelectItem:(Item *)item;
+
+// 노멀 모드 팬제스쳐
+-(void)readyUIForPanning;
+-(void)deleteImageRespondToCurrentPointY:(float)currentPointY;
+-(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint;
 
 @end
 

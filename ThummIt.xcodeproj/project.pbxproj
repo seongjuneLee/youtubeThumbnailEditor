@@ -66,8 +66,6 @@
 		6E698BBE25B8A21300CE86FB /* DashedGuideLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BBD25B8A21300CE86FB /* DashedGuideLineView.m */; };
 		6E698BC625B8D21000CE86FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */; };
 		6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */; };
-		6E6E5BF025A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BEF25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m */; };
-		6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BF525A9F44A009821CF /* ItemCollectionViewController+Text.m */; };
 		6E6E5BFC25AA23F3009821CF /* ItemCollectionViewController+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BFB25AA23F3009821CF /* ItemCollectionViewController+Button.m */; };
 		6E7BC04B25CAB70E006C9F83 /* Editing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BC04D25CAB70E006C9F83 /* Editing.storyboard */; };
 		6E7DD4A22584D3C00014618E /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD4A12584D3C00014618E /* AlbumViewController.m */; };
@@ -346,7 +344,6 @@
 		B16FC62025ADCD9400E854C1 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16FC61E25ADCD9400E854C1 /* StickerCollectionViewCell.xib */; };
 		B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC62F25ADD9DB00E854C1 /* Sticker.m */; };
 		B16FC64925ADF90000E854C1 /* CircleSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC64825ADF90000E854C1 /* CircleSticker1.m */; };
-		B16FC66025AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC65F25AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m */; };
 		B16FC68025AF459800E854C1 /* StickerCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC67E25AF459800E854C1 /* StickerCollectionReusableView.m */; };
 		B16FC68125AF459800E854C1 /* StickerCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16FC67F25AF459800E854C1 /* StickerCollectionReusableView.xib */; };
 		B16FC68725AF76A600E854C1 /* ArrowSticker1.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FC68625AF76A600E854C1 /* ArrowSticker1.m */; };
@@ -551,10 +548,6 @@
 		6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditingViewController+Text.h"; sourceTree = "<group>"; };
 		6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EditingViewController+Text.m"; sourceTree = "<group>"; };
-		6E6E5BEE25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItemCollectionViewController+PhotoFrame.h"; sourceTree = "<group>"; };
-		6E6E5BEF25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ItemCollectionViewController+PhotoFrame.m"; sourceTree = "<group>"; };
-		6E6E5BF425A9F44A009821CF /* ItemCollectionViewController+Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItemCollectionViewController+Text.h"; sourceTree = "<group>"; };
-		6E6E5BF525A9F44A009821CF /* ItemCollectionViewController+Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ItemCollectionViewController+Text.m"; sourceTree = "<group>"; };
 		6E6E5BFA25AA23F3009821CF /* ItemCollectionViewController+Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItemCollectionViewController+Button.h"; sourceTree = "<group>"; };
 		6E6E5BFB25AA23F3009821CF /* ItemCollectionViewController+Button.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ItemCollectionViewController+Button.m"; sourceTree = "<group>"; };
 		6E7BC04E25CAB74A006C9F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Editing.storyboard; sourceTree = "<group>"; };
@@ -1063,8 +1056,6 @@
 		B16FC64725ADF90000E854C1 /* CircleSticker1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleSticker1.h; sourceTree = "<group>"; };
 		B16FC64825ADF90000E854C1 /* CircleSticker1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleSticker1.m; sourceTree = "<group>"; };
 		B16FC64D25ADFAB500E854C1 /* StickerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerHeader.h; sourceTree = "<group>"; };
-		B16FC65E25AE0AE000E854C1 /* ItemCollectionViewController+Sticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItemCollectionViewController+Sticker.h"; sourceTree = "<group>"; };
-		B16FC65F25AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ItemCollectionViewController+Sticker.m"; sourceTree = "<group>"; };
 		B16FC67D25AF459800E854C1 /* StickerCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerCollectionReusableView.h; sourceTree = "<group>"; };
 		B16FC67E25AF459800E854C1 /* StickerCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickerCollectionReusableView.m; sourceTree = "<group>"; };
 		B16FC67F25AF459800E854C1 /* StickerCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickerCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -1599,12 +1590,6 @@
 				6E8E7A23259B26CF0008C5FF /* ItemCollectionViewController.m */,
 				6E6E5BFA25AA23F3009821CF /* ItemCollectionViewController+Button.h */,
 				6E6E5BFB25AA23F3009821CF /* ItemCollectionViewController+Button.m */,
-				6E6E5BEE25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.h */,
-				6E6E5BEF25A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m */,
-				6E6E5BF425A9F44A009821CF /* ItemCollectionViewController+Text.h */,
-				6E6E5BF525A9F44A009821CF /* ItemCollectionViewController+Text.m */,
-				B16FC65E25AE0AE000E854C1 /* ItemCollectionViewController+Sticker.h */,
-				B16FC65F25AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m */,
 				6E8E7A32259B27120008C5FF /* PhotoFrameCollectionController */,
 				6E8E7AC425A8335E0008C5FF /* TextCollectionController */,
 				B16FC61125ADCA9000E854C1 /* StickerCollectionController */,
@@ -3215,7 +3200,6 @@
 				6EC4DFC225A87BEC0023485C /* AdvancedTextView.m in Sources */,
 				B1836FC925C3370E00A81446 /* AngrySticker1.m in Sources */,
 				6EBEB67E25C494D40017C640 /* HeartSticker3.m in Sources */,
-				6E6E5BF025A9F41E009821CF /* ItemCollectionViewController+PhotoFrame.m in Sources */,
 				6EF0C87C25CBD2FD00BE7573 /* RspPaperSticker.m in Sources */,
 				B1F2B74C25C1CB0B0064A044 /* InfiniteChallengeCloudBox.m in Sources */,
 				6E9BE9F4258D0F1C00F7F539 /* EditingModeController.m in Sources */,
@@ -3278,7 +3262,6 @@
 				6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */,
 				6EF0C94B25CD45F100BE7573 /* DinggoStarWarsTypo.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
-				B16FC66025AE0AE000E854C1 /* ItemCollectionViewController+Sticker.m in Sources */,
 				6E8F9A6A25C344EB005C8071 /* PhotoFrame.m in Sources */,
 				6E8F99BE25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m in Sources */,
 				B16FC68725AF76A600E854C1 /* ArrowSticker1.m in Sources */,
@@ -3385,7 +3368,6 @@
 				B1F2B72C25C1BF2B0064A044 /* InfiniteChallengeTopOfYellow.m in Sources */,
 				6EF0C7CE25CBAA5900BE7573 /* ArrowSticker7.m in Sources */,
 				6E8F98FD25BCE6CC005C8071 /* GuideTarget.m in Sources */,
-				6E6E5BF625A9F44A009821CF /* ItemCollectionViewController+Text.m in Sources */,
 				6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */,
 				6EF0C7D325CBAC8A00BE7573 /* BlinkSticker3.m in Sources */,
 				6EBEB6BC25C4F8FE0017C640 /* VlogFreshmanTypo.m in Sources */,

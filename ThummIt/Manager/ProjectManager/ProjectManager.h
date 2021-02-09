@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (ProjectManager *)sharedInstance;
 
 @property (strong, nonatomic) NSMutableArray *projectSnapShots;
+@property (strong, nonatomic) NSMutableArray *photoImageDict;
 
 - (Project*)projectFromProjectID:(NSString *)projectId;
 -(Project *)generateNewProjectWithTemplate:(Template *)selectedTemplate;
@@ -24,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSUInteger)fetchProjectsCount;
 -(NSMutableArray *)loadProjectSnapshots:(NSUInteger)offSet;
 - (NSArray*)getRecentTenProjectsFromCoreDataWithOffset:(NSUInteger)offSet;
+-(void)fetchImage;
 
 @end
 

@@ -11,6 +11,7 @@
 #import "ItemManager.h"
 #import "PhotoManager.h"
 #import "UIView+Additions.h"
+#import "EditingViewController.h"
 
 @implementation PhotoFrameCollectionController
 
@@ -78,21 +79,45 @@
     NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
 
     PhotoFrame *photoFrame = photoFrames[indexPath.item];
-    [photoFrame loadView];
-    [self.delegate didSelectPhotoFrame:photoFrame];
+    [self didSelectPhotoFrame:photoFrame];
     
 }
+
+-(void)didSelectPhotoFrame:(PhotoFrame *)photoFrame{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    [photoFrame loadView];
+    if (editingVC.currentItem) {
+        PhotoFrame *currentPhotoFrame = (PhotoFrame *)editingVC.currentItem;
+        // 위치, 크기,사진 유지
+        photoFrame.baseView.center = currentPhotoFrame.baseView.center;
+        photoFrame.baseView.transform = currentPhotoFrame.baseView.transform;
+        photoFrame.photoImageView.frame = currentPhotoFrame.photoImageView.frame;
+        photoFrame.photoImageView.image = currentPhotoFrame.photoImageView.image;
+        [currentPhotoFrame.baseView removeFromSuperview];// 기존 것 떼어주고
+    } else {
+        [photoFrame scaleItem];
+        photoFrame.baseView.center = editingVC.bgView.center;
+    }
+
+    [editingVC.layerController bringCurrentItemToFront:photoFrame];
+    editingVC.recentPhotoFrame = photoFrame;
+    editingVC.currentItem = photoFrame;
+    editingVC.currentPhotoFrame = photoFrame;
+    
+}
+
 
 #pragma mark - 레이아웃 델리게이트
 
--(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    
-    PhotoFrameCollectionReusableView *reusableView = (PhotoFrameCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView" forIndexPath:indexPath];
-    NSString *category = ItemManager.sharedInstance.photoFrameCategories[indexPath.section];
-    reusableView.categoryLabel.text = category;
-    
-    return reusableView;
-}
+//-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+//    
+//    PhotoFrameCollectionReusableView *reusableView = (PhotoFrameCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView" forIndexPath:indexPath];
+//    NSString *category = ItemManager.sharedInstance.photoFrameCategories[indexPath.section];
+//    reusableView.categoryLabel.text = category;
+//    
+//    return reusableView;
+//}
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     return CGSizeMake(self.collectionView.frameWidth, 25);
