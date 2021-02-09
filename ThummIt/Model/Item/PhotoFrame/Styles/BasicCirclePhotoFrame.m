@@ -23,7 +23,6 @@
 }
 
 -(void)setBaseViewFrame{
-    [super setBaseViewFrame];
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
     float circleViewWidth = screenWidth*0.8/2;
     self.baseView.frameSize = CGSizeMake(circleViewWidth, circleViewWidth);

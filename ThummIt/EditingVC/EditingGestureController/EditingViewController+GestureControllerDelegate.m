@@ -16,30 +16,18 @@
 #pragma mark - 탭
 -(void)didSelectItem:(Item *)item{
     
-    self.modeController.editingMode = ItemMode;
+    self.modeController.editingMode = EditingItemMode;
     
     if ([item isKindOfClass:PhotoFrame.class]) {
-        
-        PhotoFrame *photoFrame = (PhotoFrame *)item;
-        self.currentItem = photoFrame;
-        [self hideNavigationItems];
-        
-        self.originalCenter = photoFrame.baseView.center;
-        self.originalTransform = photoFrame.baseView.transform;
-        
-        self.originalPhotoFrameImage = photoFrame.photoImageView.image;
-        self.originalPhotoImageViewCenter = photoFrame.photoImageView.center;
-        self.originalPhotoImageTransform = photoFrame.photoImageView.transform;
         
         if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
                 if (PhotoManager.sharedInstance.phassets.count == 0) {
                     PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
                 }
-                [self photoFrameTappedTaskWhenAuthorized];
+                [self photoFrameTappedTaskWhenAuthorizedWithItem:item];
         } else {
             [self taskWhenDenied];
         }
-        [self.layerController showTransparentView];
         
     } else if([item isKindOfClass:Text.class]){
         
@@ -85,9 +73,23 @@
     
 }
 
--(void)photoFrameTappedTaskWhenAuthorized{
+-(void)photoFrameTappedTaskWhenAuthorizedWithItem:(Item *)item{
+    
+    PhotoFrame *photoFrame = (PhotoFrame *)item;
+    self.currentItem = [photoFrame copy];
+    self.originalPhotoFrame = photoFrame;
+    self.originalPhotoFrame.baseView.hidden = true;
+    
+    self.originalCenter = photoFrame.baseView.center;
+    self.originalTransform = photoFrame.baseView.transform;
+    
+    self.originalPhotoFrameImage = photoFrame.photoImageView.image;
+    self.originalPhotoImageViewCenter = photoFrame.photoImageView.center;
+    self.originalPhotoImageTransform = photoFrame.photoImageView.transform;
+
     [self.layerController showTransparentView];
     [self hideNavigationItems];
+    
     [self.layerController bringCurrentItemToFront:self.currentItem];
     self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];

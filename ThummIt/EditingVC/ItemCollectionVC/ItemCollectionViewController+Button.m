@@ -8,6 +8,7 @@
 #import "ItemCollectionViewController+Button.h"
 #import "EditingViewController.h"
 #import "EditingViewController+Buttons.h"
+#import "UIImage+Additions.h"
 
 @implementation ItemCollectionViewController (Button)
 
@@ -15,8 +16,7 @@
 - (IBAction)cancelButtonTapped:(UIButton *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    editingVC.modeController.editingMode = NormalMode;
-    if ([ItemManager.sharedInstance isAddingItem:editingVC.currentItem]) { // 새로운 아이템 추가중
+    if (editingVC.modeController.editingMode == AddingItemMode) { // 새로운 아이템 추가중
         
         if ([editingVC.currentItem isKindOfClass:Text.class]) {
             [self cancelAddingText];
@@ -40,6 +40,8 @@
             [self cancelEditingSticker];
         }
     }
+    
+    editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
     [editingVC showNavigationItems];
     
@@ -48,8 +50,7 @@
 - (IBAction)checkButtonTapped:(UIButton *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    editingVC.modeController.editingMode = NormalMode;
-    if ([ItemManager.sharedInstance isAddingItem:editingVC.currentItem]) { // 새로운 아이템 추가중
+    if (editingVC.modeController.editingMode == AddingItemMode) { // 새로운 아이템 추가중
         
         if ([editingVC.currentItem isKindOfClass:Text.class]) {
             [self doneAddingText];
@@ -73,6 +74,7 @@
             [self doneEditingSticker];
         }
     }
+    editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
     [editingVC showNavigationItems];
 
@@ -158,20 +160,12 @@
 }
 
 -(void)cancelEditingPhotoFrame{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-
-    // 변경 취소하고, 원래 이미지 다시 넣어주기.
-    PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentItem;
+    [editingVC.currentItem.baseView removeFromSuperview];
+    editingVC.originalPhotoFrame.baseView.hidden = false;
     
-    photoFrame.baseView.center = editingVC.originalCenter;
-    photoFrame.baseView.transform = editingVC.originalTransform;
-    
-    photoFrame.photoImageView.image = editingVC.originalPhotoFrameImage;
-    photoFrame.photoImageView.center = editingVC.originalPhotoImageViewCenter;
-    photoFrame.photoImageView.transform = editingVC.originalTransform;
-    
-    // 레이어 되돌려 놓기
-    [editingVC.layerController recoverOriginalLayer];
+    // UI 돌려놓기
     [editingVC.layerController hideTransparentView];
     [editingVC showNavigationItems];
     // albumVC 없애주기
@@ -202,6 +196,7 @@
     text.baseView.transform = editingVC.originalTransform;
     text.textView.text = editingVC.originalText;
     text.text = editingVC.originalText;
+    
     [text applyTypo:editingVC.originalTypo];
     
     [editingVC showNavigationItems];
@@ -258,6 +253,8 @@
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
     }
+    UIImage *viewImage = [editingVC.view toImage];
+    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance save];
     
     editingVC.currentItem = nil;
@@ -265,15 +262,21 @@
 }
 
 -(void)doneEditingPhotoFrame{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-
+    
     // 레이어 되돌려 놓기
     [editingVC.layerController recoverOriginalLayer];
     [editingVC showNavigationItems];
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentItem;
     photoFrame.phAsset = PhotoManager.sharedInstance.phassets[editingVC.albumVC.selectedIndexPath.item];
+    [ItemManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
+    [ItemManager.sharedInstance addItem:photoFrame];
+    [editingVC.view insertSubview:photoFrame.baseView atIndex:[editingVC.originalPhotoFrame.indexInLayer integerValue]];
+    UIImage *viewImage = [editingVC.view toImage];
+    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance save];
-    
+
     // albumVC 없애주기
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
@@ -301,8 +304,10 @@
         for (Item *item in SaveManager.sharedInstance.currentProject.items) {
             item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
         }
+        UIImage *viewImage = [editingVC.view toImage];
+        SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
         [SaveManager.sharedInstance save];
-        
+
         [editingVC.currentText.textView resignFirstResponder];
         editingVC.currentItem = nil;
         editingVC.currentText = nil;
@@ -321,6 +326,8 @@
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
     item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
     }
+    UIImage *viewImage = [editingVC.view toImage];
+    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance save];
 
 
@@ -339,6 +346,8 @@
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
     }
+    UIImage *viewImage = [editingVC.view toImage];
+    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance save];
 
     editingVC.currentItem = nil;
@@ -356,6 +365,8 @@
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
     }
+    UIImage *viewImage = [editingVC.view toImage];
+    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance save];
 
 

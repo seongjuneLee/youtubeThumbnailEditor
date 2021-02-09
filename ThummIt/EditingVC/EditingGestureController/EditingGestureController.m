@@ -14,6 +14,7 @@
 #import "SaveManager.h"
 #import "GuideLineManager.h"
 #import "GuideLine.h"
+#import "UIImage+Additions.h"
 #import "GuideTarget.h"
 @implementation EditingGestureController
 
@@ -168,10 +169,7 @@
 
 
     } else if (sender.state == UIGestureRecognizerStateEnded){
-        if (!editingVC.currentItem) {
-            return;
-        }
-        if (editingVC.currentItem.isFixedPhotoFrame) {
+        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
             return;
         }
 
@@ -179,9 +177,6 @@
         
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
-        }
-        if (!self.isPinching) {
-            [SaveManager.sharedInstance save];
         }
         
         for (GuideLine *guideLine in self.guideLines) {
@@ -191,10 +186,15 @@
             [guideLine removeFromSuperView];
         }
         self.isMagneting = false;
-
+        if (!self.isPinching) {
+            UIImage *viewImage = [editingVC.view toImage];
+            SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
+            [SaveManager.sharedInstance save];
+        }
     }
-
 }
+
+
 
 -(void)itemGuideWithDelta:(CGPoint)deltaPoint{
     
@@ -482,6 +482,8 @@
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
+        UIImage *viewImage = [editingVC.view toImage];
+        SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
         [SaveManager.sharedInstance save];
         [self removeItemSizeGuideLinesFromSuperView];
         [self.rotationDashedLine removeFromSuperview];

@@ -10,8 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef enum {
     NormalMode = 0,
-    ItemMode = 1,
-    BGColorMode = 2
+    EditingItemMode = 1,
+    AddingItemMode = 2,
+    BGColorMode = 3
 } EditingMode;
 
 @interface EditingModeController : NSObject

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (Additions) <NSCopying>
 
 + (UIImage *)imageWithView:(UIView *)view;
+- (UIImage *)crop:(CGRect)rect;
 
 @end
 

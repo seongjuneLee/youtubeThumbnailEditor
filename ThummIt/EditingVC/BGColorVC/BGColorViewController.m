@@ -10,7 +10,7 @@
 #import "EditingViewController+Buttons.h"
 #import "ItemCollectionViewController.h"
 #import "ItemCollectionViewController+Button.h"
-
+#import "UIImage+Additions.h"
 @interface BGColorViewController ()
 
 @end
@@ -66,6 +66,8 @@
     }];
     [editingVC.bgColorVC dismissSelf];
     SaveManager.sharedInstance.currentProject.backgroundColor = editingVC.bgView.backgroundColor;
+    UIImage *viewImage = [editingVC.view toImage];
+    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance save];
 
 }

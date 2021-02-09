@@ -47,7 +47,7 @@
                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
             }
             [self photoFrameButtonTappedTaskWhenAuthorized];
-            self.modeController.editingMode = ItemMode;
+            self.modeController.editingMode = AddingItemMode;
         });
     } else {
         [self taskWhenDenied];
@@ -61,10 +61,18 @@
     [self hideNavigationItems];
     self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];
-//    if (self.recentPhotoFrame == nil) {
-        self.recentPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
-//    }
-    [self.itemCollectionVC.photoFrameCollectionController didSelectPhotoFrame:self.recentPhotoFrame];
+    [self addAlbumVC];
+    
+    PhotoFrame *recentPhotoFrame;
+    for (NSArray *photoFrames in ItemManager.sharedInstance.photoFrameDatas) {
+        for (PhotoFrame *photoFrame in photoFrames) {
+            if ([photoFrame isKindOfClass:self.recentPhotoFrame.class]) {
+                recentPhotoFrame = photoFrame;
+            }
+        }
+    }
+    
+    [self.itemCollectionVC.photoFrameCollectionController didSelectPhotoFrame:recentPhotoFrame];
     
 }
 
@@ -131,7 +139,7 @@
 
 - (IBAction)textButtonTapped:(UIButton *)sender {
     
-    self.modeController.editingMode = ItemMode;
+    self.modeController.editingMode = AddingItemMode;
     [self.layerController showTransparentView];
     [self hideNavigationItems];
     self.itemCollectionVC.itemType = TextType;
@@ -151,7 +159,7 @@
 
 - (IBAction)stickerButtonTapped:(UIButton *)sender {
     
-    self.modeController.editingMode = ItemMode;
+    self.modeController.editingMode = AddingItemMode;
     [self.layerController showTransparentView];
     [self hideNavigationItems];
     self.itemCollectionVC.itemType = StickerType;
@@ -296,7 +304,7 @@
     
     if ([self.currentItem isKindOfClass:Text.class]){
         self.currentText.textView.textColor = currentPointColor;
-
+        self.currentText.typo.textColor = currentPointColor;
     } else if ([self.currentItem isKindOfClass:Sticker.class]){
         [self.currentItem.backgroundImageView setTintColor:currentPointColor];
     };

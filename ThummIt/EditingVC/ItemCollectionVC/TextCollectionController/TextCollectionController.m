@@ -78,41 +78,44 @@
 -(void)didSelectTypo:(Typography *)typo{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-        
+    
     Text *text = [[Text alloc] init];
     
-    text.textView.delegate = editingVC;
-
-    text.text = typo.name;
-    text.textView.text = typo.name;
-    text.typo = typo;
-    [text.textView setNeedsDisplay];
-
-    text.textViewContainer.center = editingVC.bgView.center;
     
     if (editingVC.currentItem) {
+        text = (Text *)editingVC.currentItem;
         if (editingVC.currentText.isTypedByUser) {
             text.text = editingVC.currentText.text;
             text.textView.text = editingVC.currentText.text;
             editingVC.itemCollectionVC.checkButton.enabled = true;
             editingVC.itemCollectionVC.checkButton.alpha = 1;
         } else {
+            text.text = typo.name;
+            text.textView.text = typo.name;
             editingVC.itemCollectionVC.checkButton.enabled = false;
             editingVC.itemCollectionVC.checkButton.alpha = 0.4;
         }
         text.isTypedByUser = editingVC.currentText.isTypedByUser;
         text.baseView.center = editingVC.currentText.baseView.center;
         text.baseView.transform = editingVC.currentText.baseView.transform;
-        [editingVC.currentItem.baseView removeFromSuperview];
     } else {
         editingVC.itemCollectionVC.checkButton.enabled = false;
         editingVC.itemCollectionVC.checkButton.alpha = 0.4;
+        
+        text.textView.delegate = editingVC;
+
+        text.text = typo.name;
+        text.textView.text = typo.name;
+        [text.textView setNeedsDisplay];
+
+        text.textViewContainer.center = editingVC.bgView.center;
+        [editingVC.layerController bringCurrentItemToFront:text];
     }
+    
     [text applyTypo:typo];
     [text resize];
     [text scaleItem];
 
-    [editingVC.layerController bringCurrentItemToFront:text];
     
     editingVC.currentItem = text;
     editingVC.currentText = text;

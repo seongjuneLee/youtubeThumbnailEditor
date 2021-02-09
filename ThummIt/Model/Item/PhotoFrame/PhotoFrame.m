@@ -39,10 +39,10 @@
     UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.bounds];
     copiedBaseView.backgroundColor = self.baseView.backgroundColor;
     copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
-    if (copied.isCircle) {
-        copiedBaseView.layer.cornerRadius = self.baseView.frameWidth/2;
-    }
-    copiedBaseView.transform =CGAffineTransformMakeRotation(self.rotationDegree);
+    
+    copiedBaseView.layer.cornerRadius = self.baseView.layer.cornerRadius;
+    
+    copiedBaseView.transform = self.baseView.transform;
     copiedBaseView.center = self.center;
     
     copied.baseView = copiedBaseView;
@@ -59,7 +59,9 @@
     copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
     copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
     [copied.baseView addSubview:copied.backgroundImageView];
-
+    
+    copied.isFixedPhotoFrame = self.isFixedPhotoFrame;
+    copied.indexInLayer = self.indexInLayer;
 
     return copied;
 }
@@ -100,6 +102,9 @@
 #pragma mark - helper
 -(void)loadView{
     
+    self.baseView = [[UIView alloc] init];
+    self.baseView.clipsToBounds = true;
+    self.baseView.backgroundColor = UIColor.whiteColor;
     [self setBaseViewFrame];
     if (self.isCircle) {
         self.baseView.layer.cornerRadius = (self.baseView.frameWidth)/2;
@@ -113,7 +118,6 @@
 
     float width = UIScreen.mainScreen.bounds.size.width;
     float scale = width/self.baseView.frameWidth;
-
     if (self.isFixedPhotoFrame) {
         scaleTransform = CGAffineTransformMakeScale(self.scale,self.scale);
 
@@ -144,18 +148,16 @@
     self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
     if (self.phAsset) {
         [PhotoManager.sharedInstance getImageFromPHAsset:self.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.photoImageView.image = image;
                 float ratio = image.size.height/image.size.width;
                 float width = self.baseView.frameWidth * 1.2;
                 self.photoImageView.frameSize = CGSizeMake(self.baseView.frameWidth * 1.2, width * ratio);
-                NSLog(@"");
+                NSLog(@"self.photoImageView frame %@",NSStringFromCGRect(self.photoImageView.frame));
+                [self.baseView addSubview:self.photoImageView];
             });
-
         }];
     }
-    [self.baseView addSubview:self.photoImageView];
     
     if (self.backgroundImageName) {
         self.backgroundImageView = [[UIImageView alloc] init];

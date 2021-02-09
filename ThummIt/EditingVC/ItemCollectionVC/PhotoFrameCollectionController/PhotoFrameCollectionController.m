@@ -76,8 +76,8 @@
 #pragma mark - 델리게이트
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
     NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
+
     PhotoFrame *photoFrame = photoFrames[indexPath.item];
     [self didSelectPhotoFrame:photoFrame];
     
@@ -87,25 +87,24 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     [photoFrame loadView];
-    photoFrame.baseView.center = editingVC.bgView.center;
-    photoFrame.center = photoFrame.baseView.center;
-    [photoFrame scaleItem];
     if (editingVC.currentItem) {
         PhotoFrame *currentPhotoFrame = (PhotoFrame *)editingVC.currentItem;
         // 위치, 크기,사진 유지
-        photoFrame.baseView.frame = currentPhotoFrame.baseView.frame;
+        photoFrame.baseView.center = currentPhotoFrame.baseView.center;
+        photoFrame.baseView.transform = currentPhotoFrame.baseView.transform;
         photoFrame.photoImageView.frame = currentPhotoFrame.photoImageView.frame;
         photoFrame.photoImageView.image = currentPhotoFrame.photoImageView.image;
-        [editingVC.currentItem.baseView removeFromSuperview];// 기존 것 떼어주고
+        [currentPhotoFrame.baseView removeFromSuperview];// 기존 것 떼어주고
+    } else {
+        [photoFrame scaleItem];
+        photoFrame.baseView.center = editingVC.bgView.center;
     }
-    
-    [editingVC.layerController bringCurrentItemToFront:photoFrame];
 
-//    editingVC.recentPhotoFrame = photoFrame;
+    [editingVC.layerController bringCurrentItemToFront:photoFrame];
+    editingVC.recentPhotoFrame = photoFrame;
     editingVC.currentItem = photoFrame;
     editingVC.currentPhotoFrame = photoFrame;
     
-
 }
 
 

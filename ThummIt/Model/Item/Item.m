@@ -52,7 +52,7 @@
         self.backgroundImageView.image = [[UIImage imageNamed:self.backgroundImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         self.itemName = [decoder decodeObjectForKey:@"itemName"];
         self.indexInLayer = [decoder decodeObjectForKey:@"indexInLayer"];
-        self.baseView.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];
+        self.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.rotationDegree = [[decoder decodeObjectForKey:@"rotationDegree"] floatValue];
         self.isTemplateItem = self.isTemplateItem;

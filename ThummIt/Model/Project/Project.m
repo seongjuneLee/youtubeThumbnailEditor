@@ -85,6 +85,7 @@
     self.backgroundColor = [decoder decodeObjectForKey:@"backgroundColor"];
     self.lastEditedDate = [decoder decodeObjectForKey:@"lastEditedDate"];
     self.backgroundImageName = [decoder decodeObjectForKey:@"backgroundImageName"];
+    self.previewImage = [decoder decodeObjectForKey:@"previewImage"];
 
     return self;
 }
@@ -100,6 +101,7 @@
     [encoder encodeObject:self.backgroundColor forKey:@"backgroundColor"];
     [encoder encodeObject:self.lastEditedDate forKey:@"lastEditedDate"];
     [encoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
+    [encoder encodeObject:self.previewImage forKey:@"previewImage"];
 
 }
 
