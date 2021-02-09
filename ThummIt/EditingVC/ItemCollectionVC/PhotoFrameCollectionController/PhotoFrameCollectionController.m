@@ -76,8 +76,8 @@
 #pragma mark - 델리게이트
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
-
     PhotoFrame *photoFrame = photoFrames[indexPath.item];
     [self didSelectPhotoFrame:photoFrame];
     
@@ -95,7 +95,6 @@
         photoFrame.baseView.transform = currentPhotoFrame.baseView.transform;
         photoFrame.photoImageView.frame = currentPhotoFrame.photoImageView.frame;
         photoFrame.photoImageView.image = currentPhotoFrame.photoImageView.image;
-
         [currentPhotoFrame.baseView removeFromSuperview];// 기존 것 떼어주고
     } else {
         [photoFrame scaleItem];

@@ -303,12 +303,15 @@
     
     if ([self.currentItem isKindOfClass:Text.class]){
         self.currentText.textView.textColor = currentPointColor;
+        self.currentText.typo.textColor = currentPointColor;
         if(self.currentText.typo.backgroundColorAlsoChange){
             UIImage *image = [UIImage imageNamed:self.currentText.typo.bgImageName];
             self.currentText.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [self.currentText.backgroundImageView setTintColor:currentPointColor];
         }
     } else if ([self.currentItem isKindOfClass:Sticker.class]){
+        Sticker *sticker = (Sticker *)self.currentItem;
+        sticker.tintColor = currentPointColor;
         [self.currentItem.backgroundImageView setTintColor:currentPointColor];
     };
     self.thumbCircleView.backgroundColor = currentPointColor;

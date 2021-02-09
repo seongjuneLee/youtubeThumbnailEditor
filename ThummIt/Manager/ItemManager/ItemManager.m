@@ -272,12 +272,6 @@
     return @[basicStickers];
 }
 
--(void)addItem:(Item *)item{
-    
-    [SaveManager.sharedInstance addItem:item];
-    [SaveManager.sharedInstance save];
-    
-}
 
 -(void)deleteItem:(Item *)item{
     

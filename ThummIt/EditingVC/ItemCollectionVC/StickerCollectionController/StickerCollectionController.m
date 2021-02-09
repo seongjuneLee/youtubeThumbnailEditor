@@ -78,35 +78,38 @@
 
 -(void)didSelectSticker:(Sticker *)sticker{
     
-    [sticker loadView];
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    sticker.baseView.center = editingVC.bgView.center;
-    sticker.center = editingVC.bgView.center;
+    [sticker loadView];
+    [sticker scaleItem];
+
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
+    if (editingVC.currentItem) {
+        
+        Sticker *currentSticker = (Sticker *)editingVC.currentItem;
+        
+        sticker.baseView.center = currentSticker.baseView.center;
+        sticker.baseView.transform = currentSticker.baseView.transform;
+        sticker.tintColor = currentSticker.tintColor;
+        [editingVC.currentItem.baseView removeFromSuperview];
+        
+    } else {
+        sticker.baseView.center = editingVC.bgView.center;
+        sticker.center = editingVC.bgView.center;
+    }
+    [editingVC.layerController bringCurrentItemToFront:sticker];
+
     if (!sticker.cannotChangeColor) {
         sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        sticker.backgroundImageView.tintColor = sticker.tintColor;
-
+        [sticker.backgroundImageView setTintColor:sticker.tintColor];
         [UIView animateWithDuration:0.2 animations:^{
             editingVC.hueSlider.alpha = 1.0;
             editingVC.thumbCircleView.alpha = 1.0;
         }];
     } else{
-
-        sticker.backgroundImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
+        sticker.backgroundImageView.image = image;
         [editingVC hideAndInitSlider];
-
     }
-    if (editingVC.currentItem) {
-        
-        sticker.baseView.center = editingVC.currentItem.baseView.center;
-        sticker.baseView.transform = editingVC.currentItem.baseView.transform;
-        [editingVC.currentItem.baseView removeFromSuperview];
-        
-    }
-    
-    [editingVC.layerController bringCurrentItemToFront:sticker];
-    
+    NSLog(@"self.originalSticker change %@",editingVC.originalSticker);
     editingVC.currentItem = sticker;
     editingVC.currentSticker = sticker;
     editingVC.layerController.currentItem = sticker;

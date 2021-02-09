@@ -177,15 +177,21 @@
             [self.view insertSubview:item.baseView aboveSubview:self.backgroundImageView];
         }
 
-        item.isTemplateItem = false;
     }
     
+    // 인덱스 맞춰주기
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {
-            NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.backgroundImageView];
-            item.indexInLayer = [NSString stringWithFormat:@"%ld",backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
-            [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
+            if (item.isTemplateItem) {
+                NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.backgroundImageView];
+                item.indexInLayer = [NSString stringWithFormat:@"%ld",backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
+                [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
+            } else {
+                [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
+            }
         }
+        
+        item.isTemplateItem = false;
     }
     
     UIImage *viewImage = [self.view toImage];

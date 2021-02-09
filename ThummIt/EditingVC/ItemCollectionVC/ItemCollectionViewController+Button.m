@@ -163,16 +163,19 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [editingVC.currentItem.baseView removeFromSuperview];
-    editingVC.originalPhotoFrame.baseView.hidden = false;
     
-    // UI 돌려놓기
-    [editingVC.layerController hideTransparentView];
+    for (PhotoFrame *photoFrame in SaveManager.sharedInstance.currentProject.photoFrames) {
+        if (photoFrame == editingVC.originalPhotoFrame) {
+            [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
+            break;
+        }
+    }
     [editingVC showNavigationItems];
-    // albumVC 없애주기
+    [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
-    [editingVC.albumVC dismissSelf];
-    editingVC.currentItem = nil;
 
+    editingVC.currentItem = nil;
+    editingVC.currentText = nil;
 }
 
 -(void)cancelAddingText{
@@ -196,6 +199,7 @@
     text.baseView.transform = editingVC.originalTransform;
     text.textView.text = editingVC.originalText;
     text.text = editingVC.originalText;
+    text.textView.backgroundAttributedTexts = [NSMutableArray array];
     
     [text applyTypo:editingVC.originalTypo];
     
@@ -225,10 +229,13 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     Sticker *sticker = (Sticker *)editingVC.currentItem;
-    sticker.baseView.center = editingVC.originalCenter;
-    sticker.baseView.transform = editingVC.originalTransform;
-    sticker.backgroundImageView.image = [UIImage imageNamed:editingVC.originalStickerImageName];
-    
+    [sticker.baseView removeFromSuperview];
+    for (Sticker *sticker in SaveManager.sharedInstance.currentProject.stickers) {
+        if (sticker == editingVC.originalSticker) {
+            [editingVC.view insertSubview:sticker.baseView atIndex:editingVC.originalIndexInLayer];
+            break;
+        }
+    }
     [editingVC showNavigationItems];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
@@ -251,7 +258,7 @@
     [editingVC.albumVC dismissSelf];
     [SaveManager.sharedInstance addItem:editingVC.currentItem];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
@@ -270,11 +277,11 @@
     [editingVC showNavigationItems];
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentItem;
     photoFrame.phAsset = PhotoManager.sharedInstance.phassets[editingVC.albumVC.selectedIndexPath.item];
-    NSUInteger originalIndex = [editingVC.view.subviews indexOfObject:editingVC.originalPhotoFrame.baseView];
-    photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",originalIndex];
-    [editingVC.view insertSubview:photoFrame.baseView atIndex:originalIndex];
-
-    [ItemManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
+    photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",editingVC.originalIndexInLayer];
+    [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
+    
+    [SaveManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
+    [SaveManager.sharedInstance addItem:photoFrame];
 
     // albumVC 없애주기
     [editingVC.itemCollectionVC dismissSelf];
@@ -284,8 +291,7 @@
     editingVC.currentItem = nil;
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-    [ItemManager.sharedInstance addItem:photoFrame];
-
+    [SaveManager.sharedInstance save];
 }
 
 -(void)doneAddingText{
@@ -296,15 +302,10 @@
     [editingVC.itemCollectionVC dismissSelf];
     
     if (editingVC.currentText.isTypedByUser) {
-        editingVC.currentText.textView.tintColor = [UIColor clearColor];
-        [SaveManager.sharedInstance addItem:editingVC.currentItem];
-        for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-        }
         [editingVC.currentText.textView resignFirstResponder];
         [SaveManager.sharedInstance addItem:editingVC.currentItem];
         for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+            item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
         }
         UIImage *viewImage = [editingVC.view toImage];
         SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
@@ -326,16 +327,19 @@
 
     [SaveManager.sharedInstance addItem:editingVC.currentItem];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-    item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+    item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
+
+
+    [editingVC.currentText.textView resignFirstResponder];
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance save];
 
-
-    [editingVC.currentText.textView resignFirstResponder];
     editingVC.currentItem = nil;
     editingVC.currentText = nil;
+    
+
 }
 
 -(void)doneAddingSticker{
@@ -346,7 +350,7 @@
     [editingVC.itemCollectionVC dismissSelf];
     [SaveManager.sharedInstance addItem:editingVC.currentItem];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
@@ -364,8 +368,9 @@
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [SaveManager.sharedInstance addItem:editingVC.currentItem];
+    [SaveManager.sharedInstance deleteItem:editingVC.originalSticker];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+        item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];

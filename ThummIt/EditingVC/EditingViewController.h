@@ -51,7 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) Typography *originalTypo; // text
 @property (strong, nonatomic) NSString *originalText;
 
-@property (strong, nonatomic) NSString *originalStickerImageName; // sticker
+@property (strong, nonatomic) NSString *originalStickerBGImageName; // sticker
+@property (strong, nonatomic) UIColor *originalTintColor;
+@property (strong, nonatomic) Sticker *originalSticker;
+@property (nonatomic) BOOL originalColorChangable;
+@property (nonatomic) NSUInteger originalIndexInLayer;
 
 @property (strong, nonatomic, nullable) UIColor *originalColor; // bgColor
 

@@ -78,7 +78,7 @@
     NSData* typoData = [NSKeyedArchiver archivedDataWithRootObject:self.typo];
     [encoder encodeObject:typoData forKey:@"typo"];
     [encoder encodeObject:[NSNumber numberWithInteger:self.textAlignment] forKey:@"textAlignment"];
-    [encoder encodeObject:[NSValue valueWithCGPoint:self.center] forKey:@"center"];
+    [encoder encodeObject:[NSValue valueWithCGPoint:self.baseView.center] forKey:@"center"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotation"];
     [encoder encodeObject:[NSNumber numberWithBool:self.isTypedByUser] forKey:@"isTypedByUser"];
@@ -152,7 +152,6 @@
     // 1. 텍스트뷰에 타이포 적용
     [self.textView setUpTypography:typo range:range]; // 타이포 텍스트뷰에 적용하는 부분
     self.backgroundAttributedTexts = self.textView.backgroundAttributedTexts; // 나중에 복구 위해
-//    self.textView.backgroundAttributedTexts = [NSMutableArray array];
 
     // 2. 배경이미지뷰에 타이포 적용
     if (typo.bgImageName) { // 배경이미지뷰 달아야하면, 달기
