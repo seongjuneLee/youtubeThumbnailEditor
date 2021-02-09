@@ -32,8 +32,7 @@
         self.currentText.textView.text = self.justTyped;//추가로 입력된 글자만 출력되게
         self.currentText.textView.tintColor = self.originalCursorColor;
     }
-//    NSLog(@"%@",self.currentText.text);
-//    NSLog(@"%@",self.currentText.typo.name);
+
     // 배경이미지 있는 타이포의 경우 사이즈 조정
     if (self.currentText.typo.bgImageName) {
         [self.currentText updateBackgroundImageViewFrame:self.currentText.typo];
