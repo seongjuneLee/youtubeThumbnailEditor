@@ -212,6 +212,7 @@
 		6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFDE25A887010023485C /* NSArray+Additions.m */; };
 		6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFEB25A892B00023485C /* NormalTypo.m */; };
 		6EC4DFF225A895240023485C /* TypoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFF125A895240023485C /* TypoManager.m */; };
+		6EC7644525D2222F009FF873 /* Fraunces_9pt-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC7644425D22204009FF873 /* Fraunces_9pt-SemiBold.otf */; };
 		6ED138FA25B8507A00012144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED138F925B8507A00012144 /* AppDelegate.swift */; };
 		6ED1398C25B872F600012144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1398B25B872F600012144 /* SceneDelegate.swift */; };
 		6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */; };
@@ -810,6 +811,7 @@
 		6EC4DFF025A895240023485C /* TypoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypoManager.h; sourceTree = "<group>"; };
 		6EC4DFF125A895240023485C /* TypoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypoManager.m; sourceTree = "<group>"; };
 		6EC4DFFD25A8955E0023485C /* TypoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypoHeader.h; sourceTree = "<group>"; };
+		6EC7644425D22204009FF873 /* Fraunces_9pt-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces_9pt-SemiBold.otf"; sourceTree = "<group>"; };
 		6ED138F925B8507A00012144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED1398B25B872F600012144 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
@@ -2088,6 +2090,7 @@
 				6EBEB5DD25C30BFD0017C640 /* KCC김훈체(MAC용).otf */,
 				6EBEB5DC25C30BFD0017C640 /* Recipekorea 레코체 FONT.otf */,
 				6EF0C91125CD207D00BE7573 /* BinggraeⅡ-Bold.otf */,
+				6EC7644425D22204009FF873 /* Fraunces_9pt-SemiBold.otf */,
 				6EF0C91025CD207C00BE7573 /* NEXON Lv2 Gothic OTF.otf */,
 				6EBEB50E25C14C1E0017C640 /* NanumSquareOTFBold.otf */,
 				6EBEB60525C328AE0017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf */,
@@ -2904,6 +2907,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EC7644525D2222F009FF873 /* Fraunces_9pt-SemiBold.otf in Resources */,
 				6E88303625CDB0A80025B8A5 /* BinggraeSamanco-Bold.otf in Resources */,
 				6E88303225CDA7FA0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf in Resources */,
 				6EF0C91925CD21CE00BE7573 /* NEXON Lv2 Gothic OTF.otf in Resources */,

@@ -46,7 +46,7 @@
     
     Text *logoText = [[Text alloc] init];
     WorkManLogo2 *logo = [WorkManLogo2 workManLogo2];
-    logoText.scale = 0.13;
+    logoText.scale = 0.12;
     logoText.center = CGPointMake(0.905, 0.1);
     logoText.isTemplateItem = true;
     logoText.indexInLayer = @"0";
@@ -96,7 +96,7 @@
     WorkManLogo2 *center = [WorkManLogo2 workManLogo2];
     center.textColor = [UIColor colorWithRed:(0/255.0) green:(0/255.0) blue:(0/255.0) alpha:1];
     blackText.scale = 0.47;
-    blackText.center = CGPointMake(0.275,0.46);
+    blackText.center = CGPointMake(0.29,0.46);
     blackText.isTemplateItem = true;
     blackText.indexInLayer = @"4";
     blackText.text = @"유튜브 연봉 궁금해?";
@@ -106,8 +106,8 @@
     
     Text *letsGoText = [[Text alloc] init];
     WorkmanYelloewTitle *upTitle = [WorkmanYelloewTitle workmanYelloewTitle];
-    letsGoText.scale = 0.2;
-    letsGoText.center = CGPointMake(0.12,0.73);
+    letsGoText.scale = 0.19;
+    letsGoText.center = CGPointMake(0.128,0.73);
     letsGoText.isTemplateItem = true;
     letsGoText.indexInLayer = @"5";
     letsGoText.text = @"가자! ";
@@ -116,9 +116,9 @@
     
     Text *youtubeText2 = [[Text alloc] init];
     WorkmanYelloewTitle *yellow = [WorkmanYelloewTitle workmanYelloewTitle];
-    yellow.textColor = [UIColor colorWithRed:(238/255.0) green:(230/255.0) blue:(50/255.0) alpha:1] ;
-    youtubeText2.scale = 0.23;
-    youtubeText2.center = CGPointMake(0.32,0.73);
+    yellow.textColor = [UIColor colorWithRed:(238/255.0) green:(230/255.0) blue:(50/255.0) alpha:1];
+    youtubeText2.scale = 0.225;
+    youtubeText2.center = CGPointMake(0.328,0.73);
     youtubeText2.isTemplateItem = true;
     youtubeText2.indexInLayer = @"5";
     youtubeText2.text = @"유튜브";
@@ -127,7 +127,7 @@
 
     Text *headquatersText = [[Text alloc] init];
     headquatersText.scale = 0.24;
-    headquatersText.center = CGPointMake(0.53,0.73);
+    headquatersText.center = CGPointMake(0.548,0.73);
     headquatersText.isTemplateItem = true;
     headquatersText.indexInLayer = @"5";
     headquatersText.text = @"본사로!";
@@ -143,7 +143,7 @@
     WorkManRedTitle *blueTypo = [WorkManRedTitle workManRedTitle];
     blueTypo.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
     blueYoutube.scale = 0.21;
-    blueYoutube.center = CGPointMake(0.13,0.87);
+    blueYoutube.center = CGPointMake(0.145,0.87);
     blueYoutube.isTemplateItem = true;
     blueYoutube.indexInLayer = @"6";
     blueYoutube.text = @"유튜브";
@@ -153,7 +153,7 @@
     Text *visitingText = [[Text alloc] init];
     WorkManSecondTitle *secondTitle = [WorkManSecondTitle workManSecondTitle];
     visitingText.scale = 0.15;
-    visitingText.center = CGPointMake(0.31,0.87);
+    visitingText.center = CGPointMake(0.32,0.87);
     visitingText.isTemplateItem = true;
     visitingText.indexInLayer = @"6";
     visitingText.text = @"탐방";

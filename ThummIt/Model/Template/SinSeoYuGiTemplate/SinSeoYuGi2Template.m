@@ -87,25 +87,25 @@
     
     SinSeoYuGiExc2Sticker *exc2Sticker = [SinSeoYuGiExc2Sticker sinSeoYuGiExc2Sticker];
     exc2Sticker.indexInLayer =@"3";
-    exc2Sticker.scale = 0.21;
+    exc2Sticker.scale = 0.17;
     exc2Sticker.isTemplateItem = true;
     exc2Sticker.rotationDegree = 340;
-    exc2Sticker.center = CGPointMake(0.68, 0.35);
+    exc2Sticker.center = CGPointMake(0.63, 0.32);
     [self.stickers addObject:exc2Sticker];
     
     SinSeoYuGiQu2Sticker *quSticker = [SinSeoYuGiQu2Sticker sinSeoYuGiQu2Sticker];
     quSticker.indexInLayer =@"4";
-    quSticker.scale = 0.25;
+    quSticker.scale = 0.18;
     quSticker.isTemplateItem = true;
-    quSticker.center = CGPointMake(0.75, 0.37);
+    quSticker.center = CGPointMake(0.705, 0.3);
     [self.stickers addObject:quSticker];
     
     StartleSticker1 *effectSticker = [StartleSticker1 startleSticker1];
     effectSticker.indexInLayer =@"5";
-    effectSticker.scale = 0.2;
+    effectSticker.scale = 0.15;
     effectSticker.isTemplateItem = true;
-    effectSticker.rotationDegree = 20;
-    effectSticker.center = CGPointMake(0.31, 0.38);
+    effectSticker.rotationDegree = 17;
+    effectSticker.center = CGPointMake(0.29, 0.31);
     [self.stickers addObject:effectSticker];
     
 }

@@ -82,7 +82,7 @@
     //MY DAILY VLOG
     Text *cebuText = [[Text alloc] init];
     VlogSummer *cebu = [VlogSummer vlogSummer];
-    cebuText.scale = 0.043;
+    cebuText.scale = 0.039;
     cebuText.center = CGPointMake(0.5, 0.5);
     cebuText.isTemplateItem = true;
     cebuText.indexInLayer = @"0";

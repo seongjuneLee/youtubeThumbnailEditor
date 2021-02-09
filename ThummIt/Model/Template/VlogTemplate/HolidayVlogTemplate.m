@@ -61,7 +61,7 @@
 -(void)setUpStickers{
 
     HeartSticker1 *vlogHeartSticker1 = [HeartSticker1 heartSticker1];
-    vlogHeartSticker1.scale = 0.135;
+    vlogHeartSticker1.scale = 0.085;
     vlogHeartSticker1.tintColor = [UIColor colorWithRed:236/255.0 green:159/255.0 blue:158/255.0 alpha:1];
     vlogHeartSticker1.rotationDegree = -30;
     vlogHeartSticker1.isTemplateItem = true;
@@ -70,17 +70,17 @@
     [self.stickers addObject:vlogHeartSticker1];
 
     HeartSticker1 *vlogHeartSticker2 = [HeartSticker1 heartSticker1];
-    vlogHeartSticker2.scale = 0.13;
+    vlogHeartSticker2.scale = 0.08;
     vlogHeartSticker2.tintColor = [UIColor colorWithRed:254/255.0 green:232/255.0 blue:228/255.0 alpha:1];
     vlogHeartSticker2.rotationDegree = -20;
     vlogHeartSticker2.isTemplateItem = true;
     vlogHeartSticker2.indexInLayer = @"1";
-    vlogHeartSticker2.center = CGPointMake(0.28, 0.42);
+    vlogHeartSticker2.center = CGPointMake(0.28, 0.4);
     [self.stickers addObject:vlogHeartSticker2];
     
     
     HeartSticker1 *vlogHeartSticker3 = [HeartSticker1 heartSticker1];
-    vlogHeartSticker3.scale = 0.145;
+    vlogHeartSticker3.scale = 0.095;
     vlogHeartSticker3.tintColor = [UIColor colorWithRed:236/255.0 green:159/255.0 blue:158/255.0 alpha:1];
     vlogHeartSticker3.rotationDegree = -30;
     vlogHeartSticker3.isTemplateItem = true;
@@ -89,7 +89,7 @@
     [self.stickers addObject:vlogHeartSticker3];
 
     HeartSticker1 *vlogHeartSticker4 = [HeartSticker1 heartSticker1];
-    vlogHeartSticker4.scale = 0.125;
+    vlogHeartSticker4.scale = 0.075;
     vlogHeartSticker4.tintColor = [UIColor colorWithRed:254/255.0 green:232/255.0 blue:228/255.0 alpha:1];
     vlogHeartSticker4.rotationDegree = -20;
     vlogHeartSticker4.isTemplateItem = true;
@@ -98,7 +98,7 @@
     [self.stickers addObject:vlogHeartSticker4];
     
     HeartSticker1 *vlogHeartSticker5 = [HeartSticker1 heartSticker1];
-    vlogHeartSticker5.scale = 0.15;
+    vlogHeartSticker5.scale = 0.1;
     vlogHeartSticker5.tintColor = [UIColor colorWithRed:236/255.0 green:159/255.0 blue:158/255.0 alpha:1];
     vlogHeartSticker5.rotationDegree = 10;
     vlogHeartSticker5.isTemplateItem = true;
@@ -107,7 +107,7 @@
     [self.stickers addObject:vlogHeartSticker5];
 
     HeartSticker1 *vlogHeartSticker6 = [HeartSticker1 heartSticker1];
-    vlogHeartSticker6.scale = 0.14;
+    vlogHeartSticker6.scale = 0.08;
     vlogHeartSticker6.tintColor = [UIColor colorWithRed:254/255.0 green:232/255.0 blue:228/255.0 alpha:1];
     vlogHeartSticker6.rotationDegree = 0;
     vlogHeartSticker6.isTemplateItem = true;
@@ -116,7 +116,7 @@
     [self.stickers addObject:vlogHeartSticker6];
     
     HeartSticker1 *vlogHeartSticker7 = [HeartSticker1 heartSticker1];
-    vlogHeartSticker7.scale = 0.145;
+    vlogHeartSticker7.scale = 0.095;
     vlogHeartSticker7.tintColor = [UIColor colorWithRed:236/255.0 green:159/255.0 blue:158/255.0 alpha:1];
     vlogHeartSticker7.rotationDegree = 30;
     vlogHeartSticker7.isTemplateItem = true;
@@ -125,7 +125,7 @@
     [self.stickers addObject:vlogHeartSticker7];
 
     HeartSticker1 *vlogHeartSticker8 = [HeartSticker1 heartSticker1];
-    vlogHeartSticker8.scale = 0.13;
+    vlogHeartSticker8.scale = 0.08;
     vlogHeartSticker8.tintColor = [UIColor colorWithRed:254/255.0 green:232/255.0 blue:228/255.0 alpha:1];
     vlogHeartSticker8.rotationDegree = 10;
     vlogHeartSticker8.isTemplateItem = true;

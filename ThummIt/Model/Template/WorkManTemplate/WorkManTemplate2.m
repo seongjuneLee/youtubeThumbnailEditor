@@ -45,7 +45,7 @@
     
     Text *logoText = [[Text alloc] init];
     WorkManLogo *logo = [WorkManLogo workManLogo];
-    logoText.scale = 0.13;
+    logoText.scale = 0.12;
     logoText.center = CGPointMake(0.095, 0.1);
     logoText.isTemplateItem = true;
     logoText.indexInLayer = @"0";
@@ -56,18 +56,19 @@
     
     Text *yellowTitle = [[Text alloc] init];
     WorkmanYelloewTitle *yellow = [WorkmanYelloewTitle workmanYelloewTitle];
-    yellowTitle.scale = 0.3;
+    yellow.textColor = [UIColor colorWithRed:(238/255.0) green:(230/255.0) blue:(50/255.0) alpha:1];
+    yellowTitle.scale = 0.255;
     yellowTitle.center = CGPointMake(0.5, 0.69);
     yellowTitle.isTemplateItem = true;
     yellowTitle.indexInLayer = @"1";
     yellowTitle.text = @"유튜브";
     yellowTitle.textView.text = @"유튜브";
-    yellowTitle.typo = yellow;    
+    yellowTitle.typo = yellow;
     [self.texts addObject:yellowTitle];
     
     Text *whiteTitle = [[Text alloc] init];
     WorkmanYelloewTitle *secondTitle2 = [WorkmanYelloewTitle workmanYelloewTitle];
-    whiteTitle.scale = 0.4;
+    whiteTitle.scale = 0.355;
     whiteTitle.center = CGPointMake(0.5,0.87);
     whiteTitle.isTemplateItem = true;
     whiteTitle.indexInLayer = @"2";
@@ -80,7 +81,7 @@
     Text *handText = [[Text alloc] init];
     WorkManHandWrite *hand = [WorkManHandWrite workManHandWrite];
     handText.scale = 0.125;
-    handText.center = CGPointMake(0.13,0.230);
+    handText.center = CGPointMake(0.145,0.230);
     handText.isTemplateItem = true;
     handText.indexInLayer = @"3";
     handText.text = @"(당황)";
@@ -90,7 +91,7 @@
     
     Text *whyText = [[Text alloc] init];
     WorkManFast *why = [WorkManFast workManFast];
-    whyText.scale = 0.15;
+    whyText.scale = 0.13;
     whyText.rotationDegree = -20;
     whyText.center = CGPointMake(0.34,0.44);
     whyText.isTemplateItem = true;
@@ -118,9 +119,9 @@
     
     WorkManStartleSticker *startleSticker = [WorkManStartleSticker workManStartleSticker];
     startleSticker.indexInLayer = @"6";
-    startleSticker.scale = 0.17;
+    startleSticker.scale = 0.08;
     startleSticker.isTemplateItem = true;
-    startleSticker.center = CGPointMake(0.34, 0.32);
+    startleSticker.center = CGPointMake(0.31, 0.19);
     
     [self.stickers addObject:startleSticker];
     

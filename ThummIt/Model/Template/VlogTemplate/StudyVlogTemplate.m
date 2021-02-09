@@ -14,7 +14,7 @@
     self = [super init];
     if(self){
         
-        self.previewImageName = @"studyVlogPreView";
+        self.previewImageName = @"studyVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StudyVlogTemplate";
         self.backgroundImageName = @"";
@@ -87,17 +87,17 @@
     
     VlogTapeSticker *upTapeSticker = [VlogTapeSticker vlogTapeSticker];
     upTapeSticker.indexInLayer =@"3";
-    upTapeSticker.scale = 0.3;
+    upTapeSticker.scale = 0.225;
     upTapeSticker.isTemplateItem = true;
-    upTapeSticker.center = CGPointMake(0.21, 0.23);
+    upTapeSticker.center = CGPointMake(0.17, 0.18);
 
     [self.stickers addObject:upTapeSticker];
     
     VlogTapeSticker *underTapeSticker = [VlogTapeSticker vlogTapeSticker];
     underTapeSticker.indexInLayer =@"4";
-    underTapeSticker.scale = 0.3;
+    underTapeSticker.scale = 0.225;
     underTapeSticker.isTemplateItem = true;
-    underTapeSticker.center = CGPointMake(0.87, 0.9);
+    underTapeSticker.center = CGPointMake(0.83, 0.82);
 
     [self.stickers addObject:underTapeSticker];
     

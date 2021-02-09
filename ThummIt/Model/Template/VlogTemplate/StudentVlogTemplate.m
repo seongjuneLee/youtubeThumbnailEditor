@@ -130,8 +130,8 @@
     Text *greenVlogText = [[Text alloc] init];
     VlogStudentTypo *greenVlog = [VlogStudentTypo vlogStudentTypo];
     greenVlog.textColor = [UIColor colorWithRed:(244/255.0) green:(235/255.0) blue:(168/255.0) alpha:1] ;
-    greenVlogText.scale = 0.31;
-    greenVlogText.center = CGPointMake(0.505, 0.73);
+    greenVlogText.scale = 0.29;
+    greenVlogText.center = CGPointMake(0.515, 0.73);
     greenVlogText.isTemplateItem = true;
     greenVlogText.indexInLayer =@"5";
     greenVlogText.text = @"아싸 Vlog";
