@@ -17,6 +17,10 @@
 #import "ItemManager.h"
 #import "Typography.h"
 #import "UndoManager.h"
+#import "TypoHeader.h"
+#import "PhotoFrameHeader.h"
+#import "StickerHeader.h"
+
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
 

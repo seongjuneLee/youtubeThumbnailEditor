@@ -81,37 +81,46 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [sticker loadView];
     [sticker scaleItem];
-
+    NSLog(@"editingvc original sticker image %@",editingVC.originalStickerBGImageName);
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
-    if (editingVC.currentItem) {
+    if (editingVC.currentSticker) {
         
-        Sticker *currentSticker = (Sticker *)editingVC.currentItem;
-        
-        sticker.baseView.center = currentSticker.baseView.center;
-        sticker.baseView.transform = currentSticker.baseView.transform;
-        sticker.tintColor = currentSticker.tintColor;
-        [editingVC.currentItem.baseView removeFromSuperview];
-        
-    } else {
-        sticker.baseView.center = editingVC.bgView.center;
-        sticker.center = editingVC.bgView.center;
-    }
-    [editingVC.layerController bringCurrentItemToFront:sticker];
+        Sticker *currentSticker = (Sticker *)editingVC.currentSticker;
+        currentSticker.cannotChangeColor = sticker.cannotChangeColor;
+        if (!currentSticker.cannotChangeColor) {
+            currentSticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            [currentSticker.backgroundImageView setTintColor:currentSticker.tintColor];
+            [UIView animateWithDuration:0.2 animations:^{
+                editingVC.hueSlider.alpha = 1.0;
+                editingVC.thumbCircleView.alpha = 1.0;
+            }];
+        } else{
+            currentSticker.backgroundImageView.image = image;
+            [editingVC hideAndInitSlider];
+        }
 
-    if (!sticker.cannotChangeColor) {
-        sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [sticker.backgroundImageView setTintColor:sticker.tintColor];
-        [UIView animateWithDuration:0.2 animations:^{
-            editingVC.hueSlider.alpha = 1.0;
-            editingVC.thumbCircleView.alpha = 1.0;
-        }];
-    } else{
-        sticker.backgroundImageView.image = image;
-        [editingVC hideAndInitSlider];
+    } else {
+
+        sticker.baseView.center = editingVC.bgView.center;
+        
+        if (!sticker.cannotChangeColor) {
+            sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+            [sticker.backgroundImageView setTintColor:sticker.tintColor];
+            [UIView animateWithDuration:0.2 animations:^{
+                editingVC.hueSlider.alpha = 1.0;
+                editingVC.thumbCircleView.alpha = 1.0;
+            }];
+        } else{
+            sticker.backgroundImageView.image = image;
+            [editingVC hideAndInitSlider];
+        }
+        editingVC.currentItem = sticker;
+        editingVC.currentSticker = sticker;
+
+        [editingVC.layerController bringCurrentItemToFront:sticker];
     }
-    NSLog(@"self.originalSticker change %@",editingVC.originalSticker);
-    editingVC.currentItem = sticker;
-    editingVC.currentSticker = sticker;
+
+    
     editingVC.layerController.currentItem = sticker;
     
 }

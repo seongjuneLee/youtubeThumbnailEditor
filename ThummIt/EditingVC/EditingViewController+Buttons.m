@@ -11,7 +11,6 @@
 #import "PhotoFrameCollectionController.h"
 #import "StickerCollectionController.h"
 #import "UIColor+Additions.h"
-#import "TypoHeader.h"
 #import "UndoManager.h"
 
 @implementation EditingViewController (Buttons)
@@ -61,16 +60,17 @@
     self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];
     [self addAlbumVC];
-    
-    PhotoFrame *recentPhotoFrame;
+
+    PhotoFrame *recentPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
+;
     for (NSArray *photoFrames in ItemManager.sharedInstance.photoFrameDatas) {
         for (PhotoFrame *photoFrame in photoFrames) {
             if ([photoFrame isKindOfClass:self.recentPhotoFrame.class]) {
                 recentPhotoFrame = photoFrame;
+                break;
             }
         }
     }
-    
     [self.itemCollectionVC.photoFrameCollectionController didSelectPhotoFrame:recentPhotoFrame];
     
 }
@@ -164,6 +164,16 @@
     self.itemCollectionVC.itemType = StickerType;
     [self addItemCollectionVC];
     // 추가 필요
+    Sticker *recentSticker = [CircleSticker1 circleSticker1];
+    for (NSArray *stickers in ItemManager.sharedInstance.stickerDatas) {
+        for (Sticker *sticker in stickers) {
+            if ([sticker isKindOfClass:self.recentSticker.class]) {
+                recentSticker = sticker;
+            }
+        }
+    }
+    
+    [self.itemCollectionVC.stickerCollectionController didSelectSticker:recentSticker];
    
 }
 

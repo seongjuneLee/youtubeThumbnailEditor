@@ -58,7 +58,7 @@
 
         Sticker *sticker = (Sticker *)item;
         self.currentItem = sticker; // currentsicker가 null이라 Currentitem으로 받음일단
-        
+        self.currentSticker = sticker;
         self.originalCenter = sticker.baseView.center;
         self.originalTransform = sticker.baseView.transform;
         self.originalStickerBGImageName = sticker.backgroundImageName;
@@ -66,7 +66,6 @@
         self.originalColorChangable = sticker.cannotChangeColor;
         self.originalSticker = sticker;
         self.originalIndexInLayer = sticker.indexInLayer.integerValue;
-        NSLog(@"self.originalIndexInLayer %ld",self.originalIndexInLayer);
 
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
@@ -81,14 +80,10 @@
 -(void)photoFrameTappedTaskWhenAuthorizedWithItem:(Item *)item{
     
     PhotoFrame *photoFrame = (PhotoFrame *)item;
-    self.currentItem = photoFrame;
+    self.currentItem = [photoFrame copy];
+    self.currentPhotoFrame = [photoFrame copy];
     self.originalPhotoFrame = photoFrame;
-    self.originalCenter = photoFrame.baseView.center;
-    self.originalTransform = photoFrame.baseView.transform;
-    
-    self.originalPhotoFrameImage = photoFrame.photoImageView.image;
-    self.originalPhotoImageViewCenter = photoFrame.photoImageView.center;
-    self.originalPhotoImageTransform = photoFrame.photoImageView.transform;
+    self.originalPhotoFrame.baseView.hidden = true;
     self.originalIndexInLayer = photoFrame.indexInLayer.integerValue;
 
     [self.layerController showTransparentView];
