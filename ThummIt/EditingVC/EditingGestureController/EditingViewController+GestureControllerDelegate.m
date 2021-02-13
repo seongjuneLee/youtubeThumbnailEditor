@@ -51,6 +51,12 @@
         [self.layerController bringCurrentItemToFront:self.currentItem];
         self.itemCollectionVC.itemType = TextType;
         
+        if(!text.typo.cannotChangeColor){
+            [UIView animateWithDuration:0.2 animations:^{
+                self.hueSlider.alpha = 1.0;
+            }];
+        }
+        
         [self addItemCollectionVC];
 
     } else if([item isKindOfClass:Sticker.class]){
@@ -66,6 +72,12 @@
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
         self.itemCollectionVC.itemType = StickerType;
+        
+        if(!sticker.cannotChangeColor){
+            [UIView animateWithDuration:0.2 animations:^{
+                self.hueSlider.alpha = 1.0;
+            }];
+        }
         
         [self addItemCollectionVC];
 

@@ -146,7 +146,7 @@
         [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
         self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
-        if(!editingVC.currentItem.cannotChangeColor){
+        if(!editingVC.currentItem.cannotChangeColor || [editingVC.currentItem isKindOfClass:PhotoFrame.class] ){
             [editingVC hideAndInitSlider];
         }
 
@@ -181,7 +181,6 @@
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
-        
         for (GuideLine *guideLine in self.guideLines) {
             [guideLine removeFromSuperView];
         }
@@ -674,7 +673,7 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     float imageViewBottomY = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
-    if (currentPointY >= imageViewBottomY) {
+    if (currentPointY >= imageViewBottomY || editingVC.modeController.editingMode == NormalMode || [editingVC.currentItem isKindOfClass:PhotoFrame.class] ) {
         [UIView animateWithDuration:0.2 animations:^{
             [editingVC hideAndInitSlider];
         }];

@@ -53,66 +53,66 @@
 
 -(void)setUpTexts{
 
-//    //로고
-//    Text *logoText = [[Text alloc] init];
-//    RunningManLogoTypo *logo = [RunningManLogoTypo runningManLogoTypo];
-//    logoText.indexInLayer =@"0";
-//    logoText.text = @"러닝맨";
-//    logoText.textView.text = logoText.text;
-//    logoText.scale = 0.09;
-//    logoText.center = CGPointMake(0.09, 0.13);
-//    logoText.isTemplateItem = true;
-//    logoText.typo = logo;
-//    [self.texts addObject:logoText];
-//    
-//    //랜덤게임.zip
-//    Text *randomGameText = [[Text alloc] init];
-//    YellowGradientTypo *yellowGradientTypo = [YellowGradientTypo yellowGradientTypo];
-//    randomGameText.indexInLayer =@"1";
-//    randomGameText.text = @"랜덤게임.zip";
-//    randomGameText.textView.text = randomGameText.text;
-//    randomGameText.scale = 0.5;
-//    randomGameText.center = CGPointMake(0.25, 0.89);
-//    randomGameText.isTemplateItem = true;
-//    randomGameText.typo = yellowGradientTypo;
-//    [self.texts addObject:randomGameText];
-//    
-//    //러닝맨
-//    Text *learningManText = [[Text alloc] init];
-//    WorkingManNameTypo *workingManNameTypo = [WorkingManNameTypo workingManNameTypo];
-//    learningManText.indexInLayer =@"2";
-//    learningManText.text = @"러닝맨";
-//    learningManText.textView.text = learningManText.text;
-//    learningManText.scale = 0.19;
-//    learningManText.center = CGPointMake(0.1, 0.75);
-//    learningManText.isTemplateItem = true;
-//    learningManText.typo = workingManNameTypo;
-//    [self.texts addObject:learningManText];
-//    
-//    //(식은땀)
-//    Text *ddamText = [[Text alloc] init];
-//    DDamTypo *ddam = [DDamTypo ddamTypo];
-//    ddamText.indexInLayer =@"3";
-//    ddamText.text = @"(식은땀)";
-//    ddamText.textView.text = ddamText.text;
-//    ddamText.scale = 0.24;
-//    ddamText.center = CGPointMake(0.71, 0.21);
-//    ddamText.isTemplateItem = true;
-//    ddamText.typo = ddam;
-//    [self.texts addObject:ddamText];
-//    
-//    //하고싶은말 있는데
-//    Text *redshoutingText1 = [[Text alloc] init];
-//    RedShoutingTypo *redshoutingTypo1 = [RedShoutingTypo redShoutingTypo];
-//    redshoutingText1.indexInLayer =@"4";
-//    redshoutingText1.text = @"하고싶은말 있는데\n해도 되나요?";
-//    redshoutingText1.textView.text = redshoutingText1.text;
-//    redshoutingText1.scale = 0.3;
-//    redshoutingText1.rotationDegree = 355;
-//    redshoutingText1.center = CGPointMake(0.75, 0.72);
-//    redshoutingText1.isTemplateItem = true;
-//    redshoutingText1.typo = redshoutingTypo1;
-//    [self.texts addObject:redshoutingText1];
+    //로고
+    Text *logoText = [[Text alloc] init];
+    RunningManLogoTypo *logo = [RunningManLogoTypo runningManLogoTypo];
+    logoText.indexInLayer =@"0";
+    logoText.text = @"러닝맨";
+    logoText.textView.text = logoText.text;
+    logoText.scale = 0.09;
+    logoText.center = CGPointMake(0.09, 0.13);
+    logoText.isTemplateItem = true;
+    logoText.typo = logo;
+    [self.texts addObject:logoText];
+    
+    //랜덤게임.zip
+    Text *randomGameText = [[Text alloc] init];
+    YellowGradientTypo *yellowGradientTypo = [YellowGradientTypo yellowGradientTypo];
+    randomGameText.indexInLayer =@"1";
+    randomGameText.text = @"랜덤게임.zip";
+    randomGameText.textView.text = randomGameText.text;
+    randomGameText.scale = 0.5;
+    randomGameText.center = CGPointMake(0.25, 0.89);
+    randomGameText.isTemplateItem = true;
+    randomGameText.typo = yellowGradientTypo;
+    [self.texts addObject:randomGameText];
+    
+    //러닝맨
+    Text *learningManText = [[Text alloc] init];
+    WorkingManNameTypo *workingManNameTypo = [WorkingManNameTypo workingManNameTypo];
+    learningManText.indexInLayer =@"2";
+    learningManText.text = @"러닝맨";
+    learningManText.textView.text = learningManText.text;
+    learningManText.scale = 0.19;
+    learningManText.center = CGPointMake(0.1, 0.75);
+    learningManText.isTemplateItem = true;
+    learningManText.typo = workingManNameTypo;
+    [self.texts addObject:learningManText];
+    
+    //(식은땀)
+    Text *ddamText = [[Text alloc] init];
+    DDamTypo *ddam = [DDamTypo ddamTypo];
+    ddamText.indexInLayer =@"3";
+    ddamText.text = @"(식은땀)";
+    ddamText.textView.text = ddamText.text;
+    ddamText.scale = 0.24;
+    ddamText.center = CGPointMake(0.71, 0.21);
+    ddamText.isTemplateItem = true;
+    ddamText.typo = ddam;
+    [self.texts addObject:ddamText];
+    
+    //하고싶은말 있는데
+    Text *redshoutingText1 = [[Text alloc] init];
+    RedShoutingTypo *redshoutingTypo1 = [RedShoutingTypo redShoutingTypo];
+    redshoutingText1.indexInLayer =@"4";
+    redshoutingText1.text = @"하고싶은말 있는데\n해도 되나요?";
+    redshoutingText1.textView.text = redshoutingText1.text;
+    redshoutingText1.scale = 0.3;
+    redshoutingText1.rotationDegree = 355;
+    redshoutingText1.center = CGPointMake(0.75, 0.72);
+    redshoutingText1.isTemplateItem = true;
+    redshoutingText1.typo = redshoutingTypo1;
+    [self.texts addObject:redshoutingText1];
     
     //이 형은 룰을
     Text *redshoutingText2 = [[Text alloc] init];
