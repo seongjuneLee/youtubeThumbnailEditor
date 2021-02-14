@@ -81,12 +81,12 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [sticker loadView];
     [sticker scaleItem];
-    NSLog(@"editingvc original sticker image %@",editingVC.originalStickerBGImageName);
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
     if (editingVC.currentSticker) {
         
         Sticker *currentSticker = (Sticker *)editingVC.currentSticker;
         currentSticker.cannotChangeColor = sticker.cannotChangeColor;
+        currentSticker.backgroundImageName = sticker.backgroundImageName;
         if (!currentSticker.cannotChangeColor) {
             currentSticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [currentSticker.backgroundImageView setTintColor:currentSticker.tintColor];

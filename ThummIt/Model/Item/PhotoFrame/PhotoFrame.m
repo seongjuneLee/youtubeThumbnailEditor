@@ -81,6 +81,7 @@
         self.photoRotationDegree = [[decoder decodeObjectForKey:@"photoRotationDegree"] floatValue];
         self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
         self.isCircle = [[decoder decodeObjectForKey:@"isCircle"] boolValue];
+        self.isFixedPhotoFrame = [[decoder decodeObjectForKey:@"isFixedPhotoFrame"] boolValue];
 
     }
     return self;
@@ -95,6 +96,7 @@
     [encoder encodeObject:[NSNumber numberWithFloat:self.photoScale] forKey:@"photoScale"];
     [encoder encodeObject:[NSValue valueWithCGPoint:self.photoImageView.center] forKey:@"photoCenter"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.isCircle] forKey:@"isCircle"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.isFixedPhotoFrame] forKey:@"isFixedPhotoFrame"];
 
 }
 
@@ -113,20 +115,19 @@
     }
     [self addSubViewsToBaseView];
 
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
-    CGAffineTransform scaleTransform;
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
 
     float width = UIScreen.mainScreen.bounds.size.width;
     float scale = width/self.baseView.frameWidth;
-    if (self.isFixedPhotoFrame) {
-        scaleTransform = CGAffineTransformMakeScale(self.scale,self.scale);
-
+    if (!self.isFixedPhotoFrame) {
+        CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
+        self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
     } else {
-        scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
+        self.baseView.transform = rotationTransform;
     }
-    self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-    self.baseView.center = self.center;
     
+    self.baseView.center = self.center;
+
 }
     
 -(void)setBaseViewFrame{

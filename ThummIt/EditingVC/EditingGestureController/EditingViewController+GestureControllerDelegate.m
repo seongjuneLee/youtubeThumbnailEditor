@@ -62,6 +62,7 @@
         self.originalCenter = sticker.baseView.center;
         self.originalTransform = sticker.baseView.transform;
         self.originalStickerBGImageName = sticker.backgroundImageName;
+        NSLog(@"sticker.backgroundImageName %@",sticker.backgroundImageName);
         self.originalTintColor = sticker.tintColor;
         self.originalColorChangable = sticker.cannotChangeColor;
         self.originalSticker = sticker;

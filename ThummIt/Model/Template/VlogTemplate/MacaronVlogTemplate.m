@@ -36,25 +36,22 @@
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
     float screenHeight = screenWidth * 9/16;
     
-    PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
+    PhotoFrame *photoFrame1 = [MacaronRectangle1 macaronRectangle1];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    photoFrame1.baseView.frameSize = CGSizeMake(screenWidth * 0.54, screenHeight);
     photoFrame1.center = CGPointMake(0.27, 0.5);
     [self.photoFrames addObject:photoFrame1];
     
     
-    PhotoFrame *photoFrame2 = [[PhotoFrame alloc] init];
+    PhotoFrame *photoFrame2 = [MacaronRectangle2 macaronRectangle2];
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
-    photoFrame2.baseView.frameSize = CGSizeMake(screenWidth * 0.46, screenHeight * 0.5);
     photoFrame2.center = CGPointMake(0.77, 0.25);
     [self.photoFrames addObject:photoFrame2];
     
-    PhotoFrame *photoFrame3 = [[PhotoFrame alloc] init];
+    PhotoFrame *photoFrame3 = [MacaronRectangle2 macaronRectangle2];
     photoFrame3.isTemplateItem = true;
     photoFrame3.isFixedPhotoFrame = true;
-    photoFrame3.baseView.frameSize = CGSizeMake(screenWidth * 0.46, screenHeight * 0.5);
     photoFrame3.center = CGPointMake(0.77, 0.75);
     [self.photoFrames addObject:photoFrame3];
     

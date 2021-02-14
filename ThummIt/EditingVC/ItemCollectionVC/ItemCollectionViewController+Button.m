@@ -45,7 +45,7 @@
     [editingVC hideAndInitSlider];
     [editingVC showNavigationItems];
     
-    editingVC.currentSticker = nil;
+    editingVC.currentItem = nil;
     editingVC.currentText = nil;
     editingVC.currentPhotoFrame = nil;
     editingVC.currentSticker = nil;
@@ -348,12 +348,8 @@
 
     [editingVC showNavigationItems];
     [editingVC.layerController hideTransparentView];
+    [editingVC.layerController recoverOriginalLayer];
     [editingVC.itemCollectionVC dismissSelf];
-    [SaveManager.sharedInstance addItem:editingVC.currentSticker];
-    [SaveManager.sharedInstance deleteItem:editingVC.originalSticker];
-    for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
-    }
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance save];

@@ -158,14 +158,13 @@
     self.bgView.backgroundColor = project.backgroundColor;
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
-        if (item.isTemplateItem || item.isFixedPhotoFrame) {
+        if (item.isTemplateItem) {
             float itemX = self.bgView.frameWidth * item.center.x;
             float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             item.center = itemCenter;
         }
         [item loadView];
-        
         if ([item isKindOfClass:Text.class]){
             Text *text = (Text *)item;
             text.textView.delegate = self;

@@ -1,13 +1,13 @@
 //
-//  WebDesignerVlogTemPlate.m
+//  WebDesignerVlogTemplate.m
 //  ThummIt
 //
-//  Created by 이성준 on 2021/01/30.
+//  Created by 이성준 on 2021/02/14.
 //
 
-#import "WebDesignerVlogTemPlate.h"
+#import "WebDesignerVlogTemplate.h"
 
-@implementation WebDesignerVlogTemPlate
+@implementation WebDesignerVlogTemplate
 
 -(id)init{
     
@@ -24,9 +24,9 @@
     
 }
 
-+(WebDesignerVlogTemPlate*)webDesignerVlogTemPlate{
++(WebDesignerVlogTemplate*)webDesignerVlogTemPlate{
     
-    WebDesignerVlogTemPlate* webDesignerVlogTemPlate = [[self alloc] init];
+    WebDesignerVlogTemplate* webDesignerVlogTemPlate = [[self alloc] init];
     
     return webDesignerVlogTemPlate;
     

@@ -1,17 +1,17 @@
 //
-//  DogVlogTemPlate.h
+//  DogVlogTemplate.h
 //  ThummIt
 //
-//  Created by 이성준 on 2021/01/30.
+//  Created by 이성준 on 2021/02/14.
 //
 
 #import "Template.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DogVlogTemPlate : Template
+@interface DogVlogTemplate : Template
 
-+(DogVlogTemPlate*)dogVlogTemPlate;
++(DogVlogTemplate*)dogVlogTemPlate;
 
 @end
 

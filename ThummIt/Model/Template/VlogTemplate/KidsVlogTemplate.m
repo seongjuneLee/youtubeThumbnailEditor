@@ -33,67 +33,25 @@
 
 -(void)setUpPhotoFrame{
     
-    float screenWidth = UIScreen.mainScreen.bounds.size.width;
-    float screenHeight = screenWidth * 9/16;
-    
-    PhotoFrame *smallPhotoFrame1 = [[PhotoFrame alloc] init];
+    PhotoFrame *smallPhotoFrame1 = [KidsTrapezoid1 kidsTrapezoid1];
     smallPhotoFrame1.isTemplateItem = true;
     smallPhotoFrame1.isFixedPhotoFrame = true;
     smallPhotoFrame1.indexInLayer = @"0";
-    smallPhotoFrame1.baseView.frameSize = CGSizeMake(screenWidth * 0.5, screenHeight * 0.5);
     smallPhotoFrame1.center = CGPointMake(0.75, 0.25);
-    
-    UIBezierPath *path1 = [[UIBezierPath alloc] init];
-    [path1 moveToPoint:CGPointMake(0, 0)];
-    [path1 addLineToPoint:CGPointMake(screenWidth * 0.5, 0)];
-    [path1 addLineToPoint:CGPointMake(screenWidth * 0.5, screenHeight * 0.5)];
-    [path1 addLineToPoint:CGPointMake(screenWidth * 0.1, screenHeight * 0.5)];
-    [path1 closePath];
-
-    CAShapeLayer *shapeLayer1 = [CAShapeLayer layer];
-    shapeLayer1.path = path1.CGPath;
-    smallPhotoFrame1.baseView.layer.mask = shapeLayer1;
-    
     [self.photoFrames addObject:smallPhotoFrame1];
     
-    PhotoFrame *smallPhotoFrame2 = [[PhotoFrame alloc] init];
+    PhotoFrame *smallPhotoFrame2 = [KidsTrapezoid2 kidsTrapezoid2];
     smallPhotoFrame2.isTemplateItem = true;
     smallPhotoFrame2.isFixedPhotoFrame = true;
     smallPhotoFrame2.indexInLayer = @"1";
-    smallPhotoFrame2.baseView.frameSize = CGSizeMake(screenWidth * 0.4, screenHeight * 0.5);
     smallPhotoFrame2.center = CGPointMake(0.8, 0.75);
-    
-    UIBezierPath *path2 = [[UIBezierPath alloc] init];
-    [path2 moveToPoint:CGPointMake(0, 0)];
-    [path2 addLineToPoint:CGPointMake(screenWidth * 0.4, 0)];
-    [path2 addLineToPoint:CGPointMake(screenWidth * 0.4, screenHeight * 0.5)];
-    [path2 addLineToPoint:CGPointMake(screenWidth * 0.1, screenHeight * 0.5)];
-    [path2 closePath];
-
-    CAShapeLayer *shapeLayer2 = [CAShapeLayer layer];
-    shapeLayer2.path = path2.CGPath;
-    smallPhotoFrame2.baseView.layer.mask = shapeLayer2;
-    
     [self.photoFrames addObject:smallPhotoFrame2];
     
-    PhotoFrame *bigPhotoFrame = [[PhotoFrame alloc] init];
+    PhotoFrame *bigPhotoFrame = [KidsTrapezoid3 kidsTrapezoid3];
     bigPhotoFrame.isTemplateItem = true;
     bigPhotoFrame.isFixedPhotoFrame = true;
     bigPhotoFrame.indexInLayer = @"2";
-    bigPhotoFrame.baseView.frameSize = CGSizeMake(screenWidth * 0.7, screenHeight);;
     bigPhotoFrame.center = CGPointMake(0.35, 0.5);
-    
-    UIBezierPath *path = [[UIBezierPath alloc] init];
-    [path moveToPoint:CGPointMake(0, 0)];
-    [path addLineToPoint:CGPointMake(screenWidth * 0.5, 0)];
-    [path addLineToPoint:CGPointMake(screenWidth * 0.7, screenHeight)];
-    [path addLineToPoint:CGPointMake(0, screenHeight)];
-    [path closePath];
-
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    shapeLayer.path = path.CGPath;
-    bigPhotoFrame.baseView.layer.mask = shapeLayer;
-    
     [self.photoFrames addObject:bigPhotoFrame];
     
 }
