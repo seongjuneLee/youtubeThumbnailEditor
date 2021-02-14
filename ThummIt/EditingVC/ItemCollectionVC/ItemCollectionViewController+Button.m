@@ -174,6 +174,8 @@
     [editingVC showNavigationItems];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
+    [editingVC.albumVC dismissSelf];
+
 }
 
 -(void)cancelAddingText{

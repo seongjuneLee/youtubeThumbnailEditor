@@ -122,7 +122,6 @@
 
 -(void)addAlbumVC{
     
-    self.albumVC.view.hidden = true;
     [self addChildViewController:self.albumVC];
     [self.view addSubview:self.albumVC.view];
     
