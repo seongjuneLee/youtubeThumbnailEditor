@@ -82,6 +82,7 @@
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
     [editingVC showNavigationItems];
+    
     editingVC.currentItem = nil;
     editingVC.currentSticker = nil;
     editingVC.currentText = nil;
@@ -267,15 +268,18 @@
     [editingVC.layerController recoverOriginalLayer];
     [editingVC showNavigationItems];
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentPhotoFrame;
-    photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",editingVC.originalIndexInLayer];
-    [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
+    if (photoFrame.isFixedPhotoFrame) {
+        [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.backgroundImageView];
+    } else {
+        photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",editingVC.originalIndexInLayer];
+        [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
+    }
 
     [SaveManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
     [SaveManager.sharedInstance addItem:photoFrame];
     // albumVC 없애주기
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
-    
     editingVC.originalPhotoFrameImage = nil;
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];

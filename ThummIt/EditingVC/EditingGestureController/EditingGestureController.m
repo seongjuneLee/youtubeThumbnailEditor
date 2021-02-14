@@ -117,7 +117,6 @@
     if (editingVC.modeController.editingMode == BGColorMode) {
         return;
     }
-
     if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPannedForEditingPhotoModeWithSender:sender];
     } else {
@@ -134,13 +133,14 @@
     CGPoint currentPoint = [sender locationInView:editingVC.gestureView];
     CGPoint deltaPoint = CGPointZero;
     if (sender.state == UIGestureRecognizerStateBegan) {
+        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
+            return;
+        }
+
         self.originalPoint = [sender locationInView:editingVC.gestureView];
         
         if (!editingVC.currentItem && [self getCurrentItem:sender]) {
             editingVC.currentItem = [self getCurrentItem:sender];
-        }
-        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
-            return;
         }
         [editingVC readyUIForPanning];
         [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
@@ -152,10 +152,7 @@
 
     } else if (sender.state == UIGestureRecognizerStateChanged){
         
-        if (!editingVC.currentItem) {
-            return;
-        }
-        if (editingVC.currentItem.isFixedPhotoFrame) {
+        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
             return;
         }
 
@@ -179,9 +176,6 @@
 
         [editingVC panGestureEndedForItem:editingVC.currentItem withFingerPoint:currentPoint];
         
-        if (editingVC.modeController.editingMode == NormalMode) {
-            editingVC.currentItem = nil;
-        }
         for (GuideLine *guideLine in self.guideLines) {
             [guideLine removeFromSuperView];
         }
@@ -195,6 +189,12 @@
                 [SaveManager.sharedInstance save];
             });
         }
+        NSLog(@"editingVC.modeController.editingMode %d",editingVC.modeController.editingMode);
+
+        if (editingVC.modeController.editingMode == NormalMode) {
+            editingVC.currentItem = nil;
+        }
+
     }
 }
 
