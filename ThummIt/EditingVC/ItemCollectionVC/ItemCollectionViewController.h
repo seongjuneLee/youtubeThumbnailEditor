@@ -37,7 +37,6 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic) ItemType itemType;
-@property (strong, nonatomic) UIVisualEffectView *blurView;
 @property (strong, nonatomic) PhotoFrameCollectionController *photoFrameCollectionController;
 @property (strong, nonatomic) TextCollectionController *textCollectionController;
 @property (strong, nonatomic) StickerCollectionController *stickerCollectionController;

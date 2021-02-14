@@ -37,8 +37,9 @@
     
     BasicCirclePhotoFrame *basicCircle = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     ChristmasCircle *christmasCircle = [ChristmasCircle christmasCircle];
-    
-    NSArray *photoFrames = @[basicCircle, christmasCircle];
+    CebuRectangle *cebuRect = [CebuRectangle cebuRectangle];
+    PolaroidRectangle *polaroidRect = [PolaroidRectangle polaroidRectangle];
+    NSArray *photoFrames = @[basicCircle, christmasCircle,  cebuRect, polaroidRect];
     return @[photoFrames];
 }
 
@@ -270,15 +271,6 @@
     NSArray *basicStickers = @[longRectangleSticker, circleSticker1,arrowSticker1,xSticker1,runningManExcSticker,runningManQuSticker,sinSeoYuGiExc1Sticker,sinSeoYuGiExc2Sticker, sinSeoYuGiQu1Sticker,sinSeoYuGiQu2Sticker,startleSticker1, angrySticker1, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker,pigtailSticker,heartSticker1,heartSticker2,heartSticker3,heartSticker4,heartSticker5,heartSticker6,heartSticker7,heartSticker8,heartSticker9,heartSticker10, vlogMacaronSticker,vlogTapeSticker,arrowSticker2,arrowSticker3,arrowSticker4,arrowSticker5,arrowSticker6,arrowSticker7,blinkSticker1,blinkSticker3,bulbSticker,burstSticker1,buttonPauseSticker,buttonPlaySticker,buttonStopSticker,circleSticker2,cloudSticker1,cloudSticker2,dollarSticker,effectSticker1,effectSticker2,effectSticker3,gameSticker,glitterSticker,goodSticker1,koreanFlagSticker,lockSticker,medalBronzeSticker,medalSilverSticker,medalGoldSticker,noteSticker1,noteSticker2,noteSticker3,nuclearSticker,rspRockSticker,rspScissorsSticker,rspPaperSticker,snowflakeSticker1,snowflakeSticker2,snowmanSticker,speechBubbleSticker1,speechBubbleSticker2,speechBubbleSticker3,speechBubbleSticker4,stainSticker1,stainSticker2,starSticker1,starSticker2,starSticker3,starSticker4,tagSticker,targetSticker,tearsSticker,triangleSticker1];
     
     return @[basicStickers];
-}
-
-
--(void)deleteItem:(Item *)item{
-    
-    [item.baseView removeFromSuperview];
-    [SaveManager.sharedInstance deleteItem:item];
-    [SaveManager.sharedInstance save];
-    
 }
 
 -(BOOL)containsItem:(Item *)item{

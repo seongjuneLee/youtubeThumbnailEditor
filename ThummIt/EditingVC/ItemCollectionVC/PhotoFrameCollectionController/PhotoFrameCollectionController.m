@@ -93,7 +93,8 @@
         // 위치, 크기,사진 유지
         photoFrame.baseView.center = currentPhotoFrame.baseView.center;
         photoFrame.baseView.transform = currentPhotoFrame.baseView.transform;
-        photoFrame.photoImageView.frame = currentPhotoFrame.photoImageView.frame;
+        photoFrame.photoImageView.frameSize = photoFrame.baseView.frameSize;
+        photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
         photoFrame.photoImageView.image = currentPhotoFrame.photoImageView.image;
         [currentPhotoFrame.baseView removeFromSuperview];// 기존 것 떼어주고
     } else {

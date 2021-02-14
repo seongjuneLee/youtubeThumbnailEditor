@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)addItem:(Item *)item withView:(UIView *)view underView:(UIView *)gestureView withCriteriaView:(UIImageView *)imageView;
 -(void)deleteItem:(Item *)item;
--(void)addItem:(Item *)item;
 -(BOOL)containsItem:(Item *)item;
 
 @end

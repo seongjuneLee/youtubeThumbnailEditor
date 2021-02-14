@@ -6,6 +6,7 @@
 //
 
 #import "EditingViewController+Buttons.h"
+#import "EditingViewController+AlbumVCDelegate.h"
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "TextCollectionController.h"
 #import "PhotoFrameCollectionController.h"
@@ -62,7 +63,6 @@
     [self addAlbumVC];
 
     PhotoFrame *recentPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
-;
     for (NSArray *photoFrames in ItemManager.sharedInstance.photoFrameDatas) {
         for (PhotoFrame *photoFrame in photoFrames) {
             if ([photoFrame isKindOfClass:self.recentPhotoFrame.class]) {
@@ -72,6 +72,11 @@
         }
     }
     [self.itemCollectionVC.photoFrameCollectionController didSelectPhotoFrame:recentPhotoFrame];
+    
+    if (!self.recentPHAsset) {
+        self.recentPHAsset = PhotoManager.sharedInstance.phassets[0];
+    }
+    [self didSelectPhotoWithPHAsset:self.recentPHAsset];
     
 }
 
@@ -98,14 +103,12 @@
     [self.view addSubview:self.itemCollectionVC.view];
     
     self.itemCollectionVC.containerView.frameY = self.view.frameHeight;
-    self.itemCollectionVC.blurView.frameY = self.view.frameHeight;
     
     self.itemCollectionVC.checkButton.alpha = 0;
     self.itemCollectionVC.cancelButton.alpha = 0;
     self.itemCollectionVC.scrollView.alpha = 0;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.itemCollectionVC.containerView.frameY = 0;
-        self.itemCollectionVC.blurView.frameY = 0;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
             self.itemCollectionVC.checkButton.alpha = 1.0;

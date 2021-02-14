@@ -103,6 +103,10 @@
     
     [self.layerController bringCurrentItemToFront:self.currentItem];
     self.itemCollectionVC.itemType = PhotoFrameType;
+    
+    if (<#condition#>) {
+        <#statements#>
+    }
     [self addItemCollectionVC];
     [self addAlbumVC];
     [self setCurrentPhotoSelectedOnAlbumVC];
