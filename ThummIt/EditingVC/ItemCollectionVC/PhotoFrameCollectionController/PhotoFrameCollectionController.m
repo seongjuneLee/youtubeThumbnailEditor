@@ -76,19 +76,20 @@
 #pragma mark - 델리게이트
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
-
     PhotoFrame *photoFrame = photoFrames[indexPath.item];
     [self didSelectPhotoFrame:photoFrame];
     
 }
 
 -(void)didSelectPhotoFrame:(PhotoFrame *)photoFrame{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     [photoFrame loadView];
-    if (editingVC.currentItem) {
-        PhotoFrame *currentPhotoFrame = (PhotoFrame *)editingVC.currentItem;
+    if (editingVC.currentPhotoFrame) {
+        PhotoFrame *currentPhotoFrame = (PhotoFrame *)editingVC.currentPhotoFrame;
         // 위치, 크기,사진 유지
         photoFrame.baseView.center = currentPhotoFrame.baseView.center;
         photoFrame.baseView.transform = currentPhotoFrame.baseView.transform;

@@ -15,6 +15,7 @@
     if(self){
         self.itemName = @"LongRectangleSticker";
         self.backgroundImageName = @"rectangleSticker";
+        self.tintColor = UIColor.whiteColor;
     }
     return self;
 }

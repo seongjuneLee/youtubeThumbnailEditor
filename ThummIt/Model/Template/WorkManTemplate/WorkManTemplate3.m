@@ -69,7 +69,7 @@
     Text *howMuchText = [[Text alloc] init];
     WorkManFast*howMuch = [WorkManFast workManFast];
     howMuchText.scale = 0.58;
-    howMuchText.rotationDegree = 1;
+    howMuchText.rotationDegree = degreesToRadians(1);
     howMuchText.center = CGPointMake(0.69, 0.20);
     howMuchText.isTemplateItem = true;
     howMuchText.indexInLayer = @"2";
@@ -81,7 +81,7 @@
     Text *youtubeText = [[Text alloc] init];
     WorkManYoutube* youtube = [WorkManYoutube workManYoutube];
     youtubeText.scale = 0.16;
-    youtubeText.rotationDegree = 1;
+    youtubeText.rotationDegree = degreesToRadians(1);
     youtubeText.center = CGPointMake(0.28, 0.13);
     youtubeText.isTemplateItem = true;
     youtubeText.indexInLayer = @"3";

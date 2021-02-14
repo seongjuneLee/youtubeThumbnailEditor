@@ -1,17 +1,17 @@
 //
-//  WebDesignerVlogTemPlate.h
+//  WebDesignerVlogTemplate.h
 //  ThummIt
 //
-//  Created by 이성준 on 2021/01/30.
+//  Created by 이성준 on 2021/02/14.
 //
 
 #import "Template.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WebDesignerVlogTemPlate : Template
+@interface WebDesignerVlogTemplate : Template
 
-+(WebDesignerVlogTemPlate*)webDesignerVlogTemPlate;
++(WebDesignerVlogTemplate*)webDesignerVlogTemplate;
 
 @end
 

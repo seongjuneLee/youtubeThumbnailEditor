@@ -56,7 +56,7 @@
     Text *tagText = [[Text alloc] init];
     WorkManRightTag *tag = [WorkManRightTag workManRightTag];
     tagText.scale = 0.20;
-    tagText.rotationDegree = 40;
+    tagText.rotationDegree = degreesToRadians(40);
     tagText.center = CGPointMake(0.91,0.14);
     tagText.isTemplateItem = true;
     tagText.indexInLayer = @"1";
@@ -80,7 +80,7 @@
     WorkManTalkWrite *talk = [WorkManTalkWrite workManTalkWrite];
     talkWrite.scale = 0.255;
     talkWrite.center = CGPointMake(0.42,0.28);
-    talkWrite.rotationDegree = -25;
+    talkWrite.rotationDegree = degreesToRadians(-25);
     talkWrite.isTemplateItem = true;
     talkWrite.indexInLayer = @"3";
     talkWrite.text = @"소리질러!!!!";
@@ -140,7 +140,7 @@
     Text *fastText = [[Text alloc] init];
     WorkManFast *fast = [WorkManFast workManFast];
     fastText.scale = 0.34;
-    fastText.rotationDegree = -2;
+    fastText.rotationDegree = degreesToRadians(-2);
     fastText.center = CGPointMake(0.77,0.55);
     fastText.isTemplateItem = true;
     fastText.indexInLayer = @"6";
@@ -155,7 +155,7 @@
     
     AngrySticker1 *angrySticker = [AngrySticker1 angrySticker1];
     angrySticker.scale = 0.08;
-    angrySticker.rotationDegree = -7;
+    angrySticker.rotationDegree = degreesToRadians(-7);
     angrySticker.indexInLayer = @"7";
     angrySticker.isTemplateItem = true;
     angrySticker.center = CGPointMake(0.82, 0.31);

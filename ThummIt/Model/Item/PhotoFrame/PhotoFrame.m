@@ -43,7 +43,7 @@
     copiedBaseView.layer.cornerRadius = self.baseView.layer.cornerRadius;
     
     copiedBaseView.transform = self.baseView.transform;
-    copiedBaseView.center = self.center;
+    copiedBaseView.center = self.baseView.center;
     
     copied.baseView = copiedBaseView;
     
@@ -81,6 +81,7 @@
         self.photoRotationDegree = [[decoder decodeObjectForKey:@"photoRotationDegree"] floatValue];
         self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
         self.isCircle = [[decoder decodeObjectForKey:@"isCircle"] boolValue];
+        self.isFixedPhotoFrame = [[decoder decodeObjectForKey:@"isFixedPhotoFrame"] boolValue];
 
     }
     return self;
@@ -95,6 +96,7 @@
     [encoder encodeObject:[NSNumber numberWithFloat:self.photoScale] forKey:@"photoScale"];
     [encoder encodeObject:[NSValue valueWithCGPoint:self.photoImageView.center] forKey:@"photoCenter"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.isCircle] forKey:@"isCircle"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.isFixedPhotoFrame] forKey:@"isFixedPhotoFrame"];
 
 }
 
@@ -113,20 +115,19 @@
     }
     [self addSubViewsToBaseView];
 
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
-    CGAffineTransform scaleTransform;
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
 
     float width = UIScreen.mainScreen.bounds.size.width;
     float scale = width/self.baseView.frameWidth;
-    if (self.isFixedPhotoFrame) {
-        scaleTransform = CGAffineTransformMakeScale(self.scale,self.scale);
-
+    if (!self.isFixedPhotoFrame) {
+        CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
+        self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
     } else {
-        scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
+        self.baseView.transform = rotationTransform;
     }
-    self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-    self.baseView.center = self.center;
     
+    self.baseView.center = self.center;
+
 }
     
 -(void)setBaseViewFrame{
@@ -153,12 +154,10 @@
                 float ratio = image.size.height/image.size.width;
                 float width = self.baseView.frameWidth * 1.2;
                 self.photoImageView.frameSize = CGSizeMake(self.baseView.frameWidth * 1.2, width * ratio);
-                NSLog(@"self.photoImageView frame %@",NSStringFromCGRect(self.photoImageView.frame));
-                [self.baseView addSubview:self.photoImageView];
             });
         }];
     }
-    
+    [self.baseView addSubview:self.photoImageView];
     if (self.backgroundImageName) {
         self.backgroundImageView = [[UIImageView alloc] init];
         self.backgroundImageView.frameSize = self.baseView.frameSize;

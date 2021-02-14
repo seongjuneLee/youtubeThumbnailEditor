@@ -1,13 +1,13 @@
 //
-//  DogVlogTemPlate.m
+//  DogVlogTemplate.m
 //  ThummIt
 //
-//  Created by 이성준 on 2021/01/30.
+//  Created by 이성준 on 2021/02/14.
 //
 
-#import "DogVlogTemPlate.h"
+#import "DogVlogTemplate.h"
 
-@implementation DogVlogTemPlate
+@implementation DogVlogTemplate
 
 -(id)init{
     
@@ -16,17 +16,17 @@
         
         self.previewImageName = @"dogVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
-        self.templateName = @"DogVlogTemPlate";
+        self.templateName = @"DogVlogTemplate";
         self.backgroundImageName = @"dogVlogFrame";
         
     }
     return self;
     
 }
-
-+(DogVlogTemPlate*)dogVlogTemPlate{
+ 
++(DogVlogTemplate*)dogVlogTemPlate{
     
-    DogVlogTemPlate* dogVlogTemPlate = [[self alloc] init];
+    DogVlogTemplate* dogVlogTemPlate = [[self alloc] init];
     
     return dogVlogTemPlate;
     
@@ -46,12 +46,9 @@
     [self.photoFrames addObject:firstPhotoFrame];
     [self.photoFrames addObject:secondPhotoFrame];
 
-    PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
+    PhotoFrame *photoFrame1 = [HorizontalHalfRectangle horizontalHalfRectangle];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    float screenWidth = UIScreen.mainScreen.bounds.size.width;
-    float screenHeight = screenWidth * 9/16;
-    photoFrame1.baseView.frameSize = CGSizeMake(screenWidth, screenHeight * 0.5);
     photoFrame1.center = CGPointMake(0.5, 0.75);
     [self.photoFrames addObject:photoFrame1];
 }
@@ -74,5 +71,4 @@
 -(void)setUpStickers{
     
 }
-
 @end

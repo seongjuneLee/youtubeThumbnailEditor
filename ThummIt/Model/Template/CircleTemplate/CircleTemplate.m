@@ -92,10 +92,9 @@
     Text *gookTalk = [[Text alloc] init];
     DinggoGoodTalk *goodtaking = [DinggoGoodTalk dinggoGoodTalk];
     gookTalk.scale = 0.15;
-    gookTalk.rotationDegree = -10;
     gookTalk.center = CGPointMake(0.1, 0.13);
     gookTalk.isTemplateItem = true;
-    gookTalk.rotationDegree = -5;
+    gookTalk.rotationDegree = degreesToRadians(-5);
     gookTalk.indexInLayer = @"5";
     gookTalk.text = @"띵언가들";
     gookTalk.textView.text = @"띵언가들";

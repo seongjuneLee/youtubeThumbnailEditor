@@ -82,8 +82,8 @@
     Text *text = [[Text alloc] init];
     
     
-    if (editingVC.currentItem) {
-        text = (Text *)editingVC.currentItem;
+    if (editingVC.currentText) {
+        text = (Text *)editingVC.currentText;
         if (editingVC.currentText.isTypedByUser) {
             text.text = editingVC.currentText.text;
             text.textView.text = editingVC.currentText.text;

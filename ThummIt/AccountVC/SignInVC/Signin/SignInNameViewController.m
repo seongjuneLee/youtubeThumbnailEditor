@@ -70,7 +70,6 @@
     
     BOOL illegalCharacters = false;
     if ([username rangeOfCharacterFromSet:set].location != NSNotFound) {
-        NSLog(@"This string contains illegal characters");
         illegalCharacters = true;
     }
     BOOL minimumLengthSatisfied = false;

@@ -30,11 +30,11 @@
         }
         
     } else if([item isKindOfClass:Text.class]){
-        
+        [self hideNavigationItems];
+
         Text *text = (Text *)item;
         self.currentItem = text;
         self.currentText = text;
-        [self hideNavigationItems];
         
         self.originalCenter = text.baseView.center;
         self.originalTransform = text.baseView.transform;
@@ -60,15 +60,19 @@
         [self addItemCollectionVC];
 
     } else if([item isKindOfClass:Sticker.class]){
-        
+        [self hideNavigationItems];
+
         Sticker *sticker = (Sticker *)item;
         self.currentItem = sticker; // currentsicker가 null이라 Currentitem으로 받음일단
-        [self hideNavigationItems];
-        
+        self.currentSticker = sticker;
         self.originalCenter = sticker.baseView.center;
         self.originalTransform = sticker.baseView.transform;
-        self.originalStickerImageName = sticker.backgroundImageName;
-        
+        self.originalStickerBGImageName = sticker.backgroundImageName;
+        self.originalTintColor = sticker.tintColor;
+        self.originalColorChangable = sticker.cannotChangeColor;
+        self.originalSticker = sticker;
+        self.originalIndexInLayer = sticker.indexInLayer.integerValue;
+
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
         self.itemCollectionVC.itemType = StickerType;
@@ -89,15 +93,10 @@
     
     PhotoFrame *photoFrame = (PhotoFrame *)item;
     self.currentItem = [photoFrame copy];
+    self.currentPhotoFrame = (PhotoFrame *)self.currentItem;
     self.originalPhotoFrame = photoFrame;
     self.originalPhotoFrame.baseView.hidden = true;
-    
-    self.originalCenter = photoFrame.baseView.center;
-    self.originalTransform = photoFrame.baseView.transform;
-    
-    self.originalPhotoFrameImage = photoFrame.photoImageView.image;
-    self.originalPhotoImageViewCenter = photoFrame.photoImageView.center;
-    self.originalPhotoImageTransform = photoFrame.photoImageView.transform;
+    self.originalIndexInLayer = photoFrame.indexInLayer.integerValue;
 
     [self.layerController showTransparentView];
     [self hideNavigationItems];
@@ -172,7 +171,8 @@
     self.underAreaView.hidden = false;
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (fingerPoint.y >= imageViewBottomY) {
-        [ItemManager.sharedInstance deleteItem:item];
+        [item.baseView removeFromSuperview];
+        [SaveManager.sharedInstance deleteItem:item];
         for (Item *item in SaveManager.sharedInstance.currentProject.items) {
             if (!item.isFixedPhotoFrame) {
                 item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];

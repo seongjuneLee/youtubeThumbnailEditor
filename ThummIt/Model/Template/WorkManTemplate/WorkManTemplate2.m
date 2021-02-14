@@ -92,7 +92,7 @@
     Text *whyText = [[Text alloc] init];
     WorkManFast *why = [WorkManFast workManFast];
     whyText.scale = 0.13;
-    whyText.rotationDegree = -20;
+    whyText.rotationDegree = degreesToRadians(-20);
     whyText.center = CGPointMake(0.34,0.44);
     whyText.isTemplateItem = true;
     whyText.indexInLayer = @"4";
@@ -104,7 +104,7 @@
     Text *howText = [[Text alloc] init];
     WorkManFast *how = [WorkManFast workManFast];
     howText.scale = 0.41;
-    howText.rotationDegree = 10;
+    howText.rotationDegree = degreesToRadians(10);
     howText.center = CGPointMake(0.7,0.3);
     howText.isTemplateItem = true;
     howText.indexInLayer = @"5";

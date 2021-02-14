@@ -9,7 +9,7 @@
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "EditingViewController+Buttons.h"
 #import "EditingViewController+Text.h"
-
+#import "UIImage+Additions.h"
 @interface EditingViewController ()
 
 @end
@@ -158,14 +158,13 @@
     self.bgView.backgroundColor = project.backgroundColor;
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
-        if (item.isTemplateItem || item.isFixedPhotoFrame) {
+        if (item.isTemplateItem) {
             float itemX = self.bgView.frameWidth * item.center.x;
             float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             item.center = itemCenter;
         }
         [item loadView];
-        
         if ([item isKindOfClass:Text.class]){
             Text *text = (Text *)item;
             text.textView.delegate = self;
@@ -177,17 +176,25 @@
             [self.view insertSubview:item.baseView aboveSubview:self.backgroundImageView];
         }
 
+    }
+    
+    // 인덱스 맞춰주기
+    for (Item *item in project.items) {
+        if (!item.isFixedPhotoFrame) {
+            if (item.isTemplateItem) {
+                NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.backgroundImageView];
+                item.indexInLayer = [NSString stringWithFormat:@"%ld",backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
+                [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
+            } else {
+                [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
+            }
+        }
+        
         item.isTemplateItem = false;
     }
     
-    for (Item *item in project.items) {
-        if (!item.isFixedPhotoFrame) {
-            NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.backgroundImageView];
-
-            [self.view insertSubview:item.baseView atIndex:backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
-        }
-    }
-    
+    UIImage *viewImage = [self.view toImage];
+    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:self.bgView.frame];
     [SaveManager.sharedInstance save];
 
 }

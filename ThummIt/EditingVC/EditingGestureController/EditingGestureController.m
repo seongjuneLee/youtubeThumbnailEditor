@@ -121,12 +121,12 @@
     if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPannedForEditingPhotoModeWithSender:sender];
     } else {
-        [self gestureViewPannedForModeWithSender:sender];
+        [self gestureViewPannedWithSender:sender];
     }
 
 }
 
--(void)gestureViewPannedForModeWithSender:(UIPanGestureRecognizer *)sender{
+-(void)gestureViewPannedWithSender:(UIPanGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
@@ -175,6 +175,7 @@
         if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
             return;
         }
+        self.isMagneting = false;
 
         [editingVC panGestureEndedForItem:editingVC.currentItem withFingerPoint:currentPoint];
         
@@ -184,17 +185,15 @@
         for (GuideLine *guideLine in self.guideLines) {
             [guideLine removeFromSuperView];
         }
-        for (GuideLine *guideLine in self.itemGuideLines) {
-            [guideLine removeFromSuperView];
-        }
-        self.isMagneting = false;
         if(!editingVC.currentItem.cannotChangeColor){
             [self deleteHueSliderRespondToCurrentPointY:currentPoint.y];
         }
         if (!self.isPinching) {
-            UIImage *viewImage = [editingVC.view toImage];
-            SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-            [SaveManager.sharedInstance save];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                UIImage *viewImage = [editingVC.view toImage];
+                SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
+                [SaveManager.sharedInstance save];
+            });
         }
     }
 }
@@ -415,12 +414,12 @@
     if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPinchedForEditingPhotoModeWithSender:sender];
     } else {
-        [self gestureViewPinchedForMode:NormalMode withSender:sender];
+        [self gestureViewPinchedWithSender:sender];
     }
     
 }
 
--(void)gestureViewPinchedForMode:(EditingMode)editingMode withSender:(UIPinchGestureRecognizer *)sender{
+-(void)gestureViewPinchedWithSender:(UIPinchGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
@@ -466,7 +465,7 @@
         // 최종 적용
         editingVC.currentItem.baseView.transform = CGAffineTransformConcat(scaleTransform, rotationTransform);
         editingVC.currentItem.rotationDegree = self.currentRotation;
-        editingVC.currentItem.scale = self.originalScaleRatio*changeScale;
+        editingVC.currentItem.scale = editingVC.currentItem.baseView.frameWidth/editingVC.bgView.frameWidth;
         
         // 중심값 이동
         CGPoint newPinchCenter = [sender locationInView:editingVC.view];
@@ -479,7 +478,7 @@
 
         [self showDegreeGuideLineWithMagnetWithDeltaDegree:self.currentRotation withScaleTransform:scaleTransform];
         
-    } else if (sender.state == UIGestureRecognizerStateEnded && sender.numberOfTouches == 2){
+    } else if (sender.state == UIGestureRecognizerStateEnded){
         if (editingVC.currentItem.isFixedPhotoFrame) {
             return;
         }
@@ -487,11 +486,13 @@
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
+        [self removeItemSizeGuideLinesFromSuperView];
+        [self.rotationDashedLine removeFromSuperview];
+        
         UIImage *viewImage = [editingVC.view toImage];
         SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
         [SaveManager.sharedInstance save];
-        [self removeItemSizeGuideLinesFromSuperView];
-        [self.rotationDashedLine removeFromSuperview];
+
     }
     
 }

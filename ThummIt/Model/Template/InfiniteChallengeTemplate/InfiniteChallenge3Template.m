@@ -59,7 +59,7 @@
     InfiniteChallengeYellowSpeechBoxYellow *yellowSpeechBoxYellow = [InfiniteChallengeYellowSpeechBoxYellow infiniteChallengeYellowSpeechBoxYellow];
     yellowText.scale = 0.8;
     yellowText.center = CGPointMake(0.2, 0.5);
-    yellowText.rotationDegree = 8;
+    yellowText.rotationDegree = degreesToRadians(8);
     yellowText.isTemplateItem = true;
     yellowText.text = @"빨리!!";
     yellowText.textView.text = yellowText.text;
