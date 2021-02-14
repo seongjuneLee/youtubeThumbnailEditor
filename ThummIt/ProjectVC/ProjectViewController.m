@@ -31,10 +31,7 @@
     //            self.projectTableController.offset = projectsCount - 10;
     //        }
     NSArray *projects = [ProjectManager.sharedInstance getAllProjectsFromCoreData];
-    NSLog(@"projectsCount %ld",projectsCount);
     for (Project *project in projects) {
-        NSLog(@"project.previewImage %@",project.previewImage);
-        NSLog(@"project item count %ld",project.items.count);
         [self.projectTableController.snapShots addObject:project.previewImage];
     }
     [self.tableView reloadData];

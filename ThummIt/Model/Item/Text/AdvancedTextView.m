@@ -193,8 +193,6 @@
         
         NSMutableAttributedString * string = self.backgroundAttributedTexts[[typo.bgTextAttributes indexOfObject:bgTextAttribute]];
         NSRange adjustedRange = NSMakeRange(range.location, range.length);
-        NSLog(@"stringstringstring %@",string);
-        NSLog(@"adjustedRangeadjustedRange %@",NSStringFromRange(adjustedRange));
         string = [self updateAttributedString:string withTypo:typo withBGTextAttribute:bgTextAttribute atRange:adjustedRange];
     }
     [self setNeedsDisplay]; // DrawRect 불러주기

@@ -35,9 +35,6 @@
     
     float width = UIScreen.mainScreen.bounds.size.width;
     float scale = width/self.baseView.frameWidth;
-    NSLog(@"self.scale %f",self.scale);
-    NSLog(@"scale * self.scale %f",scale * self.scale);
-    NSLog(@"self.baseView frame %@",NSStringFromCGRect(self.baseView.frame));
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
     self.baseView.transform = CGAffineTransformConcat(self.baseView.transform, scaleTransform);
     

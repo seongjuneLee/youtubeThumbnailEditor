@@ -265,13 +265,11 @@
     [editingVC.layerController recoverOriginalLayer];
     [editingVC showNavigationItems];
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentPhotoFrame;
-    photoFrame.phAsset = PhotoManager.sharedInstance.phassets[editingVC.albumVC.selectedIndexPath.item];
     photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",editingVC.originalIndexInLayer];
     [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
-    
+
     [SaveManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
     [SaveManager.sharedInstance addItem:photoFrame];
-
     // albumVC 없애주기
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];

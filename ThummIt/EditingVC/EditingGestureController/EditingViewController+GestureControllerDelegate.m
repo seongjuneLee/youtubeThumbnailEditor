@@ -62,7 +62,6 @@
         self.originalCenter = sticker.baseView.center;
         self.originalTransform = sticker.baseView.transform;
         self.originalStickerBGImageName = sticker.backgroundImageName;
-        NSLog(@"sticker.backgroundImageName %@",sticker.backgroundImageName);
         self.originalTintColor = sticker.tintColor;
         self.originalColorChangable = sticker.cannotChangeColor;
         self.originalSticker = sticker;
@@ -82,7 +81,7 @@
     
     PhotoFrame *photoFrame = (PhotoFrame *)item;
     self.currentItem = [photoFrame copy];
-    self.currentPhotoFrame = [photoFrame copy];
+    self.currentPhotoFrame = (PhotoFrame *)self.currentItem;
     self.originalPhotoFrame = photoFrame;
     self.originalPhotoFrame.baseView.hidden = true;
     self.originalIndexInLayer = photoFrame.indexInLayer.integerValue;

@@ -41,8 +41,6 @@
         self.itemCollectionVC.checkButton.enabled = true;
         self.itemCollectionVC.checkButton.alpha = 1.0;
     }
-//    NSLog(@"%@",self.currentText.text);
-//    NSLog(@"%@",self.currentText.typo.name);
     // 배경이미지 있는 타이포의 경우 사이즈 조정
     if (self.currentText.typo.bgImageName) {
         [self.currentText updateBackgroundImageViewFrame:self.currentText.typo];
