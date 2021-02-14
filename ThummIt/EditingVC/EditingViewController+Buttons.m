@@ -6,12 +6,14 @@
 //
 
 #import "EditingViewController+Buttons.h"
+#import "EditingViewController+AlbumVCDelegate.h"
 #import "EditingViewController+GestureControllerDelegate.h"
 #import "TextCollectionController.h"
 #import "PhotoFrameCollectionController.h"
 #import "StickerCollectionController.h"
 #import "UIColor+Additions.h"
 #import "UndoManager.h"
+#import "UIImage+Additions.h"
 
 @implementation EditingViewController (Buttons)
 
@@ -21,8 +23,100 @@
 }
 
 -(void)exportThumbnail{
-    
+    UIImage *viewImage = [self.view toImage];
+    UIImage *finalImage = [viewImage crop:self.bgView.frame];
+    NSString *title = @"ThummIt";
+
+    [self isAlbumAlreadyExist:^(BOOL exist) {
+        if (exist) {
+            [self getThummItAlbum:^(PHAssetCollection *collection) {
+                PHFetchResult *fetchResult = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[collection.localIdentifier] options:nil];
+                PHAssetCollection *assetCollection = fetchResult.firstObject;
+                [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+                    PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:finalImage];
+
+                    // add asset
+                    PHAssetCollectionChangeRequest *assetCollectionChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
+                    [assetCollectionChangeRequest addAssets:@[[assetChangeRequest placeholderForCreatedAsset]]];
+                } completionHandler:^(BOOL success, NSError *error) {
+                    if (!success) {
+                        NSLog(@"Error: %@", error);
+                    }
+                }];
+            }];
+        } else {
+            __block PHObjectPlaceholder *myAlbum;
+            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+                PHAssetCollectionChangeRequest *changeRequest = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:title];
+                NSLog(@"changeRequest %@",changeRequest);
+                
+                myAlbum = changeRequest.placeholderForCreatedAssetCollection;
+            } completionHandler:^(BOOL success, NSError *error) {
+                
+                if (success) {
+                    PHFetchResult *fetchResult = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[myAlbum.localIdentifier] options:nil];
+                    PHAssetCollection *assetCollection = fetchResult.firstObject;
+                    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+                        PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:finalImage];
+
+                        // add asset
+                        PHAssetCollectionChangeRequest *assetCollectionChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
+                        [assetCollectionChangeRequest addAssets:@[[assetChangeRequest placeholderForCreatedAsset]]];
+                    } completionHandler:^(BOOL success, NSError *error) {
+                        if (!success) {
+                            NSLog(@"Error: %@", error);
+                        }
+                    }];
+                } else {
+                    NSLog(@"Error: %@", error);
+                }
+                
+            }];
+        }
+    }];
+//
 }
+
+-(void)isAlbumAlreadyExist:(void(^) (BOOL exist))block{
+    
+    PHFetchOptions *userAlbumsOptions = [PHFetchOptions new];
+    NSString *title = @"ThummIt";
+    
+    PHFetchResult *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:userAlbumsOptions];
+    [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
+        
+        if ([collection.localizedTitle isEqualToString:title]) {
+            block(true);
+            *stop = true;
+        } else if (idx +1 == userAlbums.count){
+            block(false);
+            *stop = true;
+        }
+        
+    }];
+
+}
+
+-(void)getThummItAlbum:(void(^) (PHAssetCollection *collection))block{
+    
+    PHFetchOptions *userAlbumsOptions = [PHFetchOptions new];
+    NSString *title = @"ThummIt";
+    
+    PHFetchResult *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:userAlbumsOptions];
+    [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
+        
+        if ([collection.localizedTitle isEqualToString:title]) {
+            block(collection);
+            *stop = true;
+        } else if (idx +1 == userAlbums.count){
+            block(nil);
+            *stop = true;
+        }
+        
+    }];
+
+}
+
 
 - (IBAction)leftItemTapped:(id)sender {
     
@@ -62,7 +156,6 @@
     [self addAlbumVC];
 
     PhotoFrame *recentPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
-;
     for (NSArray *photoFrames in ItemManager.sharedInstance.photoFrameDatas) {
         for (PhotoFrame *photoFrame in photoFrames) {
             if ([photoFrame isKindOfClass:self.recentPhotoFrame.class]) {
@@ -72,6 +165,11 @@
         }
     }
     [self.itemCollectionVC.photoFrameCollectionController didSelectPhotoFrame:recentPhotoFrame];
+    
+    if (!self.recentPHAsset) {
+        self.recentPHAsset = PhotoManager.sharedInstance.phassets[0];
+    }
+    [self didSelectPhotoWithPHAsset:self.recentPHAsset];
     
 }
 
@@ -98,14 +196,12 @@
     [self.view addSubview:self.itemCollectionVC.view];
     
     self.itemCollectionVC.containerView.frameY = self.view.frameHeight;
-    self.itemCollectionVC.blurView.frameY = self.view.frameHeight;
     
     self.itemCollectionVC.checkButton.alpha = 0;
     self.itemCollectionVC.cancelButton.alpha = 0;
     self.itemCollectionVC.scrollView.alpha = 0;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.itemCollectionVC.containerView.frameY = 0;
-        self.itemCollectionVC.blurView.frameY = 0;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
             self.itemCollectionVC.checkButton.alpha = 1.0;
@@ -114,12 +210,10 @@
         }];
     }];
     
-    
 }
 
 -(void)addAlbumVC{
     
-    self.albumVC.view.hidden = true;
     [self addChildViewController:self.albumVC];
     [self.view addSubview:self.albumVC.view];
     

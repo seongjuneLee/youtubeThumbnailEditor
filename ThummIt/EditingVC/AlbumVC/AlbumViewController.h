@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol AlbumViewControllerDelegate <NSObject>
 
--(void)didSelectPhoto;
+-(void)didSelectPhotoWithPHAsset:(PHAsset*)phAsset;
 
 @end
 

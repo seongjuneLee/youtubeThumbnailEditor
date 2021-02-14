@@ -6,7 +6,7 @@
 "7dA-xu-yjx.text" = "삭제";
 
 /* Class = "UIButton"; normalTitle = "Export"; ObjectID = "JmC-6K-MjI"; */
-"JmC-6K-MjI.normalTitle" = "완료";
+"JmC-6K-MjI.normalTitle" = "저장";
 
 /* Class = "UINavigationItem"; title = "Album"; ObjectID = "RKB-uI-dlr"; */
 "RKB-uI-dlr.title" = "Album";

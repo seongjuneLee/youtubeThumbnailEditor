@@ -18,7 +18,6 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self makeViewBlurred];
     [self setCollectionViewFlowLayout];
 
 }
@@ -39,7 +38,6 @@
     [UIView animateWithDuration:0.4 animations:^{
         self.cancelButton.alpha = self.checkButton.alpha = 0;
         self.containerView.frameY = screenHeight;
-        self.blurView.frameY = screenHeight;
     }completion:^(BOOL finished) {
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
@@ -63,24 +61,21 @@
     
 }
 
--(void)makeViewBlurred{
-    
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleProminent];
-    self.blurView = [[UIVisualEffectView alloc] init];
-    self.blurView.frameSize = self.view.frameSize;
-    self.blurView.effect = blurEffect;
-    [self.view insertSubview:self.blurView atIndex:0];
-    
-}
-
 -(void)connectCollectionController{
     
-
+    self.collectionView.hidden = false;
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     if (self.itemType == PhotoFrameType) {
         self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
         self.photoFrameCollectionController.editingVC = self.editingVC;
-        self.photoFrameScrollContanerView.hidden = false;
-        self.textScrollContainerView.hidden = true;
+        if (editingVC.currentPhotoFrame.isFixedPhotoFrame) {
+            self.photoFrameScrollContanerView.hidden = true;
+            self.textScrollContainerView.hidden = true;
+            self.collectionView.hidden = true;
+        } else {
+            self.photoFrameScrollContanerView.hidden = false;
+            self.textScrollContainerView.hidden = true;
+        }
     } else if (self.itemType == TextType){
         self.textCollectionController = [[TextCollectionController alloc] initWithCollectionView:self.collectionView];
         self.textCollectionController.editingVC = self.editingVC;

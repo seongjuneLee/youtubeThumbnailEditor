@@ -12,7 +12,9 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     self.selectedIndexPath = indexPath;
-    [self.delegate didSelectPhoto];
+    PHAsset *selectedPHAsset = self.phAssets[indexPath.item];
+
+    [self.delegate didSelectPhotoWithPHAsset:selectedPHAsset];
     [collectionView reloadData];
     
 }

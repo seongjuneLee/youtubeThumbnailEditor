@@ -39,9 +39,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) Text *currentText;
 @property (strong, nonatomic, nullable) PhotoFrame *currentPhotoFrame;
 @property (strong, nonatomic, nullable) Sticker *currentSticker;
+
+// 최근 데이터
 @property (strong, nonatomic, nullable) Typography *recentTypo;
 @property (strong, nonatomic, nullable) PhotoFrame *recentPhotoFrame;
 @property (strong, nonatomic, nullable) Sticker *recentSticker;
+@property (strong, nonatomic, nullable) PHAsset *recentPHAsset;
 
 // 아이템 변경전 기본값
 @property (nonatomic) CGPoint originalCenter;
