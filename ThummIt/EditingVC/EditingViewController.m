@@ -65,6 +65,7 @@
 -(void)viewDidLayoutSubviews{
     if (!self.itemLoaded) {
         [self loadItems];
+        [SaveManager.sharedInstance save];
     }
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
@@ -195,7 +196,6 @@
     
     UIImage *viewImage = [self.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:self.bgView.frame];
-    [SaveManager.sharedInstance save];
 
 }
 
