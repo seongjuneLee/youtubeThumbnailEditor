@@ -84,6 +84,7 @@
     
     if (editingVC.currentText) {
         text = (Text *)editingVC.currentText;
+        text.textView.backgroundAttributedTexts = [NSMutableArray array];
         if (editingVC.currentText.isTypedByUser) {
             text.text = editingVC.currentText.text;
             text.textView.text = editingVC.currentText.text;
