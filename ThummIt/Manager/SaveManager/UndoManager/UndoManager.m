@@ -56,6 +56,7 @@
     }
 
     NSData *data = self.undoRedoStacks[self.currentIndex];
+    NSLog(@"self.undoRedoStacks %@",self.undoRedoStacks);
     Project *project = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     project.coreDataStorage = SaveManager.sharedInstance.currentProject.coreDataStorage;
     [SaveManager.sharedInstance applyCurrentProject:project];
@@ -98,7 +99,9 @@
 }
 
 -(BOOL)isUndoRemains{
-    
+    NSLog(@"self.currentIndex undo %ld",self.currentIndex);
+    NSLog(@"self.undoRedoStacks.count undo %ld",self.undoRedoStacks.count);
+
     if (self.currentIndex - 1 > 0) {
         return true;
     } else {
@@ -107,7 +110,8 @@
 }
 
 -(BOOL)isRedoRemains{
-    
+    NSLog(@"self.currentIndex redo %ld",self.currentIndex);
+    NSLog(@"self.undoRedoStacks.count redo %ld",self.undoRedoStacks.count);
     if (self.undoRedoStacks.count > self.currentIndex + 1) {
         return true;
     }
