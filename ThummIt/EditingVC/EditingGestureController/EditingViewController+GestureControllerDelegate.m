@@ -190,6 +190,10 @@
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (fingerPoint.y >= imageViewBottomY) {
         [item.baseView removeFromSuperview];
+        self.currentItem = nil;
+        self.currentText = nil;
+        self.currentSticker = nil;
+        self.currentPhotoFrame = nil;
         [SaveManager.sharedInstance deleteItem:item];
         for (Item *item in SaveManager.sharedInstance.currentProject.items) {
             if (!item.isFixedPhotoFrame) {

@@ -89,7 +89,7 @@
         currentSticker.backgroundImageName = sticker.backgroundImageName;
         if (!currentSticker.cannotChangeColor) {
             currentSticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            [currentSticker.backgroundImageView setTintColor:currentSticker.tintColor];
+            [currentSticker.backgroundImageView setTintColor:sticker.tintColor];
             [UIView animateWithDuration:0.2 animations:^{
                 editingVC.hueSlider.alpha = 1.0;
                 editingVC.thumbCircleView.alpha = 1.0;
