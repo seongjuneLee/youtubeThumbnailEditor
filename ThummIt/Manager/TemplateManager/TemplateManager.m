@@ -60,7 +60,7 @@
     Template * dogVlogTemPlate= [DogVlogTemplate dogVlogTemPlate];
     Template * freshmanVlogTemplate= [FreshmanVlogTemplate freshmanVlogTemplate];
     Template * studentVlogTemplate= [StudentVlogTemplate studentVlogTemplate];
-    Template * webDesignerVlogTemPlate= [WebDesignerVlogTemplate webDesignerVlogTemPlate];
+    Template * webDesignerVlogTemPlate= [WebDesignerVlogTemplate webDesignerVlogTemplate];
     Template * danceVlogTemplate= [DanceVlogTemplate danceVlogTemplate];
     Template * studyVlogTemplate= [StudyVlogTemplate studyVlogTemplate];
     Template *italyTripVlogTemplate = [ItalyTripVlogTemplate italyTripVlogTemplate];

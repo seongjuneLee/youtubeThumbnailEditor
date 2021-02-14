@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WebDesignerVlogTemplate : Template
 
-+(WebDesignerVlogTemplate*)webDesignerVlogTemPlate;
++(WebDesignerVlogTemplate*)webDesignerVlogTemplate;
 
 @end
 

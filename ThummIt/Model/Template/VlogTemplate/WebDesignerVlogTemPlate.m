@@ -24,7 +24,7 @@
     
 }
 
-+(WebDesignerVlogTemplate*)webDesignerVlogTemPlate{
++(WebDesignerVlogTemplate*)webDesignerVlogTemplate{
     
     WebDesignerVlogTemplate* webDesignerVlogTemPlate = [[self alloc] init];
     
