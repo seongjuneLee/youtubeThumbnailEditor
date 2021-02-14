@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Typography : NSObject
 
 
+@property (nonatomic) float scale;
+
 // 타이포 이름
 @property (strong, nonatomic) NSString* name;
 

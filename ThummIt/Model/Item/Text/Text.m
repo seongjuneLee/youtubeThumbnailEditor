@@ -323,7 +323,9 @@
     // 5. 부분 타이포 적용
     [self setUpTypoRangeArray:self.typoRangeArray];
     self.baseView = self.textViewContainer;
+    NSLog(@"self.scccale %f",self.scale);
     
+
     CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
     float width = UIScreen.mainScreen.bounds.size.width;
     float scale = width/self.baseView.frameWidth;
@@ -342,6 +344,13 @@
     self.textViewContainer.bounds = self.textView.bounds;
     // 배경이미지뷰 리사이즈
     [self updateBackgroundImageViewFrame:self.typo];
+}
+
+-(void)scaleItem{
+    if(self.typo.scale != 0.0){
+        self.scale = self.typo.scale;
+    }
+    [super scaleItem];
 }
 
 #pragma mark - Helper

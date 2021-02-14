@@ -35,6 +35,7 @@
     [encoder encodeObject:[NSNumber numberWithBool:self.isCustomTypo] forKey:@"isCustomTypo"];
     [encoder encodeObject:self.fontName forKey:@"fontName"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.fontSize] forKey:@"fontSize"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:self.textColorPatternImageName forKey:@"textColorPatternImageName"];
 
     if (self.textToColor == nil) {
@@ -101,6 +102,7 @@
         self.isCustomTypo = [[decoder decodeObjectForKey:@"isCustomTypo"] boolValue];
         self.fontName = [decoder decodeObjectForKey:@"fontName"];
         self.fontSize = [[decoder decodeObjectForKey:@"fontSize"] floatValue];
+        self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.typoImageFilePath = [decoder decodeObjectForKey:@"typoImageFilePath"];
 
         self.textFromColor = [decoder decodeObjectForKey:@"textFromColor"];
@@ -177,6 +179,7 @@
     copy.isCustomTypo = self.isCustomTypo;
     copy.fontName = [self.fontName copyWithZone:zone];
     copy.fontSize = self.fontSize;
+    copy.scale = self.scale;
     
     copy.textColor = [self.textColor copyWithZone:zone];
     copy.textColorPatternImageName = [self.textColorPatternImageName copyWithZone:zone];

@@ -14,8 +14,8 @@
             filePath = "ThummIt/Model/Item/Text/Text.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "385"
-            endingLineNumber = "385">
+            startingLineNumber = "391"
+            endingLineNumber = "391">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -31,6 +31,22 @@
             startingLineNumber = "20"
             endingLineNumber = "20"
             landmarkName = "-resizeForCurrentFontSize"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "409F1A20-1CDD-4AAA-AE6F-710A082AAD12"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThummIt/EditingVC/EditingGestureController/EditingViewController+GestureControllerDelegate.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-didSelectItem:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
