@@ -13,6 +13,7 @@
 #import "StickerCollectionController.h"
 #import "UIColor+Additions.h"
 #import "UndoManager.h"
+#import "UIImage+Additions.h"
 
 @implementation EditingViewController (Buttons)
 
@@ -22,8 +23,100 @@
 }
 
 -(void)exportThumbnail{
-    
+    UIImage *viewImage = [self.view toImage];
+    UIImage *finalImage = [viewImage crop:self.bgView.frame];
+    NSString *title = @"ThummIt";
+
+    [self isAlbumAlreadyExist:^(BOOL exist) {
+        if (exist) {
+            [self getThummItAlbum:^(PHAssetCollection *collection) {
+                PHFetchResult *fetchResult = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[collection.localIdentifier] options:nil];
+                PHAssetCollection *assetCollection = fetchResult.firstObject;
+                [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+                    PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:finalImage];
+
+                    // add asset
+                    PHAssetCollectionChangeRequest *assetCollectionChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
+                    [assetCollectionChangeRequest addAssets:@[[assetChangeRequest placeholderForCreatedAsset]]];
+                } completionHandler:^(BOOL success, NSError *error) {
+                    if (!success) {
+                        NSLog(@"Error: %@", error);
+                    }
+                }];
+            }];
+        } else {
+            __block PHObjectPlaceholder *myAlbum;
+            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+                PHAssetCollectionChangeRequest *changeRequest = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:title];
+                NSLog(@"changeRequest %@",changeRequest);
+                
+                myAlbum = changeRequest.placeholderForCreatedAssetCollection;
+            } completionHandler:^(BOOL success, NSError *error) {
+                
+                if (success) {
+                    PHFetchResult *fetchResult = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[myAlbum.localIdentifier] options:nil];
+                    PHAssetCollection *assetCollection = fetchResult.firstObject;
+                    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+                        PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:finalImage];
+
+                        // add asset
+                        PHAssetCollectionChangeRequest *assetCollectionChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
+                        [assetCollectionChangeRequest addAssets:@[[assetChangeRequest placeholderForCreatedAsset]]];
+                    } completionHandler:^(BOOL success, NSError *error) {
+                        if (!success) {
+                            NSLog(@"Error: %@", error);
+                        }
+                    }];
+                } else {
+                    NSLog(@"Error: %@", error);
+                }
+                
+            }];
+        }
+    }];
+//
 }
+
+-(void)isAlbumAlreadyExist:(void(^) (BOOL exist))block{
+    
+    PHFetchOptions *userAlbumsOptions = [PHFetchOptions new];
+    NSString *title = @"ThummIt";
+    
+    PHFetchResult *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:userAlbumsOptions];
+    [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
+        
+        if ([collection.localizedTitle isEqualToString:title]) {
+            block(true);
+            *stop = true;
+        } else if (idx +1 == userAlbums.count){
+            block(false);
+            *stop = true;
+        }
+        
+    }];
+
+}
+
+-(void)getThummItAlbum:(void(^) (PHAssetCollection *collection))block{
+    
+    PHFetchOptions *userAlbumsOptions = [PHFetchOptions new];
+    NSString *title = @"ThummIt";
+    
+    PHFetchResult *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:userAlbumsOptions];
+    [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
+        
+        if ([collection.localizedTitle isEqualToString:title]) {
+            block(collection);
+            *stop = true;
+        } else if (idx +1 == userAlbums.count){
+            block(nil);
+            *stop = true;
+        }
+        
+    }];
+
+}
+
 
 - (IBAction)leftItemTapped:(id)sender {
     
@@ -116,7 +209,6 @@
             self.itemCollectionVC.scrollView.alpha = 1.0;
         }];
     }];
-    
     
 }
 
