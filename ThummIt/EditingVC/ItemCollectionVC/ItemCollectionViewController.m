@@ -33,7 +33,6 @@
 
 -(void)dismissSelf{
     
-    NSLog(@"self.containerView.frameY %f",self.containerView.frameY);
     [UIView animateWithDuration:0.4 animations:^{
         self.cancelButton.alpha = self.checkButton.alpha = 0;
         self.containerTopConstraint.constant = -self.view.frameHeight;

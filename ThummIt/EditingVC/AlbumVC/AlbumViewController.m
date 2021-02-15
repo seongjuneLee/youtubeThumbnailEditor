@@ -29,7 +29,7 @@
 
 
 -(void)showWithAnimation{
-
+    self.view.hidden = false;
     self.collectionViewTopConstraint.constant = self.view.frameHeight;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.collectionViewTopConstraint.constant = 0;
@@ -42,7 +42,9 @@
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.collectionViewTopConstraint.constant = self.view.frameHeight;
         [self.view layoutIfNeeded];
-    } completion:nil];
+    } completion:^(BOOL finished) {
+        self.view.hidden = true;
+    }];
 }
 
 
