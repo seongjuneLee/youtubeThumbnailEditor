@@ -122,7 +122,12 @@
 -(void)resizeForCurrentFontSize{
     
     [super resizeForCurrentFontSize];
-        
+    
+    Text *text = (Text *)self.parent;
+    if (text.typo.obliqueValue > 0) {
+        self.frameSize = CGSizeMake(self.bounds.size.width * 1.2, self.bounds.size.height);
+    }
+    
     CGPoint ret = [[[self.bgTextAttributes mapWithBlock:^id _Nonnull(BGTextAttribute * _Nonnull obj, NSUInteger idx) {
         return @(obj.offset);
     }] reduceWithBlock:^NSValue * _Nonnull(NSValue * _Nonnull obj1, NSValue *  _Nonnull obj2) {
@@ -251,8 +256,8 @@
         [string removeAttribute:NSShadowAttributeName range:range];
     }
     
-    if (typo.isItalic) {
-        [string addAttributes:@{NSObliquenessAttributeName:@0.3f}range:range];
+    if (typo.obliqueValue > 0) {
+        [string addAttributes:@{NSObliquenessAttributeName:@(typo.obliqueValue)}range:range];
     }
     
     // 정렬
@@ -283,8 +288,8 @@
         [string addAttribute:NSStrokeWidthAttributeName value:@(bgTextAttribute.borderWidth) range:range];
     }
     
-    if (bgTextAttribute.isItalic) {
-        [string addAttributes:@{NSObliquenessAttributeName:@0.3f}range:range];
+    if (bgTextAttribute.obliqueValue > 0) {
+        [string addAttributes:@{NSObliquenessAttributeName:@(bgTextAttribute.obliqueValue)}range:range];
 
     }
 
