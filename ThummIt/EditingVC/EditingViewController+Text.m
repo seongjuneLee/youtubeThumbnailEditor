@@ -47,7 +47,7 @@
         [self.currentText updateBackgroundImageViewFrame:self.currentText.typo];
         self.currentText.backgroundImageView.centerX += self.currentText.typo.bgCenterXDelta;
     }
-    
+
     self.currentText.text = textView.text;
     self.currentText.isTypedByUser = true;
     [self.currentText resize];

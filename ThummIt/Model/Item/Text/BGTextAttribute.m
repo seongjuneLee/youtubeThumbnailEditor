@@ -34,6 +34,7 @@
     //Encode properties, other class variables, etc
     [encoder encodeObject:[NSValue valueWithCGPoint:self.offset] forKey:@"offset"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
+    [encoder encodeObject:[NSNumber numberWithBool:self.isItalic] forKey:@"isItalic"];
     if (!CGColorGetPattern(self.textColor.CGColor)) {
         [encoder encodeObject:self.textColor forKey:@"textColor"];
     } else {
@@ -53,6 +54,7 @@
         
         self.offset = [[decoder decodeObjectForKey:@"offset"] CGPointValue];
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
+        self.isItalic = [[decoder decodeObjectForKey:@"isItalic"] boolValue];
         self.textColor = [decoder decodeObjectForKey:@"textColor"];
         self.textColorPatternImageName = [decoder decodeObjectForKey:@"textColorPatternImageName"];
         if (self.textColorPatternImageName) {
@@ -110,6 +112,11 @@
     shadow.shadowOffset = CGSizeMake(self.shadowOffset.x,self.shadowOffset.y);
     shadow.shadowBlurRadius = self.shadowRadius;
     [mutableAttributedString addAttribute:NSShadowAttributeName value:shadow range:range];
+    
+    if (self.isItalic) {
+        [mutableAttributedString addAttributes:@{NSObliquenessAttributeName:@0.3f}range:range];
+
+    }
 
     [mutableAttributedString.mutableString replaceOccurrencesOfString:RANDOM_TEXT withString:@"" options:NSCaseInsensitiveSearch range:range];
     

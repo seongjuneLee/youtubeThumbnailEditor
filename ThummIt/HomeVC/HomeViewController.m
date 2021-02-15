@@ -32,6 +32,11 @@
             NSLog(@"fontName : %@",fontName);
         }
     }
+    
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"THUMMIT"];
+    [text addAttributes:@{NSObliquenessAttributeName:@0.3f}range:NSMakeRange(0, 7)];
+    [self.testTextView setAttributedText:text];
+
 }
 
 -(void)connectHomeTableController{

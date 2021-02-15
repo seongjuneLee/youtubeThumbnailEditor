@@ -79,6 +79,7 @@
     
     [encoder encodeObject:self.bgTextAttributes forKey:@"bgTextAttributes"];
 
+    [encoder encodeObject:[NSNumber numberWithBool:self.isItalic] forKey:@"isItalic"];
 
     [encoder encodeObject:[NSValue valueWithCGSize:self.shadowOffset] forKey:@"shadowOffset"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.shadowRadius] forKey:@"shadowRadius"];
@@ -103,6 +104,7 @@
         self.fontName = [decoder decodeObjectForKey:@"fontName"];
         self.fontSize = [[decoder decodeObjectForKey:@"fontSize"] floatValue];
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
+        self.isItalic = [[decoder decodeObjectForKey:@"isItalic"] boolValue];
         self.typoImageFilePath = [decoder decodeObjectForKey:@"typoImageFilePath"];
 
         self.textFromColor = [decoder decodeObjectForKey:@"textFromColor"];
