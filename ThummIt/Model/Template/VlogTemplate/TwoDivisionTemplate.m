@@ -14,7 +14,7 @@
     self = [super init];
     if(self){
         
-        self.previewImageName = @"twoDivisionVlog";
+        self.previewImageName = @"twoDivisionPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"twoDivisionTemplate";
         self.backgroundImageName = @"";
@@ -38,6 +38,8 @@
     VerticalHalfRectangle *secondPhotoFrame = [VerticalHalfRectangle verticalHalfRectangle];
     firstPhotoFrame.isTemplateItem = true;
     secondPhotoFrame.isTemplateItem = true;
+    firstPhotoFrame.isFixedPhotoFrame = true;
+    secondPhotoFrame.isFixedPhotoFrame = true;
     firstPhotoFrame.scale = 0.5;
     secondPhotoFrame.scale = 0.5;
     firstPhotoFrame.center = CGPointMake(0.25, 0.5);
@@ -48,6 +50,18 @@
 
 -(void)setUpTexts{
     
+    Text *leftVlogText = [[Text alloc] init];
+    VlogNewCampus *leftVlog = [VlogNewCampus vlogNewCampus];
+    leftVlogText.scale = 0.6;
+    leftVlogText.center = CGPointMake(0.5, 0.5);
+    leftVlogText.isTemplateItem = true;
+    leftVlogText.indexInLayer =@"1";
+    leftVlogText.text = @"Summer Trip";
+    leftVlogText.textView.text = @"Summer Trip";
+    leftVlogText.typo = leftVlog;
+    [self.texts addObject:leftVlogText];
+    
+
 }
 
 @end
