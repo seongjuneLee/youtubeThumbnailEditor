@@ -33,6 +33,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="74D-YF-Hh4"/>
                                 </connections>
                             </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="attributed italic test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cEC-Tk-SeL">
+                                <rect key="frame" x="30" y="319" width="364" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="37"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,6 +58,7 @@
                     <navigationItem key="navigationItem" id="E6R-4G-uUJ"/>
                     <connections>
                         <outlet property="tableView" destination="95p-hu-MnO" id="aXP-Yo-0r3"/>
+                        <outlet property="testTextView" destination="cEC-Tk-SeL" id="v31-2h-uLh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

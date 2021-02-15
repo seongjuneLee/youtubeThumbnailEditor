@@ -61,6 +61,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIColor* shadowToColor;
 @property (nonatomic) float shadowGradientHeight;
 
+// 스타일
+@property (nonatomic) BOOL isItalic;
+
 // 투명도
 @property (nonatomic) float alpha;
 

@@ -53,7 +53,7 @@
 
         [string removeAttribute:NSParagraphStyleAttributeName range:NSMakeRange(0, string.length)];
         [string addAttribute:NSParagraphStyleAttributeName value:self.paragraphStyle range:NSMakeRange(0,string.length)];
-        [string drawInRect:CGRectMake(stringRect.origin.x+bgTextAttribute.offset.x, stringRect.origin.y+bgTextAttribute.offset.y, stringRect.size.width, stringRect.size.height)];
+        [string drawInRect:CGRectMake(stringRect.origin.x+bgTextAttribute.offset.x, stringRect.origin.y+bgTextAttribute.offset.y + 1, stringRect.size.width, stringRect.size.height+15)];
 
     }
 
@@ -251,6 +251,10 @@
         [string removeAttribute:NSShadowAttributeName range:range];
     }
     
+    if (typo.isItalic) {
+        [string addAttributes:@{NSObliquenessAttributeName:@0.3f}range:range];
+    }
+    
     // 정렬
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setAlignment:self.textAlignment];
@@ -278,7 +282,12 @@
         [string addAttribute:NSStrokeColorAttributeName value:bgTextAttribute.borderColor range:range];
         [string addAttribute:NSStrokeWidthAttributeName value:@(bgTextAttribute.borderWidth) range:range];
     }
-        
+    
+    if (bgTextAttribute.isItalic) {
+        [string addAttributes:@{NSObliquenessAttributeName:@0.3f}range:range];
+
+    }
+
     // 그림자
     if (bgTextAttribute.shadowColor) {
         NSShadow* shadow = [[NSShadow alloc] init];

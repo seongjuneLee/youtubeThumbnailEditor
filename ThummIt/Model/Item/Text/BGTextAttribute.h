@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint shadowOffset;
 @property (nonatomic) float shadowRadius;
 
+@property (nonatomic) BOOL isItalic;
+
 -(NSMutableAttributedString*)toAttributedStringWithText:(NSString*)text;
 
 @end

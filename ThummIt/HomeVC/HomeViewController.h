@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) HomeTableController *homeTableController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextView *testTextView;
 
 @end
 
