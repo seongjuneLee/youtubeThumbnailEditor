@@ -20,6 +20,7 @@
 #import "TypoHeader.h"
 #import "PhotoFrameHeader.h"
 #import "StickerHeader.h"
+#import "AppManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
@@ -96,8 +97,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) UIColor *originalCursorColor;
 
 -(void)loadItems;
--(void)showNavigationItems;
--(void)hideNavigationItems;
+-(void)showItemsForNormalMode;
+-(void)hideItemsForItemMode;
 
 
 @end

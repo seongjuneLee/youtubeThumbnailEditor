@@ -97,7 +97,7 @@
     whyRealText.indexInLayer =@"4";
     whyRealText.text = @"아 왜 그래요 진짜!!";
     whyRealText.textView.text = whyRealText.text;
-    whyRealText.scale = 0.35;
+    whyRealText.scale = 0.42;
     whyRealText.center = CGPointMake(0.27, 0.34);
     whyRealText.isTemplateItem = true;
     whyRealText.typo = whyReal;

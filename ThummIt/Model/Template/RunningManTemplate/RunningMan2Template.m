@@ -119,7 +119,7 @@
     asmosphereText.indexInLayer =@"5";
     asmosphereText.text = @"분위기 파악 못해?!";
     asmosphereText.textView.text = asmosphereText.text;
-    asmosphereText.scale = 0.3;
+    asmosphereText.scale = 0.36;
     asmosphereText.center = CGPointMake(0.75, 0.43);
     asmosphereText.isTemplateItem = true;
     asmosphereText.typo = asmosphere;

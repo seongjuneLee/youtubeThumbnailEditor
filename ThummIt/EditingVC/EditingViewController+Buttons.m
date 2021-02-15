@@ -12,7 +12,6 @@
 #import "PhotoFrameCollectionController.h"
 #import "StickerCollectionController.h"
 #import "UIColor+Additions.h"
-#import "UndoManager.h"
 #import "UIImage+Additions.h"
 
 @implementation EditingViewController (Buttons)
@@ -150,7 +149,7 @@
 
 -(void)photoFrameButtonTappedTaskWhenAuthorized{
     [self.layerController showTransparentView];
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];
     [self addAlbumVC];
@@ -201,7 +200,8 @@
     self.itemCollectionVC.cancelButton.alpha = 0;
     self.itemCollectionVC.scrollView.alpha = 0;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.itemCollectionVC.containerView.frameY = 0;
+        self.itemCollectionVC.containerTopConstraint.constant = 0;
+        [self.itemCollectionVC.view layoutIfNeeded];
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
             self.itemCollectionVC.checkButton.alpha = 1.0;
@@ -234,7 +234,7 @@
     
     self.modeController.editingMode = AddingItemMode;
     [self.layerController showTransparentView];
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = TextType;
     [self addItemCollectionVC];
     if (self.recentTypo == nil) {
@@ -254,7 +254,7 @@
     
     self.modeController.editingMode = AddingItemMode;
     [self.layerController showTransparentView];
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = StickerType;
     [self addItemCollectionVC];
     // 추가 필요
@@ -275,7 +275,7 @@
 
 - (IBAction)bgColorButtonTapped:(id)sender {
     
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     self.originalColor = self.bgView.backgroundColor;
     
     // scrollView 가려주기

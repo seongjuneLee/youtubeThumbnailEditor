@@ -99,7 +99,7 @@
     Text *whiteTitleVlogText = [[Text alloc] init];
     VlogStudentTypo *whiteTitleVlog = [VlogStudentTypo vlogStudentTypo];
     whiteTitleVlog.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1] ;
-    whiteTitleVlogText.scale = 0.745;
+    whiteTitleVlogText.scale = 0.894;
     whiteTitleVlogText.center = CGPointMake(0.375, 0.9);
     whiteTitleVlogText.isTemplateItem = true;
     whiteTitleVlogText.indexInLayer =@"3";
@@ -112,8 +112,8 @@
     Text *skinVlogText = [[Text alloc] init];
     VlogStudentTypo *skinVlog = [VlogStudentTypo vlogStudentTypo];
     skinVlog.textColor = [UIColor colorWithRed:(251/255.0) green:(189/255.0) blue:(186/255.0) alpha:1] ;
-    skinVlogText.scale = 0.36;
-    skinVlogText.center = CGPointMake(0.185, 0.73);
+    skinVlogText.scale = 0.42;
+    skinVlogText.center = CGPointMake(0.18, 0.73);
     skinVlogText.isTemplateItem = true;
     skinVlogText.indexInLayer =@"4";
     skinVlogText.text = @"대학 복학생";
@@ -125,8 +125,8 @@
     Text *greenVlogText = [[Text alloc] init];
     VlogStudentTypo *greenVlog = [VlogStudentTypo vlogStudentTypo];
     greenVlog.textColor = [UIColor colorWithRed:(244/255.0) green:(235/255.0) blue:(168/255.0) alpha:1] ;
-    greenVlogText.scale = 0.29;
-    greenVlogText.center = CGPointMake(0.515, 0.73);
+    greenVlogText.scale = 0.36;
+    greenVlogText.center = CGPointMake(0.51, 0.73);
     greenVlogText.isTemplateItem = true;
     greenVlogText.indexInLayer =@"5";
     greenVlogText.text = @"아싸 Vlog";

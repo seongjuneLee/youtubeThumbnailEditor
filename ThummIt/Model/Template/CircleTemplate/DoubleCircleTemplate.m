@@ -85,7 +85,7 @@
 
     Text *behindTypo = [[Text alloc] init];
     DinggoBehindTypo *behind = [DinggoBehindTypo dinggoBehindTypo];
-    behindTypo.scale = 0.15;
+    behindTypo.scale = 0.18;
     behindTypo.center = CGPointMake(0.11, 0.15);
     behindTypo.isTemplateItem = true;
     behindTypo.indexInLayer = @"3";

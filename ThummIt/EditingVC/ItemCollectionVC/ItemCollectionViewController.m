@@ -33,11 +33,11 @@
 
 -(void)dismissSelf{
     
-    float screenHeight = UIScreen.mainScreen.bounds.size.height;
-    
+    NSLog(@"self.containerView.frameY %f",self.containerView.frameY);
     [UIView animateWithDuration:0.4 animations:^{
         self.cancelButton.alpha = self.checkButton.alpha = 0;
-        self.containerView.frameY = screenHeight;
+        self.containerTopConstraint.constant = -self.view.frameHeight;
+        [self.view layoutIfNeeded];
     }completion:^(BOOL finished) {
         [self.view removeFromSuperview];
         [self removeFromParentViewController];

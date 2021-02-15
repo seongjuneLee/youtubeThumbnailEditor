@@ -21,17 +21,17 @@
     if ([item isKindOfClass:PhotoFrame.class]) {
         
         if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
-                if (PhotoManager.sharedInstance.phassets.count == 0) {
-                    PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
-                }
-                [self photoFrameTappedTaskWhenAuthorizedWithItem:item];
+            if (PhotoManager.sharedInstance.phassets.count == 0) {
+                PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+            }
+            [self photoFrameTappedTaskWhenAuthorizedWithItem:item];
         } else {
             [self taskWhenDenied];
         }
         
     } else if([item isKindOfClass:Text.class]){
-        [self hideNavigationItems];
-
+        [self hideItemsForItemMode];
+        
         Text *text = (Text *)item;
         self.currentItem = text;
         self.currentText = text;
@@ -45,7 +45,7 @@
         self.itemCollectionVC.typoButton.alpha = 0.4;
         self.itemCollectionVC.textButton.selected = true;
         self.itemCollectionVC.textButton.alpha = 1.0;
-
+        
         [text.textView becomeFirstResponder];
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
@@ -58,10 +58,10 @@
         }
         
         [self addItemCollectionVC];
-
+        
     } else if([item isKindOfClass:Sticker.class]){
-        [self hideNavigationItems];
-
+        [self hideItemsForItemMode];
+        
         Sticker *sticker = (Sticker *)item;
         self.currentItem = sticker; // currentsicker가 null이라 Currentitem으로 받음일단
         self.currentSticker = sticker;
@@ -72,7 +72,7 @@
         self.originalColorChangable = sticker.cannotChangeColor;
         self.originalSticker = sticker;
         self.originalIndexInLayer = sticker.indexInLayer.integerValue;
-
+        
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
         self.itemCollectionVC.itemType = StickerType;
@@ -99,7 +99,7 @@
     self.originalIndexInLayer = photoFrame.indexInLayer.integerValue;
 
     [self.layerController showTransparentView];
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     
     [self.layerController bringCurrentItemToFront:self.currentItem];
     self.itemCollectionVC.itemType = PhotoFrameType;
@@ -201,7 +201,7 @@
             }
         }
         item.baseView.center = CGPointMake(self.bgView.frameWidth/2, self.bgView.frameY + self.bgView.frameHeight/2);
-        [self showNavigationItems];
+        [self showItemsForNormalMode];
         [self.layerController hideTransparentView];
         [self.itemCollectionVC dismissSelf];
     }
