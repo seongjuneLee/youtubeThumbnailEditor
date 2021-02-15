@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.makeNewImageView.layer.cornerRadius = 5.0;
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:NSBundle.mainBundle] forCellReuseIdentifier:@"HomeTableViewCell"];
     [self connectHomeTableController];
     for (NSString *familyName in UIFont.familyNames) {

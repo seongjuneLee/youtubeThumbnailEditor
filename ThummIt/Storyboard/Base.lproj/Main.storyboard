@@ -24,7 +24,7 @@
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="95p-hu-MnO">
-                                <rect key="frame" x="0.0" y="105" width="414" height="708"/>
+                                <rect key="frame" x="0.0" y="277.5" width="414" height="535.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,22 +33,56 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="74D-YF-Hh4"/>
                                 </connections>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="makeNewPreview" translatesAutoresizingMaskIntoConstraints="NO" id="7fi-6r-OcI">
+                                <rect key="frame" x="10.5" y="105" width="393" height="152.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5B-93-eTk">
+                                <rect key="frame" x="10.5" y="105" width="393" height="152.5"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9m-rG-jwc">
+                                <rect key="frame" x="199.5" y="135" width="15" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dGU-F7-Gqs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="27"/>
+                                <color key="textColor" red="0.98039609189999999" green="0.98038047549999996" blue="0.98040121790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKi-2d-qrH">
+                                <rect key="frame" x="160" y="185" width="94.5" height="22"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <color key="textColor" red="0.98039609189999999" green="0.98038047549999996" blue="0.98040121790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7fi-6r-OcI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.95" id="1GF-aH-4bR"/>
                             <constraint firstItem="95p-hu-MnO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3jc-GW-f6t"/>
+                            <constraint firstItem="u5B-93-eTk" firstAttribute="centerY" secondItem="7fi-6r-OcI" secondAttribute="centerY" id="COa-BA-E9N"/>
+                            <constraint firstItem="u5B-93-eTk" firstAttribute="height" secondItem="7fi-6r-OcI" secondAttribute="height" id="FiW-B6-sZI"/>
+                            <constraint firstItem="u5B-93-eTk" firstAttribute="width" secondItem="7fi-6r-OcI" secondAttribute="width" id="KDA-NH-oZw"/>
+                            <constraint firstItem="kKi-2d-qrH" firstAttribute="top" secondItem="m9m-rG-jwc" secondAttribute="bottom" id="MGv-aY-dkQ"/>
+                            <constraint firstItem="m9m-rG-jwc" firstAttribute="centerX" secondItem="7fi-6r-OcI" secondAttribute="centerX" id="T4f-vo-VPy"/>
                             <constraint firstItem="hYp-WL-McN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XPn-OT-UUW"/>
                             <constraint firstItem="95p-hu-MnO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="YdA-ZQ-RrC"/>
-                            <constraint firstItem="95p-hu-MnO" firstAttribute="top" secondItem="hYp-WL-McN" secondAttribute="bottom" constant="20" id="bWQ-oD-W66"/>
+                            <constraint firstItem="95p-hu-MnO" firstAttribute="top" secondItem="7fi-6r-OcI" secondAttribute="bottom" constant="20" id="bJg-oV-G0G"/>
+                            <constraint firstItem="u5B-93-eTk" firstAttribute="centerX" secondItem="7fi-6r-OcI" secondAttribute="centerX" id="bJj-9q-WO3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hYp-WL-McN" secondAttribute="trailing" symbolic="YES" id="bzE-NG-IF2"/>
+                            <constraint firstItem="7fi-6r-OcI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.17" id="c7p-zY-M1C"/>
+                            <constraint firstItem="kKi-2d-qrH" firstAttribute="centerX" secondItem="m9m-rG-jwc" secondAttribute="centerX" id="cww-Tz-gwk"/>
                             <constraint firstItem="hYp-WL-McN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ey1-uk-EKW"/>
+                            <constraint firstItem="7fi-6r-OcI" firstAttribute="top" secondItem="hYp-WL-McN" secondAttribute="bottom" constant="20" id="s4E-dj-YBb"/>
+                            <constraint firstItem="7fi-6r-OcI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sqL-3v-9sR"/>
+                            <constraint firstItem="m9m-rG-jwc" firstAttribute="top" secondItem="7fi-6r-OcI" secondAttribute="top" constant="30" id="vOT-LL-dMP"/>
                             <constraint firstItem="95p-hu-MnO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vog-lk-794"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homeTabBarImage" id="Gfs-kR-mac"/>
                     <navigationItem key="navigationItem" id="E6R-4G-uUJ"/>
                     <connections>
+                        <outlet property="makeNewImageView" destination="7fi-6r-OcI" id="PoE-bZ-Pim"/>
                         <outlet property="tableView" destination="95p-hu-MnO" id="aXP-Yo-0r3"/>
                     </connections>
                 </viewController>
@@ -1287,6 +1321,7 @@ with the design you want.</string>
         <image name="homeTabBarImage" width="26.666666030883789" height="26.666666030883789"/>
         <image name="kakaoLogo" width="100" height="100"/>
         <image name="leftBlack" width="208" height="208"/>
+        <image name="makeNewPreview" width="640" height="429.33334350585938"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
