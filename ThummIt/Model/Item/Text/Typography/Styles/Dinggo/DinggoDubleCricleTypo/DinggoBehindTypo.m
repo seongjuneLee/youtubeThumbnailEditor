@@ -17,6 +17,7 @@
         self.fontName = @"NeoDunggeunmoPro-Regular";
         self.textColor = [UIColor colorWithRed:(249/255.0) green:(242/255.0) blue:(84/255.0) alpha:1] ;
         self.fontSize = TEXT_FONT_SIZE;
+        self.obliqueValue = 0.18;
 
         
     }

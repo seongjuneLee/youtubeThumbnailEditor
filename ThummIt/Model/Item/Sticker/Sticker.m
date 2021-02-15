@@ -83,7 +83,7 @@
     
     [self addBackgroundImageView];
 
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(degreesToRadians(self.rotationDegree));
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
     float scale = screenWidth/self.baseView.frameWidth;
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
     self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);

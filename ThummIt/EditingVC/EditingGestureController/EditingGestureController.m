@@ -189,7 +189,6 @@
                 [SaveManager.sharedInstance save];
             });
         }
-        NSLog(@"editingVC.modeController.editingMode %d",editingVC.modeController.editingMode);
 
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;

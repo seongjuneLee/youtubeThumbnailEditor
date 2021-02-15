@@ -47,7 +47,7 @@
     //서유기
     Text *logoText = [[Text alloc] init];
     SeoYuGiCloudLogoTypo *cloudLogo = [SeoYuGiCloudLogoTypo seoYuGiCloudLogoTypo];
-    logoText.scale = 0.115;
+    logoText.scale = 0.138;
     logoText.center = CGPointMake(0.14, 0.15);
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"0";
@@ -90,7 +90,7 @@
     exc2Sticker.scale = 0.17;
     exc2Sticker.isTemplateItem = true;
     exc2Sticker.rotationDegree = degreesToRadians(-20);
-    exc2Sticker.center = CGPointMake(0.63, 0.32);
+    exc2Sticker.center = CGPointMake(0.62, 0.32);
     [self.stickers addObject:exc2Sticker];
     
     SinSeoYuGiQu2Sticker *quSticker = [SinSeoYuGiQu2Sticker sinSeoYuGiQu2Sticker];

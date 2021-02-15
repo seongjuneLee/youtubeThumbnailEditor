@@ -66,7 +66,7 @@
     //와 나 이런거 무서워한다
     Text *scaredText = [[Text alloc] init];
     SeoYuGiGagwanTypo *gagwanSmall = [SeoYuGiGagwanTypo seoYuGiGagwanTypo];
-    scaredText.scale = 0.58;
+    scaredText.scale = 0.624;
     scaredText.center = CGPointMake(0.31, 0.71);
     scaredText.isTemplateItem = true;
     scaredText.indexInLayer =@"1";
@@ -78,7 +78,7 @@
     //가관이네..
     Text *gagwanText = [[Text alloc] init];
     SeoYuGiGagwanTypo *gagwanBig = [SeoYuGiGagwanTypo seoYuGiGagwanTypo];
-    gagwanText.scale = 0.32;
+    gagwanText.scale = 0.384;
     gagwanText.center = CGPointMake(0.58, 0.85);
     gagwanText.isTemplateItem = true;
     gagwanText.indexInLayer =@"2";

@@ -24,6 +24,7 @@
 
         self.textColor = [UIColor diagonalGradientFromColor:self.textFromColor toColor:self.textToColor withHeight:self.textGradientHeight];
         self.cannotChangeColor = true;
+        self.obliqueValue = 0.2;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         BGTextAttribute *borderAtt1 = [[BGTextAttribute alloc] init];
@@ -31,6 +32,9 @@
         borderAtt.borderWidth = 6;
         borderAtt1.borderColor = [UIColor whiteColor];
         borderAtt1.borderWidth = 14;
+        borderAtt.obliqueValue = 0.2;
+        borderAtt1.obliqueValue = 0.2;
+        
         self.bgTextAttributes = @[borderAtt,borderAtt1];
         
 
