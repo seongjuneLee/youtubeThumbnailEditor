@@ -13,7 +13,7 @@
     
     CGRect newBounds = self.bounds;
     CGSize newSize = [self sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-    newBounds.size = CGSizeMake(newSize.width + 40, newSize.height);
+    newBounds.size = newSize;
     self.frame = newBounds;
     
 }
