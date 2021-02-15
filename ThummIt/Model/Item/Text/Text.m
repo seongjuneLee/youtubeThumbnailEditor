@@ -323,7 +323,6 @@
     // 5. 부분 타이포 적용
     [self setUpTypoRangeArray:self.typoRangeArray];
     self.baseView = self.textViewContainer;
-    NSLog(@"self.scccale %f",self.scale);
     
 
     CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);

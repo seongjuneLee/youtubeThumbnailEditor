@@ -20,6 +20,7 @@
 #import "TypoHeader.h"
 #import "PhotoFrameHeader.h"
 #import "StickerHeader.h"
+#import "AppManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController

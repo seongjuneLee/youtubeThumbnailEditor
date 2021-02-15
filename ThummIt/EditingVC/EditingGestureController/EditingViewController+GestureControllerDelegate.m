@@ -21,17 +21,17 @@
     if ([item isKindOfClass:PhotoFrame.class]) {
         
         if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
-                if (PhotoManager.sharedInstance.phassets.count == 0) {
-                    PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
-                }
-                [self photoFrameTappedTaskWhenAuthorizedWithItem:item];
+            if (PhotoManager.sharedInstance.phassets.count == 0) {
+                PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+            }
+            [self photoFrameTappedTaskWhenAuthorizedWithItem:item];
         } else {
             [self taskWhenDenied];
         }
         
     } else if([item isKindOfClass:Text.class]){
         [self hideNavigationItems];
-
+        
         Text *text = (Text *)item;
         self.currentItem = text;
         self.currentText = text;
@@ -45,7 +45,7 @@
         self.itemCollectionVC.typoButton.alpha = 0.4;
         self.itemCollectionVC.textButton.selected = true;
         self.itemCollectionVC.textButton.alpha = 1.0;
-
+        
         [text.textView becomeFirstResponder];
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
@@ -58,10 +58,10 @@
         }
         
         [self addItemCollectionVC];
-
+        
     } else if([item isKindOfClass:Sticker.class]){
         [self hideNavigationItems];
-
+        
         Sticker *sticker = (Sticker *)item;
         self.currentItem = sticker; // currentsicker가 null이라 Currentitem으로 받음일단
         self.currentSticker = sticker;
@@ -72,7 +72,7 @@
         self.originalColorChangable = sticker.cannotChangeColor;
         self.originalSticker = sticker;
         self.originalIndexInLayer = sticker.indexInLayer.integerValue;
-
+        
         [self.layerController showTransparentView];
         [self.layerController bringCurrentItemToFront:self.currentItem];
         self.itemCollectionVC.itemType = StickerType;
