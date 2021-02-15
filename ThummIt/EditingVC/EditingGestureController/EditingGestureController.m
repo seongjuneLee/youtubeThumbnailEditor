@@ -385,12 +385,6 @@
         CGPoint fingerPoint = [sender locationInView:photoFrame.baseView];
         
         CGPoint newCenter  = CGPointMake(fingerPoint.x - (self.originalPoint.x - self.originalCenter.x), fingerPoint.y - (self.originalPoint.y - self.originalCenter.y));
-//        CGPoint photoImageViewOrigin = CGPointMake(newCenter.x - photoFrame.photoImageView.frameWidth/2, newCenter.y - photoFrame.photoImageView.frameHeight/2);
-//
-//        if (photoImageViewOrigin.x <= 0 && photoFrame.baseView.frameWidth <= newCenter.x + photoFrame.photoImageView.frameWidth/2 ) {
-//        }
-//        if (photoImageViewOrigin.y <= 0 && photoFrame.baseView.frameHeight/2 <= newCenter.y + photoFrame.photoImageView.frameHeight/2 ) {
-//        }
         if (!self.isPinching) {
             photoFrame.photoImageView.centerX = newCenter.x;
             photoFrame.photoImageView.centerY = newCenter.y;
@@ -489,6 +483,7 @@
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
+        self.isPinching = false;
         [self removeItemSizeGuideLinesFromSuperView];
         [self.rotationDashedLine removeFromSuperview];
         
@@ -615,6 +610,8 @@
         if (!editingVC.currentItem) {
             return;
         }
+        self.isPinching = true;
+
         self.originalFirstFinger = [sender locationOfTouch:0 inView:editingVC.currentItem.baseView];
         self.originalSecondFinger = [sender locationOfTouch:1 inView:editingVC.currentItem.baseView];
         
@@ -632,6 +629,7 @@
 
         
     } else if (sender.state == UIGestureRecognizerStateChanged && sender.numberOfTouches == 2){
+        
         CGPoint finger1Point = [sender locationOfTouch:0 inView:editingVC.gestureView];
         CGPoint finger2Point = [sender locationOfTouch:1 inView:editingVC.gestureView];
         
@@ -647,6 +645,9 @@
         
         photoFrame.photoScale = self.originalScaleRatio*changeScale;
         photoFrame.photoRotationDegree = self.currentRotation;
+        
+        self.isPinching = false;
+        
     }
 
 }
