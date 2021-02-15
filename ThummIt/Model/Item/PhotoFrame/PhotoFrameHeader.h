@@ -39,4 +39,7 @@
 #import "KidsTrapezoid1.h"
 #import "KidsTrapezoid2.h"
 #import "KidsTrapezoid3.h"
+#import "InfiniteTemplateRectangle1.h"
+#import "InfiniteTemplateRectangle2.h"
+#import "StudyTemplateRectangle.h"
 #endif /* BorderHeader_h */

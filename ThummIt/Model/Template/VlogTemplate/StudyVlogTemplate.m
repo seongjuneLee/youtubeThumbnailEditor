@@ -35,12 +35,18 @@
 
 -(void)setUpPhotoFrame{
     
-    PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
+//    PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
+//    photoFrame1.isTemplateItem = true;
+//    photoFrame1.isFixedPhotoFrame = true;
+//    float screenWidth = UIScreen.mainScreen.bounds.size.width;
+//    float frameWidth = screenWidth;
+//    photoFrame1.baseView.frameSize = CGSizeMake(frameWidth * 0.68, screenWidth * 9/16 * 0.73);
+//    photoFrame1.center = CGPointMake(0.5, 0.5);
+//    [self.photoFrames addObject:photoFrame1];
+    
+    PhotoFrame *photoFrame1 = [StudyTemplateRectangle studyTemplateRectangle];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    float screenWidth = UIScreen.mainScreen.bounds.size.width;
-    float frameWidth = screenWidth;
-    photoFrame1.baseView.frameSize = CGSizeMake(frameWidth * 0.68, screenWidth * 9/16 * 0.73);
     photoFrame1.center = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame1];
   

@@ -79,7 +79,7 @@
     learningManText.text = @"러닝맨";
     learningManText.textView.text = learningManText.text;
     learningManText.scale = 0.19;
-    learningManText.center = CGPointMake(0.1, 0.75);
+    learningManText.center = CGPointMake(0.1, 0.74);
     learningManText.isTemplateItem = true;
     learningManText.typo = workingManNameTypo;
     [self.texts addObject:learningManText];
