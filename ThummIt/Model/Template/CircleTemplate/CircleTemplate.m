@@ -37,7 +37,7 @@
     PhotoFrame *photoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     photoFrame.isTemplateItem = true;
     photoFrame.indexInLayer = @"0";
-    photoFrame.scale = 0.48;
+    photoFrame.scale = 0.5;
     photoFrame.center = CGPointMake(0.34, 0.53);
     [self.photoFrames addObject:photoFrame];
     
@@ -48,7 +48,7 @@
     Text *smileTypo = [[Text alloc] init];
     DinggoSmileTypo *smile = [DinggoSmileTypo dinggoSmileTypo];
     smileTypo.scale = 0.345;
-    smileTypo.center = CGPointMake(0.75, 0.5);
+    smileTypo.center = CGPointMake(0.73, 0.5);
     smileTypo.isTemplateItem = true;
     smileTypo.indexInLayer = @"1";
     smileTypo.text = @"일단 웃어~!!!";
@@ -58,7 +58,7 @@
     
     Text *bigEditTypo = [[Text alloc] init];
     DinggoBigEdit *bigEdit = [DinggoBigEdit dinggoBigEdit];
-    bigEditTypo.scale = 0.65;
+    bigEditTypo.scale = 0.78;
     bigEditTypo.center = CGPointMake(0.5, 0.85);
     bigEditTypo.isTemplateItem = true;
     bigEditTypo.indexInLayer = @"2";
@@ -81,7 +81,7 @@
     Text *potatoTypo = [[Text alloc] init];
     DinggoPotatoTypo *potato = [DinggoPotatoTypo dinggoPotatoTypo];
     potatoTypo.scale = 0.2;
-    potatoTypo.center = CGPointMake(0.34, 0.15);
+    potatoTypo.center = CGPointMake(0.34, 0.16);
     potatoTypo.isTemplateItem = true;
     potatoTypo.indexInLayer = @"4";
     potatoTypo.text = @"(감자신)";
@@ -91,7 +91,7 @@
     
     Text *gookTalk = [[Text alloc] init];
     DinggoGoodTalk *goodtaking = [DinggoGoodTalk dinggoGoodTalk];
-    gookTalk.scale = 0.15;
+    gookTalk.scale = 0.18;
     gookTalk.center = CGPointMake(0.1, 0.13);
     gookTalk.isTemplateItem = true;
     gookTalk.rotationDegree = degreesToRadians(-5);

@@ -18,10 +18,12 @@
         self.bgImageName = @"seoYUGiCloudLogo";
         self.bgWidthPadding = 5;
         self.cannotChangeColor = true;
+        self.obliqueValue = 0.2;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor colorWithRed:59/255.0f green:4/255.0f blue:1/255.0f alpha:1];
         borderAtt.borderWidth = 10;
+        borderAtt.obliqueValue = 0.2;
         self.bgTextAttributes = @[borderAtt];
     }
     

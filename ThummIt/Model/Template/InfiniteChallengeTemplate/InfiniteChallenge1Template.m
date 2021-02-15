@@ -46,7 +46,7 @@
     //방탈출
     Text *escapeRoomText = [[Text alloc] init];
     InfiniteChallengeEscapeRoom *escapeRoom = [InfiniteChallengeEscapeRoom infiniteChallengeEscapeRoom];
-    escapeRoomText.scale = 0.4;
+    escapeRoomText.scale = 0.48;
     escapeRoomText.center = CGPointMake(0.5, 0.85);
     escapeRoomText.isTemplateItem = true;
     escapeRoomText.indexInLayer =@"0";
