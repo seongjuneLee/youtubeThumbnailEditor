@@ -69,7 +69,10 @@
     }
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
-    
+    if (self.itemCollectionVC.itemType == TextType) {
+        self.itemCollectionVC.view.frame = CGRectMake(0, self.view.frameHeight - (AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY), self.view.frameWidth, AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY);
+    }
+
     float bgColorCollectionCellHeight = self.view.frameWidth/8 - 5;
     float inset = 40;
     float bgColorVCHeight = bgColorCollectionCellHeight + inset + self.bgColorVC.cancelButton.frameHeight;

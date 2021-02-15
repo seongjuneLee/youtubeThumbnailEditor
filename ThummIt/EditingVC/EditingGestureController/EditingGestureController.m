@@ -103,7 +103,9 @@
         
     } else { // 에디팅 모드 진입
         if ([self getCurrentItem:sender]) {
-            [editingVC didSelectItem:[self getCurrentItem:sender]];
+            if (![editingVC.childViewControllers containsObject:editingVC.itemCollectionVC]) {
+                [editingVC didSelectItem:[self getCurrentItem:sender]];
+            }
         }
     }
 
@@ -133,15 +135,18 @@
     CGPoint currentPoint = [sender locationInView:editingVC.gestureView];
     CGPoint deltaPoint = CGPointZero;
     if (sender.state == UIGestureRecognizerStateBegan) {
-        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
+        if (editingVC.currentItem.isFixedPhotoFrame) {
             return;
         }
-
         self.originalPoint = [sender locationInView:editingVC.gestureView];
         
         if (!editingVC.currentItem && [self getCurrentItem:sender]) {
             editingVC.currentItem = [self getCurrentItem:sender];
         }
+        if (!editingVC.currentItem) {
+            return;
+        }
+
         [editingVC readyUIForPanning];
         [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];

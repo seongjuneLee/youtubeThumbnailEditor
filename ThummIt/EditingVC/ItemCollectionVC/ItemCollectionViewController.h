@@ -41,6 +41,7 @@ typedef enum {
 @property (strong, nonatomic) TextCollectionController *textCollectionController;
 @property (strong, nonatomic) StickerCollectionController *stickerCollectionController;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerTopConstraint;
 @property (weak, nonatomic) UIViewController *editingVC;
 
 -(void)dismissSelf;

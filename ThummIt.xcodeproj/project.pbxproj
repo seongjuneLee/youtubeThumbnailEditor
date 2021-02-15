@@ -41,6 +41,7 @@
 		6E1DBEA025D82E86004C0416 /* KidsTrapezoid3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBE9F25D82E86004C0416 /* KidsTrapezoid3.m */; };
 		6E1DBEC925D918B1004C0416 /* DogVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBEC825D918B1004C0416 /* DogVlogTemplate.m */; };
 		6E1DBECE25D918FF004C0416 /* WebDesignerVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBECD25D918FF004C0416 /* WebDesignerVlogTemplate.m */; };
+		6E1DBEDD25D9A4C8004C0416 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBEDC25D9A4C8004C0416 /* AppManager.m */; };
 		6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC6625AD78B700BBA540 /* ColorManager.m */; };
 		6E20BC7125AD938000BBA540 /* BGColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC7025AD938000BBA540 /* BGColorViewController.m */; };
 		6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8625AD944B00BBA540 /* BGColorCollectionViewCell.m */; };
@@ -517,6 +518,8 @@
 		6E1DBEC825D918B1004C0416 /* DogVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogVlogTemplate.m; sourceTree = "<group>"; };
 		6E1DBECC25D918FF004C0416 /* WebDesignerVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebDesignerVlogTemplate.h; sourceTree = "<group>"; };
 		6E1DBECD25D918FF004C0416 /* WebDesignerVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDesignerVlogTemplate.m; sourceTree = "<group>"; };
+		6E1DBEDB25D9A4C8004C0416 /* AppManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		6E1DBEDC25D9A4C8004C0416 /* AppManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		6E20BC6525AD78B700BBA540 /* ColorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorManager.h; sourceTree = "<group>"; };
 		6E20BC6625AD78B700BBA540 /* ColorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorManager.m; sourceTree = "<group>"; };
 		6E20BC6F25AD938000BBA540 /* BGColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGColorViewController.h; sourceTree = "<group>"; };
@@ -1602,6 +1605,8 @@
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
 				6E698BA325B89CB200CE86FB /* GuideLine */,
 				6E2845B425C88640008B7A23 /* UserManager */,
+				6E1DBEDB25D9A4C8004C0416 /* AppManager.h */,
+				6E1DBEDC25D9A4C8004C0416 /* AppManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -3376,6 +3381,7 @@
 				6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */,
 				6EF0C81B25CBC31500BE7573 /* GameSticker.m in Sources */,
 				6ED13BAF25C08FA700012144 /* YellowGradientTypo.m in Sources */,
+				6E1DBEDD25D9A4C8004C0416 /* AppManager.m in Sources */,
 				6E28452C25C35870008B7A23 /* VlogStudy.m in Sources */,
 				6E28451925C35870008B7A23 /* VlogDesiner.m in Sources */,
 				6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */,

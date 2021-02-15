@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MainTabBarViewController : UITabBarController <UITabBarControllerDelegate,UITabBarDelegate>
 
+@property (strong, nonatomic) UITextView *textViewForFrame;
 @end
 
 NS_ASSUME_NONNULL_END
