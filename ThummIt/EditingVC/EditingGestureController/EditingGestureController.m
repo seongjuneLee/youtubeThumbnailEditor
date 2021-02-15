@@ -135,15 +135,13 @@
     CGPoint currentPoint = [sender locationInView:editingVC.gestureView];
     CGPoint deltaPoint = CGPointZero;
     if (sender.state == UIGestureRecognizerStateBegan) {
-        if (editingVC.currentItem.isFixedPhotoFrame) {
-            return;
-        }
         self.originalPoint = [sender locationInView:editingVC.gestureView];
         
         if (!editingVC.currentItem && [self getCurrentItem:sender]) {
             editingVC.currentItem = [self getCurrentItem:sender];
         }
-        if (!editingVC.currentItem) {
+        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
+            editingVC.currentItem = nil;
             return;
         }
 
@@ -433,6 +431,7 @@
             editingVC.currentItem = [self getCurrentItem:sender];
         }
         if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
+            editingVC.currentItem = nil;
             return;
         }
         self.isPinching = true;

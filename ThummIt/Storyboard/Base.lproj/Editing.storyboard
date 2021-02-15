@@ -706,7 +706,7 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="6d4-Tq-A1X" secondAttribute="bottom" id="4NK-vD-d1t"/>
                                     <constraint firstItem="W1n-4k-j0b" firstAttribute="top" secondItem="HoW-g6-MNO" secondAttribute="top" constant="10" id="4fH-WS-BaP"/>

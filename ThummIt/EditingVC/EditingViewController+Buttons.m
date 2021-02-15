@@ -13,6 +13,7 @@
 #import "StickerCollectionController.h"
 #import "UIColor+Additions.h"
 #import "UIImage+Additions.h"
+#import "ExportManager.h"
 
 @implementation EditingViewController (Buttons)
 
@@ -22,99 +23,71 @@
 }
 
 -(void)exportThumbnail{
-    UIImage *viewImage = [self.view toImage];
-    UIImage *finalImage = [viewImage crop:self.bgView.frame];
-    NSString *title = @"ThummIt";
-
-    [self isAlbumAlreadyExist:^(BOOL exist) {
+    
+    [self setResolution:CGSizeMake(1920, 1080)];
+    [self.view makeToastActivity:CSToastPositionCenter];
+    [ExportManager.sharedInstance isAlbumAlreadyExist:^(BOOL exist) {
         if (exist) {
-            [self getThummItAlbum:^(PHAssetCollection *collection) {
-                PHFetchResult *fetchResult = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[collection.localIdentifier] options:nil];
-                PHAssetCollection *assetCollection = fetchResult.firstObject;
-                [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-                    PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:finalImage];
+            [ExportManager.sharedInstance getThummItAlbum:^(PHAssetCollection *collection) {
+                
+                [ExportManager.sharedInstance saveImageToAlbum:collection withBlock:^(BOOL success) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.view hideAllToasts];
 
-                    // add asset
-                    PHAssetCollectionChangeRequest *assetCollectionChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
-                    [assetCollectionChangeRequest addAssets:@[[assetChangeRequest placeholderForCreatedAsset]]];
-                } completionHandler:^(BOOL success, NSError *error) {
-                    if (!success) {
-                        NSLog(@"Error: %@", error);
-                    }
+                        if (success) {
+                            [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
+                        } else {
+                            [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+                        }
+                    });
+                    
                 }];
             }];
         } else {
-            __block PHObjectPlaceholder *myAlbum;
-            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-                PHAssetCollectionChangeRequest *changeRequest = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:title];
-                NSLog(@"changeRequest %@",changeRequest);
-                
-                myAlbum = changeRequest.placeholderForCreatedAssetCollection;
-            } completionHandler:^(BOOL success, NSError *error) {
-                
-                if (success) {
-                    PHFetchResult *fetchResult = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[myAlbum.localIdentifier] options:nil];
-                    PHAssetCollection *assetCollection = fetchResult.firstObject;
-                    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-                        PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:finalImage];
-
-                        // add asset
-                        PHAssetCollectionChangeRequest *assetCollectionChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
-                        [assetCollectionChangeRequest addAssets:@[[assetChangeRequest placeholderForCreatedAsset]]];
-                    } completionHandler:^(BOOL success, NSError *error) {
-                        if (!success) {
-                            NSLog(@"Error: %@", error);
-                        }
+            
+            [ExportManager.sharedInstance createThummItAlbum:^(PHAssetCollection *collection) {
+                if (collection) {
+                    
+                    [ExportManager.sharedInstance saveImageToAlbum:collection withBlock:^(BOOL success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            [self.view hideAllToasts];
+                            if (success) {
+                                [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
+                            } else {
+                                [self.view makeToast:NSLocalizedString(@"Downloading image failed : Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+                            }
+                        });
                     }];
+                    
                 } else {
-                    NSLog(@"Error: %@", error);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        [self.view hideAllToasts];
+                        [self.view makeToast:NSLocalizedString(@"Creating album failed : Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+                    });
                 }
                 
+
             }];
         }
     }];
 
 }
+-(void)setResolution:(CGSize)resolution{
+    UIImage *viewImage = [self.view toImage];
+    UIImage *croppedImage = [viewImage crop:self.bgView.frame];
 
--(void)isAlbumAlreadyExist:(void(^) (BOOL exist))block{
-    
-    PHFetchOptions *userAlbumsOptions = [PHFetchOptions new];
-    NSString *title = @"ThummIt";
-    
-    PHFetchResult *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:userAlbumsOptions];
-    [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
-        
-        if ([collection.localizedTitle isEqualToString:title]) {
-            block(true);
-            *stop = true;
-        } else if (idx +1 == userAlbums.count){
-            block(false);
-            *stop = true;
-        }
-        
-    }];
+    /* Render the screen shot at custom resolution */
+    CGRect cropRect = CGRectMake(0 ,0 ,resolution.width ,resolution.height);
+    UIGraphicsBeginImageContextWithOptions(cropRect.size, self.bgView.opaque, 1.0f);
+    [croppedImage drawInRect:cropRect];
+    UIImage * customScreenShot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    ExportManager.sharedInstance.exportingImage = customScreenShot;
 
 }
 
--(void)getThummItAlbum:(void(^) (PHAssetCollection *collection))block{
-    
-    PHFetchOptions *userAlbumsOptions = [PHFetchOptions new];
-    NSString *title = @"ThummIt";
-    
-    PHFetchResult *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:userAlbumsOptions];
-    [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *collection, NSUInteger idx, BOOL *stop) {
-        
-        if ([collection.localizedTitle isEqualToString:title]) {
-            block(collection);
-            *stop = true;
-        } else if (idx +1 == userAlbums.count){
-            block(nil);
-            *stop = true;
-        }
-        
-    }];
-
-}
 
 
 - (IBAction)leftItemTapped:(id)sender {
@@ -214,6 +187,7 @@
 
 -(void)addAlbumVC{
     
+    self.albumVC.view.hidden = true;
     [self addChildViewController:self.albumVC];
     [self.view addSubview:self.albumVC.view];
     

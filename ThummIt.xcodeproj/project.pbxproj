@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E3DF43CE000686E4455BE28 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		6E07E74725DABED100A57801 /* ExportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E07E74625DABED100A57801 /* ExportManager.m */; };
 		6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190EB2584B163000DD9C0 /* HomeViewController.m */; };
 		6E1190EF2584B163000DD9C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190ED2584B163000DD9C0 /* Main.storyboard */; };
 		6E1190F12584B164000DD9C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190F02584B164000DD9C0 /* Assets.xcassets */; };
@@ -451,6 +452,8 @@
 		48179A1DED6ABC517C58F9F4 /* Pods-ThummIt-ThummItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		574966F2CC7EDC18C77FCE53 /* Pods-ThummItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.debug.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6848F671EA96C0057F163426 /* Pods-ThummIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.release.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.release.xcconfig"; sourceTree = "<group>"; };
+		6E07E74525DABED100A57801 /* ExportManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExportManager.h; sourceTree = "<group>"; };
+		6E07E74625DABED100A57801 /* ExportManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExportManager.m; sourceTree = "<group>"; };
 		6E1190E12584B163000DD9C0 /* ThummIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThummIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1190EA2584B163000DD9C0 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		6E1190EB2584B163000DD9C0 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -1229,6 +1232,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E07E74425DABCF600A57801 /* AppManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E1DBEDB25D9A4C8004C0416 /* AppManager.h */,
+				6E1DBEDC25D9A4C8004C0416 /* AppManager.m */,
+			);
+			path = AppManager;
+			sourceTree = "<group>";
+		};
+		6E07E74C25DABEE800A57801 /* ExportManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E07E74525DABED100A57801 /* ExportManager.h */,
+				6E07E74625DABED100A57801 /* ExportManager.m */,
+			);
+			path = ExportManager;
+			sourceTree = "<group>";
+		};
 		6E1190D82584B163000DD9C0 = {
 			isa = PBXGroup;
 			children = (
@@ -1605,8 +1626,8 @@
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
 				6E698BA325B89CB200CE86FB /* GuideLine */,
 				6E2845B425C88640008B7A23 /* UserManager */,
-				6E1DBEDB25D9A4C8004C0416 /* AppManager.h */,
-				6E1DBEDC25D9A4C8004C0416 /* AppManager.m */,
+				6E07E74425DABCF600A57801 /* AppManager */,
+				6E07E74C25DABEE800A57801 /* ExportManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -3432,6 +3453,7 @@
 				6E8F998725C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m in Sources */,
 				6E1DBE6825D8259C004C0416 /* ClothesTemplateRect1.m in Sources */,
 				6EF0C82525CBC33C00BE7573 /* GoodSticker1.m in Sources */,
+				6E07E74725DABED100A57801 /* ExportManager.m in Sources */,
 				6EF0C82025CBC32600BE7573 /* GlitterSticker.m in Sources */,
 				B1F2B75325C1CFFD0064A044 /* InfiniteChallengeYellowSpeechBoxYellow.m in Sources */,
 				6E8E79CB25921C830008C5FF /* ProjectViewController.m in Sources */,
