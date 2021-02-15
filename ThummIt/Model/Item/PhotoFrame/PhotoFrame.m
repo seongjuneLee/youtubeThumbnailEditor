@@ -122,7 +122,6 @@
     if (!self.isFixedPhotoFrame) {
         CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
         self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-        self.photoImageView.transform = CGAffineTransformInvert(self.baseView.transform);
     } else {
         self.baseView.transform = rotationTransform;
     }
