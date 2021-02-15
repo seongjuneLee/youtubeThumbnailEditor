@@ -49,8 +49,8 @@
     logoText.indexInLayer =@"0";
     logoText.text = @"러닝맨";
     logoText.textView.text = logoText.text;
-    logoText.scale = 0.42;
-    logoText.center = CGPointMake(0.2, 0.78);
+    logoText.scale = 0.4;
+    logoText.center = CGPointMake(0.23, 0.78);
     logoText.isTemplateItem = true;
     logoText.typo = logo;
     [self.texts addObject:logoText];
@@ -61,8 +61,8 @@
     ruleText.indexInLayer =@"1";
     ruleText.text = @"Rule";
     ruleText.textView.text = ruleText.text;
-    ruleText.scale = 0.08;
-    ruleText.center = CGPointMake(0.46, 0.7);
+    ruleText.scale = 0.096;
+    ruleText.center = CGPointMake(0.5, 0.7);
     ruleText.isTemplateItem = true;
     ruleText.typo = rule;
     [self.texts addObject:ruleText];
@@ -74,7 +74,7 @@
     matterText.text = @"문제를 듣고";
     matterText.textView.text = matterText.text;
     matterText.scale = 0.24;
-    matterText.center = CGPointMake(0.62, 0.66);
+    matterText.center = CGPointMake(0.66, 0.66);
     matterText.isTemplateItem = true;
     matterText.typo = matter;
     [self.texts addObject:matterText];
@@ -86,7 +86,7 @@
     successText.text = @"먼저 대답하면 성공!";
     successText.textView.text = successText.text;
     successText.scale = 0.385;
-    successText.center = CGPointMake(0.695, 0.74);
+    successText.center = CGPointMake(0.735, 0.74);
     successText.isTemplateItem = true;
     successText.typo = successs;
     [self.texts addObject:successText];

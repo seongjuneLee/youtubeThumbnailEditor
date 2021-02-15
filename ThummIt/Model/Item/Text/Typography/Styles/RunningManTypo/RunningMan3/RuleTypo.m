@@ -19,10 +19,12 @@
         self.bgImageName = @"Rule";
         self.bgWidthPadding = 7;
         self.bgHeightPadding = 25;
+        self.obliqueValue = 0.25;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
         borderAtt.borderWidth = 5;
+        borderAtt.obliqueValue = 0.25;
         
         self.bgTextAttributes = @[borderAtt];
         

@@ -33,24 +33,18 @@
 
 -(void)setUpPhotoFrame{
     
-    PhotoFrame *photoFrame1 = [[PhotoFrame alloc] init];
+    PhotoFrame *photoFrame1 = [InfiniteTemplateRectangle1 infiniteTemplateRectangle1];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    float screenWidth = UIScreen.mainScreen.bounds.size.width;
-    float frameWidth = screenWidth * 0.6;
-    photoFrame1.baseView.frameSize = CGSizeMake(frameWidth, screenWidth * 9/16);
     photoFrame1.center = CGPointMake(0.3, 0.5);
     [self.photoFrames addObject:photoFrame1];
     
-    
-    PhotoFrame *photoFrame2 = [[PhotoFrame alloc] init];
+    PhotoFrame *photoFrame2 = [InfiniteTemplateRectangle2 infiniteTemplateRectangle2];
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
-    float frameWidth2 = screenWidth * 0.4;
-    photoFrame2.baseView.frameSize = CGSizeMake(frameWidth2, screenWidth * 9/16);
     photoFrame2.center = CGPointMake(0.8, 0.5);
     [self.photoFrames addObject:photoFrame2];
-    
+  
 }
 
 -(void)setUpTexts{

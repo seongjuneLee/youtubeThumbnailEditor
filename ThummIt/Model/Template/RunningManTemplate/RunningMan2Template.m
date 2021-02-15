@@ -84,7 +84,7 @@
     tikitakaText.text = @"환상의 티키타카";
     tikitakaText.textView.text = tikitakaText.text;
     tikitakaText.scale = 0.57;
-    tikitakaText.center = CGPointMake(0.32, 0.67);
+    tikitakaText.center = CGPointMake(0.32, 0.66);
     tikitakaText.isTemplateItem = true;
     tikitakaText.typo = tikitaka;
     [self.texts addObject:tikitakaText];
