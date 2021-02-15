@@ -17,6 +17,8 @@
         self.fontName = @"NanumGothicOTFBold";
         self.textColor = [UIColor colorWithRed:244/255.0 green:185/255.0 blue:46/255.0 alpha:1.0];
         self.bgImageName = @"What";
+        self.bgHeightPadding = 30;
+        self.bgWidthPadding = 40;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];

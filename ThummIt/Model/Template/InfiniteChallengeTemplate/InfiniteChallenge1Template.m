@@ -58,7 +58,7 @@
     //로고
     Text *logoText = [[Text alloc] init];
     InfiniteChallengeLogo *logo = [InfiniteChallengeLogo infiniteChallengeLogo];
-    logoText.scale = 0.13;
+    logoText.scale = 0.1;
     logoText.center = CGPointMake(0.875, 0.15);
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"1";

@@ -17,6 +17,8 @@
         self.fontName = @"WindyLavender";
         self.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
         self.bgImageName = @"vlogHashTagBox";
+        self.bgWidthPadding = 7;
+        self.bgHeightPadding = 10;
 
     }
     return self;

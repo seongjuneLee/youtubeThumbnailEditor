@@ -17,7 +17,7 @@
         self.fontName = @"NanumGothicOTFBold";
         self.textColor = [UIColor whiteColor];
         self.bgImageName = @"fireField";
-        self.bgHeightPadding = 30;
+        self.bgHeightPadding = 150;
         self.obliqueValue = 0.25;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
