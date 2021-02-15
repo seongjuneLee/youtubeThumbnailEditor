@@ -43,7 +43,7 @@
     
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     
     editingVC.currentItem = nil;
     editingVC.currentText = nil;
@@ -81,7 +81,7 @@
     }
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     
     editingVC.currentItem = nil;
     editingVC.currentSticker = nil;
@@ -159,7 +159,7 @@
 -(void)cancelAddingPhotoFrame{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
@@ -172,7 +172,7 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [editingVC.currentPhotoFrame.baseView removeFromSuperview];
     editingVC.originalPhotoFrame.baseView.hidden = false;
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
@@ -182,7 +182,7 @@
 -(void)cancelAddingText{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentText.baseView removeFromSuperview];
@@ -202,7 +202,7 @@
     
     [text applyTypo:editingVC.originalTypo];
     
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentText.textView resignFirstResponder];
@@ -213,7 +213,7 @@
 -(void)cancelAddingSticker{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentSticker.baseView removeFromSuperview];
@@ -233,7 +233,7 @@
     } else {
         sticker.backgroundImageView.image = [UIImage imageNamed:editingVC.originalStickerBGImageName];
     }
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
 
@@ -246,7 +246,7 @@
 -(void)doneAddingPhotoFrame{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
@@ -266,7 +266,7 @@
     
     // 레이어 되돌려 놓기
     [editingVC.layerController recoverOriginalLayer];
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentPhotoFrame;
     if (photoFrame.isFixedPhotoFrame) {
         [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.backgroundImageView];
@@ -289,7 +289,7 @@
 -(void)doneAddingText{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     
@@ -311,7 +311,7 @@
 -(void)doneEditingText{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
 
@@ -333,7 +333,7 @@
 -(void)doneAddingSticker{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [SaveManager.sharedInstance addItem:editingVC.currentSticker];
@@ -350,7 +350,7 @@
 -(void)doneEditingSticker{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.layerController recoverOriginalLayer];
     [editingVC.itemCollectionVC dismissSelf];

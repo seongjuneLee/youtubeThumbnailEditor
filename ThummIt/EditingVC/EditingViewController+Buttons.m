@@ -149,7 +149,7 @@
 
 -(void)photoFrameButtonTappedTaskWhenAuthorized{
     [self.layerController showTransparentView];
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];
     [self addAlbumVC];
@@ -234,7 +234,7 @@
     
     self.modeController.editingMode = AddingItemMode;
     [self.layerController showTransparentView];
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = TextType;
     [self addItemCollectionVC];
     if (self.recentTypo == nil) {
@@ -254,7 +254,7 @@
     
     self.modeController.editingMode = AddingItemMode;
     [self.layerController showTransparentView];
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = StickerType;
     [self addItemCollectionVC];
     // 추가 필요
@@ -275,7 +275,7 @@
 
 - (IBAction)bgColorButtonTapped:(id)sender {
     
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     self.originalColor = self.bgView.backgroundColor;
     
     // scrollView 가려주기

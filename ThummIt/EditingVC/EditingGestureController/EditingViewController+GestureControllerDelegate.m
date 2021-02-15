@@ -30,7 +30,7 @@
         }
         
     } else if([item isKindOfClass:Text.class]){
-        [self hideNavigationItems];
+        [self hideItemsForItemMode];
         
         Text *text = (Text *)item;
         self.currentItem = text;
@@ -60,7 +60,7 @@
         [self addItemCollectionVC];
         
     } else if([item isKindOfClass:Sticker.class]){
-        [self hideNavigationItems];
+        [self hideItemsForItemMode];
         
         Sticker *sticker = (Sticker *)item;
         self.currentItem = sticker; // currentsicker가 null이라 Currentitem으로 받음일단
@@ -99,7 +99,7 @@
     self.originalIndexInLayer = photoFrame.indexInLayer.integerValue;
 
     [self.layerController showTransparentView];
-    [self hideNavigationItems];
+    [self hideItemsForItemMode];
     
     [self.layerController bringCurrentItemToFront:self.currentItem];
     self.itemCollectionVC.itemType = PhotoFrameType;
@@ -201,7 +201,7 @@
             }
         }
         item.baseView.center = CGPointMake(self.bgView.frameWidth/2, self.bgView.frameY + self.bgView.frameHeight/2);
-        [self showNavigationItems];
+        [self showItemsForNormalMode];
         [self.layerController hideTransparentView];
         [self.itemCollectionVC dismissSelf];
     }

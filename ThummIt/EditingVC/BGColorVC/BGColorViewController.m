@@ -59,7 +59,7 @@
 -(void)doneEditingBGColor{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [UIView animateWithDuration:0.2 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
@@ -75,7 +75,7 @@
 -(void)cancelEditingBGColor{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showNavigationItems];
+    [editingVC showItemsForNormalMode];
     // scrollView 가려주기
     [UIView animateWithDuration:0.2 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;

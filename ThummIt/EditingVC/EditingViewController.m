@@ -209,19 +209,23 @@
     
 }
 
--(void)showNavigationItems{
+-(void)showItemsForNormalMode{
     
     [UIView animateWithDuration:0.2 animations:^{
-        self.leftItem.alpha
-        = self.rightItem.alpha = 1.0;
+        self.undoButton.alpha =
+        self.redoButton. alpha =
+        self.leftItem.alpha =
+        self.rightItem.alpha = 1.0;
     }];
 
 }
--(void)hideNavigationItems{
+-(void)hideItemsForItemMode{
     
     [UIView animateWithDuration:0.2 animations:^{
-        self.leftItem.alpha
-        = self.rightItem.alpha = 0;
+        self.undoButton.alpha =
+        self.redoButton. alpha =
+        self.leftItem.alpha =
+        self.rightItem.alpha = 0;
     }];
 
 }
