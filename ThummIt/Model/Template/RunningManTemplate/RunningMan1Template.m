@@ -104,7 +104,7 @@
     redshoutingText1.textView.text = redshoutingText1.text;
     redshoutingText1.scale = 0.3;
     redshoutingText1.rotationDegree = degreesToRadians(-5);
-    redshoutingText1.center = CGPointMake(0.75, 0.72);
+    redshoutingText1.center = CGPointMake(0.77, 0.72);
     redshoutingText1.isTemplateItem = true;
     redshoutingText1.typo = redshoutingTypo1;
     [self.texts addObject:redshoutingText1];

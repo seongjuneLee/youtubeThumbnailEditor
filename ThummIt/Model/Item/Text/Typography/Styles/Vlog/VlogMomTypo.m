@@ -16,10 +16,12 @@
         self.name = NSLocalizedString(@"맘 Vlog",nil); //italic
         self.fontName = @"BMDoHyeon-OTF";
         self.textColor = [UIColor colorWithRed:246/255.0 green:101/255.0 blue:113/255.0 alpha:1];
+        self.obliqueValue = 0.17;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderColor = UIColor.blackColor;
         attribute.borderWidth = 15;
+        attribute.obliqueValue = 0.17;
         
         self.bgTextAttributes = @[attribute];
         

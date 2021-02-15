@@ -17,8 +17,8 @@
         self.fontName = @"UhBeeDoolDoolBold";
         self.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
         self.bgImageName = @"brushBox";
-        self.bgWidthPadding = 10;
-        self.bgHeightPadding = 15;
+        self.bgWidthPadding = 23;
+        self.bgHeightPadding = 23;
 
     }
     return self;

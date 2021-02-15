@@ -17,6 +17,8 @@
         self.fontName = @"KCC-Kimhoon-Regular";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
         self.bgImageName = @"inItalyBG";
+        self.bgHeightPadding = 30;
+        
     }
     return self;
 }

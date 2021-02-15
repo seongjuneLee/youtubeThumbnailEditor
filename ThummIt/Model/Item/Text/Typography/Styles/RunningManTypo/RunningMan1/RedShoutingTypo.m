@@ -17,8 +17,8 @@
         self.fontName = @"BMYEONSUNG-OTF";
         self.textColor = UIColor.whiteColor;
         self.bgImageName = @"talkBalloon";
-        self.bgHeightPadding = 18;
-        self.bgWidthPadding = 30;
+        self.bgHeightPadding = 70;
+        self.bgWidthPadding = 70;
         
         BGTextAttribute *boldAtt = [[BGTextAttribute alloc] init];
         boldAtt.borderColor = [UIColor whiteColor];

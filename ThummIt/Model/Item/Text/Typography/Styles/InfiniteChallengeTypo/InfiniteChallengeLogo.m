@@ -17,8 +17,8 @@
         self.fontName = @"777Chocolatlatte-";
         self.textColor = [UIColor colorWithRed:70/255.0 green:52/255.0 blue:52/255.0 alpha:1];
         self.bgImageName = @"infiniteChallengeLogoBox";
-        self.bgWidthPadding = 70;
-        self.bgHeightPadding = 50;
+        self.bgWidthPadding = 130;
+        self.bgHeightPadding = 100;
 
     }
     return self;

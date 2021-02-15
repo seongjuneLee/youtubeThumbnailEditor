@@ -17,7 +17,8 @@
         self.fontName = @"KOTRA_BOLD-Bold";
         self.textColor = [UIColor whiteColor];
         self.bgImageName = @"trapezoidBox";
-        self.bgWidthPadding = 200;
+        self.bgHeightPadding = 250;
+        self.bgWidthPadding = 250;
     }
     return self;
 }

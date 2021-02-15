@@ -17,16 +17,19 @@
         self.fontName = @"NeoDunggeunmoPro-Regular";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1] ;
         self.fontSize = TEXT_FONT_SIZE;
-        self.bgHeightPadding = -26;
-        self.bgWidthPadding = -50;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
        
-        bgTextAttribute1.borderWidth = 6;
-       
+        bgTextAttribute1.borderWidth = 5;
         
-        self.bgTextAttributes = @[bgTextAttribute1];
+        BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
+        
+        attribute.shadowOffset = CGPointMake(1.5, 1.5);
+        attribute.shadowColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
+        
+        
+        self.bgTextAttributes = @[bgTextAttribute1,attribute];
 
         
     }
