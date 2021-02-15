@@ -13,8 +13,8 @@
     
     self = [super init];
     if(self){
-        self.itemName = @"ButtonStopSticker";
-        self.backgroundImageName = @"ButtonStopSticker";
+        self.itemName = @"buttonStopSticker";
+        self.backgroundImageName = @"buttonStopSticker";
         self.tintColor = [UIColor blackColor];
     }
     return self;
