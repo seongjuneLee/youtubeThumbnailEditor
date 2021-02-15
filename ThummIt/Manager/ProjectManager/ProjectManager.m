@@ -272,26 +272,4 @@
     return self.projectSnapShots;
 }
 
--(void)fetchImage{
-    NSArray *projects = [ProjectManager.sharedInstance getAllProjectsFromCoreData];
-    self.photoImageDict = [NSMutableArray array];
-    for (Project *project in projects) {
-        for (PhotoFrame *photoFrame in project.photoFrames) {
-            if (photoFrame.phAsset) {
-                [PhotoManager.sharedInstance getImageFromPHAsset:photoFrame.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        photoFrame.photoImage = image;
-                        NSDictionary *dict = @{photoFrame.phAsset.localIdentifier : image};
-                        [self.photoImageDict addObject:dict];
-                        
-                    });
-                }];
-            }
-
-        }
-    }
-    
-}
-
 @end

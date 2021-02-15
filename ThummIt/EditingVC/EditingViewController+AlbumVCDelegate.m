@@ -16,12 +16,14 @@
         photoFrame.phAsset = phAsset;
     }
         
-
+    
     [PhotoManager.sharedInstance getImageFromPHAsset:phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920,1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.recentPHAsset = phAsset;
-            photoFrame.photoImageView.frameSize = photoFrame.baseView.frameSize;
-            photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2,photoFrame.baseView.frameHeight/2);
+            
+            float ratio = image.size.height/image.size.width;
+            float width = photoFrame.baseView.bounds.size.width * 1.2;
+            photoFrame.photoImageView.frameSize = CGSizeMake(width, width * ratio);
+            photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.bounds.size.width/2,photoFrame.baseView.bounds.size.height/2);
             photoFrame.photoImageView.image = image;
         });
     }];

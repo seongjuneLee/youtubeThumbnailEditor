@@ -388,7 +388,7 @@
         if (!self.isPinching) {
             photoFrame.photoImageView.centerX = newCenter.x;
             photoFrame.photoImageView.centerY = newCenter.y;
-        }        
+        }
         
         
     } else if (sender.state == UIGestureRecognizerStateEnded){
@@ -625,8 +625,6 @@
         self.originalScaleRatio = sqrt(t.a * t.a + t.c * t.c);
         self.originalPinchDistance = [self distanceFrom:finger1Point to:finger2Point];
         
-        self.comparingView = [[UIView alloc] initWithFrame:photoFrame.photoImageView.frame];
-
         
     } else if (sender.state == UIGestureRecognizerStateChanged && sender.numberOfTouches == 2){
         
@@ -637,17 +635,25 @@
         float changeScale = changedDistance/self.originalPinchDistance;
         
         CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.originalScaleRatio*changeScale, self.originalScaleRatio*changeScale);
-        
-        self.comparingView.transform = scaleTransform;
-        
+                
         photoFrame.photoImageView.transform = scaleTransform;
 
         
         photoFrame.photoScale = self.originalScaleRatio*changeScale;
         photoFrame.photoRotationDegree = self.currentRotation;
         
-        self.isPinching = false;
+        // 중심값 이동
+        CGPoint newPinchCenter = [sender locationInView:photoFrame.baseView];
+        float translationX = newPinchCenter.x - self.originalPinchCenter.x;
+        float translationY = newPinchCenter.y - self.originalPinchCenter.y;
         
+        // 센터가이드 적용
+        CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
+        photoFrame.photoImageView.center = changedPoint;
+
+
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        self.isPinching = false;
     }
 
 }

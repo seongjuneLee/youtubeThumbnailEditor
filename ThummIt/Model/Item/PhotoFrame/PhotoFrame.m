@@ -77,7 +77,7 @@
                 self.phAsset = phAsset;
             }
         }
-        self.photoImageView.center = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
+        self.photoCenter = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
         self.photoRotationDegree = [[decoder decodeObjectForKey:@"photoRotationDegree"] floatValue];
         self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
         self.isCircle = [[decoder decodeObjectForKey:@"isCircle"] boolValue];
@@ -122,6 +122,7 @@
     if (!self.isFixedPhotoFrame) {
         CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
         self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
+        self.photoImageView.transform = CGAffineTransformInvert(self.baseView.transform);
     } else {
         self.baseView.transform = rotationTransform;
     }
@@ -151,9 +152,8 @@
         [PhotoManager.sharedInstance getImageFromPHAsset:self.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.photoImageView.image = image;
-                float ratio = image.size.height/image.size.width;
-                float width = self.baseView.frameWidth * 1.2;
-                self.photoImageView.frameSize = CGSizeMake(self.baseView.frameWidth * 1.2, width * ratio);
+                self.photoImageView.center = self.photoCenter;
+                self.photoImageView.transform = CGAffineTransformMakeScale(self.photoScale, self.photoScale);
             });
         }];
     }

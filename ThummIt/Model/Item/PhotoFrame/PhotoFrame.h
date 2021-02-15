@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIImage *photoImage;
 @property (nonatomic) float photoRotationDegree;
 @property (nonatomic) float photoScale;
+@property (nonatomic) CGPoint photoCenter;
 @property (nonatomic) BOOL isCircle;
 @property (strong, nonatomic) PHAsset *phAsset;
 
