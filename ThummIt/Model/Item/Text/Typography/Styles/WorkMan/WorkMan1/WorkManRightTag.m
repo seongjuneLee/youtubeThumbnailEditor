@@ -17,7 +17,8 @@
         self.fontName = @"SangSangAnt";
         self.textColor = [UIColor blackColor];
         self.bgImageName = @"workManYellowTag";
-        self.bgWidthPadding = 60;
+        self.bgWidthPadding = 100;
+        self.bgHeightPadding = 100;
     }
     return self;
 }
