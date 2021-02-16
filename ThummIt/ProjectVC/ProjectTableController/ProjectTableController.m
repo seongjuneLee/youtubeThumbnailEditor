@@ -63,11 +63,11 @@
         [self loadMoreWithOffset:self.offset];
     }
 
+
     return cell;
 }
 
 -(void)loadMoreWithOffset:(NSUInteger)offset{
-    
     [self.projectVC.view makeToastActivity:CSToastPositionCenter];
     NSUInteger beforeDataCounts = self.snapShots.count;
     NSMutableArray *indexPathsToReload = [NSMutableArray new];

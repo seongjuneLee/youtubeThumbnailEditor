@@ -7,29 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DF05F3C2-267F-462D-B2B6-4AE4383F945D"
+            uuid = "D75CB74D-C5CE-4F05-99D2-C85089EA6D08"
             shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ThummIt/Model/Item/Text/Text.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "409F1A20-1CDD-4AAA-AE6F-710A082AAD12"
-            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ThummIt/EditingVC/EditingGestureController/EditingViewController+GestureControllerDelegate.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "-didSelectItem:"
             landmarkType = "7">
          </BreakpointContent>

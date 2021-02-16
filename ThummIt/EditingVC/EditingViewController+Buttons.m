@@ -255,6 +255,7 @@
 
 - (IBAction)bgColorButtonTapped:(id)sender {
     
+    self.modeController.editingMode = BGColorMode;
     [self hideItemsForItemMode];
     self.originalColor = self.bgView.backgroundColor;
     
