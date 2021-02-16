@@ -16,6 +16,7 @@
         self.name = NSLocalizedString(@"ㅎ",nil);
         self.fontName = @"OTRecipekoreaM";
         self.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
+        self.fontSize = 130;
 
     }
     return self;

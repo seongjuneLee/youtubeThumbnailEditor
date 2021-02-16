@@ -17,8 +17,9 @@
         self.fontName = @"777Chocolatlatte-";
         self.textColor = [UIColor colorWithRed:184/255.0 green:3/255.0 blue:23/255.0 alpha:1];
         self.bgImageName = @"infiniteChallengeYellowSpeechBox";
-        self.bgWidthPadding = 80;
-        self.bgHeightPadding = 80;
+        self.bgWidthPadding = 135;
+        self.bgHeightPadding = 135;
+        self.fontSize = 60;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 15;

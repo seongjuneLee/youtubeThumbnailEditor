@@ -17,8 +17,9 @@
         self.fontName = @"777Chocolatlatte-";
         self.textColor = [UIColor colorWithRed:42/255.0 green:54/255.0 blue:158/255.0 alpha:1];
         self.bgImageName = @"infiniteChallengeCloudBox";
-        self.bgWidthPadding = 20;
-        self.bgHeightPadding = 20;
+        self.bgWidthPadding = 120;
+        self.bgHeightPadding = 120;
+        self.fontSize = 100;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 20;

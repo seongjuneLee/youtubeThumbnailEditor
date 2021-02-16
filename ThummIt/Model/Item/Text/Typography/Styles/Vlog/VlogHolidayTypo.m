@@ -16,6 +16,7 @@
         self.name = NSLocalizedString(@"holiday",nil); //italic
         self.fontName = @"SDMiSaeng";
         self.textColor = [UIColor whiteColor];
+        self.fontSize = 80;
         
     }
     return self;

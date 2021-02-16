@@ -58,7 +58,7 @@
     rectangleSticker.indexInLayer = @"4";
     rectangleSticker.scale = 0.47;
     rectangleSticker.center = CGPointMake(0.5, 0.78);
-    rectangleSticker.tintColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
+    rectangleSticker.tintColor = [UIColor colorWithRed:80/255.0 green:10/255.0 blue:205/255.0 alpha:1.0];
     [self.stickers addObject:rectangleSticker];
 
     LongRectangleSticker *rectangleSticker2 = [LongRectangleSticker longRectangleSticker];

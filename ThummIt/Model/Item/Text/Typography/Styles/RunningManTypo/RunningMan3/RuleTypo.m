@@ -17,9 +17,10 @@
         self.fontName = @"NanumSquareOTFEB";
         self.textColor = [UIColor colorWithRed:249/255.0 green:253/255.0 blue:92/255.0 alpha:1.0];
         self.bgImageName = @"Rule";
-        self.bgWidthPadding = 7;
-        self.bgHeightPadding = 25;
+        self.bgWidthPadding = 45;
+        self.bgHeightPadding = 55;
         self.obliqueValue = 0.25;
+        self.fontSize = 55;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];

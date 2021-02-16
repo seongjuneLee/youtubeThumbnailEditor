@@ -15,7 +15,8 @@
     if (self) {
         self.name = NSLocalizedString(@"D-365 ",nil);
         self.fontName = @"NeoDunggeunmoPro-Regular";
-        self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];        
+        self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
+        self.fontSize = 80;
     }
     return self;
 }

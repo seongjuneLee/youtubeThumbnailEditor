@@ -20,7 +20,7 @@
         self.textToColor = [UIColor colorWithRed:245/255.0 green:253/255.0 blue:27/255.0 alpha:1.0];
         NSDictionary *attr = @{NSFontAttributeName: [UIFont fontWithName:self.fontName size:self.fontSize]};
         CGSize stringBoundingBox = [@"통편집을 피하는 법" sizeWithAttributes:attr];
-        self.textGradientHeight = stringBoundingBox.height + 4.8;
+        self.textGradientHeight = stringBoundingBox.height + 7.8;
 
         self.textColor = [UIColor diagonalGradientFromColor:self.textFromColor toColor:self.textToColor withHeight:self.textGradientHeight];
         self.cannotChangeColor = true;

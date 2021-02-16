@@ -16,6 +16,7 @@
         self.name = NSLocalizedString(@"Vlog",nil);
         self.fontName = @"NanumBarunGothicOTFBold";
         self.textColor = UIColor.whiteColor;
+        self.fontSize = 80;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.shadowOffset = CGPointMake(0, 0);

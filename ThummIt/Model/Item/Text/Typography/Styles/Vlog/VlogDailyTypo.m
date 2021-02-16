@@ -16,6 +16,7 @@
         self.name = NSLocalizedString(@"MY DAILY VLOG",nil);
         self.fontName = @"NanumMyeongjoOTFExtraBold";
         self.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:0.75];
+        self.fontSize = 55;
 
     }
     return self;
