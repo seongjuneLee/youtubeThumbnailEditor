@@ -42,7 +42,7 @@
     PhotoFrame *circlePhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     circlePhotoFrame.indexInLayer =@"0";
     circlePhotoFrame.center = CGPointMake(0.72, 0.45);
-    circlePhotoFrame.scale = 0.28;
+    circlePhotoFrame.scale = 0.2;
     circlePhotoFrame.isTemplateItem = true;
     [self.photoFrames addObject:circlePhotoFrame];
     

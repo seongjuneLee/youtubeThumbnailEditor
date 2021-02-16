@@ -63,6 +63,14 @@
 
     [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            float ratio = image.size.height/image.size.width;
+            float width = photoFrame.baseView.bounds.size.width * 1.2;
+            float height = photoFrame.baseView.bounds.size.height * 1.2;
+            if (ratio > 1) {
+                photoFrame.photoImageView.frameSize = CGSizeMake(width, width * ratio);
+            } else {
+                photoFrame.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
+            }
             photoFrame.photoImageView.image = image;
             cell.previewImageView.image = [photoFrame.baseView toImage];
 

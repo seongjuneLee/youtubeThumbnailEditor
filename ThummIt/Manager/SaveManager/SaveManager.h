@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property dispatch_queue_t savingQueue;
 
 -(Template *)currentTemplate;
--(void)save;
+-(void)saveAndAddToStack;
 -(void)addItem:(Item *)item;
 -(void)deleteItem:(Item *)item;
 -(void)applyCurrentProject:(Project *)project;

@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)redo;
 -(BOOL)isUndoRemains;
 -(BOOL)isRedoRemains;
+-(void)initUndoRedo;
 
 @end
 

@@ -68,7 +68,7 @@
     SaveManager.sharedInstance.currentProject.backgroundColor = editingVC.bgView.backgroundColor;
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-    [SaveManager.sharedInstance save];
+    [SaveManager.sharedInstance saveAndAddToStack];
 
 }
 
