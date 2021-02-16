@@ -83,7 +83,9 @@
     
     
     if (editingVC.currentText) {
+        editingVC.currentText.scale = text.scale;
         text = (Text *)editingVC.currentText;
+        NSLog(@"text.scale %@",text);
         text.textView.backgroundAttributedTexts = [NSMutableArray array];
         if (editingVC.currentText.isTypedByUser) {
             text.text = editingVC.currentText.text;
