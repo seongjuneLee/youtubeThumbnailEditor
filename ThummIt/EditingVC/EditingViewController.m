@@ -43,7 +43,7 @@
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isUndoRedoAvailable" object:nil];
     
     [self setUpSlider];
-
+    
 }
 
 -(void)setUpPhotoAlbums{
@@ -77,7 +77,8 @@
     float inset = 40;
     float bgColorVCHeight = bgColorCollectionCellHeight + inset + self.bgColorVC.cancelButton.frameHeight;
     self.bgColorVC.view.frame = CGRectMake(0, self.view.frameHeight - bgColorVCHeight, self.view.frameWidth, bgColorVCHeight);
-
+    
+    [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
 }
 
 -(void)setUpSlider{

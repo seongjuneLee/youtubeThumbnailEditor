@@ -97,6 +97,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)showItemsForNormalMode;
 -(void)hideItemsForItemMode;
 
+@property (weak, nonatomic) IBOutlet UIView *scrollContentView;
+
+
+
 
 @end
 
