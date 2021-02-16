@@ -732,6 +732,9 @@ with the design you want.</string>
                                         <state key="normal" title="PrivacyPolicy">
                                             <color key="titleColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="privacyPolicyTButtonapped:" destination="IZe-UG-0Zf" eventType="touchUpInside" id="tET-Eb-7kF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMw-b6-6RN">
                                         <rect key="frame" x="15" y="69" width="25" height="25"/>
