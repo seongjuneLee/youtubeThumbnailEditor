@@ -23,8 +23,8 @@
         self.textView = [self makeTextView];
         self.textViewContainer = [self makeTextViewContainerWithTextView:self.textView];
         self.baseView = self.textViewContainer;
-
-        self.center = CGPointMake(0,0);
+        self.scale = 0.7;
+        self.center = CGPointMake(0.5,0.5);
         self.rotationDegree = 0;
         self.textAlignment = NSTextAlignmentCenter;
         self.textView.textAlignment = NSTextAlignmentCenter;
@@ -325,12 +325,6 @@
     self.baseView = self.textViewContainer;
     
 
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
-    float width = UIScreen.mainScreen.bounds.size.width;
-    float scale = width/self.baseView.frameWidth;
-    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
-    self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-    
 }
 
 #pragma mark - 리사이즈
@@ -345,14 +339,14 @@
     [self updateBackgroundImageViewFrame:self.typo];
 }
 
--(void)scaleItem{
-    if(self.typo.scale != 0.0){                      //세부
+
+-(void)setItemCenterAndScale{
+    if(self.typo.scale != 0.0){
         self.scale = self.typo.scale;
-        NSLog(@"타이포 스케일 있음 : %f",self.scale);
-    } else {                                         //세부 아닌것 다
-        NSLog(@"타이포 스케일 없음 : %f",self.scale);
+    } else {
+
     }
-    [super scaleItem];
+    [super setItemCenterAndScale];
 }
 
 #pragma mark - Helper

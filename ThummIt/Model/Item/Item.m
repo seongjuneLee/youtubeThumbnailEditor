@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         self.indexInLayer = @"";
-        self.scale = 0.4;
+        self.scale = 1.0;
     }
     return self;
     
@@ -31,15 +31,15 @@
     
     return copied;
 }
--(void)scaleItem{
-    
-    float width = UIScreen.mainScreen.bounds.size.width;
-    float scale = width/self.baseView.frameWidth;
-    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
-    self.baseView.transform = CGAffineTransformConcat(self.baseView.transform, scaleTransform);
-    
-}
--(void)loadView{
+-(void)setItemCenterAndScale{
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
+    if (!self.isFixedPhotoFrame) {
+        CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.scale, self.scale);
+        self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
+    } else {
+        self.baseView.transform = rotationTransform;
+    }
+    self.baseView.center = self.center;
     
 }
 

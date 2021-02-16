@@ -59,7 +59,6 @@
     StickerCollectionViewCell *cell = (StickerCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCollectionViewCell" forIndexPath:indexPath];
    
     NSArray *stickers = ItemManager.sharedInstance.stickerDatas[indexPath.section];
-    
     Sticker *sticker = stickers[indexPath.item];
     cell.stickerImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
     return cell;
@@ -80,7 +79,7 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [sticker loadView];
-    [sticker scaleItem];
+    [sticker setItemCenterAndScale];
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
     if (editingVC.currentSticker) {
         

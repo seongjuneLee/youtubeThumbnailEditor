@@ -80,13 +80,11 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     Text *text = [[Text alloc] init];
-    
-    
     if (editingVC.currentText) {
         editingVC.currentText.typo = text.typo;
         editingVC.currentText.scale = text.scale;
         text = (Text *)editingVC.currentText;
-        NSLog(@"text.scale %@",text);
+        
         text.textView.backgroundAttributedTexts = [NSMutableArray array];
         if (editingVC.currentText.isTypedByUser) {
             text.text = editingVC.currentText.text;
@@ -105,7 +103,8 @@
     } else {
         editingVC.itemCollectionVC.checkButton.enabled = false;
         editingVC.itemCollectionVC.checkButton.alpha = 0.4;
-        
+        text.center = editingVC.bgView.center;
+
         text.textView.delegate = editingVC;
 
         text.text = typo.name;
@@ -117,9 +116,7 @@
     }
     
     [text applyTypo:typo];
-    [text resize];
-    [text scaleItem];
-
+    [text setItemCenterAndScale];
     
     editingVC.currentItem = text;
     editingVC.currentText = text;

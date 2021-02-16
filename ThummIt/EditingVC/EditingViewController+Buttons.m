@@ -250,8 +250,8 @@
             }
         }
     }
-    
-    [self.itemCollectionVC.stickerCollectionController didSelectSticker:recentSticker];
+
+    [self.itemCollectionVC.stickerCollectionController didSelectSticker:[CircleSticker1 circleSticker1]];
    
 }
 
