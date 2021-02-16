@@ -117,8 +117,6 @@
     
     [text applyTypo:typo];
     [text setItemCenterAndScale];
-
-    NSLog(@"text baseview frame %@",NSStringFromCGRect(text.baseView.frame));
     
     editingVC.currentItem = text;
     editingVC.currentText = text;

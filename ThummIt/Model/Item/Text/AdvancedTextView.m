@@ -256,9 +256,7 @@
         [string removeAttribute:NSShadowAttributeName range:range];
     }
     
-    if (typo.obliqueValue > 0) {
-        [string addAttributes:@{NSObliquenessAttributeName:@(typo.obliqueValue)}range:range];
-    }
+    [string addAttributes:@{NSObliquenessAttributeName:@(typo.obliqueValue)}range:range];
     
     // 정렬
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -288,10 +286,7 @@
         [string addAttribute:NSStrokeWidthAttributeName value:@(bgTextAttribute.borderWidth) range:range];
     }
     
-    if (bgTextAttribute.obliqueValue > 0) {
         [string addAttributes:@{NSObliquenessAttributeName:@(bgTextAttribute.obliqueValue)}range:range];
-
-    }
 
     // 그림자
     if (bgTextAttribute.shadowColor) {

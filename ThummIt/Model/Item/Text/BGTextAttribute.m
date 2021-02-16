@@ -113,9 +113,7 @@
     shadow.shadowBlurRadius = self.shadowRadius;
     [mutableAttributedString addAttribute:NSShadowAttributeName value:shadow range:range];
     
-    if (self.obliqueValue > 0) {
-        [mutableAttributedString addAttributes:@{NSObliquenessAttributeName:@(self.obliqueValue)}range:range];
-    }
+    [mutableAttributedString addAttributes:@{NSObliquenessAttributeName:@(self.obliqueValue)}range:range];
 
     [mutableAttributedString.mutableString replaceOccurrencesOfString:RANDOM_TEXT withString:@"" options:NSCaseInsensitiveSearch range:range];
     
