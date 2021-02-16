@@ -350,6 +350,7 @@
         self.scale = self.typo.scale;
         NSLog(@"타이포 스케일 있음 : %f",self.scale);
     } else {
+//        self.scale = 0.4f;
         NSLog(@"타이포 스케일 없음 : %f",self.scale);
     }
     [super scaleItem];
