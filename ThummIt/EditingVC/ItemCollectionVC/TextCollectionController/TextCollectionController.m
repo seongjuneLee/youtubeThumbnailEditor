@@ -83,6 +83,7 @@
     
     
     if (editingVC.currentText) {
+        editingVC.currentText.typo = text.typo;
         editingVC.currentText.scale = text.scale;
         text = (Text *)editingVC.currentText;
         NSLog(@"text.scale %@",text);

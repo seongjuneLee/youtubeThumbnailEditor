@@ -69,6 +69,7 @@
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance saveAndAddToStack];
+    editingVC.modeController.editingMode = NormalMode;
 
 }
 
@@ -82,7 +83,7 @@
     }];
     [editingVC.bgColorVC dismissSelf];
     editingVC.bgView.backgroundColor = editingVC.originalColor;
-    
+    editingVC.modeController.editingMode = NormalMode;
 }
 
 
