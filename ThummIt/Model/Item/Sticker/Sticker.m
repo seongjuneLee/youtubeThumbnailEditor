@@ -46,7 +46,7 @@
 -(id)initWithCoder:(NSCoder *)decoder{
     
     if((self = [super initWithCoder:decoder])) {
-        
+        self.tintColor = [decoder decodeObjectForKey:@"tintColor"];
     }
     return self;
 }
@@ -54,6 +54,7 @@
 -(void)encodeWithCoder:(NSCoder *)encoder{
     
     [super encodeWithCoder:encoder];
+    [encoder encodeObject:self.tintColor forKey:@"tintColor"];
 
 }
 

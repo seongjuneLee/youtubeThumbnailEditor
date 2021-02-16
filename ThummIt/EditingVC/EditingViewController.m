@@ -179,6 +179,7 @@
         }
         
         if (item.isFixedPhotoFrame) { // fixed포토프레임일 때와 아닐 때
+            item.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
         } else {
             [self.view insertSubview:item.baseView aboveSubview:self.backgroundImageView];
