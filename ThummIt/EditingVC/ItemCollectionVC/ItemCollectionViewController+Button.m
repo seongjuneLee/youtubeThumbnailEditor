@@ -49,7 +49,11 @@
     editingVC.currentText = nil;
     editingVC.currentPhotoFrame = nil;
     editingVC.currentSticker = nil;
-
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        editingVC.buttonScrollView.alpha = 1.0;
+    }];
+    
 }
 
 - (IBAction)checkButtonTapped:(UIButton *)sender{
@@ -88,6 +92,9 @@
     editingVC.currentText = nil;
     editingVC.currentPhotoFrame = nil;
 
+    [UIView animateWithDuration:0.4 animations:^{
+        editingVC.buttonScrollView.alpha = 1.0;
+    }];
 }
 
 #pragma mark - 아이템 버튼
