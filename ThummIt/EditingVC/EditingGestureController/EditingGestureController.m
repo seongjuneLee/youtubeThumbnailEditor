@@ -185,6 +185,9 @@
         if(!editingVC.currentItem.cannotChangeColor){
             [self deleteHueSliderRespondToCurrentPointY:currentPoint.y];
         }
+        if([editingVC.currentItem isKindOfClass:Text.class]){
+            [self deleteKeyBoardRespondToCurrentPointY:currentPoint.y];
+        }
         if (!self.isPinching) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 UIImage *viewImage = [editingVC.view toImage];
@@ -692,6 +695,21 @@
             editingVC.hueSlider.alpha = 1.0;
         }];
     }
+}
+
+-(void)deleteKeyBoardRespondToCurrentPointY:(float)currentPointY{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    float imageViewBottomY = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
+    if([editingVC.currentItem isKindOfClass:Text.class]){
+        if (currentPointY >= imageViewBottomY) {
+                [editingVC.currentText.textView resignFirstResponder];
+        } else {
+                [editingVC.currentText.textView becomeFirstResponder];
+        }
+    }
+   
 }
 
 
