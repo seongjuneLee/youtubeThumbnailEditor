@@ -106,7 +106,7 @@
         photoFrame.photoImageView.image = currentPhotoFrame.photoImageView.image;
         [currentPhotoFrame.baseView removeFromSuperview];// 기존 것 떼어주고
     } else {
-        [photoFrame scaleItem];
+        [photoFrame setItemCenterAndScale];
         photoFrame.baseView.center = editingVC.bgView.center;
     }
 

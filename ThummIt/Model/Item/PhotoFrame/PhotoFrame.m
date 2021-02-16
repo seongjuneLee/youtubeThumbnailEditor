@@ -111,19 +111,6 @@
     }
     [self addSubViewsToBaseView];
 
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
-
-    float width = UIScreen.mainScreen.bounds.size.width;
-    float scale = width/self.baseView.frameWidth;
-    if (!self.isFixedPhotoFrame) {
-        CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
-        self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-    } else {
-        self.baseView.transform = rotationTransform;
-    }
-    
-    self.baseView.center = self.center;
-
 }
     
 -(void)setBaseViewFrame{
