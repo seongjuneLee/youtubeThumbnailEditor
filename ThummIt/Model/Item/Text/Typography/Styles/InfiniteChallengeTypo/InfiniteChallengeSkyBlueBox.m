@@ -17,8 +17,8 @@
         self.fontName = @"NanumBarunGothicOTFBold";
         self.textColor = [UIColor colorWithRed:42/255.0 green:54/255.0 blue:158/255.0 alpha:1];
         self.bgImageName = @"infiniteChallengeSkyBlueBox";
-        self.bgWidthPadding = 60;
-        self.bgHeightPadding = 40;
+        self.bgWidthPadding = 100;
+        self.bgHeightPadding = 100;
         
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 15;
