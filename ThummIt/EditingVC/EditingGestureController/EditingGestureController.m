@@ -208,8 +208,9 @@
 -(void)itemGuideWithDelta:(CGPoint)deltaPoint{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    
+
     float padding = 5;
+
     
     if ((fabs(deltaPoint.x) < 0.4  && fabs(deltaPoint.y) < 0.4)) {
         GuideTarget *target;
@@ -265,7 +266,8 @@
 -(void)guideWithDeltaPoint:(CGPoint)deltaPoint{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
-    float padding = 5;
+    float padding = editingVC.bgView.frameWidth * 5/375;
+
     CGRect centerXRect = CGRectMake(editingVC.bgView.centerX - padding, editingVC.bgView.frameY, padding*2, editingVC.bgView.frameHeight);
     CGRect leadingRect = CGRectMake(editingVC.bgView.frameX - padding, editingVC.bgView.frameY, padding*2, editingVC.bgView.frameHeight);
     CGRect trailingRect = CGRectMake(editingVC.bgView.frameX + editingVC.bgView.frameWidth - padding, editingVC.bgView.frameY, padding*2, editingVC.bgView.frameHeight);

@@ -194,6 +194,8 @@
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentText.baseView removeFromSuperview];
     [editingVC.currentText.textView resignFirstResponder];
+    self.checkButton.enabled = true;
+    self.checkButton.alpha = 1.0;
 
 }
 
@@ -214,6 +216,11 @@
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentText.textView resignFirstResponder];
     
+//    NSLog(@"글자 %d",editingVC.justTyped.length);
+    if(editingVC.justTyped.length == 0){
+    self.checkButton.enabled = true;
+    self.checkButton.alpha = 1.0;
+    }
     
 }
 
