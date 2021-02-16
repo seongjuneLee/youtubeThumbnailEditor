@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"오분순삭",nil);
         self.fontName = @"3YangPyeongB";
         self.textColor = [UIColor colorWithRed:255/255.0 green:205/255.0 blue:0/255.0 alpha:1.0];
-        
+        self.fontSize = 60;
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
         attribute.shadowOffset = CGPointMake(2, 2);

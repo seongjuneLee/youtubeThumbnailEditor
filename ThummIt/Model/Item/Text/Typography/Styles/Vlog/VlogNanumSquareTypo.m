@@ -16,6 +16,7 @@
         self.name = NSLocalizedString(@"Square",nil);
         self.fontName = @"NanumSquareOTFEB";
         self.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1];
+        self.fontSize = 50;
 
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.shadowOffset = CGPointMake(0, 0);

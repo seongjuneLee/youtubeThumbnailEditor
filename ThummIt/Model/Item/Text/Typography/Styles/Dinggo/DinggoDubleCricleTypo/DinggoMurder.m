@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"살인미소?!",nil);
         self.fontName = @"NeoDunggeunmoPro-Regular";
         self.textColor = [UIColor colorWithRed:(0/255.0) green:(0/255.0) blue:(0/255.0) alpha:1] ;
-        self.fontSize = TEXT_FONT_SIZE;
+        self.fontSize = 100;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor colorWithRed:(249/255.0) green:(242/255.0) blue:(84/255.0) alpha:1];

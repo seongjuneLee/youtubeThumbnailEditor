@@ -83,8 +83,8 @@
     tikitakaText.indexInLayer =@"2";
     tikitakaText.text = @"환상의 티키타카";
     tikitakaText.textView.text = tikitakaText.text;
-    tikitakaText.scale = 0.57;
-    tikitakaText.center = CGPointMake(0.32, 0.66);
+    tikitakaText.scale = 0.55;
+    tikitakaText.center = CGPointMake(0.32, 0.67);
     tikitakaText.isTemplateItem = true;
     tikitakaText.typo = tikitaka;
     [self.texts addObject:tikitakaText];
@@ -95,7 +95,7 @@
     dripText.indexInLayer =@"3";
     dripText.text = @"애드립 모음집";
     dripText.textView.text = dripText.text;
-    dripText.scale = 0.65;
+    dripText.scale = 0.63;
     dripText.center = CGPointMake(0.35, 0.83);
     dripText.isTemplateItem = true;
     dripText.typo = gradient;
@@ -126,11 +126,11 @@
     [self.texts addObject:asmosphereText];
     
     //혼절직전
-    CGFloat xCenter1 = 0.11;
+    CGFloat xCenter1 = 0.12;
     CGFloat xCenter2 = 0.55;
     CGFloat yCenter1 = 0.23;
     CGFloat yCenter2 = 0.53;
-    CGFloat scale = 0.068;
+    CGFloat scale = 0.063;
     
     KnockOutTypo *knockOut = [KnockOutTypo knockOutTypo];
     
