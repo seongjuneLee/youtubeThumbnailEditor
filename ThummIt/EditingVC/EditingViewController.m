@@ -164,7 +164,9 @@
     self.bgView.backgroundColor = project.backgroundColor;
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
-        
+        NSLog(@"baseview frame");
+        [item loadView]; // 뷰 로드하기.
+
         if (item.isTemplateItem) {
             // 템플릿 상댓값 센터를 절댓값으로.
             float itemX = self.bgView.frameWidth * item.center.x;
@@ -176,8 +178,8 @@
             float scale = self.view.frameWidth * item.scale/item.baseView.frameWidth;
             item.scale = scale;
         }
-        NSLog(@"baseview frame");
-        [item loadView]; // 뷰 로드하기.
+        
+        [item scaleItem];
         
         if ([item isKindOfClass:Text.class]){ // 텍스트 해주어야 할 일.
             Text *text = (Text *)item;

@@ -73,13 +73,23 @@
     UIImage *image = [UIImage imageNamed:self.backgroundImageName];
     float imageWidth = 300;
     float imageHeight = 300;
+    float ratio = 1;
     if (image) {
         imageWidth = image.size.width * image.scale;
         imageHeight = image.size.height * image.scale;
+        ratio = imageHeight/imageWidth;
     }
+    CGSize screenSize = UIScreen.mainScreen.bounds.size;
+    float width = screenSize.width*0.8/2;
+    float height = screenSize.height*0.8/2;
+
     self.baseView = [[UIView alloc] init];
     self.baseView.clipsToBounds = true;
-    self.baseView.frameSize = CGSizeMake(imageWidth, imageHeight);
+    if (ratio > 1) {
+        self.baseView.frameSize = CGSizeMake(height * 1/ratio, height);
+    } else {
+        self.baseView.frameSize = CGSizeMake(width, width*ratio);
+    }
     self.baseView.backgroundColor = UIColor.clearColor;
 
 }

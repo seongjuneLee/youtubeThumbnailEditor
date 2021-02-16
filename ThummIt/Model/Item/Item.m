@@ -32,15 +32,6 @@
     return copied;
 }
 -(void)scaleItem{
-    
-    float width = UIScreen.mainScreen.bounds.size.width;
-    float scale = width/self.baseView.frameWidth;
-    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
-    self.baseView.transform = CGAffineTransformConcat(self.baseView.transform, scaleTransform);
-    
-}
--(void)loadView{
-    
     CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
     if (!self.isFixedPhotoFrame) {
         CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.scale, self.scale);
@@ -49,7 +40,10 @@
         self.baseView.transform = rotationTransform;
     }
     self.baseView.center = self.center;
-
+    
+}
+-(void)loadView{
+    
 }
 
 -(id)initWithCoder:(NSCoder *)decoder{

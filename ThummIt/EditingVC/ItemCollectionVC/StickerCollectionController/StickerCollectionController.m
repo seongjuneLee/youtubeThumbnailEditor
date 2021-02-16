@@ -59,7 +59,7 @@
     StickerCollectionViewCell *cell = (StickerCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCollectionViewCell" forIndexPath:indexPath];
    
     NSArray *stickers = ItemManager.sharedInstance.stickerDatas[indexPath.section];
-    
+    NSLog(@"왜케 많이불리지?");
     Sticker *sticker = stickers[indexPath.item];
     cell.stickerImageView.image = [UIImage imageNamed:sticker.backgroundImageName];
     return cell;
