@@ -25,13 +25,13 @@
 
 - (IBAction)downloadButtonTapped:(id)sender {
     
-    
+    [self.delegate downloadButtonTapped];
     
 }
 
 - (IBAction)moreButtonTapped:(id)sender {
     
-    
+    [self.delegate moreButtonTapped];
     
 }
 

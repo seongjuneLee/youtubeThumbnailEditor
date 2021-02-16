@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol ProjectTableViewCellDelegate <NSObject>
 
 -(void)moreButtonTapped;
+-(void)downloadButtonTapped;
 
 @end
 

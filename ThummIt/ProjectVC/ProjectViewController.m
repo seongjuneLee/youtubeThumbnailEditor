@@ -18,18 +18,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self connectProjectTableController];
-    self.projectTableController.offset = 0;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     NSUInteger projectsCount = ProjectManager.sharedInstance.fetchProjectsCount;
     
-        self.projectTableController.offset = 0;
-        if (projectsCount >= 10) {
-            self.projectTableController.offset = projectsCount - 10;
-        }
-        self.projectTableController.snapShots = [ProjectManager.sharedInstance loadProjectSnapshots:self.projectTableController.offset];
-        [self.tableView reloadData];
+    self.projectTableController.offset = 0;
+    if (projectsCount >= 10) {
+        self.projectTableController.offset = projectsCount - 10;
+    }
+    self.projectTableController.snapShots = [ProjectManager.sharedInstance loadProjectSnapshots:self.projectTableController.offset];
+    [self.tableView reloadData];
 }
 
 -(void)connectProjectTableController{

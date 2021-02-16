@@ -65,7 +65,9 @@
 -(void)viewDidLayoutSubviews{
     if (!self.itemLoaded) {
         [self loadItems];
-        [SaveManager.sharedInstance saveAndAddToStack];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SaveManager.sharedInstance saveAndAddToStack];
+        });
     }
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);

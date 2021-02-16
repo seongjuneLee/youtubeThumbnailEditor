@@ -9,7 +9,6 @@
 #import "EditingViewController.h"
 #import "ProjectManager.h"
 #import "SaveManager.h"
-#import "ProjectTableViewCell.h"
 #import <Toast/Toast.h>
 @import Parse;
 @implementation ProjectTableController
@@ -63,7 +62,7 @@
         [self loadMoreWithOffset:self.offset];
     }
 
-
+    cell.delegate = self;
     return cell;
 }
 
@@ -105,6 +104,12 @@
     
     return 350;
 }
+
+-(void)moreButtonTapped{
+    
+}
+
+
 
 
 @end
