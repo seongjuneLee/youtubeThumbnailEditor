@@ -13,11 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PhotoFrame : Item
 
 @property (strong, nonatomic) UIButton *plusPhotoButton;
-@property (strong, nonatomic) UILabel *plusLabel;
+@property (strong, nonatomic) UIImageView *plusPhotoImageView;
 @property (strong, nonatomic) UIImageView *photoImageView;
 @property (strong, nonatomic) UIImage *photoImage;
-@property (nonatomic) float photoRotationDegree;
 @property (nonatomic) float photoScale;
+@property (nonatomic) CGPoint photoCenter;
 @property (nonatomic) BOOL isCircle;
 @property (strong, nonatomic) PHAsset *phAsset;
 

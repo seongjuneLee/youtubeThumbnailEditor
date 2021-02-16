@@ -22,7 +22,6 @@
         self.center = CGPointMake(0.5, 0.5);
         self.rotationDegree = 0;
         self.photoScale = 1;
-        self.photoRotationDegree = 0;
     }
     return self;
     
@@ -31,9 +30,8 @@
 -(id)copyWithZone:(NSZone *)zone{
     
     PhotoFrame *copied = [super copyWithZone:zone];
-    
+    copied.phAsset = self.phAsset;
     copied.photoScale = self.photoScale;
-    copied.photoRotationDegree = self.photoRotationDegree;
     copied.isCircle = self.isCircle;
     
     UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.bounds];
@@ -77,8 +75,7 @@
                 self.phAsset = phAsset;
             }
         }
-        self.photoImageView.center = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
-        self.photoRotationDegree = [[decoder decodeObjectForKey:@"photoRotationDegree"] floatValue];
+        self.photoCenter = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
         self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
         self.isCircle = [[decoder decodeObjectForKey:@"isCircle"] boolValue];
         self.isFixedPhotoFrame = [[decoder decodeObjectForKey:@"isFixedPhotoFrame"] boolValue];
@@ -92,7 +89,6 @@
     [super encodeWithCoder:encoder];
     
     [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.photoRotationDegree] forKey:@"photoRotationDegree"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.photoScale] forKey:@"photoScale"];
     [encoder encodeObject:[NSValue valueWithCGPoint:self.photoImageView.center] forKey:@"photoCenter"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.isCircle] forKey:@"isCircle"];
@@ -136,26 +132,32 @@
 
 -(void)addSubViewsToBaseView{
     
-    if (self.isTemplateItem) {
-        self.plusLabel = [[UILabel alloc] init];
-        self.plusLabel.text = NSLocalizedString(@"+ Photo", nil);
-        self.plusLabel.textColor = UIColor.blackColor;
-        [self.plusLabel sizeToFit];
-        self.plusLabel.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
-        [self.baseView addSubview:self.plusLabel];
-    }
     
     self.photoImageView = [[UIImageView alloc] init];
     self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
     if (self.phAsset) {
         [PhotoManager.sharedInstance getImageFromPHAsset:self.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.photoImageView.image = image;
                 float ratio = image.size.height/image.size.width;
-                float width = self.baseView.frameWidth * 1.2;
-                self.photoImageView.frameSize = CGSizeMake(self.baseView.frameWidth * 1.2, width * ratio);
+                float width = self.baseView.bounds.size.width * 1.2;
+                float height = self.baseView.bounds.size.height * 1.2;
+                if (ratio > 1) {
+                    self.photoImageView.frameSize = CGSizeMake(width, width * ratio);
+                } else {
+                    self.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
+                }
+                self.photoImageView.center = self.photoCenter;
+                self.photoImageView.transform = CGAffineTransformMakeScale(self.photoScale, self.photoScale);
+                
+                self.photoImageView.image = image;
+
             });
         }];
+    } else {
+        self.plusPhotoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"plusBlack"]];
+        self.plusPhotoImageView.frameSize = CGSizeMake(self.baseView.frameWidth * 0.1, self.baseView.frameWidth * 0.1);
+        self.plusPhotoImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
+        [self.baseView addSubview:self.plusPhotoImageView];
     }
     [self.baseView addSubview:self.photoImageView];
     if (self.backgroundImageName) {
@@ -171,7 +173,7 @@
         self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
         [self.baseView addSubview:self.backgroundImageView];
     }
-
+    
 }
 
 @end

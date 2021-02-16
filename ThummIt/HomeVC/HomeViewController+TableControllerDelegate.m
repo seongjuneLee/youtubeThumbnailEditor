@@ -12,7 +12,7 @@
 
 // 홈 테이블 뷰 컨틀롤러 델리게이트를 받아 editingVC를 푸시하는 함수.
 -(void)didSelectItemAtTableIndex:(NSUInteger)tableIndex withCollectionIndex:(NSUInteger)collectionIndex{
-        
+    
     NSArray *templates = TemplateManager.sharedInstance.templateDatas[tableIndex];
     Template *selectedTemplate = templates[collectionIndex];
     Project *project =  [ProjectManager.sharedInstance generateNewProjectWithTemplate:selectedTemplate];
@@ -25,7 +25,8 @@
     EditingViewController *editingVC = (EditingViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingViewController"];
     editingVC.selectedTemplate = selectedTemplate;
     [self.navigationController pushViewController:editingVC animated:true];
-    [SaveManager.sharedInstance save];
+    [UndoManager.sharedInstance initUndoRedo];
+    [SaveManager.sharedInstance saveAndAddToStack];
     
 }
 

@@ -65,7 +65,7 @@
 -(void)viewDidLayoutSubviews{
     if (!self.itemLoaded) {
         [self loadItems];
-        [SaveManager.sharedInstance save];
+        [SaveManager.sharedInstance saveAndAddToStack];
     }
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
@@ -162,19 +162,24 @@
     self.bgView.backgroundColor = project.backgroundColor;
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
-        if (item.isTemplateItem) {
+        
+        if (item.isTemplateItem) { // 템플릿 상댓값 센터를 절댓값으로.
             float itemX = self.bgView.frameWidth * item.center.x;
             float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             item.center = itemCenter;
         }
-        [item loadView];
-        if ([item isKindOfClass:Text.class]){
+        
+        [item loadView]; // 뷰 로드하기.
+        
+        if ([item isKindOfClass:Text.class]){ // 텍스트 해주어야 할 일.
             Text *text = (Text *)item;
             text.textView.delegate = self;
             text.isTypedByUser = true;
         }
-        if (item.isFixedPhotoFrame) {
+        
+        if (item.isFixedPhotoFrame) { // fixed포토프레임일 때와 아닐 때
+            item.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
             [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
         } else {
             [self.view insertSubview:item.baseView aboveSubview:self.backgroundImageView];
@@ -199,7 +204,7 @@
     
     UIImage *viewImage = [self.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:self.bgView.frame];
-
+    [SaveManager.sharedInstance.currentProject save];
 }
 
 -(void)respondToUndoRedo{
