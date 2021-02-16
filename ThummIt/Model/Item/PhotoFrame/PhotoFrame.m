@@ -22,8 +22,6 @@
         self.center = CGPointMake(0.5, 0.5);
         self.rotationDegree = 0;
         self.photoScale = 1;
-        self.baseView = [[UIView alloc] init];
-        [self setBaseViewFrame];
     }
     return self;
     
@@ -112,7 +110,6 @@
         self.backgroundImageView.clipsToBounds = true;
     }
     [self addSubViewsToBaseView];
-    [super loadView];
 
 }
     

@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL cannotChangeColor;
 
 -(void)loadView;
--(void)scaleItem;
+-(void)setItemCenterAndScale;
 
 @end
 

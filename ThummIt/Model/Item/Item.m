@@ -31,7 +31,7 @@
     
     return copied;
 }
--(void)scaleItem{
+-(void)setItemCenterAndScale{
     CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
     if (!self.isFixedPhotoFrame) {
         CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.scale, self.scale);
@@ -40,9 +40,6 @@
         self.baseView.transform = rotationTransform;
     }
     self.baseView.center = self.center;
-    
-}
--(void)loadView{
     
 }
 

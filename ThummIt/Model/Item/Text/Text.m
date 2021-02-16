@@ -23,8 +23,8 @@
         self.textView = [self makeTextView];
         self.textViewContainer = [self makeTextViewContainerWithTextView:self.textView];
         self.baseView = self.textViewContainer;
-
-        self.center = CGPointMake(0,0);
+        self.scale = 0.7;
+        self.center = CGPointMake(0.5,0.5);
         self.rotationDegree = 0;
         self.textAlignment = NSTextAlignmentCenter;
         self.textView.textAlignment = NSTextAlignmentCenter;
@@ -324,7 +324,6 @@
     [self setUpTypoRangeArray:self.typoRangeArray];
     self.baseView = self.textViewContainer;
     
-    [super loadView];
 
 }
 
@@ -340,12 +339,12 @@
     [self updateBackgroundImageViewFrame:self.typo];
 }
 
--(void)scaleItem{
+-(void)setItemCenterAndScale{
     if(self.typo.scale != 0.0){
         self.scale = self.typo.scale;
     } else {
     }
-    [super scaleItem];
+    [super setItemCenterAndScale];
 }
 
 #pragma mark - Helper

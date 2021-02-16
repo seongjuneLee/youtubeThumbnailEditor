@@ -164,7 +164,6 @@
     self.bgView.backgroundColor = project.backgroundColor;
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
-        NSLog(@"baseview frame");
         [item loadView]; // 뷰 로드하기.
 
         if (item.isTemplateItem) {
@@ -179,7 +178,7 @@
             item.scale = scale;
         }
         
-        [item scaleItem];
+        [item setItemCenterAndScale];
         
         if ([item isKindOfClass:Text.class]){ // 텍스트 해주어야 할 일.
             Text *text = (Text *)item;

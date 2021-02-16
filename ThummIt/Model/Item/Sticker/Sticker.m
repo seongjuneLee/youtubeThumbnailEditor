@@ -16,7 +16,6 @@
         // 템플릿에서만 필요
         self.center = CGPointMake(0.5, 0.5);
         self.rotationDegree = 0;
-        [self makeBaseView];
     }
     return self;
     
@@ -65,7 +64,6 @@
     [self makeBaseView];
     [self addBackgroundImageView];
     
-    [super loadView];
 
 }
 
