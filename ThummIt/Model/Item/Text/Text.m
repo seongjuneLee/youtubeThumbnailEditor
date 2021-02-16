@@ -339,10 +339,12 @@
     [self updateBackgroundImageViewFrame:self.typo];
 }
 
+
 -(void)setItemCenterAndScale{
     if(self.typo.scale != 0.0){
         self.scale = self.typo.scale;
     } else {
+
     }
     [super setItemCenterAndScale];
 }
