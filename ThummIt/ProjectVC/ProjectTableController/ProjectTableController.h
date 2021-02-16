@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProjectTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ProjectTableController : NSObject <UITableViewDelegate, UITableViewDataSource>
+@interface ProjectTableController : NSObject <UITableViewDelegate, UITableViewDataSource, ProjectTableViewCellDelegate>
 
 @property (weak, nonatomic) UITableView *tableView;
 @property (weak, nonatomic) UIViewController *projectVC;
