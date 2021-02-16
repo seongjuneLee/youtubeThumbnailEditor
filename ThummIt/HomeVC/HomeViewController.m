@@ -27,13 +27,14 @@
     self.makeNewImageView.layer.cornerRadius = 5.0;
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:NSBundle.mainBundle] forCellReuseIdentifier:@"HomeTableViewCell"];
     [self connectHomeTableController];
-    for (NSString *familyName in UIFont.familyNames) {
-        NSLog(@"familyName : %@",familyName);
-        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
-            NSLog(@"fontName : %@",fontName);
-        }
-    }
-
+//    for (NSString *familyName in UIFont.familyNames) {
+//        NSLog(@"familyName : %@",familyName);
+//        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+//            NSLog(@"fontName : %@",fontName);
+//        }
+//    }
+//    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+//    NSLog(@"width값 : %f", window.frameSize.width);
 }
 
 -(void)connectHomeTableController{
