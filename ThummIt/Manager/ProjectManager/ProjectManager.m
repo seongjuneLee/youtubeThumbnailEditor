@@ -243,31 +243,7 @@
     self.projectSnapShots = [NSMutableArray array];
     NSArray *projects = [ProjectManager.sharedInstance getRecentTenProjectsFromCoreDataWithOffset:offSet];
     for (Project *project in projects) {
-        UIScreen *screen = UIScreen.mainScreen;
-        UIImageView *imageView = [[UIImageView alloc] init];
-        float imageViewWidth = screen.bounds.size.width;
-        imageView.frame = CGRectMake(0, 0, imageViewWidth, imageViewWidth*9/16);
-        imageView.backgroundColor = UIColor.blackColor;
-        
-        NSMutableArray *indexes = [NSMutableArray array];
-        for (Item *item in project.items) {
-            [indexes addObject:[NSNumber numberWithInteger:[item.indexInLayer integerValue]]];
-        }
-        
-        float bgViewFrameY = UIScreen.mainScreen.bounds.size.height * 0.15;
-        
-        NSNumber* smallest = [indexes valueForKeyPath:@"@min.self"];
-        for (Item *item  in project.items) {
-            
-            [item loadView];
-            item.baseView.centerY -= bgViewFrameY;
-
-            [imageView insertSubview:item.baseView atIndex:[item.indexInLayer integerValue] - [smallest integerValue] + 1];
-            
-        }
-        
-        UIImage *snapShot = [UIImage imageWithView:imageView];
-        [self.projectSnapShots addObject:snapShot];
+        [self.projectSnapShots addObject:project.previewImage];
     }
     return self.projectSnapShots;
 }
