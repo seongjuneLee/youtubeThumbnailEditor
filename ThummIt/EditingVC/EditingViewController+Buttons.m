@@ -221,6 +221,9 @@
     self.itemCollectionVC.textButton.selected = false;
     self.itemCollectionVC.textButton.alpha = 0.4;
     [self.itemCollectionVC.textCollectionController didSelectTypo:self.recentTypo];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.buttonScrollView.alpha = 0.0;
+    }];
     
 }
 

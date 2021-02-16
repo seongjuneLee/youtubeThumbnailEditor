@@ -162,6 +162,8 @@
     
     self.underAreaView.hidden = true;
     [UIView animateWithDuration:0.2 animations:^{
+        self.undoButton.alpha = 0.0;
+        self.redoButton.alpha = 0.0;
         self.buttonScrollView.alpha = 0.0;
         self.deleteButtonContainerView.alpha = 1.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
@@ -206,6 +208,8 @@
     }
     
     [UIView animateWithDuration:0.2 animations:^{
+        self.undoButton.alpha = 1.0;
+        self.redoButton.alpha = 1.0;
         self.buttonScrollView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;

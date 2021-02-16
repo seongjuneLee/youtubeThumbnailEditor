@@ -30,7 +30,7 @@
     UITextField *textField = [[UITextField alloc] init];
     [[[[UIApplication sharedApplication] windows] lastObject] addSubview:textField];
     
-    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(getKeyboardFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(getKeyboardFrame:) name:UIKeyboardDidShowNotification object:nil];
     [textField becomeFirstResponder];
     [textField resignFirstResponder];
     [textField removeFromSuperview];
@@ -77,6 +77,7 @@
     NSDictionary* keyboardInfo = [notification userInfo];
     NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
     AppManager.sharedInstance.keyboardSize = [keyboardFrameBegin CGRectValue].size;
+    [NSNotificationCenter.defaultCenter removeObserver:self name:UIKeyboardDidShowNotification object:nil];
 }
 
 @end
