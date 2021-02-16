@@ -189,7 +189,7 @@
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 UIImage *viewImage = [editingVC.view toImage];
                 SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-                [SaveManager.sharedInstance save];
+                [SaveManager.sharedInstance saveAndAddToStack];
             });
         }
 
@@ -489,7 +489,7 @@
         
         UIImage *viewImage = [editingVC.view toImage];
         SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-        [SaveManager.sharedInstance save];
+        [SaveManager.sharedInstance saveAndAddToStack];
 
     }
     
@@ -640,7 +640,6 @@
 
         
         photoFrame.photoScale = self.originalScaleRatio*changeScale;
-        photoFrame.photoRotationDegree = self.currentRotation;
         
         // 중심값 이동
         CGPoint newPinchCenter = [sender locationInView:photoFrame.baseView];

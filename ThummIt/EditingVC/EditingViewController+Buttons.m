@@ -98,6 +98,7 @@
 -(void)closeEditingVC{
     
     [self.navigationController popViewControllerAnimated:true];
+    [UndoManager.sharedInstance initUndoRedo];
 
 }
 

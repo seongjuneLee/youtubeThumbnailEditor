@@ -56,7 +56,7 @@
     }
 }
 
--(void)save{
+-(void)saveAndAddToStack{
     
     dispatch_sync(self.savingQueue, ^{
         [self.currentProject save];

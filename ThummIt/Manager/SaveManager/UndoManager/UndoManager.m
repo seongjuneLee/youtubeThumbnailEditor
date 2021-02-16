@@ -22,7 +22,11 @@
     return sharedInstance;
 }
 
-
+-(void)initUndoRedo{
+    
+    self.undoRedoStacks = [NSMutableArray array];
+    self.currentIndex = 0;
+}
 
 -(void)addCurrentProjectToUndoRedoStack{
     

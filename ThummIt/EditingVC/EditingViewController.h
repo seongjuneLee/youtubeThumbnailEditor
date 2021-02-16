@@ -51,9 +51,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint originalCenter;
 @property (nonatomic) CGAffineTransform originalTransform;
 
-@property (nonatomic) CGPoint originalPhotoImageViewCenter; // photoFrame
-@property (nonatomic) CGAffineTransform originalPhotoImageTransform;
-@property (strong, nonatomic, nullable) UIImage *originalPhotoFrameImage;
 @property (strong, nonatomic, nullable) PhotoFrame *originalPhotoFrame;
 
 @property (strong, nonatomic) Typography *originalTypo; // text

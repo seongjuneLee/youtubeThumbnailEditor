@@ -254,9 +254,10 @@
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
+    editingVC.currentPhotoFrame.plusPhotoImageView.hidden = true;
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-    [SaveManager.sharedInstance save];
+    [SaveManager.sharedInstance saveAndAddToStack];
     
 }
 
@@ -274,16 +275,15 @@
         photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",editingVC.originalIndexInLayer];
         [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
     }
-
+    editingVC.currentPhotoFrame.plusPhotoImageView.hidden = true;
     [SaveManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
     [SaveManager.sharedInstance addItem:photoFrame];
     // albumVC 없애주기
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
-    editingVC.originalPhotoFrameImage = nil;
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-    [SaveManager.sharedInstance save];
+    [SaveManager.sharedInstance saveAndAddToStack];
 }
 
 -(void)doneAddingText{
@@ -301,7 +301,7 @@
         }
         UIImage *viewImage = [editingVC.view toImage];
         SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-        [SaveManager.sharedInstance save];
+        [SaveManager.sharedInstance saveAndAddToStack];
 
         [editingVC.currentText.textView resignFirstResponder];
     }
@@ -324,7 +324,7 @@
     [editingVC.currentText.textView resignFirstResponder];
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-    [SaveManager.sharedInstance save];
+    [SaveManager.sharedInstance saveAndAddToStack];
 
     
 
@@ -342,7 +342,7 @@
     }
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-    [SaveManager.sharedInstance save];
+    [SaveManager.sharedInstance saveAndAddToStack];
 
    
 }
@@ -356,7 +356,7 @@
     [editingVC.itemCollectionVC dismissSelf];
     UIImage *viewImage = [editingVC.view toImage];
     SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-    [SaveManager.sharedInstance save];
+    [SaveManager.sharedInstance saveAndAddToStack];
 
 
 }
