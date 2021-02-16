@@ -22,6 +22,8 @@
         self.center = CGPointMake(0.5, 0.5);
         self.rotationDegree = 0;
         self.photoScale = 1;
+        self.baseView = [[UIView alloc] init];
+        [self setBaseViewFrame];
     }
     return self;
     
@@ -110,19 +112,7 @@
         self.backgroundImageView.clipsToBounds = true;
     }
     [self addSubViewsToBaseView];
-
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
-
-    float width = UIScreen.mainScreen.bounds.size.width;
-    float scale = width/self.baseView.frameWidth;
-    if (!self.isFixedPhotoFrame) {
-        CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
-        self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-    } else {
-        self.baseView.transform = rotationTransform;
-    }
-    
-    self.baseView.center = self.center;
+    [super loadView];
 
 }
     

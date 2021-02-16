@@ -324,13 +324,8 @@
     [self setUpTypoRangeArray:self.typoRangeArray];
     self.baseView = self.textViewContainer;
     
+    [super loadView];
 
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
-    float width = UIScreen.mainScreen.bounds.size.width;
-    float scale = width/self.baseView.frameWidth;
-    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
-    self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-    
 }
 
 #pragma mark - 리사이즈
@@ -348,10 +343,7 @@
 -(void)scaleItem{
     if(self.typo.scale != 0.0){
         self.scale = self.typo.scale;
-        NSLog(@"타이포 스케일 있음 : %f",self.scale);
     } else {
-//        self.scale = 0.4f;
-        NSLog(@"타이포 스케일 없음 : %f",self.scale);
     }
     [super scaleItem];
 }

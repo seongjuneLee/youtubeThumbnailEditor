@@ -16,7 +16,7 @@
         // 템플릿에서만 필요
         self.center = CGPointMake(0.5, 0.5);
         self.rotationDegree = 0;
-        
+        [self makeBaseView];
     }
     return self;
     
@@ -63,14 +63,14 @@
 -(void)loadView{
     
     [self makeBaseView];
+    [self addBackgroundImageView];
     
+    [super loadView];
+
 }
 
 -(void)makeBaseView{
-    
     UIImage *image = [UIImage imageNamed:self.backgroundImageName];
-    float screenWidth = UIScreen.mainScreen.bounds.size.width;
-
     float imageWidth = 300;
     float imageHeight = 300;
     if (image) {
@@ -81,14 +81,7 @@
     self.baseView.clipsToBounds = true;
     self.baseView.frameSize = CGSizeMake(imageWidth, imageHeight);
     self.baseView.backgroundColor = UIColor.clearColor;
-    
-    [self addBackgroundImageView];
 
-    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
-    float scale = screenWidth/self.baseView.frameWidth;
-    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale * self.scale, scale * self.scale);
-    self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
-    self.baseView.center = self.center;
 }
 
 -(void)addBackgroundImageView{

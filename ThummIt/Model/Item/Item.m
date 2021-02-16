@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         self.indexInLayer = @"";
-        self.scale = 0.4;
+        self.scale = 1.0;
     }
     return self;
     
@@ -41,6 +41,15 @@
 }
 -(void)loadView{
     
+    CGAffineTransform rotationTransform = CGAffineTransformMakeRotation(self.rotationDegree);
+    if (!self.isFixedPhotoFrame) {
+        CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.scale, self.scale);
+        self.baseView.transform = CGAffineTransformConcat(rotationTransform, scaleTransform);
+    } else {
+        self.baseView.transform = rotationTransform;
+    }
+    self.baseView.center = self.center;
+
 }
 
 -(id)initWithCoder:(NSCoder *)decoder{

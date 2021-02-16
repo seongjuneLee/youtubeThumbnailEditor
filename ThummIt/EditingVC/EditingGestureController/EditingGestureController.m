@@ -462,8 +462,8 @@
         // 최종 적용
         editingVC.currentItem.baseView.transform = CGAffineTransformConcat(scaleTransform, rotationTransform);
         editingVC.currentItem.rotationDegree = self.currentRotation;
-        editingVC.currentItem.scale = editingVC.currentItem.baseView.frameWidth/editingVC.bgView.frameWidth;
-        
+        editingVC.currentItem.scale = self.originalScaleRatio*changeScale;
+
         // 중심값 이동
         CGPoint newPinchCenter = [sender locationInView:editingVC.view];
         float translationX = newPinchCenter.x - self.originalPinchCenter.x;
@@ -479,10 +479,8 @@
         if (editingVC.currentItem.isFixedPhotoFrame) {
             return;
         }
-
-        if (editingVC.modeController.editingMode == NormalMode) {
-            editingVC.currentItem = nil;
-        }
+        
+        NSLog(@"불림");
         self.isPinching = false;
         [self removeItemSizeGuideLinesFromSuperView];
         [self.rotationDashedLine removeFromSuperview];
@@ -490,6 +488,9 @@
         UIImage *viewImage = [editingVC.view toImage];
         SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
         [SaveManager.sharedInstance saveAndAddToStack];
+        if (editingVC.modeController.editingMode == NormalMode) {
+            editingVC.currentItem = nil;
+        }
 
     }
     

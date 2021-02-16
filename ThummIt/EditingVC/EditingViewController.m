@@ -165,13 +165,18 @@
     self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
     for (Item *item in project.items) {
         
-        if (item.isTemplateItem) { // 템플릿 상댓값 센터를 절댓값으로.
+        if (item.isTemplateItem) {
+            // 템플릿 상댓값 센터를 절댓값으로.
             float itemX = self.bgView.frameWidth * item.center.x;
             float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             item.center = itemCenter;
+            
+            // 템플릿 상댓값 스케일을 절댓값으로.
+            float scale = self.view.frameWidth * item.scale/item.baseView.frameWidth;
+            item.scale = scale;
         }
-        
+        NSLog(@"baseview frame");
         [item loadView]; // 뷰 로드하기.
         
         if ([item isKindOfClass:Text.class]){ // 텍스트 해주어야 할 일.
