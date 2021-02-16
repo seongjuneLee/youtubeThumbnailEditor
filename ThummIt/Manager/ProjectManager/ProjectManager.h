@@ -20,12 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (Project*)projectFromProjectID:(NSString *)projectId;
 -(Project *)generateNewProjectWithTemplate:(Template *)selectedTemplate;
 - (NSArray*)getAllProjectsFromCoreData;
-- (BOOL)deleteIdOfProject:(NSString*)projectId;
+- (void)deleteProjectOfID:(NSString*)projectId;
 -(NSString *)generateProjectID;
 -(NSUInteger)fetchProjectsCount;
--(NSMutableArray *)loadProjectSnapshots:(NSUInteger)offSet;
-- (NSArray*)getRecentTenProjectsFromCoreDataWithOffset:(NSUInteger)offSet;
+- (NSArray*)getRecentProjectsFromCoreDataWithOffset:(NSUInteger)offSet;
+-(void)deleteProjectAtIndex:(NSUInteger)index;
 -(void)fetchImage;
+- (NSArray *)loadProjectMetaData;
 
 @end
 

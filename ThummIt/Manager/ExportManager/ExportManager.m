@@ -19,6 +19,49 @@
     return sharedInstance;
 }
 
+-(void)exportImageWithBlock:(void(^) (BOOL success))block{
+    
+    [self isAlbumAlreadyExist:^(BOOL exist) {
+        if (exist) {
+            [self getThummItAlbum:^(PHAssetCollection *collection) {
+                
+                [self saveImageToAlbum:collection withBlock:^(BOOL success) {
+                    
+                    
+                    block(success);
+                    
+                }];
+            }];
+        } else {
+            
+            [self createThummItAlbum:^(PHAssetCollection *collection) {
+                if (collection) {
+                    
+                    [self saveImageToAlbum:collection withBlock:^(BOOL success) {
+                        block(success);
+                    }];
+                    
+                } else {
+                    block(false);
+                }
+            }];
+        }
+    }];
+
+}
+
+-(void)setResolutionToExportingImage:(UIImage *)image withResolution:(CGSize)resolution{
+    
+    /* Render the screen shot at custom resolution */
+    CGRect cropRect = CGRectMake(0 ,0 ,resolution.width ,resolution.height);
+    UIGraphicsBeginImageContextWithOptions(cropRect.size, false, 1.0f);
+    [image drawInRect:cropRect];
+    UIImage * customScreenShot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.exportingImage = customScreenShot;
+    
+}
+
 -(void)createThummItAlbum:(void(^) (PHAssetCollection *collection))block{
     
     __block PHObjectPlaceholder *myAlbum;

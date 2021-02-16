@@ -31,7 +31,6 @@ class CoreDataStack: NSObject {
         return context
     }
     
-        
     private func loadCoreDataContainer() -> NSPersistentContainer? {
         
         var container: NSPersistentContainer?
@@ -49,9 +48,31 @@ class CoreDataStack: NSObject {
         
         return container
     }
+
+    // MARK: - 생성
+
+    @objc public class func newProject() -> Project? {
+        guard let context = sharedInstance.mainContext else {
+            return nil
+        }
+        
+        var ret = ""
+        ret = ProjectManager.sharedInstance().generateProjectID()
+        let newProject = Project.init(projectID: ret)
+        
+        context.performAndWait {
+            
+            let newCoreDataProject = CoreDataProject.init(context: context)
+            newCoreDataProject.projectID = ret;
+            newProject.coreDataStorage = newCoreDataProject
+        }
+        
+        return newProject
+    }
+
     
     
-    // MARK: - Core Data Saving support
+    // MARK: - 저장
     @objc public class func saveContext() throws {
         
         guard let context = sharedInstance.mainContext else {
@@ -76,33 +97,8 @@ class CoreDataStack: NSObject {
         
     }
     
-    @objc public class func newProject() -> Project? {
-        guard let context = sharedInstance.mainContext else {
-            return nil
-        }
-        
-        var ret = ""
-//        while (true) {
-//                        
-//            ret = ProjectManager.sharedInstance().generateProjectID()
-//            
-//            if CoreDataStack.isCoreDataProjectExist(projectId: ret) == false {
-//                break
-//            }
-//        }
-        ret = ProjectManager.sharedInstance().generateProjectID()
-        let newProject = Project.init(projectID: ret)
-        
-        context.performAndWait {
-            
-            let newCoreDataProject = CoreDataProject.init(context: context)
-            newCoreDataProject.projectID = ret;
-            newProject.coreDataStorage = newCoreDataProject
-        }
-        
-        return newProject
-    }
-    
+    // MARK: - 페치
+
     @objc public class func fetchAllProjects() -> [CoreDataProject] {
         
         guard let context = sharedInstance.mainContext else {
@@ -196,6 +192,8 @@ class CoreDataStack: NSObject {
         }
         return projects.first
     }
+    
+    // MARK: - 삭제
     
     @objc public class func deleteProject(project: Project) {
         guard let context = sharedInstance.mainContext else {

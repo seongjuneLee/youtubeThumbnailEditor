@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)getThummItAlbum:(void(^) (PHAssetCollection *collection))block;
 -(void)saveImageToAlbum:(PHAssetCollection *)collection withBlock:(void(^) (BOOL success))block;
 -(void)createThummItAlbum:(void(^) (PHAssetCollection *album))block;
+-(void)setResolutionToExportingImage:(UIImage *)image withResolution:(CGSize)resolution;
+-(void)exportImageWithBlock:(void(^) (BOOL success))block;
 
 @end
 

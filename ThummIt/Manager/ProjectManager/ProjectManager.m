@@ -23,6 +23,8 @@
     return sharedInstance;
 }
 
+#pragma mark - 생성
+
 -(Project *)generateNewProjectWithTemplate:(Template *)selectedTemplate{
     
     Project* project = [CoreDataStack newProject];
@@ -37,8 +39,18 @@
     return project;
     
 }
+-(NSString *)generateProjectID{
+    
+    NSString *dateString = [NSDate localizedDateString] ?: @"";
+    NSString *randomString = [NSString randomStringWithLength:4] ?: @"";
+    
+    NSString *projectID = [NSString stringWithFormat:@"%@_%@",dateString,randomString];
 
-- (BOOL)deleteIdOfProject:(NSString*)projectId{
+    return projectID;
+}
+
+#pragma mark - 삭제
+- (void)deleteProjectOfID:(NSString*)projectId{
     
     // find the project
     Project * project = [self projectFromProjectID:projectId];
@@ -49,56 +61,17 @@
         
         NSError* error;
         [CoreDataStack saveContextAndReturnError:&error];
-        return true;
     }
     
-    return false;
     
 }
 
-- (Project*)projectFromProjectID:(NSString *)projectId{
-    
-    
-    CoreDataProject* coreDataProject = [CoreDataStack fetchProjectWithProjectId:projectId];
-    
-    if (!coreDataProject){
-        return nil;
-    }
-    
-    NSData* projectData;
-    if ([MigratorJul.shared isMigrated]) {
-        projectData = coreDataProject.projectData;
-    } else {
-        NSString* filePath = coreDataProject.projectFilePath;
-        if (filePath.length > 0) {
-            NSError* error;
-            projectData = [ProjectFileManager.sharedInstance readWithFilePath:filePath error:&error];
-        }
-    }
-    Project *project;
-    if (projectData) {
-        @try {
-            project = [NSKeyedUnarchiver unarchiveObjectWithData:projectData];
-            project.coreDataStorage = coreDataProject;
-            project.projectID = projectId;
 
-            NSString* projectId = project.projectID;
-            if (projectId.length == 0) {
-                
-                projectId = [self generateProjectID];
-                
-            }
-        } @catch (NSException *exception) {
+#pragma mark - 가져오기
 
-        }
-        
-    }
-    return project;
-}
-
-- (NSArray*)getRecentTenProjectsFromCoreDataWithOffset:(NSUInteger)offSet {
+- (NSArray*)getAllProjectsFromCoreData {
     
-    NSArray<CoreDataProject*>* coreDataProjects = [CoreDataStack fetchWithFetchOffSet:offSet];
+    NSArray<CoreDataProject*>* coreDataProjects = [CoreDataStack fetchAllProjects];
     
     NSMutableArray<Project*>* projects = [NSMutableArray new];
     for (CoreDataProject* coreDataProject in coreDataProjects) {
@@ -157,10 +130,88 @@
     return projects;
 }
 
-
-- (NSArray*)getAllProjectsFromCoreData {
+- (NSArray *)loadProjectMetaData {
     
     NSArray<CoreDataProject*>* coreDataProjects = [CoreDataStack fetchAllProjects];
+    
+    NSMutableArray<NSDictionary*>* ret = [NSMutableArray array];
+    
+    for (CoreDataProject* coreDataProject in coreDataProjects) {
+        NSMutableDictionary * data = [NSMutableDictionary dictionary];
+        NSString* projectID = coreDataProject.projectID;
+        NSString *lastEditedDate = coreDataProject.lastEditedDate;
+        // migrationJul followup - project is invalid without project id
+        // do not show project on the list if project id doesn't exist.
+        if (projectID == nil || projectID.length <= 0) {
+            continue;
+        }
+        
+        data[@"projectID"] = projectID;
+        data[@"lastEditedDate"] = lastEditedDate;
+        
+        [ret addObject:data];
+    }
+    
+    [ret sortUsingComparator:^NSComparisonResult(NSDictionary*  _Nonnull prj1, NSDictionary*  _Nonnull prj2) {
+        NSDate* date1 = [NSDate dateFromString:prj1[@"recentUpdateString"]];
+        NSDate* date2 = [NSDate dateFromString:prj2[@"recentUpdateString"]];
+        if (date1.timeIntervalSince1970 < date2.timeIntervalSince1970) {
+            return NSOrderedDescending;
+        }
+        if (date1.timeIntervalSince1970 > date2.timeIntervalSince1970) {
+            return NSOrderedAscending;
+        }
+        
+        return NSOrderedSame;
+    }];
+    
+    return ret;
+}
+
+
+- (Project*)projectFromProjectID:(NSString *)projectId{
+    
+    
+    CoreDataProject* coreDataProject = [CoreDataStack fetchProjectWithProjectId:projectId];
+    
+    if (!coreDataProject){
+        return nil;
+    }
+    
+    NSData* projectData;
+    if ([MigratorJul.shared isMigrated]) {
+        projectData = coreDataProject.projectData;
+    } else {
+        NSString* filePath = coreDataProject.projectFilePath;
+        if (filePath.length > 0) {
+            NSError* error;
+            projectData = [ProjectFileManager.sharedInstance readWithFilePath:filePath error:&error];
+        }
+    }
+    Project *project;
+    if (projectData) {
+        @try {
+            project = [NSKeyedUnarchiver unarchiveObjectWithData:projectData];
+            project.coreDataStorage = coreDataProject;
+            project.projectID = projectId;
+
+            NSString* projectId = project.projectID;
+            if (projectId.length == 0) {
+                
+                projectId = [self generateProjectID];
+                
+            }
+        } @catch (NSException *exception) {
+
+        }
+        
+    }
+    return project;
+}
+
+- (NSArray*)getRecentProjectsFromCoreDataWithOffset:(NSUInteger)offSet {
+    
+    NSArray<CoreDataProject*>* coreDataProjects = [CoreDataStack fetchWithFetchOffSet:offSet];
     
     NSMutableArray<Project*>* projects = [NSMutableArray new];
     for (CoreDataProject* coreDataProject in coreDataProjects) {
@@ -227,25 +278,5 @@
     
 }
 
--(NSString *)generateProjectID{
-    
-    NSString *dateString = [NSDate localizedDateString] ?: @"";
-    NSString *randomString = [NSString randomStringWithLength:4] ?: @"";
-    
-    NSString *projectID = [NSString stringWithFormat:@"%@_%@",dateString,randomString];
-
-    return projectID;
-}
-
-
--(NSMutableArray *)loadProjectSnapshots:(NSUInteger)offSet{
-    
-    self.projectSnapShots = [NSMutableArray array];
-    NSArray *projects = [ProjectManager.sharedInstance getRecentTenProjectsFromCoreDataWithOffset:offSet];
-    for (Project *project in projects) {
-        [self.projectSnapShots addObject:project.previewImage];
-    }
-    return self.projectSnapShots;
-}
 
 @end

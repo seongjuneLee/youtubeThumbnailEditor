@@ -38,10 +38,19 @@ extension CoreDataProject {
 
     @NSManaged public var projectData: Data?
     @NSManaged public var projectID: String?
+    @NSManaged public var lastEditedDate: String?
     @NSManaged public var projectFilePath: String?
-
+    
+    
 }
 
 extension CoreDataProject : Identifiable {
+    @objc public func updateProperties(from project:Project) {
+        
+        self.projectID = project.projectID
+        self.lastEditedDate = project.lastEditedDate
+        self.projectFilePath = project.projectFilePath
+        
+    }
 
 }

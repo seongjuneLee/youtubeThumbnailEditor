@@ -55,6 +55,7 @@
     NSError* coreDataSaveError;
     [CoreDataStack saveContextAndReturnError:&coreDataSaveError];
 
+    [self.coreDataStorage updatePropertiesFrom:self];
 
     if (coreDataSaveError){
         NSLog(@"failed to save!: %@", error.localizedDescription?:@"");

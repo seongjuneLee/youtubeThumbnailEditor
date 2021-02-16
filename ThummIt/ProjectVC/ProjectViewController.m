@@ -27,7 +27,8 @@
     if (projectsCount >= 10) {
         self.projectTableController.offset = projectsCount - 10;
     }
-    self.projectTableController.snapShots = [ProjectManager.sharedInstance loadProjectSnapshots:self.projectTableController.offset];
+    
+    self.projectTableController.projects = (NSMutableArray *)[ProjectManager.sharedInstance getRecentProjectsFromCoreDataWithOffset:self.projectTableController.offset];
     [self.tableView reloadData];
 }
 

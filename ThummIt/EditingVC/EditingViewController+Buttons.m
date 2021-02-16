@@ -25,67 +25,22 @@
 -(void)exportThumbnail{
     
     [self setResolution:CGSizeMake(1920, 1080)];
-    [self.view makeToastActivity:CSToastPositionCenter];
-    [ExportManager.sharedInstance isAlbumAlreadyExist:^(BOOL exist) {
-        if (exist) {
-            [ExportManager.sharedInstance getThummItAlbum:^(PHAssetCollection *collection) {
-                
-                [ExportManager.sharedInstance saveImageToAlbum:collection withBlock:^(BOOL success) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.view hideAllToasts];
-
-                        if (success) {
-                            [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-                        } else {
-                            [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
-                        }
-                    });
-                    
-                }];
-            }];
-        } else {
-            
-            [ExportManager.sharedInstance createThummItAlbum:^(PHAssetCollection *collection) {
-                if (collection) {
-                    
-                    [ExportManager.sharedInstance saveImageToAlbum:collection withBlock:^(BOOL success) {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            
-                            [self.view hideAllToasts];
-                            if (success) {
-                                [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-                            } else {
-                                [self.view makeToast:NSLocalizedString(@"Downloading image failed : Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
-                            }
-                        });
-                    }];
-                    
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        [self.view hideAllToasts];
-                        [self.view makeToast:NSLocalizedString(@"Creating album failed : Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
-                    });
-                }
-                
-
-            }];
-        }
+    
+    [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
+            } else {
+                [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+            }
+        });
     }];
 
 }
 -(void)setResolution:(CGSize)resolution{
     UIImage *viewImage = [self.view toImage];
     UIImage *croppedImage = [viewImage crop:self.bgView.frame];
-
-    /* Render the screen shot at custom resolution */
-    CGRect cropRect = CGRectMake(0 ,0 ,resolution.width ,resolution.height);
-    UIGraphicsBeginImageContextWithOptions(cropRect.size, self.bgView.opaque, 1.0f);
-    [croppedImage drawInRect:cropRect];
-    UIImage * customScreenShot = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    ExportManager.sharedInstance.exportingImage = customScreenShot;
-
+    [ExportManager.sharedInstance setResolutionToExportingImage:croppedImage withResolution:resolution];
 }
 
 
@@ -121,7 +76,6 @@
     } else {
         [self taskWhenDenied];
     }
-    
     
 }
 
