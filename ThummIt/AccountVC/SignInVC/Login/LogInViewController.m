@@ -74,6 +74,10 @@
 
 }
 
+- (IBAction)backButtonTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:true];
+}
+
 - (IBAction)logInButtonTapped:(id)sender {
     
     [self.view makeToastActivity:CSToastPositionCenter];
@@ -86,5 +90,7 @@
         }
     }];
 }
+
+
 
 @end
