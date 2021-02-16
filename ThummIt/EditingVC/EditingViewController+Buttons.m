@@ -175,7 +175,7 @@
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.itemCollectionVC.containerTopConstraint.constant = 0;
         [self.itemCollectionVC.view layoutIfNeeded];
-//        [self.itemCollectionVC.collectionView reloadData];
+        [self.itemCollectionVC.collectionView reloadData];
 
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
