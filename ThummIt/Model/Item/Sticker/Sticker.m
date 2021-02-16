@@ -100,11 +100,11 @@
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     UIImage *image = [UIImage imageNamed:self.backgroundImageName];
     
-    if(self.tintColor){
+    if (self.cannotChangeColor) {
+        self.backgroundImageView.image = image;
+    } else {
         self.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         self.backgroundImageView.tintColor = self.tintColor;
-    } else {
-        self.backgroundImageView.image = image;
     }
     
     [self.baseView addSubview:self.backgroundImageView];
