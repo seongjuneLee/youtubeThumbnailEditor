@@ -44,6 +44,13 @@ class SignInViewController: UIViewController {
         self.emailSignInView.layer.borderColor = UIColor.black.cgColor
     }
     
+    @IBAction func privacyPolicyTButtonapped(_ sender: Any) {
+        
+        let main = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let privacyVC = main.instantiateViewController(identifier: "PrivacyPolicyViewController")
+        self.navigationController?.pushViewController(privacyVC, animated: true)
+    }
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         
         let main = UIStoryboard.init(name: "Main", bundle: Bundle.main)
