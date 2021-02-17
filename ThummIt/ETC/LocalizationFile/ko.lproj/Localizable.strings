@@ -14,5 +14,10 @@
 "Done" = "완료";
 "circle" = "원";
 "basic" = "기본";
-"Entertain" = "예능";
-"Vlog" = "브이로그";
+"TV Entertain" = "티비 예능";
+"Youtube Entertain" = "유튜브 예능";
+"Trip Vlog" = "여행 브이로그";
+"School Vlog" = "학교 브이로그";
+"Daily Vlog" = "일상 브이로그";
+"Cooking VLog" = "요리 브이로그";
+

@@ -21,7 +21,7 @@
 }
 
 -(void)setUpCategories{
-    self.categories = [NSMutableArray arrayWithArray:@[NSLocalizedString(@"Entertain", nil),NSLocalizedString(@"Vlog", nil)]];
+    self.categories = [NSMutableArray arrayWithArray:@[NSLocalizedString(@"TV Entertain", nil),NSLocalizedString(@"Youtube Entertain", nil),NSLocalizedString(@"Trip Vlog", nil),NSLocalizedString(@"School Vlog", nil),NSLocalizedString(@"Daily Vlog", nil),NSLocalizedString(@"Cooking Vlog", nil),]];
 }
 
 
