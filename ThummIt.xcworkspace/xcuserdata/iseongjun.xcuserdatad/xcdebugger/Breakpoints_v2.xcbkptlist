@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3C9CDE8A-8EFB-411C-940F-962E6CD08478"
-            shouldBeEnabled = "Yes"
+            uuid = "D75CB74D-C5CE-4F05-99D2-C85089EA6D08"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ThummIt/EditingVC/EditingGestureController/EditingGestureController.m"
+            filePath = "ThummIt/EditingVC/EditingGestureController/EditingViewController+GestureControllerDelegate.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
-            landmarkName = "-gestureViewPannedWithSender:"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-didSelectItem:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

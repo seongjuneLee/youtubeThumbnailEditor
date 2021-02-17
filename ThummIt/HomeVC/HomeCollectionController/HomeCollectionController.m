@@ -43,10 +43,10 @@
     HomeTableViewCell *parentCell = (HomeTableViewCell *)contentView.superview;
     NSUInteger cellTag = parentCell.tag;
     
-    NSArray *currentTemplates = TemplateManager.sharedInstance.templatePreviewImages[cellTag];
+    NSArray *currentTemplatesPreview = TemplateManager.sharedInstance.templatePreviewImages[cellTag];
     HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCell" forIndexPath:indexPath];
-    if (currentTemplates[indexPath.row]) {
-        UIImage *previewImage = [UIImage imageNamed:currentTemplates[indexPath.row]];
+    if (currentTemplatesPreview[indexPath.row]) {
+        UIImage *previewImage = [UIImage imageNamed:currentTemplatesPreview[indexPath.row]];
         cell.previewImageView.image = previewImage;
     }
 
