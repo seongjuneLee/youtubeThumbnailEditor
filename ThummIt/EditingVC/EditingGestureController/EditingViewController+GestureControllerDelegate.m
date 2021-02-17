@@ -188,6 +188,9 @@
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (fingerPoint.y >= imageViewBottomY) {
         [item.baseView removeFromSuperview];
+        [self.currentText.textView resignFirstResponder];
+        self.itemCollectionVC.checkButton.enabled = true;
+        self.itemCollectionVC.checkButton.alpha = 1.0;
         self.currentItem = nil;
         self.currentText = nil;
         self.currentSticker = nil;
@@ -201,6 +204,7 @@
         item.baseView.center = CGPointMake(self.bgView.frameWidth/2, self.bgView.frameY + self.bgView.frameHeight/2);
         [self showItemsForNormalMode];
         [self.layerController hideTransparentView];
+        
         [self.itemCollectionVC dismissSelf];
     }
     
