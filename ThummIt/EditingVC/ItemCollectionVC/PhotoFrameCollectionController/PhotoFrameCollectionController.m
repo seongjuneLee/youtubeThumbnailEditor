@@ -43,12 +43,24 @@
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
-    return ItemManager.sharedInstance.photoFrameCategories.count;
+    NSArray *photoFrameCategories;
+    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+        photoFrameCategories =ItemManager.sharedInstance.photoFrameCategories;
+    } else {
+        photoFrameCategories =ItemManager.sharedInstance.photoFrameCategoriesForFreeFormProject;
+    }
+
+    return photoFrameCategories.count;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[section];
+    NSArray *photoFrames;
+    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatas[section];
+    } else {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[section];
+    }
     
     return photoFrames.count;
 }
@@ -56,7 +68,12 @@
 -(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     PhotoFrameCollectionViewCell *cell = (PhotoFrameCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoFrameCollectionViewCell" forIndexPath:indexPath];
-    NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
+    NSArray *photoFrames;
+    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
+    } else {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[indexPath.section];
+    }
 
     PhotoFrame *photoFrame = photoFrames[indexPath.item];
     [photoFrame loadView];
@@ -85,7 +102,13 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSArray *photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
+    NSArray *photoFrames;
+    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
+    } else {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[indexPath.section];
+    }
+
     PhotoFrame *photoFrame = photoFrames[indexPath.item];
     [self didSelectPhotoFrame:photoFrame];
     
@@ -120,14 +143,21 @@
 
 #pragma mark - 레이아웃 델리게이트
 
-//-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-//    
-//    PhotoFrameCollectionReusableView *reusableView = (PhotoFrameCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView" forIndexPath:indexPath];
-//    NSString *category = ItemManager.sharedInstance.photoFrameCategories[indexPath.section];
-//    reusableView.categoryLabel.text = category;
-//    
-//    return reusableView;
-//}
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+    PhotoFrameCollectionReusableView *reusableView = (PhotoFrameCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView" forIndexPath:indexPath];
+    NSArray *photoFrameCategories;
+    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+        photoFrameCategories =ItemManager.sharedInstance.photoFrameCategories;
+    } else {
+        photoFrameCategories =ItemManager.sharedInstance.photoFrameCategoriesForFreeFormProject;
+    }
+
+    NSString *category = photoFrameCategories[indexPath.section];
+    reusableView.categoryLabel.text = category;
+    
+    return reusableView;
+}
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     return CGSizeMake(self.collectionView.frameWidth, 25);

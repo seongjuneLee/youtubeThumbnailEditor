@@ -52,7 +52,6 @@
     Template *workManTemplate3 = [WorkManTemplate3 workManTemplate3];
     
     NSArray *youtubeEntertainTemplates = @[circleTemplate, doubleCircleTemplate, workManTemplate1, workManTemplate2, workManTemplate3];
-
     NSArray *youtubeEntertainTemplatePreviewImages = @[circleTemplate.previewImageName, doubleCircleTemplate.previewImageName ,workManTemplate1.previewImageName, workManTemplate2.previewImageName, workManTemplate3.previewImageName];
     
     //trip vlog
@@ -88,11 +87,13 @@
     Template * summerVlogTemplate= [SummerVlogTemplate summerVlogTemplate];
     Template * dogVlogTemPlate= [DogVlogTemplate dogVlogTemPlate];
     Template * webDesignerVlogTemPlate= [WebDesignerVlogTemplate webDesignerVlogTemplate];
+
     Template *grwmVlogTemplate = [GrwmVlogTemplate grwmVlogTemplate];
     Template *sixToFourVlogTemplate = [ClothesVlogTemplate sixToFourVlogTemplate];
     Template *dailyVlogTemplate = [DailyVlogTemplate dailyVlogTemplate];
     Template *modelVlogTemplate = [ModelVlogTemplate modelVlogTemplate];
     Template *kidsVlogTemplate = [KidsVlogTemplate kidsVlogTemplate];
+
     
     NSArray *dailyVlogTemplates = @[visitingCompanyVlogTemplate,craftVlogTemplate,lookBookVlogTemplate,stayingHomeVlogTemplate,babyVlogTemplate,summerVlogTemplate,dogVlogTemPlate,webDesignerVlogTemPlate,grwmVlogTemplate,sixToFourVlogTemplate,dailyVlogTemplate,modelVlogTemplate,kidsVlogTemplate];
     NSArray *dailyVlogTemplatePreviewImages =  @[visitingCompanyVlogTemplate.previewImageName,craftVlogTemplate.previewImageName,lookBookVlogTemplate.previewImageName,stayingHomeVlogTemplate.previewImageName,babyVlogTemplate.previewImageName,summerVlogTemplate.previewImageName,dogVlogTemPlate.previewImageName,webDesignerVlogTemPlate.previewImageName,grwmVlogTemplate.previewImageName,sixToFourVlogTemplate.previewImageName,dailyVlogTemplate.previewImageName,modelVlogTemplate.previewImageName,kidsVlogTemplate.previewImageName];
