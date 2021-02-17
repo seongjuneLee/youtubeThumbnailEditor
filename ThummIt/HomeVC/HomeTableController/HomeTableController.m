@@ -63,7 +63,7 @@
     self.homeCollectionController.collectionView = cell.collectionView;
     self.homeCollectionController.currentCategory = category;
     [self.homeCollectionController.collectionView registerNib:[UINib nibWithNibName:@"HomeCollectionViewCell" bundle:NSBundle.mainBundle] forCellWithReuseIdentifier:@"HomeCollectionViewCell"];
-
+    [self.homeCollectionController.collectionView reloadData];
     return cell;
 }
 
