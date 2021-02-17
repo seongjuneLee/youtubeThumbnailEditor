@@ -18,7 +18,6 @@
 @implementation EditingViewController (Buttons)
 
 - (IBAction)rightItemTapped:(id)sender {
-    
     [self exportThumbnail];
 }
 

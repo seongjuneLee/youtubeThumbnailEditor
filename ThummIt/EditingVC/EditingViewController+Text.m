@@ -11,6 +11,7 @@
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
     
+    textView.selectedRange = NSMakeRange(textView.text.length, 0);
     if( !self.currentText.isTypedByUser){
         self.originalCursorColor = self.currentText.textView.tintColor;
         self.currentText.textView.tintColor = [UIColor clearColor];
