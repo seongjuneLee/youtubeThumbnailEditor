@@ -45,7 +45,19 @@
 }
 
 
+- (IBAction)newProjectButtonTapped:(UIButton *)sender {
+    
+    Project *project =  [ProjectManager.sharedInstance generateNewProjectWithTemplate:nil];
 
+    [SaveManager.sharedInstance applyCurrentProject:project];
+    
+    UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
+    EditingViewController *editingVC = (EditingViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingViewController"];
+    [self.navigationController pushViewController:editingVC animated:true];
+    [UndoManager.sharedInstance initUndoRedo];
+    [SaveManager.sharedInstance saveAndAddToStack];
 
+    
+}
 
 @end

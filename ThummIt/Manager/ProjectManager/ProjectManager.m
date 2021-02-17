@@ -28,9 +28,19 @@
 -(Project *)generateNewProjectWithTemplate:(Template *)selectedTemplate{
     
     Project* project = [CoreDataStack newProject];
-    project.photoFrames = selectedTemplate.photoFrames;
-    project.texts = selectedTemplate.texts;
-    project.stickers = selectedTemplate.stickers;
+    if (selectedTemplate) {
+        project.photoFrames = selectedTemplate.photoFrames;
+        project.texts = selectedTemplate.texts;
+        project.stickers = selectedTemplate.stickers;
+        project.backgroundColor = selectedTemplate.backgroundColor;
+        project.backgroundImageName = selectedTemplate.backgroundImageName;
+    } else {
+        project.photoFrames = [NSMutableArray array];
+        project.texts = [NSMutableArray array];
+        project.stickers = [NSMutableArray array];
+        project.backgroundColor = UIColor.blackColor;
+    }
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
     NSString *stringDate = [dateFormatter stringFromDate:[NSDate date]];

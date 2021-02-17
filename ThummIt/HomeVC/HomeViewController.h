@@ -17,6 +17,7 @@
 @property (strong, nonatomic) HomeTableController *homeTableController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *makeNewImageView;
+- (IBAction)newProjectButtonTapped:(id)sender;
 
 @end
 

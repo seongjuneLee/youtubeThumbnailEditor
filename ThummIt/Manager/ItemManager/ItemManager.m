@@ -43,6 +43,33 @@
     return @[photoFrames];
 }
 
+-(NSArray *)photoFrameCategoriesForFreeFormProject{
+    
+    // 여기 카테고리의 순서와 아래 아이템 데이타에서 해당 카테고리 아이템 어레이의 순서를 맞춰주어야 함.
+    NSString *circle = NSLocalizedString(@"Basic", nil);
+    NSString *screen = NSLocalizedString(@"Screen", nil);
+    NSArray *categories = @[circle,screen];
+    
+    return categories;
+}
+
+
+-(NSArray *)photoFrameDatasForFreeFormProject{
+    
+    BasicCirclePhotoFrame *basicCircle = [BasicCirclePhotoFrame basicCirclePhotoFrame];
+    ChristmasCircle *christmasCircle = [ChristmasCircle christmasCircle];
+    CebuRectangle *cebuRect = [CebuRectangle cebuRectangle];
+    PolaroidRectangle *polaroidRect = [PolaroidRectangle polaroidRectangle];
+    FullRectangle *fullRect = [FullRectangle fullRectangle];
+    VerticalHalfRectangle *verticalHalfRect = [VerticalHalfRectangle verticalHalfRectangle];
+    HorizontalHalfRectangle *horizontalHalfRect = [HorizontalHalfRectangle horizontalHalfRectangle];
+    OneThirdRectangle *oneThirdRect = [OneThirdRectangle oneThirdRectangle];
+    QuarterRectangle *quarterRect = [QuarterRectangle quarterRectangle];
+    NSArray *basicPhotoFrames = @[basicCircle, christmasCircle,  cebuRect, polaroidRect,];
+    NSArray *screenPhotoFramse = @[fullRect,verticalHalfRect,horizontalHalfRect,oneThirdRect,quarterRect];
+    return @[basicPhotoFrames,screenPhotoFramse];
+}
+
 #pragma mark - 텍스트
 
 -(NSArray *)typoCategories{
