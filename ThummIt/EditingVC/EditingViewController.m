@@ -31,8 +31,7 @@
         }
         
     }];
-
-
+    
     [self basicUIUXSetting];
 
     [self connectControllers];

@@ -418,6 +418,7 @@
                         <outlet property="stickerButtonContainerView" destination="yU9-uf-R4L" id="eFt-h0-1nx"/>
                         <outlet property="textButton" destination="IR6-qv-FJI" id="VHX-kA-5XZ"/>
                         <outlet property="textButtonContainerView" destination="4DQ-QU-Zk5" id="0tZ-ey-VZw"/>
+                        <outlet property="textButtonInScrollView" destination="IR6-qv-FJI" id="yEt-jS-0dq"/>
                         <outlet property="underAreaView" destination="ulM-C1-Guu" id="X8Q-cO-OHa"/>
                         <outlet property="undoButton" destination="QtR-ND-K0Y" id="5H1-yi-OUN"/>
                         <outlet property="upperArea" destination="UhL-LO-vTX" id="sm6-pY-crA"/>

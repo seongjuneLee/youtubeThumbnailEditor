@@ -70,6 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *deleteButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *underAreaView;
 @property (weak, nonatomic) IBOutlet UIView *textButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIButton *textButtonInScrollView;
 
 @property (weak, nonatomic) IBOutlet UIButton *photoFrameButton;
 @property (weak, nonatomic) IBOutlet UIButton *textButton;

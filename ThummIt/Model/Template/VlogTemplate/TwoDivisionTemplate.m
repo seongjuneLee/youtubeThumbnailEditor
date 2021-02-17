@@ -55,7 +55,7 @@
     leftVlogText.scale = 0.6;
     leftVlogText.center = CGPointMake(0.5, 0.5);
     leftVlogText.isTemplateItem = true;
-    leftVlogText.indexInLayer =@"1";
+    leftVlogText.indexInLayer =@"0";
     leftVlogText.text = @"Summer Trip";
     leftVlogText.textView.text = @"Summer Trip";
     leftVlogText.typo = leftVlog;
