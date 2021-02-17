@@ -138,11 +138,18 @@
 
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
-            self.itemCollectionVC.checkButton.alpha = 1.0;
+            if(self.textButtonInScrollView.selected){
+                self.itemCollectionVC.checkButton.enabled = false;
+                self.itemCollectionVC.checkButton.alpha = 0.4;
+                self.textButtonInScrollView.selected = false;
+            }else{
+                self.itemCollectionVC.checkButton.alpha = 1.0;
+            }
             self.itemCollectionVC.cancelButton.alpha = 1.0;
             self.itemCollectionVC.scrollView.alpha = 1.0;
         }];
     }];
+
     
 }
 
@@ -175,6 +182,7 @@
     if (self.recentTypo == nil) {
         self.recentTypo = [NormalTypo normalTypo];
     }
+    self.textButtonInScrollView.selected = true;
     self.itemCollectionVC.typoButton.selected = true;
     self.itemCollectionVC.typoButton.alpha = 1.0;
     self.itemCollectionVC.textButton.selected = false;
