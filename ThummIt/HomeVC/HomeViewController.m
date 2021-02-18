@@ -33,8 +33,7 @@
 //            NSLog(@"fontName : %@",fontName);
 //        }
 //    }
-//    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
-//    NSLog(@"width값 : %f", window.frameSize.width);
+
 }
 
 -(void)connectHomeTableController{
@@ -48,7 +47,7 @@
 - (IBAction)newProjectButtonTapped:(UIButton *)sender {
     
     Project *project =  [ProjectManager.sharedInstance generateNewProjectWithTemplate:nil];
-
+    
     [SaveManager.sharedInstance applyCurrentProject:project];
     
     UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
