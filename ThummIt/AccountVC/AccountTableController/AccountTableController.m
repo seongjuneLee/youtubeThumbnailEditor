@@ -10,6 +10,7 @@
 #import "AccountViewController.h"
 #import "CustomerFeedbackViewController.h"
 #import "PrivacyPolicyViewController.h"
+#import "MainTabBarViewController.h"
 @import Parse;
 
 @implementation AccountTableController
@@ -92,6 +93,17 @@
     }else if (indexPath.row == 4){
         
     }
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UIDevice* thisDevice = [UIDevice currentDevice];
+    if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        return self.accountVC.tabBarController.tabBar.frameHeight * 1.3;
+    /* do something specifically for iPad. */
+    } else {
+        return self.accountVC.tabBarController.tabBar.frameHeight * 0.6;
+    /* do something specifically for iPhone or iPod touch. */
+}
 }
 
 -(void)showLogOutAction{
