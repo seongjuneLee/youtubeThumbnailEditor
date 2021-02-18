@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01B0F527C2CA96816AA509E5 /* Pods_ThummItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B33E7A63385FF8364DC98CF /* Pods_ThummItTests.framework */; };
 		3E3DF43CE000686E4455BE28 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		6E07E74725DABED100A57801 /* ExportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E07E74625DABED100A57801 /* ExportManager.m */; };
 		6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190EB2584B163000DD9C0 /* HomeViewController.m */; };
@@ -451,6 +452,7 @@
 
 /* Begin PBXFileReference section */
 		0A49A04B80956AB489C19EA8 /* Pods-ThummIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.debug.xcconfig"; sourceTree = "<group>"; };
+		0B33E7A63385FF8364DC98CF /* Pods_ThummItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D79B06C60C4BDCBBE135243 /* Pods-ThummItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.release.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.release.xcconfig"; sourceTree = "<group>"; };
 		48179A1DED6ABC517C58F9F4 /* Pods-ThummIt-ThummItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		574966F2CC7EDC18C77FCE53 /* Pods-ThummItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummItTests.debug.xcconfig"; path = "Target Support Files/Pods-ThummItTests/Pods-ThummItTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1205,6 +1207,7 @@
 		B1F8C6E025C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogVisitingCompanyTypo.h; sourceTree = "<group>"; };
 		B1F8C6E125C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogVisitingCompanyTypo.m; sourceTree = "<group>"; };
 		BB1B7F0FA57312CBE3447BC7 /* Pods_ThummIt_ThummItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt_ThummItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2CC9D50D52A0C9C77FC64E7 /* Pods-ThummIt-ThummItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt-ThummItUITests.release.xcconfig"; path = "Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1227,6 +1230,7 @@
 				6ED13A8325B9A92C00012144 /* FBSDKCoreKit.framework in Frameworks */,
 				6ED13A8225B9A92C00012144 /* FBSDKShareKit.framework in Frameworks */,
 				3E3DF43CE000686E4455BE28 /* (null) in Frameworks */,
+				01B0F527C2CA96816AA509E5 /* Pods_ThummItTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2104,6 +2108,7 @@
 				6E9BEA3F258F099300F7F539 /* CoreData.framework */,
 				6EA70909105CF786CC44E691 /* Pods_ThummIt.framework */,
 				BB1B7F0FA57312CBE3447BC7 /* Pods_ThummIt_ThummItUITests.framework */,
+				0B33E7A63385FF8364DC98CF /* Pods_ThummItTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2954,6 +2959,7 @@
 				48179A1DED6ABC517C58F9F4 /* Pods-ThummIt-ThummItUITests.debug.xcconfig */,
 				574966F2CC7EDC18C77FCE53 /* Pods-ThummItTests.debug.xcconfig */,
 				2D79B06C60C4BDCBBE135243 /* Pods-ThummItTests.release.xcconfig */,
+				C2CC9D50D52A0C9C77FC64E7 /* Pods-ThummIt-ThummItUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2972,6 +2978,7 @@
 				6ED138EC25B82BF900012144 /* Embed Frameworks */,
 				5382FD38E426137BAC86DE7D /* [CP] Embed Pods Frameworks */,
 				06C3707C3E7963BD46EC44A5 /* [CP] Copy Pods Resources */,
+				6E11CABC25DDB8150003E02D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -3255,6 +3262,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6E11CABC25DDB8150003E02D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		7295E40E6192861C9E63A66A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3838,6 +3862,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KD6B7H34C6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4069,6 +4094,7 @@
 		};
 		6E1191182584B165000DD9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2CC9D50D52A0C9C77FC64E7 /* Pods-ThummIt-ThummItUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -7,7 +7,7 @@
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.341329154400-fobhjj6a2mdfr87l6defo62o5brefpo2</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAjKjZuITrmenDIvC8Qqm6mAMON0TtFQAw</string>
+	<string>AIzaSyCkjg6EOriBbPK-czHoW5XAGeMOnQP9LF4</string>
 	<key>GCM_SENDER_ID</key>
 	<string>341329154400</string>
 	<key>PLIST_VERSION</key>
@@ -15,20 +15,20 @@
 	<key>BUNDLE_ID</key>
 	<string>com.sj.ThummIt</string>
 	<key>PROJECT_ID</key>
-	<string>thummit-453ea</string>
+	<string>thummit-d2545</string>
 	<key>STORAGE_BUCKET</key>
 	<string>thummit-453ea.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:341329154400:ios:5fb147a45f7ca34a274e05</string>
+	<string>1:788210953224:ios:3424df5644b42999a6b5bd</string>
 </dict>
 </plist>
