@@ -173,6 +173,7 @@
 		6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */; };
 		6EA7A32725CB1435001041A1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7A32625CB1435001041A1 /* SignInViewController.swift */; };
 		6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA7A35225CB1975001041A1 /* FacebookLogin */; };
+		6EABDE6D25DFBD5C006510ED /* launchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EABDE6C25DFBD5C006510ED /* launchScreen.png */; };
 		6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */; };
 		6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */; };
 		6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8A25B767C700C42187 /* AccountTableController.m */; };
@@ -770,6 +771,7 @@
 		6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
 		6EA70909105CF786CC44E691 /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA7A32625CB1435001041A1 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		6EABDE6C25DFBD5C006510ED /* launchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen.png; sourceTree = "<group>"; };
 		6EAD5C8525B767C700C42187 /* AccountTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableController.h; sourceTree = "<group>"; };
 		6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
 		6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
@@ -1266,6 +1268,7 @@
 		6E1190D82584B163000DD9C0 = {
 			isa = PBXGroup;
 			children = (
+				6EABDE6C25DFBD5C006510ED /* launchScreen.png */,
 				6E4A18022588A744008578BA /* ThummIt-PrefixHeader.pch */,
 				6E9BEA4B258F1A9200F7F539 /* ThummIt-Bridging-Header.h */,
 				6E1190E32584B163000DD9C0 /* ThummIt */,
@@ -3139,6 +3142,7 @@
 				B1F2B7A725C2FBAC0064A044 /* NanumMyeongjoExtraBold.otf in Resources */,
 				6E8F99A225C0E8C9005C8071 /* ELAND-Nice-M.otf in Resources */,
 				B1F2B72725C1BE320064A044 /* NanumBarunGothic.otf in Resources */,
+				6EABDE6D25DFBD5C006510ED /* launchScreen.png in Resources */,
 				B1F2B7B625C2FFD30064A044 /* RecipekoreaFONT.otf in Resources */,
 				6E1190F12584B164000DD9C0 /* Assets.xcassets in Resources */,
 				B1F2B73425C1C3C50064A044 /* NanumGothicExtraBold.otf in Resources */,
