@@ -140,12 +140,10 @@
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Delete",nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        NSLog(@"indedededex %ld",index);
         Project *project = self.projects[index];
         [ProjectManager.sharedInstance deleteProjectOfID:project.projectID];
-        self.projects = (NSMutableArray *)[ProjectManager.sharedInstance getRecentProjectsFromCoreDataWithOffset:self.offset];
+        [self.projects removeObjectAtIndex:index];
         [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-        [self.tableView reloadData];
 
         // Distructive button tapped.
         [actionSheet dismissViewControllerAnimated:true completion:nil];
