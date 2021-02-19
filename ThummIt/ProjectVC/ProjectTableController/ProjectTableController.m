@@ -144,7 +144,7 @@
         [ProjectManager.sharedInstance deleteProjectOfID:project.projectID];
         [self.projects removeObjectAtIndex:index];
         [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-
+        [self.tableView reloadData];
         // Distructive button tapped.
         [actionSheet dismissViewControllerAnimated:true completion:nil];
     }]];

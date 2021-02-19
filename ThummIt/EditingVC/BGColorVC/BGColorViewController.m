@@ -68,6 +68,7 @@
     SaveManager.sharedInstance.currentProject.backgroundColor = editingVC.bgView.backgroundColor;
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.modeController.editingMode = NormalMode;
+    editingVC.buttonScrollView.hidden = false;
 
 }
 
@@ -82,6 +83,7 @@
     [editingVC.bgColorVC dismissSelf];
     editingVC.bgView.backgroundColor = editingVC.originalColor;
     editingVC.modeController.editingMode = NormalMode;
+    editingVC.buttonScrollView.hidden = false;
 }
 
 

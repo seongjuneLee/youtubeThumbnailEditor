@@ -210,6 +210,13 @@
         [self.layerController hideTransparentView];
         
         [self.itemCollectionVC dismissSelf];
+        self.buttonScrollView.hidden = false;
+    } else{
+        if(self.modeController.editingMode == NormalMode){
+            self.buttonScrollView.hidden = false;
+        }else{
+            self.buttonScrollView.hidden = true;
+        }
     }
     
     [UIView animateWithDuration:0.2 animations:^{

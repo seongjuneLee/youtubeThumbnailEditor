@@ -103,6 +103,8 @@
     } else {
         editingVC.itemCollectionVC.checkButton.enabled = false;
         editingVC.itemCollectionVC.checkButton.alpha = 0.4;
+        [text loadView];
+        [text setItemCenterAndScale];
         text.center = editingVC.bgView.center;
 
         text.textView.delegate = editingVC;

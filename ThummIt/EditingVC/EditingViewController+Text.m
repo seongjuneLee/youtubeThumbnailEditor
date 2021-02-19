@@ -51,7 +51,6 @@
 
     self.currentText.text = textView.text;
     self.currentText.isTypedByUser = true;
-    [self.currentText resize];
     [self.currentText.textView setNeedsDisplay];
     
     
