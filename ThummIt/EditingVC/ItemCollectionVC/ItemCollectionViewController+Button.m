@@ -279,10 +279,16 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
+    PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentPhotoFrame;
+
+    // 원래거 삭제하고 지금 편집하던거 넣기
+    [SaveManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
+    [editingVC.originalPhotoFrame.baseView removeFromSuperview];
+    [SaveManager.sharedInstance addItem:photoFrame];
+
     // 레이어 되돌려 놓기
     [editingVC.layerController recoverOriginalLayer];
     [editingVC showItemsForNormalMode];
-    PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentPhotoFrame;
     if (photoFrame.isFixedPhotoFrame) {
         [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.backgroundImageView];
     } else {
@@ -290,8 +296,6 @@
         [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
     }
     editingVC.currentPhotoFrame.plusPhotoImageView.hidden = true;
-    [SaveManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
-    [SaveManager.sharedInstance addItem:photoFrame];
     // albumVC 없애주기
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
