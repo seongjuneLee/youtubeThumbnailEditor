@@ -22,9 +22,9 @@
         
 //        NSDictionary *myFolderDict = @{@"My Folder":@"folderImage"}; // 이미지 추가
 //        NSDictionary *inviteFriendsDict = @{@"Invite Friends":@"friend"}; // 이미지 추가
-        NSDictionary *customerCenterDict = @{@"Customer Center":@"customerCenter"}; // 이미지 추가
-        NSDictionary *pivacyPolicyDict = @{@"Privacy Policy":@"privacyPolicy"}; // 이미지 추가
-        NSDictionary *logOutDict = @{@"Log Out":@"logOut"}; // 이미지 추가
+        NSDictionary *customerCenterDict = @{NSLocalizedString(@"Customer Center", nil):@"customerCenter"}; // 이미지 추가
+        NSDictionary *pivacyPolicyDict = @{NSLocalizedString(@"Privacy Policy", nil):@"privacyPolicy"}; // 이미지 추가
+        NSDictionary *logOutDict = @{NSLocalizedString(@"Log Out", nil):@"logOut"}; // 이미지 추가
         self.datas = @[customerCenterDict, pivacyPolicyDict, logOutDict];
         self.tableView = tableView;
         self.tableView.delegate = self;
