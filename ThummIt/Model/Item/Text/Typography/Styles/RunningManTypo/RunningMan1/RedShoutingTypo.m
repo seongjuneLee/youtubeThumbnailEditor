@@ -19,31 +19,38 @@
         self.bgImageName = @"talkBalloon";
         self.bgHeightPadding = 70;
         self.bgWidthPadding = 70;
+        self.obliqueValue = 0.2;
         
         BGTextAttribute *boldAtt = [[BGTextAttribute alloc] init];
         boldAtt.borderColor = [UIColor whiteColor];
         boldAtt.borderWidth = 2;
+        boldAtt.obliqueValue = 0.2;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
         borderAtt.borderWidth = 8;
+        borderAtt.obliqueValue = 0.2;
         
         BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
         shadowAtt1.shadowColor =[UIColor blackColor];
         shadowAtt1.shadowOffset = CGPointMake(5, 5);
-        
+        shadowAtt1.obliqueValue = 0.2;
+
         BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
         shadowAtt2.shadowColor =[UIColor blackColor];
         shadowAtt2.shadowOffset = CGPointMake(1.5, 1.5);
-        
+        shadowAtt2.obliqueValue = 0.2;
+
         BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
         shadowAtt3.shadowColor =[UIColor blackColor];
         shadowAtt3.shadowOffset = CGPointMake(2, 2);
-        
+        shadowAtt3.obliqueValue = 0.2;
+
         BGTextAttribute *shadowAtt4 = [[BGTextAttribute alloc] init];
         shadowAtt4.shadowColor =[UIColor blackColor];
         shadowAtt4.shadowOffset = CGPointMake(2.5, 2.5);
-        
+        shadowAtt4.obliqueValue = 0.2;
+
         self.bgTextAttributes = @[boldAtt, borderAtt, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4];
     }
     return self;

@@ -171,6 +171,7 @@
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
     [editingVC.currentPhotoFrame.baseView removeFromSuperview];
+    editingVC.buttonScrollView.hidden = false;
 
 }
 
@@ -183,6 +184,7 @@
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
+    editingVC.buttonScrollView.hidden = false;
 
 }
 
@@ -196,6 +198,8 @@
     [editingVC.currentText.textView resignFirstResponder];
     self.checkButton.enabled = true;
     self.checkButton.alpha = 1.0;
+    editingVC.buttonScrollView.hidden = false;
+
 
 }
 
@@ -220,6 +224,8 @@
     self.checkButton.enabled = true;
     self.checkButton.alpha = 1.0;
     }
+    editingVC.buttonScrollView.hidden = false;
+
     
 }
 
@@ -230,6 +236,7 @@
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentSticker.baseView removeFromSuperview];
+    editingVC.buttonScrollView.hidden = false;
 
 }
 
@@ -249,6 +256,7 @@
     [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
+    editingVC.buttonScrollView.hidden = false;
 
 }
 
@@ -269,6 +277,7 @@
     }
     editingVC.currentPhotoFrame.plusPhotoImageView.hidden = true;
     [SaveManager.sharedInstance saveAndAddToStack];
+    editingVC.buttonScrollView.hidden = false;
     
 }
 
@@ -297,6 +306,8 @@
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
     [SaveManager.sharedInstance saveAndAddToStack];
+    editingVC.buttonScrollView.hidden = false;
+
 }
 
 -(void)doneAddingText{
@@ -316,7 +327,7 @@
 
         [editingVC.currentText.textView resignFirstResponder];
     }
-    
+    editingVC.buttonScrollView.hidden = false;
 }
 
 -(void)doneEditingText{
@@ -335,7 +346,7 @@
     [editingVC.currentText.textView resignFirstResponder];
     [SaveManager.sharedInstance saveAndAddToStack];
 
-    
+    editingVC.buttonScrollView.hidden = false;
 
 }
 
@@ -350,7 +361,7 @@
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
     [SaveManager.sharedInstance saveAndAddToStack];
-
+    editingVC.buttonScrollView.hidden = false;
    
 }
 
@@ -362,7 +373,7 @@
     [editingVC.layerController recoverOriginalLayer];
     [editingVC.itemCollectionVC dismissSelf];
     [SaveManager.sharedInstance saveAndAddToStack];
-
+    editingVC.buttonScrollView.hidden = false;
 
 }
 

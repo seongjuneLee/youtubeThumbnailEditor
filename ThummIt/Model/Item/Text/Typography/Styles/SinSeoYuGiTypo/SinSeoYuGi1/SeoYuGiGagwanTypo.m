@@ -16,7 +16,8 @@
         self.fontName = @"NotoSansKannada-Bold";
         self.textColor = [UIColor colorWithRed:253/255.0f green:242/255.0f blue:95/255.0 alpha:1];
         self.obliqueValue = 0.18;
-        self.fontSize = 50;
+        self.fontSize = 80;
+
         
         BGTextAttribute *borderAtt1 = [[BGTextAttribute alloc] init];
         borderAtt1.borderColor = [UIColor colorWithRed:253/255.0f green:242/255.0f blue:95/255.0 alpha:1];
