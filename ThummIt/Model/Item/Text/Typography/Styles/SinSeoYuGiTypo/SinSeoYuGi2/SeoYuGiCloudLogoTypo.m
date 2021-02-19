@@ -17,8 +17,10 @@
         self.textColor = [UIColor colorWithRed:248/255.0f green:74/255.0f blue:30/255.0 alpha:1 ];
         self.bgImageName = @"seoYUGiCloudLogo";
         self.bgWidthPadding = 5;
+        self.bgWidthPadding = 5;
         self.cannotChangeColor = true;
         self.obliqueValue = 0.2;
+        self.fontSize = 30;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor colorWithRed:59/255.0f green:4/255.0f blue:1/255.0f alpha:1];

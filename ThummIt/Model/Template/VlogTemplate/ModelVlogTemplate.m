@@ -82,11 +82,11 @@
     Text *dailySummer = [[Text alloc] init];
     VlogModel *base = [VlogModel vlogModel];
 
-    dailySummer.scale = 0.27;
-    dailySummer.center = CGPointMake(0.82, 0.44);
+    dailySummer.scale = 0.31;
+    dailySummer.center = CGPointMake(0.805, 0.44);
     dailySummer.isTemplateItem = true;
     dailySummer.indexInLayer = @"3";
-    dailySummer.text = @"   모델의\n여름 일상";
+    dailySummer.text = @"       모델의\n여름 일상";
     dailySummer.textView.text = dailySummer.text;
     dailySummer.typo = base;
     
@@ -96,13 +96,12 @@
     //브이로그
     Text *vlogText = [[Text alloc] init];
     VlogModel *vlog = [VlogModel vlogModel];
-    vlogText.scale = 0.34;
-    vlogText.center = CGPointMake(0.785, 0.64);
+    vlogText.scale = 0.37;
+    vlogText.center = CGPointMake(0.805, 0.665);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer = @"4";
     vlogText.text = @"브이로그";
     vlogText.textView.text = vlogText.text;
-    vlog.fontSize = 16;
     
     vlogText.typo = vlog;
     [self.texts addObject:vlogText];

@@ -17,8 +17,8 @@
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
         self.bgImageName = @"waveYellowSquare";
-        self.bgWidthPadding = 35;
-        self.bgHeightPadding = 35;
+        self.bgWidthPadding = 65;
+        self.bgHeightPadding = 65;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];

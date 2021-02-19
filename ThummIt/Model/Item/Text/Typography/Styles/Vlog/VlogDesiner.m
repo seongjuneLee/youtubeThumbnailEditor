@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"디자이너",nil);
         self.fontName = @"AppleSDGothicNeo-UltraLight";
         self.textColor = [UIColor colorWithRed:(100/255.0) green:(29/255.0) blue:(60/255.0) alpha:1];
-        
+        self.fontSize = 100;
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         
         attribute.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];

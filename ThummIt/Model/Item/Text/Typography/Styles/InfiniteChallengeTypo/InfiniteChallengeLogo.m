@@ -19,7 +19,7 @@
         self.bgImageName = @"infiniteChallengeLogoBox";
         self.bgWidthPadding = 130;
         self.bgHeightPadding = 100;
-
+        self.fontSize = 40;
     }
     return self;
 }
