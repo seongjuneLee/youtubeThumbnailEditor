@@ -39,11 +39,11 @@
     firstPhotoFrame.center = CGPointMake(0.31, 0.5);
     firstPhotoFrame.scale = 0.5;
     firstPhotoFrame.isTemplateItem = true;
+    firstPhotoFrame.indexInLayer = @"0";
 
     secondPhotoFrame.center = CGPointMake(0.75, 0.5);
     secondPhotoFrame.scale = 0.4;
     secondPhotoFrame.isTemplateItem = true;
-    firstPhotoFrame.indexInLayer = @"0";
     secondPhotoFrame.indexInLayer = @"1";
 
     [self.photoFrames addObject:firstPhotoFrame];
