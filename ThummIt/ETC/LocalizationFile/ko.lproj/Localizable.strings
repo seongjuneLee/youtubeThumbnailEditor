@@ -14,7 +14,7 @@
 "Done" = "완료";
 "circle" = "원";
 "basic" = "기본";
-"TV Entertain" = "티비 예능";
+"TV Entertain" = "TV 예능";
 "Youtube Entertain" = "유튜브 예능";
 "Trip Vlog" = "여행 브이로그";
 "School Vlog" = "학교 브이로그";
@@ -40,4 +40,5 @@
 "Invalid username : Contains illegal characters or too short." = "잘못된 형식이거나 너무 짧습니다.";
 "Customer Center" = "고객 센터";
 "Privacy Policy" = "개인 정보 보호 정책";
+
 
