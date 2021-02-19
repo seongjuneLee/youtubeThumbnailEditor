@@ -30,7 +30,7 @@
         
         BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
         shadowAtt1.shadowColor =[UIColor blackColor];
-        shadowAtt1.shadowOffset = CGPointMake(1, 1);
+        shadowAtt1.shadowOffset = CGPointMake(5, 5);
         
         BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
         shadowAtt2.shadowColor =[UIColor blackColor];
