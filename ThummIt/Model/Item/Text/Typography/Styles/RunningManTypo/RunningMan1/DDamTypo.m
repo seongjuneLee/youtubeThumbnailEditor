@@ -18,7 +18,7 @@
         self.textColor = [UIColor whiteColor];
 
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
-        borderAtt.borderWidth = 7;
+        borderAtt.borderWidth = 8;
         borderAtt.borderColor = [UIColor blackColor];
         
         self.bgTextAttributes = @[borderAtt];

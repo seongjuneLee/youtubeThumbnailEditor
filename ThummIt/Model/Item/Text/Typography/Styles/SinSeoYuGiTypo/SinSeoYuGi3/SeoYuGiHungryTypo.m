@@ -23,25 +23,37 @@
 
         BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
         shadowAtt1.shadowColor = [UIColor colorWithRed:76/255.0f green:71/255.0f blue:70/255.0f alpha:1];
-        shadowAtt1.shadowOffset = CGPointMake(1, 1);
+        shadowAtt1.shadowOffset = CGPointMake(6, 6);
         
         BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
         shadowAtt2.shadowColor = [UIColor colorWithRed:76/255.0f green:71/255.0f blue:70/255.0f alpha:1];
-        shadowAtt2.shadowOffset = CGPointMake(1.5, 1.5);
+        shadowAtt2.shadowOffset = CGPointMake(6.5, 4.5);
         
         BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
         shadowAtt3.shadowColor = [UIColor colorWithRed:76/255.0f green:71/255.0f blue:70/255.0f alpha:1];
-        shadowAtt3.shadowOffset = CGPointMake(2, 2);
+        shadowAtt3.shadowOffset = CGPointMake(7, 3);
         
         BGTextAttribute *shadowAtt4 = [[BGTextAttribute alloc] init];
         shadowAtt4.shadowColor = [UIColor colorWithRed:76/255.0f green:71/255.0f blue:70/255.0f alpha:1];
-        shadowAtt4.shadowOffset = CGPointMake(2.5, 2.5);
+        shadowAtt4.shadowOffset = CGPointMake(6.5, 1.5);
         
         BGTextAttribute *shadowAtt5 = [[BGTextAttribute alloc] init];
         shadowAtt5.shadowColor = [UIColor colorWithRed:76/255.0f green:71/255.0f blue:70/255.0f alpha:1];
-        shadowAtt5.shadowOffset = CGPointMake(3, 3);
+        shadowAtt5.shadowOffset = CGPointMake(6, 0);
         
-        self.bgTextAttributes = @[borderAtt, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4, shadowAtt5];
+        BGTextAttribute *shadowAtt6 = [[BGTextAttribute alloc] init];
+        shadowAtt6.shadowColor = [UIColor colorWithRed:76/255.0f green:71/255.0f blue:70/255.0f alpha:1];
+        shadowAtt6.shadowOffset = CGPointMake(5, -1);
+        
+        BGTextAttribute *shadowAtt7 = [[BGTextAttribute alloc] init];
+        shadowAtt7.shadowColor = [UIColor colorWithRed:76/255.0f green:71/255.0f blue:70/255.0f alpha:1];
+        shadowAtt7.shadowOffset = CGPointMake(4.5, -2);
+        
+        BGTextAttribute *shadowAtt8 = [[BGTextAttribute alloc] init];
+        shadowAtt8.shadowColor = [UIColor colorWithRed:76/255.0f green:71/255.0f blue:70/255.0f alpha:1];
+        shadowAtt8.shadowOffset = CGPointMake(4, -3);
+        
+        self.bgTextAttributes = @[borderAtt, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4, shadowAtt5 ,shadowAtt6 ,shadowAtt7 ,shadowAtt8];
 
     }
     
