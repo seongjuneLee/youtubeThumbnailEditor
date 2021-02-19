@@ -87,7 +87,7 @@
 "YfI-2t-FKs.normalTitle" = "다음";
 
 /* Class = "UILabel"; text = "Log in with ThummIt"; ObjectID = "c46-ac-37y"; */
-"c46-ac-37y.text" = "ThummIt으로 로그인";
+"c46-ac-37y.text" = "ThummIt으로";
 
 /* Class = "UILabel"; text = "Input password for using in ThummIt."; ObjectID = "eYU-gV-Wd2"; */
 "eYU-gV-Wd2.text" = "ThummIt에서 사용할 비밀번호를 입력합니다.";
