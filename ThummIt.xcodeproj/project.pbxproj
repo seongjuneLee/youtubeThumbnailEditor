@@ -3932,7 +3932,7 @@
 					"\"Social\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sj.ThummIt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thummit.ThummIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThummIt-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -4015,7 +4015,7 @@
 					"\"Social\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sj.ThummIt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thummit.ThummIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThummIt-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

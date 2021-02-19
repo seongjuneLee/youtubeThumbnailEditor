@@ -92,8 +92,12 @@
 -(void)photoFrameTappedTaskWhenAuthorizedWithItem:(Item *)item{
     
     PhotoFrame *photoFrame = (PhotoFrame *)item;
-    self.currentItem = [photoFrame copy];
-    self.currentPhotoFrame = (PhotoFrame *)self.currentItem;
+    
+    PhotoFrame *copied = [photoFrame copy];
+    [copied loadView];
+    [copied setItemCenterAndScale];
+    self.currentItem = copied;
+    self.currentPhotoFrame = copied;
     self.originalPhotoFrame = photoFrame;
     self.originalPhotoFrame.baseView.hidden = true;
     self.originalIndexInLayer = photoFrame.indexInLayer.integerValue;
