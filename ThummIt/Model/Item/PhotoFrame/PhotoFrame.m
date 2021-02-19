@@ -34,32 +34,31 @@
     copied.photoScale = self.photoScale;
     copied.isCircle = self.isCircle;
     
-    UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.bounds];
-    copiedBaseView.backgroundColor = self.baseView.backgroundColor;
-    copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
-    
-    copiedBaseView.layer.cornerRadius = self.baseView.layer.cornerRadius;
-    
-    copiedBaseView.transform = self.baseView.transform;
-    copiedBaseView.center = self.baseView.center;
-    
-    copied.baseView = copiedBaseView;
-    
-    UIImageView *copiedPhotoImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
-    copiedPhotoImageView.image = [self.photoImageView.image copy];
-    copiedPhotoImageView.backgroundColor = UIColor.clearColor;
-    copied.photoImageView = copiedPhotoImageView;
-    copiedPhotoImageView.contentMode = self.photoImageView.contentMode;
-    copied.itemName = [NSString stringWithString:self.itemName];
-    [copied.baseView addSubview:copied.photoImageView];
-    
+//    UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.bounds];
+//    copiedBaseView.backgroundColor = self.baseView.backgroundColor;
+//    copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
+//
+//    copiedBaseView.layer.cornerRadius = self.baseView.layer.cornerRadius;
+//
+//    copiedBaseView.transform = self.baseView.transform;
+//    copiedBaseView.center = self.baseView.center;
+//
+//    copied.baseView = copiedBaseView;
+//
+//    UIImageView *copiedPhotoImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
+//    copiedPhotoImageView.image = [self.photoImageView.image copy];
+//    copiedPhotoImageView.backgroundColor = UIColor.clearColor;
+//    copied.photoImageView = copiedPhotoImageView;
+//    copiedPhotoImageView.contentMode = self.photoImageView.contentMode;
+//    copied.itemName = [NSString stringWithString:self.itemName];
+//    [copied.baseView addSubview:copied.photoImageView];
+//
 
-    copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
-    copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
-    [copied.baseView addSubview:copied.backgroundImageView];
+//    copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
+//    copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
+//    [copied.baseView addSubview:copied.backgroundImageView];
     
     copied.isFixedPhotoFrame = self.isFixedPhotoFrame;
-    copied.indexInLayer = self.indexInLayer;
 
     return copied;
 }
@@ -126,16 +125,14 @@
         [PhotoManager.sharedInstance getImageFromPHAsset:self.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 float ratio = image.size.height/image.size.width;
-                float width = self.baseView.bounds.size.width * 1.2;
-                float height = self.baseView.bounds.size.height * 1.2;
+                float width = self.baseView.bounds.size.width;
+                float height = self.baseView.bounds.size.height;
                 if (ratio > 1) {
                     self.photoImageView.frameSize = CGSizeMake(width, width * ratio);
                 } else {
                     self.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
                 }
                 self.photoImageView.center = self.photoCenter;
-                self.photoImageView.transform = CGAffineTransformMakeScale(self.photoScale, self.photoScale);
-                
                 self.photoImageView.image = image;
 
             });

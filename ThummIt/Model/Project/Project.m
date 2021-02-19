@@ -29,7 +29,7 @@
     self.stickers = [NSMutableArray<Sticker*> new];
     self.projectTitle = @"";
     self.selectedTemplateName = @"";
-    self.backgroundImageName = @"";
+    self.mainFrameImageName = @"";
 
     return self;
 
@@ -85,7 +85,7 @@
     self.selectedTemplateName = [decoder decodeObjectForKey:@"selectedTemplateName"];
     self.backgroundColor = [decoder decodeObjectForKey:@"backgroundColor"];
     self.lastEditedDate = [decoder decodeObjectForKey:@"lastEditedDate"];
-    self.backgroundImageName = [decoder decodeObjectForKey:@"backgroundImageName"];
+    self.mainFrameImageName = [decoder decodeObjectForKey:@"mainFrameImageName"];
     self.previewImage = [decoder decodeObjectForKey:@"previewImage"];
 
     return self;
@@ -101,7 +101,7 @@
     [encoder encodeObject:self.selectedTemplateName forKey:@"selectedTemplateName"];
     [encoder encodeObject:self.backgroundColor forKey:@"backgroundColor"];
     [encoder encodeObject:self.lastEditedDate forKey:@"lastEditedDate"];
-    [encoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
+    [encoder encodeObject:self.mainFrameImageName forKey:@"mainFrameImageName"];
     [encoder encodeObject:self.previewImage forKey:@"previewImage"];
 
 }

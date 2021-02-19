@@ -17,7 +17,7 @@
         self.previewImageName = @"webDesignerVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"webDesignerVlogTemPlate";
-        self.backgroundImageName = @"webDesignerVlogFrame";
+        self.mainFrameImageName = @"webDesignerVlogFrame";
         
     }
     return self;

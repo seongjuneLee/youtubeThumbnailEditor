@@ -23,6 +23,9 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="makeNewPreview" translatesAutoresizingMaskIntoConstraints="NO" id="7fi-6r-OcI">
+                                <rect key="frame" x="10.5" y="105" width="393" height="152.5"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="95p-hu-MnO">
                                 <rect key="frame" x="0.0" y="277.5" width="414" height="535.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,15 +36,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="74D-YF-Hh4"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="makeNewPreview" translatesAutoresizingMaskIntoConstraints="NO" id="7fi-6r-OcI">
-                                <rect key="frame" x="10.5" y="105" width="393" height="152.5"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5B-93-eTk">
-                                <rect key="frame" x="10.5" y="105" width="393" height="152.5"/>
-                                <connections>
-                                    <action selector="newProjectButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nF-Ag-2js"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDD-Iv-yZc" userLabel="+ New Project Holder View">
                                 <rect key="frame" x="145" y="150" width="124" height="62.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,6 +52,13 @@
                                 <color key="textColor" red="0.98039609189999999" green="0.98038047549999996" blue="0.98040121790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5B-93-eTk">
+                                <rect key="frame" x="10.5" y="105" width="393" height="152.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="newProjectButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nF-Ag-2js"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

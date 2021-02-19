@@ -219,6 +219,7 @@
 
     copy.bgTextAttributes = [self.bgTextAttributes copyWithZone:zone];
 
+    copy.obliqueValue = self.obliqueValue;
     return copy;
 }
 

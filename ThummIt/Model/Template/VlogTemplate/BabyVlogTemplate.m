@@ -17,7 +17,7 @@
         self.previewImageName = @"babyVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"BabyVlogTemplate";
-        self.backgroundImageName = @"babyVlogFrame";
+        self.mainFrameImageName = @"babyVlogFrame";
         
     }
     return self;

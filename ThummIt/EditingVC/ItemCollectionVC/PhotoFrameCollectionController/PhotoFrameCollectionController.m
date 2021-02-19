@@ -81,13 +81,14 @@
     [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             float ratio = image.size.height/image.size.width;
-            float width = photoFrame.baseView.bounds.size.width * 1.2;
-            float height = photoFrame.baseView.bounds.size.height * 1.2;
+            float width = photoFrame.baseView.bounds.size.width;
+            float height = photoFrame.baseView.bounds.size.height;
             if (ratio > 1) {
                 photoFrame.photoImageView.frameSize = CGSizeMake(width, width * ratio);
             } else {
                 photoFrame.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
             }
+            photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
             photoFrame.photoImageView.image = image;
             cell.previewImageView.image = [photoFrame.baseView toImage];
 
@@ -122,6 +123,7 @@
     if (editingVC.currentPhotoFrame) {
         PhotoFrame *currentPhotoFrame = (PhotoFrame *)editingVC.currentPhotoFrame;
         // 위치, 크기,사진 유지
+        photoFrame.phAsset = currentPhotoFrame.phAsset;
         photoFrame.baseView.center = currentPhotoFrame.baseView.center;
         photoFrame.baseView.transform = currentPhotoFrame.baseView.transform;
         photoFrame.photoImageView.frameSize = photoFrame.baseView.frameSize;

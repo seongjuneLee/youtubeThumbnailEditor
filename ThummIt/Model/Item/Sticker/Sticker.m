@@ -24,16 +24,8 @@
 -(id)copyWithZone:(NSZone *)zone{
     
     Sticker *copied = [super copyWithZone:zone];
-    
-    UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.frame];
-    copiedBaseView.backgroundColor = self.baseView.backgroundColor;
-    copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
-    copied.baseView = copiedBaseView;
-    copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
-    copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
-    [copied.baseView addSubview:copied.backgroundImageView];
-    copied.rotationDegree = self.rotationDegree;
-    copied.baseView.transform = CGAffineTransformMakeRotation(copied.rotationDegree);
+    copied.tintColor = self.tintColor;
+    copied.backgroundImageName = self.backgroundImageName;
     if (self.itemName) {
         copied.itemName = [NSString stringWithString:self.itemName];
     }

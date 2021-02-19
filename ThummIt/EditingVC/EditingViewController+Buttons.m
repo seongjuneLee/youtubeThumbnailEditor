@@ -45,9 +45,7 @@
 
 
 - (IBAction)leftItemTapped:(id)sender {
-    UIImage *viewImage = [self.view toImage];
-    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:self.bgView.frame];
-    [SaveManager.sharedInstance.currentProject save];
+    [SaveManager.sharedInstance save];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self closeEditingVC];
     });

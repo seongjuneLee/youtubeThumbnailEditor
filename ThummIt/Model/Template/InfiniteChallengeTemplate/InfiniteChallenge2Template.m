@@ -17,7 +17,7 @@
         self.previewImageName = @"infiniteChallengePreview2";
         self.category = NSLocalizedString(@"Entertainment", nil);
         self.templateName = @"infiniteChallenge2Template";
-        self.backgroundImageName = @"infiniteChallengeFrame2";
+        self.mainFrameImageName = @"infiniteChallengeFrame2";
         
     }
     return self;

@@ -17,7 +17,7 @@
         self.previewImageName = @"grwmVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"grwmVlogTemplate";
-        self.backgroundImageName = @"";
+        self.mainFrameImageName = @"";
         
     }
     return self;

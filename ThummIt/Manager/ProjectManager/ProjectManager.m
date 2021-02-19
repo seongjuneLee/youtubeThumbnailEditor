@@ -33,7 +33,7 @@
         project.texts = selectedTemplate.texts;
         project.stickers = selectedTemplate.stickers;
         project.backgroundColor = selectedTemplate.backgroundColor;
-        project.backgroundImageName = selectedTemplate.backgroundImageName;
+        project.mainFrameImageName = selectedTemplate.mainFrameImageName;
     } else {
         project.photoFrames = [NSMutableArray array];
         project.texts = [NSMutableArray array];

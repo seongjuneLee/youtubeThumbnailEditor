@@ -119,9 +119,7 @@
     copied.typo = [self.typo copy];
     copied.typoRangeArray = [self.typoRangeArray copy];
     copied.textAlignment = self.textAlignment;
-    copied.center = self.center;
-    copied.scale = self.scale;
-    copied.rotationDegree = self.rotationDegree;
+    
     
     return copied;
 }

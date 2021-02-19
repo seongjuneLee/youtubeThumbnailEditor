@@ -24,10 +24,10 @@
 -(id)copyWithZone:(NSZone *)zone{
     
     Item * copied = [[self.class alloc] init];
-    copied.center = self.center;
     copied.rotationDegree = self.rotationDegree;
     copied.scale = self.scale;
     copied.indexInLayer = self.indexInLayer;
+    copied.center = self.baseView.center;
     
     return copied;
 }

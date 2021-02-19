@@ -17,7 +17,7 @@
         self.previewImageName = @"macaronVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"macaronVlogTemplate";
-        self.backgroundImageName = @"macaronVlogFrame";
+        self.mainFrameImageName = @"macaronVlogFrame";
         
     }
     return self;

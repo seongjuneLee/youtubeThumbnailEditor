@@ -17,7 +17,7 @@
         self.previewImageName = @"danceVlogPreView";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"DanceVlogTemplate";
-        self.backgroundImageName = @"danceVlogFrame";
+        self.mainFrameImageName = @"danceVlogFrame";
 
     }
     return self;

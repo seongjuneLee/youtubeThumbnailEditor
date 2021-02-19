@@ -83,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *undoButton;
 @property (weak, nonatomic) IBOutlet UIButton *redoButton;
 @property (weak, nonatomic) IBOutlet UISlider *hueSlider;
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *mainFrameImageView;
 @property (weak, nonatomic) IBOutlet UIButton *leftItem;
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
 

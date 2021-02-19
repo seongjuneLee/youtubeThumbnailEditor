@@ -17,7 +17,7 @@
         self.previewImageName = @"lookBookVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"LookBookVlogTemplate";
-        self.backgroundImageName = @"lookBookVlogFrame";
+        self.mainFrameImageName = @"lookBookVlogFrame";
         
     }
     return self;

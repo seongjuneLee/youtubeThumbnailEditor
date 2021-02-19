@@ -17,7 +17,7 @@
         self.previewImageName = @"craftVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"craftVlogTemplate";
-        self.backgroundImageName = @"craftVlogFrame";
+        self.mainFrameImageName = @"craftVlogFrame";
         
     }
     return self;

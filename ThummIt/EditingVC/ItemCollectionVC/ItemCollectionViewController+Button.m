@@ -216,7 +216,6 @@
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentText.textView resignFirstResponder];
     
-//    NSLog(@"글자 %d",editingVC.justTyped.length);
     if(editingVC.justTyped.length == 0){
     self.checkButton.enabled = true;
     self.checkButton.alpha = 1.0;
@@ -269,8 +268,6 @@
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
     editingVC.currentPhotoFrame.plusPhotoImageView.hidden = true;
-    UIImage *viewImage = [editingVC.view toImage];
-    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance saveAndAddToStack];
     
 }
@@ -284,7 +281,7 @@
     [editingVC showItemsForNormalMode];
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentPhotoFrame;
     if (photoFrame.isFixedPhotoFrame) {
-        [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.backgroundImageView];
+        [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.mainFrameImageView];
     } else {
         photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",editingVC.originalIndexInLayer];
         [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
@@ -295,8 +292,6 @@
     // albumVC 없애주기
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
-    UIImage *viewImage = [editingVC.view toImage];
-    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance saveAndAddToStack];
 }
 
@@ -313,8 +308,6 @@
         for (Item *item in SaveManager.sharedInstance.currentProject.items) {
             item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
         }
-        UIImage *viewImage = [editingVC.view toImage];
-        SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
         [SaveManager.sharedInstance saveAndAddToStack];
 
         [editingVC.currentText.textView resignFirstResponder];
@@ -336,8 +329,6 @@
 
 
     [editingVC.currentText.textView resignFirstResponder];
-    UIImage *viewImage = [editingVC.view toImage];
-    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance saveAndAddToStack];
 
     
@@ -354,8 +345,6 @@
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
-    UIImage *viewImage = [editingVC.view toImage];
-    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance saveAndAddToStack];
 
    
@@ -368,8 +357,6 @@
     [editingVC.layerController hideTransparentView];
     [editingVC.layerController recoverOriginalLayer];
     [editingVC.itemCollectionVC dismissSelf];
-    UIImage *viewImage = [editingVC.view toImage];
-    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
     [SaveManager.sharedInstance saveAndAddToStack];
 
 

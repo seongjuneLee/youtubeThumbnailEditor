@@ -17,7 +17,7 @@
         self.templateName = @"sinSeoYuGi2Template";
         self.previewImageName = @"sinseoyugiPreview2";
         self.category = NSLocalizedString(@"Entertain", nil);
-        self.backgroundImageName = @"sinseoyugi2Frame";
+        self.mainFrameImageName = @"sinseoyugi2Frame";
         
     }
     return self;

@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) Project *currentProject;
 @property (strong, nonatomic) NSMutableArray *tenRecentChanges;
+@property (nonatomic) CGRect bgViewRect;
 @property dispatch_queue_t savingQueue;
 
 -(Template *)currentTemplate;
@@ -24,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)addItem:(Item *)item;
 -(void)deleteItem:(Item *)item;
 -(void)applyCurrentProject:(Project *)project;
+-(void)savePreviewImage;
+-(void)save;
 
 @end
 

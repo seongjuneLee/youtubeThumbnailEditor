@@ -16,7 +16,7 @@
         self.previewImageName = @"quarterDivisionPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"quarterDivisionTemplate";
-        self.backgroundImageName = @"";
+        self.mainFrameImageName = @"";
         
     }
     return self;

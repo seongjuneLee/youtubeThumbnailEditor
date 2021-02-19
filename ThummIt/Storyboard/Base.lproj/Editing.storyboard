@@ -400,7 +400,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageView" destination="OGb-vs-PFa" id="xqj-bs-s9K"/>
                         <outlet property="bgColorButton" destination="IYO-Zm-RAl" id="nhD-wW-sc2"/>
                         <outlet property="bgColorButtonContainerView" destination="YP2-Kz-HSN" id="0Pf-LA-fbz"/>
                         <outlet property="bgView" destination="c8Y-hQ-BzP" id="NMv-b2-Pr6"/>
@@ -409,6 +408,7 @@
                         <outlet property="gestureView" destination="zeV-pp-6xL" id="eFT-Gp-vQG"/>
                         <outlet property="hueSlider" destination="dNB-8m-B4w" id="pLl-pE-Mot"/>
                         <outlet property="leftItem" destination="i2a-Qa-wOL" id="HV2-ck-yN3"/>
+                        <outlet property="mainFrameImageView" destination="OGb-vs-PFa" id="xqj-bs-s9K"/>
                         <outlet property="photoFrameButton" destination="kFG-gf-ZDf" id="8Av-8f-9oo"/>
                         <outlet property="photoFrameButtonContainerView" destination="MaA-yZ-tJG" id="ZmA-HC-BW4"/>
                         <outlet property="redoButton" destination="hyI-hU-5Mx" id="A3S-Ua-REa"/>

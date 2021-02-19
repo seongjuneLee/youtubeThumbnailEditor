@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *category;
 @property (strong, nonatomic) NSString *templateName;
 
-@property (strong, nonatomic) NSString *backgroundImageName;
+@property (strong, nonatomic) NSString *mainFrameImageName;
 @property (strong, nonatomic) UIColor *backgroundColor;
 @property (strong, nonatomic) NSMutableArray *texts;
 @property (strong, nonatomic) NSMutableArray *stickers;

@@ -17,8 +17,8 @@
     [PhotoManager.sharedInstance getImageFromPHAsset:phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920,1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             float ratio = image.size.height/image.size.width;
-            float width = photoFrame.baseView.bounds.size.width * 1.2;
-            float height = photoFrame.baseView.bounds.size.height * 1.2;
+            float width = photoFrame.baseView.bounds.size.width;
+            float height = photoFrame.baseView.bounds.size.height;
             if (ratio > 1) {
                 photoFrame.photoImageView.frameSize = CGSizeMake(width, width * ratio);
             } else {

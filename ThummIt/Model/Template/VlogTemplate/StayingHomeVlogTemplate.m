@@ -17,7 +17,7 @@
         self.previewImageName = @"stayingHomePreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StayingHomeTemplate";
-        self.backgroundImageName = @"";
+        self.mainFrameImageName = @"";
         
     }
     return self;

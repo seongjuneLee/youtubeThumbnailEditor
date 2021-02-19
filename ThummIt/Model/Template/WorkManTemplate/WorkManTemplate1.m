@@ -17,7 +17,7 @@
         self.templateName = @"WorkManTemplate1";
         self.previewImageName = @"workManPreview1";
         self.category = NSLocalizedString(@"Entertain", nil);
-        self.backgroundImageName = @"WorkManFrame1";
+        self.mainFrameImageName = @"WorkManFrame1";
     }
     return self;
     

@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString* projectTitle;
 @property (strong, nonatomic) NSString* projectFilePath;
 @property (strong, nonatomic) NSString* selectedTemplateName;
-@property (strong, nonatomic) NSString* backgroundImageName;
+@property (strong, nonatomic) NSString* mainFrameImageName;
 @property (strong, nonatomic) UIColor * backgroundColor;
 @property (strong, nonatomic) NSString *lastEditedDate;
 @property (strong, nonatomic) NSMutableArray *photoFrames;

@@ -191,11 +191,7 @@
         }
         
         if (!self.isPinching) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                UIImage *viewImage = [editingVC.view toImage];
-                SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
-                [SaveManager.sharedInstance saveAndAddToStack];
-            });
+            [SaveManager.sharedInstance saveAndAddToStack];
         }
 
         if (editingVC.modeController.editingMode == NormalMode) {
@@ -487,13 +483,10 @@
             return;
         }
         
-        NSLog(@"불림");
         self.isPinching = false;
         [self removeItemSizeGuideLinesFromSuperView];
         [self.rotationDashedLine removeFromSuperview];
         
-        UIImage *viewImage = [editingVC.view toImage];
-        SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:editingVC.bgView.frame];
         [SaveManager.sharedInstance saveAndAddToStack];
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;

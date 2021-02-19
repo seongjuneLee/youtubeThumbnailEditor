@@ -17,7 +17,7 @@
         self.previewImageName = @"sixToFourVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"sixToFourVlogTemplate";
-        self.backgroundImageName = @"sixToFourVlogFrame";
+        self.mainFrameImageName = @"sixToFourVlogFrame";
         
     }
     return self;

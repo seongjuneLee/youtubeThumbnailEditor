@@ -62,6 +62,7 @@
 }
 
 -(void)viewDidLayoutSubviews{
+    SaveManager.sharedInstance.bgViewRect = self.bgView.frame;
     if (!self.itemLoaded) {
         [self loadItems];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -162,7 +163,7 @@
     self.itemLoaded = true;
     Project *project = SaveManager.sharedInstance.currentProject;
     self.bgView.backgroundColor = project.backgroundColor;
-    self.backgroundImageView.image = [UIImage imageNamed:project.backgroundImageName];
+    self.mainFrameImageView.image = [UIImage imageNamed:project.mainFrameImageName];
     for (Item *item in project.items) {
         [item loadView]; // 뷰 로드하기.
 
@@ -188,9 +189,9 @@
         
         if (item.isFixedPhotoFrame) { // fixed포토프레임일 때와 아닐 때
             item.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
-            [self.view insertSubview:item.baseView belowSubview:self.backgroundImageView];
+            [self.view insertSubview:item.baseView belowSubview:self.mainFrameImageView];
         } else {
-            [self.view insertSubview:item.baseView aboveSubview:self.backgroundImageView];
+            [self.view insertSubview:item.baseView aboveSubview:self.mainFrameImageView];
         }
 
     }
@@ -199,7 +200,7 @@
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {
             if (item.isTemplateItem) {
-                NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.backgroundImageView];
+                NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
                 item.indexInLayer = [NSString stringWithFormat:@"%ld",backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
                 [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
             } else {
@@ -209,10 +210,7 @@
         
         item.isTemplateItem = false;
     }
-    
-    UIImage *viewImage = [self.view toImage];
-    SaveManager.sharedInstance.currentProject.previewImage = [viewImage crop:self.bgView.frame];
-    [SaveManager.sharedInstance.currentProject save];
+    [SaveManager.sharedInstance save];
 }
 
 -(void)respondToUndoRedo{

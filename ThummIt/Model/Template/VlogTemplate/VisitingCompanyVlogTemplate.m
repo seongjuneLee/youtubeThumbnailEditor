@@ -17,7 +17,7 @@
         self.previewImageName = @"visitingCompanyPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"visitingCompanyVlogTemplate";
-        self.backgroundImageName = @"visitingCompanyVlogFrame";
+        self.mainFrameImageName = @"visitingCompanyVlogFrame";
         
     }
     return self;

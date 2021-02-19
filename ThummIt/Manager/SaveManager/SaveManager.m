@@ -7,6 +7,7 @@
 
 #import "SaveManager.h"
 #import "UndoManager.h"
+#import "UIImage+Additions.h"
 
 @implementation SaveManager
 
@@ -61,7 +62,18 @@
     dispatch_sync(self.savingQueue, ^{
         [self.currentProject save];
         [UndoManager.sharedInstance addCurrentProjectToUndoRedoStack];
+        [self savePreviewImage];
     });
+
+}
+
+-(void)save{
+    
+    dispatch_sync(self.savingQueue, ^{
+        [self.currentProject save];
+        [self savePreviewImage];
+    });
+
     
 }
 
@@ -74,6 +86,42 @@
     self.currentProject = project;
     [self.currentProject save];
     
+}
+
+-(void)savePreviewImage{
+    
+    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+    
+    // view
+    UIView *view = [[UIView alloc] initWithFrame:window.bounds];
+    view.frameY = 0;
+    view.backgroundColor = self.currentProject.backgroundColor;
+    
+    // fameImageView
+    UIImageView *mainFrameImageView = [[UIImageView alloc] initWithFrame:self.bgViewRect];
+    mainFrameImageView.contentMode = UIViewContentModeScaleAspectFit;
+    if (self.currentProject.mainFrameImageName) {
+        mainFrameImageView.image = [UIImage imageNamed:self.currentProject.mainFrameImageName];
+        [view addSubview:mainFrameImageView];
+    }
+    
+    // add Items
+    for (Item *item in self.currentProject.items) {
+        Item *copied = [item copy];
+        [copied loadView];
+        [copied setItemCenterAndScale];
+        if (copied.isFixedPhotoFrame) {
+            copied.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
+            [view insertSubview:copied.baseView belowSubview:mainFrameImageView];
+        } else {
+            [view insertSubview:copied.baseView atIndex:copied.indexInLayer.integerValue];
+        }
+    }
+    
+    // to image and save
+    UIImage *viewImage = [view toImage];
+     
+    self.currentProject.previewImage = [viewImage crop:self.bgViewRect];
 }
 
 @end

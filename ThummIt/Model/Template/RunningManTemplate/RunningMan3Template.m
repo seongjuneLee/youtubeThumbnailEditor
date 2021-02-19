@@ -17,7 +17,7 @@
         self.templateName = @"runningMan3Template";
         self.previewImageName = @"runningManPreview3";
         self.category = NSLocalizedString(@"Entertain", nil);
-        self.backgroundImageName = @"runningMan3Frame";
+        self.mainFrameImageName = @"runningMan3Frame";
         
     }
     return self;

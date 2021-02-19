@@ -17,7 +17,7 @@
         self.previewImageName = @"twoDivisionPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"twoDivisionTemplate";
-        self.backgroundImageName = @"";
+        self.mainFrameImageName = @"";
         
     }
     return self;
