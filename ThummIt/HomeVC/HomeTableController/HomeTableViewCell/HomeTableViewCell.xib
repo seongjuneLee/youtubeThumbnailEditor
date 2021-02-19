@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egg-Hw-QR4">
-                        <rect key="frame" x="10" y="10" width="80.5" height="24"/>
+                        <rect key="frame" x="15" y="10" width="80.5" height="24"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="C6L-x7-Sr0">
-                        <rect key="frame" x="0.0" y="44" width="400" height="225"/>
+                        <rect key="frame" x="0.0" y="34" width="400" height="235"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="10" id="D3V-Ax-0id">
                             <size key="itemSize" width="128" height="128"/>
@@ -35,9 +35,9 @@
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="C6L-x7-Sr0" firstAttribute="top" secondItem="egg-Hw-QR4" secondAttribute="bottom" constant="10" id="Ite-Xp-V0D"/>
+                    <constraint firstItem="C6L-x7-Sr0" firstAttribute="top" secondItem="egg-Hw-QR4" secondAttribute="bottom" id="Ite-Xp-V0D"/>
                     <constraint firstItem="egg-Hw-QR4" firstAttribute="top" secondItem="mjp-rT-an2" secondAttribute="top" constant="10" id="QoO-zN-9li"/>
-                    <constraint firstItem="egg-Hw-QR4" firstAttribute="leading" secondItem="mjp-rT-an2" secondAttribute="leading" constant="10" id="cGT-G4-dcc"/>
+                    <constraint firstItem="egg-Hw-QR4" firstAttribute="leading" secondItem="mjp-rT-an2" secondAttribute="leading" constant="15" id="cGT-G4-dcc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="110-Sh-3XW"/>

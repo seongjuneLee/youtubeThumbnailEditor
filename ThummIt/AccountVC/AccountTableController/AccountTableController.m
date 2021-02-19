@@ -98,7 +98,7 @@
     
     UIDevice* thisDevice = [UIDevice currentDevice];
     if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        return self.accountVC.tabBarController.tabBar.frameHeight * 1.3;
+        return self.accountVC.tabBarController.tabBar.frameHeight * 1.0;
     /* do something specifically for iPad. */
     } else {
         return self.accountVC.tabBarController.tabBar.frameHeight * 0.6;
