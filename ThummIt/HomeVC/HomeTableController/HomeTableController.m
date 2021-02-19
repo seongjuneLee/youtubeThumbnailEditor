@@ -84,10 +84,10 @@
     
     UIDevice* thisDevice = [UIDevice currentDevice];
     if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        return safeAreaHeight * 0.35;
+        return safeAreaHeight * 0.33;
     /* do something specifically for iPad. */
     } else {
-        return safeAreaHeight * 0.29;
+        return safeAreaHeight * 0.275;
     /* do something specifically for iPhone or iPod touch. */
 }
 
