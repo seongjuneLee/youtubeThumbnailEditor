@@ -15,7 +15,7 @@
 
         self.name = NSLocalizedString(@"통편집을 피하는 법",nil);
         self.fontName = @"NEXONLv2GothicOTFBold";
-        self.fontSize = TEXT_FONT_SIZE;
+        self.fontSize = 50;
         self.textFromColor = [UIColor colorWithRed:246/255.0 green:0/255.0 blue:27/255.0 alpha:1.0];
         self.textToColor = [UIColor colorWithRed:245/255.0 green:253/255.0 blue:27/255.0 alpha:1.0];
         NSDictionary *attr = @{NSFontAttributeName: [UIFont fontWithName:self.fontName size:self.fontSize]};

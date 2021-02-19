@@ -20,7 +20,7 @@
         self.bgWidthPadding = 45;
         self.bgHeightPadding = 55;
         self.obliqueValue = 0.25;
-        self.fontSize = 55;
+        self.fontSize = 50;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
