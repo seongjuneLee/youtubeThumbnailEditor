@@ -150,7 +150,15 @@
         // Distructive button tapped.
         [actionSheet dismissViewControllerAnimated:true completion:nil];
     }]];
+    [actionSheet setModalPresentationStyle:UIModalPresentationPopover];
+
     
+    ProjectTableViewCell *cell = (ProjectTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    
+    UIPopoverPresentationController *popPresenter = [actionSheet
+                                                  popoverPresentationController];
+    popPresenter.sourceView = cell.moreButton;
+
     // Present action sheet.
     [self.projectVC presentViewController:actionSheet animated:true completion:nil];
     
