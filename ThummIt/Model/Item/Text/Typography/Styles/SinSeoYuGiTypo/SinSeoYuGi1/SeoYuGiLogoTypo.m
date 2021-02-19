@@ -16,6 +16,7 @@
         self.name = NSLocalizedString(@"서유기",nil); //italic
         self.fontName = @"a2570";
         self.textColor = [UIColor colorWithRed:248/255.0f green:74/255.0f blue:30/255.0 alpha:1 ];
+        self.fontSize = 50;
         self.obliqueValue = 0.14;
 
         

@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"띵언가들",nil);
         self.fontName = @"NEXONLv2GothicOTFBold";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1] ;
-        self.fontSize = TEXT_FONT_SIZE;
+        self.fontSize = 50;
         self.obliqueValue = 0.2;
         
     }
