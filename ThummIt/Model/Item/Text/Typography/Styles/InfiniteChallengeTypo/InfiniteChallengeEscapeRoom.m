@@ -17,6 +17,7 @@
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
         self.obliqueValue = 0.18;
+        self.fontSize = 80;
                 
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 10;

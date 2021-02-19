@@ -17,6 +17,7 @@
         self.fontName = @"BMDoHyeon-OTF";
         self.textFromColor = [UIColor colorWithRed:248/255.0 green:233/255.0 blue:104/255.0 alpha:1.0];
         self.textToColor = [UIColor colorWithRed:233/255.0 green:174/255.0 blue:83/255.0 alpha:1.0];
+        self.fontSize = 60;
         NSDictionary *attr = @{NSFontAttributeName: [UIFont fontWithName:self.fontName size:self.fontSize]};
         CGSize stringBoundingBox = [@"랜덤게임.zip" sizeWithAttributes:attr];
         

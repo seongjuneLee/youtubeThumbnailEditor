@@ -17,8 +17,8 @@
         self.fontName = @"AppleSDGothicNeo-Bold";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
         self.bgImageName = @"italyBG";
-        self.bgHeightPadding = 150;
-        self.bgWidthPadding = 175;
+        self.bgHeightPadding = 200;
+        self.bgWidthPadding = 200;
         
     }
     return self;
