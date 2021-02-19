@@ -121,7 +121,7 @@
     }]];
     
     
-    [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Dwonload", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Download", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         Project *project = self.projects[index];
         
         // OK button tapped.
