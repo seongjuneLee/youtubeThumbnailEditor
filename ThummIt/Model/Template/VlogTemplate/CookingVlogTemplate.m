@@ -59,8 +59,8 @@
     //ㅎ
     Text *logoText = [[Text alloc] init];
     VlogLogoTagTypo *logo = [VlogLogoTagTypo vlogLogoTagTypo];
-    logoText.scale = 0.16;
-    logoText.center = CGPointMake(0.05, 0.12);
+    logoText.scale = 0.12;
+    logoText.center = CGPointMake(0.05, 0.125);
     logoText.isTemplateItem = true;
     logoText.indexInLayer = @"1";
     logoText.text = @"ㅎ";

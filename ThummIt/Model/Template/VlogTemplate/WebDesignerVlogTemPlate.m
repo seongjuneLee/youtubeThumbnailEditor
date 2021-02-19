@@ -58,7 +58,7 @@
     Text *undertagText = [[Text alloc] init];
     VlogWebWrite *undertagvlog = [VlogWebWrite vlogWebWrite];
     undertagText.scale = 0.26;
-    undertagText.center = CGPointMake(0.17, 0.91);
+    undertagText.center = CGPointMake(0.16, 0.91);
     undertagText.isTemplateItem = true;
     undertagText.indexInLayer =@"1";
     undertagText.text = @"웹 디자이너편";

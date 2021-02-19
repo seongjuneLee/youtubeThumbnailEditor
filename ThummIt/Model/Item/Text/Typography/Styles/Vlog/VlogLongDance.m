@@ -17,8 +17,8 @@
         self.fontName = @"UhBeepudingBold";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
         self.bgImageName = @"longDanceBG";
-        self.bgHeightPadding = -6;
-        self.bgWidthPadding =55;    }
+        self.bgHeightPadding = -10;
+        self.bgWidthPadding =75;    }
     return self;
 }
 

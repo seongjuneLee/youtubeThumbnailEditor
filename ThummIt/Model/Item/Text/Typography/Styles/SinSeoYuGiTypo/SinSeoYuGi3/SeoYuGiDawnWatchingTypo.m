@@ -16,7 +16,7 @@
         self.fontName = @"NotoSansKannada-Bold";
         self.bgImageName = @"seoYuGiFlame";
         self.textColor = [UIColor whiteColor];
-        self.bgHeightPadding = 220;
+        self.bgHeightPadding = 290;
         
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor whiteColor];
