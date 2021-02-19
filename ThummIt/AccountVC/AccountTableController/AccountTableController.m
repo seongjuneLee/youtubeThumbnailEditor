@@ -10,6 +10,7 @@
 #import "AccountViewController.h"
 #import "CustomerFeedbackViewController.h"
 #import "PrivacyPolicyViewController.h"
+#import "MainTabBarViewController.h"
 @import Parse;
 
 @implementation AccountTableController
@@ -21,9 +22,9 @@
         
 //        NSDictionary *myFolderDict = @{@"My Folder":@"folderImage"}; // 이미지 추가
 //        NSDictionary *inviteFriendsDict = @{@"Invite Friends":@"friend"}; // 이미지 추가
-        NSDictionary *customerCenterDict = @{@"Customer Center":@"customerCenter"}; // 이미지 추가
-        NSDictionary *pivacyPolicyDict = @{@"Privacy Policy":@"privacyPolicy"}; // 이미지 추가
-        NSDictionary *logOutDict = @{@"Log Out":@"logOut"}; // 이미지 추가
+        NSDictionary *customerCenterDict = @{NSLocalizedString(@"Customer Center", nil):@"customerCenter"}; // 이미지 추가
+        NSDictionary *pivacyPolicyDict = @{NSLocalizedString(@"Privacy Policy", nil):@"privacyPolicy"}; // 이미지 추가
+        NSDictionary *logOutDict = @{NSLocalizedString(@"Log Out", nil):@"logOut"}; // 이미지 추가
         self.datas = @[customerCenterDict, pivacyPolicyDict, logOutDict];
         self.tableView = tableView;
         self.tableView.delegate = self;
@@ -92,6 +93,17 @@
     }else if (indexPath.row == 4){
         
     }
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UIDevice* thisDevice = [UIDevice currentDevice];
+    if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        return self.accountVC.tabBarController.tabBar.frameHeight * 1.3;
+    /* do something specifically for iPad. */
+    } else {
+        return self.accountVC.tabBarController.tabBar.frameHeight * 0.6;
+    /* do something specifically for iPhone or iPod touch. */
+}
 }
 
 -(void)showLogOutAction{

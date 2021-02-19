@@ -103,9 +103,11 @@
     
 }
 
--(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 350;
+    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+    
+    return window.frameWidth * 0.59;
 }
 
 -(void)moreButtonTappedWithIndex:(NSUInteger)index{
