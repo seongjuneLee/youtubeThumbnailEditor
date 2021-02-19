@@ -6,7 +6,7 @@
 "4I7-ZI-Fnm.normalTitle" = "이용약관";
 
 /* Class = "UILabel"; text = "Input username for using in ThummIt."; ObjectID = "5Gv-Mz-pIw"; */
-"5Gv-Mz-pIw.text" = "ThummIt에서 사용할 사용자 이름을 입력합니다.";
+"5Gv-Mz-pIw.text" = "잊어버린 비밀번호의 아이디를 입력해 주세요.";
 
 /* Class = "UILabel"; text = "Sign in with Email"; ObjectID = "70X-Rj-zFr"; */
 "70X-Rj-zFr.text" = "회원가입";
@@ -30,7 +30,7 @@
 "BrQ-Gj-hp9.placeholder" = "비밀번호";
 
 /* Class = "UIButton"; normalTitle = "PrivacyPolicy"; ObjectID = "CkI-tf-NMY"; */
-"CkI-tf-NMY.normalTitle" = "개인보호정책";
+"CkI-tf-NMY.normalTitle" = "개인 보호 정책";
 
 /* Class = "UILabel"; text = "Input username for using in ThummIt."; ObjectID = "DrK-QE-Fxi"; */
 "DrK-QE-Fxi.text" = "ThummIt에서 사용할 닉네임을 입력해주세요.";
@@ -75,7 +75,7 @@
 "RXB-fr-iJj.text" = "불편사항이나 문제점이 있으시면 적어주십시오.";
 
 /* Class = "UILabel"; text = "Input username"; ObjectID = "WJl-Vn-S4v"; */
-"WJl-Vn-S4v.text" = "사용자 이름을 입력해주십시오.";
+"WJl-Vn-S4v.text" = "사용자의 아이디를 입력해주십시오.";
 
 /* Class = "UILabel"; text = "Continue"; ObjectID = "XcV-qe-ebc"; */
 "XcV-qe-ebc.text" = "이어하기";
@@ -96,7 +96,7 @@
 "ebg-vd-x6a.text" = "비밀번호가 맞지않습니다.";
 
 /* Class = "UILabel"; text = "email will be used when you forget password."; ObjectID = "eiV-2U-V1y"; */
-"eiV-2U-V1y.text" = "비밀번호를 잊어 버린 경우 이메일이 사용됩니다.";
+"eiV-2U-V1y.text" = "비밀번호를 잊어 버린 경우 이 이메일이 사용됩니다.";
 
 /* Class = "UITextField"; placeholder = "re-enter password"; ObjectID = "eyb-m9-hfa"; */
 "eyb-m9-hfa.placeholder" = "비밀번호를 다시 입력하세요.";
