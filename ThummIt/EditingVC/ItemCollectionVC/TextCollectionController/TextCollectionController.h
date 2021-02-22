@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (weak, nonatomic) UIViewController *editingVC;
+@property (strong, nonatomic) NSCache *imageCaching;
 
 -(id)initWithCollectionView:(UICollectionView *)collectionView;
 -(void)didSelectTypo:(Typography *)typo;

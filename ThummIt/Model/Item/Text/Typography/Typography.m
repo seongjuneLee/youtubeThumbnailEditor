@@ -228,7 +228,6 @@
     NSMutableArray *attributes = [NSMutableArray new];
     CGPoint currentOffset = fromOffset;
     while (true) {
-        
         if (currentOffset.x >= toOffset.x && currentOffset.y >= toOffset.y) {
             break;
         } else {

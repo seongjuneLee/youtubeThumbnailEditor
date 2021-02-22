@@ -34,7 +34,7 @@
         
         [self.collectionView registerNib:[UINib nibWithNibName:@"TextCollectionViewCell" bundle:NSBundle.mainBundle] forCellWithReuseIdentifier:@"TextCollectionViewCell"];
 //        [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoFrameCollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView"];
-
+        self.imageCaching = [[NSCache alloc] init];
     }
     
     return self;
@@ -56,10 +56,32 @@
     
     TextCollectionViewCell *cell = (TextCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"TextCollectionViewCell" forIndexPath:indexPath];
     NSArray *typos = ItemManager.sharedInstance.typoDatas[indexPath.section];
-
-    Typography *typo = typos[indexPath.item];
     
-    cell.textImageView.image = [Text makePlaceHolderWithTypo:typo].image;
+    Typography *typo = typos[indexPath.item];
+        
+    NSString *imageName = typo.name;
+    UIImage *image = [self.imageCaching objectForKey:imageName];
+    
+    if(image){
+        
+        cell.textImageView.image = image;
+    }
+    
+    else{
+        
+        cell.textImageView.image = nil;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            UIImage *image = [Text makePlaceHolderWithTypo:typo].image;
+            
+            
+            cell.textImageView.image = image;
+            
+            
+            [self.imageCaching setObject:image forKey:imageName];
+        });
+    }
     
     return cell;
     

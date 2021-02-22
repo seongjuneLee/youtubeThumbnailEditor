@@ -17,6 +17,7 @@
     static dispatch_once_t onceToken; // onceToken = 0
     dispatch_once(&onceToken, ^{
         sharedInstance = [[ItemManager alloc] init];
+        sharedInstance.fetchedTypoDatas = [sharedInstance typoDatas];
     });
     
     return sharedInstance;

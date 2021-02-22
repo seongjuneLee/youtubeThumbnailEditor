@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)deleteItem:(Item *)item;
 -(BOOL)containsItem:(Item *)item;
 
+@property (strong, nonatomic) NSArray *fetchedTypoDatas;
+
 @end
 
 NS_ASSUME_NONNULL_END
