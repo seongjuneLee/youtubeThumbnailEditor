@@ -107,7 +107,6 @@ class SignInViewController: UIViewController {
         
         
         // Swift override func viewDidLoad() { super.viewDidLoad() if let token = AccessToken.current, !token.isExpired { // User is logged in, do work such as go to next view controller. } }
-        self.view.makeToastActivity(CSToastPositionCenter)
 
         if ((AccessToken.current?.hasGranted(permission: "public_profile")) == true) {
             
@@ -119,7 +118,6 @@ class SignInViewController: UIViewController {
                     let userID = profile?.userID ?? ""
                     
                     UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "facebook", username: username, withEmail: email) { (success) in
-                        self.view.hideAllToasts()
 
                         if success {
                             self.dismiss(animated: true, completion: nil)
@@ -144,8 +142,6 @@ class SignInViewController: UIViewController {
                             let userID = profile?.userID ?? ""
                             
                             UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "facebook", username: username, withEmail: email) { (success) in
-                                self.view.hideAllToasts()
-
                                 if success {
                                     self.dismiss(animated: true, completion: nil)
                                 } else {

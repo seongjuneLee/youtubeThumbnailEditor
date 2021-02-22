@@ -22,7 +22,7 @@
         self.category = NSLocalizedString(@"Jolly", nil);
         self.alpha = 1;
         self.fontSize = TEXT_FONT_SIZE;
-        
+        self.bgTextAttributes = [NSMutableArray array];
     }
     return self;
 }
@@ -223,6 +223,25 @@
     return copy;
 }
 
-
+-(NSMutableArray *)makeShadowWithColor:(UIColor *)color fromOffset:(CGPoint)fromOffset toOffset:(CGPoint)toOffset{
+    
+    NSMutableArray *attributes = [NSMutableArray new];
+    CGPoint currentOffset = fromOffset;
+    while (true) {
+        
+        if (currentOffset.x >= toOffset.x && currentOffset.y >= toOffset.y) {
+            break;
+        } else {
+            BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
+            shadowAtt.shadowColor = color;
+            shadowAtt.shadowOffset = CGPointMake(currentOffset.x, currentOffset.y);
+            currentOffset.x += 0.2;
+            currentOffset.y += 0.2;
+            [attributes addObject:shadowAtt];
+        }
+    }
+    
+    return attributes;
+}
 
 @end
