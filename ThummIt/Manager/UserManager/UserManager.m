@@ -47,7 +47,11 @@
                 newUser[@"nickname"] = validatedUsername;
                 newUser[@"password"] = password;
                 newUser[@"thirdPartyUserID"] = formattedId;
-                newUser[@"email"] = email;
+                if (formattedId) { // third party
+                    newUser[@"thirdPartyEmail"] = email;
+                } else {
+                    newUser[@"email"] = email;
+                }
                 
                 // 유저에도 언어, 국가 저장해두기 => 푸시노티 메시지 로컬라이즈를 위해
                 NSString* language = PFUser.currentUser[@"language"];

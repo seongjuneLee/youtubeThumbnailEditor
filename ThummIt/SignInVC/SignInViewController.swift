@@ -15,12 +15,13 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import FBSDKLoginKit
 import FBSDKCoreKit
-
+import AuthenticationServices
 
 class SignInViewController: UIViewController {
     @IBOutlet weak var kakaoSignInView: UIView!
     @IBOutlet weak var emailSignInView: UIView!
     @IBOutlet weak var facebookSignInView: UIView!
+    @IBOutlet weak var appleSignInView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
@@ -34,14 +35,17 @@ class SignInViewController: UIViewController {
         self.kakaoSignInView.layer.cornerRadius = 5
         self.facebookSignInView.layer.cornerRadius = 5
         self.emailSignInView.layer.cornerRadius = 5
+        self.appleSignInView.layer.cornerRadius = 5
         
         self.kakaoSignInView.layer.borderWidth = 0.5
         self.facebookSignInView.layer.borderWidth = 0.5
         self.emailSignInView.layer.borderWidth = 0.5
+        self.appleSignInView.layer.borderWidth = 0.5
 
         self.kakaoSignInView.layer.borderColor = UIColor.black.cgColor
         self.facebookSignInView.layer.borderColor = UIColor.black.cgColor
         self.emailSignInView.layer.borderColor = UIColor.black.cgColor
+        self.appleSignInView.layer.borderColor = UIColor.black.cgColor
     }
     
     @IBAction func privacyPolicyTButtonapped(_ sender: Any) {
@@ -162,6 +166,16 @@ class SignInViewController: UIViewController {
         
     }
         
+    @IBAction func appleButtonTapped(_ sender: UIButton) {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        controller.performRequests()
+    }
+    
+    
     @IBAction func emailButtonTapped(_ sender: UIButton) {
         
         let main = UIStoryboard.init(name: "Main", bundle: Bundle.main)
@@ -175,4 +189,46 @@ class SignInViewController: UIViewController {
     }
     
     
+}
+
+extension SignInViewController : ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+            // Apple ID
+            case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                    
+                // 계정 정보 가져오기
+                let userIdentifier = appleIDCredential.user
+                let fullName = appleIDCredential.fullName
+                let email = appleIDCredential.email
+                let name = (fullName?.givenName ?? "") + (fullName?.familyName ?? "")
+//                let userID = appleIDCredential.
+                    
+                print("User ID : \(userIdentifier)")
+                print("User Email : \(email ?? "")")
+                print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
+            
+                UserManager.sharedInstance().signUp(withThirdPartyID: userIdentifier , withType: "apple", username: name, withEmail: email ?? "") { (success) in
+                    self.view.hideAllToasts()
+
+                    if success {
+                        self.dismiss(animated: true, completion: nil)
+                    } else {
+                        self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
+                    }
+                }
+            default:
+                break
+            }
+        
+        }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
+    }
 }
