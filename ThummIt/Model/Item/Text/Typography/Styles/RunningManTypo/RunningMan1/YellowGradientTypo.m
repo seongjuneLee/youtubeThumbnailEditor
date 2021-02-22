@@ -30,27 +30,10 @@
         borderAtt.borderColor = [UIColor blackColor];
         borderAtt.borderWidth = 5;
         
-        BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
-        shadowAtt1.shadowColor =[UIColor colorWithRed:90/255.0 green:4/255.0 blue:8/255.0 alpha:1.0];
-        shadowAtt1.shadowOffset = CGPointMake(1, 1);
+        NSMutableArray *shadowAttributes = [self makeShadowWithColor:[UIColor colorWithRed:90/255.0f green:4/255.0f blue:8/255.0f alpha:1] fromOffset:CGPointMake(2, 2) toOffset:CGPointMake(6, 6)];
         
-        BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
-        shadowAtt2.shadowColor =[UIColor colorWithRed:90/255.0 green:4/255.0 blue:8/255.0 alpha:1.0];
-        shadowAtt2.shadowOffset = CGPointMake(1.5, 1.5);
-        
-        BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
-        shadowAtt3.shadowColor =[UIColor colorWithRed:90/255.0 green:4/255.0 blue:8/255.0 alpha:1.0];
-        shadowAtt3.shadowOffset = CGPointMake(2, 2);
-        
-        BGTextAttribute *shadowAtt4 = [[BGTextAttribute alloc] init];
-        shadowAtt4.shadowColor =[UIColor colorWithRed:90/255.0 green:4/255.0 blue:8/255.0 alpha:1.0];
-        shadowAtt4.shadowOffset = CGPointMake(2.5, 2.5);
-        
-        BGTextAttribute *shadowAtt5 = [[BGTextAttribute alloc] init];
-        shadowAtt5.shadowColor =[UIColor colorWithRed:90/255.0 green:4/255.0 blue:8/255.0 alpha:1.0];
-        shadowAtt5.shadowOffset = CGPointMake(3, 3);
-        
-        self.bgTextAttributes = @[borderAtt, shadowAtt1, shadowAtt2, shadowAtt3, shadowAtt4, shadowAtt5];
+        [self.bgTextAttributes addObjectsFromArray:@[borderAtt]];
+        [self.bgTextAttributes addObjectsFromArray:shadowAttributes];
     }
     return self;
 }

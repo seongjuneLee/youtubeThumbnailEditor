@@ -111,7 +111,7 @@
 "hYp-WL-McN.text" = "홈";
 
 /* Class = "UILabel"; text = "invalid username : aleady exist"; ObjectID = "huZ-a2-SE6"; */
-"huZ-a2-SE6.text" = "잘못된 사용자 이름 : 이미 존재합니다. ";
+"huZ-a2-SE6.text" = "잘못된 사용자 이름 : 이미 존재합니다.";
 
 /* Class = "UITextField"; placeholder = "verification code"; ObjectID = "iTh-JB-vs4"; */
 "iTh-JB-vs4.placeholder" = "이메일";
