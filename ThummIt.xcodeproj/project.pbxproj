@@ -278,8 +278,6 @@
 		6ED13D6325C2FFB000012144 /* RunningMan3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D6225C2FFB000012144 /* RunningMan3Template.m */; };
 		6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D6C25C2FFD900012144 /* SinSeoYuGi2Template.m */; };
 		6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D7125C2FFE400012144 /* SinSeoYuGi3Template.m */; };
-		6ED53FFC25E2BDBF00CF944D /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED53FEF25E2B92100CF944D /* GPUImage.framework */; };
-		6ED53FFD25E2BDBF00CF944D /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED53FEF25E2B92100CF944D /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
@@ -439,20 +437,6 @@
 			remoteGlobalIDString = 6E1190E02584B163000DD9C0;
 			remoteInfo = ThumbnailMaker;
 		};
-		6ED53FEC25E2B92100CF944D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6ED53FE625E2B92100CF944D /* GPUImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
-			remoteInfo = GPUImage;
-		};
-		6ED53FEE25E2B92100CF944D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6ED53FE625E2B92100CF944D /* GPUImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCE209E51943F20C002FEED8;
-			remoteInfo = GPUImageFramework;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -462,7 +446,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6ED53FFD25E2BDBF00CF944D /* GPUImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -968,7 +951,6 @@
 		6ED13D6C25C2FFD900012144 /* SinSeoYuGi2Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi2Template.m; sourceTree = "<group>"; };
 		6ED13D7025C2FFE400012144 /* SinSeoYuGi3Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinSeoYuGi3Template.h; sourceTree = "<group>"; };
 		6ED13D7125C2FFE400012144 /* SinSeoYuGi3Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi3Template.m; sourceTree = "<group>"; };
-		6ED53FE625E2B92100CF944D /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../Desktop/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -1239,7 +1221,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */,
-				6ED53FFC25E2BDBF00CF944D /* GPUImage.framework in Frameworks */,
 				C3AA5AEB200F3BCD30FC7A2B /* Pods_ThummIt.framework in Frameworks */,
 				6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */,
 			);
@@ -1290,7 +1271,6 @@
 		6E1190D82584B163000DD9C0 = {
 			isa = PBXGroup;
 			children = (
-				6ED53FE625E2B92100CF944D /* GPUImage.xcodeproj */,
 				6EABDE6C25DFBD5C006510ED /* launchScreen.png */,
 				6E4A18022588A744008578BA /* ThummIt-PrefixHeader.pch */,
 				6E9BEA4B258F1A9200F7F539 /* ThummIt-Bridging-Header.h */,
@@ -2639,15 +2619,6 @@
 			path = SinSeoYuGiTemplate;
 			sourceTree = "<group>";
 		};
-		6ED53FE725E2B92100CF944D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6ED53FED25E2B92100CF944D /* libGPUImage.a */,
-				6ED53FEF25E2B92100CF944D /* GPUImage.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6EDE19ED258A277F001FC1DA /* HomeCollectionController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3106,12 +3077,6 @@
 			);
 			productRefGroup = 6E1190E22584B163000DD9C0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6ED53FE725E2B92100CF944D /* Products */;
-					ProjectRef = 6ED53FE625E2B92100CF944D /* GPUImage.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6E1190E02584B163000DD9C0 /* ThummIt */,
@@ -3120,23 +3085,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6ED53FED25E2B92100CF944D /* libGPUImage.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libGPUImage.a;
-			remoteRef = 6ED53FEC25E2B92100CF944D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6ED53FEF25E2B92100CF944D /* GPUImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GPUImage.framework;
-			remoteRef = 6ED53FEE25E2B92100CF944D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6E1190DF2584B163000DD9C0 /* Resources */ = {
