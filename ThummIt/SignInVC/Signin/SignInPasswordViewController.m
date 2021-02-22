@@ -109,9 +109,9 @@
     
     [self.view makeToastActivity:CSToastPositionCenter];
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [self.view hideAllToasts];
         if (succeeded) {
             [self.navigationController dismissViewControllerAnimated:true completion:nil];
-            [self.view hideAllToasts];
         }
     }];
     
