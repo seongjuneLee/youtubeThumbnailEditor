@@ -17,11 +17,10 @@
         self.fontName = @"3YangPyeongB";
         self.textColor = [UIColor colorWithRed:255/255.0 green:205/255.0 blue:0/255.0 alpha:1.0];
         self.fontSize = 60;
-        BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
-        attribute.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
-        attribute.shadowOffset = CGPointMake(2, 2);
         
-        self.bgTextAttributes = @[attribute];
+        NSMutableArray *shadowAttributes = [self makeShadowWithColor:[UIColor blackColor] fromOffset:CGPointMake(1, 1) toOffset:CGPointMake(3.8, 3.8)];
+        [self.bgTextAttributes addObjectsFromArray:shadowAttributes];
+ 
     }
     return self;
 }

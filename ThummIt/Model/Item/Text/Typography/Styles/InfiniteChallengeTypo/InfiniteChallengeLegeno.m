@@ -21,19 +21,11 @@
         borderAtt.borderWidth = 6;
         borderAtt.borderColor = UIColor.blackColor;
         
-        BGTextAttribute *shadowAtt1 = [[BGTextAttribute alloc] init];
-        shadowAtt1.shadowColor = UIColor.blackColor;
-        shadowAtt1.shadowOffset = CGPointMake(0.5, 0.5);
+        NSMutableArray *shadowAttributes = [self makeShadowWithColor:[UIColor blackColor] fromOffset:CGPointMake(1, 1) toOffset:CGPointMake(3, 3)];
         
-        BGTextAttribute *shadowAtt2 = [[BGTextAttribute alloc] init];
-        shadowAtt2.shadowColor = UIColor.blackColor;
-        shadowAtt2.shadowOffset = CGPointMake(1, 1);
-        
-        BGTextAttribute *shadowAtt3 = [[BGTextAttribute alloc] init];
-        shadowAtt3.shadowColor = UIColor.blackColor;
-        shadowAtt3.shadowOffset = CGPointMake(1.5, 1.5);
-        
-        self.bgTextAttributes = @[borderAtt, shadowAtt1, shadowAtt2, shadowAtt3];
+        [self.bgTextAttributes addObjectsFromArray:@[borderAtt]];
+        [self.bgTextAttributes addObjectsFromArray:shadowAttributes];
+
     }
     return self;
 }

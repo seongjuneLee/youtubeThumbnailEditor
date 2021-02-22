@@ -234,6 +234,7 @@
         } else {
             BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
             shadowAtt.shadowColor = color;
+            shadowAtt.obliqueValue = self.obliqueValue;
             shadowAtt.shadowOffset = CGPointMake(currentOffset.x, currentOffset.y);
             currentOffset.x += 0.2;
             currentOffset.y += 0.2;

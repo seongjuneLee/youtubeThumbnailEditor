@@ -105,13 +105,13 @@
 "fGF-xn-Zdm.normalTitle" = "가입하기";
 
 /* Class = "UILabel"; text = "Sign in with Apple"; ObjectID = "fUE-Nu-5AB"; */
-"fUE-Nu-5AB.text" = "Sign in with Apple";
+"fUE-Nu-5AB.text" = "애플 계정으로 계속하기";
 
 /* Class = "UILabel"; text = "Home"; ObjectID = "hYp-WL-McN"; */
 "hYp-WL-McN.text" = "홈";
 
 /* Class = "UILabel"; text = "invalid username : aleady exist"; ObjectID = "huZ-a2-SE6"; */
-"huZ-a2-SE6.text" = "잘못된 사용자 이름 : 이미 존재합니다. ";
+"huZ-a2-SE6.text" = "잘못된 사용자 이름 : 이미 존재합니다.";
 
 /* Class = "UITextField"; placeholder = "verification code"; ObjectID = "iTh-JB-vs4"; */
 "iTh-JB-vs4.placeholder" = "이메일";
