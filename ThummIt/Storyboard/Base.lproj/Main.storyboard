@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Grg-i6-8rr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Grg-i6-8rr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -659,27 +659,36 @@ with the design you want.</string>
                                         <rect key="frame" x="20.5" y="490.5" width="373" height="53.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </button>
-                                    <view hidden="YES" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-P0-m35" userLabel="Apple Sign In View">
-                                        <rect key="frame" x="20.5" y="559" width="373" height="54"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-P0-m35" userLabel="Apple Sign In View">
+                                        <rect key="frame" x="20.5" y="411.5" width="373" height="53.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in with Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-Nu-5AB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-Nu-5AB">
                                                 <rect key="frame" x="120.5" y="16.5" width="132" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BM2-wd-ZmS">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BM2-wd-ZmS">
                                                 <rect key="frame" x="15" y="13.5" width="27" height="27"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="BM2-wd-ZmS" secondAttribute="height" multiplier="1:1" id="0Kh-0K-Q1r"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="BM2-wd-ZmS" firstAttribute="leading" secondItem="8wy-P0-m35" secondAttribute="leading" constant="15" id="4LA-Mg-baC"/>
+                                            <constraint firstItem="fUE-Nu-5AB" firstAttribute="centerX" secondItem="8wy-P0-m35" secondAttribute="centerX" id="6to-hh-gRf"/>
+                                            <constraint firstItem="fUE-Nu-5AB" firstAttribute="centerY" secondItem="8wy-P0-m35" secondAttribute="centerY" id="GFw-dB-SbJ"/>
+                                            <constraint firstItem="BM2-wd-ZmS" firstAttribute="height" secondItem="8wy-P0-m35" secondAttribute="height" multiplier="0.5" id="qMy-3m-sU3"/>
+                                            <constraint firstItem="BM2-wd-ZmS" firstAttribute="centerY" secondItem="8wy-P0-m35" secondAttribute="centerY" id="uPQ-ee-MV8"/>
+                                        </constraints>
                                     </view>
-                                    <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKQ-cw-Jqe" userLabel="Apple Sign In Button">
-                                        <rect key="frame" x="20.5" y="559" width="373" height="54"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKQ-cw-Jqe" userLabel="Apple Sign In Button">
+                                        <rect key="frame" x="20.5" y="411" width="373" height="54.5"/>
+                                        <connections>
+                                            <action selector="appleButtonTapped:" destination="IZe-UG-0Zf" eventType="touchUpInside" id="Qas-Be-kQu"/>
+                                        </connections>
                                     </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yri-bN-KhL" userLabel="Email Sign In View">
                                         <rect key="frame" x="20.5" y="612.5" width="373" height="54"/>
@@ -733,7 +742,7 @@ with the design you want.</string>
                                         </constraints>
                                     </view>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4I7-ZI-Fnm">
-                                        <rect key="frame" x="217.5" y="827.5" width="79" height="29"/>
+                                        <rect key="frame" x="167.5" y="808" width="79" height="29"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                         <state key="normal" title="TermsOfUses">
                                             <color key="titleColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -763,16 +772,23 @@ with the design you want.</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="4I7-ZI-Fnm" firstAttribute="centerX" secondItem="9In-nM-ggd" secondAttribute="centerX" id="1IP-tR-ddr"/>
                                     <constraint firstItem="qc9-r3-acU" firstAttribute="centerX" secondItem="bQ4-vK-OnZ" secondAttribute="centerX" id="2OS-Xg-hBY"/>
+                                    <constraint firstItem="8wy-P0-m35" firstAttribute="width" secondItem="qc9-r3-acU" secondAttribute="width" id="2Wp-Kl-NDn"/>
                                     <constraint firstItem="1fl-rI-lBB" firstAttribute="centerX" secondItem="qc9-r3-acU" secondAttribute="centerX" id="5Re-sQ-In8"/>
-                                    <constraint firstItem="4I7-ZI-Fnm" firstAttribute="centerY" secondItem="9In-nM-ggd" secondAttribute="centerY" id="Ell-e9-5Mi"/>
+                                    <constraint firstItem="4I7-ZI-Fnm" firstAttribute="bottom" secondItem="9In-nM-ggd" secondAttribute="top" id="BUP-FZ-PbG"/>
+                                    <constraint firstItem="8wy-P0-m35" firstAttribute="centerX" secondItem="qc9-r3-acU" secondAttribute="centerX" id="CBk-OT-hvV"/>
+                                    <constraint firstItem="vKQ-cw-Jqe" firstAttribute="centerX" secondItem="8wy-P0-m35" secondAttribute="centerX" id="F8b-Uw-B8d"/>
                                     <constraint firstItem="ihg-Ok-LTt" firstAttribute="top" secondItem="qc9-r3-acU" secondAttribute="bottom" constant="15" id="IO4-gT-PgE"/>
                                     <constraint firstItem="xwk-oc-Fct" firstAttribute="centerY" secondItem="bQ4-vK-OnZ" secondAttribute="centerY" multiplier="0.4" id="Jfm-MZ-D7A"/>
                                     <constraint firstItem="g6C-lp-Urq" firstAttribute="centerY" secondItem="ihg-Ok-LTt" secondAttribute="centerY" id="Jk8-Bp-41m"/>
+                                    <constraint firstItem="8wy-P0-m35" firstAttribute="height" secondItem="qc9-r3-acU" secondAttribute="height" id="KgX-Kg-C4Y"/>
                                     <constraint firstItem="yri-bN-KhL" firstAttribute="centerX" secondItem="bQ4-vK-OnZ" secondAttribute="centerX" id="LdD-X5-vUS"/>
                                     <constraint firstItem="yri-bN-KhL" firstAttribute="height" secondItem="qc9-r3-acU" secondAttribute="height" id="RV8-Rj-Zil"/>
+                                    <constraint firstItem="vKQ-cw-Jqe" firstAttribute="height" secondItem="8wy-P0-m35" secondAttribute="height" multiplier="1.00935" id="RtK-k7-U7d"/>
                                     <constraint firstItem="ihg-Ok-LTt" firstAttribute="centerX" secondItem="bQ4-vK-OnZ" secondAttribute="centerX" id="S0n-oJ-qFj"/>
                                     <constraint firstItem="yri-bN-KhL" firstAttribute="top" secondItem="ihg-Ok-LTt" secondAttribute="bottom" constant="10" id="S7P-aA-pdH"/>
+                                    <constraint firstItem="vKQ-cw-Jqe" firstAttribute="centerY" secondItem="8wy-P0-m35" secondAttribute="centerY" id="T24-1k-wUP"/>
                                     <constraint firstItem="hUT-ek-J4J" firstAttribute="centerY" secondItem="yri-bN-KhL" secondAttribute="centerY" id="TBG-qx-fbC"/>
                                     <constraint firstItem="g6C-lp-Urq" firstAttribute="width" secondItem="ihg-Ok-LTt" secondAttribute="width" id="VYn-OC-1RX"/>
                                     <constraint firstItem="CkI-tf-NMY" firstAttribute="centerY" secondItem="9In-nM-ggd" secondAttribute="centerY" id="XXC-5l-sqC"/>
@@ -797,10 +813,11 @@ with the design you want.</string>
                                     <constraint firstItem="ihg-Ok-LTt" firstAttribute="width" secondItem="qc9-r3-acU" secondAttribute="width" id="qR7-do-eUP"/>
                                     <constraint firstItem="yri-bN-KhL" firstAttribute="width" secondItem="qc9-r3-acU" secondAttribute="width" id="t50-Lk-KQb"/>
                                     <constraint firstItem="xMw-b6-6RN" firstAttribute="leading" secondItem="bQ4-vK-OnZ" secondAttribute="leading" constant="15" id="uYm-sK-i2T"/>
+                                    <constraint firstItem="vKQ-cw-Jqe" firstAttribute="width" secondItem="8wy-P0-m35" secondAttribute="width" id="vK0-w3-Fwx"/>
                                     <constraint firstItem="g6C-lp-Urq" firstAttribute="centerX" secondItem="ihg-Ok-LTt" secondAttribute="centerX" id="vlX-J5-3Fo"/>
+                                    <constraint firstItem="8wy-P0-m35" firstAttribute="bottom" secondItem="qc9-r3-acU" secondAttribute="top" constant="-15" id="wYD-ca-Hjp"/>
                                     <constraint firstItem="1fl-rI-lBB" firstAttribute="width" secondItem="qc9-r3-acU" secondAttribute="width" id="yRh-w8-9UU"/>
                                     <constraint firstItem="uBz-LS-iza" firstAttribute="leading" secondItem="c46-ac-37y" secondAttribute="trailing" constant="10" id="ywg-jI-2hW"/>
-                                    <constraint firstItem="4I7-ZI-Fnm" firstAttribute="leading" secondItem="9In-nM-ggd" secondAttribute="trailing" constant="10" id="zOH-hb-zeF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -813,12 +830,14 @@ with the design you want.</string>
                             <constraint firstItem="9In-nM-ggd" firstAttribute="centerX" secondItem="pTC-ky-5rQ" secondAttribute="centerX" id="Q0d-LC-Pn6"/>
                             <constraint firstItem="bQ4-vK-OnZ" firstAttribute="height" secondItem="4p0-rf-cBI" secondAttribute="height" id="a53-mP-tVv"/>
                             <constraint firstItem="xMw-b6-6RN" firstAttribute="top" secondItem="pTC-ky-5rQ" secondAttribute="top" constant="30" id="ngH-A9-bxT"/>
+                            <constraint firstItem="8wy-P0-m35" firstAttribute="centerX" secondItem="pTC-ky-5rQ" secondAttribute="centerX" id="noR-uE-ARb"/>
                             <constraint firstItem="bQ4-vK-OnZ" firstAttribute="width" secondItem="4p0-rf-cBI" secondAttribute="width" id="pct-v2-RzV"/>
                             <constraint firstItem="bQ4-vK-OnZ" firstAttribute="centerY" secondItem="pTC-ky-5rQ" secondAttribute="centerY" id="rQG-sf-hJK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5g6-9Y-Hel"/>
                     <connections>
+                        <outlet property="appleSignInView" destination="8wy-P0-m35" id="beg-Rg-DFH"/>
                         <outlet property="emailSignInView" destination="yri-bN-KhL" id="GA0-yl-X6Z"/>
                         <outlet property="facebookSignInView" destination="ihg-Ok-LTt" id="aGh-zj-Q4J"/>
                         <outlet property="kakaoSignInView" destination="qc9-r3-acU" id="NM5-mx-wGY"/>
