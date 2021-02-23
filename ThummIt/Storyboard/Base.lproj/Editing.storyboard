@@ -96,6 +96,16 @@
                                     <action selector="leftItemTapped:" destination="9gy-MH-RR0" eventType="touchUpInside" id="ubb-e4-3Rb"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3Y-IR-QAI">
+                                <rect key="frame" x="364" y="56" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h3Y-IR-QAI" secondAttribute="height" multiplier="1:1" id="B1g-2d-TmA"/>
+                                </constraints>
+                                <state key="normal" image="magicEffect"/>
+                                <connections>
+                                    <action selector="removeBGButtonTapped:" destination="9gy-MH-RR0" eventType="touchUpInside" id="r1I-zD-dan"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmC-6K-MjI" userLabel="Right Item">
                                 <rect key="frame" x="352" y="59" width="52" height="34"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
@@ -378,6 +388,7 @@
                             <constraint firstItem="OGb-vs-PFa" firstAttribute="centerX" secondItem="c8Y-hQ-BzP" secondAttribute="centerX" id="VZ3-DL-LcJ"/>
                             <constraint firstItem="Yts-NW-w4K" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="X93-o3-Uof"/>
                             <constraint firstItem="dNB-8m-B4w" firstAttribute="bottom" secondItem="c8Y-hQ-BzP" secondAttribute="bottom" id="XUc-dD-1x1"/>
+                            <constraint firstItem="h3Y-IR-QAI" firstAttribute="trailing" secondItem="7pY-QV-G2j" secondAttribute="trailing" constant="-10" id="YPe-jC-T0g"/>
                             <constraint firstItem="ulM-C1-Guu" firstAttribute="top" secondItem="qIS-C8-jIt" secondAttribute="bottom" id="Yzl-qb-8Oz"/>
                             <constraint firstItem="UhL-LO-vTX" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="Zzp-b0-yX7"/>
                             <constraint firstItem="dNB-8m-B4w" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="bBQ-6c-uA4"/>
@@ -391,11 +402,13 @@
                             <constraint firstItem="7pY-QV-G2j" firstAttribute="bottom" secondItem="ulM-C1-Guu" secondAttribute="bottom" id="lBD-KV-0oc"/>
                             <constraint firstItem="qIS-C8-jIt" firstAttribute="bottom" secondItem="c8Y-hQ-BzP" secondAttribute="bottom" constant="1" id="m2R-pA-N18"/>
                             <constraint firstItem="JmC-6K-MjI" firstAttribute="centerY" secondItem="xcS-1G-W8A" secondAttribute="centerY" id="odn-Vf-V7V"/>
+                            <constraint firstItem="h3Y-IR-QAI" firstAttribute="centerY" secondItem="i2a-Qa-wOL" secondAttribute="centerY" id="pub-eN-VY0"/>
                             <constraint firstItem="UhL-LO-vTX" firstAttribute="width" secondItem="Mym-l3-rms" secondAttribute="width" id="qDk-yq-LvY"/>
                             <constraint firstItem="Yts-NW-w4K" firstAttribute="top" secondItem="c8Y-hQ-BzP" secondAttribute="top" constant="-1" id="sGy-iD-IMk"/>
                             <constraint firstItem="i2a-Qa-wOL" firstAttribute="centerY" secondItem="xcS-1G-W8A" secondAttribute="centerY" id="tRU-DX-d5C"/>
                             <constraint firstItem="c8Y-hQ-BzP" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="uGa-BX-F8L"/>
                             <constraint firstItem="7pY-QV-G2j" firstAttribute="trailing" secondItem="JmC-6K-MjI" secondAttribute="trailing" constant="10" id="x87-py-Lgz"/>
+                            <constraint firstItem="h3Y-IR-QAI" firstAttribute="height" secondItem="i2a-Qa-wOL" secondAttribute="height" id="ynm-xp-S9I"/>
                             <constraint firstItem="xcS-1G-W8A" firstAttribute="centerX" secondItem="UhL-LO-vTX" secondAttribute="centerX" id="zUw-2w-iyo"/>
                         </constraints>
                     </view>
@@ -412,6 +425,7 @@
                         <outlet property="photoFrameButton" destination="kFG-gf-ZDf" id="8Av-8f-9oo"/>
                         <outlet property="photoFrameButtonContainerView" destination="MaA-yZ-tJG" id="ZmA-HC-BW4"/>
                         <outlet property="redoButton" destination="hyI-hU-5Mx" id="A3S-Ua-REa"/>
+                        <outlet property="removeBGButton" destination="h3Y-IR-QAI" id="h1L-Lh-ZSs"/>
                         <outlet property="rightItem" destination="JmC-6K-MjI" id="iJv-fw-kR5"/>
                         <outlet property="scrollContentView" destination="tp2-GO-AoY" id="KGM-LR-Vkt"/>
                         <outlet property="stickerButton" destination="S58-zA-LLk" id="x7v-dK-Qe6"/>
@@ -827,6 +841,7 @@
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="closeButton" width="302.33334350585938" height="302.33334350585938"/>
         <image name="deleteImage" width="116.66666412353516" height="116.66666412353516"/>
+        <image name="magicEffect" width="266.66665649414062" height="266.66665649414062"/>
         <image name="photoFrameImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="redoImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="stickerImage" width="216.66667175292969" height="216.66667175292969"/>

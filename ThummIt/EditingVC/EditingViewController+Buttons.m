@@ -14,7 +14,7 @@
 #import "UIColor+Additions.h"
 #import "UIImage+Additions.h"
 #import "ExportManager.h"
-
+#import "ThummIt-Swift.h"
 @implementation EditingViewController (Buttons)
 
 - (IBAction)rightItemTapped:(id)sender {
@@ -166,6 +166,24 @@
 }
 
 
+- (IBAction)removeBGButtonTapped:(UIButton *)sender {
+    
+    UIImage *sourceImage = self.currentPhotoFrame.photoImageView.image;
+
+    struct CGImage *cgImg = sourceImage.segmentation;
+    if (cgImg) {
+        SegmentFilter *filter = [[SegmentFilter alloc] init];
+        filter.inputImage = [[CIImage alloc] initWithCGImage:sourceImage.CGImage];
+        filter.maskImage = [[CIImage alloc] initWithCGImage:cgImg];
+        
+        CIImage *output = [filter valueForKey:kCIOutputImageKey];
+        CIContext *ciContext = [[CIContext alloc] initWithOptions:nil];
+        struct CGImage *cgImage = [ciContext createCGImage:output fromRect:output.extent];
+        self.currentPhotoFrame.photoImageView.image = [[UIImage alloc] initWithCGImage:cgImage];
+
+    }
+    
+}
 
 #pragma mark - 텍스트 버튼
 

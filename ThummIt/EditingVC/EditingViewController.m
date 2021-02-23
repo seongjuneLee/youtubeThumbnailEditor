@@ -227,6 +227,7 @@
         self.redoButton. alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 1.0;
+        self.removeBGButton.hidden = true;
     }];
 
 }
@@ -237,6 +238,7 @@
         self.redoButton. alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 0;
+        self.removeBGButton.hidden = false;
     }];
 
 }

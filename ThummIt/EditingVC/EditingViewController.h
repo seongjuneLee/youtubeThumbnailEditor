@@ -86,6 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *mainFrameImageView;
 @property (weak, nonatomic) IBOutlet UIButton *leftItem;
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
+@property (weak, nonatomic) IBOutlet UIButton *removeBGButton;
 
 @property (strong, nonatomic) UIImageView *hueImageView;
 @property (strong, nonatomic) UIView *thumbCircleView;
