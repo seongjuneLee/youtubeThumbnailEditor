@@ -20,12 +20,14 @@
 #import "TypoHeader.h"
 #import "PhotoFrameHeader.h"
 #import "StickerHeader.h"
+#import "MainFrameHeader.h"
 #import "AppManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
 
 @property (strong, nonatomic) EditingViewController *collectionView;
+
 // 컨트롤러
 @property (strong, nonatomic) EditingModeController *modeController;
 @property (strong, nonatomic) EditingGestureController *gestureController;
@@ -62,6 +64,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL originalColorChangable;
 @property (nonatomic) NSUInteger originalIndexInLayer;
 
+@property (strong, nonatomic) MainFrame *origialMainFrame;
+@property (strong, nonatomic) NSString *originalMainFrameImageName; // mainframe
+
 @property (strong, nonatomic, nullable) UIColor *originalColor; // bgColor
 
 @property (weak, nonatomic) IBOutlet UIView *upperArea;
@@ -75,6 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *photoFrameButton;
 @property (weak, nonatomic) IBOutlet UIButton *textButton;
 @property (weak, nonatomic) IBOutlet UIButton *stickerButton;
+@property (weak, nonatomic) IBOutlet UIButton *mainFrameButton;
 @property (weak, nonatomic) IBOutlet UIButton *bgColorButton;
 @property (weak, nonatomic) IBOutlet UIView *stickerButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *bgColorButtonContainerView;

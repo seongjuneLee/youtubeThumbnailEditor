@@ -17,7 +17,6 @@
         self.templateName = @"sinSeoYuGi2Template";
         self.previewImageName = @"sinseoyugiPreview2";
         self.category = NSLocalizedString(@"Entertain", nil);
-        self.mainFrameImageName = @"sinseoyugi2Frame";
         
     }
     return self;
@@ -30,6 +29,13 @@
     
     return sinSeoYuGi2Template;
     
+}
+
+-(void)setUpMainFrames{
+    
+    SinSeoYuGi2MainFrame *mainFrame = [SinSeoYuGi2MainFrame sinSeoYuGi2MainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

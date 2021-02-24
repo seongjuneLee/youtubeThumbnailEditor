@@ -17,7 +17,6 @@
         self.previewImageName = @"infiniteChallengePreview2";
         self.category = NSLocalizedString(@"Entertainment", nil);
         self.templateName = @"infiniteChallenge2Template";
-        self.mainFrameImageName = @"infiniteChallengeFrame2";
         
     }
     return self;
@@ -29,6 +28,13 @@
     InfiniteChallenge2Template* infiniteChallenge2Template = [[self alloc] init];
     return infiniteChallenge2Template;
     
+}
+
+-(void)setUpMainFrames{
+    
+    InfiniteChallenge2MainFrame *mainFrame = [InfiniteChallenge2MainFrame infiniteChallenge2MainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

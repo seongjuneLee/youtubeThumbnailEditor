@@ -9,6 +9,7 @@
 #import "PhotoFrameCollectionController.h"
 #import "TextCollectionController.h"
 #import "StickerCollectionController.h"
+#import "MainFrameCollectionController.h"
 #import "Item.h"
 #import "PhotoManager.h"
 #import "ItemManager.h"
@@ -18,7 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef enum {
     PhotoFrameType = 0,
     TextType = 1,
-    StickerType = 2
+    StickerType = 2,
+    MainFrameType = 3
 }ItemType;
 
 @interface ItemCollectionViewController : UIViewController 
@@ -40,6 +42,7 @@ typedef enum {
 @property (strong, nonatomic) PhotoFrameCollectionController *photoFrameCollectionController;
 @property (strong, nonatomic) TextCollectionController *textCollectionController;
 @property (strong, nonatomic) StickerCollectionController *stickerCollectionController;
+@property (strong, nonatomic) MainFrameCollectionController *mainFrameCollectionController;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerTopConstraint;
 @property (weak, nonatomic) UIViewController *editingVC;

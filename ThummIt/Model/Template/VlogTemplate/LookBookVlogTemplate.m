@@ -17,7 +17,6 @@
         self.previewImageName = @"lookBookVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"LookBookVlogTemplate";
-        self.mainFrameImageName = @"lookBookVlogFrame";
         
     }
     return self;
@@ -30,6 +29,13 @@
     
     return lookBookVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
+    LookBookVlogMainFrame *mainFrame = [LookBookVlogMainFrame lookBookVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

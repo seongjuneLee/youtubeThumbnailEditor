@@ -38,6 +38,9 @@
             [self photoFrameStyleTapped:self.photoFrameStyleButton];
         } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
             [self cancelEditingSticker];
+        } else {
+            [self cancelEditingMainFrame];
+            // undo redo, donebutton눌렸을시 세이브매니저에도 업데이트해야되고, colorchange없앨거고
         }
     }
     
@@ -81,6 +84,8 @@
             [self photoFrameStyleTapped:self.photoFrameStyleButton];
         } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
             [self doneEditingSticker];
+        } else {
+            [self doneEditingMainFrame];
         }
     }
     editingVC.modeController.editingMode = NormalMode;
@@ -164,6 +169,7 @@
 #pragma mark - 취소 버튼
 
 -(void)cancelAddingPhotoFrame{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     [editingVC showItemsForNormalMode];
@@ -172,12 +178,14 @@
     [editingVC.albumVC dismissSelf];
     [editingVC.currentPhotoFrame.baseView removeFromSuperview];
     editingVC.buttonScrollView.hidden = false;
+    editingVC.modeController.editingMode = NormalMode;
 
 }
 
 -(void)cancelEditingPhotoFrame{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    
     [editingVC.currentPhotoFrame.baseView removeFromSuperview];
     editingVC.originalPhotoFrame.baseView.hidden = false;
     [editingVC showItemsForNormalMode];
@@ -185,10 +193,12 @@
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
     editingVC.buttonScrollView.hidden = false;
+    editingVC.modeController.editingMode = NormalMode;
 
 }
 
 -(void)cancelAddingText{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     [editingVC showItemsForNormalMode];
@@ -199,11 +209,12 @@
     self.checkButton.enabled = true;
     self.checkButton.alpha = 1.0;
     editingVC.buttonScrollView.hidden = false;
-
+    editingVC.modeController.editingMode = NormalMode;
 
 }
 
 -(void)cancelEditingText{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     Text *text = (Text *)editingVC.currentText;
@@ -225,11 +236,12 @@
     self.checkButton.alpha = 1.0;
     }
     editingVC.buttonScrollView.hidden = false;
-
+    editingVC.modeController.editingMode = NormalMode;
     
 }
 
 -(void)cancelAddingSticker{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     [editingVC showItemsForNormalMode];
@@ -237,10 +249,12 @@
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentSticker.baseView removeFromSuperview];
     editingVC.buttonScrollView.hidden = false;
+    editingVC.modeController.editingMode = NormalMode;
 
 }
 
 -(void)cancelEditingSticker{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     Sticker *sticker = (Sticker *)editingVC.currentSticker;
@@ -257,7 +271,19 @@
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     editingVC.buttonScrollView.hidden = false;
+    editingVC.modeController.editingMode = NormalMode;
 
+}
+
+-(void)cancelEditingMainFrame{
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    
+    editingVC.mainFrameImageView.image = [UIImage imageNamed:editingVC.originalMainFrameImageName];
+    [editingVC.itemCollectionVC dismissSelf];
+    editingVC.buttonScrollView.hidden = false;
+    editingVC.modeController.editingMode = NormalMode;
+    
 }
 
 
@@ -265,6 +291,7 @@
 
 
 -(void)doneAddingPhotoFrame{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     [editingVC showItemsForNormalMode];
@@ -278,13 +305,13 @@
     editingVC.currentPhotoFrame.plusPhotoImageView.hidden = true;
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.buttonScrollView.hidden = false;
+    editingVC.modeController.editingMode = NormalMode;
     
 }
 
 -(void)doneEditingPhotoFrame{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    
     PhotoFrame *photoFrame = (PhotoFrame *)editingVC.currentPhotoFrame;
 
     // 원래거 삭제하고 지금 편집하던거 넣기
@@ -308,9 +335,11 @@
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.buttonScrollView.hidden = false;
 
+    editingVC.modeController.editingMode = NormalMode;
 }
 
 -(void)doneAddingText{
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     [editingVC showItemsForNormalMode];
@@ -328,6 +357,8 @@
         [editingVC.currentText.textView resignFirstResponder];
     }
     editingVC.buttonScrollView.hidden = false;
+    
+    editingVC.modeController.editingMode = NormalMode;
 }
 
 -(void)doneEditingText{
@@ -347,7 +378,7 @@
     [SaveManager.sharedInstance saveAndAddToStack];
 
     editingVC.buttonScrollView.hidden = false;
-
+    editingVC.modeController.editingMode = NormalMode;
 }
 
 -(void)doneAddingSticker{
@@ -362,6 +393,7 @@
     }
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.buttonScrollView.hidden = false;
+    editingVC.modeController.editingMode = NormalMode;
    
 }
 
@@ -374,7 +406,20 @@
     [editingVC.itemCollectionVC dismissSelf];
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.buttonScrollView.hidden = false;
+    editingVC.modeController.editingMode = NormalMode;
 
+}
+
+-(void)doneEditingMainFrame{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    [editingVC showItemsForNormalMode];
+    [editingVC.itemCollectionVC dismissSelf];
+
+    [SaveManager.sharedInstance saveAndAddToStack];
+    editingVC.buttonScrollView.hidden = false;
+    editingVC.modeController.editingMode = NormalMode;
+    
 }
 
 @end

@@ -17,7 +17,6 @@
         self.previewImageName = @"circleTemplatePreview";
         self.category = NSLocalizedString(@"Entertain", nil);
         self.backgroundColor = UIColor.blackColor;
-        self.mainFrameImageName = @"";
         
     }
     return self;
@@ -30,6 +29,10 @@
     
     return circleTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
 }
 
 -(void)setUpPhotoFrame{

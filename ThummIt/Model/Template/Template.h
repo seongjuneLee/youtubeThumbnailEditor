@@ -10,6 +10,8 @@
 #import "TypoHeader.h"
 #import "Sticker.h"
 #import "StickerHeader.h"
+#import "MainFrame.h"
+#import "MainFrameHeader.h"
 
 #import <UIKit/UIKit.h>
 
@@ -34,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)setUpPhotoFrame;
 -(void)setUpTexts;
 -(void)setUpStickers;
+-(void)setUpMainFrames;
 
 @end
 

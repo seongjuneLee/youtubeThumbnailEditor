@@ -17,7 +17,6 @@
         self.previewImageName = @"dogVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"DogVlogTemplate";
-        self.mainFrameImageName = @"dogVlogFrame";
         
     }
     return self;
@@ -30,6 +29,13 @@
     
     return dogVlogTemPlate;
     
+}
+
+-(void)setUpMainFrames{
+
+    DogVlogMainFrame *mainFrame = [DogVlogMainFrame dogVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

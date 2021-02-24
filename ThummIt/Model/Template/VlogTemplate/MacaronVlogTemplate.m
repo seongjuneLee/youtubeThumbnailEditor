@@ -17,7 +17,6 @@
         self.previewImageName = @"macaronVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"macaronVlogTemplate";
-        self.mainFrameImageName = @"macaronVlogFrame";
         
     }
     return self;
@@ -29,6 +28,13 @@
     MacaronVlogTemplate* macaronVlogTemplate = [[self alloc] init];
     return macaronVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
+    MacaronVlogMainFrame *mainFrame = [MacaronVlogMainFrame macaronVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

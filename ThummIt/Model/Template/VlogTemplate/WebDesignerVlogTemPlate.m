@@ -17,7 +17,6 @@
         self.previewImageName = @"webDesignerVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"webDesignerVlogTemPlate";
-        self.mainFrameImageName = @"webDesignerVlogFrame";
         
     }
     return self;
@@ -30,6 +29,13 @@
     
     return webDesignerVlogTemPlate;
     
+}
+
+-(void)setUpMainFrames{
+
+    WebDesignerVlogMainFrame *mainFrame = [WebDesignerVlogMainFrame webDesignerVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

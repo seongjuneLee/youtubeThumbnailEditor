@@ -17,7 +17,6 @@
         self.previewImageName = @"cebuVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"cebuVlogTemplate";
-        self.mainFrameImageName = @"";
         self.backgroundColor = UIColor.whiteColor;
         
     }
@@ -31,6 +30,10 @@
     
     return cebuVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
 }
 
 -(void)setUpPhotoFrame{

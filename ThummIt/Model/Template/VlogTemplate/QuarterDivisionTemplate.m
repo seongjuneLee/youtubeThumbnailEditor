@@ -16,7 +16,6 @@
         self.previewImageName = @"quarterDivisionPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"quarterDivisionTemplate";
-        self.mainFrameImageName = @"";
         
     }
     return self;
@@ -28,6 +27,10 @@
     QuarterDivisionTemplate* quarterDivisionTemplate = [[self alloc] init];
     
     return quarterDivisionTemplate;
+    
+}
+
+-(void)setUpMainFrames{
     
 }
 

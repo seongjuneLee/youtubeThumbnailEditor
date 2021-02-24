@@ -76,7 +76,8 @@
 -(void)gestureViewTapped:(UITapGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.modeController.editingMode == BGColorMode) {
+    
+    if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
         return;
     }
     if (editingVC.currentItem) { // 애딩 또는 에디팅 모드일 때 컨텐트 모드 진입
@@ -88,7 +89,7 @@
                 [editingVC.itemCollectionVC textButtonTapped:editingVC.itemCollectionVC.textButton];
             } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
                 [editingVC.itemCollectionVC photoButtonTapped:editingVC.itemCollectionVC.photoButton];
-            }else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
+            } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
                // 해줄 것 없음.
             }
         } else { // 다른 아이템 탭 함.
@@ -116,7 +117,7 @@
 -(void)gestureViewPanned:(UIPanGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.modeController.editingMode == BGColorMode) {
+    if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
         return;
     }
     if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
@@ -406,7 +407,7 @@
     
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.modeController.editingMode == BGColorMode) {
+    if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
         return;
     }
 

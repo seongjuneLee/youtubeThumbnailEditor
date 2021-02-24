@@ -18,7 +18,6 @@
         self.category = NSLocalizedString(@"Entertain", nil);
         self.templateName = @"doubleCircleTemplate";
         self.backgroundColor = UIColor.blackColor;
-        self.mainFrameImageName = @"";
         
     }
     return self;
@@ -30,6 +29,10 @@
     DoubleCircleTemplate* doubleCircleTemplate = [[self alloc] init];
     return doubleCircleTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
 }
 
 -(void)setUpPhotoFrame{

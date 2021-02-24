@@ -32,6 +32,13 @@
     
 }
 
+-(void)setUpMainFrames{
+
+    ItalyTripVlogMainFrame *mainFrame = [ItalyTripVlogMainFrame italyTripVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
+}
+
 -(void)setUpPhotoFrame{
     
     FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];

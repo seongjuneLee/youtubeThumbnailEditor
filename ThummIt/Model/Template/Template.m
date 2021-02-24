@@ -19,6 +19,7 @@
         [self setUpPhotoFrame];
         [self setUpTexts];
         [self setUpStickers];
+        [self setUpMainFrames];
     }
     return self;
 }
@@ -29,6 +30,7 @@
     [items addObjectsFromArray:self.photoFrames];
     [items addObjectsFromArray:self.texts];
     [items addObjectsFromArray:self.stickers];
+    
     return items;
     
 }
@@ -42,6 +44,10 @@
 }
 
 -(void)setUpStickers{
+    
+}
+
+-(void)setUpMainFrames{
     
 }
 

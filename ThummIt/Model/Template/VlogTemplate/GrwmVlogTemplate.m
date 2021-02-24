@@ -17,7 +17,6 @@
         self.previewImageName = @"grwmVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"grwmVlogTemplate";
-        self.mainFrameImageName = @"";
         
     }
     return self;
@@ -30,6 +29,10 @@
 
     return grwmVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
 }
 
 -(void)setUpPhotoFrame{
