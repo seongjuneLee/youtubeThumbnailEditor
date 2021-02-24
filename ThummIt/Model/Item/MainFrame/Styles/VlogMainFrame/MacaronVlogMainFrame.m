@@ -15,7 +15,6 @@
     if(self){
         self.itemName = @"macaronVlogFrame";
         self.backgroundImageName = @"macaronVlogFrame";
-    //    self.cannotChangeColor = true;
     }
     return self;
 }

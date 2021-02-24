@@ -82,18 +82,8 @@
     
     editingVC.mainFrameImageView.image = image;
     mainFrame.baseView.center = editingVC.bgView.center;
+    [editingVC hideAndInitSlider];
     
-    if (!mainFrame.cannotChangeColor) {
-        editingVC.mainFrameImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [mainFrame.backgroundImageView setTintColor:mainFrame.tintColor];
-        [UIView animateWithDuration:0.2 animations:^{
-            editingVC.hueSlider.alpha = 1.0;
-            editingVC.thumbCircleView.alpha = 1.0;
-        }];
-    } else{
-        editingVC.mainFrameImageView.image = image;
-        [editingVC hideAndInitSlider];
-    }
     SaveManager.sharedInstance.currentProject.mainFrameImageName = mainFrame.backgroundImageName;
 
 }
