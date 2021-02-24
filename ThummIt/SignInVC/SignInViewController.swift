@@ -50,13 +50,35 @@ class SignInViewController: UIViewController {
     
     @IBAction func privacyPolicyTButtonapped(_ sender: Any) {
         
-        let main = UIStoryboard.init(name: "Main", bundle: Bundle.main)
-        let privacyVC = main.instantiateViewController(identifier: "PrivacyPolicyViewController")
-        self.navigationController?.pushViewController(privacyVC, animated: true)
+        let reach = Reachability.forInternetConnection()
+        let netStatus = reach?.currentReachabilityStatus()
+        if netStatus==NetworkStatus.NotReachable {
+            self.view.makeToast(NSLocalizedString("Internet is not connected. please check and try again.", comment: ""), duration: 4.0, position: CSToastPositionCenter)
+            return
+        }
+
+        let language = NSLocale.preferredLanguages.first
+        let request : NSURLRequest
+        if language == "en" {
+            request = NSURLRequest.init(url: URL.init(string: "http://thummiteng.o-r.kr/")!)
+        } else {
+            request = NSURLRequest.init(url: URL.init(string: "http://thummitkr.o-r.kr/")!)
+        }
+        let webVC = UIViewController.init()
+        let wkWebView = WKWebView.init(frame: self.view.frame)
+        wkWebView.load(request as URLRequest)
+        webVC.view.addSubview(wkWebView)
+        self.present(webVC, animated: true, completion: nil)
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        
+        let reach = Reachability.forInternetConnection()
+        let netStatus = reach?.currentReachabilityStatus()
+        if netStatus==NetworkStatus.NotReachable {
+            self.view.makeToast(NSLocalizedString("Internet is not connected. please check and try again.", comment: ""), duration: 4.0, position: CSToastPositionCenter)
+            return
+        }
+
         let main = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let logInVC = main.instantiateViewController(identifier: "LogInViewController")
         self.navigationController?.pushViewController(logInVC, animated: true)
@@ -65,8 +87,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func kakaoButtonTapped(_ sender: UIButton) {
         
-        
-        if AuthApi.isKakaoTalkLoginAvailable() {            
+        if AuthApi.isKakaoTalkLoginAvailable() {
             KOSession.shared()?.close()
             
             AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
@@ -91,7 +112,9 @@ class SignInViewController: UIViewController {
                             
                             self.view.makeToastActivity(CSToastPositionCenter)
                             UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
-                                self.view.hideAllToasts()
+                                DispatchQueue.main.async {
+                                    self.view.hideAllToasts()
+                                }
                                 if (success){
                                     self.dismiss(animated: true, completion: nil)
                                 } else {
@@ -108,7 +131,6 @@ class SignInViewController: UIViewController {
 }
     
     @IBAction func facebookButtonTapped(_ sender: UIButton) {
-        
         
         // Swift override func viewDidLoad() { super.viewDidLoad() if let token = AccessToken.current, !token.isExpired { // User is logged in, do work such as go to next view controller. } }
 
@@ -174,6 +196,12 @@ class SignInViewController: UIViewController {
     
     @IBAction func emailButtonTapped(_ sender: UIButton) {
         
+        let reach = Reachability.forInternetConnection()
+        let netStatus = reach?.currentReachabilityStatus()
+        if netStatus==NetworkStatus.NotReachable {
+            self.view.makeToast(NSLocalizedString("Internet is not connected. please check and try again.", comment: ""), duration: 4.0, position: CSToastPositionCenter)
+            return
+        }
         let main = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         let signInEmailVC = main.instantiateViewController(identifier: "SignInEmailViewController")
         self.navigationController?.pushViewController(signInEmailVC, animated: true)
@@ -203,14 +231,11 @@ extension SignInViewController : ASAuthorizationControllerDelegate, ASAuthorizat
                 let fullName = appleIDCredential.fullName
                 let email = appleIDCredential.email
                 let name = (fullName?.givenName ?? "") + (fullName?.familyName ?? "")
-//                let userID = appleIDCredential.
-                    
-                print("User ID : \(userIdentifier)")
-                print("User Email : \(email ?? "")")
-                print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
             
                 UserManager.sharedInstance().signUp(withThirdPartyID: userIdentifier , withType: "apple", username: name, withEmail: email ?? "") { (success) in
-                    self.view.hideAllToasts()
+                    DispatchQueue.main.async {
+                        self.view.hideAllToasts()
+                    }
 
                     if success {
                         self.dismiss(animated: true, completion: nil)
@@ -227,4 +252,5 @@ extension SignInViewController : ASAuthorizationControllerDelegate, ASAuthorizat
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
     }
+    
 }

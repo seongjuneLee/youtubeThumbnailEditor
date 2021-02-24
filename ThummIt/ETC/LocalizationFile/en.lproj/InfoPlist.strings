@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  ThummIt
+
+  Created by 이성준 on 2021/02/24.
+  
+*/
+"NSPhotoLibraryUsageDescription" = "This allows us to access your photo library. You can make thumbnail with your own photo using ‘PhotoFrame’ item.";

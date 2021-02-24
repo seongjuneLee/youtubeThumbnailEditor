@@ -14,6 +14,7 @@
 #import "SignInEmailViewController.h"
 #import "LogInViewController.h"
 #import "AppManager.h"
+#import <Reachability/Reachability.h>
 /**
  * Copyright 2015-2017 Kakao Corp.
  *
