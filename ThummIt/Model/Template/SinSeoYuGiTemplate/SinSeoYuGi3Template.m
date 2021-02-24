@@ -17,7 +17,6 @@
         self.templateName = @"sinSeoYuGi3Template";
         self.previewImageName = @"sinseoyugiPreview3";
         self.category = NSLocalizedString(@"Entertain", nil);
-        self.mainFrameImageName = @"";
         
     }
     return self;
@@ -29,6 +28,10 @@
     SinSeoYuGi3Template* sinSeoYuGi3Template = [[self alloc] init];
     
     return sinSeoYuGi3Template;
+    
+}
+
+-(void)setUpMainFrames{
     
 }
 

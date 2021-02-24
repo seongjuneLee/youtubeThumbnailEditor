@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) UIColor* tintColor;
 
--(void)addSubViewsToBaseView;
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,6 +10,7 @@
 #import "PhotoFrame.h"
 #import "Text.h"
 #import "Sticker.h"
+#import "MainFrame.h"
 #import "Template.h"
 @class CoreDataProject;
 

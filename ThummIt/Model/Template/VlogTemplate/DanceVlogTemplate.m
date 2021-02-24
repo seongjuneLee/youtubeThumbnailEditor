@@ -17,7 +17,6 @@
         self.previewImageName = @"danceVlogPreView";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"DanceVlogTemplate";
-        self.mainFrameImageName = @"danceVlogFrame";
 
     }
     return self;
@@ -30,6 +29,13 @@
     
     return danceVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
+    DanceVlogMainFrame *mainFrame = [DanceVlogMainFrame danceVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

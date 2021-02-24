@@ -27,7 +27,7 @@
 
 -(Project *)generateNewProjectWithTemplate:(Template *)selectedTemplate{
     
-    Project* project = [CoreDataStack newProject];
+    Project *project = [CoreDataStack newProject];
     if (selectedTemplate) {
         project.photoFrames = selectedTemplate.photoFrames;
         project.texts = selectedTemplate.texts;
@@ -40,7 +40,7 @@
         project.stickers = [NSMutableArray array];
         project.backgroundColor = UIColor.blackColor;
     }
-    
+    project.selectedTemplateName = selectedTemplate.templateName;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
     NSString *stringDate = [dateFormatter stringFromDate:[NSDate date]];

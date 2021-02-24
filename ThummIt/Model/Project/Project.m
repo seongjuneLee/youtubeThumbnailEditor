@@ -36,23 +36,23 @@
 }
 
 -(void)save{
-    NSError* error;
+    NSError *error;
 
-    NSData* projectData = [NSKeyedArchiver archivedDataWithRootObject:self];
-    NSString* oldFilePath;
+    NSData *projectData = [NSKeyedArchiver archivedDataWithRootObject:self];
+    NSString *oldFilePath;
     
     if ([MigratorJul.shared isMigrated]) {
 
         self.coreDataStorage.projectData = projectData;
 
     } else {
-        NSString* filePath = [ProjectFileManager.sharedInstance writeWithData:projectData error:&error];
+        NSString *filePath = [ProjectFileManager.sharedInstance writeWithData:projectData error:&error];
         oldFilePath = self.projectFilePath;
 
         // update file path
         self.projectFilePath = filePath;
     }
-    NSError* coreDataSaveError;
+    NSError *coreDataSaveError;
     [CoreDataStack saveContextAndReturnError:&coreDataSaveError];
 
     [self.coreDataStorage updatePropertiesFrom:self];
@@ -69,6 +69,7 @@
 }
 
 -(NSMutableArray *)items{
+    
     NSMutableArray *items = [NSMutableArray arrayWithArray:self.photoFrames];
     [items addObjectsFromArray:self.texts];
     [items addObjectsFromArray:self.stickers];

@@ -17,7 +17,6 @@
         self.previewImageName = @"visitingCompanyPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"visitingCompanyVlogTemplate";
-        self.mainFrameImageName = @"visitingCompanyVlogFrame";
         
     }
     return self;
@@ -30,6 +29,13 @@
     
     return visitingCompanyVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+    
+    VisitingCompanyVlogMainFrame *mainFrame = [VisitingCompanyVlogMainFrame visitingCompanyVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

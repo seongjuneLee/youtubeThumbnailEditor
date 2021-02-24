@@ -31,6 +31,10 @@
     
 }
 
+-(void)setUpMainFrames{
+
+}
+
 -(void)setUpPhotoFrame{
     
     FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];

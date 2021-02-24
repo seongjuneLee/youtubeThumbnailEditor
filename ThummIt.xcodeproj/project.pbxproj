@@ -237,6 +237,36 @@
 		6EC7645E25DAD8FC009FF873 /* InfiniteTemplateRectangle1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7645D25DAD8FC009FF873 /* InfiniteTemplateRectangle1.m */; };
 		6EC7646825DAD938009FF873 /* InfiniteTemplateRectangle2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7646725DAD938009FF873 /* InfiniteTemplateRectangle2.m */; };
 		6EC7647025DADB74009FF873 /* StudyTemplateRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7646F25DADB74009FF873 /* StudyTemplateRectangle.m */; };
+		6ED0AF6D25E4FAFE0027485F /* MainFrameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF6B25E4FAFE0027485F /* MainFrameCollectionViewCell.m */; };
+		6ED0AF6E25E4FAFE0027485F /* MainFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0AF6C25E4FAFE0027485F /* MainFrameCollectionViewCell.xib */; };
+		6ED0AF7525E4FB780027485F /* MainFrameCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF7325E4FB780027485F /* MainFrameCollectionReusableView.m */; };
+		6ED0AF7625E4FB780027485F /* MainFrameCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0AF7425E4FB780027485F /* MainFrameCollectionReusableView.xib */; };
+		6ED0AF8925E5143F0027485F /* SinSeoYuGi1MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF8825E5143F0027485F /* SinSeoYuGi1MainFrame.m */; };
+		6ED0AF8E25E514580027485F /* InfiniteChallenge1MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF8D25E514580027485F /* InfiniteChallenge1MainFrame.m */; };
+		6ED0AF9325E514870027485F /* RunningMan1MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF9225E514870027485F /* RunningMan1MainFrame.m */; };
+		6ED0AF9825E514990027485F /* WorkMan1MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF9725E514990027485F /* WorkMan1MainFrame.m */; };
+		6ED0AF9D25E514DD0027485F /* SinSeoYuGi2MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF9C25E514DD0027485F /* SinSeoYuGi2MainFrame.m */; };
+		6ED0AFA225E515050027485F /* InfiniteChallenge2MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFA125E515050027485F /* InfiniteChallenge2MainFrame.m */; };
+		6ED0AFA725E515170027485F /* RunningMan2MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFA625E515170027485F /* RunningMan2MainFrame.m */; };
+		6ED0AFAC25E515230027485F /* RunningMan3MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFAB25E515230027485F /* RunningMan3MainFrame.m */; };
+		6ED0AFB125E515360027485F /* WorkMan2MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFB025E515360027485F /* WorkMan2MainFrame.m */; };
+		6ED0AFB625E515410027485F /* WorkMan3MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFB525E515410027485F /* WorkMan3MainFrame.m */; };
+		6ED0AFBB25E519B90027485F /* BabyVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFBA25E519B90027485F /* BabyVlogMainFrame.m */; };
+		6ED0AFC025E519CD0027485F /* CookingVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFBF25E519CD0027485F /* CookingVlogMainFrame.m */; };
+		6ED0AFC525E519DB0027485F /* CraftVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFC425E519DB0027485F /* CraftVlogMainFrame.m */; };
+		6ED0AFCA25E519F10027485F /* DanceVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFC925E519F10027485F /* DanceVlogMainFrame.m */; };
+		6ED0AFCF25E51A260027485F /* DogVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFCE25E51A260027485F /* DogVlogMainFrame.m */; };
+		6ED0AFD425E51C3F0027485F /* FreshManVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFD325E51C3F0027485F /* FreshManVlogMainFrame.m */; };
+		6ED0AFD925E51C540027485F /* ItalyTripVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFD825E51C540027485F /* ItalyTripVlogMainFrame.m */; };
+		6ED0AFDE25E51C660027485F /* KidsVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFDD25E51C660027485F /* KidsVlogMainFrame.m */; };
+		6ED0AFE325E51C800027485F /* LookBookVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFE225E51C800027485F /* LookBookVlogMainFrame.m */; };
+		6ED0AFE825E51C920027485F /* MacaronVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFE725E51C920027485F /* MacaronVlogMainFrame.m */; };
+		6ED0AFED25E51CA40027485F /* SixToFourVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFEC25E51CA40027485F /* SixToFourVlogMainFrame.m */; };
+		6ED0AFF225E51CB50027485F /* StudentVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFF125E51CB50027485F /* StudentVlogMainFrame.m */; };
+		6ED0AFF725E51CC30027485F /* SummerVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFF625E51CC30027485F /* SummerVlogMainFrame.m */; };
+		6ED0AFFC25E51CD10027485F /* TeenVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFFB25E51CD10027485F /* TeenVlogMainFrame.m */; };
+		6ED0B00125E51CE20027485F /* VisitingCompanyVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0B00025E51CE20027485F /* VisitingCompanyVlogMainFrame.m */; };
+		6ED0B00625E51CF50027485F /* WebDesignerVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0B00525E51CF50027485F /* WebDesignerVlogMainFrame.m */; };
 		6EC764B625E51E8A009FF873 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC764B525E51E89009FF873 /* WebKit.framework */; };
 		6ED138FA25B8507A00012144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED138F925B8507A00012144 /* AppDelegate.swift */; };
 		6ED1398C25B872F600012144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1398B25B872F600012144 /* SceneDelegate.swift */; };
@@ -351,6 +381,8 @@
 		6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */; };
 		6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95925CD513000BE7573 /* DinggoMurder.m */; };
 		6EF0C95F25CD528C00BE7573 /* DigitalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */; };
+		6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */; };
+		6EF37B7725E4DE8400A43595 /* MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B7625E4DE8400A43595 /* MainFrame.m */; };
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
 		B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */; };
 		B11E0D5425C4F6070050D9F0 /* ClothesVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5325C4F6070050D9F0 /* ClothesVlogTemplate.m */; };
@@ -882,6 +914,64 @@
 		6EC7646725DAD938009FF873 /* InfiniteTemplateRectangle2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteTemplateRectangle2.m; sourceTree = "<group>"; };
 		6EC7646E25DADB74009FF873 /* StudyTemplateRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyTemplateRectangle.h; sourceTree = "<group>"; };
 		6EC7646F25DADB74009FF873 /* StudyTemplateRectangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyTemplateRectangle.m; sourceTree = "<group>"; };
+		6ED0AF6A25E4FAFE0027485F /* MainFrameCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrameCollectionViewCell.h; sourceTree = "<group>"; };
+		6ED0AF6B25E4FAFE0027485F /* MainFrameCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainFrameCollectionViewCell.m; sourceTree = "<group>"; };
+		6ED0AF6C25E4FAFE0027485F /* MainFrameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainFrameCollectionViewCell.xib; sourceTree = "<group>"; };
+		6ED0AF7225E4FB780027485F /* MainFrameCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrameCollectionReusableView.h; sourceTree = "<group>"; };
+		6ED0AF7325E4FB780027485F /* MainFrameCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainFrameCollectionReusableView.m; sourceTree = "<group>"; };
+		6ED0AF7425E4FB780027485F /* MainFrameCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainFrameCollectionReusableView.xib; sourceTree = "<group>"; };
+		6ED0AF8725E5143F0027485F /* SinSeoYuGi1MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinSeoYuGi1MainFrame.h; sourceTree = "<group>"; };
+		6ED0AF8825E5143F0027485F /* SinSeoYuGi1MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi1MainFrame.m; sourceTree = "<group>"; };
+		6ED0AF8C25E514580027485F /* InfiniteChallenge1MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteChallenge1MainFrame.h; sourceTree = "<group>"; };
+		6ED0AF8D25E514580027485F /* InfiniteChallenge1MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteChallenge1MainFrame.m; sourceTree = "<group>"; };
+		6ED0AF9125E514870027485F /* RunningMan1MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunningMan1MainFrame.h; sourceTree = "<group>"; };
+		6ED0AF9225E514870027485F /* RunningMan1MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunningMan1MainFrame.m; sourceTree = "<group>"; };
+		6ED0AF9625E514990027485F /* WorkMan1MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkMan1MainFrame.h; sourceTree = "<group>"; };
+		6ED0AF9725E514990027485F /* WorkMan1MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkMan1MainFrame.m; sourceTree = "<group>"; };
+		6ED0AF9B25E514DD0027485F /* SinSeoYuGi2MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinSeoYuGi2MainFrame.h; sourceTree = "<group>"; };
+		6ED0AF9C25E514DD0027485F /* SinSeoYuGi2MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi2MainFrame.m; sourceTree = "<group>"; };
+		6ED0AFA025E515050027485F /* InfiniteChallenge2MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteChallenge2MainFrame.h; sourceTree = "<group>"; };
+		6ED0AFA125E515050027485F /* InfiniteChallenge2MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteChallenge2MainFrame.m; sourceTree = "<group>"; };
+		6ED0AFA525E515170027485F /* RunningMan2MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunningMan2MainFrame.h; sourceTree = "<group>"; };
+		6ED0AFA625E515170027485F /* RunningMan2MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunningMan2MainFrame.m; sourceTree = "<group>"; };
+		6ED0AFAA25E515230027485F /* RunningMan3MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunningMan3MainFrame.h; sourceTree = "<group>"; };
+		6ED0AFAB25E515230027485F /* RunningMan3MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunningMan3MainFrame.m; sourceTree = "<group>"; };
+		6ED0AFAF25E515360027485F /* WorkMan2MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkMan2MainFrame.h; sourceTree = "<group>"; };
+		6ED0AFB025E515360027485F /* WorkMan2MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkMan2MainFrame.m; sourceTree = "<group>"; };
+		6ED0AFB425E515410027485F /* WorkMan3MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkMan3MainFrame.h; sourceTree = "<group>"; };
+		6ED0AFB525E515410027485F /* WorkMan3MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkMan3MainFrame.m; sourceTree = "<group>"; };
+		6ED0AFB925E519B90027485F /* BabyVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BabyVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFBA25E519B90027485F /* BabyVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabyVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFBE25E519CD0027485F /* CookingVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookingVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFBF25E519CD0027485F /* CookingVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookingVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFC325E519DB0027485F /* CraftVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CraftVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFC425E519DB0027485F /* CraftVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CraftVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFC825E519F10027485F /* DanceVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DanceVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFC925E519F10027485F /* DanceVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DanceVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFCD25E51A260027485F /* DogVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFCE25E51A260027485F /* DogVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFD225E51C3F0027485F /* FreshManVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreshManVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFD325E51C3F0027485F /* FreshManVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreshManVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFD725E51C540027485F /* ItalyTripVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItalyTripVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFD825E51C540027485F /* ItalyTripVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItalyTripVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFDC25E51C660027485F /* KidsVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KidsVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFDD25E51C660027485F /* KidsVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidsVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFE125E51C800027485F /* LookBookVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LookBookVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFE225E51C800027485F /* LookBookVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LookBookVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFE625E51C920027485F /* MacaronVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacaronVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFE725E51C920027485F /* MacaronVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacaronVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFEB25E51CA40027485F /* SixToFourVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SixToFourVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFEC25E51CA40027485F /* SixToFourVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixToFourVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFF025E51CB50027485F /* StudentVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFF125E51CB50027485F /* StudentVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFF525E51CC30027485F /* SummerVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummerVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFF625E51CC30027485F /* SummerVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummerVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFFA25E51CD10027485F /* TeenVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeenVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0AFFB25E51CD10027485F /* TeenVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeenVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0AFFF25E51CE20027485F /* VisitingCompanyVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitingCompanyVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0B00025E51CE20027485F /* VisitingCompanyVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitingCompanyVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0B00425E51CF50027485F /* WebDesignerVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebDesignerVlogMainFrame.h; sourceTree = "<group>"; };
+		6ED0B00525E51CF50027485F /* WebDesignerVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDesignerVlogMainFrame.m; sourceTree = "<group>"; };
 		6EC764B525E51E89009FF873 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6ED138F925B8507A00012144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED1398B25B872F600012144 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1095,6 +1185,11 @@
 		6EF0C95D25CD528C00BE7573 /* DigitalTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalTypo.h; sourceTree = "<group>"; };
 		6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalTypo.m; sourceTree = "<group>"; };
 		6EF37B5125E399F000A43595 /* ThummIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThummIt.entitlements; sourceTree = "<group>"; };
+		6EF37B6625E4DC6400A43595 /* MainFrameCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrameCollectionController.h; sourceTree = "<group>"; };
+		6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainFrameCollectionController.m; sourceTree = "<group>"; };
+		6EF37B7525E4DE8400A43595 /* MainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrame.h; sourceTree = "<group>"; };
+		6EF37B7625E4DE8400A43595 /* MainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainFrame.m; sourceTree = "<group>"; };
+		6EF37B7C25E4DEA300A43595 /* MainFrameHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrameHeader.h; sourceTree = "<group>"; };
 		B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogBarunGothicTypo.h; sourceTree = "<group>"; };
 		B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogBarunGothicTypo.m; sourceTree = "<group>"; };
 		B11E0D4D25C4EDBD0050D9F0 /* GrwmVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrwmVlogTemplate.h; sourceTree = "<group>"; };
@@ -1746,6 +1841,7 @@
 				6E8E7A32259B27120008C5FF /* PhotoFrameCollectionController */,
 				6E8E7AC425A8335E0008C5FF /* TextCollectionController */,
 				B16FC61125ADCA9000E854C1 /* StickerCollectionController */,
+				6EF37B6B25E4DC6B00A43595 /* MainFrameController */,
 			);
 			path = ItemCollectionVC;
 			sourceTree = "<group>";
@@ -2056,6 +2152,7 @@
 				6E8E7B0225A84EA30008C5FF /* Text */,
 				6E8F9A6F25C344F5005C8071 /* PhotoFrame */,
 				B16FC62A25ADD8E800E854C1 /* Sticker */,
+				6EF37B7425E4DE3B00A43595 /* MainFrame */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -2522,6 +2619,115 @@
 			path = StudyTemplate;
 			sourceTree = "<group>";
 		};
+		6ED0AF7125E4FB2C0027485F /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0AF7225E4FB780027485F /* MainFrameCollectionReusableView.h */,
+				6ED0AF7325E4FB780027485F /* MainFrameCollectionReusableView.m */,
+				6ED0AF7425E4FB780027485F /* MainFrameCollectionReusableView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		6ED0AF7B25E50A320027485F /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0AF8025E513430027485F /* VlogMainFrame */,
+				6ED0AF8325E5134E0027485F /* WorkManMainFrame */,
+				6ED0AF8125E5134A0027485F /* RunningManMainFrame */,
+				6ED0AF7F25E513300027485F /* InfiniteChallengeMainFrame */,
+				6ED0AF8225E5134C0027485F /* SinSeoYugiMainFrame */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		6ED0AF7F25E513300027485F /* InfiniteChallengeMainFrame */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0AF8C25E514580027485F /* InfiniteChallenge1MainFrame.h */,
+				6ED0AF8D25E514580027485F /* InfiniteChallenge1MainFrame.m */,
+				6ED0AFA025E515050027485F /* InfiniteChallenge2MainFrame.h */,
+				6ED0AFA125E515050027485F /* InfiniteChallenge2MainFrame.m */,
+			);
+			path = InfiniteChallengeMainFrame;
+			sourceTree = "<group>";
+		};
+		6ED0AF8025E513430027485F /* VlogMainFrame */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0AFB925E519B90027485F /* BabyVlogMainFrame.h */,
+				6ED0AFBA25E519B90027485F /* BabyVlogMainFrame.m */,
+				6ED0AFBE25E519CD0027485F /* CookingVlogMainFrame.h */,
+				6ED0AFBF25E519CD0027485F /* CookingVlogMainFrame.m */,
+				6ED0AFC325E519DB0027485F /* CraftVlogMainFrame.h */,
+				6ED0AFC425E519DB0027485F /* CraftVlogMainFrame.m */,
+				6ED0AFC825E519F10027485F /* DanceVlogMainFrame.h */,
+				6ED0AFC925E519F10027485F /* DanceVlogMainFrame.m */,
+				6ED0AFCD25E51A260027485F /* DogVlogMainFrame.h */,
+				6ED0AFCE25E51A260027485F /* DogVlogMainFrame.m */,
+				6ED0AFD225E51C3F0027485F /* FreshManVlogMainFrame.h */,
+				6ED0AFD325E51C3F0027485F /* FreshManVlogMainFrame.m */,
+				6ED0AFD725E51C540027485F /* ItalyTripVlogMainFrame.h */,
+				6ED0AFD825E51C540027485F /* ItalyTripVlogMainFrame.m */,
+				6ED0AFDC25E51C660027485F /* KidsVlogMainFrame.h */,
+				6ED0AFDD25E51C660027485F /* KidsVlogMainFrame.m */,
+				6ED0AFE125E51C800027485F /* LookBookVlogMainFrame.h */,
+				6ED0AFE225E51C800027485F /* LookBookVlogMainFrame.m */,
+				6ED0AFE625E51C920027485F /* MacaronVlogMainFrame.h */,
+				6ED0AFE725E51C920027485F /* MacaronVlogMainFrame.m */,
+				6ED0AFEB25E51CA40027485F /* SixToFourVlogMainFrame.h */,
+				6ED0AFEC25E51CA40027485F /* SixToFourVlogMainFrame.m */,
+				6ED0AFF025E51CB50027485F /* StudentVlogMainFrame.h */,
+				6ED0AFF125E51CB50027485F /* StudentVlogMainFrame.m */,
+				6ED0AFF525E51CC30027485F /* SummerVlogMainFrame.h */,
+				6ED0AFF625E51CC30027485F /* SummerVlogMainFrame.m */,
+				6ED0AFFA25E51CD10027485F /* TeenVlogMainFrame.h */,
+				6ED0AFFB25E51CD10027485F /* TeenVlogMainFrame.m */,
+				6ED0AFFF25E51CE20027485F /* VisitingCompanyVlogMainFrame.h */,
+				6ED0B00025E51CE20027485F /* VisitingCompanyVlogMainFrame.m */,
+				6ED0B00425E51CF50027485F /* WebDesignerVlogMainFrame.h */,
+				6ED0B00525E51CF50027485F /* WebDesignerVlogMainFrame.m */,
+			);
+			path = VlogMainFrame;
+			sourceTree = "<group>";
+		};
+		6ED0AF8125E5134A0027485F /* RunningManMainFrame */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0AF9125E514870027485F /* RunningMan1MainFrame.h */,
+				6ED0AF9225E514870027485F /* RunningMan1MainFrame.m */,
+				6ED0AFA525E515170027485F /* RunningMan2MainFrame.h */,
+				6ED0AFA625E515170027485F /* RunningMan2MainFrame.m */,
+				6ED0AFAA25E515230027485F /* RunningMan3MainFrame.h */,
+				6ED0AFAB25E515230027485F /* RunningMan3MainFrame.m */,
+			);
+			path = RunningManMainFrame;
+			sourceTree = "<group>";
+		};
+		6ED0AF8225E5134C0027485F /* SinSeoYugiMainFrame */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0AF8725E5143F0027485F /* SinSeoYuGi1MainFrame.h */,
+				6ED0AF8825E5143F0027485F /* SinSeoYuGi1MainFrame.m */,
+				6ED0AF9B25E514DD0027485F /* SinSeoYuGi2MainFrame.h */,
+				6ED0AF9C25E514DD0027485F /* SinSeoYuGi2MainFrame.m */,
+			);
+			path = SinSeoYugiMainFrame;
+			sourceTree = "<group>";
+		};
+		6ED0AF8325E5134E0027485F /* WorkManMainFrame */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0AF9625E514990027485F /* WorkMan1MainFrame.h */,
+				6ED0AF9725E514990027485F /* WorkMan1MainFrame.m */,
+				6ED0AFAF25E515360027485F /* WorkMan2MainFrame.h */,
+				6ED0AFB025E515360027485F /* WorkMan2MainFrame.m */,
+				6ED0AFB425E515410027485F /* WorkMan3MainFrame.h */,
+				6ED0AFB525E515410027485F /* WorkMan3MainFrame.m */,
+			);
+			path = WorkManMainFrame;
+			sourceTree = "<group>";
+		};
 		6ED13B8225C0898900012144 /* RunningManTypo */ = {
 			isa = PBXGroup;
 			children = (
@@ -2681,6 +2887,38 @@
 			path = DinggoDubleCricleTypo;
 			sourceTree = "<group>";
 		};
+		6EF37B6B25E4DC6B00A43595 /* MainFrameController */ = {
+			isa = PBXGroup;
+			children = (
+				6EF37B6625E4DC6400A43595 /* MainFrameCollectionController.h */,
+				6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */,
+				6EF37B6C25E4DCBD00A43595 /* CollectionCell */,
+				6ED0AF7125E4FB2C0027485F /* Header */,
+			);
+			path = MainFrameController;
+			sourceTree = "<group>";
+		};
+		6EF37B6C25E4DCBD00A43595 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0AF6A25E4FAFE0027485F /* MainFrameCollectionViewCell.h */,
+				6ED0AF6B25E4FAFE0027485F /* MainFrameCollectionViewCell.m */,
+				6ED0AF6C25E4FAFE0027485F /* MainFrameCollectionViewCell.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		6EF37B7425E4DE3B00A43595 /* MainFrame */ = {
+			isa = PBXGroup;
+			children = (
+				6EF37B7C25E4DEA300A43595 /* MainFrameHeader.h */,
+				6EF37B7525E4DE8400A43595 /* MainFrame.h */,
+				6EF37B7625E4DE8400A43595 /* MainFrame.m */,
+				6ED0AF7B25E50A320027485F /* Styles */,
+			);
+			path = MainFrame;
+			sourceTree = "<group>";
+		};
 		B16FC61125ADCA9000E854C1 /* StickerCollectionController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2719,7 +2957,7 @@
 				B1D2AC6825CB07E000F4630B /* ETC */,
 				B1836FBB25C3370D00A81446 /* WorkManSticker */,
 				6ED13D2C25C2C6E500012144 /* RunningManSticker */,
-				B1F2B7C725C305620064A044 /* Vlog */,
+				B1F2B7C725C305620064A044 /* VlogSticker */,
 				B1F2B76E25C2C6050064A044 /* InfiniteChallengeSticker */,
 				6E8F99D725C11630005C8071 /* SinSeoYuGiSticker */,
 			);
@@ -2947,7 +3185,7 @@
 			path = InfiniteChallengeSticker;
 			sourceTree = "<group>";
 		};
-		B1F2B7C725C305620064A044 /* Vlog */ = {
+		B1F2B7C725C305620064A044 /* VlogSticker */ = {
 			isa = PBXGroup;
 			children = (
 				6E80771B25C85FDB0033FF21 /* VlogTapeSticker.h */,
@@ -2957,7 +3195,7 @@
 				B11E0D7225C576760050D9F0 /* VlogMacaronSticker.h */,
 				B11E0D7325C576760050D9F0 /* VlogMacaronSticker.m */,
 			);
-			path = Vlog;
+			path = VlogSticker;
 			sourceTree = "<group>";
 		};
 		D7497D01466F91BCF058B268 /* Pods */ = {
@@ -3096,6 +3334,7 @@
 				6E88303625CDB0A80025B8A5 /* BinggraeSamanco-Bold.otf in Resources */,
 				6E88303225CDA7FA0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf in Resources */,
 				6EF0C91925CD21CE00BE7573 /* NEXON Lv2 Gothic OTF.otf in Resources */,
+				6ED0AF6E25E4FAFE0027485F /* MainFrameCollectionViewCell.xib in Resources */,
 				6EF0C91625CD21C600BE7573 /* BinggraeⅡ-Bold.otf in Resources */,
 				6EBEB60A25C32A140017C640 /* neodgm_pro.otf in Resources */,
 				6EBEB60625C328D10017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf in Resources */,
@@ -3109,6 +3348,7 @@
 				6EBEB5A025C20B170017C640 /* BMJUA_otf.otf in Resources */,
 				6EBEB54925C1BB7C0017C640 /* SangSangAnt.otf in Resources */,
 				6EBEB52125C156600017C640 /* NanumSquareOTFExtraBold.otf in Resources */,
+				6ED0AF7625E4FB780027485F /* MainFrameCollectionReusableView.xib in Resources */,
 				6EBEB51D25C155490017C640 /* NanumGothicBold.otf in Resources */,
 				6EBEB51525C1502F0017C640 /* AnyConv.com__NanumGothic.otf in Resources */,
 				B1F2B76B25C2C5340064A044 /* BMJUA_otf.otf in Resources */,
@@ -3343,8 +3583,10 @@
 				6E28452825C35870008B7A23 /* VlogLogoTagTypo.m in Sources */,
 				6EF0C8B325CBDB6B00BE7573 /* StainSticker2.m in Sources */,
 				6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */,
+				6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */,
 				6EF0C7C925CBAA4C00BE7573 /* ArrowSticker6.m in Sources */,
 				6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */,
+				6ED0AFE825E51C920027485F /* MacaronVlogMainFrame.m in Sources */,
 				6E1DBDFE25D8063F004C0416 /* ThreeFifthsRectangle.m in Sources */,
 				6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */,
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
@@ -3359,13 +3601,16 @@
 				6ED13B0425BDA75D00012144 /* UIImageView+Additions.m in Sources */,
 				6EBEB50B25C146300017C640 /* WorkManTalkWrite.m in Sources */,
 				6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */,
+				6ED0AFF725E51CC30027485F /* SummerVlogMainFrame.m in Sources */,
 				6E1DBE0325D806B4004C0416 /* TwoFifthRectangle.m in Sources */,
 				6EF0C7F625CBAE1C00BE7573 /* CloudSticker1.m in Sources */,
 				B11E0D5B25C55FC60050D9F0 /* CookingVlogTemplate.m in Sources */,
 				6EF0C92525CD232900BE7573 /* DinggoSmileTypo.m in Sources */,
 				B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */,
 				6EBEB52625C191340017C640 /* WorkManRedTitle.m in Sources */,
+				6ED0AFC525E519DB0027485F /* CraftVlogMainFrame.m in Sources */,
 				B1F8C6C825C4C71C002DDAF8 /* ItalyTripVlogTemplate.m in Sources */,
+				6ED0AFE325E51C800027485F /* LookBookVlogMainFrame.m in Sources */,
 				B1D2AC8325CB0DAD00F4630B /* SinSeoYuGiQu2Sticker.m in Sources */,
 				B11E0D5425C4F6070050D9F0 /* ClothesVlogTemplate.m in Sources */,
 				6EF0C8C225CBDB9600BE7573 /* StarSticker3.m in Sources */,
@@ -3380,6 +3625,7 @@
 				6ED13D3425C2C76D00012144 /* RunningManQuSticker.m in Sources */,
 				6EF0C89525CBD36300BE7573 /* SnowmanSticker.m in Sources */,
 				6E28451F25C35870008B7A23 /* VlogCompany.m in Sources */,
+				6ED0AFF225E51CB50027485F /* StudentVlogMainFrame.m in Sources */,
 				6E8F98E625BC4B08005C8071 /* GuideLineManager.m in Sources */,
 				6ED13C1C25C10DE400012144 /* RunningMan1Template.m in Sources */,
 				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
@@ -3413,8 +3659,10 @@
 				6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */,
 				6EF0C8E925CBE0B700BE7573 /* TriangleSticker1.m in Sources */,
 				6E9BE9CE258B3A5700F7F539 /* EditingViewController+GestureControllerDelegate.m in Sources */,
+				6ED0AF9825E514990027485F /* WorkMan1MainFrame.m in Sources */,
 				6E1DBE3725D81C31004C0416 /* GRWMRectangle1.m in Sources */,
 				6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */,
+				6ED0AFAC25E515230027485F /* RunningMan3MainFrame.m in Sources */,
 				6E8F9A9525C34581005C8071 /* QuarterRectangle.m in Sources */,
 				6EC4DFC225A87BEC0023485C /* AdvancedTextView.m in Sources */,
 				B1836FC925C3370E00A81446 /* AngrySticker1.m in Sources */,
@@ -3435,12 +3683,14 @@
 				6ED13BB425C08FC700012144 /* WorkingManNameTypo.m in Sources */,
 				B1F8C6E225C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m in Sources */,
 				6EF0C88B25CBD33A00BE7573 /* SnowflakeSticker1.m in Sources */,
+				6ED0AFA725E515170027485F /* RunningMan2MainFrame.m in Sources */,
 				6E2845B125C5FCC4008B7A23 /* UserManager.m in Sources */,
 				6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */,
 				6E80771D25C85FDB0033FF21 /* VlogTapeSticker.m in Sources */,
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,
 				6EAD5C9025B767C700C42187 /* AccountViewController.m in Sources */,
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
+				6ED0AFD425E51C3F0027485F /* FreshManVlogMainFrame.m in Sources */,
 				B11E0D6F25C5751C0050D9F0 /* VlogMacaronTypo.m in Sources */,
 				6E28451B25C35870008B7A23 /* VlogItaly.m in Sources */,
 				6E1DBCF825CBE240004C0416 /* SignInEmailViewController.m in Sources */,
@@ -3465,6 +3715,7 @@
 				6E9BEA22258DECDB00F7F539 /* EditingLayerController.m in Sources */,
 				6EF0C7EC25CBACE200BE7573 /* ButtonStopSticker.m in Sources */,
 				6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */,
+				6ED0AFCA25E519F10027485F /* DanceVlogMainFrame.m in Sources */,
 				6EF0C81B25CBC31500BE7573 /* GameSticker.m in Sources */,
 				6ED13BAF25C08FA700012144 /* YellowGradientTypo.m in Sources */,
 				6E1DBEDD25D9A4C8004C0416 /* AppManager.m in Sources */,
@@ -3479,6 +3730,7 @@
 				6E8E7A2E259B270E0008C5FF /* PhotoFrameCollectionController.m in Sources */,
 				B1F2B7CF25C305C50064A044 /* BlinkSticker1.m in Sources */,
 				6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */,
+				6ED0AFED25E51CA40027485F /* SixToFourVlogMainFrame.m in Sources */,
 				6EC7646825DAD938009FF873 /* InfiniteTemplateRectangle2.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */,
@@ -3486,6 +3738,7 @@
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				6E8F9A6A25C344EB005C8071 /* PhotoFrame.m in Sources */,
 				6E8F99BE25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m in Sources */,
+				6ED0AFBB25E519B90027485F /* BabyVlogMainFrame.m in Sources */,
 				B16FC68725AF76A600E854C1 /* ArrowSticker1.m in Sources */,
 				6ED13D5E25C2FFA100012144 /* RunningMan2Template.m in Sources */,
 				B1F2B70125C1ABC10064A044 /* InfiniteChallengeBlueTypo.m in Sources */,
@@ -3513,13 +3766,16 @@
 				6E1DBE9925D82DF2004C0416 /* KidsTrapezoid2.m in Sources */,
 				6E8F9A9425C34581005C8071 /* FullRectangle.m in Sources */,
 				6EF0C95F25CD528C00BE7573 /* DigitalTypo.m in Sources */,
+				6ED0AF7525E4FB780027485F /* MainFrameCollectionReusableView.m in Sources */,
 				B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */,
 				6E8F9A9725C34582005C8071 /* ChristmasCircle.m in Sources */,
+				6ED0AFB625E515410027485F /* WorkMan3MainFrame.m in Sources */,
 				6EBEB59625C1EA990017C640 /* WorkManTemplate3.m in Sources */,
 				6E8F998725C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m in Sources */,
 				6E1DBE6825D8259C004C0416 /* ClothesTemplateRect1.m in Sources */,
 				6EF0C82525CBC33C00BE7573 /* GoodSticker1.m in Sources */,
 				6E07E74725DABED100A57801 /* ExportManager.m in Sources */,
+				6ED0AFC025E519CD0027485F /* CookingVlogMainFrame.m in Sources */,
 				6EF0C82025CBC32600BE7573 /* GlitterSticker.m in Sources */,
 				B1F2B75325C1CFFD0064A044 /* InfiniteChallengeYellowSpeechBoxYellow.m in Sources */,
 				6E8E79CB25921C830008C5FF /* ProjectViewController.m in Sources */,
@@ -3530,6 +3786,7 @@
 				6EF0C86D25CBD2BF00BE7573 /* NoteSticker2.m in Sources */,
 				6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */,
 				6E9BEA1C258DDECC00F7F539 /* UIButton+Additions.m in Sources */,
+				6ED0AFFC25E51CD10027485F /* TeenVlogMainFrame.m in Sources */,
 				6E9BE9DB258CFCFE00F7F539 /* PhotoManager.m in Sources */,
 				6EF0C7E725CBACD200BE7573 /* ButtonPlaySticker.m in Sources */,
 				6E8F997725C0D006005C8071 /* SeoYuGiGagwanTypo.m in Sources */,
@@ -3540,11 +3797,13 @@
 				6EF0C7FB25CBAE2E00BE7573 /* CloudSticker2.m in Sources */,
 				6EF0C8A425CBDB3E00BE7573 /* SpeechBubbleSticker3.m in Sources */,
 				6E1DBE6D25D825DB004C0416 /* ClothesTemplateRect2.m in Sources */,
+				6ED0AF8E25E514580027485F /* InfiniteChallenge1MainFrame.m in Sources */,
 				B16FC68D25AF7F3900E854C1 /* XSticker1.m in Sources */,
 				6E28451E25C35870008B7A23 /* VlogBMDohyunTypo.m in Sources */,
 				B1F2B72325C1B5D50064A044 /* InfiniteChallengeYellowSpeechBoxWhite.m in Sources */,
 				6EF0C83425CBC36500BE7573 /* HeartSticker7.m in Sources */,
 				B1F2B77125C2C6370064A044 /* InfiniteChallengeSkullSticker.m in Sources */,
+				6ED0AFA225E515050027485F /* InfiniteChallenge2MainFrame.m in Sources */,
 				6E1DBE0E25D809AE004C0416 /* HorizontalHalfRectangle.m in Sources */,
 				6E80770F25C82B060033FF21 /* DanceVlogTemplate.m in Sources */,
 				6EF0C93D25CD2B7800BE7573 /* DinggoPotatoTypo.m in Sources */,
@@ -3560,6 +3819,7 @@
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E1DBE2325D81ADB004C0416 /* DailyVlogTemplateRectangle2.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
+				6ED0AF8925E5143F0027485F /* SinSeoYuGi1MainFrame.m in Sources */,
 				B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */,
 				6EF0C87725CBD2E600BE7573 /* NuclearSticker.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
@@ -3575,6 +3835,7 @@
 				6EF0C80A25CBB0BE00BE7573 /* EffectSticker2.m in Sources */,
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,
 				6EF0C7D825CBAC9B00BE7573 /* BulbSticker.m in Sources */,
+				6ED0AFD925E51C540027485F /* ItalyTripVlogMainFrame.m in Sources */,
 				6E80772A25C960D00033FF21 /* WorkManYoutube.m in Sources */,
 				6EF0C7E225CBACBF00BE7573 /* ButtonPauseSticker.m in Sources */,
 				6E1DBE7925D82A71004C0416 /* CebuRectangle.m in Sources */,
@@ -3593,6 +3854,7 @@
 				6EAD5C9F25B767E200C42187 /* CustomerFeedbackViewController.m in Sources */,
 				6EF0C85925CBD25400BE7573 /* MedalBronzeSticker.m in Sources */,
 				6E1DBE7E25D82B28004C0416 /* MacaronRectangle1.m in Sources */,
+				6ED0B00625E51CF50027485F /* WebDesignerVlogMainFrame.m in Sources */,
 				B11E0D6A25C56D560050D9F0 /* MacaronVlogTemplate.m in Sources */,
 				6E28452525C35870008B7A23 /* VlogSummerTypo.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
@@ -3602,6 +3864,7 @@
 				6ED13BA525C08F1F00012144 /* DDamTypo.m in Sources */,
 				B11E0D7425C576760050D9F0 /* VlogMacaronSticker.m in Sources */,
 				6E28451D25C35870008B7A23 /* VlogDog.m in Sources */,
+				6ED0AF9D25E514DD0027485F /* SinSeoYuGi2MainFrame.m in Sources */,
 				6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */,
 				B1F2B72C25C1BF2B0064A044 /* InfiniteChallengeTopOfYellow.m in Sources */,
 				6EF0C7CE25CBAA5900BE7573 /* ArrowSticker7.m in Sources */,
@@ -3631,6 +3894,7 @@
 				6E28451525C35870008B7A23 /* VlogGRWMTypo.m in Sources */,
 				6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */,
 				6EF0C80025CBAE3F00BE7573 /* DollarSticker.m in Sources */,
+				6ED0B00125E51CE20027485F /* VisitingCompanyVlogMainFrame.m in Sources */,
 				6E28451625C35870008B7A23 /* VlogDailyTypo.m in Sources */,
 				6ED13CA825C1AE8D00012144 /* TikiTypo.m in Sources */,
 				6EF0C7DD25CBACAF00BE7573 /* BurstSticker1.m in Sources */,
@@ -3644,6 +3908,7 @@
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
 				6E9BE9D5258CFBC200F7F539 /* PartialTransparentView.m in Sources */,
 				6ED13BAA25C08F9000012144 /* RedShoutingTypo.m in Sources */,
+				6EF37B7725E4DE8400A43595 /* MainFrame.m in Sources */,
 				B1D2AC8A25CB0DFB00F4630B /* SinSeoYuGiQu1Sticker.m in Sources */,
 				6E8E79EC25921E440008C5FF /* ProjectTableViewCell.m in Sources */,
 				6EF0C7C425CBAA3E00BE7573 /* ArrowSticker5.m in Sources */,
@@ -3666,15 +3931,20 @@
 				6E8F9A9825C34582005C8071 /* VerticalHalfRectangle.m in Sources */,
 				6E4A1885258A1201008578BA /* CategoryManager.m in Sources */,
 				6EA7A32725CB1435001041A1 /* SignInViewController.swift in Sources */,
+				6ED0AFDE25E51C660027485F /* KidsVlogMainFrame.m in Sources */,
+				6ED0AF6D25E4FAFE0027485F /* MainFrameCollectionViewCell.m in Sources */,
 				6E8E7AC025A833590008C5FF /* TextCollectionController.m in Sources */,
 				6EBEB56C25C1DFB00017C640 /* WorkManLeftTag.m in Sources */,
 				6E1DBE2F25D81BCC004C0416 /* DailyVlogTemplateRectangle4.m in Sources */,
 				6EF0C8D125CBDC2700BE7573 /* TargetSticker.m in Sources */,
+				6ED0AFCF25E51A260027485F /* DogVlogMainFrame.m in Sources */,
 				6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */,
+				6ED0AF9325E514870027485F /* RunningMan1MainFrame.m in Sources */,
 				6E1DBE2A25D81B6B004C0416 /* DailyVlogTemplateRectangle3.m in Sources */,
 				6EF0C80525CBB0B500BE7573 /* EffectSticker1.m in Sources */,
 				6E698BB825B89DBC00CE86FB /* GuideLineView.m in Sources */,
 				6E9BEA58258F1BA800F7F539 /* ProjectManager.m in Sources */,
+				6ED0AFB125E515360027485F /* WorkMan2MainFrame.m in Sources */,
 				6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

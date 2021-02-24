@@ -15,9 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(NSArray *)photoFrameCategories;
 -(NSArray *)stickerCategories;
+-(NSArray *)mainFrameCategories;
 
 -(NSArray *)photoFrameDatas;
 -(NSArray *)stickerDatas;
+-(NSArray *)mainFrameDatas;
 
 -(NSArray *)typoDatas;
 -(NSArray *)photoFrameDatasForFreeFormProject;

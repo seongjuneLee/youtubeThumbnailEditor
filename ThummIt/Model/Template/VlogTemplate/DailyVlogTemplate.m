@@ -17,7 +17,6 @@
         self.previewImageName = @"dailyVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"dailyVlogTemplate";
-        self.mainFrameImageName = @"";
         
     }
     return self;
@@ -30,6 +29,10 @@
     
     return dailyVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
 }
 
 -(void)setUpPhotoFrame{

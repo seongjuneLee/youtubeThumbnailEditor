@@ -18,7 +18,6 @@
         self.category = NSLocalizedString(@"Entertain", nil);
         self.templateName = @"christmasCircleTemplate";
         self.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:229.0/255.0 blue:205.0/255.0 alpha:1.0];
-        self.mainFrameImageName = @"";
         
     }
     return self;
@@ -31,6 +30,10 @@
     
     return christmasCircleTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
 }
 
 -(void)setUpPhotoFrame{

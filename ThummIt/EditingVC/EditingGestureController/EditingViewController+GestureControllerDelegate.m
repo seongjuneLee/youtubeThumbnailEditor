@@ -63,7 +63,7 @@
         [self hideItemsForItemMode];
         
         Sticker *sticker = (Sticker *)item;
-        self.currentItem = sticker; // currentsicker가 null이라 Currentitem으로 받음일단
+        self.currentItem = sticker;
         self.currentSticker = sticker;
         self.originalCenter = sticker.baseView.center;
         self.originalTransform = sticker.baseView.transform;
@@ -85,6 +85,8 @@
         
         [self addItemCollectionVC];
 
+    } else if([item isKindOfClass:MainFrame.class]){
+        
     }
     
 }

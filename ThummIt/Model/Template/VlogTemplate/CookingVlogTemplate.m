@@ -17,7 +17,6 @@
         self.previewImageName = @"cookingVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"cookingVlogTemplate";
-        self.mainFrameImageName = @"cookingVlogFrame";
         
     }
     return self;
@@ -30,6 +29,13 @@
     
     return cookingVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+    
+    CookingVlogMainFrame *mainFrame = [CookingVlogMainFrame cookingVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

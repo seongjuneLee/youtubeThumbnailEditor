@@ -17,7 +17,6 @@
         self.previewImageName = @"summerVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"SummerVlogTemplate";
-        self.mainFrameImageName = @"summerVlogFrame";
         
     }
     return self;
@@ -30,6 +29,13 @@
     
     return summerVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
+    SummerVlogMainFrame *mainFrame = [SummerVlogMainFrame summerVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

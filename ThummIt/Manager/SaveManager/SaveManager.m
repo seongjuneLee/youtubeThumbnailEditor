@@ -83,6 +83,7 @@
     [dateFormatter setDateFormat:@"YYYY-MM-dd-hh-mm-ss"];
     NSString *stringDate = [dateFormatter stringFromDate:[NSDate date]];
     project.lastEditedDate = stringDate;
+
     self.currentProject = project;
     [self.currentProject save];
     
@@ -97,7 +98,7 @@
     view.frameY = 0;
     view.backgroundColor = self.currentProject.backgroundColor;
     
-    // fameImageView
+    // frameImageView
     UIImageView *mainFrameImageView = [[UIImageView alloc] initWithFrame:self.bgViewRect];
     mainFrameImageView.contentMode = UIViewContentModeScaleAspectFit;
     if (self.currentProject.mainFrameImageName) {

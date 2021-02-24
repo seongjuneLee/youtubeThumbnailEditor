@@ -17,7 +17,6 @@
         self.templateName = @"runningMan1Template";
         self.previewImageName = @"runningManPreview1";
         self.category = NSLocalizedString(@"Entertain", nil);
-        self.mainFrameImageName = @"runningMan1Frame";
     }
     return self;
     
@@ -28,6 +27,13 @@
     RunningMan1Template* runningMan1Template = [[self alloc] init];
     return runningMan1Template;
     
+}
+
+-(void)setUpMainFrames{
+    
+    RunningMan1MainFrame *mainFrame = [RunningMan1MainFrame runningMan1MainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

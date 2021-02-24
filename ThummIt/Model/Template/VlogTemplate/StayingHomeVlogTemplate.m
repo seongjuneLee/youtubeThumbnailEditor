@@ -17,7 +17,6 @@
         self.previewImageName = @"stayingHomePreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"StayingHomeTemplate";
-        self.mainFrameImageName = @"";
         
     }
     return self;
@@ -29,6 +28,10 @@
     StayingHomeVlogTemplate* stayingHomeVlogTemplate = [[self alloc] init];
     return stayingHomeVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
 }
 
 -(void)setUpPhotoFrame{

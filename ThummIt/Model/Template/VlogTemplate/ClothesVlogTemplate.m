@@ -32,6 +32,13 @@
     
 }
 
+-(void)setUpMainFrames{
+    
+    SixToFourVlogMainFrame *mainFrame = [SixToFourVlogMainFrame sixToFourVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
+}
+
 -(void)setUpPhotoFrame{
     
     PhotoFrame *photoFrame1 = [ClothesTemplateRect1 clothesTemplateRect1];

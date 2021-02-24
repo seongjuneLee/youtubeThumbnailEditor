@@ -64,6 +64,7 @@
     
     self.collectionView.hidden = false;
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    
     if (self.itemType == PhotoFrameType) {
         self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
         self.photoFrameCollectionController.editingVC = self.editingVC;
@@ -75,16 +76,25 @@
             self.photoFrameScrollContanerView.hidden = false;
             self.textScrollContainerView.hidden = true;
         }
+        
     } else if (self.itemType == TextType){
         self.textCollectionController = [[TextCollectionController alloc] initWithCollectionView:self.collectionView];
         self.textCollectionController.editingVC = self.editingVC;
         self.photoFrameScrollContanerView.hidden = true;
         self.textScrollContainerView.hidden = false;
-    }else if (self.itemType == StickerType){
+        
+    } else if (self.itemType == StickerType){
         self.stickerCollectionController = [[StickerCollectionController alloc] initWithCollectionView:self.collectionView];
         self.stickerCollectionController.editingVC = self.editingVC;
         self.photoFrameScrollContanerView.hidden = true;
         self.textScrollContainerView.hidden = true;
+        
+    } else if (self.itemType == MainFrameType){
+        self.mainFrameCollectionController = [[MainFrameCollectionController alloc] initWithCollectionView:self.collectionView];
+        self.mainFrameCollectionController.editingVC = self.editingVC;
+        self.photoFrameScrollContanerView.hidden = true;
+        self.textScrollContainerView.hidden = true;
+
     }
     
     

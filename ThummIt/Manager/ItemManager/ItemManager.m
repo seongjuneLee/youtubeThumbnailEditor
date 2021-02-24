@@ -9,6 +9,7 @@
 #import "SaveManager.h"
 #import "PhotoFrameHeader.h"
 #import "StickerHeader.h"
+#import "MainFrameHeader.h"
 
 @implementation ItemManager
 
@@ -40,7 +41,7 @@
     ChristmasCircle *christmasCircle = [ChristmasCircle christmasCircle];
     CebuRectangle *cebuRect = [CebuRectangle cebuRectangle];
     PolaroidRectangle *polaroidRect = [PolaroidRectangle polaroidRectangle];
-    NSArray *photoFrames = @[basicCircle, christmasCircle,  cebuRect, polaroidRect];
+    NSArray *photoFrames = @[basicCircle, christmasCircle, cebuRect, polaroidRect];
     return @[photoFrames];
 }
 
@@ -66,7 +67,7 @@
     HorizontalHalfRectangle *horizontalHalfRect = [HorizontalHalfRectangle horizontalHalfRectangle];
     OneThirdRectangle *oneThirdRect = [OneThirdRectangle oneThirdRectangle];
     QuarterRectangle *quarterRect = [QuarterRectangle quarterRectangle];
-    NSArray *basicPhotoFrames = @[basicCircle, christmasCircle,  cebuRect, polaroidRect,];
+    NSArray *basicPhotoFrames = @[basicCircle, christmasCircle, cebuRect, polaroidRect,];
     NSArray *screenPhotoFramse = @[fullRect,verticalHalfRect,horizontalHalfRect,oneThirdRect,quarterRect];
     return @[basicPhotoFrames,screenPhotoFramse];
 }
@@ -185,7 +186,7 @@
     VlogMomTypo *vlogMomTypo = [VlogMomTypo vlogMomTypo];
     VlogHolidayTypo *vlogHolidayTypo = [VlogHolidayTypo vlogHolidayTypo];
 
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, seoYuGiGagwanTypo, vlogWebWrite,vlogDesiner,vlogCompany,vlogNewCampus, seoYuGiCloudLogoTypo, seoYuGiInFrontOfGirlTypo, seoYuGiCowRiseTypo,vlogDog,vlogModel,vlogSummer, vlogOriginal, vlogTrip, vlogInItaly, vlogItaly, vlogLongDance, vlogShortDance, vlogStudy, vlog365,vlogFreshmanTypo,vlogStudentTypo, seoYuGiHungryTypo, seoYuGiDawnWatchingTypo,runningManLogoTypo ,workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle, workManRightTag,workManYoutube, workmanYelloewTitle,workManLogo2, workManLeftTag, workManSecondTitle, workManFast, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhiteTypo, infiniteChallengeBlackTypo, infiniteChallengeBlueTypo, infiniteChallengeOrangeTypo, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogLookbookTypo, vlogBrushTypo, vlogSummerTypo, vlogDailyTypo, vlogLogoTagTypo, vlogCookingTypo, vlogHashTagTypo, vlogBMDohyunTypo, vlogMyeongjoTypo, vlogGRWMTypo, vlogNanumSquareTypo, ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo, tikiTypo, knockOutTypo, matterTypo, successTypo, whyrealTypo, ruleTypo, vlogMakingFilmTypo,vlogVisitingCompanyTypo,     vlogBarunGothicTypo, vlogMacaronTypo, vlogMomTypo, vlogHolidayTypo,dinggoSmileTypo,dinggoBigEdit,dinggoBingoTypo,dinggoPotatoTypo,dinggoGoodTalk,dinggoStarWarsTypo,dinggoBehindTypo,dinggoWinkTypo,dinggoMurder,digitalTypo];
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, seoYuGiGagwanTypo, vlogWebWrite, vlogDesiner, vlogCompany, vlogNewCampus, seoYuGiCloudLogoTypo, seoYuGiInFrontOfGirlTypo, seoYuGiCowRiseTypo, vlogDog, vlogModel, vlogSummer, vlogOriginal, vlogTrip, vlogInItaly, vlogItaly, vlogLongDance, vlogShortDance, vlogStudy, vlog365, vlogFreshmanTypo, vlogStudentTypo, seoYuGiHungryTypo, seoYuGiDawnWatchingTypo, runningManLogoTypo, workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle, workManRightTag, workManYoutube, workmanYelloewTitle, workManLogo2, workManLeftTag, workManSecondTitle, workManFast, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhiteTypo, infiniteChallengeBlackTypo, infiniteChallengeBlueTypo, infiniteChallengeOrangeTypo, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogLookbookTypo, vlogBrushTypo, vlogSummerTypo, vlogDailyTypo, vlogLogoTagTypo, vlogCookingTypo, vlogHashTagTypo, vlogBMDohyunTypo, vlogMyeongjoTypo, vlogGRWMTypo, vlogNanumSquareTypo, ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo, tikiTypo, knockOutTypo, matterTypo, successTypo, whyrealTypo, ruleTypo, vlogMakingFilmTypo,vlogVisitingCompanyTypo, vlogBarunGothicTypo, vlogMacaronTypo, vlogMomTypo, vlogHolidayTypo, dinggoSmileTypo, dinggoBigEdit, dinggoBingoTypo, dinggoPotatoTypo, dinggoGoodTalk, dinggoStarWarsTypo, dinggoBehindTypo, dinggoWinkTypo, dinggoMurder, digitalTypo];
     
     return @[typos];
 }
@@ -204,12 +205,12 @@
 
 -(NSArray *)stickerDatas{
 
-    RunningManExcSticker* runningManExcSticker =[RunningManExcSticker runningManExcSticker];
-    RunningManQuSticker* runningManQuSticker =[RunningManQuSticker runningManQuSticker];
-    SinSeoYuGiExc1Sticker* sinSeoYuGiExc1Sticker =[SinSeoYuGiExc1Sticker sinSeoYuGiExc1Sticker];
-    SinSeoYuGiExc2Sticker* sinSeoYuGiExc2Sticker =[SinSeoYuGiExc2Sticker sinSeoYuGiExc2Sticker];
-    SinSeoYuGiQu1Sticker* sinSeoYuGiQu1Sticker =[SinSeoYuGiQu1Sticker sinSeoYuGiQu1Sticker];
-    SinSeoYuGiQu2Sticker* sinSeoYuGiQu2Sticker =[SinSeoYuGiQu2Sticker sinSeoYuGiQu2Sticker];
+    RunningManExcSticker *runningManExcSticker =[RunningManExcSticker runningManExcSticker];
+    RunningManQuSticker *runningManQuSticker =[RunningManQuSticker runningManQuSticker];
+    SinSeoYuGiExc1Sticker *sinSeoYuGiExc1Sticker =[SinSeoYuGiExc1Sticker sinSeoYuGiExc1Sticker];
+    SinSeoYuGiExc2Sticker *sinSeoYuGiExc2Sticker =[SinSeoYuGiExc2Sticker sinSeoYuGiExc2Sticker];
+    SinSeoYuGiQu1Sticker *sinSeoYuGiQu1Sticker =[SinSeoYuGiQu1Sticker sinSeoYuGiQu1Sticker];
+    SinSeoYuGiQu2Sticker *sinSeoYuGiQu2Sticker =[SinSeoYuGiQu2Sticker sinSeoYuGiQu2Sticker];
 
 
     WorkManStartleSticker *workManStartleSticker  = [WorkManStartleSticker workManStartleSticker];
@@ -248,38 +249,38 @@
     CircleSticker2 *circleSticker2 = [CircleSticker2 circleSticker2];
     CloudSticker1 *cloudSticker1 = [CloudSticker1 cloudSticker1];
     CloudSticker2 *cloudSticker2 = [CloudSticker2 cloudSticker2];
-    DollarSticker*dollarSticker = [DollarSticker dollarSticker];
-    EffectSticker1*effectSticker1 = [EffectSticker1 effectSticker1];
-    EffectSticker2*effectSticker2 = [EffectSticker2 effectSticker2];
-    EffectSticker3*effectSticker3 = [EffectSticker3 effectSticker3];
-    GameSticker*gameSticker = [GameSticker gameSticker];
-    GlitterSticker*glitterSticker = [GlitterSticker glitterSticker];
-    GoodSticker1*goodSticker1 = [GoodSticker1 goodSticker1];
-    HeartSticker5*heartSticker5 = [HeartSticker5 heartSticker5];
-    HeartSticker6*heartSticker6 = [HeartSticker6 heartSticker6];
-    HeartSticker7*heartSticker7 = [HeartSticker7 heartSticker7];
-    HeartSticker8*heartSticker8 = [HeartSticker8 heartSticker8];
-    HeartSticker9*heartSticker9 = [HeartSticker9 heartSticker9];
-    HeartSticker10*heartSticker10 = [HeartSticker10 heartSticker10];
-    KoreanFlagSticker*koreanFlagSticker = [KoreanFlagSticker koreanFlagSticker];
-    LockSticker*lockSticker = [LockSticker lockSticker];
-    MedalBronzeSticker*medalBronzeSticker = [MedalBronzeSticker medalBronzeSticker];
-    MedalSilverSticker*medalSilverSticker = [MedalSilverSticker medalSilverSticker];
-    MedalGoldSticker*medalGoldSticker = [MedalGoldSticker medalGoldSticker];
-    NoteSticker1*noteSticker1 = [NoteSticker1 noteSticker1];
-    NoteSticker2*noteSticker2 = [NoteSticker2 noteSticker2];
-    NoteSticker3*noteSticker3 = [NoteSticker3 noteSticker3];
-    NuclearSticker*nuclearSticker = [NuclearSticker nuclearSticker];
-    RspRockSticker*rspRockSticker = [RspRockSticker rspRockSticker];
-    RspScissorsSticker*rspScissorsSticker = [RspScissorsSticker rspScissorsSticker];
-    RspPaperSticker*rspPaperSticker = [RspPaperSticker rspPaperSticker];
-    SnowflakeSticker1*snowflakeSticker1 = [SnowflakeSticker1 snowflakeSticker1];
-    SnowflakeSticker2*snowflakeSticker2 = [SnowflakeSticker2 snowflakeSticker2];
-    SnowmanSticker*snowmanSticker = [SnowmanSticker snowmanSticker];
-    SpeechBubbleSticker1*speechBubbleSticker1 = [SpeechBubbleSticker1 speechBubbleSticker1];
-    SpeechBubbleSticker2*speechBubbleSticker2 = [SpeechBubbleSticker2 speechBubbleSticker2];
-    SpeechBubbleSticker3*speechBubbleSticker3 = [SpeechBubbleSticker3 speechBubbleSticker3];
-    SpeechBubbleSticker4*speechBubbleSticker4 = [SpeechBubbleSticker4 speechBubbleSticker4];
+    DollarSticker *dollarSticker = [DollarSticker dollarSticker];
+    EffectSticker1 *effectSticker1 = [EffectSticker1 effectSticker1];
+    EffectSticker2 *effectSticker2 = [EffectSticker2 effectSticker2];
+    EffectSticker3 *effectSticker3 = [EffectSticker3 effectSticker3];
+    GameSticker *gameSticker = [GameSticker gameSticker];
+    GlitterSticker *glitterSticker = [GlitterSticker glitterSticker];
+    GoodSticker1 *goodSticker1 = [GoodSticker1 goodSticker1];
+    HeartSticker5 *heartSticker5 = [HeartSticker5 heartSticker5];
+    HeartSticker6 *heartSticker6 = [HeartSticker6 heartSticker6];
+    HeartSticker7 *heartSticker7 = [HeartSticker7 heartSticker7];
+    HeartSticker8 *heartSticker8 = [HeartSticker8 heartSticker8];
+    HeartSticker9 *heartSticker9 = [HeartSticker9 heartSticker9];
+    HeartSticker10 *heartSticker10 = [HeartSticker10 heartSticker10];
+    KoreanFlagSticker *koreanFlagSticker = [KoreanFlagSticker koreanFlagSticker];
+    LockSticker *lockSticker = [LockSticker lockSticker];
+    MedalBronzeSticker *medalBronzeSticker = [MedalBronzeSticker medalBronzeSticker];
+    MedalSilverSticker *medalSilverSticker = [MedalSilverSticker medalSilverSticker];
+    MedalGoldSticker *medalGoldSticker = [MedalGoldSticker medalGoldSticker];
+    NoteSticker1 *noteSticker1 = [NoteSticker1 noteSticker1];
+    NoteSticker2 *noteSticker2 = [NoteSticker2 noteSticker2];
+    NoteSticker3 *noteSticker3 = [NoteSticker3 noteSticker3];
+    NuclearSticker *nuclearSticker = [NuclearSticker nuclearSticker];
+    RspRockSticker *rspRockSticker = [RspRockSticker rspRockSticker];
+    RspScissorsSticker *rspScissorsSticker = [RspScissorsSticker rspScissorsSticker];
+    RspPaperSticker *rspPaperSticker = [RspPaperSticker rspPaperSticker];
+    SnowflakeSticker1 *snowflakeSticker1 = [SnowflakeSticker1 snowflakeSticker1];
+    SnowflakeSticker2 *snowflakeSticker2 = [SnowflakeSticker2 snowflakeSticker2];
+    SnowmanSticker *snowmanSticker = [SnowmanSticker snowmanSticker];
+    SpeechBubbleSticker1 *speechBubbleSticker1 = [SpeechBubbleSticker1 speechBubbleSticker1];
+    SpeechBubbleSticker2 *speechBubbleSticker2 = [SpeechBubbleSticker2 speechBubbleSticker2];
+    SpeechBubbleSticker3 *speechBubbleSticker3 = [SpeechBubbleSticker3 speechBubbleSticker3];
+    SpeechBubbleSticker4 *speechBubbleSticker4 = [SpeechBubbleSticker4 speechBubbleSticker4];
     StainSticker1 *stainSticker1 =[StainSticker1 stainSticker1];
     StainSticker2 *stainSticker2 =[StainSticker2 stainSticker2];
     StarSticker1 *starSticker1 =[StarSticker1 starSticker1];
@@ -296,9 +297,57 @@
     
     
 
-    NSArray *basicStickers = @[longRectangleSticker, circleSticker1,arrowSticker1,xSticker1,runningManExcSticker,runningManQuSticker,sinSeoYuGiExc1Sticker,sinSeoYuGiExc2Sticker, sinSeoYuGiQu1Sticker,sinSeoYuGiQu2Sticker,startleSticker1, angrySticker1, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker,pigtailSticker,heartSticker1,heartSticker2,heartSticker3,heartSticker4,heartSticker5,heartSticker6,heartSticker7,heartSticker8,heartSticker9,heartSticker10, vlogMacaronSticker,vlogTapeSticker,arrowSticker2,arrowSticker3,arrowSticker4,arrowSticker5,arrowSticker6,arrowSticker7,blinkSticker1,blinkSticker3,bulbSticker,burstSticker1,buttonPauseSticker,buttonPlaySticker,buttonStopSticker,circleSticker2,cloudSticker1,cloudSticker2,dollarSticker,effectSticker1,effectSticker2,effectSticker3,gameSticker,glitterSticker,goodSticker1,koreanFlagSticker,lockSticker,medalBronzeSticker,medalSilverSticker,medalGoldSticker,noteSticker1,noteSticker2,noteSticker3,nuclearSticker,rspRockSticker,rspScissorsSticker,rspPaperSticker,snowflakeSticker1,snowflakeSticker2,snowmanSticker,speechBubbleSticker1,speechBubbleSticker2,speechBubbleSticker3,speechBubbleSticker4,stainSticker1,stainSticker2,starSticker1,starSticker2,starSticker3,starSticker4,tagSticker,targetSticker,tearsSticker,triangleSticker1];
+    NSArray *basicStickers = @[longRectangleSticker, circleSticker1, arrowSticker1, xSticker1, runningManExcSticker, runningManQuSticker, sinSeoYuGiExc1Sticker, sinSeoYuGiExc2Sticker, sinSeoYuGiQu1Sticker, sinSeoYuGiQu2Sticker, startleSticker1, angrySticker1, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker, pigtailSticker, heartSticker1, heartSticker2, heartSticker3, heartSticker4, heartSticker5, heartSticker6, heartSticker7, heartSticker8, heartSticker9, heartSticker10, vlogMacaronSticker, vlogTapeSticker, arrowSticker2, arrowSticker3, arrowSticker4, arrowSticker5, arrowSticker6, arrowSticker7, blinkSticker1, blinkSticker3, bulbSticker, burstSticker1, buttonPauseSticker, buttonPlaySticker, buttonStopSticker, circleSticker2, cloudSticker1, cloudSticker2, dollarSticker, effectSticker1, effectSticker2, effectSticker3, gameSticker, glitterSticker, goodSticker1, koreanFlagSticker, lockSticker, medalBronzeSticker, medalSilverSticker, medalGoldSticker, noteSticker1, noteSticker2, noteSticker3, nuclearSticker, rspRockSticker, rspScissorsSticker, rspPaperSticker, snowflakeSticker1, snowflakeSticker2, snowmanSticker, speechBubbleSticker1, speechBubbleSticker2, speechBubbleSticker3, speechBubbleSticker4 ,stainSticker1, stainSticker2, starSticker1, starSticker2, starSticker3, starSticker4, tagSticker, targetSticker, tearsSticker, triangleSticker1];
     
     return @[basicStickers];
+}
+
+#pragma mark - 메인프레임
+
+-(NSArray *)mainFrameCategories{
+
+    NSString *basic = NSLocalizedString(@"basic", nil);
+
+    NSArray *categories = @[basic];
+    
+    return categories;
+}
+
+-(NSArray *)mainFrameDatas{
+
+    WorkMan1MainFrame *workMan1MainFrame = [WorkMan1MainFrame workMan1MainFrame];
+    WorkMan2MainFrame *workMan2MainFrame = [WorkMan2MainFrame workMan2MainFrame];
+    WorkMan3MainFrame *workMan3MainFrame = [WorkMan3MainFrame workMan3MainFrame];
+    RunningMan1MainFrame *runningMan1MainFrame = [RunningMan1MainFrame runningMan1MainFrame];
+    RunningMan2MainFrame *runningMan2MainFrame = [RunningMan2MainFrame runningMan2MainFrame];
+    RunningMan3MainFrame *runningMan3MainFrame = [RunningMan3MainFrame runningMan3MainFrame];
+    InfiniteChallenge1MainFrame *infiniteChallenge1MainFrame = [InfiniteChallenge1MainFrame infiniteChallenge1MainFrame];
+    InfiniteChallenge2MainFrame *infiniteChallenge2MainFrame = [InfiniteChallenge2MainFrame infiniteChallenge2MainFrame];
+    SinSeoYuGi1MainFrame *sinSeoYuGi1MainFrame = [SinSeoYuGi1MainFrame sinSeoYuGi1MainFrame];
+    SinSeoYuGi2MainFrame *sinSeoYuGi2MainFrame = [SinSeoYuGi2MainFrame sinSeoYuGi2MainFrame];
+
+    BabyVlogMainFrame *babyVlogMainFrame = [BabyVlogMainFrame babyVlogMainFrame];
+    CookingVlogMainFrame *cookingVlogMainFrame = [CookingVlogMainFrame cookingVlogMainFrame];
+    CraftVlogMainFrame *craftVlogMainFrame = [CraftVlogMainFrame craftVlogMainFrame];
+    DanceVlogMainFrame *danceVlogMainFrame = [DanceVlogMainFrame danceVlogMainFrame];
+    DogVlogMainFrame *dogVlogMainFrame = [DogVlogMainFrame dogVlogMainFrame];
+    FreshManVlogMainFrame *freshManVlogMainFrame = [FreshManVlogMainFrame freshManVlogMainFrame];
+    ItalyTripVlogMainFrame *italyTripVlogMainFrame = [ItalyTripVlogMainFrame italyTripVlogMainFrame];
+    KidsVlogMainFrame *kidsVlogMainFrame = [KidsVlogMainFrame kidsVlogMainFrame];
+    LookBookVlogMainFrame *lookBookVlogMainFrame = [LookBookVlogMainFrame lookBookVlogMainFrame];
+    MacaronVlogMainFrame *macaronVlogMainFrame = [MacaronVlogMainFrame macaronVlogMainFrame];
+    SixToFourVlogMainFrame *sixToFourVlogMainFrame = [SixToFourVlogMainFrame sixToFourVlogMainFrame];
+    StudentVlogMainFrame *studentVlogMainFrame = [StudentVlogMainFrame studentVlogMainFrame];
+    SummerVlogMainFrame *summerVlogMainFrame = [SummerVlogMainFrame summerVlogMainFrame];
+    TeenVlogMainFrame *teenVlogMainFrame = [TeenVlogMainFrame teenVlogMainFrame];
+    VisitingCompanyVlogMainFrame *visitingCompanyVlogMainFrame = [VisitingCompanyVlogMainFrame visitingCompanyVlogMainFrame];
+    WebDesignerVlogMainFrame *webDesignerVlogMainFrame = [WebDesignerVlogMainFrame webDesignerVlogMainFrame];
+ 
+    
+    NSArray *basicMainFrames = @[workMan1MainFrame, workMan2MainFrame, workMan3MainFrame, runningMan1MainFrame, runningMan2MainFrame, runningMan3MainFrame, infiniteChallenge1MainFrame, infiniteChallenge2MainFrame, sinSeoYuGi1MainFrame, sinSeoYuGi2MainFrame, babyVlogMainFrame, cookingVlogMainFrame, craftVlogMainFrame, danceVlogMainFrame, dogVlogMainFrame, freshManVlogMainFrame, italyTripVlogMainFrame, kidsVlogMainFrame, lookBookVlogMainFrame, macaronVlogMainFrame, sixToFourVlogMainFrame, studentVlogMainFrame, summerVlogMainFrame, teenVlogMainFrame, visitingCompanyVlogMainFrame, webDesignerVlogMainFrame];
+    
+    
+    return @[basicMainFrames];
 }
 
 -(BOOL)containsItem:(Item *)item{

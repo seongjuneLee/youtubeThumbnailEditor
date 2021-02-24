@@ -17,7 +17,6 @@
         self.previewImageName = @"modelVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"modelVlogTemplate";
-        self.mainFrameImageName = @"";
         self.backgroundColor = [UIColor colorWithRed:121/255.0 green:148/255.0 blue:195/255.0 alpha:1];
         
     }
@@ -30,6 +29,10 @@
     ModelVlogTemplate* modelVlogTemplate = [[self alloc] init];
     return modelVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
 }
 
 -(void)setUpPhotoFrame{

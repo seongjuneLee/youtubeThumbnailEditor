@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)photoFrameButtonTapped:(id)sender;
 - (IBAction)textButtonTapped:(UIButton *)sender;
 - (IBAction)stickerButtonTapped:(id)sender;
+- (IBAction)mainFrameButtonTapped:(UIButton *)sender;
 - (IBAction)bgColorButtonTapped:(id)sender;
 - (IBAction)undoButtonTapped:(UIButton *)sender;
 - (IBAction)redoButtonTapped:(UIButton *)sender;

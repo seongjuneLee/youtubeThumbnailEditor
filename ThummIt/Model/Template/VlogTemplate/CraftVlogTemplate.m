@@ -17,7 +17,6 @@
         self.previewImageName = @"craftVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"craftVlogTemplate";
-        self.mainFrameImageName = @"craftVlogFrame";
         
     }
     return self;
@@ -29,6 +28,13 @@
     CraftVlogTemplate* craftVlogTemplate = [[self alloc] init];
     return craftVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
+    CraftVlogMainFrame *mainFrame = [CraftVlogMainFrame craftVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

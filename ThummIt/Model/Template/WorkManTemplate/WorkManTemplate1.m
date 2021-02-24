@@ -17,7 +17,6 @@
         self.templateName = @"WorkManTemplate1";
         self.previewImageName = @"workManPreview1";
         self.category = NSLocalizedString(@"Entertain", nil);
-        self.mainFrameImageName = @"WorkManFrame1";
     }
     return self;
     
@@ -27,6 +26,14 @@
     
     WorkManTemplate1* workManTemplate1 = [[self alloc] init];
     return workManTemplate1;
+    
+}
+
+-(void)setUpMainFrames{
+    
+    WorkMan1MainFrame *mainFrame = [WorkMan1MainFrame workMan1MainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
     
 }
 

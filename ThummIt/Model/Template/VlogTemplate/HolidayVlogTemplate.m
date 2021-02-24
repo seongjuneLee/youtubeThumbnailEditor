@@ -17,7 +17,6 @@
         self.previewImageName = @"holidayVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"holidayVlogTemplate";
-        self.mainFrameImageName = @"";
         
     }
     return self;
@@ -29,6 +28,10 @@
     HolidayVlogTemplate* holidayVlogTemplate = [[self alloc] init];
     return holidayVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
 }
 
 -(void)setUpPhotoFrame{

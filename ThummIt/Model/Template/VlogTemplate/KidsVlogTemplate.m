@@ -17,7 +17,6 @@
         self.previewImageName = @"kidsVlogPreview";
         self.category = NSLocalizedString(@"Vlog", nil);
         self.templateName = @"kidsVlogTemplate";
-        self.mainFrameImageName = @"kidsVlogFrame";
         
     }
     return self;
@@ -29,6 +28,13 @@
     KidsVlogTemplate* kidsVlogTemplate = [[self alloc] init];
     return kidsVlogTemplate;
     
+}
+
+-(void)setUpMainFrames{
+
+    KidsVlogMainFrame *mainFrame = [KidsVlogMainFrame kidsVlogMainFrame];
+    mainFrame.isTemplateItem = true;
+    self.mainFrameImageName = mainFrame.backgroundImageName;
 }
 
 -(void)setUpPhotoFrame{

@@ -214,11 +214,23 @@
    
 }
 
+#pragma mark - 메인프레임 버튼
+
+- (IBAction)mainFrameButtonTapped:(UIButton *)sender {
+    
+    self.modeController.editingMode = MainFrameAndBGColorMode;
+    [self hideItemsForItemMode];
+    self.itemCollectionVC.itemType = MainFrameType; //type에 따라 올라오는 Collectionview종류가 달라서 필요
+    [self addItemCollectionVC];
+    //추가필요
+    self.originalMainFrameImageName = SaveManager.sharedInstance.currentProject.mainFrameImageName;
+}
+
 #pragma mark - 보더칼라 버튼
 
 - (IBAction)bgColorButtonTapped:(id)sender {
     
-    self.modeController.editingMode = BGColorMode;
+    self.modeController.editingMode = MainFrameAndBGColorMode;
     [self hideItemsForItemMode];
     self.originalColor = self.bgView.backgroundColor;
     
