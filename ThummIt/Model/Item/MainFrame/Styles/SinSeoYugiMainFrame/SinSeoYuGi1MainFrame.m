@@ -15,7 +15,6 @@
     if(self){
         self.itemName = @"sinseoyugiFrame1";
         self.backgroundImageName = @"sinseoyugiFrame1";
-        self.cannotChangeColor = true;
     }
     return self;
 }

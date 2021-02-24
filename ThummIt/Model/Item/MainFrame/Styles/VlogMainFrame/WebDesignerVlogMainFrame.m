@@ -15,7 +15,6 @@
     if(self){
         self.itemName = @"webDesignerVlogFrame";
         self.backgroundImageName = @"webDesignerVlogFrame";
-    //    self.cannotChangeColor = true;
     }
     return self;
 }

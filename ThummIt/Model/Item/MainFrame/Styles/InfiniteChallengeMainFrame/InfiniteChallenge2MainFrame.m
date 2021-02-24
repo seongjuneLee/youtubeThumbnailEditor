@@ -15,7 +15,6 @@
     if(self){
         self.itemName = @"infiniteChallengeFrame2";
         self.backgroundImageName = @"infiniteChallengeFrame2";
-        self.cannotChangeColor = true;
     }
     return self;
 }

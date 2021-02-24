@@ -15,7 +15,6 @@
     if(self){
         self.itemName = @"runningManFrame2";
         self.backgroundImageName = @"runningManFrame2";
-        self.cannotChangeColor = true;
     }
     return self;
 }

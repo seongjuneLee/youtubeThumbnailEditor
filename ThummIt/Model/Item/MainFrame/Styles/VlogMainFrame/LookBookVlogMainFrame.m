@@ -15,7 +15,6 @@
     if(self){
         self.itemName = @"lookBookVlogFrame";
         self.backgroundImageName = @"lookBookVlogFrame";
-    //    self.cannotChangeColor = true;
     }
     return self;
 }

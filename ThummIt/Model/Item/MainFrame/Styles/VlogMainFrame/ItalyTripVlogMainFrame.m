@@ -15,7 +15,6 @@
     if(self){
         self.itemName = @"italyTripVlogFrame";
         self.backgroundImageName = @"italyTripVlogFrame";
-    //    self.cannotChangeColor = true;
 }
     return self;
 }
