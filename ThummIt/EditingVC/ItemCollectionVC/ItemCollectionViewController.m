@@ -19,6 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setCollectionViewFlowLayout];
+    
+    UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
+    self.editingPhotoButtonVC = (EditingPhotoButtonViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingPhotoButtonViewController"];
 
 }
 
@@ -28,6 +31,12 @@
 }
 
 -(void)viewWillLayoutSubviews{
+    
+}
+-(void)viewDidLayoutSubviews{
+    
+    float height = 150;
+    self.editingPhotoButtonVC.view.frame = CGRectMake(0, self.view.frameHeight - height, self.view.frameWidth, height);
     
 }
 

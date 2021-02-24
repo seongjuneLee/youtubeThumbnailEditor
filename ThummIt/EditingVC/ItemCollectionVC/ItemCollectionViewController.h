@@ -14,6 +14,7 @@
 #import "PhotoManager.h"
 #import "ItemManager.h"
 #import "Text.h"
+#import "EditingPhotoButtonViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 typedef enum {
@@ -37,13 +38,14 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIButton *photoButton;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *editPhotoButton;
 
 @property (nonatomic) ItemType itemType;
 @property (strong, nonatomic) PhotoFrameCollectionController *photoFrameCollectionController;
 @property (strong, nonatomic) TextCollectionController *textCollectionController;
 @property (strong, nonatomic) StickerCollectionController *stickerCollectionController;
 @property (strong, nonatomic) MainFrameCollectionController *mainFrameCollectionController;
-
+@property (strong, nonatomic, nullable) EditingPhotoButtonViewController *editingPhotoButtonVC;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerTopConstraint;
 @property (weak, nonatomic) UIViewController *editingVC;
 

@@ -79,6 +79,14 @@
 		6E28452C25C35870008B7A23 /* VlogStudy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28451225C35870008B7A23 /* VlogStudy.m */; };
 		6E2845B125C5FCC4008B7A23 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845B025C5FCC4008B7A23 /* UserManager.m */; };
 		6E2845CB25C98990008B7A23 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */; };
+		6E40F3DB25E6947D00FD0F67 /* EditingPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F3D725E6947D00FD0F67 /* EditingPhotoViewController.m */; };
+		6E40F3DC25E6947D00FD0F67 /* EditingPhotoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F3D925E6947D00FD0F67 /* EditingPhotoButtonViewController.m */; };
+		6E40F40525E6961100FD0F67 /* SegmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F40425E6961100FD0F67 /* SegmentFilter.swift */; };
+		6E40F40E25E6963C00FD0F67 /* DeepLabV3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F40925E6963C00FD0F67 /* DeepLabV3Int8LUT.mlmodel */; };
+		6E40F41025E6963C00FD0F67 /* Deeplab.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F40B25E6963C00FD0F67 /* Deeplab.mlmodel */; };
+		6E40F41125E6963C00FD0F67 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F40C25E6963C00FD0F67 /* DeepLabV3FP16.mlmodel */; };
+		6E40F41225E6963C00FD0F67 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F40D25E6963C00FD0F67 /* DeepLabV3.mlmodel */; };
+		6E40F41825E6968F00FD0F67 /* UIImage+Segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F41725E6968F00FD0F67 /* UIImage+Segmentation.swift */; };
 		6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17EA25888FFA008578BA /* CircleTemplate.m */; };
 		6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17F42588A518008578BA /* UIView+Additions.m */; };
 		6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A18602589F7BD008578BA /* EditingViewController+Buttons.m */; };
@@ -634,6 +642,16 @@
 		6E2845B025C5FCC4008B7A23 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		6E2845C925C98990008B7A23 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
+		6E40F3D725E6947D00FD0F67 /* EditingPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoViewController.m; sourceTree = "<group>"; };
+		6E40F3D825E6947D00FD0F67 /* EditingPhotoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingPhotoButtonViewController.h; sourceTree = "<group>"; };
+		6E40F3D925E6947D00FD0F67 /* EditingPhotoButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoButtonViewController.m; sourceTree = "<group>"; };
+		6E40F3DA25E6947D00FD0F67 /* EditingPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingPhotoViewController.h; sourceTree = "<group>"; };
+		6E40F40425E6961100FD0F67 /* SegmentFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentFilter.swift; path = ../../../../../archive/ThummIt/Model/Item/PhotoFrame/SegmentFilter.swift; sourceTree = "<group>"; };
+		6E40F40925E6963C00FD0F67 /* DeepLabV3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3Int8LUT.mlmodel; sourceTree = "<group>"; };
+		6E40F40B25E6963C00FD0F67 /* Deeplab.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Deeplab.mlmodel; sourceTree = "<group>"; };
+		6E40F40C25E6963C00FD0F67 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
+		6E40F40D25E6963C00FD0F67 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
+		6E40F41725E6968F00FD0F67 /* UIImage+Segmentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Segmentation.swift"; path = "../../../../../archive/ThummIt/ETC/Category/UIImage/UIImage+Segmentation.swift"; sourceTree = "<group>"; };
 		6E4A17E925888FFA008578BA /* CircleTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleTemplate.h; sourceTree = "<group>"; };
 		6E4A17EA25888FFA008578BA /* CircleTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleTemplate.m; sourceTree = "<group>"; };
 		6E4A17EF258891D7008578BA /* TemplateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateHeader.h; sourceTree = "<group>"; };
@@ -1403,6 +1421,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF37B5125E399F000A43595 /* ThummIt.entitlements */,
+				6E40F40825E6963B00FD0F67 /* CoreML */,
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
 				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E4A18AC258A15F6008578BA /* Storyboard */,
@@ -1598,6 +1617,30 @@
 				6E2845B025C5FCC4008B7A23 /* UserManager.m */,
 			);
 			path = UserManager;
+			sourceTree = "<group>";
+		};
+		6E40F3D625E6947D00FD0F67 /* EditingPhotoVC */ = {
+			isa = PBXGroup;
+			children = (
+				6E40F3DA25E6947D00FD0F67 /* EditingPhotoViewController.h */,
+				6E40F3D725E6947D00FD0F67 /* EditingPhotoViewController.m */,
+				6E40F3D825E6947D00FD0F67 /* EditingPhotoButtonViewController.h */,
+				6E40F3D925E6947D00FD0F67 /* EditingPhotoButtonViewController.m */,
+			);
+			name = EditingPhotoVC;
+			path = ../../../../../archive/ThummIt/EditingVC/ItemCollectionVC/PhotoFrameCollectionController/EditingPhotoVC;
+			sourceTree = "<group>";
+		};
+		6E40F40825E6963B00FD0F67 /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				6E40F40925E6963C00FD0F67 /* DeepLabV3Int8LUT.mlmodel */,
+				6E40F40B25E6963C00FD0F67 /* Deeplab.mlmodel */,
+				6E40F40C25E6963C00FD0F67 /* DeepLabV3FP16.mlmodel */,
+				6E40F40D25E6963C00FD0F67 /* DeepLabV3.mlmodel */,
+			);
+			name = CoreML;
+			path = ../../archive/ThummIt/CoreML;
 			sourceTree = "<group>";
 		};
 		6E4A17FA2588A521008578BA /* UIVIew */ = {
@@ -1835,6 +1878,7 @@
 		6E8E7A01259237BC0008C5FF /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
+				6E40F41725E6968F00FD0F67 /* UIImage+Segmentation.swift */,
 				6E8E79F8259237B80008C5FF /* UIImage+Additions.h */,
 				6E8E79F9259237B80008C5FF /* UIImage+Additions.m */,
 			);
@@ -1859,6 +1903,7 @@
 		6E8E7A32259B27120008C5FF /* PhotoFrameCollectionController */ = {
 			isa = PBXGroup;
 			children = (
+				6E40F3D625E6947D00FD0F67 /* EditingPhotoVC */,
 				6E8E7A2C259B270E0008C5FF /* PhotoFrameCollectionController.h */,
 				6E8E7A2D259B270E0008C5FF /* PhotoFrameCollectionController.m */,
 				6E8E7A6F259C915C0008C5FF /* CollectionCell */,
@@ -2020,6 +2065,7 @@
 		6E8F9A6F25C344F5005C8071 /* PhotoFrame */ = {
 			isa = PBXGroup;
 			children = (
+				6E40F40425E6961100FD0F67 /* SegmentFilter.swift */,
 				6E8F9A6725C344EA005C8071 /* PhotoFrameHeader.h */,
 				6E8F9A6825C344EB005C8071 /* PhotoFrame.h */,
 				6E8F9A6925C344EB005C8071 /* PhotoFrame.m */,
@@ -3659,6 +3705,7 @@
 				6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */,
 				6E8F9B4425C35261005C8071 /* SeoYuGiHungryTypo.m in Sources */,
 				B1F8C6C125C4C09E002DDAF8 /* VisitingCompanyVlogTemplate.m in Sources */,
+				6E40F41125E6963C00FD0F67 /* DeepLabV3FP16.mlmodel in Sources */,
 				6E8F9A9625C34582005C8071 /* BasicCirclePhotoFrame.m in Sources */,
 				6EF0C8CC25CBDBE000BE7573 /* TagSticker.m in Sources */,
 				6EBEB67425C494B10017C640 /* HeartSticker1.m in Sources */,
@@ -3679,10 +3726,12 @@
 				6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */,
 				6EC4DFCC25A87DAF0023485C /* UIColor+patternArchive.m in Sources */,
 				6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */,
+				6E40F40525E6961100FD0F67 /* SegmentFilter.swift in Sources */,
 				6EF0C8E925CBE0B700BE7573 /* TriangleSticker1.m in Sources */,
 				6E9BE9CE258B3A5700F7F539 /* EditingViewController+GestureControllerDelegate.m in Sources */,
 				6ED0AF9825E514990027485F /* WorkMan1MainFrame.m in Sources */,
 				6E1DBE3725D81C31004C0416 /* GRWMRectangle1.m in Sources */,
+				6E40F41825E6968F00FD0F67 /* UIImage+Segmentation.swift in Sources */,
 				6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */,
 				6ED0AFAC25E515230027485F /* RunningMan3MainFrame.m in Sources */,
 				6E8F9A9525C34581005C8071 /* QuarterRectangle.m in Sources */,
@@ -3701,6 +3750,7 @@
 				6E9BEA36258E696F00F7F539 /* SaveManager.m in Sources */,
 				6E28451A25C35870008B7A23 /* VlogLookbookTypo.m in Sources */,
 				6E9BEA46258F0AA300F7F539 /* ThummIt.xcdatamodeld in Sources */,
+				6E40F41225E6963C00FD0F67 /* DeepLabV3.mlmodel in Sources */,
 				6ED13D5725C2C8B000012144 /* StartleSticker1.m in Sources */,
 				6ED13BB425C08FC700012144 /* WorkingManNameTypo.m in Sources */,
 				B1F8C6E225C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m in Sources */,
@@ -3757,6 +3807,7 @@
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */,
 				6EF0C94B25CD45F100BE7573 /* DinggoStarWarsTypo.m in Sources */,
+				6E40F3DC25E6947D00FD0F67 /* EditingPhotoButtonViewController.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				6E8F9A6A25C344EB005C8071 /* PhotoFrame.m in Sources */,
 				6E8F99BE25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m in Sources */,
@@ -3802,6 +3853,7 @@
 				6EF0C82025CBC32600BE7573 /* GlitterSticker.m in Sources */,
 				B1F2B75325C1CFFD0064A044 /* InfiniteChallengeYellowSpeechBoxYellow.m in Sources */,
 				6E8E79CB25921C830008C5FF /* ProjectViewController.m in Sources */,
+				6E40F3DB25E6947D00FD0F67 /* EditingPhotoViewController.m in Sources */,
 				6EF0C86825CBD2A900BE7573 /* NoteSticker1.m in Sources */,
 				6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */,
 				6E1DBEA025D82E86004C0416 /* KidsTrapezoid3.m in Sources */,
@@ -3840,6 +3892,7 @@
 				6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */,
 				6E1DBCFD25CBE2B5004C0416 /* ForgotPasswordViewController.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
+				6E40F40E25E6963C00FD0F67 /* DeepLabV3Int8LUT.mlmodel in Sources */,
 				6E1DBE2325D81ADB004C0416 /* DailyVlogTemplateRectangle2.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
 				6ED0AF8925E5143F0027485F /* SinSeoYuGi1MainFrame.m in Sources */,
@@ -3854,6 +3907,7 @@
 				6ED13D4625C2C82900012144 /* SinSeoYuGiExc1Sticker.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
 				6E1DBE1325D80A7A004C0416 /* OneThirdRectangle.m in Sources */,
+				6E40F41025E6963C00FD0F67 /* Deeplab.mlmodel in Sources */,
 				B16FC68025AF459800E854C1 /* StickerCollectionReusableView.m in Sources */,
 				6EF0C80A25CBB0BE00BE7573 /* EffectSticker2.m in Sources */,
 				6E8E79A7258F86A00008C5FF /* NSString+Additions.m in Sources */,

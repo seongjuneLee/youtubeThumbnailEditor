@@ -15,6 +15,11 @@
 #import "LogInViewController.h"
 #import "AppManager.h"
 #import <Reachability/Reachability.h>
+#import "Deeplab.h"
+#import "DeepLabV3.h"
+#import "DeepLabV3FP16.h"
+#import "DeepLabV3Int8LUT.h"
+
 /**
  * Copyright 2015-2017 Kakao Corp.
  *

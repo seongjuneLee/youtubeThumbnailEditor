@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)sliderValueChanged:(UISlider *)sender;
 - (IBAction)leftItemTapped:(id)sender;
 - (IBAction)rightItemTapped:(id)sender;
+- (IBAction)removeBGButtonTapped:(UIButton *)sender;
 
 -(void)photoFrameButtonHoldDown;
 -(void)photoFrameButtonHoldRelease;

@@ -74,11 +74,14 @@
     if (self.itemCollectionVC.itemType == TextType) {
         self.itemCollectionVC.view.frame = CGRectMake(0, self.view.frameHeight - (AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY), self.view.frameWidth, AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY);
     }
-
+    
     float bgColorCollectionCellHeight = self.view.frameWidth/8 - 5;
     float inset = 40;
     float bgColorVCHeight = bgColorCollectionCellHeight + inset + self.bgColorVC.cancelButton.frameHeight;
     self.bgColorVC.view.frame = CGRectMake(0, self.view.frameHeight - bgColorVCHeight, self.view.frameWidth, bgColorVCHeight);
+    
+    float underAreaBottom = self.upperArea.frameY + self.upperArea.frameHeight;
+    self.editingPhotoVC.view.frame = CGRectMake(0,underAreaBottom, self.view.frameWidth, self.view.frameHeight - self.itemCollectionVC.containerView.frameHeight - (underAreaBottom));
     
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
 }
@@ -131,7 +134,10 @@
     
     self.bgColorVC = (BGColorViewController *)[editing instantiateViewControllerWithIdentifier:@"BGColorViewController"];
     self.bgColorVC.editingVC = self;
-
+    
+    self.editingPhotoVC = (EditingPhotoViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingPhotoViewController"];
+    
+    
 }
 
 -(void)connectEditingGestureController{
@@ -227,6 +233,7 @@
         self.redoButton. alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 1.0;
+        self.buttonScrollView.hidden = false;
     }];
 
 }
@@ -237,6 +244,7 @@
         self.redoButton. alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 0;
+        self.buttonScrollView.hidden = true;
     }];
 
 }
