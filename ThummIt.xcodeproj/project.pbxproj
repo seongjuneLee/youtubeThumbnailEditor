@@ -237,6 +237,7 @@
 		6EC7645E25DAD8FC009FF873 /* InfiniteTemplateRectangle1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7645D25DAD8FC009FF873 /* InfiniteTemplateRectangle1.m */; };
 		6EC7646825DAD938009FF873 /* InfiniteTemplateRectangle2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7646725DAD938009FF873 /* InfiniteTemplateRectangle2.m */; };
 		6EC7647025DADB74009FF873 /* StudyTemplateRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7646F25DADB74009FF873 /* StudyTemplateRectangle.m */; };
+		6EC764B625E51E8A009FF873 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC764B525E51E89009FF873 /* WebKit.framework */; };
 		6ED138FA25B8507A00012144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED138F925B8507A00012144 /* AppDelegate.swift */; };
 		6ED1398C25B872F600012144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1398B25B872F600012144 /* SceneDelegate.swift */; };
 		6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */; };
@@ -881,6 +882,7 @@
 		6EC7646725DAD938009FF873 /* InfiniteTemplateRectangle2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteTemplateRectangle2.m; sourceTree = "<group>"; };
 		6EC7646E25DADB74009FF873 /* StudyTemplateRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyTemplateRectangle.h; sourceTree = "<group>"; };
 		6EC7646F25DADB74009FF873 /* StudyTemplateRectangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyTemplateRectangle.m; sourceTree = "<group>"; };
+		6EC764B525E51E89009FF873 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6ED138F925B8507A00012144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED1398B25B872F600012144 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
@@ -1218,6 +1220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EC764B625E51E8A009FF873 /* WebKit.framework in Frameworks */,
 				6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */,
 				C3AA5AEB200F3BCD30FC7A2B /* Pods_ThummIt.framework in Frameworks */,
 				6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */,
@@ -2106,6 +2109,7 @@
 		6E9BEA3E258F099300F7F539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EC764B525E51E89009FF873 /* WebKit.framework */,
 				6ED13A8625B9AAC400012144 /* Bolts.framework */,
 				6ED13A8025B9A92C00012144 /* FBSDKCoreKit.framework */,
 				6ED13A7E25B9A92A00012144 /* FBSDKLoginKit.framework */,
