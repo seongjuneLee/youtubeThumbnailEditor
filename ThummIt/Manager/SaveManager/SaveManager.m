@@ -63,7 +63,6 @@
         [self.currentProject save];
         [UndoManager.sharedInstance addCurrentProjectToUndoRedoStack];
         [self savePreviewImage];
-        NSLog(@"프리뷰 이미지 저장");
     });
 
 }

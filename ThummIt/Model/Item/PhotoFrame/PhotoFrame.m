@@ -57,8 +57,6 @@
             }
         }
         self.photoCenter = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
-        NSLog(@"self.photoCenter %@",NSStringFromCGPoint(self.photoCenter));
-
         self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
         self.isCircle = [[decoder decodeObjectForKey:@"isCircle"] boolValue];
         self.isFixedPhotoFrame = [[decoder decodeObjectForKey:@"isFixedPhotoFrame"] boolValue];
@@ -74,8 +72,6 @@
     [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.photoScale] forKey:@"photoScale"];
     [encoder encodeObject:[NSValue valueWithCGPoint:self.photoImageView.center] forKey:@"photoCenter"];
-    NSLog(@"self.photoCenter encodeWithCoder %@",NSStringFromCGPoint(self.photoCenter));
-
     [encoder encodeObject:[NSNumber numberWithFloat:self.isCircle] forKey:@"isCircle"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.isFixedPhotoFrame] forKey:@"isFixedPhotoFrame"];
 
