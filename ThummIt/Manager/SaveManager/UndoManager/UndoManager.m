@@ -60,7 +60,6 @@
     }
 
     NSData *data = self.undoRedoStacks[self.currentIndex];
-    NSLog(@"self.undoRedoStacks %@",self.undoRedoStacks);
     Project *project = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     project.coreDataStorage = SaveManager.sharedInstance.currentProject.coreDataStorage;
     [SaveManager.sharedInstance applyCurrentProject:project];

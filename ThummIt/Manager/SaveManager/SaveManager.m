@@ -109,8 +109,6 @@
     // add Items
     for (Item *item in self.currentProject.items) {
         Item *copied = [item copy];
-        [copied loadView];
-        [copied setItemCenterAndScale];
         if (copied.isFixedPhotoFrame) {
             copied.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
             [view insertSubview:copied.baseView belowSubview:mainFrameImageView];

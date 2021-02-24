@@ -369,7 +369,7 @@
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
-    
+
 }
 
 -(void)doneEditingPhotoFrame{

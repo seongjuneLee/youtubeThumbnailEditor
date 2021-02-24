@@ -29,6 +29,8 @@
     if (self.itemName) {
         copied.itemName = [NSString stringWithString:self.itemName];
     }
+    [copied loadView];
+    [copied setItemCenterAndScale];
 
     return copied;
 }
