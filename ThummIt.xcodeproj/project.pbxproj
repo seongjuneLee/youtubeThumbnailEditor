@@ -356,6 +356,8 @@
 		6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */; };
 		6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95925CD513000BE7573 /* DinggoMurder.m */; };
 		6EF0C95F25CD528C00BE7573 /* DigitalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */; };
+		6EF4326125E53F8F00EED56F /* EditingPhotoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4326025E53F8F00EED56F /* EditingPhotoButtonViewController.m */; };
+		6EF4326F25E568D600EED56F /* EditingPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4326E25E568D600EED56F /* EditingPhotoViewController.m */; };
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
 		B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */; };
 		B11E0D5425C4F6070050D9F0 /* ClothesVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5325C4F6070050D9F0 /* ClothesVlogTemplate.m */; };
@@ -1105,6 +1107,10 @@
 		6EF0C95D25CD528C00BE7573 /* DigitalTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalTypo.h; sourceTree = "<group>"; };
 		6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalTypo.m; sourceTree = "<group>"; };
 		6EF37B5125E399F000A43595 /* ThummIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThummIt.entitlements; sourceTree = "<group>"; };
+		6EF4325F25E53F8F00EED56F /* EditingPhotoButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditingPhotoButtonViewController.h; sourceTree = "<group>"; };
+		6EF4326025E53F8F00EED56F /* EditingPhotoButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoButtonViewController.m; sourceTree = "<group>"; };
+		6EF4326D25E568D600EED56F /* EditingPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditingPhotoViewController.h; sourceTree = "<group>"; };
+		6EF4326E25E568D600EED56F /* EditingPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoViewController.m; sourceTree = "<group>"; };
 		B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogBarunGothicTypo.h; sourceTree = "<group>"; };
 		B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogBarunGothicTypo.m; sourceTree = "<group>"; };
 		B11E0D4D25C4EDBD0050D9F0 /* GrwmVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrwmVlogTemplate.h; sourceTree = "<group>"; };
@@ -1775,6 +1781,7 @@
 		6E8E7A32259B27120008C5FF /* PhotoFrameCollectionController */ = {
 			isa = PBXGroup;
 			children = (
+				6EF4326425E53F9400EED56F /* EditingPhotoVC */,
 				6E8E7A2C259B270E0008C5FF /* PhotoFrameCollectionController.h */,
 				6E8E7A2D259B270E0008C5FF /* PhotoFrameCollectionController.m */,
 				6E8E7A6F259C915C0008C5FF /* CollectionCell */,
@@ -2703,6 +2710,17 @@
 			path = DinggoDubleCricleTypo;
 			sourceTree = "<group>";
 		};
+		6EF4326425E53F9400EED56F /* EditingPhotoVC */ = {
+			isa = PBXGroup;
+			children = (
+				6EF4326D25E568D600EED56F /* EditingPhotoViewController.h */,
+				6EF4326E25E568D600EED56F /* EditingPhotoViewController.m */,
+				6EF4325F25E53F8F00EED56F /* EditingPhotoButtonViewController.h */,
+				6EF4326025E53F8F00EED56F /* EditingPhotoButtonViewController.m */,
+			);
+			path = EditingPhotoVC;
+			sourceTree = "<group>";
+		};
 		B16FC61125ADCA9000E854C1 /* StickerCollectionController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3430,6 +3448,7 @@
 				6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */,
 				6EBEB68325C494E20017C640 /* HeartSticker4.m in Sources */,
 				6EF0C82F25CBC35D00BE7573 /* HeartSticker6.m in Sources */,
+				6EF4326F25E568D600EED56F /* EditingPhotoViewController.m in Sources */,
 				6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */,
 				6EC4DFCC25A87DAF0023485C /* UIColor+patternArchive.m in Sources */,
 				6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */,
@@ -3516,6 +3535,7 @@
 				6ED13D5E25C2FFA100012144 /* RunningMan2Template.m in Sources */,
 				B1F2B70125C1ABC10064A044 /* InfiniteChallengeBlueTypo.m in Sources */,
 				6E28451725C35870008B7A23 /* VlogCookingTypo.m in Sources */,
+				6EF4326125E53F8F00EED56F /* EditingPhotoButtonViewController.m in Sources */,
 				6EF0C8D625CBDC3A00BE7573 /* TearsSticker.m in Sources */,
 				B1F2B70125C1ABC10064A044 /* InfiniteChallengeBlueTypo.m in Sources */,
 				6E8E7B0B25A84F090008C5FF /* Text.m in Sources */,

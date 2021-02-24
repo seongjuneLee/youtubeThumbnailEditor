@@ -12,6 +12,7 @@
 #import "EditingModeController.h"
 #import "BGColorViewController.h"
 #import "EditingLayerController.h"
+#import "EditingPhotoViewController.h"
 #import "ItemCollectionViewController.h"
 #import "SaveManager.h"
 #import "ItemManager.h"
@@ -33,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) BGColorViewController *bgColorVC;
 @property (strong, nonatomic) ItemCollectionViewController *itemCollectionVC;
 @property (strong, nonatomic, nullable) AlbumViewController *albumVC;
+@property (strong, nonatomic, nullable) EditingPhotoViewController *editingPhotoVC;
 
 // 모델
 @property (strong, nonatomic) Template *selectedTemplate;
@@ -86,7 +88,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *mainFrameImageView;
 @property (weak, nonatomic) IBOutlet UIButton *leftItem;
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
-@property (weak, nonatomic) IBOutlet UIButton *removeBGButton;
 
 @property (strong, nonatomic) UIImageView *hueImageView;
 @property (strong, nonatomic) UIView *thumbCircleView;

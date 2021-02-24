@@ -74,7 +74,7 @@
     if (self.itemCollectionVC.itemType == TextType) {
         self.itemCollectionVC.view.frame = CGRectMake(0, self.view.frameHeight - (AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY), self.view.frameWidth, AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY);
     }
-
+    
     float bgColorCollectionCellHeight = self.view.frameWidth/8 - 5;
     float inset = 40;
     float bgColorVCHeight = bgColorCollectionCellHeight + inset + self.bgColorVC.cancelButton.frameHeight;
@@ -131,7 +131,9 @@
     
     self.bgColorVC = (BGColorViewController *)[editing instantiateViewControllerWithIdentifier:@"BGColorViewController"];
     self.bgColorVC.editingVC = self;
-
+    
+    
+    
 }
 
 -(void)connectEditingGestureController{
@@ -227,7 +229,7 @@
         self.redoButton. alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 1.0;
-        self.removeBGButton.hidden = true;
+        self.buttonScrollView.hidden = false;
     }];
 
 }
@@ -238,7 +240,7 @@
         self.redoButton. alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 0;
-        self.removeBGButton.hidden = false;
+        self.buttonScrollView.hidden = true;
     }];
 
 }

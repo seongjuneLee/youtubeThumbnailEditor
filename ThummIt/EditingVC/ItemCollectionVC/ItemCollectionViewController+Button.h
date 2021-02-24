@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)photoButtonTapped:(id)sender;
 - (IBAction)textButtonTapped:(id)sender;
 - (IBAction)typoButtonTapped:(id)sender;
+- (IBAction)editPhotoButtonTapped:(UIButton *)sender;
 
 @end
 
