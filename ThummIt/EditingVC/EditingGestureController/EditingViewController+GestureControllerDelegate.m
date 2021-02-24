@@ -96,8 +96,6 @@
     PhotoFrame *photoFrame = (PhotoFrame *)item;
     
     PhotoFrame *copied = [photoFrame copy];
-    [copied loadView];
-    [copied setItemCenterAndScale];
     self.currentItem = copied;
     self.currentPhotoFrame = copied;
     self.originalPhotoFrame = photoFrame;

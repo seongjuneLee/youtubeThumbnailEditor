@@ -306,7 +306,8 @@
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
-    
+    NSLog(@"editingVC.currentPhotoFrame.photoImageView frame %@",NSStringFromCGRect(editingVC.currentPhotoFrame.photoImageView.frame));
+
 }
 
 -(void)doneEditingPhotoFrame{

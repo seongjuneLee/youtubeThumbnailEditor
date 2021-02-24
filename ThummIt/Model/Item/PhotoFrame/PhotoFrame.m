@@ -30,35 +30,17 @@
 -(id)copyWithZone:(NSZone *)zone{
     
     PhotoFrame *copied = [super copyWithZone:zone];
-    copied.phAsset = self.phAsset;
     copied.photoScale = self.photoScale;
     copied.isCircle = self.isCircle;
-    
-//    UIView *copiedBaseView = [[UIView alloc] initWithFrame:self.baseView.bounds];
-//    copiedBaseView.backgroundColor = self.baseView.backgroundColor;
-//    copiedBaseView.clipsToBounds = self.baseView.clipsToBounds;
-//
-//    copiedBaseView.layer.cornerRadius = self.baseView.layer.cornerRadius;
-//
-//    copiedBaseView.transform = self.baseView.transform;
-//    copiedBaseView.center = self.baseView.center;
-//
-//    copied.baseView = copiedBaseView;
-//
-//    UIImageView *copiedPhotoImageView = [[UIImageView alloc] initWithFrame:self.photoImageView.frame];
-//    copiedPhotoImageView.image = [self.photoImageView.image copy];
-//    copiedPhotoImageView.backgroundColor = UIColor.clearColor;
-//    copied.photoImageView = copiedPhotoImageView;
-//    copiedPhotoImageView.contentMode = self.photoImageView.contentMode;
-//    copied.itemName = [NSString stringWithString:self.itemName];
-//    [copied.baseView addSubview:copied.photoImageView];
-//
-
-//    copied.backgroundImageView = [[UIImageView alloc] initWithFrame:self.backgroundImageView.frame];
-//    copied.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
-//    [copied.baseView addSubview:copied.backgroundImageView];
-    
+        
     copied.isFixedPhotoFrame = self.isFixedPhotoFrame;
+    
+    [copied loadView];
+    [copied setItemCenterAndScale];
+
+    // 카피시에 이미지를 가져올 때 phasset으로 가져오면 시차가 발생하는 문제 해결 위해. loadView 아래해서 해줄것.
+    copied.photoImageView.frame = self.photoImageView.frame;
+    copied.photoImageView.image = self.photoImageView.image;
 
     return copied;
 }
@@ -75,6 +57,8 @@
             }
         }
         self.photoCenter = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
+        NSLog(@"self.photoCenter %@",NSStringFromCGPoint(self.photoCenter));
+
         self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
         self.isCircle = [[decoder decodeObjectForKey:@"isCircle"] boolValue];
         self.isFixedPhotoFrame = [[decoder decodeObjectForKey:@"isFixedPhotoFrame"] boolValue];
@@ -90,6 +74,8 @@
     [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.photoScale] forKey:@"photoScale"];
     [encoder encodeObject:[NSValue valueWithCGPoint:self.photoImageView.center] forKey:@"photoCenter"];
+    NSLog(@"self.photoCenter encodeWithCoder %@",NSStringFromCGPoint(self.photoCenter));
+
     [encoder encodeObject:[NSNumber numberWithFloat:self.isCircle] forKey:@"isCircle"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.isFixedPhotoFrame] forKey:@"isFixedPhotoFrame"];
 
