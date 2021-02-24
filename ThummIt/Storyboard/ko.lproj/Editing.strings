@@ -1,36 +1,36 @@
 
 /* Class = "UILabel"; text = "BG Color"; ObjectID = "1zi-B1-aPg"; */
-"1zi-B1-aPg.text" = "배경색";
+"dB0-Zb-cI3.text" = "배경색";
 
 /* Class = "UILabel"; text = "Delete"; ObjectID = "7dA-xu-yjx"; */
-"7dA-xu-yjx.text" = "삭제";
+"XUi-TN-JUe.text" = "삭제";
 
 /* Class = "UIButton"; normalTitle = "Export"; ObjectID = "JmC-6K-MjI"; */
-"JmC-6K-MjI.normalTitle" = "저장";
+"aLA-EF-qfs.normalTitle" = "저장";
 
 /* Class = "UINavigationItem"; title = "Album"; ObjectID = "RKB-uI-dlr"; */
 "RKB-uI-dlr.title" = "Album";
 
 /* Class = "UILabel"; text = "PhotoFrame"; ObjectID = "TLd-62-MNS"; */
-"TLd-62-MNS.text" = "포토프레임";
+"IET-RP-L4d.text" = "포토프레임";
 
 /* Class = "UILabel"; text = "Sticker"; ObjectID = "d66-vL-Vag"; */
-"d66-vL-Vag.text" = "스티커";
+"Qls-cN-zA9.text" = "스티커";
 
 /* Class = "UILabel"; text = "Text"; ObjectID = "f42-Nn-7mT"; */
-"f42-Nn-7mT.text" = "텍스트";
+"Yc1-On-4DM.text" = "텍스트";
 
 /* Class = "UILabel"; text = "BackgroundColor"; ObjectID = "qsY-NY-IDB"; */
 "qsY-NY-IDB.text" = "배경색";
 
 /* Class = "UILabel"; text = "MainFrame"; ObjectID = "qsY-NY-IDB"; */
-"mBj-yN-1GN.text" = "메인프레임";
+"Ixq-tj-UjT.text" = "메인프레임";
 
 /* Class = "UILabel"; text = "T"; ObjectID = "wmZ-XO-KM9"; */
 "wmZ-XO-KM9.text" = "T";
 
 /* Class = "UILabel"; text = "Editing"; ObjectID = "xcS-1G-W8A"; */
-"xcS-1G-W8A.text" = "편집";
+"SQW-dO-c0J.text" = "편집";
 
 "1FF-i8-Sg0.normalTitle" = "스타일";
 "o6x-KH-rv5.normalTitle" = "입력";
