@@ -79,10 +79,23 @@
         [self.accountVC.navigationController pushViewController:CustomerFeedbackVC animated:true];
 
     }else if (indexPath.row == 1){
-        
-        UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-        PrivacyPolicyViewController *privacyVC = (PrivacyPolicyViewController *)[main instantiateViewControllerWithIdentifier:@"PrivacyPolicyViewController"];
-        [self.accountVC.navigationController pushViewController:privacyVC animated:true];
+        UIViewController *webVC = [[UIViewController alloc] init];
+        NSString * language = [[NSLocale preferredLanguages] firstObject];
+        if ([language isEqualToString:@"en"]) {
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://thummiteng.o-r.kr/"]];
+            self.wkWebView = [[WKWebView alloc] initWithFrame:self.accountVC.view.frame];
+            [self.wkWebView setNavigationDelegate:self];
+            [self.wkWebView loadRequest:request];
+            [webVC.view addSubview:self.wkWebView];
+            [self.accountVC presentViewController:webVC animated:true completion:nil];
+        } else{
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://thummitkr.o-r.kr/"]];
+            self.wkWebView = [[WKWebView alloc] initWithFrame:self.accountVC.view.frame];
+            [self.wkWebView setNavigationDelegate:self];
+            [self.wkWebView loadRequest:request];
+            [webVC.view addSubview:self.wkWebView];
+            [self.accountVC presentViewController:webVC animated:true completion:nil];
+        }
         
     }else if (indexPath.row == 2){
         
@@ -128,6 +141,23 @@
     
 }
 
+
+- (void)didReceiveMemoryWarning {
+   // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - WKNavigationDelegate
+- (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
+   NSLog(@"1. didCommitNavigation");
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
+   NSLog(@"2. didFinishNavigation");
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
+   NSLog(@"3. didFailNavigation");
+}
 
 
 
