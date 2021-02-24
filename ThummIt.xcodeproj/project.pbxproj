@@ -148,6 +148,7 @@
 		6E8F9B1125C348C9005C8071 /* WorkManStartleSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B0F25C348C9005C8071 /* WorkManStartleSticker.m */; };
 		6E8F9B4425C35261005C8071 /* SeoYuGiHungryTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B4225C35261005C8071 /* SeoYuGiHungryTypo.m */; };
 		6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F9B4725C35289005C8071 /* SeoYuGiInFrontOfGirlTypo.m */; };
+		6E90EF9E25E64CAD0059DEEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E90EFA025E64CAD0059DEEB /* InfoPlist.strings */; };
 		6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99877B258A2A9D00C8F907 /* TemplateManager.m */; };
 		6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E998794258A300300C8F907 /* HomeCollectionViewCell.m */; };
 		6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */; };
@@ -717,6 +718,8 @@
 		6E8F9B4325C35261005C8071 /* SeoYuGiHungryTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeoYuGiHungryTypo.h; sourceTree = "<group>"; };
 		6E8F9B4725C35289005C8071 /* SeoYuGiInFrontOfGirlTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiInFrontOfGirlTypo.m; sourceTree = "<group>"; };
 		6E8F9B4825C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeoYuGiInFrontOfGirlTypo.h; sourceTree = "<group>"; };
+		6E90EF9F25E64CAD0059DEEB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E90EFA125E64D0A0059DEEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E99877A258A2A9D00C8F907 /* TemplateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateManager.h; sourceTree = "<group>"; };
 		6E99877B258A2A9D00C8F907 /* TemplateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemplateManager.m; sourceTree = "<group>"; };
 		6E998793258A300300C8F907 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -2631,6 +2634,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF0C6F825CA328300BE7573 /* Localizable.strings */,
+				6E90EFA025E64CAD0059DEEB /* InfoPlist.strings */,
 			);
 			path = LocalizationFile;
 			sourceTree = "<group>";
@@ -3109,6 +3113,7 @@
 				6EBEB5E125C30C460017C640 /* KCC김훈체(MAC용).otf in Resources */,
 				6EBEB5DE25C30C3D0017C640 /* Recipekorea 레코체 FONT.otf in Resources */,
 				6EBEB5D925C308EB0017C640 /* SDSwagger.otf in Resources */,
+				6E90EF9E25E64CAD0059DEEB /* InfoPlist.strings in Resources */,
 				6EBEB5D025C2F9F60017C640 /* SangSangShin.otf in Resources */,
 				6EBEB5C525C2F3030017C640 /* SCDream2.otf in Resources */,
 				6EBEB5A025C20B170017C640 /* BMJUA_otf.otf in Resources */,
@@ -3742,6 +3747,15 @@
 				6E7BC04F25CAB781006C9F83 /* ko */,
 			);
 			name = Editing.storyboard;
+			sourceTree = "<group>";
+		};
+		6E90EFA025E64CAD0059DEEB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E90EF9F25E64CAD0059DEEB /* ko */,
+				6E90EFA125E64D0A0059DEEB /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		6EF0C6F825CA328300BE7573 /* Localizable.strings */ = {
