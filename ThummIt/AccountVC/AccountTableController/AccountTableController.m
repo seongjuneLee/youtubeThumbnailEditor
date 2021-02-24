@@ -20,8 +20,6 @@
     self = [super init];
     if(self){
         
-//        NSDictionary *myFolderDict = @{@"My Folder":@"folderImage"}; // 이미지 추가
-//        NSDictionary *inviteFriendsDict = @{@"Invite Friends":@"friend"}; // 이미지 추가
         NSDictionary *customerCenterDict = @{NSLocalizedString(@"Customer Center", nil):@"customerCenter"}; // 이미지 추가
         NSDictionary *pivacyPolicyDict = @{NSLocalizedString(@"Privacy Policy", nil):@"privacyPolicy"}; // 이미지 추가
         NSDictionary *logOutDict = @{NSLocalizedString(@"Log Out", nil):@"logOut"}; // 이미지 추가

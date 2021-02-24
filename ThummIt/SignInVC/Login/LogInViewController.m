@@ -82,7 +82,9 @@
     
     [self.view makeToastActivity:CSToastPositionCenter];
     [PFUser logInWithUsernameInBackground:self.emailTextField.text password:self.passwordTextField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
-        [self.view hideAllToasts];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.view hideAllToasts];
+        });
         if (user) {
             [self.navigationController dismissViewControllerAnimated:true completion:nil];
         } else {

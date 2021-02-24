@@ -351,6 +351,8 @@
 		6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */; };
 		6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95925CD513000BE7573 /* DinggoMurder.m */; };
 		6EF0C95F25CD528C00BE7573 /* DigitalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */; };
+		6EF4330D25E6368000EED56F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF4330C25E6368000EED56F /* SystemConfiguration.framework */; };
+		6EF4331525E636F000EED56F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4331425E636F000EED56F /* Reachability.m */; };
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
 		B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */; };
 		B11E0D5425C4F6070050D9F0 /* ClothesVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5325C4F6070050D9F0 /* ClothesVlogTemplate.m */; };
@@ -438,19 +440,6 @@
 			remoteInfo = ThumbnailMaker;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		6ED138EC25B82BF900012144 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A49A04B80956AB489C19EA8 /* Pods-ThummIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThummIt.debug.xcconfig"; path = "Target Support Files/Pods-ThummIt/Pods-ThummIt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1095,6 +1084,10 @@
 		6EF0C95D25CD528C00BE7573 /* DigitalTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalTypo.h; sourceTree = "<group>"; };
 		6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalTypo.m; sourceTree = "<group>"; };
 		6EF37B5125E399F000A43595 /* ThummIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThummIt.entitlements; sourceTree = "<group>"; };
+		6EF432B425E62F4D00EED56F /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reachability.framework; sourceTree = "<group>"; };
+		6EF4330C25E6368000EED56F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6EF4331325E636F000EED56F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6EF4331425E636F000EED56F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogBarunGothicTypo.h; sourceTree = "<group>"; };
 		B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogBarunGothicTypo.m; sourceTree = "<group>"; };
 		B11E0D4D25C4EDBD0050D9F0 /* GrwmVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrwmVlogTemplate.h; sourceTree = "<group>"; };
@@ -1220,6 +1213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF4330D25E6368000EED56F /* SystemConfiguration.framework in Frameworks */,
 				6EC764B625E51E8A009FF873 /* WebKit.framework in Frameworks */,
 				6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */,
 				C3AA5AEB200F3BCD30FC7A2B /* Pods_ThummIt.framework in Frameworks */,
@@ -1510,6 +1504,7 @@
 		6E4A17FB2588A529008578BA /* ETC */ = {
 			isa = PBXGroup;
 			children = (
+				6EF4331925E636FA00EED56F /* InternetReachability */,
 				6EF0C6E725CA31CF00BE7573 /* LocalizationFile */,
 				6EAFD5BA25B876D700B193AB /* Fonts */,
 				6EAFD5AB25B876C300B193AB /* Category */,
@@ -2109,6 +2104,8 @@
 		6E9BEA3E258F099300F7F539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EF4330C25E6368000EED56F /* SystemConfiguration.framework */,
+				6EF432B425E62F4D00EED56F /* Reachability.framework */,
 				6EC764B525E51E89009FF873 /* WebKit.framework */,
 				6ED13A8625B9AAC400012144 /* Bolts.framework */,
 				6ED13A8025B9A92C00012144 /* FBSDKCoreKit.framework */,
@@ -2681,6 +2678,15 @@
 			path = DinggoDubleCricleTypo;
 			sourceTree = "<group>";
 		};
+		6EF4331925E636FA00EED56F /* InternetReachability */ = {
+			isa = PBXGroup;
+			children = (
+				6EF4331325E636F000EED56F /* Reachability.h */,
+				6EF4331425E636F000EED56F /* Reachability.m */,
+			);
+			path = InternetReachability;
+			sourceTree = "<group>";
+		};
 		B16FC61125ADCA9000E854C1 /* StickerCollectionController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2984,7 +2990,6 @@
 				6E1190DD2584B163000DD9C0 /* Sources */,
 				6E1190DE2584B163000DD9C0 /* Frameworks */,
 				6E1190DF2584B163000DD9C0 /* Resources */,
-				6ED138EC25B82BF900012144 /* Embed Frameworks */,
 				5382FD38E426137BAC86DE7D /* [CP] Embed Pods Frameworks */,
 				06C3707C3E7963BD46EC44A5 /* [CP] Copy Pods Resources */,
 				6E11CABC25DDB8150003E02D /* ShellScript */,
@@ -3471,6 +3476,7 @@
 				6E28452C25C35870008B7A23 /* VlogStudy.m in Sources */,
 				6E28451925C35870008B7A23 /* VlogDesiner.m in Sources */,
 				6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */,
+				6EF4331525E636F000EED56F /* Reachability.m in Sources */,
 				6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */,
 				6E28451425C35870008B7A23 /* VlogBrushTypo.m in Sources */,
 				6ED13D4D25C2C84400012144 /* SinSeoYuGiExc2Sticker.m in Sources */,

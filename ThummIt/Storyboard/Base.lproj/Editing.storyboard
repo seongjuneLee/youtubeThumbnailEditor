@@ -558,40 +558,6 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1n-4k-j0b">
                                         <rect key="frame" x="55" y="10" width="304" height="40"/>
                                         <subviews>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhf-kQ-LNQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="304" height="33"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFi-0M-2vF">
-                                                        <rect key="frame" x="110" y="0.0" width="84" height="33"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcT-F7-jII">
-                                                        <rect key="frame" x="110" y="0.0" width="33" height="33"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                        <state key="normal" title="Text">
-                                                            <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhg-NI-vMI">
-                                                        <rect key="frame" x="158" y="0.0" width="36" height="33"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                        <state key="normal" title="Style">
-                                                            <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="aFi-0M-2vF" firstAttribute="centerY" secondItem="qhf-kQ-LNQ" secondAttribute="centerY" id="0VL-tQ-4X7"/>
-                                                    <constraint firstItem="IcT-F7-jII" firstAttribute="centerY" secondItem="qhf-kQ-LNQ" secondAttribute="centerY" id="1kL-Su-Leh"/>
-                                                    <constraint firstItem="aFi-0M-2vF" firstAttribute="height" secondItem="qhf-kQ-LNQ" secondAttribute="height" id="Apb-2S-4zm"/>
-                                                    <constraint firstItem="IcT-F7-jII" firstAttribute="leading" secondItem="aFi-0M-2vF" secondAttribute="leading" id="Er1-nM-i2u"/>
-                                                    <constraint firstItem="aFi-0M-2vF" firstAttribute="centerX" secondItem="qhf-kQ-LNQ" secondAttribute="centerX" id="JPz-af-9KK"/>
-                                                    <constraint firstItem="xhg-NI-vMI" firstAttribute="trailing" secondItem="aFi-0M-2vF" secondAttribute="trailing" id="bDa-Hv-Nux"/>
-                                                    <constraint firstItem="xhg-NI-vMI" firstAttribute="leading" secondItem="IcT-F7-jII" secondAttribute="trailing" constant="15" id="ohi-K2-H8E"/>
-                                                    <constraint firstItem="xhg-NI-vMI" firstAttribute="centerY" secondItem="qhf-kQ-LNQ" secondAttribute="centerY" id="xqt-mf-Ic5"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msq-OU-u2e">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="33"/>
                                                 <subviews>
@@ -679,18 +645,13 @@
                                             <constraint firstAttribute="bottom" secondItem="rUN-Ij-0B9" secondAttribute="bottom" id="2jk-T5-GqN"/>
                                             <constraint firstItem="rUN-Ij-0B9" firstAttribute="top" secondItem="W1n-4k-j0b" secondAttribute="top" id="BCE-xc-VLS"/>
                                             <constraint firstItem="Msq-OU-u2e" firstAttribute="width" secondItem="W1n-4k-j0b" secondAttribute="width" id="CDq-Tv-qFR"/>
-                                            <constraint firstItem="qhf-kQ-LNQ" firstAttribute="top" secondItem="W1n-4k-j0b" secondAttribute="top" id="Ded-sf-4qY"/>
-                                            <constraint firstAttribute="trailing" secondItem="qhf-kQ-LNQ" secondAttribute="trailing" id="Ekl-dE-l8r"/>
-                                            <constraint firstItem="qhf-kQ-LNQ" firstAttribute="width" secondItem="W1n-4k-j0b" secondAttribute="width" id="Kx4-4O-PnP"/>
                                             <constraint firstItem="Msq-OU-u2e" firstAttribute="leading" secondItem="W1n-4k-j0b" secondAttribute="leading" id="Mra-qK-rrY"/>
                                             <constraint firstItem="Msq-OU-u2e" firstAttribute="top" secondItem="W1n-4k-j0b" secondAttribute="top" id="WF4-pO-M6W"/>
-                                            <constraint firstItem="qhf-kQ-LNQ" firstAttribute="leading" secondItem="W1n-4k-j0b" secondAttribute="leading" id="fHE-T0-i6e"/>
                                             <constraint firstItem="rUN-Ij-0B9" firstAttribute="width" secondItem="W1n-4k-j0b" secondAttribute="width" id="lcI-bs-w7s"/>
                                             <constraint firstAttribute="trailing" secondItem="rUN-Ij-0B9" secondAttribute="trailing" id="q26-Zi-FnM"/>
                                             <constraint firstItem="rUN-Ij-0B9" firstAttribute="leading" secondItem="W1n-4k-j0b" secondAttribute="leading" id="tA1-kz-uus"/>
                                             <constraint firstAttribute="bottom" secondItem="Msq-OU-u2e" secondAttribute="bottom" id="v2z-gW-WEb"/>
                                             <constraint firstAttribute="trailing" secondItem="Msq-OU-u2e" secondAttribute="trailing" id="vpL-jY-2ba"/>
-                                            <constraint firstAttribute="bottom" secondItem="qhf-kQ-LNQ" secondAttribute="bottom" id="yZA-pq-VEN"/>
                                         </constraints>
                                         <viewLayoutGuide key="contentLayoutGuide" id="vSV-HQ-s1I"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="WIs-4M-vip"/>
@@ -748,7 +709,6 @@
                         <outlet property="photoFrameScrollContanerView" destination="Msq-OU-u2e" id="Vab-lQ-gnW"/>
                         <outlet property="photoFrameStyleButton" destination="fuq-Yy-9we" id="iTX-Bh-CiQ"/>
                         <outlet property="scrollView" destination="W1n-4k-j0b" id="dTt-ac-75h"/>
-                        <outlet property="stickerScrollContainerView" destination="qhf-kQ-LNQ" id="abH-X5-cPA"/>
                         <outlet property="textButton" destination="o6x-KH-rv5" id="J2b-xv-PnE"/>
                         <outlet property="textScrollContainerView" destination="rUN-Ij-0B9" id="2Yh-qy-YiY"/>
                         <outlet property="typoButton" destination="1FF-i8-Sg0" id="14v-IX-itQ"/>

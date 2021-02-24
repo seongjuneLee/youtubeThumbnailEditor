@@ -9,6 +9,7 @@
 #import "UserManager.h"
 #import "NSString+Additions.h"
 @import Parse;
+#import <Reachability/Reachability.h>
 @interface SignInPasswordViewController ()
 
 @end
@@ -101,6 +102,18 @@
 
 - (IBAction)nextButtonTapped:(id)sender {
     
+    Reachability* reach = [Reachability reachabilityForInternetConnection];
+
+    NetworkStatus netStatus = [reach currentReachabilityStatus];
+    //See if the reachable object status is "ReachableViaWifi"
+ if (netStatus==NotReachable) {
+     //If not
+     [self.view makeToast:NSLocalizedString(@"Internet is not connected. please check and try again.", comment: @"") duration:4.0 position:CSToastPositionCenter];
+     
+     //Alert the user about the Internet cnx
+     return;//Exit the method
+ }
+
     PFUser *newUser = [PFUser user];
     newUser[@"username"] = UserManager.sharedInstance.email;
     newUser[@"email"] = UserManager.sharedInstance.email;
@@ -109,7 +122,9 @@
     
     [self.view makeToastActivity:CSToastPositionCenter];
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        [self.view hideAllToasts];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.view hideAllToasts];
+        });
         if (succeeded) {
             [self.navigationController dismissViewControllerAnimated:true completion:nil];
         }
