@@ -215,9 +215,10 @@
     }];
     
     PhotoFrame *copied = [(PhotoFrame *)editingVC.currentItem copy];
-    [copied loadView];
     copied.baseView.clipsToBounds = false;
     editingVC.editingPhotoVC.photoFrame = copied;
+    self.editingPhotoButtonVC.photoFrame = editingVC.editingPhotoVC.photoFrame;
+    self.editingPhotoButtonVC.editingPhotoVC = editingVC.editingPhotoVC;
     [editingVC.editingPhotoVC.view insertSubview:copied.baseView belowSubview:editingVC.editingPhotoVC.gestureView];
     
     [self addChildViewController:self.editingPhotoButtonVC];

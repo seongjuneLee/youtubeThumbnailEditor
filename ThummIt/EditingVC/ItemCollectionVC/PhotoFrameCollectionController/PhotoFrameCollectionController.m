@@ -8,6 +8,8 @@
 #import "PhotoFrameCollectionController.h"
 #import "PhotoFrameCollectionViewCell.h"
 #import "PhotoFrameCollectionReusableView.h"
+#import "FreeFormCollectionReusableView.h"
+
 #import "ItemManager.h"
 #import "PhotoManager.h"
 #import "UIView+Additions.h"
@@ -32,6 +34,7 @@
         self.collectionView.dataSource = self;
         [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoFrameCollectionViewCell" bundle:NSBundle.mainBundle] forCellWithReuseIdentifier:@"PhotoFrameCollectionViewCell"];
         [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoFrameCollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView"];
+        [self.collectionView registerNib:[UINib nibWithNibName:@"FreeFormCollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"FreeFormCollectionReusableView"];
 
     }
     
@@ -50,50 +53,56 @@
         photoFrameCategories =ItemManager.sharedInstance.photoFrameCategoriesForFreeFormProject;
     }
 
-    return photoFrameCategories.count;
+    return photoFrameCategories.count + 1;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    NSArray *photoFrames;
-    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
-        photoFrames = ItemManager.sharedInstance.photoFrameDatas[section];
+    if (section == 0) {
+        return 0;
     } else {
-        photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[section];
+        NSArray *photoFrames;
+        if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+            photoFrames = ItemManager.sharedInstance.photoFrameDatas[section - 1];
+        } else {
+            photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[section - 1];
+        }
+        
+        return photoFrames.count;
     }
-    
-    return photoFrames.count;
 }
 
 -(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     PhotoFrameCollectionViewCell *cell = (PhotoFrameCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoFrameCollectionViewCell" forIndexPath:indexPath];
-    NSArray *photoFrames;
-    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
-        photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
-    } else {
-        photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[indexPath.section];
+    if (indexPath.section > 0) {
+        NSArray *photoFrames;
+        if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+            photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section - 1];
+        } else {
+            photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[indexPath.section - 1];
+        }
+
+        PhotoFrame *photoFrame = photoFrames[indexPath.item];
+        [photoFrame loadView];
+
+        [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                float ratio = image.size.height/image.size.width;
+                float width = photoFrame.baseView.bounds.size.width;
+                float height = photoFrame.baseView.bounds.size.height;
+                if (ratio > 1) {
+                    photoFrame.photoImageView.frameSize = CGSizeMake(width, width * ratio);
+                } else {
+                    photoFrame.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
+                }
+                photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
+                photoFrame.photoImageView.image = image;
+                cell.previewImageView.image = [photoFrame.baseView toImage];
+
+            });
+        }];
     }
-
-    PhotoFrame *photoFrame = photoFrames[indexPath.item];
-    [photoFrame loadView];
-
-    [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            float ratio = image.size.height/image.size.width;
-            float width = photoFrame.baseView.bounds.size.width;
-            float height = photoFrame.baseView.bounds.size.height;
-            if (ratio > 1) {
-                photoFrame.photoImageView.frameSize = CGSizeMake(width, width * ratio);
-            } else {
-                photoFrame.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
-            }
-            photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
-            photoFrame.photoImageView.image = image;
-            cell.previewImageView.image = [photoFrame.baseView toImage];
-
-        });
-    }];
 
     
     return cell;
@@ -147,22 +156,37 @@
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
-    PhotoFrameCollectionReusableView *reusableView = (PhotoFrameCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView" forIndexPath:indexPath];
-    NSArray *photoFrameCategories;
-    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
-        photoFrameCategories =ItemManager.sharedInstance.photoFrameCategories;
-    } else {
-        photoFrameCategories =ItemManager.sharedInstance.photoFrameCategoriesForFreeFormProject;
-    }
-
-    NSString *category = photoFrameCategories[indexPath.section];
-    reusableView.categoryLabel.text = category;
+    ;
     
-    return reusableView;
+    if (indexPath.section == 0) {
+        FreeFormCollectionReusableView *reusableView = (FreeFormCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"FreeFormCollectionReusableView" forIndexPath:indexPath];
+        reusableView.freeformBGView.layer.cornerRadius = reusableView.freeformBGView.frameWidth/2;
+        return reusableView;
+
+    } else {
+        PhotoFrameCollectionReusableView *reusableView = (PhotoFrameCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView" forIndexPath:indexPath];
+        NSArray *photoFrameCategories;
+        if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+            photoFrameCategories =ItemManager.sharedInstance.photoFrameCategories;
+        } else {
+            photoFrameCategories =ItemManager.sharedInstance.photoFrameCategoriesForFreeFormProject;
+        }
+
+        NSString *category = photoFrameCategories[indexPath.section - 1];
+        reusableView.categoryLabel.text = category;
+        return reusableView;
+
+    }
+    
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return CGSizeMake(self.collectionView.frameWidth, 25);
+    if (section == 0) {
+        return CGSizeMake(self.collectionView.frameWidth, 100);
+
+    } else {
+        return CGSizeMake(self.collectionView.frameWidth, 20);
+    }
 }
 
 @end
