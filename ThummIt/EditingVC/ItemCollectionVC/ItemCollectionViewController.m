@@ -41,15 +41,22 @@
 }
 
 -(void)dismissSelf{
-    
-    [UIView animateWithDuration:0.4 animations:^{
-        self.cancelButton.alpha = self.checkButton.alpha = 0;
-        self.containerTopConstraint.constant = -self.view.frameHeight;
-        [self.view layoutIfNeeded];
-    }completion:^(BOOL finished) {
-        [self.view removeFromSuperview];
-        [self removeFromParentViewController];
-    }];
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    float duration = 0.4;
+    if ([editingVC.childViewControllers containsObject:editingVC.editingPhotoVC]) { // 정말 알 수 없는 dismiss 시에 애니메이션이 이상해지는 경우가 있음. 포토 에디팅 시에는 containerTopConstraint가 좀 더 아래에 있기 때문에 빠르게 내려줘야 해결됨.
+        duration = 0.2;
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:duration animations:^{
+                self.cancelButton.alpha = self.doneButton.alpha = 0;
+                self.containerTopConstraint.constant = -self.view.frameHeight;
+                [self.view layoutIfNeeded];
+        }completion:^(BOOL finished) {
+            [self.view removeFromSuperview];
+            [self removeFromParentViewController];
+        }];
+    });
+
     
 }
 
@@ -78,8 +85,7 @@
         self.textScrollContainerView.hidden = true;
         self.photoScrollContainerView.hidden = false;
 
-    }
-    else if (self.itemType == PhotoFrameType) {
+    }else if (self.itemType == PhotoFrameType) {
         self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
         self.photoFrameCollectionController.editingVC = self.editingVC;
         if (editingVC.currentPhotoFrame.isFixedPhotoFrame) {

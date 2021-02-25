@@ -49,7 +49,6 @@
 
 
 -(void)dismissSelf{
-    
     [UIView animateWithDuration:0.4 animations:^{
         self.collectionViewTopConstraint.constant = self.view.frameHeight;
         [self.view layoutIfNeeded];
@@ -57,7 +56,6 @@
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
     }];
-
 }
 
 - (void)setCollectionViewFlowLayout {

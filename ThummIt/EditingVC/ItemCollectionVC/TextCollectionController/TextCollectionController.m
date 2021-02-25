@@ -111,20 +111,20 @@
         if (editingVC.currentText.isTypedByUser) {
             text.text = editingVC.currentText.text;
             text.textView.text = editingVC.currentText.text;
-            editingVC.itemCollectionVC.checkButton.enabled = true;
-            editingVC.itemCollectionVC.checkButton.alpha = 1;
+            editingVC.itemCollectionVC.doneButton.enabled = true;
+            editingVC.itemCollectionVC.doneButton.alpha = 1;
         } else {
             text.text = typo.name;
             text.textView.text = typo.name;
-            editingVC.itemCollectionVC.checkButton.enabled = false;
-            editingVC.itemCollectionVC.checkButton.alpha = 0.4;
+            editingVC.itemCollectionVC.doneButton.enabled = false;
+            editingVC.itemCollectionVC.doneButton.alpha = 0.4;
         }
         text.isTypedByUser = editingVC.currentText.isTypedByUser;
         text.baseView.center = editingVC.currentText.baseView.center;
         text.baseView.transform = editingVC.currentText.baseView.transform;
     } else {
-        editingVC.itemCollectionVC.checkButton.enabled = false;
-        editingVC.itemCollectionVC.checkButton.alpha = 0.4;
+        editingVC.itemCollectionVC.doneButton.enabled = false;
+        editingVC.itemCollectionVC.doneButton.alpha = 0.4;
         [text loadView];
         [text setItemCenterAndScale];
         text.center = editingVC.bgView.center;

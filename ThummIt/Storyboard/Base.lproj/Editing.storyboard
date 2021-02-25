@@ -705,7 +705,7 @@
                                             <imageReference key="image" image="checkWhite" symbolScale="large" renderingMode="original"/>
                                         </state>
                                         <connections>
-                                            <action selector="checkButtonTapped:" destination="rv8-a5-Dv3" eventType="touchUpInside" id="P3z-LN-uRo"/>
+                                            <action selector="doneButtonTapped:" destination="rv8-a5-Dv3" eventType="touchUpInside" id="P3z-LN-uRo"/>
                                         </connections>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtb-s8-W6M">
@@ -749,13 +749,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="33"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-h2-llY">
-                                                        <rect key="frame" x="110" y="0.0" width="84" height="33"/>
+                                                        <rect key="frame" x="107.5" y="0.0" width="89" height="33"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U11-Go-zfT">
-                                                        <rect key="frame" x="110" y="0.0" width="33" height="33"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U11-Go-zfT">
+                                                        <rect key="frame" x="107.5" y="0.0" width="44" height="33"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                        <state key="normal" title="Text">
+                                                        <state key="normal" title="Photo">
                                                             <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -763,9 +763,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvZ-GF-95Y">
-                                                        <rect key="frame" x="158" y="0.0" width="36" height="33"/>
+                                                        <rect key="frame" x="166.5" y="0.0" width="30" height="33"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                        <state key="normal" title="Style">
+                                                        <state key="normal" title="Edit">
                                                             <color key="titleColor" red="1" green="0.99997437" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -794,7 +794,7 @@
                                                         <rect key="frame" x="107" y="0.0" width="90" height="33"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
-                                                    <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyl-TT-Vqb">
+                                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyl-TT-Vqb">
                                                         <rect key="frame" x="107" y="0.0" width="44" height="33"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                         <state key="normal" title="Photo">
@@ -804,7 +804,7 @@
                                                             <action selector="photoFramePhotoButtonTapped:" destination="rv8-a5-Dv3" eventType="touchUpInside" id="VYU-Zq-8pF"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxP-5Y-6Ea">
+                                                    <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxP-5Y-6Ea">
                                                         <rect key="frame" x="161" y="0.0" width="36" height="33"/>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                         <state key="normal" title="Style">
@@ -939,10 +939,10 @@
                     <size key="freeformSize" width="414" height="700"/>
                     <connections>
                         <outlet property="cancelButton" destination="ta7-uC-Qbg" id="616-Zs-5HR"/>
-                        <outlet property="checkButton" destination="KGY-sr-8sQ" id="EFJ-3X-vFj"/>
                         <outlet property="collectionView" destination="ydU-9a-W2i" id="ge6-kp-4yk"/>
                         <outlet property="containerTopConstraint" destination="9j2-xc-gud" id="Bt3-lI-hrT"/>
                         <outlet property="containerView" destination="xa1-cc-7S2" id="t4P-W7-7Wv"/>
+                        <outlet property="doneButton" destination="KGY-sr-8sQ" id="EFJ-3X-vFj"/>
                         <outlet property="editPhotoButton" destination="fvZ-GF-95Y" id="WxX-U3-dLy"/>
                         <outlet property="photoButton" destination="U11-Go-zfT" id="9MJ-86-lvV"/>
                         <outlet property="photoFramePhotoButton" destination="fyl-TT-Vqb" id="XZp-bG-fCo"/>

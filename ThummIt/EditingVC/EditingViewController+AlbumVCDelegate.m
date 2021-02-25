@@ -32,19 +32,20 @@
     } else {
         Photo *photo = self.currentPhoto;
         photo.phAsset = phAsset;
-        
+        CGPoint originalCenter = photo.baseView.center;
         [PhotoManager.sharedInstance getImageFromPHAsset:phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(1920,1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 float ratio = image.size.height/image.size.width;
-                float width = self.view.frameWidth * 0.8;
+                float width = self.bgView.frameWidth * 0.8;
                 float height = self.bgView.frameHeight * 0.8;
-                if (ratio > 1) {
+                if (ratio < 1) {
                     photo.photoImageView.frameSize = CGSizeMake(width, width * ratio);
                 } else {
                     photo.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
                 }
-                photo.photoImageView.center = CGPointMake(photo.baseView.bounds.size.width/2,photo.baseView.bounds.size.height/2);
                 photo.photoImageView.image = image;
+                photo.baseView.bounds = photo.photoImageView.bounds;
+                photo.baseView.center = originalCenter;
             });
         }];
 

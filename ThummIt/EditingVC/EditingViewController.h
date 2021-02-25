@@ -58,6 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGAffineTransform originalTransform;
 
 @property (strong, nonatomic, nullable) PhotoFrame *originalPhotoFrame;
+@property (strong, nonatomic, nullable) Photo *originalPhoto;
 
 @property (strong, nonatomic) Typography *originalTypo; // text
 @property (strong, nonatomic) NSString *originalText;

@@ -79,8 +79,6 @@
 		6E28452C25C35870008B7A23 /* VlogStudy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28451225C35870008B7A23 /* VlogStudy.m */; };
 		6E2845B125C5FCC4008B7A23 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845B025C5FCC4008B7A23 /* UserManager.m */; };
 		6E2845CB25C98990008B7A23 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */; };
-		6E40F3DB25E6947D00FD0F67 /* EditingPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F3D725E6947D00FD0F67 /* EditingPhotoViewController.m */; };
-		6E40F3DC25E6947D00FD0F67 /* EditingPhotoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F3D925E6947D00FD0F67 /* EditingPhotoButtonViewController.m */; };
 		6E40F40E25E6963C00FD0F67 /* DeepLabV3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F40925E6963C00FD0F67 /* DeepLabV3Int8LUT.mlmodel */; };
 		6E40F41025E6963C00FD0F67 /* Deeplab.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F40B25E6963C00FD0F67 /* Deeplab.mlmodel */; };
 		6E40F41125E6963C00FD0F67 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F40C25E6963C00FD0F67 /* DeepLabV3FP16.mlmodel */; };
@@ -114,6 +112,8 @@
 		6E80771825C857520033FF21 /* StudyVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80771725C857520033FF21 /* StudyVlogTemplate.m */; };
 		6E80771D25C85FDB0033FF21 /* VlogTapeSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80771C25C85FDB0033FF21 /* VlogTapeSticker.m */; };
 		6E80772A25C960D00033FF21 /* WorkManYoutube.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80772925C960D00033FF21 /* WorkManYoutube.m */; };
+		6E84301F25E81A2100034174 /* EditingPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E84301D25E81A2000034174 /* EditingPhotoViewController.m */; };
+		6E84302025E81A2100034174 /* EditingPhotoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E84301E25E81A2100034174 /* EditingPhotoButtonViewController.m */; };
 		6E88303225CDA7FA0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E88303125CDA7CC0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf */; };
 		6E88303625CDB0A80025B8A5 /* BinggraeSamanco-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E88303525CDB08E0025B8A5 /* BinggraeSamanco-Bold.otf */; };
 		6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7997258F82E80008C5FF /* Migrator200406.swift */; };
@@ -645,10 +645,6 @@
 		6E2845B025C5FCC4008B7A23 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		6E2845C925C98990008B7A23 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
-		6E40F3D725E6947D00FD0F67 /* EditingPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoViewController.m; sourceTree = "<group>"; };
-		6E40F3D825E6947D00FD0F67 /* EditingPhotoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingPhotoButtonViewController.h; sourceTree = "<group>"; };
-		6E40F3D925E6947D00FD0F67 /* EditingPhotoButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoButtonViewController.m; sourceTree = "<group>"; };
-		6E40F3DA25E6947D00FD0F67 /* EditingPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingPhotoViewController.h; sourceTree = "<group>"; };
 		6E40F40925E6963C00FD0F67 /* DeepLabV3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3Int8LUT.mlmodel; sourceTree = "<group>"; };
 		6E40F40B25E6963C00FD0F67 /* Deeplab.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Deeplab.mlmodel; sourceTree = "<group>"; };
 		6E40F40C25E6963C00FD0F67 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
@@ -709,6 +705,10 @@
 		6E80772425C92EDC0033FF21 /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.otf; sourceTree = "<group>"; };
 		6E80772825C960D00033FF21 /* WorkManYoutube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManYoutube.h; sourceTree = "<group>"; };
 		6E80772925C960D00033FF21 /* WorkManYoutube.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManYoutube.m; sourceTree = "<group>"; };
+		6E84301B25E81A1F00034174 /* EditingPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditingPhotoViewController.h; sourceTree = "<group>"; };
+		6E84301C25E81A2000034174 /* EditingPhotoButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditingPhotoButtonViewController.h; sourceTree = "<group>"; };
+		6E84301D25E81A2000034174 /* EditingPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoViewController.m; sourceTree = "<group>"; };
+		6E84301E25E81A2100034174 /* EditingPhotoButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoButtonViewController.m; sourceTree = "<group>"; };
 		6E88302C25CD73BC0025B8A5 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		6E88303125CDA7CC0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NEXON Lv2 Gothic OTF Bold.otf"; sourceTree = "<group>"; };
 		6E88303525CDB08E0025B8A5 /* BinggraeSamanco-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BinggraeSamanco-Bold.otf"; sourceTree = "<group>"; };
@@ -1627,18 +1627,6 @@
 			path = UserManager;
 			sourceTree = "<group>";
 		};
-		6E40F3D625E6947D00FD0F67 /* EditingPhotoVC */ = {
-			isa = PBXGroup;
-			children = (
-				6E40F3DA25E6947D00FD0F67 /* EditingPhotoViewController.h */,
-				6E40F3D725E6947D00FD0F67 /* EditingPhotoViewController.m */,
-				6E40F3D825E6947D00FD0F67 /* EditingPhotoButtonViewController.h */,
-				6E40F3D925E6947D00FD0F67 /* EditingPhotoButtonViewController.m */,
-			);
-			name = EditingPhotoVC;
-			path = ../../../../../archive/ThummIt/EditingVC/ItemCollectionVC/PhotoFrameCollectionController/EditingPhotoVC;
-			sourceTree = "<group>";
-		};
 		6E40F40825E6963B00FD0F67 /* CoreML */ = {
 			isa = PBXGroup;
 			children = (
@@ -1836,6 +1824,17 @@
 			path = Template;
 			sourceTree = "<group>";
 		};
+		6E84301A25E81A1F00034174 /* EditingPhotoVC */ = {
+			isa = PBXGroup;
+			children = (
+				6E84301B25E81A1F00034174 /* EditingPhotoViewController.h */,
+				6E84301D25E81A2000034174 /* EditingPhotoViewController.m */,
+				6E84301C25E81A2000034174 /* EditingPhotoButtonViewController.h */,
+				6E84301E25E81A2100034174 /* EditingPhotoButtonViewController.m */,
+			);
+			path = EditingPhotoVC;
+			sourceTree = "<group>";
+		};
 		6E8E799E258F82ED0008C5FF /* Migrator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1910,6 +1909,7 @@
 				6E8E7A23259B26CF0008C5FF /* ItemCollectionViewController.m */,
 				6E6E5BFA25AA23F3009821CF /* ItemCollectionViewController+Button.h */,
 				6E6E5BFB25AA23F3009821CF /* ItemCollectionViewController+Button.m */,
+				6E84301A25E81A1F00034174 /* EditingPhotoVC */,
 				6E8E7A32259B27120008C5FF /* PhotoFrameCollectionController */,
 				6E8E7AC425A8335E0008C5FF /* TextCollectionController */,
 				B16FC61125ADCA9000E854C1 /* StickerCollectionController */,
@@ -1921,7 +1921,6 @@
 		6E8E7A32259B27120008C5FF /* PhotoFrameCollectionController */ = {
 			isa = PBXGroup;
 			children = (
-				6E40F3D625E6947D00FD0F67 /* EditingPhotoVC */,
 				6E8E7A2C259B270E0008C5FF /* PhotoFrameCollectionController.h */,
 				6E8E7A2D259B270E0008C5FF /* PhotoFrameCollectionController.m */,
 				6E8E7A6F259C915C0008C5FF /* CollectionCell */,
@@ -3682,6 +3681,7 @@
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
 				6EF0C92A25CD266600BE7573 /* DinggoBigEdit.m in Sources */,
 				6ED13CAF25C1AEF700012144 /* KnockOutTypo.m in Sources */,
+				6E84301F25E81A2100034174 /* EditingPhotoViewController.m in Sources */,
 				6ED13D2F25C2C73A00012144 /* RunningManExcSticker.m in Sources */,
 				6E28452325C35870008B7A23 /* VlogNanumSquareTypo.m in Sources */,
 				6E7DD4A82584D4490014618E /* AlbumViewController+CollectionViewDelegate.m in Sources */,
@@ -3829,7 +3829,6 @@
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */,
 				6EF0C94B25CD45F100BE7573 /* DinggoStarWarsTypo.m in Sources */,
-				6E40F3DC25E6947D00FD0F67 /* EditingPhotoButtonViewController.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				6E8F9A6A25C344EB005C8071 /* PhotoFrame.m in Sources */,
 				6E8F99BE25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m in Sources */,
@@ -3876,7 +3875,6 @@
 				6EF0C82025CBC32600BE7573 /* GlitterSticker.m in Sources */,
 				B1F2B75325C1CFFD0064A044 /* InfiniteChallengeYellowSpeechBoxYellow.m in Sources */,
 				6E8E79CB25921C830008C5FF /* ProjectViewController.m in Sources */,
-				6E40F3DB25E6947D00FD0F67 /* EditingPhotoViewController.m in Sources */,
 				6EF0C86825CBD2A900BE7573 /* NoteSticker1.m in Sources */,
 				6E4A187C258A0E0B008578BA /* DoubleCircleTemplate.m in Sources */,
 				6E1DBEA025D82E86004C0416 /* KidsTrapezoid3.m in Sources */,
@@ -3928,6 +3926,7 @@
 				6EF0C89025CBD34A00BE7573 /* SnowflakeSticker2.m in Sources */,
 				B11E0D7E25C57BB90050D9F0 /* KidsVlogTemplate.m in Sources */,
 				6ED13D4625C2C82900012144 /* SinSeoYuGiExc1Sticker.m in Sources */,
+				6E84302025E81A2100034174 /* EditingPhotoButtonViewController.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
 				6E1DBE1325D80A7A004C0416 /* OneThirdRectangle.m in Sources */,
 				6E40F41025E6963C00FD0F67 /* Deeplab.mlmodel in Sources */,
@@ -4343,7 +4342,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KD6B7H34C6;
 				FRAMEWORK_SEARCH_PATHS = (

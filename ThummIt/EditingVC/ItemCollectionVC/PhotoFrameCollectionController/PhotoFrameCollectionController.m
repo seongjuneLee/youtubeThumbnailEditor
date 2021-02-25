@@ -52,53 +52,51 @@
         photoFrameCategories =ItemManager.sharedInstance.photoFrameCategoriesForFreeFormProject;
     }
 
-    return photoFrameCategories.count + 1;
+    return photoFrameCategories.count;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-        NSArray *photoFrames;
-        if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
-            photoFrames = ItemManager.sharedInstance.photoFrameDatas[section];
-        } else {
-            photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[section];
-        }
-        
-        return photoFrames.count;
+    NSArray *photoFrames;
+    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatas[section];
+    } else {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[section];
+    }
+    
+    return photoFrames.count;
     
 }
 
 -(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     PhotoFrameCollectionViewCell *cell = (PhotoFrameCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoFrameCollectionViewCell" forIndexPath:indexPath];
-    if (indexPath.section > 0) {
-        NSArray *photoFrames;
-        if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
-            photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
-        } else {
-            photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[indexPath.section];
-        }
-
-        PhotoFrame *photoFrame = photoFrames[indexPath.item];
-        [photoFrame loadView];
-
-        [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                float ratio = image.size.height/image.size.width;
-                float width = photoFrame.baseView.bounds.size.width;
-                float height = photoFrame.baseView.bounds.size.height;
-                if (ratio > 1) {
-                    photoFrame.photoImageView.frameSize = CGSizeMake(width, width * ratio);
-                } else {
-                    photoFrame.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
-                }
-                photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
-                photoFrame.photoImageView.image = image;
-                cell.previewImageView.image = [photoFrame.baseView toImage];
-
-            });
-        }];
+    NSArray *photoFrames;
+    if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
+    } else {
+        photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[indexPath.section];
     }
+    
+    PhotoFrame *photoFrame = photoFrames[indexPath.item];
+    [photoFrame loadView];
+    
+    [PhotoManager.sharedInstance getFirstPhotoFromAlbumWithContentMode:PHImageContentModeAspectFill withSize:CGSizeMake(500, 500) WithCompletionBlock:^(UIImage * _Nonnull image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            float ratio = image.size.height/image.size.width;
+            float width = photoFrame.baseView.bounds.size.width;
+            float height = photoFrame.baseView.bounds.size.height;
+            if (ratio > 1) {
+                photoFrame.photoImageView.frameSize = CGSizeMake(width, width * ratio);
+            } else {
+                photoFrame.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
+            }
+            photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.frameWidth/2, photoFrame.baseView.frameHeight/2);
+            photoFrame.photoImageView.image = image;
+            cell.previewImageView.image = [photoFrame.baseView toImage];
+        });
+    }];
+    
 
     
     return cell;

@@ -82,12 +82,15 @@
     self.itemCollectionVC.itemType = PhotoType;
     [self addItemCollectionVC];
     [self addAlbumVC];
-    [self.albumVC showWithAnimation];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.albumVC showWithAnimation];
+    });
     
     if (!self.recentPHAsset) {
         self.recentPHAsset = PhotoManager.sharedInstance.phassets[0];
     }
     Photo *photo = [[Photo alloc] init];
+    [photo loadView];
     photo.baseView.center = self.bgView.center;
     self.currentItem = photo;
     self.currentPhoto = photo;
@@ -115,11 +118,15 @@
 }
 
 -(void)photoFrameButtonTappedTaskWhenAuthorized{
+    
     [self.layerController showTransparentView];
     [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = PhotoFrameType;
     [self addItemCollectionVC];
     [self addAlbumVC];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.albumVC showWithAnimation];
+    });
 
     PhotoFrame *recentPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     for (NSArray *photoFrames in ItemManager.sharedInstance.photoFrameDatas) {
@@ -158,12 +165,18 @@
 
 -(void)addItemCollectionVC{
     
+    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
+    self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
+    if (self.itemCollectionVC.itemType == TextType) {
+        self.itemCollectionVC.view.frame = CGRectMake(0, self.view.frameHeight - (AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY), self.view.frameWidth, AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY);
+    }
+
     [self addChildViewController:self.itemCollectionVC];
     [self.view addSubview:self.itemCollectionVC.view];
     
     self.itemCollectionVC.containerView.frameY = self.view.frameHeight;
-    
-    self.itemCollectionVC.checkButton.alpha = 0;
+    self.itemCollectionVC.collectionView.hidden = true;
+    self.itemCollectionVC.doneButton.alpha = 0;
     self.itemCollectionVC.cancelButton.alpha = 0;
     self.itemCollectionVC.scrollView.alpha = 0;
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
@@ -174,15 +187,18 @@
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
             if(self.textButtonInScrollView.selected){
-                self.itemCollectionVC.checkButton.enabled = false;
-                self.itemCollectionVC.checkButton.alpha = 0.4;
+                self.itemCollectionVC.doneButton.enabled = false;
+                self.itemCollectionVC.doneButton.alpha = 0.4;
                 self.textButtonInScrollView.selected = false;
             }else{
-                self.itemCollectionVC.checkButton.alpha = 1.0;
+                self.itemCollectionVC.doneButton.alpha = 1.0;
             }
             self.itemCollectionVC.cancelButton.alpha = 1.0;
             self.itemCollectionVC.scrollView.alpha = 1.0;
         }];
+        if (self.itemCollectionVC.itemType == PhotoFrameType) {
+            self.itemCollectionVC.collectionView.hidden = false;
+        }
     }];
 
     
