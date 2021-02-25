@@ -165,16 +165,9 @@
 
 -(void)addItemCollectionVC{
     
-    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
-    self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
-    if (self.itemCollectionVC.itemType == TextType) {
-        self.itemCollectionVC.view.frame = CGRectMake(0, self.view.frameHeight - (AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY), self.view.frameWidth, AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY);
-    }
-
     [self addChildViewController:self.itemCollectionVC];
     [self.view addSubview:self.itemCollectionVC.view];
     
-    self.itemCollectionVC.containerView.frameY = self.view.frameHeight;
     self.itemCollectionVC.collectionView.hidden = true;
     self.itemCollectionVC.doneButton.alpha = 0;
     self.itemCollectionVC.cancelButton.alpha = 0;

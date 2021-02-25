@@ -23,7 +23,7 @@
             if (PhotoManager.sharedInstance.phassets.count == 0) {
                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
             }
-            [self photoFrameTappedTaskWhenAuthorizedWithItem:item];
+            [self didTapPhoto:item];
         } else {
             [self taskWhenDenied];
         }
@@ -33,7 +33,7 @@
             if (PhotoManager.sharedInstance.phassets.count == 0) {
                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
             }
-            [self photoFrameTappedTaskWhenAuthorizedWithItem:item];
+            [self didTapPhotoFrame:item];
         } else {
             [self taskWhenDenied];
         }
@@ -78,7 +78,7 @@
 
 #pragma mark - 포토프레임
 
--(void)photoFrameTappedTaskWhenAuthorizedWithItem:(Item *)item{
+-(void)didTapPhotoFrame:(Item *)item{
     
     PhotoFrame *photoFrame = (PhotoFrame *)item;
     
@@ -100,6 +100,10 @@
     } else {
         [self addItemCollectionVC];
         [self addAlbumVC];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.albumVC showWithAnimation];
+        });
+
     }
     [self setCurrentPhotoSelectedOnAlbumVC];
 }

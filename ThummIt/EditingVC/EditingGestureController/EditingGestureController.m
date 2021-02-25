@@ -120,7 +120,7 @@
     if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
         return;
     }
-    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && (editingVC.modeController.editingMode != NormalMode) && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPannedForEditingPhotoModeWithSender:sender];
     } else {
         [self gestureViewPannedWithSender:sender];
@@ -411,7 +411,7 @@
         return;
     }
 
-    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && (editingVC.modeController.editingMode != NormalMode) && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPinchedForEditingPhotoModeWithSender:sender];
     } else {
         [self gestureViewPinchedWithSender:sender];

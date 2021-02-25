@@ -413,8 +413,6 @@
     [editingVC.layerController hideTransparentView];
     [self dismissSelf];
     [editingVC.albumVC dismissSelf];
-    editingVC.currentPhoto.baseView.backgroundColor = UIColor.orangeColor;
-    NSLog(@"editingVC.currentPhoto.baseView frame %@",NSStringFromCGRect(editingVC.currentPhoto.baseView.frame));
     [SaveManager.sharedInstance addItem:editingVC.currentPhoto];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
