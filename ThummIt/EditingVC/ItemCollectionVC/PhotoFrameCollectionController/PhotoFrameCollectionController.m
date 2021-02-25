@@ -8,8 +8,7 @@
 #import "PhotoFrameCollectionController.h"
 #import "PhotoFrameCollectionViewCell.h"
 #import "PhotoFrameCollectionReusableView.h"
-#import "FreeFormCollectionReusableView.h"
-
+#import "EditingPhotoViewController.h"
 #import "ItemManager.h"
 #import "PhotoManager.h"
 #import "UIView+Additions.h"
@@ -58,18 +57,15 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    if (section == 0) {
-        return 0;
-    } else {
         NSArray *photoFrames;
         if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
-            photoFrames = ItemManager.sharedInstance.photoFrameDatas[section - 1];
+            photoFrames = ItemManager.sharedInstance.photoFrameDatas[section];
         } else {
-            photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[section - 1];
+            photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[section];
         }
         
         return photoFrames.count;
-    }
+    
 }
 
 -(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -78,9 +74,9 @@
     if (indexPath.section > 0) {
         NSArray *photoFrames;
         if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
-            photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section - 1];
+            photoFrames = ItemManager.sharedInstance.photoFrameDatas[indexPath.section];
         } else {
-            photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[indexPath.section - 1];
+            photoFrames = ItemManager.sharedInstance.photoFrameDatasForFreeFormProject[indexPath.section];
         }
 
         PhotoFrame *photoFrame = photoFrames[indexPath.item];
@@ -156,14 +152,6 @@
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
-    ;
-    
-    if (indexPath.section == 0) {
-        FreeFormCollectionReusableView *reusableView = (FreeFormCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"FreeFormCollectionReusableView" forIndexPath:indexPath];
-        reusableView.freeformBGView.layer.cornerRadius = reusableView.freeformBGView.frameWidth/2;
-        return reusableView;
-
-    } else {
         PhotoFrameCollectionReusableView *reusableView = (PhotoFrameCollectionReusableView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView" forIndexPath:indexPath];
         NSArray *photoFrameCategories;
         if (SaveManager.sharedInstance.currentProject.selectedTemplateName.length > 0) {
@@ -172,21 +160,14 @@
             photoFrameCategories =ItemManager.sharedInstance.photoFrameCategoriesForFreeFormProject;
         }
 
-        NSString *category = photoFrameCategories[indexPath.section - 1];
+        NSString *category = photoFrameCategories[indexPath.section];
         reusableView.categoryLabel.text = category;
         return reusableView;
-
-    }
     
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return CGSizeMake(self.collectionView.frameWidth, 100);
-
-    } else {
         return CGSizeMake(self.collectionView.frameWidth, 20);
-    }
 }
 
 @end

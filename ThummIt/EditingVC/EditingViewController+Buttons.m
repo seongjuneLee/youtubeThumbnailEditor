@@ -57,6 +57,45 @@
 
 }
 
+#pragma mark - 포토 버튼
+
+- (IBAction)photoButtonTapped:(UIButton *)sender {
+    
+    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (PhotoManager.sharedInstance.phassets.count == 0) {
+                PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+            }
+            [self photoButtonTappedTaskWhenAuthorized];
+            self.modeController.editingMode = AddingItemMode;
+        });
+    } else {
+        [self taskWhenDenied];
+    }
+    
+}
+
+-(void)photoButtonTappedTaskWhenAuthorized{
+    
+    [self.layerController showTransparentView];
+    [self hideItemsForItemMode];
+    self.itemCollectionVC.itemType = PhotoType;
+    [self addItemCollectionVC];
+    [self addAlbumVC];
+    [self.albumVC showWithAnimation];
+    
+    if (!self.recentPHAsset) {
+        self.recentPHAsset = PhotoManager.sharedInstance.phassets[0];
+    }
+    Photo *photo = [[Photo alloc] init];
+    photo.baseView.center = self.bgView.center;
+    self.currentItem = photo;
+    self.currentPhoto = photo;
+    [self.view insertSubview:photo.baseView belowSubview:self.gestureView];
+    [self didSelectPhotoWithPHAsset:self.recentPHAsset];
+    
+}
+
 #pragma mark - 포토 프레임 버튼
 
 - (IBAction)photoFrameButtonTapped:(UIButton *)sender {

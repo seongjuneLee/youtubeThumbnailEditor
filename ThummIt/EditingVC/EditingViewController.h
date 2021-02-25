@@ -20,6 +20,7 @@
 #import "UndoManager.h"
 #import "TypoHeader.h"
 #import "PhotoFrameHeader.h"
+#import "Photo.h"
 #import "StickerHeader.h"
 #import "MainFrameHeader.h"
 #import "AppManager.h"
@@ -43,6 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) Item *currentItem;
 @property (strong, nonatomic, nullable) Text *currentText;
 @property (strong, nonatomic, nullable) PhotoFrame *currentPhotoFrame;
+@property (strong, nonatomic, nullable) Photo *currentPhoto;
 @property (strong, nonatomic, nullable) Sticker *currentSticker;
 
 // 최근 데이터
@@ -94,6 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *mainFrameImageView;
 @property (weak, nonatomic) IBOutlet UIButton *leftItem;
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
+@property (weak, nonatomic) IBOutlet UIButton *photoButton;
 
 @property (strong, nonatomic) UIImageView *hueImageView;
 @property (strong, nonatomic) UIView *thumbCircleView;
@@ -110,6 +113,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+- (IBAction)photoButtonTapped:(id)sender;
 
 @end
 

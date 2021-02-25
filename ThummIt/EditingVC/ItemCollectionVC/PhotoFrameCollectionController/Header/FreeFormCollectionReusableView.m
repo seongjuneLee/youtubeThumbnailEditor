@@ -16,5 +16,10 @@
 }
 
 - (IBAction)freeFormButtonTapped:(id)sender {
+    
+    [self.delegate freeFormButtonTapped];
+    
 }
+
+
 @end

@@ -88,7 +88,7 @@
             if ([editingVC.currentItem isKindOfClass:Text.class]) {
                 [editingVC.itemCollectionVC textButtonTapped:editingVC.itemCollectionVC.textButton];
             } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
-                [editingVC.itemCollectionVC photoButtonTapped:editingVC.itemCollectionVC.photoButton];
+                [editingVC.itemCollectionVC photoFramePhotoButtonTapped:editingVC.itemCollectionVC.photoFramePhotoButton];
             } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
                // 해줄 것 없음.
             }
@@ -120,7 +120,7 @@
     if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
         return;
     }
-    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPannedForEditingPhotoModeWithSender:sender];
     } else {
         [self gestureViewPannedWithSender:sender];
@@ -411,7 +411,7 @@
         return;
     }
 
-    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPinchedForEditingPhotoModeWithSender:sender];
     } else {
         [self gestureViewPinchedWithSender:sender];

@@ -18,17 +18,13 @@
                     <color key="textColor" red="1" green="1" blue="0.99124803120000005" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exR-i3-Wvp">
-                    <rect key="frame" x="105" y="44" width="110" height="110"/>
-                    <color key="backgroundColor" red="1" green="1" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="exR-i3-Wvp" secondAttribute="height" multiplier="1:1" id="IO6-R8-7CR"/>
-                    </constraints>
-                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editingPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Fqu-5k-GdT">
+                    <rect key="frame" x="40" y="46" width="240" height="128"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb1-BJ-ihC">
-                    <rect key="frame" x="105" y="44" width="110" height="110"/>
+                    <rect key="frame" x="40" y="46" width="240" height="128"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
-                    <state key="normal" title="Edit">
+                    <state key="normal">
                         <color key="titleColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -37,20 +33,21 @@
                 </button>
             </subviews>
             <constraints>
+                <constraint firstItem="Fqu-5k-GdT" firstAttribute="top" secondItem="wSI-Ni-Cwf" secondAttribute="bottom" constant="12" id="0Ta-rl-uVK"/>
+                <constraint firstItem="Pb1-BJ-ihC" firstAttribute="width" secondItem="Fqu-5k-GdT" secondAttribute="width" id="1pp-bh-EHu"/>
+                <constraint firstItem="Pb1-BJ-ihC" firstAttribute="height" secondItem="Fqu-5k-GdT" secondAttribute="height" id="35e-Z0-EF4"/>
                 <constraint firstItem="wSI-Ni-Cwf" firstAttribute="leading" secondItem="Muy-cX-Snu" secondAttribute="leading" constant="10" id="Jub-NE-d2r"/>
                 <constraint firstItem="wSI-Ni-Cwf" firstAttribute="top" secondItem="Muy-cX-Snu" secondAttribute="top" constant="10" id="Rxw-xT-YSR"/>
-                <constraint firstItem="Pb1-BJ-ihC" firstAttribute="centerX" secondItem="exR-i3-Wvp" secondAttribute="centerX" id="Yk6-d1-X1d"/>
-                <constraint firstItem="exR-i3-Wvp" firstAttribute="height" secondItem="Muy-cX-Snu" secondAttribute="height" multiplier="0.5" id="bAO-tq-VKz"/>
-                <constraint firstItem="Pb1-BJ-ihC" firstAttribute="height" secondItem="exR-i3-Wvp" secondAttribute="height" id="qOQ-IY-l0Q"/>
-                <constraint firstItem="exR-i3-Wvp" firstAttribute="centerX" secondItem="Muy-cX-Snu" secondAttribute="centerX" id="qiO-yh-Aw2"/>
-                <constraint firstItem="Pb1-BJ-ihC" firstAttribute="centerY" secondItem="exR-i3-Wvp" secondAttribute="centerY" id="rzW-NE-dH4"/>
-                <constraint firstItem="exR-i3-Wvp" firstAttribute="top" secondItem="wSI-Ni-Cwf" secondAttribute="bottom" constant="10" id="siJ-ea-OY9"/>
-                <constraint firstItem="Pb1-BJ-ihC" firstAttribute="width" secondItem="exR-i3-Wvp" secondAttribute="width" id="yAo-n3-hDA"/>
+                <constraint firstItem="Pb1-BJ-ihC" firstAttribute="centerX" secondItem="Fqu-5k-GdT" secondAttribute="centerX" id="Srw-BT-RDN"/>
+                <constraint firstItem="Pb1-BJ-ihC" firstAttribute="centerY" secondItem="Fqu-5k-GdT" secondAttribute="centerY" id="aCh-Q5-bCI"/>
+                <constraint firstItem="Fqu-5k-GdT" firstAttribute="centerX" secondItem="Muy-cX-Snu" secondAttribute="centerX" id="hse-NE-GBJ"/>
+                <constraint firstItem="Fqu-5k-GdT" firstAttribute="height" secondItem="Muy-cX-Snu" secondAttribute="height" multiplier="0.581818" id="lHD-kB-SOO"/>
+                <constraint firstItem="Fqu-5k-GdT" firstAttribute="width" secondItem="Muy-cX-Snu" secondAttribute="width" multiplier="0.75" id="qs3-Mn-T5T"/>
             </constraints>
-            <connections>
-                <outlet property="freeformBGView" destination="exR-i3-Wvp" id="zBf-PH-fDg"/>
-            </connections>
             <point key="canvasLocation" x="50.724637681159422" y="-16.741071428571427"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="editingPhoto" width="333.33334350585938" height="333.33334350585938"/>
+    </resources>
 </document>

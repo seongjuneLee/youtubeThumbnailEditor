@@ -8,9 +8,15 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol FreeFormCollectionReusableViewDelegate <NSObject>
 
+-(void)freeFormButtonTapped;
+
+@end
 @interface FreeFormCollectionReusableView : UICollectionReusableView
-@property (weak, nonatomic) IBOutlet UIView *freeformBGView;
+
+@property (weak, nonatomic) id<FreeFormCollectionReusableViewDelegate> delegate;
+
 - (IBAction)freeFormButtonTapped:(id)sender;
 
 @end

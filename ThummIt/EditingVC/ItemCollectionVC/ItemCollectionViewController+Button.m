@@ -102,6 +102,120 @@
     }];
 }
 
+#pragma mark - 포토 버튼
+
+- (IBAction)photoButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        [editingVC.editingPhotoVC saveAndDismissSelf];
+        [self.editingPhotoButtonVC dismissSelf];
+
+        self.editPhotoButton.selected = false;
+        [editingVC.albumVC showWithAnimation];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.containerTopConstraint.constant = -self.view.frameHeight;
+            [self.view layoutIfNeeded];
+            self.photoButton.alpha = 1.0;
+            self.editPhotoButton.alpha = 0.4;
+        }];
+    }
+
+}
+
+
+- (IBAction)editPhotoButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    [editingVC.albumVC hideWithAnimation];
+    if (!sender.selected) {
+        sender.selected = true;
+        self.photoButton.selected = false;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.containerTopConstraint.constant = 0;
+            [self.view layoutIfNeeded];
+            self.photoButton.alpha = 0.4;
+            self.editPhotoButton.alpha = 1.0;
+        }];
+    }
+    
+}
+
+-(void)addEditingPhotoVC{
+
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    float height = 150;
+    self.editingPhotoButtonVC.view.alpha = 0.0;
+    editingVC.editingPhotoVC.view.alpha = 0;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.editingPhotoButtonVC.view.alpha = 1.0;
+        editingVC.editingPhotoVC.view.alpha = 1.0;
+        self.containerTopConstraint.constant = height + self.collectionView.frameY - self.view.frameHeight;
+        [self.view layoutIfNeeded];
+    }];
+
+    UIImage *photoImage = editingVC.currentPhotoFrame.photoImageView.image;
+
+    editingVC.editingPhotoVC.photoImageView = [[UIImageView alloc] init];
+    editingVC.editingPhotoVC.photoImageView.contentMode = UIViewContentModeScaleAspectFit;
+    editingVC.editingPhotoVC.photoImageView.image = photoImage;
+    editingVC.editingPhotoVC.photoImageView.center = editingVC.editingPhotoVC.view.center;
+
+    [editingVC.editingPhotoVC.view insertSubview:editingVC.editingPhotoVC.photoImageView belowSubview:editingVC.editingPhotoVC.gestureView];
+
+    self.editingPhotoButtonVC.delegate = editingVC.editingPhotoVC;
+    [self addChildViewController:self.editingPhotoButtonVC];
+    [self.view addSubview:self.editingPhotoButtonVC.view];
+    [editingVC addChildViewController:editingVC.editingPhotoVC];
+    [editingVC.view insertSubview:editingVC.editingPhotoVC.view aboveSubview:self.view];
+
+}
+
+
+
+#pragma mark - 포토프레임 모드 버튼
+
+- (IBAction)photoFramePhotoButtonTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+
+        self.photoFrameStyleButton.selected = false;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.containerTopConstraint.constant = 0;
+            [self.view layoutIfNeeded];
+            self.photoFramePhotoButton.alpha = 1.0;
+            self.photoFrameStyleButton.alpha = 0.4;
+        }];
+        [editingVC.albumVC showWithAnimation];
+    }
+
+
+}
+
+- (IBAction)photoFrameStyleTapped:(UIButton *)sender {
+    
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    if (!sender.selected) {
+        sender.selected = true;
+        
+        self.photoFramePhotoButton.selected = false;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.containerTopConstraint.constant = 0;
+            [self.view layoutIfNeeded];
+
+            self.photoFramePhotoButton.alpha = 0.4;
+            self.photoFrameStyleButton.alpha = 1.0;
+        }];
+        [editingVC.albumVC hideWithAnimation];
+    }
+
+}
+
+
 #pragma mark - 타이포 모드 버튼
 
 - (IBAction)typoButtonTapped:(UIButton *)sender {
@@ -132,100 +246,6 @@
         [editingVC.currentText.textView becomeFirstResponder];
     }
 
-}
-
-#pragma mark - 포토프레임 모드 버튼
-
-- (IBAction)photoButtonTapped:(UIButton *)sender {
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (!sender.selected) {
-        sender.selected = true;
-        [editingVC.editingPhotoVC dismissSelf];
-        [self.editingPhotoButtonVC dismissSelf];
-
-        self.photoFrameStyleButton.selected = false;
-        self.editPhotoButton.selected = false;
-        [UIView animateWithDuration:0.2 animations:^{
-            self.containerTopConstraint.constant = 0;
-            [self.view layoutIfNeeded];
-
-            self.photoButton.alpha = 1.0;
-            self.photoFrameStyleButton.alpha = self.editPhotoButton.alpha = 0.4;
-        }];
-        [editingVC.albumVC showWithAnimation];
-        [self.editingPhotoButtonVC dismissSelf];
-    }
-
-
-}
-
-- (IBAction)photoFrameStyleTapped:(UIButton *)sender {
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (!sender.selected) {
-        sender.selected = true;
-
-        [editingVC.editingPhotoVC dismissSelf];
-        [self.editingPhotoButtonVC dismissSelf];
-        
-        self.photoButton.selected = false;
-        self.editPhotoButton.selected = false;
-        [UIView animateWithDuration:0.2 animations:^{
-            self.containerTopConstraint.constant = 0;
-            [self.view layoutIfNeeded];
-
-            self.photoButton.alpha = self.editPhotoButton.alpha = 0.4;
-            self.photoFrameStyleButton.alpha = 1.0;
-        }];
-        [editingVC.albumVC hideWithAnimation];
-    }
-
-}
-
-- (IBAction)editPhotoButtonTapped:(UIButton *)sender {
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (!sender.selected) {
-        
-        sender.selected = true;
-        
-        self.photoButton.selected = self.photoFrameStyleButton.selected = false;
-        [UIView animateWithDuration:0.2 animations:^{
-            self.photoButton.alpha = self.photoFrameStyleButton.alpha = 0.4;
-            sender.alpha = 1.0;
-        }];
-        [editingVC.albumVC hideWithAnimation];
-        [self addEditingPhotoVC];
-    }
-
-}
-
--(void)addEditingPhotoVC{
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    float height = 150;
-    self.editingPhotoButtonVC.view.alpha = 0.0;
-    editingVC.editingPhotoVC.view.alpha = 0;
-    [UIView animateWithDuration:0.2 animations:^{
-        self.editingPhotoButtonVC.view.alpha = 1.0;
-        editingVC.editingPhotoVC.view.alpha = 1.0;
-        self.containerTopConstraint.constant = height + self.collectionView.frameY - self.view.frameHeight;
-        [self.view layoutIfNeeded];
-    }];
-    
-    PhotoFrame *copied = [(PhotoFrame *)editingVC.currentItem copy];
-    copied.baseView.clipsToBounds = false;
-    editingVC.editingPhotoVC.photoFrame = copied;
-    self.editingPhotoButtonVC.photoFrame = editingVC.editingPhotoVC.photoFrame;
-    self.editingPhotoButtonVC.editingPhotoVC = editingVC.editingPhotoVC;
-    [editingVC.editingPhotoVC.view insertSubview:copied.baseView belowSubview:editingVC.editingPhotoVC.gestureView];
-    
-    [self addChildViewController:self.editingPhotoButtonVC];
-    [self.view addSubview:self.editingPhotoButtonVC.view];
-    [editingVC addChildViewController:editingVC.editingPhotoVC];
-    [editingVC.view insertSubview:editingVC.editingPhotoVC.view aboveSubview:self.view];
-    
 }
 
 #pragma mark - 취소 버튼
@@ -356,7 +376,7 @@
 -(void)doneAddingPhotoFrame{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-
+    [editingVC.editingPhotoVC saveAndDismissSelf];
     [self.editingPhotoButtonVC dismissSelf];
     [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
@@ -394,6 +414,7 @@
     }
     editingVC.currentPhotoFrame.plusPhotoImageView.hidden = true;
     // VC들 없애주기
+    [editingVC.editingPhotoVC saveAndDismissSelf];
     [self.editingPhotoButtonVC dismissSelf];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];

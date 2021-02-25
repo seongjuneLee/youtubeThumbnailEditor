@@ -82,7 +82,7 @@
     
     float underAreaBottom = self.upperArea.frameY + self.upperArea.frameHeight;
     self.editingPhotoVC.view.frame = CGRectMake(0,underAreaBottom, self.view.frameWidth, self.view.frameHeight - self.itemCollectionVC.containerView.frameHeight - (underAreaBottom));
-    
+    self.editingPhotoVC.editingVC = self;
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
 }
 

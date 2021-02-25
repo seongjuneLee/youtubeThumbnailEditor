@@ -82,7 +82,6 @@
 -(void)loadView{
     
     self.baseView = [[UIView alloc] init];
-    self.baseView.clipsToBounds = true;
     self.baseView.backgroundColor = UIColor.whiteColor;
     [self setBaseViewFrame];
     if (self.isCircle) {

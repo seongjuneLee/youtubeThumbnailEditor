@@ -18,10 +18,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 typedef enum {
-    PhotoFrameType = 0,
-    TextType = 1,
-    StickerType = 2,
-    MainFrameType = 3
+    PhotoType = 0,
+    PhotoFrameType = 1,
+    TextType = 2,
+    StickerType = 3,
+    MainFrameType = 4
 }ItemType;
 
 @interface ItemCollectionViewController : UIViewController 
@@ -35,9 +36,11 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIButton *textButton;
 @property (weak, nonatomic) IBOutlet UIButton *typoButton;
 @property (weak, nonatomic) IBOutlet UIButton *photoFrameStyleButton;
-@property (weak, nonatomic) IBOutlet UIButton *photoButton;
+@property (weak, nonatomic) IBOutlet UIButton *photoFramePhotoButton;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *photoScrollContainerView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIButton *photoButton;
 @property (weak, nonatomic) IBOutlet UIButton *editPhotoButton;
 
 @property (nonatomic) ItemType itemType;
