@@ -14,7 +14,7 @@
     self = [super init];
     if(self){
         self.itemName = @"sinSeoYuGiExc2Sticker";
-        self.backgroundImageName = @"sinSeoYuGiExc2Sticker";
+        self.backgroundImageName = @"SinSeoYuGiExc2Sticker";
         self.cannotChangeColor = true;
     }
     return self;

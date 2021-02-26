@@ -122,13 +122,15 @@ class SignInViewController: UIViewController {
                                     
                                 }
                             }
-                        
+                            
+                        }
                     }
                 }
             }
+        } else {
+            self.view.makeToast(NSLocalizedString("Error occured. Kakao login is not available.", comment: ""), duration: 5, position: CSToastPositionCenter)
         }
     }
-}
     
     @IBAction func facebookButtonTapped(_ sender: UIButton) {
         
