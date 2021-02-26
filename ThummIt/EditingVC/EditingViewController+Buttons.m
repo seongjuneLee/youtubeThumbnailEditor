@@ -14,7 +14,8 @@
 #import "UIColor+Additions.h"
 #import "UIImage+Additions.h"
 #import "ExportManager.h"
-
+@import Parse;
+#import <Parse/PFFileObject.h>
 @implementation EditingViewController (Buttons)
 
 - (IBAction)rightItemTapped:(id)sender {
@@ -28,6 +29,17 @@
     [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (success) {
+                if (PFUser.currentUser) {
+                    NSMutableArray *exportedImages = [NSMutableArray array];
+                    [exportedImages addObjectsFromArray:PFUser.currentUser[@"exportedThumbnails"]];
+                    NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
+                    PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithData:thumbnailBigData];
+                    [exportedImages addObject:thumbnailBigFile];
+                    [PFUser.currentUser setObject:exportedImages forKey:@"exportedThumbnails"];
+
+                    [PFUser.currentUser saveInBackground];
+                }
+
                 [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
             } else {
                 [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];

@@ -6,7 +6,7 @@
 //
 
 #import "ExportManager.h"
-
+@import Parse;
 @implementation ExportManager
 
 + (ExportManager *)sharedInstance {
@@ -26,7 +26,6 @@
             [self getThummItAlbum:^(PHAssetCollection *collection) {
                 
                 [self saveImageToAlbum:collection withBlock:^(BOOL success) {
-                    
                     
                     block(success);
                     
