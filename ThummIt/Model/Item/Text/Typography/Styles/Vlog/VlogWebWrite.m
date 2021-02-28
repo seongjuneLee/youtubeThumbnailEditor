@@ -19,6 +19,7 @@
         self.bgImageName = @"webBG.png";
         self.bgHeightPadding = 0;
         self.bgWidthPadding = -20;
+        self.canChangeColor = true;
     }
     return self;
 }

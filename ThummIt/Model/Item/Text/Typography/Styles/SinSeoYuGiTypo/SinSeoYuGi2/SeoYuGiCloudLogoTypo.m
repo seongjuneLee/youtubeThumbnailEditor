@@ -18,7 +18,7 @@
         self.bgImageName = @"seoYUGiCloudLogo";
         self.bgWidthPadding = 5;
         self.bgWidthPadding = 5;
-        self.cannotChangeColor = true;
+        
         self.obliqueValue = 0.15;
         self.fontSize = 40;
         

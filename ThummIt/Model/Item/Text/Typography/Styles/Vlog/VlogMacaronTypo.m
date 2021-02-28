@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"Square",nil);
         self.fontName = @"NanumSquareOTFEB";
         self.textColor = UIColor.whiteColor;
-        
+        self.canChangeColor = true;
     }
     return self;
 }

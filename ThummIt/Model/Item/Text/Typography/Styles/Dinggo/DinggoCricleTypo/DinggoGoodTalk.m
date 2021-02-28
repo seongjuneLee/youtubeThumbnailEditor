@@ -18,7 +18,7 @@
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1] ;
         self.fontSize = 50;
         self.obliqueValue = 0.2;
-        
+        self.canChangeColor = true;
     }
     return self;
 }

@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@">> 유튜브",nil);
         self.fontName = @"BMDoHyeon-OTF";
         self.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor whiteColor];
         bgTextAttribute1.borderWidth = 5;

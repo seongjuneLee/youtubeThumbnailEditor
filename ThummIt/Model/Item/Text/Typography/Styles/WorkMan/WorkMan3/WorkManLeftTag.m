@@ -19,7 +19,7 @@
         self.bgImageName = @"waveYellowSquare";
         self.bgWidthPadding = 65;
         self.bgHeightPadding = 65;
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
         bgTextAttribute1.borderWidth = 7;

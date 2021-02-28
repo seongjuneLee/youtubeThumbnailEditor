@@ -16,7 +16,7 @@
         self.itemName = @"blinkSticker1";
         self.backgroundImageName = @"blinkSticker1";
         self.tintColor = [UIColor colorWithRed:252/255.0 green:203/255.0 blue:85/255.0 alpha:1.0];
-
+        self.canChangeColor = true;
     }
     return self;
 }

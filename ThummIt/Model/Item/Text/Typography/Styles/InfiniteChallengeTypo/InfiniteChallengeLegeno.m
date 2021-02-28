@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"레게노",nil);
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithRed:43/255.0 green:254/255.0 blue:181/255.0 alpha:1];
-        
+        self.canChangeColor = true;
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderWidth = 6;
         borderAtt.borderColor = UIColor.blackColor;

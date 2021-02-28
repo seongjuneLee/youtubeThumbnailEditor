@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"rspScissorsSticker";
         self.backgroundImageName = @"rspScissorsSticker";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

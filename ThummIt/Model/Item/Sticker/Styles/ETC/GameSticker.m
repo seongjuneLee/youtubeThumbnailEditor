@@ -16,6 +16,7 @@
         self.itemName = @"gameSticker";
         self.backgroundImageName = @"gameSticker";
         self.tintColor = [UIColor colorWithRed:0/255 green:0/255 blue:0/255 alpha:1];
+        self.canChangeColor = true;
     }
     return self;
 }

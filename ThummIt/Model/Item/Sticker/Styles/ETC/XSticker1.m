@@ -16,6 +16,7 @@
         self.itemName = @"xSticker1";
         self.backgroundImageName = @"xSticker1";
         self.tintColor = [UIColor redColor];
+        self.canChangeColor = true;
     }
     return self;
 }

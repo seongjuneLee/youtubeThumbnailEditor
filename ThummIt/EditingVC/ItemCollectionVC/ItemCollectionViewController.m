@@ -19,28 +19,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setCollectionViewFlowLayout];
-
-}
-
--(void)viewWillAppear:(BOOL)animated{
     
-    [self connectCollectionController];
 }
-
 -(void)viewWillLayoutSubviews{
+    
+}
+-(void)viewDidLayoutSubviews{
+    
     
 }
 
 -(void)dismissSelf{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
-    [UIView animateWithDuration:0.4 animations:^{
-        self.cancelButton.alpha = self.checkButton.alpha = 0;
-        self.containerTopConstraint.constant = -self.view.frameHeight;
-        [self.view layoutIfNeeded];
-    }completion:^(BOOL finished) {
-        [self.view removeFromSuperview];
-        [self removeFromParentViewController];
+    [UIView animateWithDuration:0.2 animations:^{
+        editingVC.itemCollectionTopConstraint.constant = editingVC.view.frameHeight;
+        [editingVC.view layoutIfNeeded];
     }];
+    
     
 }
 
@@ -64,8 +60,12 @@
     
     self.collectionView.hidden = false;
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    
-    if (self.itemType == PhotoFrameType) {
+    if (self.itemType == PhotoType) {
+        self.photoFrameScrollContanerView.hidden = true;
+        self.textScrollContainerView.hidden = true;
+        self.photoScrollContainerView.hidden = false;
+
+    }else if (self.itemType == PhotoFrameType) {
         self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
         self.photoFrameCollectionController.editingVC = self.editingVC;
         if (editingVC.currentPhotoFrame.isFixedPhotoFrame) {
@@ -75,6 +75,7 @@
         } else {
             self.photoFrameScrollContanerView.hidden = false;
             self.textScrollContainerView.hidden = true;
+            self.photoScrollContainerView.hidden = true;
         }
         
     } else if (self.itemType == TextType){
@@ -82,22 +83,24 @@
         self.textCollectionController.editingVC = self.editingVC;
         self.photoFrameScrollContanerView.hidden = true;
         self.textScrollContainerView.hidden = false;
+        self.photoScrollContainerView.hidden = true;
         
     } else if (self.itemType == StickerType){
         self.stickerCollectionController = [[StickerCollectionController alloc] initWithCollectionView:self.collectionView];
         self.stickerCollectionController.editingVC = self.editingVC;
         self.photoFrameScrollContanerView.hidden = true;
         self.textScrollContainerView.hidden = true;
+        self.photoScrollContainerView.hidden = true;
         
     } else if (self.itemType == MainFrameType){
         self.mainFrameCollectionController = [[MainFrameCollectionController alloc] initWithCollectionView:self.collectionView];
         self.mainFrameCollectionController.editingVC = self.editingVC;
         self.photoFrameScrollContanerView.hidden = true;
         self.textScrollContainerView.hidden = true;
-
+        self.photoScrollContainerView.hidden = true;
     }
     
-    
+    [self.collectionView reloadData];
 }
 
 

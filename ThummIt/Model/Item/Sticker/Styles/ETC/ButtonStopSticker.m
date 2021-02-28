@@ -16,6 +16,7 @@
         self.itemName = @"buttonStopSticker";
         self.backgroundImageName = @"buttonStopSticker";
         self.tintColor = [UIColor blackColor];
+        self.canChangeColor = true;
     }
     return self;
 }

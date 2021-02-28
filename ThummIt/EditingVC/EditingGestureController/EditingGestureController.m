@@ -88,7 +88,7 @@
             if ([editingVC.currentItem isKindOfClass:Text.class]) {
                 [editingVC.itemCollectionVC textButtonTapped:editingVC.itemCollectionVC.textButton];
             } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
-                [editingVC.itemCollectionVC photoButtonTapped:editingVC.itemCollectionVC.photoButton];
+                [editingVC.itemCollectionVC photoFramePhotoButtonTapped:editingVC.itemCollectionVC.photoFramePhotoButton];
             } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
                // 해줄 것 없음.
             }
@@ -120,7 +120,7 @@
     if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
         return;
     }
-    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && (editingVC.modeController.editingMode != NormalMode) && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPannedForEditingPhotoModeWithSender:sender];
     } else {
         [self gestureViewPannedWithSender:sender];
@@ -150,9 +150,6 @@
         [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
         self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
-        if(!editingVC.currentItem.cannotChangeColor || [editingVC.currentItem isKindOfClass:PhotoFrame.class] ){
-            [editingVC hideAndInitSlider];
-        }
 
     } else if (sender.state == UIGestureRecognizerStateChanged){
         
@@ -183,9 +180,7 @@
         for (GuideLine *guideLine in self.guideLines) {
             [guideLine removeFromSuperView];
         }
-        if(!editingVC.currentItem.cannotChangeColor){
-            [self deleteHueSliderRespondToCurrentPointY:currentPoint.y];
-        }
+        [self deleteHueSliderRespondToCurrentPointY:currentPoint.y];
         
         if([editingVC.currentItem isKindOfClass:Text.class]){
             [self deleteKeyBoardRespondToCurrentPointY:currentPoint.y];
@@ -411,7 +406,7 @@
         return;
     }
 
-    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && (editingVC.modeController.editingMode != NormalMode) && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPinchedForEditingPhotoModeWithSender:sender];
     } else {
         [self gestureViewPinchedWithSender:sender];
@@ -685,13 +680,13 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     float imageViewBottomY = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
-    if (currentPointY >= imageViewBottomY || editingVC.modeController.editingMode == NormalMode || [editingVC.currentItem isKindOfClass:PhotoFrame.class] ) {
+    if (currentPointY > imageViewBottomY && editingVC.currentItem.canChangeColor) {
         [UIView animateWithDuration:0.2 animations:^{
-            [editingVC hideAndInitSlider];
+            editingVC.hueSlider.alpha = 1.0;
         }];
     } else {
         [UIView animateWithDuration:0.2 animations:^{
-            editingVC.hueSlider.alpha = 1.0;
+            [editingVC hideAndInitSlider];
         }];
     }
 }

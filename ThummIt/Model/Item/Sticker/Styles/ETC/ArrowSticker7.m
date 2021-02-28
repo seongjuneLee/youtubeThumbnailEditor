@@ -16,6 +16,7 @@
         self.itemName = @"arrowSticker7";
         self.backgroundImageName = @"arrowSticker7";
         self.tintColor = [UIColor blackColor];
+        self.canChangeColor = true;
     }
     return self;
 }

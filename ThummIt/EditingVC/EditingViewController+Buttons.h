@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)sliderValueChanged:(UISlider *)sender;
 - (IBAction)leftItemTapped:(id)sender;
 - (IBAction)rightItemTapped:(id)sender;
+- (IBAction)photoButtonTapped:(id)sender;
 
 -(void)photoFrameButtonHoldDown;
 -(void)photoFrameButtonHoldRelease;
@@ -30,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)stickerButtonHoldRelease;
 -(void)bgColorButtonHoldDown;
 -(void)bgColorButtonHoldRelease;
--(void)addItemCollectionVC;
+-(void)showItemCollectionVC;
 -(void)addAlbumVC;
 -(void)taskWhenDenied;
 -(void)hideAndInitSlider;

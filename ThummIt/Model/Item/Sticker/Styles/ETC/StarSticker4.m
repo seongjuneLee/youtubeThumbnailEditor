@@ -16,6 +16,7 @@
         self.itemName = @"starSticker4";
         self.backgroundImageName = @"starSticker4";
         self.tintColor = [UIColor colorWithRed:255/255.0 green:201/255.0 blue:91/255.0 alpha:1.0];
+        self.canChangeColor = true;
     }
     return self;
 }

@@ -19,6 +19,7 @@
         self.bgImageName = @"workManYellowTag";
         self.bgWidthPadding = 100;
         self.bgHeightPadding = 100;
+        self.canChangeColor = true;
     }
     return self;
 }

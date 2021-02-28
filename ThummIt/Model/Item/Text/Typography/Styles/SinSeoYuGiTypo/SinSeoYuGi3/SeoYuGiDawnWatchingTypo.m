@@ -17,7 +17,7 @@
         self.bgImageName = @"seoYuGiFlame";
         self.textColor = [UIColor whiteColor];
         self.bgHeightPadding = 290;
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor whiteColor];
         bgTextAttribute1.borderWidth = 2;

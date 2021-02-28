@@ -20,7 +20,7 @@
         self.bgHeightPadding = 70;
         self.bgWidthPadding = 70;
         self.obliqueValue = 0.2;
-        
+        self.canChangeColor = true;
         BGTextAttribute *boldAtt = [[BGTextAttribute alloc] init];
         boldAtt.borderColor = [UIColor whiteColor];
         boldAtt.borderWidth = 2;

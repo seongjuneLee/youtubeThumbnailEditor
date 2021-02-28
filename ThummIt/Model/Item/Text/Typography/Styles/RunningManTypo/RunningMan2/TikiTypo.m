@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"환상의 티키타카",nil);
         self.fontName = @"BMHANNA11yrsoldOTF";
         self.textColor = [UIColor whiteColor];
-        
+        self.canChangeColor = true;
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
         borderAtt.borderWidth = 8;

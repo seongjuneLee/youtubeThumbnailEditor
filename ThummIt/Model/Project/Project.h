@@ -5,10 +5,10 @@
 //  Created by 이성준 on 2020/12/19.
 //
 #import <Foundation/Foundation.h>
-
 #import "Item.h"
 #import "PhotoFrame.h"
 #import "Text.h"
+#import "Photo.h"
 #import "Sticker.h"
 #import "MainFrame.h"
 #import "ItemLayer.h"
@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString* mainFrameImageName;
 @property (strong, nonatomic) UIColor * backgroundColor;
 @property (strong, nonatomic) NSString *lastEditedDate;
+@property (strong, nonatomic) NSMutableArray *photos;
 @property (strong, nonatomic) NSMutableArray *photoFrames;
 @property (strong, nonatomic) NSMutableArray *texts;
 @property (strong, nonatomic) NSMutableArray *stickers;

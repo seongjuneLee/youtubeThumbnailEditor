@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"nuclearSticker";
         self.backgroundImageName = @"nuclearSticker";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

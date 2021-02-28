@@ -20,30 +20,5 @@
     return sharedInstance;
 }
 
-//- (BOOL)connected
-//{
-//    Reachability *internetReachableFoo = [Reachability reachabilityWithHostname:@"www.google.com"];
-//
-//    // Internet is reachable
-//    internetReachableFoo.reachableBlock = ^(Reachability*reach)
-//    {
-//        // Update the UI on the main thread
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSLog(@"Yayyy, we have the interwebs!");
-//        });
-//    };
-//
-//    // Internet is not reachable
-//    internetReachableFoo.unreachableBlock = ^(Reachability*reach)
-//    {
-//        // Update the UI on the main thread
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSLog(@"Someone broke the internet :(");
-//        });
-//    };
-//
-//    [internetReachableFoo startNotifier];
-//}
-
 
 @end

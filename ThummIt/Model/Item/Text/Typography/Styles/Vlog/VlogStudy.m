@@ -16,6 +16,7 @@
         self.name = NSLocalizedString(@"Study With Me",nil);
         self.fontName = @"Fraunces-9ptBlack";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
+        self.canChangeColor = true;
     }
     return self;
 }

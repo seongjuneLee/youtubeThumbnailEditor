@@ -16,6 +16,7 @@
         self.itemName = @"circleSticker2";
         self.backgroundImageName = @"circleSticker2";
         self.tintColor = [UIColor redColor];
+        self.canChangeColor = true;
     }
     return self;
 }

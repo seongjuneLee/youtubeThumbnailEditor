@@ -12,12 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ItemCollectionViewController (Button)
 
 - (IBAction)cancelButtonTapped:(UIButton *)sender;
-- (IBAction)checkButtonTapped:(UIButton *)sender;
+- (IBAction)doneButtonTapped:(UIButton *)sender;
 
 - (IBAction)photoFrameStyleTapped:(id)sender;
-- (IBAction)photoButtonTapped:(id)sender;
+- (IBAction)photoFramePhotoButtonTapped:(id)sender;
 - (IBAction)textButtonTapped:(id)sender;
 - (IBAction)typoButtonTapped:(id)sender;
+- (IBAction)photoButtonTapped:(id)sender;
+- (IBAction)editPhotoButtonTapped:(id)sender;
 
 @end
 

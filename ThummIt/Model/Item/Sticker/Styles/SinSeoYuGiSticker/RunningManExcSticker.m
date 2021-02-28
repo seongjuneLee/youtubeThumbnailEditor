@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"runningManExcSticker";
         self.backgroundImageName = @"runningManExcSticker";
-        self.cannotChangeColor = true;
+        
 //        self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return self;

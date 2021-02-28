@@ -25,6 +25,7 @@
     
     self.projectID = projectID;
     self.photoFrames = [NSMutableArray<PhotoFrame*> new];
+    self.photos = [NSMutableArray<Photo*> new];
     self.texts = [NSMutableArray<Text*> new];
     self.stickers = [NSMutableArray<Sticker*> new];
     self.itemLayers = [NSMutableArray<ItemLayer*> new];
@@ -71,7 +72,8 @@
 
 -(NSMutableArray *)items{
     
-    NSMutableArray *items = [NSMutableArray arrayWithArray:self.photoFrames];
+    NSMutableArray *items = [NSMutableArray arrayWithArray:self.photos];
+    [items addObjectsFromArray:self.photoFrames];
     [items addObjectsFromArray:self.texts];
     [items addObjectsFromArray:self.stickers];
     return items;

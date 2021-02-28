@@ -19,7 +19,7 @@
         self.bgImageName = @"vlogHashTagBox";
         self.bgWidthPadding = 15;
         self.bgHeightPadding = 20;
-
+        self.canChangeColor = true;
     }
     return self;
 }

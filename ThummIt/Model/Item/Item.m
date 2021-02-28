@@ -53,7 +53,7 @@
         self.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.rotationDegree = [[decoder decodeObjectForKey:@"rotationDegree"] floatValue];
-        self.cannotChangeColor = [[decoder decodeObjectForKey:@"cannotChangeColor"] boolValue];
+        self.canChangeColor = [[decoder decodeObjectForKey:@"canChangeColor"] boolValue];
         self.isTemplateItem = self.isTemplateItem;
     }
     return self;
@@ -68,7 +68,7 @@
     [encoder encodeObject:[NSValue valueWithCGPoint:self.baseView.center] forKey:@"center"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotationDegree"];
-    [encoder encodeObject:[NSNumber numberWithBool:self.cannotChangeColor] forKey:@"cannotChangeColor"];
+    [encoder encodeObject:[NSNumber numberWithBool:self.canChangeColor] forKey:@"canChangeColor"];
 
 
 }

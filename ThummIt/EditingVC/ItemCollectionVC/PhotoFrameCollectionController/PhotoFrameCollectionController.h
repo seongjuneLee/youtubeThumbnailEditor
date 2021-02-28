@@ -7,9 +7,10 @@
 
 #import <Foundation/Foundation.h>
 #import "PhotoFrame.h"
+#import "FreeFormCollectionReusableView.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@interface PhotoFrameCollectionController : NSObject <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface PhotoFrameCollectionController : NSObject <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,FreeFormCollectionReusableViewDelegate>
 
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UIImage *firstPhoto;

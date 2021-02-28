@@ -23,7 +23,7 @@
         self.textGradientHeight = stringBoundingBox.height + 7.8;
 
         self.textColor = [UIColor diagonalGradientFromColor:self.textFromColor toColor:self.textToColor withHeight:self.textGradientHeight];
-        self.cannotChangeColor = true;
+        
         self.obliqueValue = 0.2;
         
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];

@@ -17,7 +17,7 @@
         self.fontName = @"BinggraeSamanco-Bold";
         self.textColor = [UIColor colorWithRed:(128/255.0) green:(128/255.0) blue:(128/255.0) alpha:1] ;
         self.fontSize = 150;
-        
+        self.canChangeColor = true;
 
         
     }
