@@ -190,7 +190,6 @@
                 self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
                 self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
                 
-                
                 self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
                 [SaveManager.sharedInstance.currentProject.itemLayers removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
                 //itemLayers에서 presseditemlayer자기 원래 자리에서 제거

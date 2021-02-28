@@ -110,7 +110,7 @@
                                 <rect key="frame" x="0.0" y="403" width="414" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBX-hP-Jmq" userLabel="Item Layer ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -123,7 +123,7 @@
                                     <constraint firstItem="IBX-hP-Jmq" firstAttribute="width" secondItem="iGt-3I-8UG" secondAttribute="width" id="MDv-Ll-OjA"/>
                                     <constraint firstItem="IBX-hP-Jmq" firstAttribute="bottom" secondItem="bbF-4q-cnH" secondAttribute="bottom" id="Vbq-XI-7qu"/>
                                     <constraint firstItem="IBX-hP-Jmq" firstAttribute="top" secondItem="bbF-4q-cnH" secondAttribute="top" id="qdp-Ls-vVv"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="height" secondItem="Vjn-Vc-vW2" secondAttribute="height" multiplier="1.3" id="rAZ-yu-hi5"/>
+                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="height" secondItem="Vjn-Vc-vW2" secondAttribute="height" multiplier="2" id="rAZ-yu-hi5"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="bbF-4q-cnH"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="iGt-3I-8UG"/>

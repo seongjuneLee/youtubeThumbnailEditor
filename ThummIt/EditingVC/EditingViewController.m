@@ -231,11 +231,8 @@
             [self.itemLayerScrollView addSubview:itemLayer.barBaseView];
             
             // itemLayer 들을 projects.itemlayers에 더해주기.
-            
-            
+        
             [self.layerController addItemLayerGestureRecognizers:itemLayer];
-            
-            
             
             [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
             itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
