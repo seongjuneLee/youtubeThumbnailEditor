@@ -40,13 +40,14 @@
 -(void)setUpPhotoFrame{
     
     FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
+    fullRectPhotoFrame.indexInLayer = @"0";
     fullRectPhotoFrame.isTemplateItem = true;
     fullRectPhotoFrame.isFixedPhotoFrame = true;
     fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:fullRectPhotoFrame];
     
     PhotoFrame *circlePhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
-    circlePhotoFrame.indexInLayer =@"0";
+    circlePhotoFrame.indexInLayer =@"1";
     circlePhotoFrame.center = CGPointMake(0.72, 0.45);
     circlePhotoFrame.scale = 0.2;
     circlePhotoFrame.isTemplateItem = true;
@@ -62,7 +63,7 @@
     logoText.scale = 0.13;
     logoText.center = CGPointMake(0.5, 0.06);
     logoText.isTemplateItem = true;
-    logoText.indexInLayer =@"1";
+    logoText.indexInLayer =@"2";
     logoText.text = @"서유기";
     logoText.textView.text = logoText.text;
     
@@ -75,7 +76,7 @@
     scaredText.scale = 0.65;
     scaredText.center = CGPointMake(0.3, 0.71);
     scaredText.isTemplateItem = true;
-    scaredText.indexInLayer =@"2";
+    scaredText.indexInLayer =@"3";
     scaredText.text = @"와 나 이런거 무서워한다";
     scaredText.textView.text = scaredText.text;
     scaredText.typo = gagwanSmall;
@@ -87,7 +88,7 @@
     gagwanText.scale = 0.384;
     gagwanText.center = CGPointMake(0.58, 0.85);
     gagwanText.isTemplateItem = true;
-    gagwanText.indexInLayer =@"3";
+    gagwanText.indexInLayer =@"4";
     gagwanText.text = @"가관이네..";
     gagwanText.textView.text = gagwanText.text;
     gagwanText.typo = gagwanBig;
@@ -98,7 +99,7 @@
 -(void)setUpStickers{
     
     SinSeoYuGiExc1Sticker *exc1Sticker = [SinSeoYuGiExc1Sticker sinSeoYuGiExc1Sticker];
-    exc1Sticker.indexInLayer =@"4";
+    exc1Sticker.indexInLayer =@"5";
     exc1Sticker.scale = 0.23;
     exc1Sticker.rotationDegree = degreesToRadians(-5);
     exc1Sticker.isTemplateItem = true;

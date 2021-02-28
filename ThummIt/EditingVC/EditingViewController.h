@@ -15,6 +15,7 @@
 #import "ItemCollectionViewController.h"
 #import "SaveManager.h"
 #import "ItemManager.h"
+#import "ItemLayer.h"
 #import "Typography.h"
 #import "UndoManager.h"
 #import "TypoHeader.h"
@@ -84,6 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *bgColorButton;
 @property (weak, nonatomic) IBOutlet UIView *stickerButtonContainerView;
 @property (weak, nonatomic) IBOutlet UIView *bgColorButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIScrollView *itemLayerScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *buttonScrollView;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UIButton *undoButton;

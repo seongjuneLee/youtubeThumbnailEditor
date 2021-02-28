@@ -272,6 +272,7 @@
 		6ED0AFFC25E51CD10027485F /* TeenVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AFFB25E51CD10027485F /* TeenVlogMainFrame.m */; };
 		6ED0B00125E51CE20027485F /* VisitingCompanyVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0B00025E51CE20027485F /* VisitingCompanyVlogMainFrame.m */; };
 		6ED0B00625E51CF50027485F /* WebDesignerVlogMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0B00525E51CF50027485F /* WebDesignerVlogMainFrame.m */; };
+		6ED0B01725E688EB0027485F /* ItemLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0B01625E688EB0027485F /* ItemLayer.m */; };
 		6ED138FA25B8507A00012144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED138F925B8507A00012144 /* AppDelegate.swift */; };
 		6ED1398C25B872F600012144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1398B25B872F600012144 /* SceneDelegate.swift */; };
 		6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */; };
@@ -983,6 +984,8 @@
 		6ED0B00025E51CE20027485F /* VisitingCompanyVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitingCompanyVlogMainFrame.m; sourceTree = "<group>"; };
 		6ED0B00425E51CF50027485F /* WebDesignerVlogMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebDesignerVlogMainFrame.h; sourceTree = "<group>"; };
 		6ED0B00525E51CF50027485F /* WebDesignerVlogMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDesignerVlogMainFrame.m; sourceTree = "<group>"; };
+		6ED0B01525E688EB0027485F /* ItemLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemLayer.h; sourceTree = "<group>"; };
+		6ED0B01625E688EB0027485F /* ItemLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemLayer.m; sourceTree = "<group>"; };
 		6ED138F925B8507A00012144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED1398B25B872F600012144 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6ED13A2C25B8DB2A00012144 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
@@ -1733,6 +1736,7 @@
 		6E7DD50B25888C3A0014618E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6ED0B01425E688BC0027485F /* ItemLayer */,
 				6E9BEA30258E448B00F7F539 /* Project */,
 				6E7DD51D25888C9E0014618E /* Template */,
 				6E9BE9BF258B2E7900F7F539 /* Item */,
@@ -2755,6 +2759,15 @@
 				6ED0AFB525E515410027485F /* WorkMan3MainFrame.m */,
 			);
 			path = WorkManMainFrame;
+			sourceTree = "<group>";
+		};
+		6ED0B01425E688BC0027485F /* ItemLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0B01525E688EB0027485F /* ItemLayer.h */,
+				6ED0B01625E688EB0027485F /* ItemLayer.m */,
+			);
+			path = ItemLayer;
 			sourceTree = "<group>";
 		};
 		6ED13B8225C0898900012144 /* RunningManTypo */ = {
@@ -3868,6 +3881,7 @@
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
 				B11E0D6525C56CA30050D9F0 /* CebuVlogTemplate.m in Sources */,
 				6E8E7A24259B26CF0008C5FF /* ItemCollectionViewController.m in Sources */,
+				6ED0B01725E688EB0027485F /* ItemLayer.m in Sources */,
 				6EC4DFC025A87BEC0023485C /* TextViewContainer.m in Sources */,
 				6EC7647025DADB74009FF873 /* StudyTemplateRectangle.m in Sources */,
 				6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */,

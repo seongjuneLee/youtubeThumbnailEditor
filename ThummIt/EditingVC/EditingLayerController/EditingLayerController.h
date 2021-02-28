@@ -7,9 +7,10 @@
 
 #import <Foundation/Foundation.h>
 #import "Item.h"
+#import "ItemLayer.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EditingLayerController : NSObject
+@interface EditingLayerController : NSObject 
 
 @property (weak, nonatomic) UIViewController *editingVC;
 
@@ -17,12 +18,22 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSUInteger originalIndex;
 
 @property (strong, nonatomic) Item *currentItem;
+@property (strong, nonatomic) ItemLayer *itemLayer;
+@property (nonatomic) CGPoint previousPoint;
+@property (strong, nonatomic) ItemLayer *pressedItemLayer;
+@property (strong, nonatomic) ItemLayer *nextItemLayer;
 
+@property (nonatomic) NSInteger pressedItemOriginalCenterY;
+@property (nonatomic) NSInteger nextItemOriginalCenterY;
+
+
+@property (nonatomic) BOOL doesItemLayerArrangeFinished;
 
 -(void)bringCurrentItemToFront:(Item *)CurrentItem;
 -(void)recoverOriginalLayer;
 -(void)showTransparentView;
 -(void)hideTransparentView;
+-(void)addItemLayerGestureRecognizers:(ItemLayer *)itemLayer;
 
 @end
 

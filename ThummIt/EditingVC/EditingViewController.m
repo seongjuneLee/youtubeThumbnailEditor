@@ -81,6 +81,7 @@
     self.bgColorVC.view.frame = CGRectMake(0, self.view.frameHeight - bgColorVCHeight, self.view.frameWidth, bgColorVCHeight);
     
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
+//    self.itemLayerScrollView setContentSize:CGSizeMake(<#CGFloat width#>, <#CGFloat height#>)
 }
 
 -(void)setUpSlider{
@@ -210,6 +211,39 @@
         
         item.isTemplateItem = false;
     }
+    
+    NSInteger i = 1;
+    for (Item *item in project.items) {
+        
+        if(!item.isFixedPhotoFrame){
+            // 만들기
+            ItemLayer *itemLayer = [[ItemLayer alloc] init];
+            itemLayer.item = item;
+            
+            [itemLayer loadView];
+            
+            // scrollView에 올려주기 (indexInLayer 와 frameY)
+            float itemLayerX = (self.itemLayerScrollView.frameWidth)/2;
+            float itemLayerY = (itemLayer.barBaseView.frameHeight/2)*(3*i-1) ;
+            itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
+            itemLayer.originalCenterY = itemLayerY;
+            
+            [self.itemLayerScrollView addSubview:itemLayer.barBaseView];
+            
+            // itemLayer 들을 projects.itemlayers에 더해주기.
+            
+            
+            [self.layerController addItemLayerGestureRecognizers:itemLayer];
+            
+            
+            
+            [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
+            itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
+            i += 1;
+
+        }
+    }
+    
     [SaveManager.sharedInstance save];
 }
 

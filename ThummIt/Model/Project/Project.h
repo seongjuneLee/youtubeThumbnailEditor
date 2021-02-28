@@ -11,6 +11,7 @@
 #import "Text.h"
 #import "Sticker.h"
 #import "MainFrame.h"
+#import "ItemLayer.h"
 #import "Template.h"
 @class CoreDataProject;
 
@@ -29,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray *photoFrames;
 @property (strong, nonatomic) NSMutableArray *texts;
 @property (strong, nonatomic) NSMutableArray *stickers;
+@property (strong, nonatomic) NSMutableArray *itemLayers;
 @property (strong, atomic) CoreDataProject* coreDataStorage;
 @property (strong, nonatomic) UIImage * previewImage;
 
