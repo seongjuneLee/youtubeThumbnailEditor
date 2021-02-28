@@ -17,6 +17,7 @@
         self.fontName = @"NeoDunggeunmoPro-Regular";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
         self.fontSize = 80;
+        self.canChangeColor = true;
     }
     return self;
 }

@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"끌어내려 빨리!!",nil);
         self.fontName = @"NanumSquareOTFEB";
         self.textColor = UIColor.whiteColor;
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = UIColor.blackColor;
         bgTextAttribute1.borderWidth = 8;

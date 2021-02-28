@@ -16,6 +16,7 @@
         self.itemName = @"dollarSticker";
         self.backgroundImageName = @"dollarSticker";
         self.tintColor = [UIColor colorWithRed:99/255.0 green:181/255.0 blue:104/255.0 alpha:1];
+        self.canChangeColor = true;
     }
     return self;
 }

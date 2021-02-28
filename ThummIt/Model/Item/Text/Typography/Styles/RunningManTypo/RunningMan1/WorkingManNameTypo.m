@@ -17,6 +17,7 @@
         self.fontName = @"BMDoHyeon-OTF";
         self.textColor = [UIColor colorWithRed:39/255.0 green:238/255.0 blue:244/255.0 alpha:1.0];
         self.fontSize = 60;
+        self.canChangeColor = true;
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
         borderAtt.borderWidth = 7;

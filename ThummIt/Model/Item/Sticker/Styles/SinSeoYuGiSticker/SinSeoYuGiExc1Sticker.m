@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"sinSeoYuGiExc1Sticker";
         self.backgroundImageName = @"sinSeoYuGiExc1Sticker";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

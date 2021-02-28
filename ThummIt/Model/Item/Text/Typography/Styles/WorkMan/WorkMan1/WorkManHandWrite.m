@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"(무대난입)",nil);
         self.fontName = @"NanumGothicOTFExtraBold";
         self.textColor = [UIColor whiteColor];
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
        

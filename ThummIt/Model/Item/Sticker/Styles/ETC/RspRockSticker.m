@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"rspRockSticker";
         self.backgroundImageName = @"rspRockSticker";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

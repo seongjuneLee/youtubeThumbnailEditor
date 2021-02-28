@@ -16,7 +16,7 @@
         self.itemName = @"vlogTapeSticker";
         self.backgroundImageName = @"vlogTapeSticker";
         self.tintColor = [UIColor colorWithRed:191/255.0 green:171/255.0 blue:167/255.0 alpha:1.0];
-
+        self.canChangeColor = true;
     }
     return self;
 }

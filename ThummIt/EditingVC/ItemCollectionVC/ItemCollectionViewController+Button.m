@@ -281,8 +281,8 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     [self.editingPhotoButtonVC dismissSelf];
-    [editingVC.currentPhotoFrame.baseView removeFromSuperview];
-    editingVC.originalPhotoFrame.baseView.hidden = false;
+    [editingVC.currentPhoto.baseView removeFromSuperview];
+    editingVC.originalPhoto.baseView.hidden = false;
     [editingVC.layerController hideTransparentView];
     [self dismissSelf];
     [editingVC.albumVC dismissSelf];
@@ -375,8 +375,8 @@
     Sticker *sticker = (Sticker *)editingVC.currentSticker;
     sticker.baseView.center = editingVC.originalCenter;
     sticker.baseView.transform = editingVC.originalTransform;
-    sticker.cannotChangeColor = editingVC.originalColorChangable;
-    if (!sticker.cannotChangeColor) {
+    sticker.canChangeColor = editingVC.originalColorChangable;
+    if (sticker.canChangeColor) {
         sticker.backgroundImageView.image = [[UIImage imageNamed:editingVC.originalStickerBGImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [sticker.backgroundImageView setTintColor:editingVC.originalTintColor];
     } else {
@@ -401,7 +401,7 @@
 }
 
 
-#pragma mark - 체크 버튼
+#pragma mark - Done 버튼
 
 #pragma mark - 포토
 

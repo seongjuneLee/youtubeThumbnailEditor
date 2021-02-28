@@ -166,7 +166,7 @@
     [self.layerController bringCurrentItemToFront:self.currentItem];
     self.itemCollectionVC.itemType = TextType;
     
-    if(!text.typo.cannotChangeColor){
+    if(text.typo.canChangeColor){
         [UIView animateWithDuration:0.2 animations:^{
             self.hueSlider.alpha = 1.0;
         }];
@@ -185,7 +185,7 @@
     self.originalTransform = sticker.baseView.transform;
     self.originalStickerBGImageName = sticker.backgroundImageName;
     self.originalTintColor = sticker.tintColor;
-    self.originalColorChangable = sticker.cannotChangeColor;
+    self.originalColorChangable = sticker.canChangeColor;
     self.originalSticker = sticker;
     self.originalIndexInLayer = sticker.indexInLayer.integerValue;
     
@@ -193,7 +193,7 @@
     [self.layerController bringCurrentItemToFront:self.currentItem];
     self.itemCollectionVC.itemType = StickerType;
     
-    if(!sticker.cannotChangeColor){
+    if(sticker.canChangeColor){
         [UIView animateWithDuration:0.2 animations:^{
             self.hueSlider.alpha = 1.0;
         }];

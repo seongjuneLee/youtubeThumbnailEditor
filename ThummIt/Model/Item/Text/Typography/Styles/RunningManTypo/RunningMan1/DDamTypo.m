@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"(식은땀)",nil);
         self.fontName = @"TmoneyRoundWind-Regular";
         self.textColor = [UIColor whiteColor];
-
+        self.canChangeColor = true;
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderWidth = 8;
         borderAtt.borderColor = [UIColor blackColor];

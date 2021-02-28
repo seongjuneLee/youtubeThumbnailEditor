@@ -16,6 +16,7 @@
         self.itemName = @"speechBubbleSticker1";
         self.backgroundImageName = @"speechBubbleSticker1";
         self.tintColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
+        self.canChangeColor = true;
     }
     return self;
 }

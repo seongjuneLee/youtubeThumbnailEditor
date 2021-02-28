@@ -74,11 +74,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             UIImage *image = [Text makePlaceHolderWithTypo:typo].image;
-            
-            
             cell.textImageView.image = image;
-            
-            
             [self.imageCaching setObject:image forKey:imageName];
         });
     }
@@ -148,7 +144,7 @@
     
     
     // 칼라 바
-    if (!text.typo.cannotChangeColor) {
+    if (text.typo.canChangeColor) {
         [UIView animateWithDuration:0.2 animations:^{
             editingVC.hueSlider.alpha = 1.0;
             editingVC.thumbCircleView.alpha = 1.0;

@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"snowmanSticker";
         self.backgroundImageName = @"snowmanSticker";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

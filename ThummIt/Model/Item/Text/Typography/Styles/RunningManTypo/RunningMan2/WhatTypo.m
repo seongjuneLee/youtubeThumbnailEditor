@@ -19,7 +19,7 @@
         self.bgImageName = @"What";
         self.bgHeightPadding = 30;
         self.bgWidthPadding = 40;
-        
+        self.canChangeColor = true;
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
         borderAtt.borderWidth = 6;

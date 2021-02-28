@@ -43,6 +43,9 @@
                 } else {
                     photo.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
                 }
+                NSData *imageData = UIImagePNGRepresentation(image);
+
+                photo.imageData = imageData;
                 photo.photoImageView.image = image;
                 photo.baseView.bounds = photo.photoImageView.bounds;
                 photo.baseView.center = originalCenter;

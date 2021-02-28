@@ -20,6 +20,7 @@
         self.bgWidthPadding = 130;
         self.bgHeightPadding = 100;
         self.fontSize = 40;
+        self.canChangeColor = true;
     }
     return self;
 }

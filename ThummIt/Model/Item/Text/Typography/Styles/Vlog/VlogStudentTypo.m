@@ -18,7 +18,7 @@
         self.textColor = [UIColor colorWithRed:(224/255.0) green:(230/255.0) blue:(190/255.0) alpha:1];
         self.obliqueValue = 0.17;
         self.fontSize = 50;
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:1];
         

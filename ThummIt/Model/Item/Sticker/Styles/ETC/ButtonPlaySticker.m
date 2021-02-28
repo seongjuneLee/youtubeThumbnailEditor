@@ -16,6 +16,7 @@
         self.itemName = @"buttonPlaySticker";
         self.backgroundImageName = @"buttonPlaySticker";
         self.tintColor = [UIColor blackColor];
+        self.canChangeColor = true;
     }
     return self;
 }

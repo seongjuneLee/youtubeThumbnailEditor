@@ -15,6 +15,7 @@
         self.name = NSLocalizedString(@"MAKING\nFILM",nil);
         self.fontName = @"KOTRA_BOLD-Bold";
         self.textColor = [UIColor colorWithRed:38/255.0 green:179/255.0 blue:213/255.0 alpha:1];
+        self.canChangeColor = true;
     }
     return self;
 }

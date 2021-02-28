@@ -150,9 +150,6 @@
         [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
         self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
-        if(!editingVC.currentItem.cannotChangeColor || [editingVC.currentItem isKindOfClass:PhotoFrame.class] ){
-            [editingVC hideAndInitSlider];
-        }
 
     } else if (sender.state == UIGestureRecognizerStateChanged){
         
@@ -183,9 +180,7 @@
         for (GuideLine *guideLine in self.guideLines) {
             [guideLine removeFromSuperView];
         }
-        if(!editingVC.currentItem.cannotChangeColor){
-            [self deleteHueSliderRespondToCurrentPointY:currentPoint.y];
-        }
+        [self deleteHueSliderRespondToCurrentPointY:currentPoint.y];
         
         if([editingVC.currentItem isKindOfClass:Text.class]){
             [self deleteKeyBoardRespondToCurrentPointY:currentPoint.y];
@@ -685,13 +680,13 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     float imageViewBottomY = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
-    if (currentPointY >= imageViewBottomY || editingVC.modeController.editingMode == NormalMode || [editingVC.currentItem isKindOfClass:PhotoFrame.class] ) {
+    if (currentPointY > imageViewBottomY && editingVC.currentItem.canChangeColor) {
         [UIView animateWithDuration:0.2 animations:^{
-            [editingVC hideAndInitSlider];
+            editingVC.hueSlider.alpha = 1.0;
         }];
     } else {
         [UIView animateWithDuration:0.2 animations:^{
-            editingVC.hueSlider.alpha = 1.0;
+            [editingVC hideAndInitSlider];
         }];
     }
 }

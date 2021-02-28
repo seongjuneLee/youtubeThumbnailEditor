@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"heartSticker7";
         self.backgroundImageName = @"heartSticker7";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

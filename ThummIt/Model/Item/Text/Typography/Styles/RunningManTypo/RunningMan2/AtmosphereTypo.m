@@ -17,7 +17,7 @@
         self.fontName = @"SDMiSaeng";
         self.textColor = [UIColor whiteColor];
         self.obliqueValue = 0.2;
-        
+        self.canChangeColor = true;
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         borderAtt.borderColor = [UIColor blackColor];
         borderAtt.borderWidth = 6;

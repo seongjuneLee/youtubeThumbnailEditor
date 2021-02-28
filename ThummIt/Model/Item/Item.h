@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGFloat scale;
 @property (nonatomic) BOOL isFixedPhotoFrame;
 @property (nonatomic) BOOL isTemplateItem;
-@property (nonatomic) BOOL cannotChangeColor;
+@property (nonatomic) BOOL canChangeColor;
 
 -(void)loadView;
 -(void)setItemCenterAndScale;

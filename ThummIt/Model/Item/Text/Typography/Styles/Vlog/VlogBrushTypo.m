@@ -19,7 +19,7 @@
         self.bgImageName = @"brushBox";
         self.bgWidthPadding = 50;
         self.bgHeightPadding = 50;
-
+        self.canChangeColor = true;
     }
     return self;
 }

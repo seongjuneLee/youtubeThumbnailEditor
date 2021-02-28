@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"회사탐방 브이로그",nil);
         self.fontName = @"KOTRA_BOLD-Bold";
         self.textColor = UIColor.whiteColor;
-        
+        self.canChangeColor = true;
     }
     return self;
 }
