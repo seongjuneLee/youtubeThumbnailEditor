@@ -133,54 +133,8 @@
             
             self.pressedItemLayer.barBaseView.centerY += deltaPoint.y;
             self.previousPoint = [sender locationInView:editingVC.itemLayerScrollView];
-
-            NSInteger pressedItemOriginalCenterY;
-            NSInteger nextItemOriginalCenterY;
             
-            if(deltaPoint.y > 0 && !self.doesItemLayerArrangeFinished){
-                
-                self.nextItemLayer = SaveManager.sharedInstance.currentProject.itemLayers[self.pressedItemLayer.itemLayerIndex + 1];
-                
-                if(![self doesLastObjectEqualToNextItemLayer:self.nextItemLayer]){
-                    
-                    if(self.pressedItemLayer.barBaseView.centerY >= self.nextItemLayer.originalCenterY - self.nextItemLayer.barBaseView.frameHeight/2){      //nextitem의 frame 안으로 들어오면 둘 위치 바꿔줌 & 둘 index 바꿔줌
-
-                        pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
-                        nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;               // 바꾸기 전 저장해놈
-                        
-                        self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
-                        self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY; //실제위치를 바꿔줌
-                        
-                        self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
-                        self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
-                        
-                        self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
-                        self.pressedItemLayer.itemLayerIndex += 1;
-                                //savemanager에 save해줘야댐 & stacksave도 해야댐
-                    }
-                } else{
-                    if(self.pressedItemLayer.barBaseView.centerY >= self.nextItemLayer.originalCenterY - self.nextItemLayer.barBaseView.frameHeight/2){      //nextitem의 frame 안으로 들어오면 둘 위치 바꿔줌 & 둘 index 바꿔줌
-
-                        pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
-                        nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;               // 바꾸기 전 저장해놈
-                        
-                        self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
-                        self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY; //실제위치를 바꿔줌
-                        
-                        self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
-                        self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
-                        
-                        self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;                                //savemanager에 save해줘야댐 & stacksave도 해야댐
-
-                        self.doesItemLayerArrangeFinished = YES;
-                        
-                    }
-                    
-                }
-                
-                
-            }
-
+            [self itemLayerArrange:deltaPoint];
             
             
             
@@ -209,6 +163,70 @@
     return [foundItemLayers firstObject];
     
 }
+
+-(void)itemLayerArrange:(CGPoint)deltaPoint{
+    
+    
+    NSInteger pressedItemOriginalCenterY;
+    NSInteger nextItemOriginalCenterY;
+    
+    
+    if(deltaPoint.y >= 0 && !self.doesItemLayerArrangeFinished){//itemLayerArrange 시작
+        //nextitemlayer가 array의 마지막 object 일땐 doeslast...일때는 doesitemlayerarranage를 끝내주고 이안으로 못들어오도록
+        
+        self.nextItemLayer = SaveManager.sharedInstance.currentProject.itemLayers[self.pressedItemLayer.itemLayerIndex + 1];
+        if(![self doesLastObjectEqualToNextItemLayer:self.nextItemLayer]){
+           //nextitemlayer가 array의 마지막 object 아닐때
+            if(self.pressedItemLayer.barBaseView.centerY >= self.nextItemLayer.originalCenterY - self.nextItemLayer.barBaseView.frameHeight/2){
+
+                pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
+                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;               // 바꾸기 전 저장해놈
+                
+                self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
+                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY; //실제위치를 바꿔줌
+                
+                self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
+                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
+                
+                
+                self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
+                [SaveManager.sharedInstance.currentProject.itemLayers removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
+                //itemLayers에서 presseditemlayer자기 원래 자리에서 제거
+                self.pressedItemLayer.itemLayerIndex += 1;
+                
+                [SaveManager.sharedInstance.currentProject.itemLayers insertObject:self.pressedItemLayer atIndex:self.pressedItemLayer.itemLayerIndex];
+                
+                        // stacksave도 해야댐
+            }
+        } else{           //nextitemlayer가 array의 마지막 object일때는 arrange가 끝났으므로
+            if(self.pressedItemLayer.barBaseView.centerY >= self.nextItemLayer.originalCenterY - self.nextItemLayer.barBaseView.frameHeight/2){
+
+                pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
+                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;        // 바꾸기 전 값 저장
+                
+                self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
+                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY; //실제위치를 바꿔줌
+                
+                self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
+                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;     //객체가 가진 위치값도 바꿔줌
+                
+                self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
+                [SaveManager.sharedInstance.currentProject.itemLayers    removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
+                
+                self.pressedItemLayer.itemLayerIndex += 1;
+                [SaveManager.sharedInstance.currentProject.itemLayers insertObject:self.pressedItemLayer atIndex:self.pressedItemLayer.itemLayerIndex];
+                
+                self.doesItemLayerArrangeFinished = YES;
+                
+            }
+            
+        }
+        
+        
+    }
+
+}
+
 
 -(BOOL)doesLastObjectEqualToNextItemLayer:(ItemLayer *)nextItemLayer{
     
