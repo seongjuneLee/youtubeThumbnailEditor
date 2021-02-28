@@ -218,7 +218,7 @@
         if(!item.isFixedPhotoFrame){
             // 만들기
             ItemLayer *itemLayer = [[ItemLayer alloc] init];
-            itemLayer.item = item;
+            itemLayer.item = item;                                  //각 itemLayer객체는 일치하는 item을 가짐 이후에 변동 x
             
             [itemLayer loadView];
             
