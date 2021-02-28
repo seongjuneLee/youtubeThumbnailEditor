@@ -33,7 +33,6 @@
         self.collectionView.dataSource = self;
         
         [self.collectionView registerNib:[UINib nibWithNibName:@"TextCollectionViewCell" bundle:NSBundle.mainBundle] forCellWithReuseIdentifier:@"TextCollectionViewCell"];
-//        [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoFrameCollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"PhotoFrameCollectionReusableView"];
         self.imageCaching = [[NSCache alloc] init];
     }
     
@@ -63,7 +62,6 @@
     UIImage *image = [self.imageCaching objectForKey:imageName];
     
     if(image){
-        
         cell.textImageView.image = image;
     }
     

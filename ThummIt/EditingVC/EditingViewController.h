@@ -111,6 +111,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)hideItemsForItemMode;
 
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
+@property (weak, nonatomic) IBOutlet UIView *itemCollectionContainerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionTopConstraint;
 
 
 

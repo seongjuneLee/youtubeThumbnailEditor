@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)stickerButtonHoldRelease;
 -(void)bgColorButtonHoldDown;
 -(void)bgColorButtonHoldRelease;
--(void)addItemCollectionVC;
+-(void)showItemCollectionVC;
 -(void)addAlbumVC;
 -(void)taskWhenDenied;
 -(void)hideAndInitSlider;

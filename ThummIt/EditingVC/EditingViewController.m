@@ -45,21 +45,15 @@
     
 }
 
--(void)setUpPhotoAlbums{
-    
-    
-    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
-     {
-         if (status == PHAuthorizationStatusAuthorized)
-         {
-             
-             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
-             });
-         }
-    }];
-
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+   NSString * segueName = segue.identifier;
+   if ([segueName isEqualToString: @"itemCollectionVCSegue"]) {
+       self.itemCollectionVC = (ItemCollectionViewController *) [segue destinationViewController];
+       self.itemCollectionVC.editingVC = self;
+   }
 }
+
 
 -(void)viewDidLayoutSubviews{
     SaveManager.sharedInstance.bgViewRect = self.bgView.frame;
@@ -69,21 +63,6 @@
             [SaveManager.sharedInstance saveAndAddToStack];
         });
     }
-    
-    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
-    self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
-    if (self.itemCollectionVC.itemType == TextType) {
-        self.itemCollectionVC.view.frame = CGRectMake(0, self.view.frameHeight - (AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY), self.view.frameWidth, AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY);
-    }
-
-    float bgColorCollectionCellHeight = self.view.frameWidth/8 - 5;
-    float inset = 40;
-    float bgColorVCHeight = bgColorCollectionCellHeight + inset + self.bgColorVC.cancelButton.frameHeight;
-    self.bgColorVC.view.frame = CGRectMake(0, self.view.frameHeight - bgColorVCHeight, self.view.frameWidth, bgColorVCHeight);
-    
-    float underAreaBottom = self.upperArea.frameY + self.upperArea.frameHeight;
-    self.editingPhotoVC.view.frame = CGRectMake(0,underAreaBottom, self.view.frameWidth, self.view.frameHeight - self.itemCollectionVC.containerView.frameHeight - (underAreaBottom));
-    self.editingPhotoVC.editingVC = self;
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
 }
 
@@ -127,8 +106,6 @@
     [self connectEditingLayerController];
     
     UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
-    self.itemCollectionVC = (ItemCollectionViewController *)[editing instantiateViewControllerWithIdentifier:@"ItemCollectionViewController"];
-    self.itemCollectionVC.editingVC = self;
 
     self.albumVC = (AlbumViewController *)[editing instantiateViewControllerWithIdentifier:@"AlbumViewController"];
     self.albumVC.editingVC = self;
@@ -279,6 +256,22 @@
     [self.bgColorButton addTarget:self action:@selector(bgColorButtonHoldRelease) forControlEvents:UIControlEventTouchDragExit];
     [self.bgColorButton addTarget:self action:@selector(bgColorButtonHoldRelease) forControlEvents:UIControlEventTouchUpOutside];
     [self.bgColorButton addTarget:self action:@selector(bgColorButtonHoldRelease) forControlEvents:UIControlEventTouchCancel];
+
+}
+
+-(void)setUpPhotoAlbums{
+    
+    
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
+     {
+         if (status == PHAuthorizationStatusAuthorized)
+         {
+             
+             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+             });
+         }
+    }];
 
 }
 

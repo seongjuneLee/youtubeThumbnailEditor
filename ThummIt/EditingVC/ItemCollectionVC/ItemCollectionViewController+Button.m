@@ -126,7 +126,6 @@
         self.editPhotoButton.selected = false;
         [editingVC.albumVC showWithAnimation];
         [UIView animateWithDuration:0.2 animations:^{
-            self.containerTopConstraint.constant = 0;
             [self.view layoutIfNeeded];
             self.photoButton.alpha = 1.0;
             self.editPhotoButton.alpha = 0.4;
@@ -162,7 +161,6 @@
     [UIView animateWithDuration:0.4 animations:^{
         self.editingPhotoButtonVC.view.alpha = 1.0;
         editingVC.editingPhotoVC.view.alpha = 1.0;
-        self.containerTopConstraint.constant = height + self.collectionView.frameY - self.view.frameHeight;
         [self.view layoutIfNeeded];
     }];
 
@@ -195,7 +193,6 @@
 
         self.photoFrameStyleButton.selected = false;
         [UIView animateWithDuration:0.2 animations:^{
-            self.containerTopConstraint.constant = 0;
             [self.view layoutIfNeeded];
             self.photoFramePhotoButton.alpha = 1.0;
             self.photoFrameStyleButton.alpha = 0.4;
@@ -214,7 +211,6 @@
         
         self.photoFramePhotoButton.selected = false;
         [UIView animateWithDuration:0.2 animations:^{
-            self.containerTopConstraint.constant = 0;
             [self.view layoutIfNeeded];
 
             self.photoFramePhotoButton.alpha = 0.4;

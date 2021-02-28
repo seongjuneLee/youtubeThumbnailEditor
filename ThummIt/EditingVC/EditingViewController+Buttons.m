@@ -80,7 +80,7 @@
     [self.layerController showTransparentView];
     [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = PhotoType;
-    [self addItemCollectionVC];
+    [self showItemCollectionVC];
     [self addAlbumVC];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.albumVC showWithAnimation];
@@ -122,7 +122,7 @@
     [self.layerController showTransparentView];
     [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = PhotoFrameType;
-    [self addItemCollectionVC];
+    [self showItemCollectionVC];
     [self addAlbumVC];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.albumVC showWithAnimation];
@@ -163,57 +163,6 @@
     
 }
 
--(void)addItemCollectionVC{
-    
-    [self addChildViewController:self.itemCollectionVC];
-    [self.view addSubview:self.itemCollectionVC.view];
-    
-    self.itemCollectionVC.collectionView.hidden = true;
-    self.itemCollectionVC.doneButton.alpha = 0;
-    self.itemCollectionVC.cancelButton.alpha = 0;
-    self.itemCollectionVC.scrollView.alpha = 0;
-    [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.itemCollectionVC.containerTopConstraint.constant = 0;
-        [self.itemCollectionVC.view layoutIfNeeded];
-        [self.itemCollectionVC.collectionView reloadData];
-
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.2 animations:^{
-            if(self.textButtonInScrollView.selected){
-                self.itemCollectionVC.doneButton.enabled = false;
-                self.itemCollectionVC.doneButton.alpha = 0.4;
-                self.textButtonInScrollView.selected = false;
-            }else{
-                self.itemCollectionVC.doneButton.alpha = 1.0;
-            }
-            self.itemCollectionVC.cancelButton.alpha = 1.0;
-            self.itemCollectionVC.scrollView.alpha = 1.0;
-        }];
-        if (self.itemCollectionVC.itemType == PhotoFrameType) {
-            self.itemCollectionVC.collectionView.hidden = false;
-        }
-    }];
-
-    
-}
-
--(void)addAlbumVC{
-    
-    self.albumVC.view.hidden = true;
-    [self addChildViewController:self.albumVC];
-    [self.view addSubview:self.albumVC.view];
-    
-    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
-    self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY - self.itemCollectionVC.collectionView.frameY);
-    self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY + self.itemCollectionVC.collectionView.frameY);
-    
-    self.albumVC.delegate = self;
-    self.albumVC.collectionViewTopConstraint.constant = self.albumVC.view.frameHeight;
-    
-}
-
-
-
 
 #pragma mark - 텍스트 버튼
 
@@ -223,7 +172,7 @@
     [self.layerController showTransparentView];
     [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = TextType;
-    [self addItemCollectionVC];
+    [self showItemCollectionVC];
     if (self.recentTypo == nil) {
         self.recentTypo = [NormalTypo normalTypo];
     }
@@ -247,7 +196,7 @@
     [self.layerController showTransparentView];
     [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = StickerType;
-    [self addItemCollectionVC];
+    [self showItemCollectionVC];
     // 추가 필요
     Sticker *recentSticker = [CircleSticker1 circleSticker1];
     for (NSArray *stickers in ItemManager.sharedInstance.stickerDatas) {
@@ -269,7 +218,7 @@
     self.modeController.editingMode = MainFrameAndBGColorMode;
     [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = MainFrameType; //type에 따라 올라오는 Collectionview종류가 달라서 필요
-    [self addItemCollectionVC];
+    [self showItemCollectionVC];
     //추가필요
     self.originalMainFrameImageName = SaveManager.sharedInstance.currentProject.mainFrameImageName;
 }
@@ -440,6 +389,42 @@
         self.hueSlider.alpha = 0.0;
     }];
 }
+
+#pragma  mark - VC 띄우고, 내리기
+
+-(void)showItemCollectionVC{
+    
+    [self.itemCollectionVC connectCollectionController];
+    
+    float constant = 0;
+    if (self.itemCollectionVC.itemType == TextType) {
+        constant = self.itemCollectionVC.view.frameHeight - AppManager.sharedInstance.keyboardSize.height;
+    }
+    [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        
+        self.itemCollectionTopConstraint.constant = constant;
+        [self.view layoutIfNeeded];
+
+    } completion:nil];
+
+    
+}
+
+-(void)addAlbumVC{
+    
+    self.albumVC.view.hidden = true;
+    [self addChildViewController:self.albumVC];
+    [self.view addSubview:self.albumVC.view];
+    
+    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
+    self.albumVC.view.frameSize = CGSizeMake(self.view.frameWidth, self.view.frameHeight - imageViewBottomY - self.itemCollectionVC.collectionView.frameY);
+    self.albumVC.view.frameOrigin = CGPointMake(0, imageViewBottomY + self.itemCollectionVC.collectionView.frameY);
+    
+    self.albumVC.delegate = self;
+    self.albumVC.collectionViewTopConstraint.constant = self.albumVC.view.frameHeight;
+    
+}
+
 
 
 @end

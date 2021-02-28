@@ -48,7 +48,7 @@
 
     }
     [self hideItemsForItemMode];
-    [self addItemCollectionVC];
+    [self showItemCollectionVC];
 
 }
 
@@ -71,7 +71,7 @@
     [self.layerController bringCurrentItemToFront:self.currentItem];
     self.itemCollectionVC.itemType = PhotoType;
     
-    [self addItemCollectionVC];
+    [self showItemCollectionVC];
     [self addAlbumVC];
     
 }
@@ -98,7 +98,7 @@
     if (photoFrame.isFixedPhotoFrame) {
         [self fixedPhotoFrameTapped];
     } else {
-        [self addItemCollectionVC];
+        [self showItemCollectionVC];
         [self addAlbumVC];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.albumVC showWithAnimation];
@@ -110,7 +110,7 @@
 
 -(void)fixedPhotoFrameTapped{
     
-    [self addItemCollectionVC];
+    [self showItemCollectionVC];
     [self addAlbumVC];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
