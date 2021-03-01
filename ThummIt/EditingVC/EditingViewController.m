@@ -81,7 +81,7 @@
     self.bgColorVC.view.frame = CGRectMake(0, self.view.frameHeight - bgColorVCHeight, self.view.frameWidth, bgColorVCHeight);
     
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
-//    self.itemLayerScrollView setContentSize:CGSizeMake(<#CGFloat width#>, <#CGFloat height#>)
+    
 }
 
 -(void)setUpSlider{
@@ -197,34 +197,44 @@
 
     }
     
+    
+    
     for (Item *item in project.items) {
-        NSInteger itemindex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
+        NSInteger itemIndex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
         
         if(!item.isFixedPhotoFrame){
+            
+            
             // 만들기
             ItemLayer *itemLayer = [[ItemLayer alloc] init];
-            itemLayer.item = item;                                  //각 itemLayer객체는 일치하는 item을 가짐 이후에 변동 x
-            
+            itemLayer.item = item;
+            //각 itemLayer객체는 일치하는 item을 가짐 이후에 변동 없음
             [itemLayer makeView];
+            //각 객체의 뷰 생성
             
-            // scrollView에 올려주기 (indexInLayer 와 frameY)
             float itemLayerX = (self.itemLayerContentView.frameWidth)/2;
-            float itemLayerY = (self.itemLayerContentView.frameHeight)-( (itemLayer.barBaseView.frameHeight/2)*(3*(itemindex+1)-1));           //수정할거
-            itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
+            float itemLayerY = (self.itemLayerContentView.frameHeight)-( (itemLayer.barBaseView.frameHeight/2)*(3*(itemIndex+1)-1));
+            
+            itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);             //위치 정해줌
             itemLayer.originalCenterY = itemLayerY;
+            //arrange에 쓰이는 original값에 정해진 y값 넣어줌
             
             [self.itemLayerContentView addSubview:itemLayer.barBaseView];
-            
-            // itemLayer 들을 projects.itemlayers에 더해주기.
-        
             [self.layerController addItemLayerGestureRecognizers:itemLayer];
             
             [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
-            itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
-
+            itemLayer.itemLayerIndex = [SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
+            
+            
         }
+
     }
-    
+    NSInteger numberOfItemlayers = [SaveManager.sharedInstance.currentProject.itemLayers count];
+    ItemLayer *anyItemLayer = SaveManager.sharedInstance.currentProject.itemLayers.firstObject;
+    self.itemLayerContentViewHeightConstraint.constant = - self.itemLayerScrollView.frameHeight + anyItemLayer.barBaseView.frameHeight/2 *(3*numberOfItemlayers + 1);
+
+    self.itemLayerScrollView.contentSize = CGSizeMake(self.itemLayerScrollView.contentSize.width, self.itemLayerContentView.frameHeight);
+
     // 인덱스 맞춰주기
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {

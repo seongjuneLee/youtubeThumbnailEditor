@@ -107,23 +107,23 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vjn-Vc-vW2" userLabel="Item Layer Scroll View">
-                                <rect key="frame" x="0.0" y="403" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="403" width="414" height="280"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBX-hP-Jmq" userLabel="Item Layer ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                                        <color key="backgroundColor" red="0.96145427920000004" green="0.99942404029999998" blue="0.86277811149999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="bbF-4q-cnH" firstAttribute="trailing" secondItem="IBX-hP-Jmq" secondAttribute="trailing" id="0Id-6p-D6z"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="leading" secondItem="bbF-4q-cnH" secondAttribute="leading" id="BKP-BS-pVY"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="width" secondItem="iGt-3I-8UG" secondAttribute="width" id="MDv-Ll-OjA"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="bottom" secondItem="bbF-4q-cnH" secondAttribute="bottom" id="Vbq-XI-7qu"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="top" secondItem="bbF-4q-cnH" secondAttribute="top" id="qdp-Ls-vVv"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="height" secondItem="Vjn-Vc-vW2" secondAttribute="height" multiplier="1.5" id="rAZ-yu-hi5"/>
+                                    <constraint firstAttribute="trailing" secondItem="IBX-hP-Jmq" secondAttribute="trailing" id="8LY-fs-svu"/>
+                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="top" secondItem="Vjn-Vc-vW2" secondAttribute="top" id="H6l-0o-OlT"/>
+                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="width" secondItem="Vjn-Vc-vW2" secondAttribute="width" id="MJL-z1-Ra6"/>
+                                    <constraint firstAttribute="bottom" secondItem="IBX-hP-Jmq" secondAttribute="bottom" id="gjj-Yl-HjX"/>
+                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="leading" secondItem="Vjn-Vc-vW2" secondAttribute="leading" id="vXl-1G-NOs"/>
+                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="height" secondItem="Vjn-Vc-vW2" secondAttribute="height" priority="250" id="xP1-nf-x2r"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="bbF-4q-cnH"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="iGt-3I-8UG"/>
@@ -475,7 +475,7 @@
                             <constraint firstItem="Yts-NW-w4K" firstAttribute="top" secondItem="c8Y-hQ-BzP" secondAttribute="top" constant="-1" id="sGy-iD-IMk"/>
                             <constraint firstItem="i2a-Qa-wOL" firstAttribute="centerY" secondItem="xcS-1G-W8A" secondAttribute="centerY" id="tRU-DX-d5C"/>
                             <constraint firstItem="c8Y-hQ-BzP" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="uGa-BX-F8L"/>
-                            <constraint firstItem="Vjn-Vc-vW2" firstAttribute="bottom" secondItem="a67-Pd-GYU" secondAttribute="top" constant="-10" id="vFn-9h-woD"/>
+                            <constraint firstItem="Vjn-Vc-vW2" firstAttribute="bottom" secondItem="a67-Pd-GYU" secondAttribute="top" constant="-30" id="vFn-9h-woD"/>
                             <constraint firstItem="7pY-QV-G2j" firstAttribute="trailing" secondItem="JmC-6K-MjI" secondAttribute="trailing" constant="10" id="x87-py-Lgz"/>
                             <constraint firstItem="xcS-1G-W8A" firstAttribute="centerX" secondItem="UhL-LO-vTX" secondAttribute="centerX" id="zUw-2w-iyo"/>
                         </constraints>
@@ -489,6 +489,7 @@
                         <outlet property="gestureView" destination="zeV-pp-6xL" id="eFT-Gp-vQG"/>
                         <outlet property="hueSlider" destination="dNB-8m-B4w" id="pLl-pE-Mot"/>
                         <outlet property="itemLayerContentView" destination="IBX-hP-Jmq" id="JsR-Yf-z1I"/>
+                        <outlet property="itemLayerContentViewHeightConstraint" destination="xP1-nf-x2r" id="LQD-yk-d46"/>
                         <outlet property="itemLayerScrollView" destination="Vjn-Vc-vW2" id="CqD-Hi-9Uq"/>
                         <outlet property="leftItem" destination="i2a-Qa-wOL" id="HV2-ck-yN3"/>
                         <outlet property="mainFrameButton" destination="lNj-Ou-9TS" id="18p-Xr-bzP"/>

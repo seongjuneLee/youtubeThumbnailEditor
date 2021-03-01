@@ -90,6 +90,12 @@
         
     }
     
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        if(itemLayer.item == self.currentItem){
+            self.layerController.currentItemLayer = itemLayer;
+        }
+    }
+    
 }
 
 -(void)photoFrameTappedTaskWhenAuthorizedWithItem:(Item *)item{

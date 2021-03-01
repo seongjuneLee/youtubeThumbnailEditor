@@ -86,7 +86,6 @@
     }
     
     [editingVC didSelectItem:itemOfItemLayer];
-    
 }
 
 -(void)itemLayerLongPressed:(UILongPressGestureRecognizer *)sender{

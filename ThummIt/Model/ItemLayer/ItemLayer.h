@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger originalCenterY;
 @property (nonatomic) NSInteger itemLayerIndex; // savemanager itemlayers에 저장된 객체의 index
 
+@property (nonatomic) UILabel *textLabel;
+@property (nonatomic) UIImageView *backgroundImageView;
+
 -(void)makeView;
 
 

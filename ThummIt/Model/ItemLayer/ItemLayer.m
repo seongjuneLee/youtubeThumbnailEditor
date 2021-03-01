@@ -29,7 +29,6 @@
     self.barBaseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)]; //3경우 모두 공통적으로 barbaseview 생성
 
     if ([self.item isKindOfClass:PhotoFrame.class]) {
-//        PhotoFrame *photoFrame = (PhotoFrame *)self.item; //project의 item이 이 itemlayer객체에 담기고 photoframe일 경우
         
         UIImageView *photoFrameView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)]; //가져온 item을 얹을 뷰
         photoFrameView.image = [UIImage imageWithView:self.item.baseView];
@@ -39,8 +38,7 @@
         [self.barBaseView addSubview:photoFrameView];
         self.barBaseView.backgroundColor = UIColor.cyanColor;
         
-     
-
+        self.backgroundImageView = photoFrameView;
 
     } else if([self.item isKindOfClass:Text.class]){
         Text *text = (Text *)self.item;
@@ -54,7 +52,7 @@
         [self.barBaseView addSubview:textLabel];
         self.barBaseView.backgroundColor = UIColor.greenColor;
         
-        
+        self.textLabel = textLabel;
         
     } else if([self.item isKindOfClass:Sticker.class]){
         
@@ -66,7 +64,8 @@
 
         [self.barBaseView addSubview:stickerImageView];
         self.barBaseView.backgroundColor = UIColor.blueColor;
-
+        
+        self.backgroundImageView = stickerImageView;
     }
     
 } 

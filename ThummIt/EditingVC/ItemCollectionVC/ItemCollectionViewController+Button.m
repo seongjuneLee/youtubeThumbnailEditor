@@ -429,18 +429,11 @@
 
 -(void)doneAddingItemLayer{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    ///시작
+    
     NSInteger numberOfItemLayers = [SaveManager.sharedInstance.currentProject.itemLayers count] + 1;
-//    NSLog(@"ddd %d",numberOfItemLayers);
     ItemLayer *itemLayer = [ItemLayer new];
 
-    if ([editingVC.currentItem isKindOfClass:Text.class]) {
-        itemLayer.item = editingVC.currentText;
-    } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
-        itemLayer.item = editingVC.currentPhotoFrame;//보류
-    } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
-        itemLayer.item = editingVC.currentSticker;
-    }
+    itemLayer.item = editingVC.currentItem;
     [itemLayer makeView];
     
     float itemLayerX = (editingVC.itemLayerContentView.frameWidth)/2;
@@ -455,12 +448,34 @@
     
     [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
     itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
-
-    ///끝
+    
+    editingVC.itemLayerContentView.frameHeight = (itemLayer.barBaseView.frameHeight/2)*(3*(numberOfItemLayers)+1);
+    [editingVC.itemLayerScrollView setContentSize:CGSizeMake(editingVC.itemLayerContentView.frameWidth, editingVC.itemLayerContentView.frameHeight*2)];
+   
+    editingVC.itemLayerContentView.backgroundColor = UIColor.yellowColor;
+    
+    for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        
+        itemlayer.barBaseView.centerY += itemlayer.barBaseView.frameHeight/2*3;
+        
+        itemlayer.originalCenterY += itemlayer.barBaseView.frameHeight/2*3;
+    }
+    
 }
 
 -(void)doneEditingItemLayer{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
+    if ([editingVC.currentItem isKindOfClass:Text.class]) {
+        editingVC.layerController.currentItemLayer.textLabel.text = editingVC.currentText.text;
+    } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
+        editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentPhotoFrame.baseView];
+    } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
+        editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentSticker.baseView];
+
+    }
+    
+ 
 }
 
 @end
