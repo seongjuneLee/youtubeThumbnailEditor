@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) UILabel *textLabel;
 @property (nonatomic) UIImageView *backgroundImageView;
-
+@property (nonatomic) float barBaseViewHeight;
 -(void)makeView;
 
 

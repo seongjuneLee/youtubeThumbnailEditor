@@ -196,14 +196,24 @@
         }
 
     }
+    //fixedphotoframe을 제외한 item 개수 얻기위함
+    int itemCountExceptFixedPhotoFrame = 0;
+    for(Item *item in project.items){
+        if(!item.isFixedPhotoFrame){
+            itemCountExceptFixedPhotoFrame += 1;
+        }
+    }
     
+    //얻은 값을 사용하여 contentview의 height를 정함(itemlayers count를 사용할 수 없는 시점 이므로)
+    ItemLayer *anyItemLayer = [ItemLayer new];
+    self.itemLayerContentViewHeightConstraint.constant = - self.itemLayerScrollView.frameHeight + anyItemLayer.barBaseViewHeight/2 *(3*itemCountExceptFixedPhotoFrame + 1);
+    self.itemLayerScrollView.contentSize = CGSizeMake(self.itemLayerScrollView.contentSize.width, self.itemLayerContentView.frameHeight);
     
-    
+
     for (Item *item in project.items) {
         NSInteger itemIndex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
         
         if(!item.isFixedPhotoFrame){
-            
             
             // 만들기
             ItemLayer *itemLayer = [[ItemLayer alloc] init];
@@ -212,8 +222,8 @@
             [itemLayer makeView];
             //각 객체의 뷰 생성
             
-            float itemLayerX = (self.itemLayerContentView.frameWidth)/2;
-            float itemLayerY = (self.itemLayerContentView.frameHeight)-( (itemLayer.barBaseView.frameHeight/2)*(3*(itemIndex+1)-1));
+            float itemLayerX = (self.itemLayerScrollView.frameWidth)/2;
+            float itemLayerY = (self.itemLayerContentView.frameHeight)-((itemLayer.barBaseViewHeight/2)*(3*(itemIndex+1)-1));
             
             itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);             //위치 정해줌
             itemLayer.originalCenterY = itemLayerY;
@@ -224,16 +234,10 @@
             
             [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
             itemLayer.itemLayerIndex = [SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
-            
-            
+   
         }
 
     }
-    NSInteger numberOfItemlayers = [SaveManager.sharedInstance.currentProject.itemLayers count];
-    ItemLayer *anyItemLayer = SaveManager.sharedInstance.currentProject.itemLayers.firstObject;
-    self.itemLayerContentViewHeightConstraint.constant = - self.itemLayerScrollView.frameHeight + anyItemLayer.barBaseView.frameHeight/2 *(3*numberOfItemlayers + 1);
-
-    self.itemLayerScrollView.contentSize = CGSizeMake(self.itemLayerScrollView.contentSize.width, self.itemLayerContentView.frameHeight);
 
     // 인덱스 맞춰주기
     for (Item *item in project.items) {

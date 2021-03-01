@@ -15,6 +15,8 @@
     
     self = [super init];
     if(self){
+        UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+        self.barBaseViewHeight = window.frameWidth * 4/5 * 0.05;
     }
     return self;
     
@@ -23,8 +25,8 @@
 -(void)makeView{//make bar base view
     
     UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
-    float barBaseViewWitdth = window.frameWidth*2/3;
-    float barBaseViewHeight = window.frameWidth*2/3*0.08;
+    float barBaseViewWitdth = window.frameWidth * 4/5;
+    float barBaseViewHeight = window.frameWidth * 4/5 * 0.05;
 
     self.barBaseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)]; //3경우 모두 공통적으로 barbaseview 생성
 
@@ -45,7 +47,6 @@
 
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
         [textLabel setTextAlignment:NSTextAlignmentCenter];
-//        [textLabel setTextColor:UIColor.whiteColor];
         textLabel.backgroundColor = UIColor.clearColor;
         textLabel.text = text.text;
 
