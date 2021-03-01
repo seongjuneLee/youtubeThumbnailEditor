@@ -467,7 +467,7 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     if ([editingVC.currentItem isKindOfClass:Text.class]) {
-        editingVC.layerController.currentItemLayer.textLabel.text = editingVC.currentText.text;
+//        editingVC.layerController.currentItemLayer.textLabel.text = editingVC.currentText.text;
     } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
         editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentPhotoFrame.baseView];
     } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){

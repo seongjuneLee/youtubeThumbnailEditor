@@ -111,7 +111,6 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBX-hP-Jmq" userLabel="Item Layer ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
-                                        <color key="backgroundColor" red="0.96145427920000004" green="0.99942404029999998" blue="0.86277811149999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -368,7 +367,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="oyv-kb-ZOD" firstAttribute="trailing" secondItem="tp2-GO-AoY" secondAttribute="trailing" id="7sk-r8-1Pw"/>
                                     <constraint firstItem="tp2-GO-AoY" firstAttribute="leading" secondItem="oyv-kb-ZOD" secondAttribute="leading" id="U4d-BC-qcF"/>
