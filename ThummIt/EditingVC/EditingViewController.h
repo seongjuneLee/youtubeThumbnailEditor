@@ -25,6 +25,7 @@
 #import "StickerHeader.h"
 #import "MainFrameHeader.h"
 #import "AppManager.h"
+#import "EditingPhotoButtonViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
@@ -39,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) ItemCollectionViewController *itemCollectionVC;
 @property (strong, nonatomic, nullable) AlbumViewController *albumVC;
 @property (strong, nonatomic, nullable) EditingPhotoViewController *editingPhotoVC;
+@property (strong, nonatomic, nullable) EditingPhotoButtonViewController *editingPhotoButtonVC;
 
 // 모델
 @property (strong, nonatomic) Template *selectedTemplate;

@@ -19,8 +19,11 @@
     if (editingVC.modeController.editingMode == AddingItemMode) { // 새로운 아이템 추가중
         
         if ([editingVC.currentItem isKindOfClass:Photo.class]) {
+            self.photoButton.selected= true;
+            self.photoButton.alpha = 1.0;
+            self.editPhotoButton.selected= false;
+            self.editPhotoButton.alpha = 0.4;
             [self cancelAddingPhoto];
-            [self photoButtonTapped:self.photoButton];
         }  else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
             [self cancelAddingPhotoFrame];
             [self photoFramePhotoButtonTapped:self.photoFramePhotoButton];
@@ -86,7 +89,6 @@
         if ([editingVC.currentItem isKindOfClass:Photo.class]) {
             [self doneEditingPhoto];
             [self photoButtonTapped:self.photoButton];
-
         }else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
             [self doneEditingPhotoFrame];
             [self photoFramePhotoButtonTapped:self.photoFramePhotoButton];
@@ -121,11 +123,13 @@
     if (!sender.selected) {
         sender.selected = true;
         [editingVC.editingPhotoVC dismissSelf];
+        [editingVC.editingPhotoButtonVC dismissSelf];
 
         self.editPhotoButton.selected = false;
         [editingVC.albumVC showWithAnimation];
         [UIView animateWithDuration:0.2 animations:^{
-            [self.view layoutIfNeeded];
+            editingVC.itemCollectionTopConstraint.constant = 0;
+            [editingVC.view layoutIfNeeded];
             self.photoButton.alpha = 1.0;
             self.editPhotoButton.alpha = 0.4;
         }];
@@ -153,11 +157,17 @@
 -(void)addEditingPhotoVC{
 
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    
+    float screenHeight = UIScreen.mainScreen.bounds.size.height;
+    editingVC.editingPhotoVC.view.frame = CGRectMake(0, 0, editingVC.view.frameWidth, screenHeight*0.8);
+    editingVC.editingPhotoButtonVC.view.frame = CGRectMake(0, screenHeight*0.8, editingVC.view.frameWidth, screenHeight*0.2);
 
     editingVC.editingPhotoVC.view.alpha = 0;
+    editingVC.editingPhotoButtonVC.view.alpha = 0;
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.editingPhotoVC.view.alpha = 1.0;
-        editingVC.itemCollectionTopConstraint.constant =  150;
+        editingVC.editingPhotoButtonVC.view.alpha = 1.0;
+        editingVC.itemCollectionTopConstraint.constant = self.view.frameHeight - screenHeight*0.2 - self.cancelButton.frameHeight;
         [editingVC.view layoutIfNeeded];
     }];
 
@@ -172,6 +182,9 @@
 
     [editingVC addChildViewController:editingVC.editingPhotoVC];
     [editingVC.view insertSubview:editingVC.editingPhotoVC.view belowSubview:editingVC.itemCollectionContainerView];
+    
+    [editingVC addChildViewController:editingVC.editingPhotoButtonVC];
+    [editingVC.view insertSubview:editingVC.editingPhotoButtonVC.view aboveSubview:editingVC.itemCollectionContainerView];
 
 }
 
@@ -254,9 +267,9 @@
 -(void)cancelAddingPhoto{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    [self dismissSelf];
-
     [editingVC.editingPhotoVC dismissSelf];
+    [editingVC.editingPhotoButtonVC dismissSelf];
+    [self dismissSelf];
     [editingVC.layerController hideTransparentView];
     [editingVC.albumVC dismissSelf];
     
@@ -397,6 +410,7 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [editingVC.editingPhotoVC dismissSelf];
+    [editingVC.editingPhotoButtonVC dismissSelf];
     [editingVC.layerController hideTransparentView];
     [self dismissSelf];
     [editingVC.albumVC dismissSelf];

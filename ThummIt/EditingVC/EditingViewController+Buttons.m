@@ -394,6 +394,11 @@
     [self.itemCollectionVC connectCollectionController];
     
     float constant = 0;
+    if (self.itemCollectionVC.itemType == PhotoType) {
+        self.itemCollectionVC.collectionView.hidden = true;
+    } else {
+        self.itemCollectionVC.collectionView.hidden = false;
+    }
     if (self.itemCollectionVC.itemType == TextType) {
         constant = self.itemCollectionVC.view.frameHeight - AppManager.sharedInstance.keyboardSize.height;
     }
