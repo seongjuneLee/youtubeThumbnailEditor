@@ -114,13 +114,14 @@ class SignInViewController: UIViewController {
                             UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
                                 DispatchQueue.main.async {
                                     self.view.hideAllToasts()
+                                    if (success){
+                                        self.dismiss(animated: true, completion: nil)
+                                    } else {
+                                        self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
+                                        
+                                    }
                                 }
-                                if (success){
-                                    self.dismiss(animated: true, completion: nil)
-                                } else {
-                                    self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
-                                    
-                                }
+
                             }
                             
                         }
@@ -154,12 +155,12 @@ class SignInViewController: UIViewController {
                             UserManager.sharedInstance().signUp(withThirdPartyID: userID, withType: "kakao", username: username!, withEmail: email!) { (success) in
                                 DispatchQueue.main.async {
                                     self.view.hideAllToasts()
-                                }
-                                if (success){
-                                    self.dismiss(animated: true, completion: nil)
-                                } else {
-                                    self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
-                                    
+                                    if (success){
+                                        self.dismiss(animated: true, completion: nil)
+                                    } else {
+                                        self.view.makeToast(NSLocalizedString("Error occured. Visit customer center if this error is repeated.", comment: ""), duration: 5, position: CSToastPositionCenter)
+                                        
+                                    }
                                 }
                             }
                             
