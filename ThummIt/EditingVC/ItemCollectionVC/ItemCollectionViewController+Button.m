@@ -157,7 +157,8 @@
     editingVC.editingPhotoVC.view.alpha = 0;
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.editingPhotoVC.view.alpha = 1.0;
-        [self.view layoutIfNeeded];
+        editingVC.itemCollectionTopConstraint.constant =  150;
+        [editingVC.view layoutIfNeeded];
     }];
 
     UIImage *photoImage = editingVC.currentPhoto.photoImageView.image;
@@ -167,10 +168,10 @@
     editingVC.editingPhotoVC.photoImageView.image = photoImage;
     editingVC.editingPhotoVC.photoImageView.center = editingVC.editingPhotoVC.view.center;
 
-    [editingVC.editingPhotoVC.view insertSubview:editingVC.editingPhotoVC.photoImageView belowSubview:editingVC.editingPhotoVC.gestureView];
+    [editingVC.editingPhotoVC.contentView addSubview:editingVC.editingPhotoVC.photoImageView];
 
     [editingVC addChildViewController:editingVC.editingPhotoVC];
-    [editingVC.view insertSubview:editingVC.editingPhotoVC.view aboveSubview:self.view];
+    [editingVC.view insertSubview:editingVC.editingPhotoVC.view belowSubview:editingVC.itemCollectionContainerView];
 
 }
 

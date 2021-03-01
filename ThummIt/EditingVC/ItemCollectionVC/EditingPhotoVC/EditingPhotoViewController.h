@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIImageView *photoImageView;
 @property (strong, nonatomic) UIViewController *editingVC;
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic) CGPoint originalPoint;
 @property (nonatomic) CGPoint originalCenter;
 @property (nonatomic) CGPoint originalFirstFinger;

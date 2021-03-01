@@ -215,7 +215,7 @@
 
 - (IBAction)mainFrameButtonTapped:(UIButton *)sender {
     
-    self.modeController.editingMode = MainFrameAndBGColorMode;
+    self.modeController.editingMode = MainFrameOrBGColorMode;
     [self hideItemsForItemMode];
     self.itemCollectionVC.itemType = MainFrameType; //type에 따라 올라오는 Collectionview종류가 달라서 필요
     [self showItemCollectionVC];
@@ -227,7 +227,7 @@
 
 - (IBAction)bgColorButtonTapped:(id)sender {
     
-    self.modeController.editingMode = MainFrameAndBGColorMode;
+    self.modeController.editingMode = MainFrameOrBGColorMode;
     [self hideItemsForItemMode];
     self.originalColor = self.bgView.backgroundColor;
     
@@ -236,12 +236,9 @@
         self.buttonScrollView.alpha = 0.0;
     }];
     
-    [self addChildViewController:self.bgColorVC];
-    [self.view addSubview:self.bgColorVC.view];
-    
-    self.bgColorVC.contentView.frameY = self.view.frameHeight;
     [UIView animateWithDuration:0.4 animations:^{
-        self.bgColorVC.contentView.frameY = self.bgColorVC.view.frameY;
+        self.bgColorTopConstraint.constant = 0;
+        [self.view layoutIfNeeded];
     }];
     
 }
@@ -252,13 +249,13 @@
 
 -(void)photoFrameButtonHoldDown{
     
-    self.photoFrameButtonContainerView.alpha = 0.6;
+    self.photoFrameButtonContentView.alpha = 0.6;
     
 }
 
 -(void)photoFrameButtonHoldRelease{
     [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.photoFrameButtonContainerView.alpha = 1.0;
+        self.photoFrameButtonContentView.alpha = 1.0;
         
     } completion:nil];
     
@@ -267,13 +264,13 @@
 
 -(void)textButtonHoldDown{
     
-    self.textButtonContainerView.alpha = 0.6;
+    self.textButtonContentView.alpha = 0.6;
     
 }
 
 -(void)textButtonHoldRelease{
     [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.textButtonContainerView.alpha = 1.0;
+        self.textButtonContentView.alpha = 1.0;
         
     } completion:nil];
     
@@ -282,13 +279,13 @@
 
 -(void)stickerButtonHoldDown{
     
-    self.stickerButtonContainerView.alpha = 0.6;
+    self.stickerButtonContentView.alpha = 0.6;
     
 }
 
 -(void)stickerButtonHoldRelease{
     [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.stickerButtonContainerView.alpha = 1.0;
+        self.stickerButtonContentView.alpha = 1.0;
         
     } completion:nil];
     
@@ -297,7 +294,7 @@
 
 -(void)bgColorButtonHoldDown{
     [UIView animateWithDuration:0.2 animations:^{
-        self.bgColorButtonContainerView.alpha = 0.6;
+        self.bgColorButtonContentView.alpha = 0.6;
     }];
 
 }
@@ -305,7 +302,7 @@
 -(void)bgColorButtonHoldRelease{
     
     [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.bgColorButtonContainerView.alpha = 1.0;
+        self.bgColorButtonContentView.alpha = 1.0;
         
     } completion:nil];
     

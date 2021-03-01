@@ -211,7 +211,7 @@
         self.undoButton.alpha = 0.0;
         self.redoButton.alpha = 0.0;
         self.buttonScrollView.alpha = 0.0;
-        self.deleteButtonContainerView.alpha = 1.0;
+        self.deleteButtonContentView.alpha = 1.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
     }];
     
@@ -225,12 +225,12 @@
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (currentPointY >= imageViewBottomY) {
         [UIView animateWithDuration:0.2 animations:^{
-            self.deleteButtonContainerView.alpha = 0.4;
+            self.deleteButtonContentView.alpha = 0.4;
             self.currentItem.baseView.alpha = 0.4;
         }];
     } else {
         [UIView animateWithDuration:0.2 animations:^{
-            self.deleteButtonContainerView.alpha = 1.0;
+            self.deleteButtonContentView.alpha = 1.0;
             self.currentItem.baseView.alpha = 1.0;
         }];
     }
@@ -272,7 +272,7 @@
         self.undoButton.alpha = 1.0;
         self.redoButton.alpha = 1.0;
         self.buttonScrollView.alpha = 1.0;
-        self.deleteButtonContainerView.alpha = 0.0;
+        self.deleteButtonContentView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
     }];
 
@@ -284,8 +284,8 @@
 -(void)pinchGestureInNormalModeBeganWithItem:(Item *)item withSender:(UIGestureRecognizer *)sender{
     self.underAreaView.hidden = true;
     [UIView animateWithDuration:0.2 animations:^{
-        self.photoFrameButtonContainerView.alpha = 0.0;
-        self.deleteButtonContainerView.alpha = 1.0;
+        self.photoFrameButtonContentView.alpha = 0.0;
+        self.deleteButtonContentView.alpha = 1.0;
     }];
 }
 

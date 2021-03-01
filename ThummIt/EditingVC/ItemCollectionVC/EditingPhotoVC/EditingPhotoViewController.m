@@ -42,8 +42,8 @@
     if (photoImage && !self.photoLoaded) {
         self.photoLoaded = true;
         float ratio = photoImage.size.height/photoImage.size.width;
-        float photoImageViewWidth = self.view.frameWidth * 0.9;
-        float photoImageViewHeight = self.view.frameHeight * 0.9;
+        float photoImageViewWidth = self.contentView.frameWidth * 0.9;
+        float photoImageViewHeight = self.contentView.frameHeight * 0.9;
         if (ratio < 1) {
             self.photoImageView.frameSize = CGSizeMake (photoImageViewWidth, photoImageViewWidth*ratio);
         } else {

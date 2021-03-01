@@ -51,6 +51,9 @@
    if ([segueName isEqualToString: @"itemCollectionVCSegue"]) {
        self.itemCollectionVC = (ItemCollectionViewController *) [segue destinationViewController];
        self.itemCollectionVC.editingVC = self;
+   } else if ([segueName isEqualToString:@"BGColorVCSegue"]) {
+       self.bgColorVC = (BGColorViewController *) [segue destinationViewController];
+       self.bgColorVC.editingVC = self;
    }
 }
 
@@ -62,9 +65,10 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [SaveManager.sharedInstance saveAndAddToStack];
         });
+        self.bgColorTopConstraint.constant = self.itemCollectionTopConstraint.constant = self.view.frameHeight;
     }
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
-//    self.itemLayerScrollView setContentSize:CGSizeMake(<#CGFloat width#>, <#CGFloat height#>)
+    
 }
 
 -(void)setUpSlider{

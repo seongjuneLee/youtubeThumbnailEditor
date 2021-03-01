@@ -77,7 +77,7 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
-    if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
+    if (editingVC.modeController.editingMode == MainFrameOrBGColorMode) {
         return;
     }
     if (editingVC.currentItem) { // 애딩 또는 에디팅 모드일 때 컨텐트 모드 진입
@@ -117,7 +117,7 @@
 -(void)gestureViewPanned:(UIPanGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
+    if (editingVC.modeController.editingMode == MainFrameOrBGColorMode) {
         return;
     }
     if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && (editingVC.modeController.editingMode != NormalMode) && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
@@ -402,7 +402,7 @@
     
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
+    if (editingVC.modeController.editingMode == MainFrameOrBGColorMode) {
         return;
     }
 

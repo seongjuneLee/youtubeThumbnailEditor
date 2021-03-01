@@ -77,20 +77,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIView *upperArea;
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
-@property (weak, nonatomic) IBOutlet UIView *photoFrameButtonContainerView;
-@property (weak, nonatomic) IBOutlet UIView *deleteButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *photoFrameButtonContentView;
+@property (weak, nonatomic) IBOutlet UIView *deleteButtonContentView;
 @property (weak, nonatomic) IBOutlet UIView *underAreaView;
-@property (weak, nonatomic) IBOutlet UIView *textButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *textButtonContentView;
 @property (weak, nonatomic) IBOutlet UIButton *textButtonInScrollView;
-@property (weak, nonatomic) IBOutlet UIView *photoButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *photoButtonContentView;
 
 @property (weak, nonatomic) IBOutlet UIButton *photoFrameButton;
 @property (weak, nonatomic) IBOutlet UIButton *textButton;
 @property (weak, nonatomic) IBOutlet UIButton *stickerButton;
 @property (weak, nonatomic) IBOutlet UIButton *mainFrameButton;
 @property (weak, nonatomic) IBOutlet UIButton *bgColorButton;
-@property (weak, nonatomic) IBOutlet UIView *stickerButtonContainerView;
-@property (weak, nonatomic) IBOutlet UIView *bgColorButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *stickerButtonContentView;
+@property (weak, nonatomic) IBOutlet UIView *bgColorButtonContentView;
 @property (weak, nonatomic) IBOutlet UIScrollView *itemLayerScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *buttonScrollView;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
@@ -116,6 +116,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
 @property (weak, nonatomic) IBOutlet UIView *itemCollectionContainerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionTopConstraint;
+@property (weak, nonatomic) IBOutlet UIView *bgColorContainerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgColorTopConstraint;
 
 
 
