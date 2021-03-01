@@ -104,12 +104,10 @@
         
     } else { // 에디팅 모드 진입
         if ([self getCurrentItem:sender]) {
-            if (![editingVC.childViewControllers containsObject:editingVC.itemCollectionVC]) {
-                [editingVC didSelectItem:[self getCurrentItem:sender]];
-            }
+            [editingVC didSelectItem:[self getCurrentItem:sender]];
         }
     }
-
+    
 }
 
 #pragma mark - 팬

@@ -74,7 +74,8 @@
 -(void)encodeWithCoder:(NSCoder *)encoder{
     
     [super encodeWithCoder:encoder];
-    [encoder encodeObject:self.imageData forKey:@"imageData"];
+    NSData *imageData = UIImagePNGRepresentation(self.photoImageView.image);
+    [encoder encodeObject:imageData forKey:@"imageData"];
 
 }
 

@@ -6,10 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PhotoFrame.h"
+#import "Photo.h"
+#import "EditingPhotoButtonViewController.h"
+#import "UndoManager.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EditingPhotoViewController : UIViewController 
+@interface EditingPhotoViewController : UIViewController
 
 
 @property (strong, nonatomic) UIImageView *photoImageView;

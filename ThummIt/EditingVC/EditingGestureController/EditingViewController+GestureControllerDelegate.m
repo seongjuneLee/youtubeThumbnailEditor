@@ -73,6 +73,7 @@
     
     [self showItemCollectionVC];
     [self addAlbumVC];
+    [self.albumVC showWithAnimation];
     
 }
 

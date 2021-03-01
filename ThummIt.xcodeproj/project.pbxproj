@@ -397,6 +397,7 @@
 		6EF1C73425ECDF7C002B8820 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1C72F25ECDF7B002B8820 /* DeepLabV3FP16.mlmodel */; };
 		6EF1C73625ECDF7C002B8820 /* DeepLabV3.mlarchive in Resources */ = {isa = PBXBuildFile; fileRef = 6EF1C73125ECDF7B002B8820 /* DeepLabV3.mlarchive */; };
 		6EF1C73F25ECE011002B8820 /* UIImage+Segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1C73E25ECE011002B8820 /* UIImage+Segmentation.swift */; };
+		6EF1C76F25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1C76E25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m */; };
 		6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */; };
 		6EF37B7725E4DE8400A43595 /* MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B7625E4DE8400A43595 /* MainFrame.m */; };
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
@@ -1223,6 +1224,8 @@
 		6EF1C72F25ECDF7B002B8820 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
 		6EF1C73125ECDF7B002B8820 /* DeepLabV3.mlarchive */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeepLabV3.mlarchive; sourceTree = "<group>"; };
 		6EF1C73E25ECE011002B8820 /* UIImage+Segmentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Segmentation.swift"; sourceTree = "<group>"; };
+		6EF1C76D25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditingPhotoViewController+ButtonDelegate.h"; sourceTree = "<group>"; };
+		6EF1C76E25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EditingPhotoViewController+ButtonDelegate.m"; sourceTree = "<group>"; };
 		6EF37B5125E399F000A43595 /* ThummIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThummIt.entitlements; sourceTree = "<group>"; };
 		6EF37B6625E4DC6400A43595 /* MainFrameCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrameCollectionController.h; sourceTree = "<group>"; };
 		6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainFrameCollectionController.m; sourceTree = "<group>"; };
@@ -1804,6 +1807,7 @@
 				6E9BE9DF258CFD0400F7F539 /* PhotoManager */,
 				6E8E7A3C259B2EA80008C5FF /* ItemManager */,
 				6E9BEA5C258F1BAD00F7F539 /* ProjectManager */,
+				6E20BCC725AEF59000BBA540 /* UndoManager */,
 				6E9BEA3A258E697200F7F539 /* SaveManager */,
 				6EC4DFF625A8952A0023485C /* TypoManager */,
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
@@ -1834,10 +1838,12 @@
 		6E84301A25E81A1F00034174 /* EditingPhotoVC */ = {
 			isa = PBXGroup;
 			children = (
-				6EF1C72A25ECDF2D002B8820 /* EditingPhotoButtonViewController.h */,
-				6EF1C72925ECDF2D002B8820 /* EditingPhotoButtonViewController.m */,
 				6E84301B25E81A1F00034174 /* EditingPhotoViewController.h */,
 				6E84301D25E81A2000034174 /* EditingPhotoViewController.m */,
+				6EF1C76D25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.h */,
+				6EF1C76E25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m */,
+				6EF1C72A25ECDF2D002B8820 /* EditingPhotoButtonViewController.h */,
+				6EF1C72925ECDF2D002B8820 /* EditingPhotoButtonViewController.m */,
 			);
 			path = EditingPhotoVC;
 			sourceTree = "<group>";
@@ -2297,7 +2303,6 @@
 		6E9BEA3A258E697200F7F539 /* SaveManager */ = {
 			isa = PBXGroup;
 			children = (
-				6E20BCC725AEF59000BBA540 /* UndoManager */,
 				6E9BEA34258E696F00F7F539 /* SaveManager.h */,
 				6E9BEA35258E696F00F7F539 /* SaveManager.m */,
 			);
@@ -3974,6 +3979,7 @@
 				B11E0D6A25C56D560050D9F0 /* MacaronVlogTemplate.m in Sources */,
 				6E28452525C35870008B7A23 /* VlogSummerTypo.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
+				6EF1C76F25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m in Sources */,
 				6E1DBE8B25D82CC9004C0416 /* PolaroidRectangle.m in Sources */,
 				6E28451325C35870008B7A23 /* VlogShortDance.m in Sources */,
 				6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */,

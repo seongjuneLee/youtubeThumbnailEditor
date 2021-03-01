@@ -119,6 +119,7 @@
     self.bgColorVC.editingVC = self;
     
     self.editingPhotoVC = (EditingPhotoViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingPhotoViewController"];
+    self.editingPhotoVC.editingVC = self;
     
     self.editingPhotoButtonVC = (EditingPhotoButtonViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingPhotoButtonViewController"];
     
@@ -156,7 +157,7 @@
     self.mainFrameImageView.image = [UIImage imageNamed:project.mainFrameImageName];
     for (Item *item in project.items) {
         [item loadView]; // 뷰 로드하기.
-
+        
         if (item.isTemplateItem) {
             // 템플릿 상댓값 센터를 절댓값으로.
             float itemX = self.bgView.frameWidth * item.center.x;
@@ -170,6 +171,10 @@
         }
         
         [item setItemCenterAndScale];
+        
+        if ([item isKindOfClass:Photo.class]) {
+            NSLog(@"item baseview frame %@",NSStringFromCGRect(item.baseView.frame));
+        }
         
         if ([item isKindOfClass:Text.class]){ // 텍스트 해주어야 할 일.
             Text *text = (Text *)item;

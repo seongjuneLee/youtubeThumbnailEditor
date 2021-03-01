@@ -902,7 +902,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6p8-DU-rUh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="717"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSH-Ch-Cf9">
@@ -916,7 +916,7 @@
                             <constraint firstItem="6p8-DU-rUh" firstAttribute="centerX" secondItem="RKV-5F-iCI" secondAttribute="centerX" id="5fs-z2-HY9"/>
                             <constraint firstItem="JSH-Ch-Cf9" firstAttribute="top" secondItem="RKV-5F-iCI" secondAttribute="top" id="64o-zg-uGf"/>
                             <constraint firstItem="RKV-5F-iCI" firstAttribute="bottom" secondItem="JSH-Ch-Cf9" secondAttribute="bottom" id="CPt-YQ-fhS"/>
-                            <constraint firstItem="RKV-5F-iCI" firstAttribute="bottom" secondItem="6p8-DU-rUh" secondAttribute="bottom" id="R1w-6P-bGI"/>
+                            <constraint firstItem="6p8-DU-rUh" firstAttribute="height" secondItem="WR0-ox-QrL" secondAttribute="height" multiplier="0.8" id="G7i-TL-cev"/>
                             <constraint firstItem="JSH-Ch-Cf9" firstAttribute="width" secondItem="WR0-ox-QrL" secondAttribute="width" id="W8h-Vz-VVI"/>
                             <constraint firstItem="JSH-Ch-Cf9" firstAttribute="centerX" secondItem="RKV-5F-iCI" secondAttribute="centerX" id="gla-0P-89T"/>
                             <constraint firstItem="6p8-DU-rUh" firstAttribute="top" secondItem="RKV-5F-iCI" secondAttribute="top" id="pWe-5k-9lg"/>
@@ -1000,6 +1000,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cSH-Hh-Uzl"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H6s-74-1ZY" firstAttribute="width" secondItem="gbW-Id-VKA" secondAttribute="width" id="Nfg-8n-cZ9"/>
@@ -1026,8 +1027,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzk-kg-fUE">
+                                <rect key="frame" x="10" y="38" width="39" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="8v5-bc-LQ1"/>
+                                    <constraint firstAttribute="width" constant="39" id="YKH-jA-OpK"/>
+                                </constraints>
+                                <state key="normal" image="undoImage"/>
+                                <connections>
+                                    <action selector="undoButtonTapped:" destination="WPY-oh-2cf" eventType="touchUpInside" id="2sh-uo-l0x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzf-h4-1gm">
+                                <rect key="frame" x="54" y="38" width="39" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="Zvd-XJ-qe1"/>
+                                    <constraint firstAttribute="height" constant="39" id="cdE-hN-TLH"/>
+                                </constraints>
+                                <state key="normal" image="redoImage"/>
+                                <connections>
+                                    <action selector="redoButtonTapped:" destination="WPY-oh-2cf" eventType="touchUpInside" id="crK-kL-cpP"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSc-aX-9Kr">
-                                <rect key="frame" x="20" y="59" width="83" height="99.5"/>
+                                <rect key="frame" x="20" y="87" width="83" height="99.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magicEffect" translatesAutoresizingMaskIntoConstraints="NO" id="vx1-dy-0Wq">
                                         <rect key="frame" x="16.5" y="10" width="50" height="50"/>
@@ -1063,7 +1086,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Stg-zS-1i9">
-                                <rect key="frame" x="165.5" y="59" width="83" height="99.5"/>
+                                <rect key="frame" x="165.5" y="87" width="83" height="99.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rubToInclude" translatesAutoresizingMaskIntoConstraints="NO" id="MA0-TP-8zW">
                                         <rect key="frame" x="16.5" y="10" width="50" height="50"/>
@@ -1098,7 +1121,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-mW-VVx">
-                                <rect key="frame" x="311" y="59" width="83" height="99.5"/>
+                                <rect key="frame" x="311" y="87" width="83" height="99.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eraseImage" translatesAutoresizingMaskIntoConstraints="NO" id="Ge6-Ra-qmF">
                                         <rect key="frame" x="16.5" y="10" width="50" height="50"/>
@@ -1137,13 +1160,17 @@
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="b5P-mW-VVx" firstAttribute="height" secondItem="Stg-zS-1i9" secondAttribute="height" id="3yl-Zg-jZf"/>
+                            <constraint firstItem="Nzf-h4-1gm" firstAttribute="leading" secondItem="Gzk-kg-fUE" secondAttribute="trailing" constant="5" id="Awt-ew-EeR"/>
                             <constraint firstItem="b5P-mW-VVx" firstAttribute="centerY" secondItem="Stg-zS-1i9" secondAttribute="centerY" id="HOL-PW-b5S"/>
                             <constraint firstItem="b5P-mW-VVx" firstAttribute="width" secondItem="Stg-zS-1i9" secondAttribute="width" id="Hma-KY-DHv"/>
                             <constraint firstItem="Stg-zS-1i9" firstAttribute="centerY" secondItem="mSc-aX-9Kr" secondAttribute="centerY" id="Icv-eC-NYd"/>
                             <constraint firstItem="mSc-aX-9Kr" firstAttribute="width" secondItem="Wwd-D3-ohg" secondAttribute="width" multiplier="0.2" id="KF5-FC-Rb6"/>
+                            <constraint firstItem="Gzk-kg-fUE" firstAttribute="leading" secondItem="6Na-NI-Uj4" secondAttribute="leading" constant="10" id="S4O-X4-eOi"/>
                             <constraint firstItem="Stg-zS-1i9" firstAttribute="centerX" secondItem="6Na-NI-Uj4" secondAttribute="centerX" id="Tlf-Cs-T6X"/>
+                            <constraint firstItem="mSc-aX-9Kr" firstAttribute="top" secondItem="Gzk-kg-fUE" secondAttribute="bottom" constant="10" id="VEl-Fa-R77"/>
+                            <constraint firstItem="Nzf-h4-1gm" firstAttribute="centerY" secondItem="Gzk-kg-fUE" secondAttribute="centerY" id="dQp-gw-ZOa"/>
                             <constraint firstItem="Stg-zS-1i9" firstAttribute="width" secondItem="mSc-aX-9Kr" secondAttribute="width" id="dhP-al-i8O"/>
-                            <constraint firstItem="mSc-aX-9Kr" firstAttribute="top" secondItem="6Na-NI-Uj4" secondAttribute="top" constant="15" id="e4T-k6-tFO"/>
+                            <constraint firstItem="6Na-NI-Uj4" firstAttribute="top" secondItem="Gzk-kg-fUE" secondAttribute="top" constant="6" id="mpU-wh-0uE"/>
                             <constraint firstItem="Stg-zS-1i9" firstAttribute="height" secondItem="mSc-aX-9Kr" secondAttribute="height" id="mr4-7K-6Mw"/>
                             <constraint firstItem="mSc-aX-9Kr" firstAttribute="leading" secondItem="6Na-NI-Uj4" secondAttribute="leading" constant="20" id="soi-EC-oTy"/>
                             <constraint firstItem="6Na-NI-Uj4" firstAttribute="trailing" secondItem="b5P-mW-VVx" secondAttribute="trailing" constant="20" id="u0D-FC-MwP"/>
@@ -1152,8 +1179,10 @@
                     <size key="freeformSize" width="414" height="250"/>
                     <connections>
                         <outlet property="eraseContainerView" destination="b5P-mW-VVx" id="gEF-0z-Fa7"/>
+                        <outlet property="redoButton" destination="Nzf-h4-1gm" id="Wh8-Zt-AbV"/>
                         <outlet property="removeBGContainerView" destination="mSc-aX-9Kr" id="FvB-B5-9PU"/>
                         <outlet property="rubToIncludeContainerView" destination="Stg-zS-1i9" id="caV-Ef-3vQ"/>
+                        <outlet property="undoButton" destination="Gzk-kg-fUE" id="ZgL-t6-Kwq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfX-Lv-s3o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

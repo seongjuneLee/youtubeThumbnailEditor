@@ -6,7 +6,7 @@
 //
 
 #import "EditingPhotoButtonViewController.h"
-
+#import "UndoManager.h"
 @interface EditingPhotoButtonViewController ()
 
 @end
@@ -16,6 +16,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(respondToUndoRedo) name:@"isEditingPhotoUndoRedoAvailable" object:nil];
+}
+
+-(void)respondToUndoRedo{
+    
+    self.undoButton.enabled = UndoManager.sharedInstance.isUndoRemainsForEditingPhoto;
+    self.redoButton.enabled = UndoManager.sharedInstance.isRedoRemainsForEditingPhoto;
+    
 }
 
 -(void)dismissSelf{
@@ -46,5 +54,19 @@
     
     
 }
+
+- (IBAction)redoButtonTapped:(id)sender {
+    
+    [self.delegate redoButtonTapped];
+    
+}
+
+- (IBAction)undoButtonTapped:(id)sender {
+    
+    [self.delegate undoButtonTapped];
+    
+}
+
+
 
 @end

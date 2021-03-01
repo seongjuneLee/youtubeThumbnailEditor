@@ -17,6 +17,9 @@
         sharedInstance = [[UndoManager alloc] init];
         sharedInstance.undoRedoStacks = [NSMutableArray array];
         sharedInstance.maximumCount = 20;
+        
+        sharedInstance.undoRedoStacksForEditingPhoto = [NSMutableArray array];
+        sharedInstance.maximumCountForEditingPhoto = 20;
     });
     
     return sharedInstance;
@@ -115,5 +118,99 @@
     }
     return false;
 }
+
+
+
+
+#pragma mark - editingPhoto Undo Redo
+
+-(void)initUndoRedoForEditingPhoto{
+    
+    self.undoRedoStacksForEditingPhoto = [NSMutableArray array];
+    self.currentIndexForEditingPhoto = 0;
+}
+
+-(void)addCurrentPhotoToStack:(UIImage *)image{
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    [self removeForwadsForEditingPhoto];
+    [self.undoRedoStacksForEditingPhoto addObject:imageData];
+    if (self.undoRedoStacksForEditingPhoto.count > self.maximumCountForEditingPhoto) {
+        [self.undoRedoStacksForEditingPhoto removeObjectAtIndex:0];
+    }
+    self.currentIndexForEditingPhoto = self.undoRedoStacksForEditingPhoto.count-1;
+    [self sendPushnotiForEditingPhotoUndoRedo];
+    
+}
+
+-(void)sendPushnotiForEditingPhotoUndoRedo{
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"isEditingPhotoUndoRedoAvailable" object:nil];
+    
+}
+
+-(void)undoEditingPhotoWithBlock:(void(^) (UIImage *image))block{
+    if (self.undoRedoStacksForEditingPhoto.count == 0) {
+        return;
+    }
+    
+    if (self.currentIndexForEditingPhoto - 1 >= 0) {
+        self.currentIndexForEditingPhoto -= 1;
+    } else {
+        return;
+    }
+
+    NSData *data = self.undoRedoStacksForEditingPhoto[self.currentIndexForEditingPhoto];
+    [self sendPushnotiForEditingPhotoUndoRedo];
+    block([UIImage imageWithData:data]);
+
+}
+
+-(void)redoEditingPhotoWithBlock:(void(^) (UIImage *image))block{
+    
+    if (self.undoRedoStacksForEditingPhoto.count == 0) {
+        return;
+    }
+
+    if (self.undoRedoStacksForEditingPhoto.count >= self.currentIndexForEditingPhoto+1) {
+        self.currentIndexForEditingPhoto += 1;
+    } else {
+        return;
+    }
+
+    NSData *data = self.undoRedoStacksForEditingPhoto[self.currentIndexForEditingPhoto];
+    [self sendPushnotiForEditingPhotoUndoRedo];
+    block([UIImage imageWithData:data]);
+}
+
+-(void)removeForwadsForEditingPhoto{
+    
+    NSMutableArray *objectsToRemove = [NSMutableArray new];
+    for (int i = 0; i < self.undoRedoStacksForEditingPhoto.count; i++ ) {
+        if (self.currentIndexForEditingPhoto < i) {
+            [objectsToRemove addObject:self.undoRedoStacksForEditingPhoto[i]];
+        }
+    }
+    
+    [self.undoRedoStacksForEditingPhoto removeObjectsInArray:objectsToRemove];
+    
+}
+
+-(BOOL)isUndoRemainsForEditingPhoto{
+
+    if (self.currentIndexForEditingPhoto - 1 >= 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+-(BOOL)isRedoRemainsForEditingPhoto{
+    if (self.undoRedoStacksForEditingPhoto.count > self.currentIndexForEditingPhoto+1) {
+        return true;
+    }
+    return false;
+}
+
 
 @end

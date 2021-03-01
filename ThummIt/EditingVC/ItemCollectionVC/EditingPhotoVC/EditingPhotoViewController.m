@@ -6,9 +6,6 @@
 //
 
 #import "EditingPhotoViewController.h"
-#import "EditingViewController.h"
-#import "ThummIt-Swift.h"
-#import "UIImage+Additions.h"
 
 @interface EditingPhotoViewController ()
 
@@ -20,7 +17,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self addGestureRecognizers];
-    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [UndoManager.sharedInstance initUndoRedoForEditingPhoto];
 }
 
 -(void)dismissSelf{
@@ -49,7 +49,9 @@
         } else {
             self.photoImageView.frameSize = CGSizeMake (photoImageViewHeight * 1/ratio, photoImageViewHeight*ratio);
         }
-        self.photoImageView.center = self.gestureView.center;
+        self.photoImageView.center = self.contentView.center;
+        [UndoManager.sharedInstance addCurrentPhotoToStack:photoImage];
+
     }
 
 }
@@ -145,43 +147,6 @@
     CGFloat xDist = (point2.x - point1.x);
     CGFloat yDist = (point2.y - point1.y);
     return sqrt((xDist * xDist) + (yDist * yDist));
-}
-
--(void)removeBGButtonTapped{
-    
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    
-    CGPoint originalCenter = editingVC.currentPhoto.baseView.center;
-    
-    UIImageView *photoImageView = self.photoImageView;
-
-    UIImage *sourceImage = photoImageView.image;
-    struct CGImage *cgImg = sourceImage.segmentation;
-    if (cgImg) {
-        SegmentFilter *filter = [[SegmentFilter alloc] init];
-        filter.inputImage = [[CIImage alloc] initWithCGImage:sourceImage.CGImage];
-        filter.maskImage = [[CIImage alloc] initWithCGImage:cgImg];
-
-        CIImage *output = [filter valueForKey:kCIOutputImageKey];
-        CIContext *ciContext = [[CIContext alloc] initWithOptions:nil];
-        struct CGImage *cgImage = [ciContext createCGImage:output fromRect:output.extent];
-
-        UIImage *originalImage = photoImageView.image;
-        CGSize originalSize = CGSizeMake(originalImage.size.width * originalImage.scale, originalImage.size.height * originalImage.scale);
-        UIImage *finalImage = [UIImage trimImage:[[UIImage alloc] initWithCGImage:cgImage]];
-        CGSize finalImageSize = CGSizeMake(finalImage.size.width * finalImage.scale, finalImage.size.height * finalImage.scale);
-        float widthDeltaRatio = finalImageSize.width/originalSize.width;
-        float heightDeltaRatio = finalImageSize.height/originalSize.height;
-        photoImageView.image = finalImage;
-        photoImageView.frameWidth *= widthDeltaRatio;
-        photoImageView.frameHeight *= heightDeltaRatio;
-        photoImageView.center = self.gestureView.center;
-        
-        editingVC.currentPhoto.photoImageView.frameSize = photoImageView.frameSize;
-        editingVC.currentPhoto.photoImageView.image = finalImage;
-        editingVC.currentPhoto.baseView.bounds = editingVC.currentPhoto.photoImageView.bounds;
-        editingVC.currentPhoto.baseView.center = originalCenter;
-    }
 }
 
 @end

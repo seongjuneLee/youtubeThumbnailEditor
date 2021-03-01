@@ -83,6 +83,7 @@
 
     self.projectID = [decoder decodeObjectForKey:@"projectID"];
     self.projectTitle = [decoder decodeObjectForKey:@"items"];
+    self.photos = [decoder decodeObjectForKey:@"photos"];
     self.photoFrames = [decoder decodeObjectForKey:@"photoFrames"];
     self.texts = [decoder decodeObjectForKey:@"texts"];
     self.stickers = [decoder decodeObjectForKey:@"stickers"];
@@ -99,6 +100,7 @@
 -(void)encodeWithCoder:(NSCoder *)encoder{
 
     [encoder encodeObject:self.projectID forKey:@"projectID"];
+    [encoder encodeObject:self.photos forKey:@"photos"];
     [encoder encodeObject:self.photoFrames forKey:@"photoFrames"];
     [encoder encodeObject:self.texts forKey:@"texts"];
     [encoder encodeObject:self.stickers forKey:@"stickers"];
