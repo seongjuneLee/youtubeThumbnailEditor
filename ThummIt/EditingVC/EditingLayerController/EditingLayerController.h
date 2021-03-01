@@ -27,8 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger nextItemOriginalCenterY;
 
 
-@property (nonatomic) BOOL doesItemLayerArrangeFinished;
-
 -(void)bringCurrentItemToFront:(Item *)CurrentItem;
 -(void)recoverOriginalLayer;
 -(void)showTransparentView;

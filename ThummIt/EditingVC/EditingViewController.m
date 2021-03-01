@@ -197,38 +197,23 @@
 
     }
     
-    // 인덱스 맞춰주기
     for (Item *item in project.items) {
-        if (!item.isFixedPhotoFrame) {
-            if (item.isTemplateItem) {
-                NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
-                item.indexInLayer = [NSString stringWithFormat:@"%ld",backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
-                [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
-            } else {
-                [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
-            }
-        }
-        
-        item.isTemplateItem = false;
-    }
-    
-    NSInteger i = 1;
-    for (Item *item in project.items) {
+        NSInteger itemindex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
         
         if(!item.isFixedPhotoFrame){
             // 만들기
             ItemLayer *itemLayer = [[ItemLayer alloc] init];
             itemLayer.item = item;                                  //각 itemLayer객체는 일치하는 item을 가짐 이후에 변동 x
             
-            [itemLayer loadView];
+            [itemLayer makeView];
             
             // scrollView에 올려주기 (indexInLayer 와 frameY)
-            float itemLayerX = (self.itemLayerScrollView.frameWidth)/2;
-            float itemLayerY = (itemLayer.barBaseView.frameHeight/2)*(3*i-1) ;
+            float itemLayerX = (self.itemLayerContentView.frameWidth)/2;
+            float itemLayerY = (self.itemLayerContentView.frameHeight)-( (itemLayer.barBaseView.frameHeight/2)*(3*(itemindex+1)-1));           //수정할거
             itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
             itemLayer.originalCenterY = itemLayerY;
             
-            [self.itemLayerScrollView addSubview:itemLayer.barBaseView];
+            [self.itemLayerContentView addSubview:itemLayer.barBaseView];
             
             // itemLayer 들을 projects.itemlayers에 더해주기.
         
@@ -236,9 +221,23 @@
             
             [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
             itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
-            i += 1;
 
         }
+    }
+    
+    // 인덱스 맞춰주기
+    for (Item *item in project.items) {
+        if (!item.isFixedPhotoFrame) {
+            if (item.isTemplateItem) {
+                NSUInteger mainFrameImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
+                item.indexInLayer = [NSString stringWithFormat:@"%ld",mainFrameImageViewIndex + [item.indexInLayer integerValue] + 1];
+                [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
+            } else {
+                [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
+            }
+        }
+        
+        item.isTemplateItem = false;
     }
     
     [SaveManager.sharedInstance save];

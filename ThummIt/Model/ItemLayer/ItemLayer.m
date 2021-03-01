@@ -20,7 +20,7 @@
     
 }
 
--(void)loadView{//make bar base view
+-(void)makeView{//make bar base view
     
     UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
     float barBaseViewWitdth = window.frameWidth*2/3;

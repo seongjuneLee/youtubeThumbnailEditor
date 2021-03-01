@@ -110,8 +110,8 @@
                                 <rect key="frame" x="0.0" y="403" width="414" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBX-hP-Jmq" userLabel="Item Layer ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -123,7 +123,7 @@
                                     <constraint firstItem="IBX-hP-Jmq" firstAttribute="width" secondItem="iGt-3I-8UG" secondAttribute="width" id="MDv-Ll-OjA"/>
                                     <constraint firstItem="IBX-hP-Jmq" firstAttribute="bottom" secondItem="bbF-4q-cnH" secondAttribute="bottom" id="Vbq-XI-7qu"/>
                                     <constraint firstItem="IBX-hP-Jmq" firstAttribute="top" secondItem="bbF-4q-cnH" secondAttribute="top" id="qdp-Ls-vVv"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="height" secondItem="Vjn-Vc-vW2" secondAttribute="height" multiplier="2" id="rAZ-yu-hi5"/>
+                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="height" secondItem="Vjn-Vc-vW2" secondAttribute="height" multiplier="1.5" id="rAZ-yu-hi5"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="bbF-4q-cnH"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="iGt-3I-8UG"/>
@@ -368,6 +368,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="oyv-kb-ZOD" firstAttribute="trailing" secondItem="tp2-GO-AoY" secondAttribute="trailing" id="7sk-r8-1Pw"/>
                                     <constraint firstItem="tp2-GO-AoY" firstAttribute="leading" secondItem="oyv-kb-ZOD" secondAttribute="leading" id="U4d-BC-qcF"/>
@@ -487,6 +488,7 @@
                         <outlet property="deleteButtonContainerView" destination="wc0-ej-qTW" id="tWS-ud-jZS"/>
                         <outlet property="gestureView" destination="zeV-pp-6xL" id="eFT-Gp-vQG"/>
                         <outlet property="hueSlider" destination="dNB-8m-B4w" id="pLl-pE-Mot"/>
+                        <outlet property="itemLayerContentView" destination="IBX-hP-Jmq" id="JsR-Yf-z1I"/>
                         <outlet property="itemLayerScrollView" destination="Vjn-Vc-vW2" id="CqD-Hi-9Uq"/>
                         <outlet property="leftItem" destination="i2a-Qa-wOL" id="HV2-ck-yN3"/>
                         <outlet property="mainFrameButton" destination="lNj-Ou-9TS" id="18p-Xr-bzP"/>

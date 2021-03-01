@@ -19,9 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL isLongPressed;
 
 @property (nonatomic) NSInteger originalCenterY;
-@property (nonatomic) NSInteger itemLayerIndex;
+@property (nonatomic) NSInteger itemLayerIndex; // savemanager itemlayers에 저장된 객체의 index
 
--(void)loadView;
+-(void)makeView;
 
 
 @end

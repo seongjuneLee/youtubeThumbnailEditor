@@ -63,36 +63,6 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
-    NSInteger numberOfItemLayers = [SaveManager.sharedInstance.currentProject.itemLayers count] + 1;
-//    NSLog(@"ddd %d",numberOfItemLayers);
-    ItemLayer *itemLayer = [ItemLayer new];
-    itemLayer.item = editingVC.currentItem;
-   
-
-    if ([editingVC.currentItem isKindOfClass:Text.class]) {
-        itemLayer.item = editingVC.currentText;
-    } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
-        itemLayer.item = editingVC.currentPhotoFrame;
-    } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
-        itemLayer.item = editingVC.currentSticker;
-    }
-    [itemLayer loadView];
-    
-    float itemLayerX = (editingVC.itemLayerScrollView.frameWidth)/2;
-    float itemLayerY = (itemLayer.barBaseView.frameHeight/2)*(3*numberOfItemLayers-1);
-    
-    itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
-    itemLayer.originalCenterY = itemLayerY;
-
-    [editingVC.itemLayerScrollView addSubview:itemLayer.barBaseView];
-    
-    [editingVC.layerController addItemLayerGestureRecognizers:itemLayer];
-    
-    [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
-    itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
-
-    
-    
     if (editingVC.modeController.editingMode == AddingItemMode) { // 새로운 아이템 추가중
         
         if ([editingVC.currentItem isKindOfClass:Text.class]) {
@@ -105,7 +75,9 @@
             [self doneAddingSticker];
         }
         
-    } else { // 기존 아이템 편집중
+        [self doneAddingItemLayer];
+        
+    } else{ // 기존 아이템 편집중
         
         if ([editingVC.currentItem isKindOfClass:Text.class]) {
             [self doneEditingText];
@@ -118,6 +90,8 @@
         } else {
             [self doneEditingMainFrame];
         }
+        
+        [self doneEditingItemLayer];
     }
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
@@ -450,6 +424,42 @@
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
+    
+}
+
+-(void)doneAddingItemLayer{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    ///시작
+    NSInteger numberOfItemLayers = [SaveManager.sharedInstance.currentProject.itemLayers count] + 1;
+//    NSLog(@"ddd %d",numberOfItemLayers);
+    ItemLayer *itemLayer = [ItemLayer new];
+
+    if ([editingVC.currentItem isKindOfClass:Text.class]) {
+        itemLayer.item = editingVC.currentText;
+    } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
+        itemLayer.item = editingVC.currentPhotoFrame;//보류
+    } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
+        itemLayer.item = editingVC.currentSticker;
+    }
+    [itemLayer makeView];
+    
+    float itemLayerX = (editingVC.itemLayerContentView.frameWidth)/2;
+    float itemLayerY = (editingVC.itemLayerContentView.frameHeight)-(itemLayer.barBaseView.frameHeight/2)*(3*numberOfItemLayers-1);
+    
+    itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
+    itemLayer.originalCenterY = itemLayerY;
+
+    [editingVC.itemLayerContentView addSubview:itemLayer.barBaseView];
+    
+    [editingVC.layerController addItemLayerGestureRecognizers:itemLayer];
+    
+    [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
+    itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
+
+    ///끝
+}
+
+-(void)doneEditingItemLayer{
     
 }
 

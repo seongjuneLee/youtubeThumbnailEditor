@@ -40,6 +40,7 @@
         self.originalTransform = text.baseView.transform;
         self.originalTypo = text.typo;
         self.originalText = text.text;
+        self.originalIndexInLayer = text.indexInLayer.integerValue;
         
         self.itemCollectionVC.typoButton.selected = false;
         self.itemCollectionVC.typoButton.alpha = 0.4;
