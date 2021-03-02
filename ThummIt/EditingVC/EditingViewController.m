@@ -271,9 +271,10 @@
     
     [UIView animateWithDuration:0.2 animations:^{
         self.undoButton.alpha =
-        self.redoButton. alpha =
+        self.redoButton.alpha =
         self.leftItem.alpha =
-        self.rightItem.alpha = 1.0;
+        self.rightItem.alpha =
+        self.itemLayerScrollView.alpha = 1.0;
     }];
 
 }
@@ -281,9 +282,10 @@
     
     [UIView animateWithDuration:0.2 animations:^{
         self.undoButton.alpha =
-        self.redoButton. alpha =
+        self.redoButton.alpha =
         self.leftItem.alpha =
-        self.rightItem.alpha = 0;
+        self.rightItem.alpha =
+        self.itemLayerScrollView.alpha = 0;
     }];
 
 }

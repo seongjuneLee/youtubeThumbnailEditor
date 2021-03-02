@@ -18,15 +18,13 @@
     return self;
 }
 
--(void)bringCurrentItemToFront:(Item *)currentItem{
+-(void)bringCurrentItemToFront{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    //item을 Currentitem에 넣고
-    self.currentItem = currentItem;
     //바꾸기전 index를 저장해놓고
-    self.originalIndex = [editingVC.view.subviews indexOfObject:self.currentItem.baseView];
+    self.originalIndex = [editingVC.view.subviews indexOfObject:editingVC.currentItem.baseView];
     //item을 젤 위로 올리고
-    [editingVC.view insertSubview:self.currentItem.baseView belowSubview:editingVC.gestureView];
+    [editingVC.view insertSubview:editingVC.currentItem.baseView belowSubview:editingVC.gestureView];
     //올려진 상태로 다시 indexinlayer 값 모든 item들에 대해 저장
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
@@ -51,7 +49,12 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [self.transparentView removeFromSuperview];
     self.transparentView = nil;
-    [editingVC.view insertSubview:self.currentItem.baseView atIndex:self.originalIndex];
+    
+  
+    [editingVC.view insertSubview:editingVC.currentItem.baseView atIndex:self.originalIndex];
+    
+//    NSLog(@"tttd %lu",[editingVC.view.subviews indexOfObject:editingVC.mainFrameImageView]);
+//    NSLog(@"tttt %lu",self.originalIndex);
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }

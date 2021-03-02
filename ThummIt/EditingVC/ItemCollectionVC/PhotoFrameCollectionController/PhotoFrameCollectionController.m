@@ -135,11 +135,11 @@
         photoFrame.baseView.center = editingVC.bgView.center;
     }
 
-    [editingVC.layerController bringCurrentItemToFront:photoFrame];
     editingVC.recentPhotoFrame = photoFrame;
     editingVC.currentItem = photoFrame;
     editingVC.currentPhotoFrame = photoFrame;
-    
+    [editingVC.layerController bringCurrentItemToFront];
+
 }
 
 

@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImpactFeedbackGenerator *impactFeedbackGenerator;
 
--(void)bringCurrentItemToFront:(Item *)CurrentItem;
+-(void)bringCurrentItemToFront;
 -(void)recoverOriginalLayer;
 -(void)showTransparentView;
 -(void)hideTransparentView;

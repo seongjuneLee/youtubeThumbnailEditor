@@ -197,7 +197,7 @@
     editingVC.originalPhotoFrame.baseView.hidden = false;
     [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
-    [editingVC.layerController recoverOriginalLayer];
+    [editingVC.layerController recoverOriginalLayer];//
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
     editingVC.buttonScrollView.hidden = false;
@@ -245,7 +245,7 @@
     }
     editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
-    [editingVC.layerController recoverOriginalLayer];
+    [editingVC.layerController recoverOriginalLayer];//
     
 }
 
@@ -278,7 +278,7 @@
     }
     [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
-    [editingVC.layerController recoverOriginalLayer];
+    [editingVC.layerController recoverOriginalLayer];//
     [editingVC.itemCollectionVC dismissSelf];
     editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
@@ -328,7 +328,10 @@
     [SaveManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
     [editingVC.originalPhotoFrame.baseView removeFromSuperview];
     [SaveManager.sharedInstance addItem:photoFrame];
-
+    
+//    // 레이어 되돌려 놓기
+//    [editingVC.layerController recoverOriginalLayer];
+//    [editingVC showItemsForNormalMode];원래있었음
     if (photoFrame.isFixedPhotoFrame) {
         [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.mainFrameImageView];
     } else {
@@ -343,7 +346,7 @@
     editingVC.buttonScrollView.hidden = false;
 
     editingVC.modeController.editingMode = NormalMode;
-    [editingVC.layerController recoverOriginalLayer];
+    [editingVC.layerController recoverOriginalLayer];//
 
 }
 
@@ -375,7 +378,7 @@
 
     [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
-    [editingVC.layerController recoverOriginalLayer];
+    [editingVC.layerController recoverOriginalLayer];//
     [editingVC.itemCollectionVC dismissSelf];
 
     [SaveManager.sharedInstance addItem:editingVC.currentText];
@@ -412,11 +415,11 @@
 
     [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
-    [editingVC.layerController recoverOriginalLayer];
     [editingVC.itemCollectionVC dismissSelf];
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
+    [editingVC.layerController recoverOriginalLayer];//
 
 }
 
@@ -487,6 +490,8 @@
     } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
         editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentSticker.baseView];
     }
+    
+    editingVC.layerController.currentItemLayer.item = editingVC.currentItem;
     
  
 }

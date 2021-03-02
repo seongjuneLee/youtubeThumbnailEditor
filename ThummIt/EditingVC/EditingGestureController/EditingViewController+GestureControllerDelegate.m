@@ -49,7 +49,7 @@
         
         [text.textView becomeFirstResponder];
         [self.layerController showTransparentView];
-        [self.layerController bringCurrentItemToFront:self.currentItem];
+        [self.layerController bringCurrentItemToFront];
         self.itemCollectionVC.itemType = TextType;
         
         if(!text.typo.cannotChangeColor){
@@ -75,7 +75,7 @@
         self.originalIndexInLayer = sticker.indexInLayer.integerValue;
         
         [self.layerController showTransparentView];
-        [self.layerController bringCurrentItemToFront:self.currentItem];
+        [self.layerController bringCurrentItemToFront];
         self.itemCollectionVC.itemType = StickerType;
         
         if(!sticker.cannotChangeColor){
@@ -114,7 +114,7 @@
     [self.layerController showTransparentView];
     [self hideItemsForItemMode];
     
-    [self.layerController bringCurrentItemToFront:self.currentItem];
+    [self.layerController bringCurrentItemToFront];
     self.itemCollectionVC.itemType = PhotoFrameType;
     
     if (photoFrame.isFixedPhotoFrame) {
@@ -167,6 +167,7 @@
 -(void)readyUIForPanning{
     
     self.underAreaView.hidden = true;
+    self.itemLayerScrollView.hidden = YES;
     [UIView animateWithDuration:0.2 animations:^{
         self.undoButton.alpha = 0.0;
         self.redoButton.alpha = 0.0;
@@ -240,8 +241,8 @@
         self.buttonScrollView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
+        self.itemLayerScrollView.hidden = NO;
     }];
-
 }
 
 

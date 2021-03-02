@@ -197,7 +197,6 @@
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
-
     }
 }
 

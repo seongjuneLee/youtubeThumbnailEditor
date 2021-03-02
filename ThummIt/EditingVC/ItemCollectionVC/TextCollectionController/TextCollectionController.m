@@ -74,12 +74,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             UIImage *image = [Text makePlaceHolderWithTypo:typo].image;
-            
-            
             cell.textImageView.image = image;
-            
-            
             [self.imageCaching setObject:image forKey:imageName];
+            
         });
     }
     
@@ -122,6 +119,9 @@
         text.isTypedByUser = editingVC.currentText.isTypedByUser;
         text.baseView.center = editingVC.currentText.baseView.center;
         text.baseView.transform = editingVC.currentText.baseView.transform;
+        editingVC.currentItem = text;
+        editingVC.currentText = text;
+        editingVC.recentTypo = typo;
     } else {
         editingVC.itemCollectionVC.checkButton.enabled = false;
         editingVC.itemCollectionVC.checkButton.alpha = 0.4;
@@ -136,15 +136,16 @@
         [text.textView setNeedsDisplay];
 
         text.textViewContainer.center = editingVC.bgView.center;
-        [editingVC.layerController bringCurrentItemToFront:text];
+        editingVC.currentItem = text;
+        editingVC.currentText = text;
+        editingVC.recentTypo = typo;
+        
+
+        [editingVC.layerController bringCurrentItemToFront];
     }
     
     [text applyTypo:typo];
     [text setItemCenterAndScale];
-    
-    editingVC.currentItem = text;
-    editingVC.currentText = text;
-    editingVC.recentTypo = typo;
     
     
     // 칼라 바
