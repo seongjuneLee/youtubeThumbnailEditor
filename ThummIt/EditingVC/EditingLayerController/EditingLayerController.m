@@ -53,8 +53,6 @@
   
     [editingVC.view insertSubview:editingVC.currentItem.baseView atIndex:self.originalIndex];
     
-//    NSLog(@"tttd %lu",[editingVC.view.subviews indexOfObject:editingVC.mainFrameImageView]);
-//    NSLog(@"tttt %lu",self.originalIndex);
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }
@@ -86,7 +84,7 @@
     [itemLayer.barBaseView addGestureRecognizer:itemLayerTap];
 
     UILongPressGestureRecognizer *itemLayerlongPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(itemLayerLongPressed:)];
-    itemLayerlongPress.minimumPressDuration = 0.5;
+    itemLayerlongPress.minimumPressDuration = 0.3;
     [itemLayer.barBaseView addGestureRecognizer:itemLayerlongPress];
     
 }
@@ -109,13 +107,12 @@
 -(void)itemLayerLongPressed:(UILongPressGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-
         CGPoint currentPoint = [sender locationInView:editingVC.itemLayerContentView];
         CGPoint deltaPoint = CGPointZero;
     
         if(sender.state == UIGestureRecognizerStateBegan){
             
-//        [self.impactFeedbackGenerator impactOccurred];
+            [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
             self.pressedItemLayer = [self getCurrentItemLayer:sender];
             self.previousPoint = [sender locationInView:editingVC.itemLayerContentView];
             
@@ -131,6 +128,8 @@
         } else if(sender.state == UIGestureRecognizerStateEnded){
             
             self.pressedItemLayer.barBaseView.centerY = self.pressedItemLayer.originalCenterY;
+            
+            [SaveManager.sharedInstance saveAndAddToStack];//여기
         }
     
 }
@@ -180,7 +179,6 @@
                 //indexinlayer에 맞추어 bgview에서도 위치 변경
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
-                // stacksave 필요
             }
             
             //nextitemlayer가 array의 마지막 object일때는 nextitemlayer를 받으면 튕기는 현상에 대한 대응
@@ -212,8 +210,6 @@
                 self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
                 //indexinlayer에 맞추어 bgview에서도 위치 변경
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
-
-                // stacksave 필요
                 
                 //nextitemlayer = first object 일시 state end시켜줘서 튕김 방어(이후 다른 방법 생각)
                 sender.state = UIGestureRecognizerStateEnded;
@@ -253,9 +249,7 @@
                 
                 
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
-
                 
-            // stacksave 필요
             }
             
         } else{
@@ -283,7 +277,6 @@
                 
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
-                // stacksave 필요
                 sender.state = UIGestureRecognizerStateEnded;
             }
         }
@@ -342,13 +335,7 @@
         }
     }
 
-    //for문 돌면서 화면에서 Pan 된 item을 가진 itemlayer찾고
-    //그 itemlayer removefrom superview하고
-    //지운거 반영해서 itemlayerindex에 다시저장하고
-    //해당 itemlayer보다 위에 있는 아이템들 다 3/2만큼 내리고 originalY도내리고
-    //itemlayercontenview 높이도 줄이고
-    //스텍 세이브(아직안함)
-
+    [SaveManager.sharedInstance saveAndAddToStack];//여기
 }
 
 @end
