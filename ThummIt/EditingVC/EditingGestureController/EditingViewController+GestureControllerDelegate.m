@@ -195,6 +195,8 @@
         }];
     }
 }
+
+//bgview밖으로 나가면 item 지워줌 & 해당 itemlayer 지워줌 등등
 -(void)panGestureEndedForItem:(Item *)item withFingerPoint:(CGPoint)fingerPoint{
     
     self.underAreaView.hidden = false;
@@ -204,6 +206,9 @@
         [self.currentText.textView resignFirstResponder];
         self.itemCollectionVC.checkButton.enabled = true;
         self.itemCollectionVC.checkButton.alpha = 1.0;
+        
+        [self.layerController itemLayerDelete];
+        
         self.currentItem = nil;
         self.currentText = nil;
         self.currentSticker = nil;
@@ -220,6 +225,7 @@
         
         [self.itemCollectionVC dismissSelf];
         self.buttonScrollView.hidden = false;
+        
     } else{
         if(self.modeController.editingMode == NormalMode){
             self.buttonScrollView.hidden = false;

@@ -147,7 +147,6 @@
         }
 
         [editingVC readyUIForPanning];
-//        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
         self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
         if(!editingVC.currentItem.cannotChangeColor || [editingVC.currentItem isKindOfClass:PhotoFrame.class] ){

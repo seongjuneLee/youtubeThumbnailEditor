@@ -43,10 +43,13 @@
         self.barBaseView.backgroundColor = UIColor.blackColor;
         self.barBaseView.layer.borderColor = [UIColor redColor].CGColor;
         self.barBaseView.layer.borderWidth = 1.0f;
+        self.barBaseView.layer.cornerRadius = 10;
         
         UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
         transparentView.backgroundColor = UIColor.redColor;
         transparentView.alpha = 0.15;
+        transparentView.layer.cornerRadius = 10;
+
         [self.barBaseView addSubview:transparentView];
 
         
@@ -63,12 +66,15 @@
         self.barBaseView.backgroundColor = UIColor.blackColor;
         self.barBaseView.layer.borderColor = [UIColor greenColor].CGColor;
         self.barBaseView.layer.borderWidth = 1.0f;
+        self.barBaseView.layer.cornerRadius = 10;
 
         self.backgroundImageView = textView;
         
         UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
         transparentView.backgroundColor = UIColor.greenColor;
         transparentView.alpha = 0.15;
+        transparentView.layer.cornerRadius = 10;
+
         [self.barBaseView addSubview:transparentView];
         
     } else if([self.item isKindOfClass:Sticker.class]){
@@ -83,12 +89,15 @@
         self.barBaseView.backgroundColor = UIColor.blackColor;
         self.barBaseView.layer.borderColor = [UIColor blueColor].CGColor;
         self.barBaseView.layer.borderWidth = 1.0f;
+        self.barBaseView.layer.cornerRadius = 10;
 
         self.backgroundImageView = stickerImageView;
         
         UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
         transparentView.backgroundColor = UIColor.blueColor;
         transparentView.alpha = 0.15;
+        transparentView.layer.cornerRadius = 10;
+        
         [self.barBaseView addSubview:transparentView];
         
     }

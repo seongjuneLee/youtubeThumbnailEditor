@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)showTransparentView;
 -(void)hideTransparentView;
 -(void)addItemLayerGestureRecognizers:(ItemLayer *)itemLayer;
+-(void)itemLayerDelete;
 
 @end
 

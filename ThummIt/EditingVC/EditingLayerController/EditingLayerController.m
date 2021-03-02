@@ -333,4 +333,48 @@
     }
 }
 
+-(void)itemLayerDelete{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    NSInteger deletedItemLayerIndex = 0;
+    ItemLayer *foundItemLayer;
+    ItemLayer *anyItemLayer = [ItemLayer new];
+    
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        if(itemLayer.item == editingVC.currentItem){
+            foundItemLayer = itemLayer;
+            [itemLayer.barBaseView removeFromSuperview];
+            deletedItemLayerIndex = itemLayer.itemLayerIndex;
+        }
+    }
+    [SaveManager.sharedInstance.currentProject.itemLayers removeObject:foundItemLayer];
+    
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        if(itemLayer.itemLayerIndex > deletedItemLayerIndex){
+            itemLayer.itemLayerIndex -= 1;
+        }
+    }
+    [UIView animateWithDuration:0.2 animations:^{
+    editingVC.itemLayerContentViewHeightConstraint.constant -= anyItemLayer.barBaseViewHeight/2 * 3;
+    }];
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        if(itemLayer.itemLayerIndex < deletedItemLayerIndex){
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                itemLayer.barBaseView.centerY -= itemLayer.barBaseViewHeight/2 * 3;
+            }];
+            itemLayer.originalCenterY -= itemLayer.barBaseViewHeight/2 * 3;
+           
+        }
+    }
+
+    //for문 돌면서 화면에서 Pan 된 item을 가진 itemlayer찾고
+    //그 itemlayer removefrom superview하고
+    //지운거 반영해서 itemlayerindex에 다시저장하고
+    //해당 itemlayer보다 위에 있는 아이템들 다 3/2만큼 내리고 originalY도내리고
+    //itemlayercontenview 높이도 줄이고
+    //스텍 세이브(아직안함)
+
+}
+
 @end
