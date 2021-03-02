@@ -23,14 +23,14 @@
     
 }
 
--(void)makeView{//make bar base view
+-(void)makeView{ // 객체가 가진 item의 type에 따른 view 제작
     
     UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
     float barBaseViewWitdth = window.frameWidth * 4/5;
     float barBaseViewHeight = window.frameWidth * 4/5 * 0.06;
 
     self.barBaseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
-    //3경우 모두 공통적으로 barbaseview 생성
+    // 3경우 모두 공통적으로 barbaseview 생성
 
     if ([self.item isKindOfClass:PhotoFrame.class]) {
         

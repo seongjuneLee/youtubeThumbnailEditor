@@ -94,7 +94,7 @@
         if(itemLayer.item == self.currentItem){
             self.layerController.currentItemLayer = itemLayer;
         }
-    }
+    }//photoframe일 경우 self.currentitem에 copy객체가 들어있어서 주소값이 달라서 currentitemlayer가 안바뀜
     
 }
 

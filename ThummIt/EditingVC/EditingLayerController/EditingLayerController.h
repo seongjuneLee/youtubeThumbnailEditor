@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSUInteger originalIndex;
 
 @property (strong, nonatomic) Item *currentItem;
-@property (strong, nonatomic) ItemLayer *currentItemLayer; //tap된 itemlayer
+@property (strong, nonatomic, nullable) ItemLayer *currentItemLayer; //tap된 itemlayer
 @property (nonatomic) CGPoint previousPoint;
 
 @property (strong, nonatomic) ItemLayer *pressedItemLayer; // longpressed된 itemlayer

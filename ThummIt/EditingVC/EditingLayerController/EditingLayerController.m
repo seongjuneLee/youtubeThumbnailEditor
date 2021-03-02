@@ -84,7 +84,6 @@
             itemOfItemLayer = item;
         }
     }
-    
     [editingVC didSelectItem:itemOfItemLayer];
 }
 

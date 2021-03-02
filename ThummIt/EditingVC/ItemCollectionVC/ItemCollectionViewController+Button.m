@@ -52,6 +52,7 @@
     editingVC.currentText = nil;
     editingVC.currentPhotoFrame = nil;
     editingVC.currentSticker = nil;
+    editingVC.layerController.currentItemLayer = nil;
     
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
@@ -429,15 +430,16 @@
 
 -(void)doneAddingItemLayer{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    
-    NSInteger numberOfItemLayers = [SaveManager.sharedInstance.currentProject.itemLayers count] + 1;
+   
+    //itemlayers에 추가되기 전이므로 +1
+    NSInteger numberOfItemLayersAfterAdding = [SaveManager.sharedInstance.currentProject.itemLayers count] + 1;
     ItemLayer *itemLayer = [ItemLayer new];
 
     itemLayer.item = editingVC.currentItem;
     [itemLayer makeView];
     
     float itemLayerX = (editingVC.itemLayerContentView.frameWidth)/2;
-    float itemLayerY = (editingVC.itemLayerContentView.frameHeight)-(itemLayer.barBaseView.frameHeight/2)*(3*numberOfItemLayers-1);
+    float itemLayerY = (editingVC.itemLayerContentView.frameHeight)-(itemLayer.barBaseView.frameHeight/2)*(3*numberOfItemLayersAfterAdding-1);
     
     itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
     itemLayer.originalCenterY = itemLayerY;
@@ -449,11 +451,12 @@
     [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
     itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
     
-    editingVC.itemLayerContentView.frameHeight = (itemLayer.barBaseView.frameHeight/2)*(3*(numberOfItemLayers)+1);
-    [editingVC.itemLayerScrollView setContentSize:CGSizeMake(editingVC.itemLayerContentView.frameWidth, editingVC.itemLayerContentView.frameHeight*2)];
+    //추가되는 아이템에 맞추어 itemlayercontentview크기 늘려줌
+    editingVC.itemLayerContentViewHeightConstraint.constant = -editingVC.itemLayerScrollView.frameHeight + (itemLayer.barBaseViewHeight/2)*(3*numberOfItemLayersAfterAdding + 1);
+    [editingVC.itemLayerScrollView setContentSize:CGSizeMake(editingVC.itemLayerContentView.frameWidth, editingVC.itemLayerContentView.frameHeight)];
    
-    editingVC.itemLayerContentView.backgroundColor = UIColor.yellowColor;
     
+    //contentview는 아래로 넓어지므로 그에 맞추어 객체들의 실제 위치 & 위치값 모두 커진 만큼 내려줌
     for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
         
         itemlayer.barBaseView.centerY += itemlayer.barBaseView.frameHeight/2*3;
@@ -467,12 +470,11 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     if ([editingVC.currentItem isKindOfClass:Text.class]) {
-//        editingVC.layerController.currentItemLayer.textLabel.text = editingVC.currentText.text;
+        editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentText.baseView];
     } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
         editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentPhotoFrame.baseView];
     } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
         editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentSticker.baseView];
-
     }
     
  
