@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "Item.h"
 #import "ItemLayer.h"
+//#import 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EditingLayerController : NSObject 
@@ -26,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger pressedItemOriginalCenterY;
 @property (nonatomic) NSInteger nextItemOriginalCenterY;
 
+@property (nonatomic, strong) UIImpactFeedbackGenerator *impactFeedbackGenerator;
 
 -(void)bringCurrentItemToFront:(Item *)CurrentItem;
 -(void)recoverOriginalLayer;

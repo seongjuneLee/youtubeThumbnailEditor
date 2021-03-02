@@ -43,6 +43,8 @@
     
     [self setUpSlider];
     
+    self.layerController.impactFeedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy];
+    [self.layerController.impactFeedbackGenerator prepare];
 }
 
 -(void)setUpPhotoAlbums{
