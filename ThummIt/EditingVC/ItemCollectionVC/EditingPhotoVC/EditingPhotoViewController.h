@@ -11,11 +11,12 @@
 #import "UndoManager.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EditingPhotoViewController : UIViewController
-
+@interface EditingPhotoViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) UIImageView *photoImageView;
 @property (strong, nonatomic) UIViewController *editingVC;
+@property (weak, nonatomic) UIButton *includeButton;
+@property (weak, nonatomic) UIButton *eraseButton;
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic) CGPoint originalPoint;
@@ -25,10 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint originalPinchCenter;
 @property (nonatomic) CGPoint originalItemViewCenter;
 
+@property (nonatomic) CGPoint lastPoint;
+
 @property (nonatomic) float originalScaleRatio;
 @property (nonatomic) float originalPinchDistance;
+@property (nonatomic) float lastPinchDistance;
 
 @property (nonatomic) BOOL isPinching;
+@property (nonatomic) BOOL singleFingerOffedWhilePinching;
 @property (nonatomic) BOOL photoLoaded;
 
 -(void)dismissSelf;

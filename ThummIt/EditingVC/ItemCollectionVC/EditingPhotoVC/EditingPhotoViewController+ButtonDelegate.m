@@ -98,4 +98,26 @@
 
 }
 
+
+#pragma mark - include Button
+
+-(void)includeButtonTapped:(UIButton *)sender{
+    
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        sender.backgroundColor = UIColor.redColor;
+    } else {
+        sender.backgroundColor = UIColor.clearColor;
+    }
+    
+}
+
+#pragma mark - erase Button
+
+-(void)eraseButtonTapped{
+    
+    
+    
+}
+
 @end

@@ -193,6 +193,8 @@
     [editingVC.editingPhotoVC.contentView addSubview:editingVC.editingPhotoVC.photoImageView];
 
     editingVC.editingPhotoButtonVC.delegate = editingVC.editingPhotoVC;
+    editingVC.editingPhotoVC.includeButton = editingVC.editingPhotoButtonVC.includeButton;
+    editingVC.editingPhotoVC.eraseButton = editingVC.editingPhotoButtonVC.eraseButton;
     [editingVC addChildViewController:editingVC.editingPhotoVC];
     [editingVC.view insertSubview:editingVC.editingPhotoVC.view belowSubview:editingVC.itemCollectionContainerView];
     

@@ -45,13 +45,13 @@
 
 - (IBAction)eraseButtonTapped:(id)sender {
     
-    
+    [self.delegate eraseButtonTapped];
     
 }
 
-- (IBAction)rubToIncludeButtonTapped:(id)sender {
+- (IBAction)rubToIncludeButtonTapped:(UIButton *)sender {
     
-    
+    [self.delegate includeButtonTapped:sender];
     
 }
 

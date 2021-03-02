@@ -12,8 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol EditingPhotoButtonViewControllerDelegate <NSObject>
 
 -(void)removeBGButtonTapped;
+-(void)includeButtonTapped:(UIButton *)sender;
+-(void)eraseButtonTapped;
 -(void)undoButtonTapped;
 -(void)redoButtonTapped;
+
 
 @end
 
@@ -25,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *eraseContainerView;
 @property (weak, nonatomic) IBOutlet UIButton *undoButton;
 @property (weak, nonatomic) IBOutlet UIButton *redoButton;
+@property (weak, nonatomic) IBOutlet UIButton *includeButton;
+@property (weak, nonatomic) IBOutlet UIButton *eraseButton;
 
 
 - (IBAction)removeBGButtonTapped:(id)sender;

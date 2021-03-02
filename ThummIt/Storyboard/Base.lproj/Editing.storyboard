@@ -1178,7 +1178,9 @@
                     </view>
                     <size key="freeformSize" width="414" height="250"/>
                     <connections>
+                        <outlet property="eraseButton" destination="qEK-iX-sHM" id="nHB-nx-Wx5"/>
                         <outlet property="eraseContainerView" destination="b5P-mW-VVx" id="gEF-0z-Fa7"/>
+                        <outlet property="includeButton" destination="eAb-VY-4en" id="zbF-RX-lET"/>
                         <outlet property="redoButton" destination="Nzf-h4-1gm" id="Wh8-Zt-AbV"/>
                         <outlet property="removeBGContainerView" destination="mSc-aX-9Kr" id="FvB-B5-9PU"/>
                         <outlet property="rubToIncludeContainerView" destination="Stg-zS-1i9" id="caV-Ef-3vQ"/>
