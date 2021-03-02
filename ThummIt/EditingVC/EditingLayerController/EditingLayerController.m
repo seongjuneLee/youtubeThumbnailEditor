@@ -165,9 +165,8 @@
 
 -(void)itemLayerArrange:(CGPoint)deltaPoint :(UIGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    NSInteger mainFrameImageViewIndex = [editingVC.view.subviews indexOfObject:editingVC.mainFrameImageView];
-
     
+    NSInteger mainFrameImageViewIndex = [editingVC.view.subviews indexOfObject:editingVC.mainFrameImageView];
     NSInteger pressedItemOriginalCenterY;
     NSInteger nextItemOriginalCenterY;
     
@@ -181,60 +180,67 @@
         if(![self doesFirstObjectEqualToNextItemLayer:self.nextItemLayer]){
            //nextitemlayer가 array의 마지막 object 아닐때
             if(self.pressedItemLayer.barBaseView.centerY >= self.nextItemLayer.originalCenterY - self.nextItemLayer.barBaseView.frameHeight/2){
-
+                
+                // 바꾸기 전 값 저장
                 pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
-                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;               // 바꾸기 전 저장해놈
+                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;
+                //실제위치 변경
                 [UIView animateWithDuration:0.2 animations:^{
                 self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY; //실제위치를 바꿔줌
+                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY;
                 }];
-                 
+                //객체가 가진 위치값도 변경
                 self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
                 self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
-                
+                //nextitem의 itemlayerindex 변경
                 self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
-                
-                //itemLayers에서 presseditemlayer자기 원래 자리에서 제거
+                //presseditem를 array에서 제거
                 [SaveManager.sharedInstance.currentProject.itemLayers removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
+                //변경된 값에 맞추어 array에 다시 넣음
                 self.pressedItemLayer.itemLayerIndex += -1;
-                
+                //pressed & next item의 indexinlayer을 itemlayerindex에 맞추어 다시 설정
                 [SaveManager.sharedInstance.currentProject.itemLayers insertObject:self.pressedItemLayer atIndex:self.pressedItemLayer.itemLayerIndex];
-                
-                //itemlayer에 해당하는 item의 indexinlayer도 바뀐값으로 잘넣어줌
+                //pressed & next item의 indexinlayer을 itemlayerindex에 맞추어 다시 설정
                 self.pressedItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.pressedItemLayer.itemLayerIndex + 1];
                 self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
-                
+                //indexinlayer에 맞추어 bgview에서도 위치 변경
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
-                        // stacksave도 해야댐
+                // stacksave 필요
             }
             
-            //nextitemlayer가 array의 마지막 object일때는 nextitemlayer로 savemanager에서 받으면 튕기므로
+            //nextitemlayer가 array의 마지막 object일때는 nextitemlayer를 받으면 튕기는 현상에 대한 대응
         } else{
             if(self.pressedItemLayer.barBaseView.centerY >= self.nextItemLayer.originalCenterY - self.nextItemLayer.barBaseView.frameHeight/2){
-
+                
+                // 바꾸기 전 값 저장
                 pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
-                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;        // 바꾸기 전 값 저장
+                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;
+                //실제위치 변경
                 [UIView animateWithDuration:0.2 animations:^{
                 self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY; //실제위치를 바꿔줌
+                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY;
                 }];
+                //객체가 가진 위치값도 변경
                 self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;     //객체가 가진 위치값도 바꿔줌
-                
+                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
+                //nextitem의 itemlayerindex 변경
                 self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
+                //presseditem를 array에서 제거
                 [SaveManager.sharedInstance.currentProject.itemLayers    removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
-                
+                //presseditem의 itemlayerindex 변경
                 self.pressedItemLayer.itemLayerIndex += -1;
+                //변경된 값에 맞추어 array에 다시 넣음
                 [SaveManager.sharedInstance.currentProject.itemLayers insertObject:self.pressedItemLayer atIndex:self.pressedItemLayer.itemLayerIndex];
-                
+                //pressed & next item의 indexinlayer을 itemlayerindex에 맞추어 다시 설정
                 self.pressedItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.pressedItemLayer.itemLayerIndex + 1];
                 self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
-                //itemlayer에 해당하는 item의 index in layer도 바뀐값으로 잘넣어줌
-                
+                //indexinlayer에 맞추어 bgview에서도 위치 변경
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
 
+                // stacksave 필요
                 
+                //nextitemlayer = first object 일시 stateend시켜줘서 튕김 방어(이후 다른 방법 생각)
                 sender.state = UIGestureRecognizerStateEnded;
             }
             
@@ -247,23 +253,21 @@
         
         self.nextItemLayer = SaveManager.sharedInstance.currentProject.itemLayers[self.pressedItemLayer.itemLayerIndex + 1];
         if(![self doesLastObjectEqualToNextItemLayer:self.nextItemLayer]){
-           //nextitemlayer가 array의 마지막 object 아닐때
+
             if(self.pressedItemLayer.barBaseView.centerY <= self.nextItemLayer.originalCenterY + self.nextItemLayer.barBaseView.frameHeight/2){
 
                 pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
-                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;               //바꾸기 전 값 저장
+                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;
                 [UIView animateWithDuration:0.2 animations:^{
                 self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY;        //실제위치를 바꿔줌
+                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY;
                 }];
                 
                 self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;            //객체가 가지는 값도 바꿈
+                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
                 
-                //객체가 가지는 index값 바꿈 & arrary에 save도 자기 index에 맞게
                 self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
                 [SaveManager.sharedInstance.currentProject.itemLayers removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
-                //itemLayers에서 presseditemlayer자기 원래 자리에서 제거
                 
                 self.pressedItemLayer.itemLayerIndex += 1;
                 
@@ -271,12 +275,12 @@
                 
                 self.pressedItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.pressedItemLayer.itemLayerIndex + 1];
                 self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
-                //itemlayer에 해당하는 item의 index in layer도 바뀐값으로 잘넣어줌
+                
                 
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
 
                 
-                        // stacksave도 해야댐
+            // stacksave 필요
             }
             
         } else{
@@ -301,18 +305,14 @@
                 
                 self.pressedItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.pressedItemLayer.itemLayerIndex + 1];
                 self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
-                //itemlayer에 해당하는 item의 index in layer도 바뀐값으로 잘넣어줌
                 
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
-
                 
+                // stacksave 필요
                 sender.state = UIGestureRecognizerStateEnded;
             }
-            
         }
-        
     }
-
 }
 
 
