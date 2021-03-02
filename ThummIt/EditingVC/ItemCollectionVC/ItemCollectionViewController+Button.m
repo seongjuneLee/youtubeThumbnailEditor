@@ -97,11 +97,12 @@
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
     [editingVC showItemsForNormalMode];
-    
+
     editingVC.currentItem = nil;
     editingVC.currentSticker = nil;
     editingVC.currentText = nil;
     editingVC.currentPhotoFrame = nil;
+    editingVC.layerController.currentItemLayer = nil;
 
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
@@ -196,6 +197,7 @@
     editingVC.originalPhotoFrame.baseView.hidden = false;
     [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
+    [editingVC.layerController recoverOriginalLayer];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
     editingVC.buttonScrollView.hidden = false;
@@ -243,6 +245,7 @@
     }
     editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
+    [editingVC.layerController recoverOriginalLayer];
     
 }
 
@@ -275,6 +278,7 @@
     }
     [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
+    [editingVC.layerController recoverOriginalLayer];
     [editingVC.itemCollectionVC dismissSelf];
     editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
@@ -325,9 +329,6 @@
     [editingVC.originalPhotoFrame.baseView removeFromSuperview];
     [SaveManager.sharedInstance addItem:photoFrame];
 
-    // 레이어 되돌려 놓기
-    [editingVC.layerController recoverOriginalLayer];
-    [editingVC showItemsForNormalMode];
     if (photoFrame.isFixedPhotoFrame) {
         [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.mainFrameImageView];
     } else {
@@ -342,6 +343,8 @@
     editingVC.buttonScrollView.hidden = false;
 
     editingVC.modeController.editingMode = NormalMode;
+    [editingVC.layerController recoverOriginalLayer];
+
 }
 
 -(void)doneAddingText{
@@ -372,6 +375,7 @@
 
     [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
+    [editingVC.layerController recoverOriginalLayer];
     [editingVC.itemCollectionVC dismissSelf];
 
     [SaveManager.sharedInstance addItem:editingVC.currentText];
@@ -463,6 +467,13 @@
         
         itemlayer.originalCenterY += itemlayer.barBaseView.frameHeight/2*3;
     }
+    
+    //adding - donebutton 눌렀을때 실제 item도 위로 올라오도록
+    //새로추가된 itemlayer.item의 indexinlayer값 바꾸기 & 그에 맞게 다시 bgview에 띄우기
+    NSInteger mainFrameImageViewIndex = [editingVC.view.subviews indexOfObject:editingVC.mainFrameImageView];
+    
+    itemLayer.item.indexInLayer =  [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + itemLayer.itemLayerIndex + 1];
+    [editingVC.view insertSubview:itemLayer.item.baseView atIndex:itemLayer.item.indexInLayer.integerValue];
     
 }
 

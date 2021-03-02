@@ -43,6 +43,11 @@
         self.barBaseView.backgroundColor = UIColor.blackColor;
         self.barBaseView.layer.borderColor = [UIColor redColor].CGColor;
         self.barBaseView.layer.borderWidth = 1.0f;
+        
+        UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
+        transparentView.backgroundColor = UIColor.redColor;
+        transparentView.alpha = 0.15;
+        [self.barBaseView addSubview:transparentView];
 
         
         self.backgroundImageView = photoFrameView;
@@ -61,6 +66,11 @@
 
         self.backgroundImageView = textView;
         
+        UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
+        transparentView.backgroundColor = UIColor.greenColor;
+        transparentView.alpha = 0.15;
+        [self.barBaseView addSubview:transparentView];
+        
     } else if([self.item isKindOfClass:Sticker.class]){
         
         UIImageView *stickerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
@@ -75,6 +85,12 @@
         self.barBaseView.layer.borderWidth = 1.0f;
 
         self.backgroundImageView = stickerImageView;
+        
+        UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
+        transparentView.backgroundColor = UIColor.blueColor;
+        transparentView.alpha = 0.15;
+        [self.barBaseView addSubview:transparentView];
+        
     }
     
 } 

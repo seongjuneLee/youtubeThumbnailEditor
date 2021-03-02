@@ -19,11 +19,15 @@
 }
 
 -(void)bringCurrentItemToFront:(Item *)currentItem{
-    
-    self.currentItem = currentItem;
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    //item을 Currentitem에 넣고
+    self.currentItem = currentItem;
+    //바꾸기전 index를 저장해놓고
     self.originalIndex = [editingVC.view.subviews indexOfObject:self.currentItem.baseView];
+    //item을 젤 위로 올리고
     [editingVC.view insertSubview:self.currentItem.baseView belowSubview:editingVC.gestureView];
+    //올려진 상태로 다시 indexinlayer 값 모든 item들에 대해 저장
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }
@@ -43,7 +47,7 @@
 }
 
 -(void)recoverOriginalLayer{
-    
+    //transparentview 제거 & 원래 index위치에 currentitem 위치시킴 & 위치시킨 대로 indexinlayer 저장
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [self.transparentView removeFromSuperview];
     self.transparentView = nil;
@@ -52,7 +56,9 @@
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }
 }
+
 -(void)hideTransparentView{
+    //transparentview만 제거
     [self.transparentView removeFromSuperview];
     self.transparentView = nil;
 }
@@ -187,21 +193,24 @@
                 self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
                 
                 self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
-                [SaveManager.sharedInstance.currentProject.itemLayers removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
+                
                 //itemLayers에서 presseditemlayer자기 원래 자리에서 제거
+                [SaveManager.sharedInstance.currentProject.itemLayers removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
                 self.pressedItemLayer.itemLayerIndex += -1;
                 
                 [SaveManager.sharedInstance.currentProject.itemLayers insertObject:self.pressedItemLayer atIndex:self.pressedItemLayer.itemLayerIndex];
                 
+                //itemlayer에 해당하는 item의 indexinlayer도 바뀐값으로 잘넣어줌
                 self.pressedItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.pressedItemLayer.itemLayerIndex + 1];
                 self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
-                //itemlayer에 해당하는 item의 index in layer도 바뀐값으로 잘넣어줌
                 
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
+                
                         // stacksave도 해야댐
             }
             
-        } else{           //nextitemlayer가 array의 마지막 object일때는 nextitemlayer로 savemanager에서 받으면 튕기므로
+            //nextitemlayer가 array의 마지막 object일때는 nextitemlayer로 savemanager에서 받으면 튕기므로
+        } else{
             if(self.pressedItemLayer.barBaseView.centerY >= self.nextItemLayer.originalCenterY - self.nextItemLayer.barBaseView.frameHeight/2){
 
                 pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
