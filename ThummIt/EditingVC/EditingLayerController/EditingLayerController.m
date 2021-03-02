@@ -66,6 +66,20 @@
     self.transparentView = nil;
 }
 
+-(ItemLayer *)getCurrentItemLayer:(UIGestureRecognizer*)sender{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    CGPoint tappedLocation = [sender locationInView:editingVC.itemLayerContentView];
+    NSMutableArray *foundItemLayers = [NSMutableArray new];
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        if (CGRectContainsPoint(itemLayer.barBaseView.frame, tappedLocation)) {
+                [foundItemLayers addObject:itemLayer];
+            }
+        }
+    return [foundItemLayers firstObject];
+    
+}
+
 -(void)addItemLayerGestureRecognizers:(ItemLayer *)itemLayer{
 
     UITapGestureRecognizer *itemLayerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemLayerTapped:)];
@@ -74,11 +88,6 @@
     UILongPressGestureRecognizer *itemLayerlongPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(itemLayerLongPressed:)];
     itemLayerlongPress.minimumPressDuration = 0.5;
     [itemLayer.barBaseView addGestureRecognizer:itemLayerlongPress];
-    
-    UIPanGestureRecognizer *itemLayerPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(itemLayerPanned:)];
-    [itemLayerPan setMaximumNumberOfTouches:1];
-    [itemLayer.barBaseView addGestureRecognizer:itemLayerPan];
-    
     
 }
 
@@ -98,74 +107,31 @@
 }
 
 -(void)itemLayerLongPressed:(UILongPressGestureRecognizer *)sender{
-    
-    
-    if(sender.state == UIGestureRecognizerStateBegan){
-      
-        [self.impactFeedbackGenerator impactOccurred];
-        
-//        sender.state = UIGestureRecognizerStateCancelled; cancel해도 손을 떼었다가 다시pan해야 pan이 시작됨
-        
-        self.pressedItemLayer = [self getCurrentItemLayer:sender];
-        self.pressedItemLayer.isLongPressed = YES;
-
-    } else if(sender.state == UIGestureRecognizerStateChanged){
-        
-    } else if(sender.state == UIGestureRecognizerStateEnded){
-        
-    } else if(sender.state == UIGestureRecognizerStateCancelled){
-        
-    }
-    
-}
-
--(void)itemLayerPanned:(UIPanGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    
-    //pressed된 아이템이 없거나 & longpressed되지 않았다면 pan 자체 못함
-    if (!self.pressedItemLayer || !self.pressedItemLayer.isLongPressed){
-        return;
-    } else{
-        
+
+
         CGPoint currentPoint = [sender locationInView:editingVC.itemLayerContentView];
         CGPoint deltaPoint = CGPointZero;
-        
-        if (sender.state == UIGestureRecognizerStateBegan) {
+    
+        if(sender.state == UIGestureRecognizerStateBegan){
             
-           self.previousPoint = [sender locationInView:editingVC.itemLayerContentView];
-           
+//        [self.impactFeedbackGenerator impactOccurred];
+            self.pressedItemLayer = [self getCurrentItemLayer:sender];
+            self.previousPoint = [sender locationInView:editingVC.itemLayerContentView];
+            
         } else if(sender.state == UIGestureRecognizerStateChanged){
             
             deltaPoint = CGPointMake(editingVC.itemLayerContentView.frameWidth/2 ,currentPoint.y - self.previousPoint.y);
-            
+
             self.pressedItemLayer.barBaseView.centerY += deltaPoint.y;
             self.previousPoint = [sender locationInView:editingVC.itemLayerContentView];
             
             [self itemLayerArrange:deltaPoint:sender];
-//            [self itemLayerMagnet:sender];
             
         } else if(sender.state == UIGestureRecognizerStateEnded){
+            
             self.pressedItemLayer.barBaseView.centerY = self.pressedItemLayer.originalCenterY;
-            self.pressedItemLayer.isLongPressed = NO;
-
         }
-        
-    }
-
-    
-}
-
--(ItemLayer *)getCurrentItemLayer:(UIGestureRecognizer*)sender{
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-
-    CGPoint tappedLocation = [sender locationInView:editingVC.itemLayerContentView];
-    NSMutableArray *foundItemLayers = [NSMutableArray new];
-    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
-        if (CGRectContainsPoint(itemLayer.barBaseView.frame, tappedLocation)) {
-                [foundItemLayers addObject:itemLayer];
-            }
-        }
-    return [foundItemLayers firstObject];
     
 }
 
@@ -323,22 +289,6 @@
         }
     }
 }
-
-//-(void)itemLayerMagnet:(UIPanGestureRecognizer *)sender{
-//    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-//
-//    float padding = 3.0;
-//
-//    if(fabs([sender velocityInView:editingVC.itemLayerContentView].y) < 0.3){
-//        NSLog(@"속도 %f",[sender velocityInView:editingVC.itemLayerContentView].y);
-//        if( fabs(self.pressedItemLayer.barBaseView.centerY - self.pressedItemLayer.originalCenterY) <= padding ){
-//
-//            self.pressedItemLayer.barBaseView.centerY = self.pressedItemLayer.originalCenterY;
-//
-//        }
-//    }
-//
-//}
 
 -(BOOL)doesNextItemLayerEqualToLastObject:(ItemLayer *)nextItemLayer{
     

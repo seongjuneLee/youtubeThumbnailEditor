@@ -16,25 +16,41 @@
     
     self = [super init];
     if(self){
-        UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
-        self.barBaseViewHeight = window.frameWidth * 4/5 * 0.06;
+        self.barBaseViewHeight = [self settingBarBaseViewHeightAccoridingToDevice].height;
     }
     return self;
     
 }
 
--(void)makeView{ // 객체가 가진 item의 type에 따른 view 제작
+-(CGSize)settingBarBaseViewHeightAccoridingToDevice{
     
     UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
-    float barBaseViewWitdth = window.frameWidth * 4/5;
-    float barBaseViewHeight = window.frameWidth * 4/5 * 0.06;
+    UIDevice *thisDevice = [UIDevice currentDevice];
+    if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        float barBaseViewWitdth = window.frameWidth * 4/5;
+        float barBaseViewHeight = window.frameWidth * 4/5 * 0.06;
+        
+        return CGSizeMake(barBaseViewWitdth, barBaseViewHeight);
+    /* do something specifically for iPad. */
+    } else {
+        float barBaseViewWitdth = window.frameWidth * 4/5;
+        float barBaseViewHeight = window.frameWidth * 4/5 * 0.08;
+        
+        return CGSizeMake(barBaseViewWitdth, barBaseViewHeight);
+    /* do something specifically for iPhone or iPod touch. */
+    }
+}
 
-    self.barBaseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
+-(void)makeView{ // 객체가 가진 item의 type에 따른 view 제작
+    
+    CGSize BarBaseViewSize = [self settingBarBaseViewHeightAccoridingToDevice];
+
+    self.barBaseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width, BarBaseViewSize.height)];
     // 3경우 모두 공통적으로 barbaseview 생성
 
     if ([self.item isKindOfClass:PhotoFrame.class]) {
         
-        UIImageView *photoFrameView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)]; //가져온 item을 얹을 뷰
+        UIImageView *photoFrameView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width, BarBaseViewSize.height)]; //가져온 item 얹을 뷰
         photoFrameView.image = [UIImage imageWithView:self.item.baseView];
         [photoFrameView setContentMode:UIViewContentModeScaleAspectFit];
         photoFrameView.backgroundColor = UIColor.clearColor;
@@ -45,7 +61,7 @@
         self.barBaseView.layer.borderWidth = 1.0f;
         self.barBaseView.layer.cornerRadius = 10;
         
-        UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
+        UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width, BarBaseViewSize.height)];
         transparentView.backgroundColor = UIColor.redColor;
         transparentView.alpha = 0.15;
         transparentView.layer.cornerRadius = 10;
@@ -57,7 +73,7 @@
 
     } else if([self.item isKindOfClass:Text.class]){
         
-        UIImageView *textView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
+        UIImageView *textView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width, BarBaseViewSize.height)];
         textView.image = [UIImage imageWithView:self.item.baseView];
         [textView setContentMode:UIViewContentModeScaleAspectFit];
         textView.backgroundColor = UIColor.clearColor;
@@ -70,7 +86,7 @@
 
         self.backgroundImageView = textView;
         
-        UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
+        UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width, BarBaseViewSize.height)];
         transparentView.backgroundColor = UIColor.greenColor;
         transparentView.alpha = 0.15;
         transparentView.layer.cornerRadius = 10;
@@ -79,7 +95,7 @@
         
     } else if([self.item isKindOfClass:Sticker.class]){
         
-        UIImageView *stickerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
+        UIImageView *stickerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width, BarBaseViewSize.height)];
 
         stickerImageView.image = [UIImage imageWithView:self.item.baseView];
         [stickerImageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -93,7 +109,7 @@
 
         self.backgroundImageView = stickerImageView;
         
-        UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
+        UIView *transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width, BarBaseViewSize.height)];
         transparentView.backgroundColor = UIColor.blueColor;
         transparentView.alpha = 0.15;
         transparentView.layer.cornerRadius = 10;
@@ -102,7 +118,6 @@
         
     }
     
-} 
-
+}
 
 @end

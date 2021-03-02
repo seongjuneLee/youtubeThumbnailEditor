@@ -8,10 +8,10 @@
 #import <Foundation/Foundation.h>
 #import "Item.h"
 #import "ItemLayer.h"
-//#import 
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EditingLayerController : NSObject 
+@interface EditingLayerController : NSObject
 
 @property (weak, nonatomic) UIViewController *editingVC;
 
@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger nextItemOriginalCenterY;
 
 @property (nonatomic, strong) UIImpactFeedbackGenerator *impactFeedbackGenerator;
+
+@property (nonatomic) BOOL shouldAllowPan;
 
 -(void)bringCurrentItemToFront;
 -(void)recoverOriginalLayer;

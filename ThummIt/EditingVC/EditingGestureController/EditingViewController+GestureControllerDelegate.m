@@ -167,13 +167,13 @@
 -(void)readyUIForPanning{
     
     self.underAreaView.hidden = true;
-    self.itemLayerScrollView.hidden = YES;
     [UIView animateWithDuration:0.2 animations:^{
         self.undoButton.alpha = 0.0;
         self.redoButton.alpha = 0.0;
         self.buttonScrollView.alpha = 0.0;
         self.deleteButtonContainerView.alpha = 1.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
+        self.itemLayerScrollView.alpha = 0.0;
     }];
     
     if([self.currentItem isKindOfClass:Text.class]){
@@ -241,7 +241,7 @@
         self.buttonScrollView.alpha = 1.0;
         self.deleteButtonContainerView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
-        self.itemLayerScrollView.hidden = NO;
+        self.itemLayerScrollView.alpha = 1.0;
     }];
 }
 
