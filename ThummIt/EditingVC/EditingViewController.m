@@ -207,12 +207,7 @@
     //얻은 값을 사용하여 contentview의 height를 정함(itemlayers count를 사용할 수 없는 시점 이므로)
     ItemLayer *anyItemLayer = [ItemLayer new];
     self.itemLayerContentViewHeightConstraint.constant = - self.itemLayerScrollView.frameHeight + anyItemLayer.barBaseViewHeight/2 * (3*itemCountExceptFixedPhotoFrame + 1);
-    self.itemLayerScrollView.contentSize = CGSizeMake(self.itemLayerScrollView.contentSize.width, self.itemLayerContentView.frameHeight);
-//    NSLog(@"시발1 %f", self.itemLayerContentView.frameHeight);
-//    NSLog(@"시발3 %f", - self.itemLayerScrollView.frameHeight);
-//    NSLog(@"시발4 %f", anyItemLayer.barBaseViewHeight/2);
-//    NSLog(@"시발5 %f", self.itemLayerScrollView.frameHeight);
-
+    self.itemLayerScrollView.contentSize = CGSizeMake(self.itemLayerContentView.frameWidth, self.itemLayerContentView.frameHeight);
 
 
     for (Item *item in project.items) {
@@ -227,7 +222,7 @@
             [itemLayer makeView];
             //각 객체의 뷰 생성
             
-            float itemLayerX = (self.itemLayerScrollView.frameWidth)/2;
+            float itemLayerX = (self.itemLayerContentView.frameWidth)/2;
             float itemLayerY = (self.itemLayerContentView.frameHeight) - ((itemLayer.barBaseViewHeight/2) * (3 * (itemIndex + 1) - 1));
             
             NSLog(@"시발2 %f", self.itemLayerContentView.frameHeight);

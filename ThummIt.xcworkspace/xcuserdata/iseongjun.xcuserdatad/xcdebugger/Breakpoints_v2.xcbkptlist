@@ -3,4 +3,54 @@
    uuid = "FC93489E-7B3D-46F8-B5DA-1F87FE95DDCA"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13AF28F8-1042-45BE-8BB6-ACB89FDEBD47"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThummIt/EditingVC/EditingViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-loadItems"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "13AF28F8-1042-45BE-8BB6-ACB89FDEBD47 - c08a251edcc4d14c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EditingViewController loadItems]"
+                  moduleName = "ThummIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iseongjun/ThummIt/ThummIt/EditingVC/EditingViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "2872">
+               </Location>
+               <Location
+                  uuid = "13AF28F8-1042-45BE-8BB6-ACB89FDEBD47 - c08a251edcc4d14c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EditingViewController loadItems]"
+                  moduleName = "ThummIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iseongjun/ThummIt/ThummIt/EditingVC/EditingViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "2896">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

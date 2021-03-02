@@ -88,7 +88,7 @@
     dailySummer.scale = 0.31;
     dailySummer.center = CGPointMake(0.805, 0.44);
     dailySummer.isTemplateItem = true;
-    dailySummer.indexInLayer = @"3";
+    dailySummer.indexInLayer = @"4";
     dailySummer.text = @"       모델의\n여름 일상";
     dailySummer.textView.text = dailySummer.text;
     dailySummer.typo = base;
@@ -102,7 +102,7 @@
     vlogText.scale = 0.37;
     vlogText.center = CGPointMake(0.805, 0.665);
     vlogText.isTemplateItem = true;
-    vlogText.indexInLayer = @"4";
+    vlogText.indexInLayer = @"5";
     vlogText.text = @"브이로그";
     vlogText.textView.text = vlogText.text;
     

@@ -96,7 +96,7 @@
     
     HeartSticker10 *heartSticker10 = [HeartSticker10 heartSticker10];
     heartSticker10.tintColor = [UIColor  colorWithRed:255/255.0 green:112/255.0 blue:255/255.0 alpha:1.0];
-    heartSticker10.indexInLayer =@"5";
+    heartSticker10.indexInLayer =@"2";
     heartSticker10.scale = 0.18;
     heartSticker10.isTemplateItem = true;
     heartSticker10.center = CGPointMake(0.13, 0.2);
@@ -106,7 +106,7 @@
     
     HeartSticker3 *heartSticker3 = [HeartSticker3 heartSticker3];
     heartSticker3.tintColor = [UIColor colorWithRed:247/255.0 green:141/255.0 blue:131/255.0 alpha:1.0];
-    heartSticker3.indexInLayer =@"2";
+    heartSticker3.indexInLayer =@"3";
     heartSticker3.scale = 0.11;
     heartSticker3.isTemplateItem = true;
     heartSticker3.center = CGPointMake(0.76, 0.28);
@@ -117,7 +117,7 @@
     
     HeartSticker4 *heartSticker4 = [HeartSticker4 heartSticker4];
     heartSticker4.tintColor = [UIColor colorWithRed:248/255.0 green:247/255.0 blue:183/255.0 alpha:1.0];
-    heartSticker4.indexInLayer =@"3";
+    heartSticker4.indexInLayer =@"4";
     heartSticker4.scale = 0.13;
     heartSticker4.isTemplateItem = true;
     heartSticker4.center = CGPointMake(0.89, 0.51);
@@ -126,7 +126,7 @@
 //   #f8f7b7
     HeartSticker5 *heartStickerUnder = [HeartSticker5 heartSticker5];
     heartStickerUnder.tintColor = [UIColor  colorWithRed:182/255.0 green:151/255.0 blue:208/255.0 alpha:1.0];
-    heartStickerUnder.indexInLayer =@"4";
+    heartStickerUnder.indexInLayer =@"5";
     heartStickerUnder.scale = 0.13;
     heartStickerUnder.isTemplateItem = true;
     heartStickerUnder.center = CGPointMake(0.045, 0.93);

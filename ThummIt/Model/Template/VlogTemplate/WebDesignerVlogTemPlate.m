@@ -77,7 +77,7 @@
     titleVlog.scale = 0.35;
     titleVlog.center = CGPointMake(0.19, 0.47);
     titleVlog.isTemplateItem = true;
-    titleVlog.indexInLayer =@"3";
+    titleVlog.indexInLayer =@"2";
     titleVlog.text = @"웹\n디자이너";
     titleVlog.textView.text = titleVlog.text;
     titleVlog.textAlignment = NSTextAlignmentLeft;

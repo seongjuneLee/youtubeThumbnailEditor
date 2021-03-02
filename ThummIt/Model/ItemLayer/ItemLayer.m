@@ -17,7 +17,7 @@
     self = [super init];
     if(self){
         UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
-        self.barBaseViewHeight = window.frameWidth * 4/5 * 0.05;
+        self.barBaseViewHeight = window.frameWidth * 4/5 * 0.06;
     }
     return self;
     
@@ -27,7 +27,7 @@
     
     UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
     float barBaseViewWitdth = window.frameWidth * 4/5;
-    float barBaseViewHeight = window.frameWidth * 4/5 * 0.05;
+    float barBaseViewHeight = window.frameWidth * 4/5 * 0.06;
 
     self.barBaseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewWitdth, barBaseViewHeight)];
     //3경우 모두 공통적으로 barbaseview 생성
