@@ -168,7 +168,6 @@
         self.originalPoint = [sender locationInView:editingVC.gestureView];
         
         editingVC.currentItem.relativeCenter = CGPointMake( editingVC.currentItem.baseView.centerX/editingVC.bgView.frameWidth, (editingVC.currentItem.baseView.centerY - editingVC.bgView.frameY)/(editingVC.bgView.frameHeight));
-        NSLog(@"editingVC.currentItem.relativeCenter %@",NSStringFromCGPoint(editingVC.currentItem.relativeCenter));
         [self guideWithDeltaPoint:deltaPoint];
         [self showGuideLineForSituation];
 

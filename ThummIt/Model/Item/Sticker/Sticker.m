@@ -99,6 +99,7 @@
     } else {
         self.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         self.backgroundImageView.tintColor = self.tintColor;
+        NSLog(@"self. tintitnitn i %@",self.tintColor);
     }
     
     [self.baseView addSubview:self.backgroundImageView];

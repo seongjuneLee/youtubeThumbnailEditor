@@ -86,6 +86,7 @@
         Sticker *currentSticker = (Sticker *)editingVC.currentSticker;
         currentSticker.cannotChangeColor = sticker.cannotChangeColor;
         currentSticker.backgroundImageName = sticker.backgroundImageName;
+        currentSticker.tintColor = sticker.tintColor;
         if (!currentSticker.cannotChangeColor) {
             currentSticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [currentSticker.backgroundImageView setTintColor:sticker.tintColor];
