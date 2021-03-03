@@ -91,8 +91,13 @@
         } else {
             [self doneEditingMainFrame];
         }
-        
+        for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
+            NSLog(@"의의 %d", itemlayer.item.indexInLayer.integerValue);
+        }
         [self doneEditingItemLayer];
+        for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
+            NSLog(@"의의2 %d", itemlayer.item.indexInLayer.integerValue);
+        }
     }
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
@@ -103,7 +108,7 @@
     editingVC.currentText = nil;
     editingVC.currentPhotoFrame = nil;
     editingVC.layerController.currentItemLayer = nil;
-
+    
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
     }];
@@ -179,12 +184,11 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
     [editingVC.currentPhotoFrame.baseView removeFromSuperview];
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
 
 }
@@ -195,12 +199,10 @@
     
     [editingVC.currentPhotoFrame.baseView removeFromSuperview];
     editingVC.originalPhotoFrame.baseView.hidden = false;
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
-    [editingVC.layerController recoverOriginalLayer];//
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
 
 }
@@ -209,14 +211,13 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentText.baseView removeFromSuperview];
     [editingVC.currentText.textView resignFirstResponder];
     self.checkButton.enabled = true;
     self.checkButton.alpha = 1.0;
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
 
 }
@@ -234,7 +235,7 @@
     
     [text applyTypo:editingVC.originalTypo];
     
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentText.textView resignFirstResponder];
@@ -243,7 +244,6 @@
     self.checkButton.enabled = true;
     self.checkButton.alpha = 1.0;
     }
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
     [editingVC.layerController recoverOriginalLayer];//
     
@@ -253,11 +253,10 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.currentSticker.baseView removeFromSuperview];
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
 
 }
@@ -276,11 +275,10 @@
     } else {
         sticker.backgroundImageView.image = [UIImage imageNamed:editingVC.originalStickerBGImageName];
     }
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
     [editingVC.layerController recoverOriginalLayer];//
     [editingVC.itemCollectionVC dismissSelf];
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
 
 }
@@ -291,7 +289,6 @@
     
     editingVC.mainFrameImageView.image = [UIImage imageNamed:editingVC.originalMainFrameImageName];
     [editingVC.itemCollectionVC dismissSelf];
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
     
 }
@@ -304,7 +301,7 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
@@ -314,7 +311,6 @@
     }
     editingVC.currentPhotoFrame.plusPhotoImageView.hidden = true;
     [SaveManager.sharedInstance saveAndAddToStack];
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
     
 }
@@ -328,10 +324,11 @@
     [SaveManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
     [editingVC.originalPhotoFrame.baseView removeFromSuperview];
     [SaveManager.sharedInstance addItem:photoFrame];
-    
+
 //    // 레이어 되돌려 놓기
-//    [editingVC.layerController recoverOriginalLayer];
-//    [editingVC showItemsForNormalMode];원래있었음
+    editingVC.layerController.originalIndex = editingVC.originalIndexInLayer;
+    [editingVC.layerController recoverOriginalLayer];
+     // 원래있었음
     if (photoFrame.isFixedPhotoFrame) {
         [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.mainFrameImageView];
     } else {
@@ -343,10 +340,8 @@
     [editingVC.itemCollectionVC dismissSelf];
     [editingVC.albumVC dismissSelf];
     [SaveManager.sharedInstance saveAndAddToStack];
-    editingVC.buttonScrollView.hidden = false;
 
     editingVC.modeController.editingMode = NormalMode;
-    [editingVC.layerController recoverOriginalLayer];//
 
 }
 
@@ -354,7 +349,7 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     
@@ -368,7 +363,6 @@
 
         [editingVC.currentText.textView resignFirstResponder];
     }
-    editingVC.buttonScrollView.hidden = false;
     
     editingVC.modeController.editingMode = NormalMode;
 }
@@ -376,7 +370,7 @@
 -(void)doneEditingText{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
     [editingVC.layerController recoverOriginalLayer];//
     [editingVC.itemCollectionVC dismissSelf];
@@ -390,14 +384,13 @@
     [editingVC.currentText.textView resignFirstResponder];
     [SaveManager.sharedInstance saveAndAddToStack];
 
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
 }
 
 -(void)doneAddingSticker{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
     [SaveManager.sharedInstance addItem:editingVC.currentSticker];
@@ -405,7 +398,6 @@
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
     [SaveManager.sharedInstance saveAndAddToStack];
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
    
 }
@@ -413,24 +405,20 @@
 -(void)doneEditingSticker{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showItemsForNormalMode];
     [editingVC.layerController hideTransparentView];
     [editingVC.itemCollectionVC dismissSelf];
-    [SaveManager.sharedInstance saveAndAddToStack];
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
     [editingVC.layerController recoverOriginalLayer];//
-
+    [SaveManager.sharedInstance saveAndAddToStack];
 }
 
 -(void)doneEditingMainFrame{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
-    [editingVC showItemsForNormalMode];
+    
     [editingVC.itemCollectionVC dismissSelf];
 
     [SaveManager.sharedInstance saveAndAddToStack];
-    editingVC.buttonScrollView.hidden = false;
     editingVC.modeController.editingMode = NormalMode;
     
 }
@@ -490,10 +478,9 @@
     } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
         editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentSticker.baseView];
     }
-    
+
     editingVC.layerController.currentItemLayer.item = editingVC.currentItem;
-    
- 
+
 }
 
 @end

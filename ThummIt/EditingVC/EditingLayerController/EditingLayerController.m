@@ -50,9 +50,7 @@
     [self.transparentView removeFromSuperview];
     self.transparentView = nil;
     
-  
     [editingVC.view insertSubview:editingVC.currentItem.baseView atIndex:self.originalIndex];
-    
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }
@@ -69,7 +67,10 @@
 
     CGPoint tappedLocation = [sender locationInView:editingVC.itemLayerContentView];
     NSMutableArray *foundItemLayers = [NSMutableArray new];
+    NSLog(@"SaveManager.sharedInstance.currentProject.itemLayers %@",SaveManager.sharedInstance.currentProject.itemLayers);
     for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        NSLog(@"itemLayer.barBaseView.frame %@",NSStringFromCGRect(itemLayer.barBaseView.frame));
+        NSLog(@"tappedLocationtappedLocation %@",NSStringFromCGPoint(tappedLocation));
         if (CGRectContainsPoint(itemLayer.barBaseView.frame, tappedLocation)) {
                 [foundItemLayers addObject:itemLayer];
             }
@@ -90,7 +91,7 @@
 }
 
 -(void)itemLayerTapped:(UITapGestureRecognizer *)sender{
-//longtap일땐 여기로 안들어옴
+    
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     ItemLayer *tappedItemLayer = [self getCurrentItemLayer:sender];
@@ -119,11 +120,15 @@
         } else if(sender.state == UIGestureRecognizerStateChanged){
             
             deltaPoint = CGPointMake(editingVC.itemLayerContentView.frameWidth/2 ,currentPoint.y - self.previousPoint.y);
-
+            
             self.pressedItemLayer.barBaseView.centerY += deltaPoint.y;
             self.previousPoint = [sender locationInView:editingVC.itemLayerContentView];
             
-            [self itemLayerArrange:deltaPoint:sender];
+            [self itemLayerArrange:deltaPoint withSender:sender];
+            
+            NSLog(@"%@",self.pressedItemLayer);
+            NSLog(@"%@",self.nextItemLayer);
+
             
         } else if(sender.state == UIGestureRecognizerStateEnded){
             
@@ -135,7 +140,7 @@
     
 }
 
--(void)itemLayerArrange:(CGPoint)deltaPoint :(UIGestureRecognizer *)sender{
+-(void)itemLayerArrange:(CGPoint)deltaPoint withSender:(UIGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     NSInteger mainFrameImageViewIndex = [editingVC.view.subviews indexOfObject:editingVC.mainFrameImageView];
@@ -337,8 +342,6 @@
            
         }
     }
-
-    [SaveManager.sharedInstance saveAndAddToStack];//여기
 }
 
 @end

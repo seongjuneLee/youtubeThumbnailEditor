@@ -28,7 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger nextItemOriginalCenterY;
 
 @property (nonatomic, strong) UIImpactFeedbackGenerator *impactFeedbackGenerator;
-
 @property (nonatomic) BOOL directionShouldChange;
 
 -(void)bringCurrentItemToFront;

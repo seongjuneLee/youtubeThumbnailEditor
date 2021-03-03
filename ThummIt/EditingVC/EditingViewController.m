@@ -45,6 +45,8 @@
     
     self.layerController.impactFeedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy];
     [self.layerController.impactFeedbackGenerator prepare];
+    
+    self.isFirstLoadVIew = YES;
 }
 
 -(void)setUpPhotoAlbums{
@@ -165,6 +167,7 @@
     
     self.itemLoaded = true;
     Project *project = SaveManager.sharedInstance.currentProject;
+    project.itemLayers = [NSMutableArray new];
     self.bgView.backgroundColor = project.backgroundColor;
     self.mainFrameImageView.image = [UIImage imageNamed:project.mainFrameImageName];
     for (Item *item in project.items) {
@@ -210,13 +213,20 @@
     ItemLayer *anyItemLayer = [ItemLayer new];
     self.itemLayerContentViewHeightConstraint.constant = - self.itemLayerScrollView.frameHeight + anyItemLayer.barBaseViewHeight/2 * (3*itemCountExceptFixedPhotoFrame + 1);
     self.itemLayerScrollView.contentSize = CGSizeMake(self.itemLayerContentView.frameWidth, self.itemLayerContentView.frameHeight);
+    self.itemLayerContentView.backgroundColor = UIColor.systemBlueColor;
 
-
+    NSUInteger mainFrameImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
+    
     for (Item *item in project.items) {
-        NSInteger itemIndex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
+        NSInteger itemIndex;
+        
+        if(self.isFirstLoadVIew){
+            itemIndex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
+        } else{
+            itemIndex = item.indexInLayer.integerValue - mainFrameImageViewIndex -1;
+        }
         
         if(!item.isFixedPhotoFrame){
-            
             // 만들기
             ItemLayer *itemLayer = [[ItemLayer alloc] init];
             itemLayer.item = item;
@@ -227,26 +237,36 @@
             float itemLayerX = (self.itemLayerContentView.frameWidth)/2;
             float itemLayerY = (self.itemLayerContentView.frameHeight) - ((itemLayer.barBaseViewHeight/2) * (3 * (itemIndex + 1) - 1));
             
-            NSLog(@"시발2 %f", self.itemLayerContentView.frameHeight);
             itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
             itemLayer.originalCenterY = itemLayerY;
+            
             //arrange에 쓰이는 original값에 정해진 y값 넣어줌
             
             [self.itemLayerContentView addSubview:itemLayer.barBaseView];
             [self.layerController addItemLayerGestureRecognizers:itemLayer];
-            
             [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
             itemLayer.itemLayerIndex = [SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
-   
         }
+    }
+    
+    if(!self.isFirstLoadVIew){
+        NSMutableArray *itemLayersCopy = [NSMutableArray new];
+        NSInteger i = 0;
 
+        for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+            itemLayer.itemLayerIndex = itemLayer.item.indexInLayer.integerValue - mainFrameImageViewIndex - 1;
+            [itemLayersCopy addObject:itemLayer];
+        }
+        for(i = 0; i < itemLayersCopy.count; i++){
+             ItemLayer *itemLayer = [itemLayersCopy objectAtIndex:i];
+            [SaveManager.sharedInstance.currentProject.itemLayers replaceObjectAtIndex:itemLayer.itemLayerIndex withObject:itemLayer];
+        }
     }
 
     // 인덱스 맞춰주기
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {
             if (item.isTemplateItem) {
-                NSUInteger mainFrameImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
                 item.indexInLayer = [NSString stringWithFormat:@"%ld",mainFrameImageViewIndex + [item.indexInLayer integerValue] + 1];
                 [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
             } else {
@@ -258,6 +278,8 @@
     }
     
     [SaveManager.sharedInstance save];
+    
+    self.isFirstLoadVIew = NO;
 }
 
 -(void)respondToUndoRedo{
@@ -275,6 +297,7 @@
         self.leftItem.alpha =
         self.rightItem.alpha =
         self.itemLayerScrollView.alpha = 1.0;
+        self.buttonScrollView.alpha = 1.0;
     }];
 
 }
@@ -285,7 +308,8 @@
         self.redoButton.alpha =
         self.leftItem.alpha =
         self.rightItem.alpha =
-        self.itemLayerScrollView.alpha = 0;
+        self.itemLayerScrollView.alpha = 
+        self.buttonScrollView.alpha = 0;
     }];
 
 }
