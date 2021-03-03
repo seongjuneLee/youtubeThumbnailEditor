@@ -127,8 +127,9 @@
             
         } else if(sender.state == UIGestureRecognizerStateEnded){
             
+            [UIView animateWithDuration:0.2 animations:^{
             self.pressedItemLayer.barBaseView.centerY = self.pressedItemLayer.originalCenterY;
-            
+            }];
             [SaveManager.sharedInstance saveAndAddToStack];//여기
         }
     
