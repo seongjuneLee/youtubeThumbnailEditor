@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>341329154400-fobhjj6a2mdfr87l6defo62o5brefpo2.apps.googleusercontent.com</string>
+	<string>156656321027-2s3v44p9gl6b8do6hokpaudco74sjoi5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.341329154400-fobhjj6a2mdfr87l6defo62o5brefpo2</string>
+	<string>com.googleusercontent.apps.156656321027-2s3v44p9gl6b8do6hokpaudco74sjoi5</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCkjg6EOriBbPK-czHoW5XAGeMOnQP9LF4</string>
+	<string>AIzaSyAfn6TSjlE4lfK-78YAWOlt6qQyiT8au8s</string>
 	<key>GCM_SENDER_ID</key>
-	<string>341329154400</string>
+	<string>156656321027</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.thummit.ThummIt</string>
 	<key>PROJECT_ID</key>
-	<string>thummit-d2545</string>
+	<string>thummit-real</string>
 	<key>STORAGE_BUCKET</key>
-	<string>thummit-453ea.appspot.com</string>
+	<string>thummit-real.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:788210953224:ios:3424df5644b42999a6b5bd</string>
+	<string>1:156656321027:ios:fd6b232e67db26df46c436</string>
 </dict>
 </plist>

@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIImageView *backgroundImageView;
 
 @property (nonatomic) CGPoint center;
+@property (nonatomic) CGPoint relativeCenter;
 @property (nonatomic) float rotationDegree;
 @property (nonatomic) CGFloat scale;
 @property (nonatomic) BOOL isFixedPhotoFrame;

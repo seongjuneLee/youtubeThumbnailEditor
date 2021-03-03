@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Project.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ExportManager : NSObject
@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)createThummItAlbum:(void(^) (PHAssetCollection *album))block;
 -(void)setResolutionToExportingImage:(UIImage *)image withResolution:(CGSize)resolution;
 -(void)exportImageWithBlock:(void(^) (BOOL success))block;
+-(void)savePreviewImageWithResolution:(CGSize)resolution withProject:(Project *)project;
 
 @end
 

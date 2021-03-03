@@ -92,4 +92,22 @@
     return albums;
 }
 
+-(void)requstGoingToSettingWithVC:(UIViewController*)viewController{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *settingAlertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Go to setting", @"#-세팅으로 가기 - #") message:NSLocalizedString(@"You should agree photo access request for this function.", nil) preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        UIAlertAction *goToSetting = [UIAlertAction actionWithTitle:NSLocalizedString(@"Setting", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+        }];
+        
+        [settingAlertController addAction:cancel];
+        [settingAlertController addAction:goToSetting];
+        [viewController presentViewController:settingAlertController animated:true completion:nil];
+    });
+    
+}
+
+
 @end

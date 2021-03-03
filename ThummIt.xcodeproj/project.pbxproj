@@ -88,7 +88,6 @@
 		6E4A1898258A138F008578BA /* HomeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A1897258A138F008578BA /* HomeTableController.m */; };
 		6E698BB825B89DBC00CE86FB /* GuideLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BB725B89DBC00CE86FB /* GuideLineView.m */; };
 		6E698BBE25B8A21300CE86FB /* DashedGuideLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BBD25B8A21300CE86FB /* DashedGuideLineView.m */; };
-		6E698BC625B8D21000CE86FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */; };
 		6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */; };
 		6E6E5BFC25AA23F3009821CF /* ItemCollectionViewController+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BFB25AA23F3009821CF /* ItemCollectionViewController+Button.m */; };
 		6E7BC04B25CAB70E006C9F83 /* Editing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7BC04D25CAB70E006C9F83 /* Editing.storyboard */; };
@@ -384,6 +383,7 @@
 		6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */; };
 		6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95925CD513000BE7573 /* DinggoMurder.m */; };
 		6EF0C95F25CD528C00BE7573 /* DigitalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */; };
+		6EF1C7D925EF4C41002B8820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EF1C7D825EF4C41002B8820 /* GoogleService-Info.plist */; };
 		6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */; };
 		6EF37B7725E4DE8400A43595 /* MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B7625E4DE8400A43595 /* MainFrame.m */; };
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
@@ -654,7 +654,6 @@
 		6E698BB725B89DBC00CE86FB /* GuideLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideLineView.m; sourceTree = "<group>"; };
 		6E698BBC25B8A21300CE86FB /* DashedGuideLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashedGuideLineView.h; sourceTree = "<group>"; };
 		6E698BBD25B8A21300CE86FB /* DashedGuideLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashedGuideLineView.m; sourceTree = "<group>"; };
-		6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditingViewController+Text.h"; sourceTree = "<group>"; };
 		6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EditingViewController+Text.m"; sourceTree = "<group>"; };
 		6E6E5BFA25AA23F3009821CF /* ItemCollectionViewController+Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItemCollectionViewController+Button.h"; sourceTree = "<group>"; };
@@ -1192,6 +1191,7 @@
 		6EF0C95925CD513000BE7573 /* DinggoMurder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoMurder.m; sourceTree = "<group>"; };
 		6EF0C95D25CD528C00BE7573 /* DigitalTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalTypo.h; sourceTree = "<group>"; };
 		6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalTypo.m; sourceTree = "<group>"; };
+		6EF1C7D825EF4C41002B8820 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EF37B5125E399F000A43595 /* ThummIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThummIt.entitlements; sourceTree = "<group>"; };
 		6EF37B6625E4DC6400A43595 /* MainFrameCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrameCollectionController.h; sourceTree = "<group>"; };
 		6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainFrameCollectionController.m; sourceTree = "<group>"; };
@@ -1403,6 +1403,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF37B5125E399F000A43595 /* ThummIt.entitlements */,
+				6EF1C7D825EF4C41002B8820 /* GoogleService-Info.plist */,
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
 				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E4A18AC258A15F6008578BA /* Storyboard */,
@@ -1664,7 +1665,6 @@
 		6E4A18AD258A1607008578BA /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				6E698BC525B8D21000CE86FB /* GoogleService-Info.plist */,
 				6ED138F925B8507A00012144 /* AppDelegate.swift */,
 				6ED1398B25B872F600012144 /* SceneDelegate.swift */,
 			);
@@ -3414,9 +3414,9 @@
 				B1F2B7B625C2FFD30064A044 /* RecipekoreaFONT.otf in Resources */,
 				6E1190F12584B164000DD9C0 /* Assets.xcassets in Resources */,
 				B1F2B73425C1C3C50064A044 /* NanumGothicExtraBold.otf in Resources */,
-				6E698BC625B8D21000CE86FB /* GoogleService-Info.plist in Resources */,
 				B1F2B71225C1AF780064A044 /* yangpyeong_B.otf in Resources */,
 				6E8E7A9C259CBB470008C5FF /* PhotoFrameCollectionReusableView.xib in Resources */,
+				6EF1C7D925EF4C41002B8820 /* GoogleService-Info.plist in Resources */,
 				6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */,
 				6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */,
 				6E1190EF2584B163000DD9C0 /* Main.storyboard in Resources */,
@@ -4176,8 +4176,8 @@
 				CODE_SIGN_ENTITLEMENTS = ThummIt/ThummIt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CURRENT_PROJECT_VERSION = 0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KD6B7H34C6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4193,7 +4193,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.11;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",
@@ -4265,7 +4265,7 @@
 				CODE_SIGN_ENTITLEMENTS = ThummIt/ThummIt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KD6B7H34C6;
@@ -4282,7 +4282,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.11;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",

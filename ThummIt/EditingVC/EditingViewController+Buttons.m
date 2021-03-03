@@ -23,37 +23,43 @@
 }
 
 -(void)exportThumbnail{
-    
-    [self setResolution:CGSizeMake(1920, 1080)];
-    
-    [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
+    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (success) {
-                if (PFUser.currentUser) {
-                    NSMutableArray *exportedImages = [NSMutableArray array];
-                    [exportedImages addObjectsFromArray:PFUser.currentUser[@"exportedThumbnails"]];
-                    NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
-                    PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithData:thumbnailBigData];
-                    [exportedImages addObject:thumbnailBigFile];
-                    [PFUser.currentUser setObject:exportedImages forKey:@"exportedThumbnails"];
+            
+            [ExportManager.sharedInstance savePreviewImageWithResolution:CGSizeMake(2048.f, 1152.f) withProject:SaveManager.sharedInstance.currentProject];
+            
+            [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (success) {
+                        if (PFUser.currentUser) {
+                            NSMutableArray *exportedImages = [NSMutableArray array];
+                            [exportedImages addObjectsFromArray:PFUser.currentUser[@"exportedThumbnails"]];
+                            NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
+                            PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithData:thumbnailBigData];
+                            [exportedImages addObject:thumbnailBigFile];
+                            [PFUser.currentUser setObject:exportedImages forKey:@"exportedThumbnails"];
 
-                    [PFUser.currentUser saveInBackground];
-                }
+                            [PFUser.currentUser saveInBackground];
+                        }
+                        
+                        [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
+                    } else {
+                        [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+                    }
+                });
+            }];
 
-                [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-            } else {
-                [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
-            }
         });
-    }];
+    } else {
+        [PhotoManager.sharedInstance requstGoingToSettingWithVC:self];
+    }
 
 }
--(void)setResolution:(CGSize)resolution{
+-(void)setThumbnailAndResolution:(CGSize)resolution{
     UIImage *viewImage = [self.view toImage];
     UIImage *croppedImage = [viewImage crop:self.bgView.frame];
     [ExportManager.sharedInstance setResolutionToExportingImage:croppedImage withResolution:resolution];
 }
-
 
 
 - (IBAction)leftItemTapped:(id)sender {
@@ -83,7 +89,7 @@
             self.modeController.editingMode = AddingItemMode;
         });
     } else {
-        [self taskWhenDenied];
+        [PhotoManager.sharedInstance requstGoingToSettingWithVC:self];
     }
     
 }
@@ -110,23 +116,6 @@
         self.recentPHAsset = PhotoManager.sharedInstance.phassets[0];
     }
     [self didSelectPhotoWithPHAsset:self.recentPHAsset];
-    
-}
-
--(void)taskWhenDenied{
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UIAlertController *settingAlertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Go to setting", @"#-세팅으로 가기 - #") message:NSLocalizedString(@"You should agree photo access request for this function.", nil) preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        }];
-        UIAlertAction *goToSetting = [UIAlertAction actionWithTitle:NSLocalizedString(@"Setting", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
-        }];
-        
-        [settingAlertController addAction:cancel];
-        [settingAlertController addAction:goToSetting];
-        [self presentViewController:settingAlertController animated:true completion:nil];
-    });
     
 }
 

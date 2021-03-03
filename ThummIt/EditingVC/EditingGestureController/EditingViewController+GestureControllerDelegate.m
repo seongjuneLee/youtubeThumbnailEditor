@@ -26,7 +26,7 @@
             }
             [self photoFrameTappedTaskWhenAuthorizedWithItem:item];
         } else {
-            [self taskWhenDenied];
+            [PhotoManager.sharedInstance requstGoingToSettingWithVC:self];
         }
         
     } else if([item isKindOfClass:Text.class]){

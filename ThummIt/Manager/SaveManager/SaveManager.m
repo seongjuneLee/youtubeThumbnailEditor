@@ -119,7 +119,6 @@
     
     // to image and save
     UIImage *viewImage = [view toImage];
-     
     self.currentProject.previewImage = [viewImage crop:self.bgViewRect];
 }
 

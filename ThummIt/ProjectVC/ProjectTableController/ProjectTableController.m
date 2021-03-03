@@ -124,17 +124,7 @@
     [actionSheet addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Download", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         Project *project = self.projects[index];
         
-        // OK button tapped.
-        [ExportManager.sharedInstance setResolutionToExportingImage:project.previewImage withResolution:CGSizeMake(1920, 1080)];
-        [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (success) {
-                    [self.projectVC.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-                } else {
-                    [self.projectVC.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
-                }
-            });
-        }];
+        [self downloadButtonTappedWithProject:project];
 
         [actionSheet dismissViewControllerAnimated:true completion:nil];
     }]];
@@ -163,9 +153,38 @@
     
 }
 
--(void)downloadButtonTapped{
+-(void)downloadButtonTappedWithProject:(Project *)project{
     
-    
+    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [ExportManager.sharedInstance savePreviewImageWithResolution:CGSizeMake(2048.f, 1152.f) withProject:project];
+            
+            [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (success) {
+                        if (PFUser.currentUser) {
+                            NSMutableArray *exportedImages = [NSMutableArray array];
+                            [exportedImages addObjectsFromArray:PFUser.currentUser[@"exportedThumbnails"]];
+                            NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
+                            PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithData:thumbnailBigData];
+                            [exportedImages addObject:thumbnailBigFile];
+                            [PFUser.currentUser setObject:exportedImages forKey:@"exportedThumbnails"];
+
+                            [PFUser.currentUser saveInBackground];
+                        }
+                        
+                        [self.projectVC.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
+                    } else {
+                        [self.projectVC.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+                    }
+                });
+            }];
+
+        });
+    } else {
+        [PhotoManager.sharedInstance requstGoingToSettingWithVC:self.projectVC];
+    }
     
 }
 

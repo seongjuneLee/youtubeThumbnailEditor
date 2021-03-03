@@ -7,6 +7,7 @@
 
 #import "Item.h"
 #import "PhotoManager.h"
+#import "SaveManager.h"
 #import "UIImage+Additions.h"
 @implementation Item
 
@@ -28,7 +29,14 @@
     copied.scale = self.scale;
     copied.indexInLayer = self.indexInLayer;
     copied.center = self.baseView.center;
-    
+    if (CGRectEqualToRect(SaveManager.sharedInstance.bgViewRect, CGRectMake(0, 0, 0, 0))) {
+        copied.relativeCenter = self.relativeCenter;
+    } else {
+        CGPoint relativeCenter = CGPointMake(self.baseView.centerX / SaveManager.sharedInstance.bgViewRect.size.width, (self.baseView.centerY - SaveManager.sharedInstance.bgViewRect.origin.y)/SaveManager.sharedInstance.bgViewRect.size.height);
+
+        copied.relativeCenter = relativeCenter;
+    }
+
     return copied;
 }
 -(void)setItemCenterAndScale{
@@ -54,7 +62,7 @@
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.rotationDegree = [[decoder decodeObjectForKey:@"rotationDegree"] floatValue];
         self.cannotChangeColor = [[decoder decodeObjectForKey:@"cannotChangeColor"] boolValue];
-        self.isTemplateItem = self.isTemplateItem;
+        self.relativeCenter = [[decoder decodeObjectForKey:@"relativeCenter"] CGPointValue];
     }
     return self;
 }
@@ -69,7 +77,9 @@
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotationDegree"];
     [encoder encodeObject:[NSNumber numberWithBool:self.cannotChangeColor] forKey:@"cannotChangeColor"];
-
+    
+    CGPoint relativeCenter = CGPointMake(self.baseView.centerX / SaveManager.sharedInstance.bgViewRect.size.width, (self.baseView.centerY - SaveManager.sharedInstance.bgViewRect.origin.y)/SaveManager.sharedInstance.bgViewRect.size.height);
+    [encoder encodeObject:[NSValue valueWithCGPoint:relativeCenter] forKey:@"relativeCenter"];
 
 }
 

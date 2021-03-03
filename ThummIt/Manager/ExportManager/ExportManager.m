@@ -6,6 +6,7 @@
 //
 
 #import "ExportManager.h"
+#import "SaveManager.h"
 @import Parse;
 @implementation ExportManager
 
@@ -134,6 +135,44 @@
         
     }];
 
+}
+
+-(void)savePreviewImageWithResolution:(CGSize)resolution withProject:(Project *)project{
+    
+    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+    float scale = resolution.width/window.bounds.size.width;
+    
+    // view
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, resolution.width, resolution.height)];
+    view.backgroundColor = project.backgroundColor;
+    
+    // frameImageView
+    UIImageView *mainFrameImageView = [[UIImageView alloc] initWithFrame:view.frame];
+    mainFrameImageView.contentMode = UIViewContentModeScaleAspectFit;
+    if (project.mainFrameImageName) {
+        mainFrameImageView.image = [UIImage imageNamed:project.mainFrameImageName];
+        [view addSubview:mainFrameImageView];
+    }
+    
+    // add Items
+    for (Item *item in project.items) {
+        Item *copied = [item copy];
+        
+        copied.baseView.transform = CGAffineTransformConcat(copied.baseView.transform, CGAffineTransformMakeScale(scale, scale));
+        copied.baseView.center = CGPointMake(copied.relativeCenter.x * view.frameWidth, copied.relativeCenter.y * view.frameHeight);
+
+        if (copied.isFixedPhotoFrame) {
+            copied.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
+            [view insertSubview:copied.baseView belowSubview:mainFrameImageView];
+        } else {
+            [view insertSubview:copied.baseView atIndex:copied.indexInLayer.integerValue];
+        }
+    }
+    
+    // to image and save
+    UIImage *viewImage = [view toImage];
+    self.exportingImage = viewImage;
+    [ExportManager.sharedInstance setResolutionToExportingImage:viewImage withResolution:resolution];
 }
 
 

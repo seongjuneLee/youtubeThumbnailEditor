@@ -78,8 +78,6 @@
     NSData* typoData = [NSKeyedArchiver archivedDataWithRootObject:self.typo];
     [encoder encodeObject:typoData forKey:@"typo"];
     [encoder encodeObject:[NSNumber numberWithInteger:self.textAlignment] forKey:@"textAlignment"];
-    [encoder encodeObject:[NSValue valueWithCGPoint:self.baseView.center] forKey:@"center"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotation"];
     [encoder encodeObject:[NSNumber numberWithBool:self.isTypedByUser] forKey:@"isTypedByUser"];
 
@@ -99,10 +97,8 @@
         }
         
         // 위치, 크기, 각도
-        self.center = [[decoder decodeObjectForKey:@"center"] CGPointValue];
         self.textAlignment = [[decoder decodeObjectForKey:@"textAlignment"] integerValue];
         self.rotationDegree = [[decoder decodeObjectForKey:@"rotation"] floatValue];
-        self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.isTypedByUser = [[decoder decodeObjectForKey:@"isTypedByUser"] boolValue];
 
     }

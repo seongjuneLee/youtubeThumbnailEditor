@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(NSMutableArray *)fetchPhassets;
 -(NSArray *)categoryFetchResults;
+-(void)requstGoingToSettingWithVC:(UIViewController*)viewController;
 
 @end
 
