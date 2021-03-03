@@ -43,21 +43,21 @@
     smallPhotoFrame1.isTemplateItem = true;
     smallPhotoFrame1.isFixedPhotoFrame = true;
     smallPhotoFrame1.indexInLayer = @"0";
-    smallPhotoFrame1.center = CGPointMake(0.75, 0.25);
+    smallPhotoFrame1.relativeCenter = CGPointMake(0.75, 0.25);
     [self.photoFrames addObject:smallPhotoFrame1];
     
     PhotoFrame *smallPhotoFrame2 = [KidsTrapezoid2 kidsTrapezoid2];
     smallPhotoFrame2.isTemplateItem = true;
     smallPhotoFrame2.isFixedPhotoFrame = true;
     smallPhotoFrame2.indexInLayer = @"1";
-    smallPhotoFrame2.center = CGPointMake(0.8, 0.75);
+    smallPhotoFrame2.relativeCenter = CGPointMake(0.8, 0.75);
     [self.photoFrames addObject:smallPhotoFrame2];
     
     PhotoFrame *bigPhotoFrame = [KidsTrapezoid3 kidsTrapezoid3];
     bigPhotoFrame.isTemplateItem = true;
     bigPhotoFrame.isFixedPhotoFrame = true;
     bigPhotoFrame.indexInLayer = @"2";
-    bigPhotoFrame.center = CGPointMake(0.35, 0.5);
+    bigPhotoFrame.relativeCenter = CGPointMake(0.35, 0.5);
     [self.photoFrames addObject:bigPhotoFrame];
     
 }
@@ -68,7 +68,7 @@
     Text *momVlogText = [[Text alloc] init];
     VlogMomTypo *mom = [VlogMomTypo vlogMomTypo];
     momVlogText.scale = 0.222;
-    momVlogText.center = CGPointMake(0.115, 0.74);
+    momVlogText.relativeCenter = CGPointMake(0.115, 0.74);
     momVlogText.isTemplateItem = true;
     momVlogText.indexInLayer = @"3";
     momVlogText.text = @"맘 Vlog";
@@ -81,7 +81,7 @@
     VlogMomTypo *daily = [VlogMomTypo vlogMomTypo];
     daily.textColor = UIColor.whiteColor;
     dailyText.scale = 0.612;
-    dailyText.center = CGPointMake(0.275, 0.88);
+    dailyText.relativeCenter = CGPointMake(0.275, 0.88);
     dailyText.isTemplateItem = true;
     dailyText.indexInLayer = @"4";
     dailyText.text = @"육아 일상 브이로그";

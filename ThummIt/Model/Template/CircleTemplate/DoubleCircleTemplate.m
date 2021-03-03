@@ -39,12 +39,12 @@
     
     PhotoFrame *firstPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
     PhotoFrame *secondPhotoFrame = [BasicCirclePhotoFrame basicCirclePhotoFrame];
-    firstPhotoFrame.center = CGPointMake(0.31, 0.5);
+    firstPhotoFrame.relativeCenter = CGPointMake(0.31, 0.5);
     firstPhotoFrame.scale = 0.5;
     firstPhotoFrame.isTemplateItem = true;
     firstPhotoFrame.indexInLayer = @"0";
 
-    secondPhotoFrame.center = CGPointMake(0.75, 0.5);
+    secondPhotoFrame.relativeCenter = CGPointMake(0.75, 0.5);
     secondPhotoFrame.scale = 0.4;
     secondPhotoFrame.isTemplateItem = true;
     secondPhotoFrame.indexInLayer = @"1";
@@ -60,7 +60,7 @@
     rectangleSticker.isTemplateItem = true;
     rectangleSticker.indexInLayer = @"4";
     rectangleSticker.scale = 0.47;
-    rectangleSticker.center = CGPointMake(0.5, 0.78);
+    rectangleSticker.relativeCenter = CGPointMake(0.5, 0.78);
     rectangleSticker.tintColor = [UIColor colorWithRed:80/255.0 green:10/255.0 blue:205/255.0 alpha:1.0];
     [self.stickers addObject:rectangleSticker];
 
@@ -68,7 +68,7 @@
     rectangleSticker2.isTemplateItem = true;
     rectangleSticker2.indexInLayer = @"5";
     rectangleSticker2.scale = 0.7;
-    rectangleSticker2.center = CGPointMake(0.5, 0.9);
+    rectangleSticker2.relativeCenter = CGPointMake(0.5, 0.9);
     rectangleSticker2.tintColor = [UIColor colorWithRed:80/255.0 green:10/255.0 blue:205/255.0 alpha:1.0];
     [self.stickers addObject:rectangleSticker2];
 
@@ -79,7 +79,7 @@
     Text *starWarsTypo = [[Text alloc] init];
     DinggoStarWarsTypo *starsWas = [DinggoStarWarsTypo dinggoStarWarsTypo];
     starWarsTypo.scale = 0.185;
-    starWarsTypo.center = CGPointMake(0.11, 0.08);
+    starWarsTypo.relativeCenter = CGPointMake(0.11, 0.08);
     starWarsTypo.isTemplateItem = true;
     starWarsTypo.indexInLayer = @"2";
     starWarsTypo.text = @"스타월드";
@@ -90,7 +90,7 @@
     Text *behindTypo = [[Text alloc] init];
     DinggoBehindTypo *behind = [DinggoBehindTypo dinggoBehindTypo];
     behindTypo.scale = 0.18;
-    behindTypo.center = CGPointMake(0.11, 0.15);
+    behindTypo.relativeCenter = CGPointMake(0.11, 0.15);
     behindTypo.isTemplateItem = true;
     behindTypo.indexInLayer = @"3";
     behindTypo.text = @"[비하인드]";
@@ -101,7 +101,7 @@
     Text *winkTypo = [[Text alloc] init];
     DinggoWinkTypo *wink = [DinggoWinkTypo dinggoWinkTypo];
     winkTypo.scale = 0.185;
-    winkTypo.center = CGPointMake(0.47, 0.13);
+    winkTypo.relativeCenter = CGPointMake(0.47, 0.13);
     winkTypo.isTemplateItem = true;
     winkTypo.indexInLayer = @"4";
     winkTypo.text = @"윙크발사?!";
@@ -112,7 +112,7 @@
     Text *murdertypo = [[Text alloc] init];
     DinggoMurder *murder = [DinggoMurder dinggoMurder];
     murdertypo.scale = 0.2;
-    murdertypo.center = CGPointMake(0.75, 0.12);
+    murdertypo.relativeCenter = CGPointMake(0.75, 0.12);
     murdertypo.isTemplateItem = true;
     murdertypo.indexInLayer = @"3";
     murdertypo.text = @"살인미소?!";
@@ -123,7 +123,7 @@
     Text *binggoTypo = [[Text alloc] init];
     DinggoBingoTypo *binggo = [DinggoBingoTypo dinggoBingoTypo];
     binggoTypo.scale = 0.13;
-    binggoTypo.center = CGPointMake(0.92, 0.06);
+    binggoTypo.relativeCenter = CGPointMake(0.92, 0.06);
     binggoTypo.isTemplateItem = true;
     binggoTypo.indexInLayer = @"4";
     binggoTypo.text = @"bingo";
@@ -134,7 +134,7 @@
     Text *kpopTyop = [[Text alloc] init];
     DigitalTypo *kpop = [DigitalTypo digitalTypo];
     kpopTyop.scale = 0.255;
-    kpopTyop.center = CGPointMake(0.35,0.75);
+    kpopTyop.relativeCenter = CGPointMake(0.35,0.75);
     kpopTyop.isTemplateItem = true;
     kpopTyop.indexInLayer = @"5";
     kpopTyop.text = @"케이팝";
@@ -145,7 +145,7 @@
     DigitalTypo *yellow = [DigitalTypo digitalTypo];
     yellow.textColor = [UIColor colorWithRed:(252/255.0) green:(237/255.0) blue:(53/255.0) alpha:1] ;
     numberOne.scale = 0.255;
-    numberOne.center = CGPointMake(0.64,0.75);
+    numberOne.relativeCenter = CGPointMake(0.64,0.75);
     numberOne.isTemplateItem = true;
     numberOne.indexInLayer = @"5";
     numberOne.text = @"넘버원";
@@ -159,7 +159,7 @@
     Text *kpopTypo2 = [[Text alloc] init];
     DigitalTypo *kpop2 = [DigitalTypo digitalTypo];
     kpopTypo2.scale = 0.43;
-    kpopTypo2.center = CGPointMake(0.31, 0.9);
+    kpopTypo2.relativeCenter = CGPointMake(0.31, 0.9);
     kpopTypo2.isTemplateItem = true;
     kpopTypo2.indexInLayer = @"6";
     kpopTypo2.text = @"승부욕그룹";
@@ -170,7 +170,7 @@
     DigitalTypo *pink = [DigitalTypo digitalTypo];
     pink.textColor = [UIColor colorWithRed:(252/255.0) green:(46/255.0) blue:(108/255.0) alpha:1];
     girlFriend.scale = 0.36;
-    girlFriend.center = CGPointMake(0.72, 0.9);
+    girlFriend.relativeCenter = CGPointMake(0.72, 0.9);
     girlFriend.isTemplateItem = true;
     girlFriend.indexInLayer = @"6";
     girlFriend.text = @"남자친구";

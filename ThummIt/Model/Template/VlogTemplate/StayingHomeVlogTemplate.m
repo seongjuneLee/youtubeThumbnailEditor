@@ -45,9 +45,9 @@
     firstPhotoFrame.isFixedPhotoFrame = true;
     secondPhotoFrame.isFixedPhotoFrame = true;
     thirdPhotoFrame.isFixedPhotoFrame = true;
-    firstPhotoFrame.center = CGPointMake(0.25, 0.5);
-    secondPhotoFrame.center = CGPointMake(0.75, 0.25);
-    thirdPhotoFrame.center = CGPointMake(0.75, 0.75);
+    firstPhotoFrame.relativeCenter = CGPointMake(0.25, 0.5);
+    secondPhotoFrame.relativeCenter = CGPointMake(0.75, 0.25);
+    thirdPhotoFrame.relativeCenter = CGPointMake(0.75, 0.75);
     [self.photoFrames addObject:firstPhotoFrame];
     [self.photoFrames addObject:secondPhotoFrame];
     [self.photoFrames addObject:thirdPhotoFrame];
@@ -59,7 +59,7 @@
     Text *stayText = [[Text alloc] init];
     VlogHashTagTypo *stay = [VlogHashTagTypo vlogHashTagTypo];
     stayText.scale = 0.24;
-    stayText.center = CGPointMake(0.155, 0.78);
+    stayText.relativeCenter = CGPointMake(0.155, 0.78);
     stayText.isTemplateItem = true;
     stayText.indexInLayer =@"0";
     stayText.text = @"#Staying Home";
@@ -70,7 +70,7 @@
     Text *understayText = [[Text alloc] init];
     VlogBMDohyunTypo *underStay = [VlogBMDohyunTypo vlogBMDohyunTypo];
     understayText.scale = 0.38;
-    understayText.center = CGPointMake(0.2, 0.9);
+    understayText.relativeCenter = CGPointMake(0.2, 0.9);
     understayText.isTemplateItem = true;
     understayText.indexInLayer =@"1";
     understayText.text = @"집콕 브이로그";

@@ -24,7 +24,6 @@
         self.textViewContainer = [self makeTextViewContainerWithTextView:self.textView];
         self.baseView = self.textViewContainer;
         self.scale = 0.7;
-        self.center = CGPointMake(0.5,0.5);
         self.rotationDegree = 0;
         self.textAlignment = NSTextAlignmentCenter;
         self.textView.textAlignment = NSTextAlignmentCenter;

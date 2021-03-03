@@ -167,6 +167,8 @@
         [editingVC deleteImageRespondToCurrentPointY:currentPoint.y];
         self.originalPoint = [sender locationInView:editingVC.gestureView];
         
+        editingVC.currentItem.relativeCenter = CGPointMake( editingVC.currentItem.baseView.centerX/editingVC.bgView.frameWidth, (editingVC.currentItem.baseView.centerY - editingVC.bgView.frameY)/(editingVC.bgView.frameHeight));
+        NSLog(@"editingVC.currentItem.relativeCenter %@",NSStringFromCGPoint(editingVC.currentItem.relativeCenter));
         [self guideWithDeltaPoint:deltaPoint];
         [self showGuideLineForSituation];
 
@@ -476,6 +478,7 @@
         // 센터가이드 적용
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
         editingVC.currentItem.baseView.center = changedPoint;
+        editingVC.currentItem.relativeCenter = CGPointMake(editingVC.currentItem.baseView.centerX/editingVC.bgView.frameWidth, editingVC.currentItem.baseView.centerY/editingVC.bgView.frameHeight);
 
         [self showDegreeGuideLineWithMagnetWithDeltaDegree:self.currentRotation withScaleTransform:scaleTransform];
         

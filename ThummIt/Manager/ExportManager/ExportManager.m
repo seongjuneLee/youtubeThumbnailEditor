@@ -160,7 +160,7 @@
         
         copied.baseView.transform = CGAffineTransformConcat(copied.baseView.transform, CGAffineTransformMakeScale(scale, scale));
         copied.baseView.center = CGPointMake(copied.relativeCenter.x * view.frameWidth, copied.relativeCenter.y * view.frameHeight);
-
+        NSLog(@"copied.relativeCenter %@",NSStringFromCGPoint(copied.relativeCenter));
         if (copied.isFixedPhotoFrame) {
             copied.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
             [view insertSubview:copied.baseView belowSubview:mainFrameImageView];

@@ -53,10 +53,10 @@
     secondPhotoFrame.isFixedPhotoFrame = true;
     thirdPhotoFrame.isFixedPhotoFrame = true;
     fourthPhotoFrame.isFixedPhotoFrame = true;
-    firstPhotoFrame.center = CGPointMake(0.25, 0.25);
-    secondPhotoFrame.center = CGPointMake(0.75, 0.25);
-    thirdPhotoFrame.center = CGPointMake(0.25, 0.75);
-    fourthPhotoFrame.center = CGPointMake(0.75, 0.75);
+    firstPhotoFrame.relativeCenter = CGPointMake(0.25, 0.25);
+    secondPhotoFrame.relativeCenter = CGPointMake(0.75, 0.25);
+    thirdPhotoFrame.relativeCenter = CGPointMake(0.25, 0.75);
+    fourthPhotoFrame.relativeCenter = CGPointMake(0.75, 0.75);
     [self.photoFrames addObject:firstPhotoFrame];
     [self.photoFrames addObject:secondPhotoFrame];
     [self.photoFrames addObject:thirdPhotoFrame];
@@ -69,7 +69,7 @@
     Text *dacevlogText = [[Text alloc] init];
     VlogLongDance *dancevlog = [VlogLongDance vlogLongDance];
     dacevlogText.scale = 0.3;
-    dacevlogText.center = CGPointMake(0.5, 0.41);
+    dacevlogText.relativeCenter = CGPointMake(0.5, 0.41);
     dacevlogText.isTemplateItem = true;
     dacevlogText.indexInLayer =@"0";
     dacevlogText.text = @"댄스 동아리 연습";
@@ -80,7 +80,7 @@
     Text *vlogText = [[Text alloc] init];
     VlogShortDance *vlog = [VlogShortDance vlogShortDance];
     vlogText.scale = 0.17;
-    vlogText.center = CGPointMake(0.5, 0.59);
+    vlogText.relativeCenter = CGPointMake(0.5, 0.59);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer =@"1";
     vlogText.text = @"브이로그";
@@ -99,7 +99,7 @@
     heartSticker10.indexInLayer =@"5";
     heartSticker10.scale = 0.18;
     heartSticker10.isTemplateItem = true;
-    heartSticker10.center = CGPointMake(0.13, 0.2);
+    heartSticker10.relativeCenter = CGPointMake(0.13, 0.2);
 
     [self.stickers addObject:heartSticker10];
 
@@ -109,7 +109,7 @@
     heartSticker3.indexInLayer =@"2";
     heartSticker3.scale = 0.11;
     heartSticker3.isTemplateItem = true;
-    heartSticker3.center = CGPointMake(0.76, 0.28);
+    heartSticker3.relativeCenter = CGPointMake(0.76, 0.28);
 
 
     [self.stickers addObject:heartSticker3];
@@ -120,7 +120,7 @@
     heartSticker4.indexInLayer =@"3";
     heartSticker4.scale = 0.13;
     heartSticker4.isTemplateItem = true;
-    heartSticker4.center = CGPointMake(0.89, 0.51);
+    heartSticker4.relativeCenter = CGPointMake(0.89, 0.51);
 
     [self.stickers addObject:heartSticker4];
 //   #f8f7b7
@@ -129,7 +129,7 @@
     heartStickerUnder.indexInLayer =@"4";
     heartStickerUnder.scale = 0.13;
     heartStickerUnder.isTemplateItem = true;
-    heartStickerUnder.center = CGPointMake(0.045, 0.93);
+    heartStickerUnder.relativeCenter = CGPointMake(0.045, 0.93);
 
     [self.stickers addObject:heartStickerUnder];
     

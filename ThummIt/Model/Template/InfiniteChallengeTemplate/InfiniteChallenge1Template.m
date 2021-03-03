@@ -42,7 +42,7 @@
     FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
     fullRectPhotoFrame.isTemplateItem = true;
     fullRectPhotoFrame.isFixedPhotoFrame = true;
-    fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
+    fullRectPhotoFrame.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:fullRectPhotoFrame];
 
 }
@@ -53,7 +53,7 @@
     Text *escapeRoomText = [[Text alloc] init];
     InfiniteChallengeEscapeRoom *escapeRoom = [InfiniteChallengeEscapeRoom infiniteChallengeEscapeRoom];
     escapeRoomText.scale = 0.48;
-    escapeRoomText.center = CGPointMake(0.5, 0.85);
+    escapeRoomText.relativeCenter = CGPointMake(0.5, 0.85);
     escapeRoomText.isTemplateItem = true;
     escapeRoomText.indexInLayer =@"0";
     escapeRoomText.text = @"방탈출";
@@ -65,7 +65,7 @@
     Text *logoText = [[Text alloc] init];
     InfiniteChallengeLogo *logo = [InfiniteChallengeLogo infiniteChallengeLogo];
     logoText.scale = 0.1;
-    logoText.center = CGPointMake(0.875, 0.15);
+    logoText.relativeCenter = CGPointMake(0.875, 0.15);
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"1";
     logoText.text = @"백만도전";
@@ -77,7 +77,7 @@
     Text *memberText = [[Text alloc] init];
     InfiniteChallengeOrangeTypo *orange = [InfiniteChallengeOrangeTypo infiniteChallengeOrangeTypo];
     memberText.scale = 0.15;
-    memberText.center = CGPointMake(0.345, 0.55);
+    memberText.relativeCenter = CGPointMake(0.345, 0.55);
     memberText.isTemplateItem = true;
     memberText.indexInLayer =@"2";
     memberText.text = @"멤버들";
@@ -87,7 +87,7 @@
     Text *withText = [[Text alloc] init];
     InfiniteChallengeWhiteTypo *white = [InfiniteChallengeWhiteTypo infiniteChallengeWhiteTypo];
     withText.scale = 0.165;
-    withText.center = CGPointMake(0.495, 0.55);
+    withText.relativeCenter = CGPointMake(0.495, 0.55);
     withText.isTemplateItem = true;
     withText.indexInLayer =@"2";
     withText.text = @"과 함께";
@@ -97,7 +97,7 @@
     Text *secreteText = [[Text alloc] init];
     InfiniteChallengeBlueTypo *blue = [InfiniteChallengeBlueTypo infiniteChallengeBlueTypo];
     secreteText.scale = 0.105;
-    secreteText.center = CGPointMake(0.635, 0.55);
+    secreteText.relativeCenter = CGPointMake(0.635, 0.55);
     secreteText.isTemplateItem = true;
     secreteText.indexInLayer =@"2";
     secreteText.text = @"비밀";
@@ -108,7 +108,7 @@
     InfiniteChallengeWhiteTypo *white2 = [InfiniteChallengeWhiteTypo infiniteChallengeWhiteTypo];
 
     eulText.scale = 0.06;
-    eulText.center = CGPointMake(0.71, 0.55);
+    eulText.relativeCenter = CGPointMake(0.71, 0.55);
     eulText.isTemplateItem = true;
     eulText.indexInLayer =@"2";
     eulText.text = @"을";
@@ -118,7 +118,7 @@
     Text *digingText = [[Text alloc] init];
     InfiniteChallengeBlackTypo *black = [InfiniteChallengeBlackTypo infiniteChallengeBlackTypo];
     digingText.scale = 0.23;
-    digingText.center = CGPointMake(0.86, 0.55);
+    digingText.relativeCenter = CGPointMake(0.86, 0.55);
     digingText.isTemplateItem = true;
     digingText.indexInLayer =@"2";
     digingText.text = @"파헤쳐라!";
@@ -140,7 +140,7 @@
     skullSticker.indexInLayer =@"3";
     skullSticker.scale = 0.09;
     skullSticker.isTemplateItem = true;
-    skullSticker.center = CGPointMake(0.19, 0.32);
+    skullSticker.relativeCenter = CGPointMake(0.19, 0.32);
     
     [self.stickers addObject:skullSticker];
     

@@ -40,7 +40,7 @@
     FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
     fullRectPhotoFrame.isTemplateItem = true;
     fullRectPhotoFrame.isFixedPhotoFrame = true;
-    fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
+    fullRectPhotoFrame.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:fullRectPhotoFrame];
     
 }
@@ -51,7 +51,7 @@
     Text *logoText = [[Text alloc] init];
     InfiniteChallengeLogo *logo = [InfiniteChallengeLogo infiniteChallengeLogo];
     logoText.scale = 0.4;
-    logoText.center = CGPointMake(0.17, 0.08);
+    logoText.relativeCenter = CGPointMake(0.17, 0.08);
     logoText.isTemplateItem = true;
     logoText.text = @"백만도전";
     logoText.textView.text = logoText.text;
@@ -62,7 +62,7 @@
     Text *yellowText = [[Text alloc] init];
     InfiniteChallengeYellowSpeechBoxYellow *yellowSpeechBoxYellow = [InfiniteChallengeYellowSpeechBoxYellow infiniteChallengeYellowSpeechBoxYellow];
     yellowText.scale = 0.8;
-    yellowText.center = CGPointMake(0.2, 0.5);
+    yellowText.relativeCenter = CGPointMake(0.2, 0.5);
     yellowText.rotationDegree = degreesToRadians(8);
     yellowText.isTemplateItem = true;
     yellowText.text = @"빨리!!";
@@ -74,7 +74,7 @@
     Text *skyBlueText = [[Text alloc] init];
     InfiniteChallengeSkyBlueBox *skyBlueBox = [InfiniteChallengeSkyBlueBox infiniteChallengeSkyBlueBox];
     skyBlueText.scale = 0.55;
-    skyBlueText.center = CGPointMake(0.8, 0.57);
+    skyBlueText.relativeCenter = CGPointMake(0.8, 0.57);
     skyBlueText.isTemplateItem = true;
     skyBlueText.text = @"저한테 왜 그러세요..?";
     skyBlueText.textView.text = skyBlueText.text;
@@ -85,7 +85,7 @@
     Text *embarrassedText = [[Text alloc] init];
     InfiniteChallengeCloudBox *cloudBox = [InfiniteChallengeCloudBox infiniteChallengeCloudBox];
     embarrassedText.scale = 0.45;
-    embarrassedText.center = CGPointMake(0.65, 0.5);
+    embarrassedText.relativeCenter = CGPointMake(0.65, 0.5);
     embarrassedText.isTemplateItem = true;
     embarrassedText.text = @"당황";
     embarrassedText.textView.text = embarrassedText.text;

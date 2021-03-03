@@ -43,7 +43,7 @@
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
     photoFrame.isFixedPhotoFrame = true;
-    photoFrame.center = CGPointMake(0.5, 0.5);
+    photoFrame.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame];
         
 }
@@ -53,7 +53,7 @@
     Text *firstVlogText = [[Text alloc] init];
     VlogFreshmanTypo *firstVlog = [VlogFreshmanTypo vlogFreshmanTypo];
     firstVlogText.scale = 0.27;
-    firstVlogText.center = CGPointMake(0.83, 0.48);
+    firstVlogText.relativeCenter = CGPointMake(0.83, 0.48);
     firstVlogText.isTemplateItem = true;
     firstVlogText.indexInLayer =@"0";
     firstVlogText.text = @"새내기의\n일주일\nvlog";
@@ -65,7 +65,7 @@
     Text *leftVlogText = [[Text alloc] init];
     VlogNewCampus *leftVlog = [VlogNewCampus vlogNewCampus];
     leftVlogText.scale = 0.12;
-    leftVlogText.center = CGPointMake(0.065, 0.05);
+    leftVlogText.relativeCenter = CGPointMake(0.065, 0.05);
     leftVlogText.isTemplateItem = true;
     leftVlogText.indexInLayer =@"3";
     leftVlogText.text = @"Thumm-log";

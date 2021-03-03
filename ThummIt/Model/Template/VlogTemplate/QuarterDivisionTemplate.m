@@ -48,10 +48,10 @@
     secondPhotoFrame.isFixedPhotoFrame = true;
     thirdPhotoFrame.isFixedPhotoFrame = true;
     fourthPhotoFrame.isFixedPhotoFrame = true;
-    firstPhotoFrame.center = CGPointMake(0.25, 0.25);
-    secondPhotoFrame.center = CGPointMake(0.75, 0.25);
-    thirdPhotoFrame.center = CGPointMake(0.25, 0.75);
-    fourthPhotoFrame.center = CGPointMake(0.75, 0.75);
+    firstPhotoFrame.relativeCenter = CGPointMake(0.25, 0.25);
+    secondPhotoFrame.relativeCenter = CGPointMake(0.75, 0.25);
+    thirdPhotoFrame.relativeCenter = CGPointMake(0.25, 0.75);
+    fourthPhotoFrame.relativeCenter = CGPointMake(0.75, 0.75);
     [self.photoFrames addObject:firstPhotoFrame];
     [self.photoFrames addObject:secondPhotoFrame];
     [self.photoFrames addObject:thirdPhotoFrame];
@@ -63,7 +63,7 @@
     
     Text *trapezoidText = [[Text alloc] init];
     TrapezoidTypo *trapezoid = [TrapezoidTypo trapezoidTypo];
-    trapezoidText.center = CGPointMake(0.5, 0.5);
+    trapezoidText.relativeCenter = CGPointMake(0.5, 0.5);
     trapezoidText.rotationDegree = degreesToRadians(-3);
     trapezoidText.scale = 0.35;
     trapezoidText.isTemplateItem = true;

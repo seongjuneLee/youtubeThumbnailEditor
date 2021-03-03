@@ -47,15 +47,15 @@
     firstPhotoFrame.isFixedPhotoFrame = true;
     secondPhotoFrame.isFixedPhotoFrame = true;
    
-    firstPhotoFrame.center = CGPointMake(0.25, 0.25);
-    secondPhotoFrame.center = CGPointMake(0.75, 0.25);
+    firstPhotoFrame.relativeCenter = CGPointMake(0.25, 0.25);
+    secondPhotoFrame.relativeCenter = CGPointMake(0.75, 0.25);
     [self.photoFrames addObject:firstPhotoFrame];
     [self.photoFrames addObject:secondPhotoFrame];
 
     PhotoFrame *photoFrame1 = [HorizontalHalfRectangle horizontalHalfRectangle];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    photoFrame1.center = CGPointMake(0.5, 0.75);
+    photoFrame1.relativeCenter = CGPointMake(0.5, 0.75);
     [self.photoFrames addObject:photoFrame1];
 }
 
@@ -64,7 +64,7 @@
     Text *vlogText = [[Text alloc] init];
     VlogDog *vlog = [VlogDog vlogDog];
     vlogText.scale = 0.23;
-    vlogText.center = CGPointMake(0.5, 0.5);
+    vlogText.relativeCenter = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer =@"0";
     vlogText.text = @"vlog";

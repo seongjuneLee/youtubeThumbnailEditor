@@ -42,13 +42,13 @@
     PhotoFrame *photoFrame1 = [InfiniteTemplateRectangle1 infiniteTemplateRectangle1];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    photoFrame1.center = CGPointMake(0.3, 0.5);
+    photoFrame1.relativeCenter = CGPointMake(0.3, 0.5);
     [self.photoFrames addObject:photoFrame1];
     
     PhotoFrame *photoFrame2 = [InfiniteTemplateRectangle2 infiniteTemplateRectangle2];
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
-    photoFrame2.center = CGPointMake(0.8, 0.5);
+    photoFrame2.relativeCenter = CGPointMake(0.8, 0.5);
     [self.photoFrames addObject:photoFrame2];
   
 }
@@ -59,7 +59,7 @@
     Text *mainTextTop = [[Text alloc] init];
     InfiniteChallengeLegeno *legeno = [InfiniteChallengeLegeno infiniteChallengeLegeno];
     mainTextTop.scale = 0.7;
-    mainTextTop.center = CGPointMake(0.36, 0.73);
+    mainTextTop.relativeCenter = CGPointMake(0.36, 0.73);
     mainTextTop.isTemplateItem = true;
     mainTextTop.indexInLayer =@"0";
     mainTextTop.text = @"레전드 오브 레게노";
@@ -71,7 +71,7 @@
     InfiniteChallengeLegeno *longJourney = [InfiniteChallengeLegeno infiniteChallengeLegeno];
     longJourney.textColor = [UIColor colorWithRed:254/255.0 green:208/255.0 blue:254/255.0 alpha:1];
     mainTextBottom.scale = 0.62;
-    mainTextBottom.center = CGPointMake(0.32, 0.9);
+    mainTextBottom.relativeCenter = CGPointMake(0.32, 0.9);
     mainTextBottom.isTemplateItem = true;
     mainTextBottom.indexInLayer =@"1";
     mainTextBottom.text = @"그 대장정의 시작";
@@ -83,7 +83,7 @@
     Text *logoText = [[Text alloc] init];
     InfiniteChallengeLogo *logo = [InfiniteChallengeLogo infiniteChallengeLogo];
     logoText.scale = 0.1;
-    logoText.center = CGPointMake(0.885, 0.14);
+    logoText.relativeCenter = CGPointMake(0.885, 0.14);
     logoText.isTemplateItem = true;
     logoText.indexInLayer =@"2";
     logoText.text = @"백만도전";
@@ -95,7 +95,7 @@
     Text *fiveMinutesText = [[Text alloc] init];
     InfiniteChallengeFiveMinutes *fiveMinutes = [InfiniteChallengeFiveMinutes infiniteChallengeFiveMinutes];
     fiveMinutesText.scale = 0.24;
-    fiveMinutesText.center = CGPointMake(0.15, 0.11);
+    fiveMinutesText.relativeCenter = CGPointMake(0.15, 0.11);
     fiveMinutesText.isTemplateItem = true;
     fiveMinutesText.indexInLayer =@"3";
     fiveMinutesText.text = @"오분순삭";
@@ -107,7 +107,7 @@
     Text *hashtagText = [[Text alloc] init];
     InfiniteChallengeHashTag *legend = [InfiniteChallengeHashTag infiniteChallengeHashTag];
     hashtagText.scale = 0.03;
-    hashtagText.center = CGPointMake(0.06, 0.195);
+    hashtagText.relativeCenter = CGPointMake(0.06, 0.195);
     hashtagText.isTemplateItem = true;
     hashtagText.indexInLayer =@"4";
     hashtagText.text = @"#";
@@ -118,7 +118,7 @@
     InfiniteChallengeHashTag *hashTagYellow = [InfiniteChallengeHashTag infiniteChallengeHashTag];
     hashTagYellow.textColor = [UIColor colorWithRed:254/255.0 green:216/255.0 blue:60/255.0 alpha:1];
     entertainText.scale = 0.065;
-    entertainText.center = CGPointMake(0.1, 0.195);
+    entertainText.relativeCenter = CGPointMake(0.1, 0.195);
     entertainText.isTemplateItem = true;
     entertainText.indexInLayer =@"4";
     entertainText.text = @"예능";
@@ -129,7 +129,7 @@
     Text *legendText = [[Text alloc] init];
     InfiniteChallengeHashTag *hashTag = [InfiniteChallengeHashTag infiniteChallengeHashTag];
     legendText.scale = 0.09;
-    legendText.center = CGPointMake(0.17, 0.195);
+    legendText.relativeCenter = CGPointMake(0.17, 0.195);
     legendText.isTemplateItem = true;
     legendText.indexInLayer =@"4";
     legendText.text = @"레전드";
@@ -144,7 +144,7 @@
     Text *muYaHoText = [[Text alloc] init];
     InfiniteChallengeYellowSpeechBoxWhite *yellowSpeechBoxWhite = [InfiniteChallengeYellowSpeechBoxWhite infiniteChallengeYellowSpeechBoxWhite];
     muYaHoText.scale = 0.15;
-    muYaHoText.center = CGPointMake(0.3, 0.45);
+    muYaHoText.relativeCenter = CGPointMake(0.3, 0.45);
     muYaHoText.isTemplateItem = true;
     muYaHoText.indexInLayer =@"5";
     muYaHoText.text = @"무야~호~";
@@ -157,7 +157,7 @@
     Text *questionMarkText = [[Text alloc] init];
     InfiniteChallengeTopOfYellow *topOfYellow = [InfiniteChallengeTopOfYellow infiniteChallengeTopOfYellow];
     questionMarkText.scale = 0.1;
-    questionMarkText.center = CGPointMake(0.33, 0.35);
+    questionMarkText.relativeCenter = CGPointMake(0.33, 0.35);
     questionMarkText.isTemplateItem = true;
     questionMarkText.indexInLayer =@"6";
     questionMarkText.text = @"??";

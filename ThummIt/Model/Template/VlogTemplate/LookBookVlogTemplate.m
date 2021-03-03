@@ -43,7 +43,7 @@
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
     photoFrame.isFixedPhotoFrame = true;
-    photoFrame.center = CGPointMake(0.5, 0.5);
+    photoFrame.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame];
         
 }
@@ -53,7 +53,7 @@
     Text *vlogText = [[Text alloc] init];
     VlogLookbookTypo *vlog = [VlogLookbookTypo vlogLookbookTypo];
     vlogText.scale = 0.27;
-    vlogText.center = CGPointMake(0.77, 0.43);
+    vlogText.relativeCenter = CGPointMake(0.77, 0.43);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer =@"0";
     vlogText.text = @"룩북\n브이로그";

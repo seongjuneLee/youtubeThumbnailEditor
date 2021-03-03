@@ -43,7 +43,7 @@
     FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
     fullRectPhotoFrame.isTemplateItem = true;
     fullRectPhotoFrame.isFixedPhotoFrame = true;
-    fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
+    fullRectPhotoFrame.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:fullRectPhotoFrame];
     
 }
@@ -54,7 +54,7 @@
     Text *cookingText = [[Text alloc] init];
     VlogCookingTypo *cooking = [VlogCookingTypo vlogCookingTypo];
     cookingText.scale = 0.25;
-    cookingText.center = CGPointMake(0.25, 0.33);
+    cookingText.relativeCenter = CGPointMake(0.25, 0.33);
     cookingText.isTemplateItem = true;
     cookingText.indexInLayer = @"0";
     cookingText.text = @"Cooking\nVlog";
@@ -66,7 +66,7 @@
     Text *logoText = [[Text alloc] init];
     VlogLogoTagTypo *logo = [VlogLogoTagTypo vlogLogoTagTypo];
     logoText.scale = 0.12;
-    logoText.center = CGPointMake(0.05, 0.125);
+    logoText.relativeCenter = CGPointMake(0.05, 0.125);
     logoText.isTemplateItem = true;
     logoText.indexInLayer = @"1";
     logoText.text = @"ㅎ";
@@ -82,7 +82,7 @@
     vlogBlinkSticker1.indexInLayer = @"2";
     vlogBlinkSticker1.scale = 0.15;
     vlogBlinkSticker1.isTemplateItem = true;
-    vlogBlinkSticker1.center = CGPointMake(0.42, 0.15);
+    vlogBlinkSticker1.relativeCenter = CGPointMake(0.42, 0.15);
     [self.stickers addObject:vlogBlinkSticker1];
     
     PigtailSticker *vlogPigtailSticker = [PigtailSticker pigtailSticker];
@@ -90,7 +90,7 @@
     vlogPigtailSticker.scale = 0.18;
     vlogPigtailSticker.rotationDegree = degreesToRadians(-160);
     vlogPigtailSticker.isTemplateItem = true;
-    vlogPigtailSticker.center = CGPointMake(0.26, 0.8);
+    vlogPigtailSticker.relativeCenter = CGPointMake(0.26, 0.8);
     [self.stickers addObject:vlogPigtailSticker];
     
 }

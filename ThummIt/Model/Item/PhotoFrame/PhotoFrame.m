@@ -19,7 +19,6 @@
         self.baseView.backgroundColor = UIColor.whiteColor;
 
         // 템플릿에서만 필요
-        self.center = CGPointMake(0.5, 0.5);
         self.rotationDegree = 0;
         self.photoScale = 1;
     }

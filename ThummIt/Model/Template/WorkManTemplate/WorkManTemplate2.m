@@ -42,7 +42,7 @@
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
     photoFrame.isFixedPhotoFrame = true;
-    photoFrame.center = CGPointMake(0.5, 0.5);
+    photoFrame.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame];
     
 }
@@ -52,7 +52,7 @@
     Text *logoText = [[Text alloc] init];
     WorkManLogo *logo = [WorkManLogo workManLogo];
     logoText.scale = 0.12;
-    logoText.center = CGPointMake(0.095, 0.1);
+    logoText.relativeCenter = CGPointMake(0.095, 0.1);
     logoText.isTemplateItem = true;
     logoText.indexInLayer = @"0";
     logoText.text = @"위크맨";
@@ -64,7 +64,7 @@
     WorkmanYelloewTitle *yellow = [WorkmanYelloewTitle workmanYelloewTitle];
     yellow.textColor = [UIColor colorWithRed:(238/255.0) green:(230/255.0) blue:(50/255.0) alpha:1];
     yellowTitle.scale = 0.255;
-    yellowTitle.center = CGPointMake(0.5, 0.69);
+    yellowTitle.relativeCenter = CGPointMake(0.5, 0.69);
     yellowTitle.isTemplateItem = true;
     yellowTitle.indexInLayer = @"1";
     yellowTitle.text = @"유튜브";
@@ -75,7 +75,7 @@
     Text *whiteTitle = [[Text alloc] init];
     WorkmanYelloewTitle *secondTitle2 = [WorkmanYelloewTitle workmanYelloewTitle];
     whiteTitle.scale = 0.355;
-    whiteTitle.center = CGPointMake(0.5,0.87);
+    whiteTitle.relativeCenter = CGPointMake(0.5,0.87);
     whiteTitle.isTemplateItem = true;
     whiteTitle.indexInLayer = @"2";
     whiteTitle.text = @"비하인드";
@@ -87,7 +87,7 @@
     Text *handText = [[Text alloc] init];
     WorkManHandWrite *hand = [WorkManHandWrite workManHandWrite];
     handText.scale = 0.125;
-    handText.center = CGPointMake(0.145,0.230);
+    handText.relativeCenter = CGPointMake(0.145,0.230);
     handText.isTemplateItem = true;
     handText.indexInLayer = @"3";
     handText.text = @"(당황)";
@@ -99,7 +99,7 @@
     WorkManFast *why = [WorkManFast workManFast];
     whyText.scale = 0.13;
     whyText.rotationDegree = degreesToRadians(-20);
-    whyText.center = CGPointMake(0.34,0.44);
+    whyText.relativeCenter = CGPointMake(0.34,0.44);
     whyText.isTemplateItem = true;
     whyText.indexInLayer = @"4";
     whyText.text = @"네?!?";
@@ -111,7 +111,7 @@
     WorkManFast *how = [WorkManFast workManFast];
     howText.scale = 0.41;
     howText.rotationDegree = degreesToRadians(10);
-    howText.center = CGPointMake(0.7,0.3);
+    howText.relativeCenter = CGPointMake(0.7,0.3);
     howText.isTemplateItem = true;
     howText.indexInLayer = @"5";
     howText.text = @"이렇게 하는거 맞죠?";
@@ -127,7 +127,7 @@
     startleSticker.indexInLayer = @"6";
     startleSticker.scale = 0.08;
     startleSticker.isTemplateItem = true;
-    startleSticker.center = CGPointMake(0.31, 0.19);
+    startleSticker.relativeCenter = CGPointMake(0.31, 0.19);
     
     [self.stickers addObject:startleSticker];
     

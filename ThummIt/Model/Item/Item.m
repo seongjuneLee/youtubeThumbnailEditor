@@ -17,6 +17,7 @@
     if (self) {
         self.indexInLayer = @"";
         self.scale = 1.0;
+        self.relativeCenter = CGPointMake(0.5, 0.5);
     }
     return self;
     
@@ -29,13 +30,7 @@
     copied.scale = self.scale;
     copied.indexInLayer = self.indexInLayer;
     copied.center = self.baseView.center;
-    if (CGRectEqualToRect(SaveManager.sharedInstance.bgViewRect, CGRectMake(0, 0, 0, 0))) {
-        copied.relativeCenter = self.relativeCenter;
-    } else {
-        CGPoint relativeCenter = CGPointMake(self.baseView.centerX / SaveManager.sharedInstance.bgViewRect.size.width, (self.baseView.centerY - SaveManager.sharedInstance.bgViewRect.origin.y)/SaveManager.sharedInstance.bgViewRect.size.height);
-
-        copied.relativeCenter = relativeCenter;
-    }
+    copied.relativeCenter = self.relativeCenter;
 
     return copied;
 }
@@ -77,9 +72,7 @@
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.rotationDegree] forKey:@"rotationDegree"];
     [encoder encodeObject:[NSNumber numberWithBool:self.cannotChangeColor] forKey:@"cannotChangeColor"];
-    
-    CGPoint relativeCenter = CGPointMake(self.baseView.centerX / SaveManager.sharedInstance.bgViewRect.size.width, (self.baseView.centerY - SaveManager.sharedInstance.bgViewRect.origin.y)/SaveManager.sharedInstance.bgViewRect.size.height);
-    [encoder encodeObject:[NSValue valueWithCGPoint:relativeCenter] forKey:@"relativeCenter"];
+    [encoder encodeObject:[NSValue valueWithCGPoint:self.relativeCenter] forKey:@"relativeCenter"];
 
 }
 

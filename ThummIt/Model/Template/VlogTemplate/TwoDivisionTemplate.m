@@ -45,8 +45,8 @@
     secondPhotoFrame.isFixedPhotoFrame = true;
     firstPhotoFrame.scale = 0.5;
     secondPhotoFrame.scale = 0.5;
-    firstPhotoFrame.center = CGPointMake(0.25, 0.5);
-    secondPhotoFrame.center = CGPointMake(0.75, 0.5);
+    firstPhotoFrame.relativeCenter = CGPointMake(0.25, 0.5);
+    secondPhotoFrame.relativeCenter = CGPointMake(0.75, 0.5);
     [self.photoFrames addObject:firstPhotoFrame];
     [self.photoFrames addObject:secondPhotoFrame];
 }
@@ -56,7 +56,7 @@
     Text *leftVlogText = [[Text alloc] init];
     VlogNewCampus *leftVlog = [VlogNewCampus vlogNewCampus];
     leftVlogText.scale = 0.6;
-    leftVlogText.center = CGPointMake(0.5, 0.5);
+    leftVlogText.relativeCenter = CGPointMake(0.5, 0.5);
     leftVlogText.isTemplateItem = true;
     leftVlogText.indexInLayer =@"0";
     leftVlogText.text = @"Summer Trip";

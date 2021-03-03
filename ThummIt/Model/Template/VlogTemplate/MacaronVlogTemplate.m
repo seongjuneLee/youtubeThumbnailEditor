@@ -45,20 +45,20 @@
     PhotoFrame *photoFrame1 = [MacaronRectangle1 macaronRectangle1];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    photoFrame1.center = CGPointMake(0.27, 0.5);
+    photoFrame1.relativeCenter = CGPointMake(0.27, 0.5);
     [self.photoFrames addObject:photoFrame1];
     
     
     PhotoFrame *photoFrame2 = [MacaronRectangle2 macaronRectangle2];
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
-    photoFrame2.center = CGPointMake(0.77, 0.25);
+    photoFrame2.relativeCenter = CGPointMake(0.77, 0.25);
     [self.photoFrames addObject:photoFrame2];
     
     PhotoFrame *photoFrame3 = [MacaronRectangle2 macaronRectangle2];
     photoFrame3.isTemplateItem = true;
     photoFrame3.isFixedPhotoFrame = true;
-    photoFrame3.center = CGPointMake(0.77, 0.75);
+    photoFrame3.relativeCenter = CGPointMake(0.77, 0.75);
     [self.photoFrames addObject:photoFrame3];
     
 }
@@ -69,7 +69,7 @@
     Text *vlogText = [[Text alloc] init];
     VlogMacaronTypo *vlog = [VlogMacaronTypo vlogMacaronTypo];
     vlogText.scale = 0.16;
-    vlogText.center = CGPointMake(0.465, 0.25);
+    vlogText.relativeCenter = CGPointMake(0.465, 0.25);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer = @"0";
     vlogText.text = @"vlog";
@@ -81,7 +81,7 @@
     Text *homebakingText = [[Text alloc] init];
     VlogMacaronTypo *homebaking = [VlogMacaronTypo vlogMacaronTypo];
     homebakingText.scale = 0.115;
-    homebakingText.center = CGPointMake(0.455, 0.35);
+    homebakingText.relativeCenter = CGPointMake(0.455, 0.35);
     homebakingText.isTemplateItem = true;
     homebakingText.indexInLayer = @"0";
     homebakingText.text = @"homebaking\n:macaron";
@@ -99,7 +99,7 @@
     vlogMacaronSticker1.isTemplateItem = true;
     vlogMacaronSticker1.cannotChangeColor = true;
     vlogMacaronSticker1.rotationDegree = degreesToRadians(-10);
-    vlogMacaronSticker1.center = CGPointMake(0.06, 0.09);
+    vlogMacaronSticker1.relativeCenter = CGPointMake(0.06, 0.09);
     [self.stickers addObject:vlogMacaronSticker1];
 
     VlogMacaronSticker *vlogMacaronSticker2 = [VlogMacaronSticker vlogMacaronSticker];
@@ -107,7 +107,7 @@
     vlogMacaronSticker2.isTemplateItem = true;
     vlogMacaronSticker2.cannotChangeColor = true;
     vlogMacaronSticker2.rotationDegree = degreesToRadians(-10);
-    vlogMacaronSticker2.center = CGPointMake(0.94, 0.91);
+    vlogMacaronSticker2.relativeCenter = CGPointMake(0.94, 0.91);
     [self.stickers addObject:vlogMacaronSticker2];
 
 }

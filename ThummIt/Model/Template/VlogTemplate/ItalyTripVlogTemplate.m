@@ -44,7 +44,7 @@
     FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
     fullRectPhotoFrame.isTemplateItem = true;
     fullRectPhotoFrame.isFixedPhotoFrame = true;
-    fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
+    fullRectPhotoFrame.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:fullRectPhotoFrame];
     
 }
@@ -55,7 +55,7 @@
     Text *italyText = [[Text alloc] init];
     VlogItaly *italy = [VlogItaly vlogItaly];
     italyText.scale = 0.09;
-    italyText.center = CGPointMake(0.3, 0.77);
+    italyText.relativeCenter = CGPointMake(0.3, 0.77);
     italyText.isTemplateItem = true;
     italyText.indexInLayer = @"0";
     italyText.text = @"vlog_italy";
@@ -67,7 +67,7 @@
     Text *inItalyText = [[Text alloc] init];
     VlogInItaly *inItaly = [VlogInItaly vlogInItaly];
     inItalyText.scale = 0.48;
-    inItalyText.center = CGPointMake(0.77, 0.65);
+    inItalyText.relativeCenter = CGPointMake(0.77, 0.65);
     inItalyText.isTemplateItem = true;
     inItalyText.indexInLayer = @"1";
     inItalyText.text = @"in Italy";
@@ -79,7 +79,7 @@
     Text *tripText = [[Text alloc] init];
     VlogBarunGothicTypo *barun = [VlogBarunGothicTypo vlogBarunGothicTypo];
     tripText.scale = 0.28;
-    tripText.center = CGPointMake(0.73, 0.37);
+    tripText.relativeCenter = CGPointMake(0.73, 0.37);
     tripText.isTemplateItem = true;
     tripText.indexInLayer = @"2";
     tripText.text = @"Vlog";

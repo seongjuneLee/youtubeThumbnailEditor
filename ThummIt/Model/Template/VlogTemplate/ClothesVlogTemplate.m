@@ -44,13 +44,13 @@
     PhotoFrame *photoFrame1 = [ClothesTemplateRect1 clothesTemplateRect1];
     photoFrame1.isTemplateItem = true;
     photoFrame1.isFixedPhotoFrame = true;
-    photoFrame1.center = CGPointMake(0.275, 0.5);
+    photoFrame1.relativeCenter = CGPointMake(0.275, 0.5);
     [self.photoFrames addObject:photoFrame1];
     
     PhotoFrame *photoFrame2 = [ClothesTemplateRect2 clothesTemplateRect2];
     photoFrame2.isTemplateItem = true;
     photoFrame2.isFixedPhotoFrame = true;
-    photoFrame2.center = CGPointMake(0.775, 0.5);
+    photoFrame2.relativeCenter = CGPointMake(0.775, 0.5);
     [self.photoFrames addObject:photoFrame2];
     
 }
@@ -61,7 +61,7 @@
     Text *vlogText = [[Text alloc] init];
     VlogMyeongjoTypo *myeongjo = [VlogMyeongjoTypo vlogMyeongjoTypo];
     vlogText.scale = 0.25;
-    vlogText.center = CGPointMake(0.5, 0.5);
+    vlogText.relativeCenter = CGPointMake(0.5, 0.5);
     vlogText.isTemplateItem = true;
     vlogText.indexInLayer = @"0";
     vlogText.text = @"VLOG";

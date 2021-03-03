@@ -41,7 +41,7 @@
     photoFrame.isTemplateItem = true;
     photoFrame.indexInLayer = @"0";
     photoFrame.scale = 0.5;
-    photoFrame.center = CGPointMake(0.34, 0.53);
+    photoFrame.relativeCenter = CGPointMake(0.34, 0.53);
     [self.photoFrames addObject:photoFrame];
     
 }
@@ -51,7 +51,7 @@
     Text *smileTypo = [[Text alloc] init];
     DinggoSmileTypo *smile = [DinggoSmileTypo dinggoSmileTypo];
     smileTypo.scale = 0.345;
-    smileTypo.center = CGPointMake(0.73, 0.5);
+    smileTypo.relativeCenter = CGPointMake(0.73, 0.5);
     smileTypo.isTemplateItem = true;
     smileTypo.indexInLayer = @"1";
     smileTypo.text = @"일단 웃어~!!!";
@@ -62,7 +62,7 @@
     Text *bigEditTypo = [[Text alloc] init];
     DinggoBigEdit *bigEdit = [DinggoBigEdit dinggoBigEdit];
     bigEditTypo.scale = 0.78;
-    bigEditTypo.center = CGPointMake(0.5, 0.85);
+    bigEditTypo.relativeCenter = CGPointMake(0.5, 0.85);
     bigEditTypo.isTemplateItem = true;
     bigEditTypo.indexInLayer = @"2";
     bigEditTypo.text = @"통편집을 피하는 법";
@@ -73,7 +73,7 @@
     Text *binggoTypo = [[Text alloc] init];
     DinggoBingoTypo *binggo = [DinggoBingoTypo dinggoBingoTypo];
     binggoTypo.scale = 0.13;
-    binggoTypo.center = CGPointMake(0.92, 0.06);
+    binggoTypo.relativeCenter = CGPointMake(0.92, 0.06);
     binggoTypo.isTemplateItem = true;
     binggoTypo.indexInLayer = @"3";
     binggoTypo.text = @"bingo";
@@ -84,7 +84,7 @@
     Text *potatoTypo = [[Text alloc] init];
     DinggoPotatoTypo *potato = [DinggoPotatoTypo dinggoPotatoTypo];
     potatoTypo.scale = 0.2;
-    potatoTypo.center = CGPointMake(0.34, 0.16);
+    potatoTypo.relativeCenter = CGPointMake(0.34, 0.16);
     potatoTypo.isTemplateItem = true;
     potatoTypo.indexInLayer = @"4";
     potatoTypo.text = @"(감자신)";
@@ -95,7 +95,7 @@
     Text *gookTalk = [[Text alloc] init];
     DinggoGoodTalk *goodtaking = [DinggoGoodTalk dinggoGoodTalk];
     gookTalk.scale = 0.18;
-    gookTalk.center = CGPointMake(0.1, 0.13);
+    gookTalk.relativeCenter = CGPointMake(0.1, 0.13);
     gookTalk.isTemplateItem = true;
     gookTalk.rotationDegree = degreesToRadians(-5);
     gookTalk.indexInLayer = @"5";

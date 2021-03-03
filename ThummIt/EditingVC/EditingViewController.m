@@ -169,8 +169,8 @@
 
         if (item.isTemplateItem) {
             // 템플릿 상댓값 센터를 절댓값으로.
-            float itemX = self.bgView.frameWidth * item.center.x;
-            float itemY = self.bgView.frameY + self.bgView.frameHeight * item.center.y;
+            float itemX = self.bgView.frameWidth * item.relativeCenter.x;
+            float itemY = self.bgView.frameY + self.bgView.frameHeight * item.relativeCenter.y;
             CGPoint itemCenter = CGPointMake(itemX, itemY);
             item.center = itemCenter;
             
