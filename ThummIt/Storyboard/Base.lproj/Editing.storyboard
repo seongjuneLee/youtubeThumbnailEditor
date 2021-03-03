@@ -111,8 +111,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBX-hP-Jmq" userLabel="Item Layer ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
-                                        <color key="backgroundColor" red="0.033346795213492264" green="1" blue="0.5940946059727078" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.074194453656673431" green="0.80525904893875122" blue="0.81332534551620483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>

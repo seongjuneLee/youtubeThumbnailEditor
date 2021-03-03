@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImpactFeedbackGenerator *impactFeedbackGenerator;
 
-@property (nonatomic) BOOL shouldAllowPan;
+@property (nonatomic) BOOL directionShouldChange;
 
 -(void)bringCurrentItemToFront;
 -(void)recoverOriginalLayer;

@@ -143,7 +143,8 @@
     
     if(deltaPoint.y > 0){
         //y > 0 인 case에 대해, 젤 아래 itemlayer가 선택되면 nextitem 존재 x -> return 시켜서 아래로 pan 불가하게
-        if(self.pressedItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.firstObject){
+        if(self.pressedItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.firstObject || self.directionShouldChange){
+            self.directionShouldChange = NO;
             return;
         }
         //dy > 0 이면 nextitem 다음과 같음
@@ -212,13 +213,14 @@
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
                 //nextitemlayer = first object 일시 state end시켜줘서 튕김 방어(이후 다른 방법 생각)
-                sender.state = UIGestureRecognizerStateEnded;
-            }
+                self.directionShouldChange = YES;
+                }
             
         }
     } else if(deltaPoint.y < 0){
         
-        if(self.pressedItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.lastObject){
+        if(self.pressedItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.lastObject || self.directionShouldChange){
+            self.directionShouldChange = NO;
             return;
         }
         
@@ -277,7 +279,7 @@
                 
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
-                sender.state = UIGestureRecognizerStateEnded;
+                self.directionShouldChange = YES;
             }
         }
     }
