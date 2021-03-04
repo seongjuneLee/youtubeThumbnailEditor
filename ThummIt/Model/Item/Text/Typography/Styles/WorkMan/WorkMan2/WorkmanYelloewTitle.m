@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"유튜브",nil);
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:(1)];
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
         bgTextAttribute1.borderWidth = 5;

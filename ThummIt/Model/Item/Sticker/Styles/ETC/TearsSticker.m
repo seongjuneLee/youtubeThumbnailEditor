@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"tearsSticker";
         self.backgroundImageName = @"tearsSticker";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

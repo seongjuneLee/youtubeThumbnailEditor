@@ -16,6 +16,7 @@
         self.itemName = @"buttonPauseSticker";
         self.backgroundImageName = @"buttonPauseSticker";
         self.tintColor = [UIColor blackColor];
+        self.canChangeColor = true;
     }
     return self;
 }

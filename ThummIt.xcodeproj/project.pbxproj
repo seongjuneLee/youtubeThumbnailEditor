@@ -79,6 +79,10 @@
 		6E28452C25C35870008B7A23 /* VlogStudy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28451225C35870008B7A23 /* VlogStudy.m */; };
 		6E2845B125C5FCC4008B7A23 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845B025C5FCC4008B7A23 /* UserManager.m */; };
 		6E2845CB25C98990008B7A23 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */; };
+		6E40F42B25E6E67100FD0F67 /* FreeFormCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F42925E6E67100FD0F67 /* FreeFormCollectionReusableView.m */; };
+		6E40F42C25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E40F42A25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib */; };
+		6E40F43B25E7DADD00FD0F67 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F43A25E7DADD00FD0F67 /* Photo.m */; };
+		6E40F44225E7DEB100FD0F67 /* SegmentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F44125E7DEB100FD0F67 /* SegmentFilter.swift */; };
 		6E4A17EB25888FFA008578BA /* CircleTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17EA25888FFA008578BA /* CircleTemplate.m */; };
 		6E4A17F62588A518008578BA /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A17F42588A518008578BA /* UIView+Additions.m */; };
 		6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A18602589F7BD008578BA /* EditingViewController+Buttons.m */; };
@@ -103,6 +107,7 @@
 		6E80771825C857520033FF21 /* StudyVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80771725C857520033FF21 /* StudyVlogTemplate.m */; };
 		6E80771D25C85FDB0033FF21 /* VlogTapeSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80771C25C85FDB0033FF21 /* VlogTapeSticker.m */; };
 		6E80772A25C960D00033FF21 /* WorkManYoutube.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80772925C960D00033FF21 /* WorkManYoutube.m */; };
+		6E84301F25E81A2100034174 /* EditingPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E84301D25E81A2000034174 /* EditingPhotoViewController.m */; };
 		6E88303225CDA7FA0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E88303125CDA7CC0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf */; };
 		6E88303625CDB0A80025B8A5 /* BinggraeSamanco-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E88303525CDB08E0025B8A5 /* BinggraeSamanco-Bold.otf */; };
 		6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8E7997258F82E80008C5FF /* Migrator200406.swift */; };
@@ -186,6 +191,11 @@
 		6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */; };
 		6EAFD5B625B876D400B193AB /* KOTRA_BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */; };
 		6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */; };
+		6EB2A0ED25F0D53F009715B4 /* DeepLabV3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A0E825F0D53D009715B4 /* DeepLabV3Int8LUT.mlmodel */; };
+		6EB2A0EE25F0D53F009715B4 /* Deeplab.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A0E925F0D53E009715B4 /* Deeplab.mlmodel */; };
+		6EB2A0EF25F0D53F009715B4 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A0EA25F0D53E009715B4 /* DeepLabV3.mlmodel */; };
+		6EB2A0F025F0D53F009715B4 /* DeepLabV3.mlarchive in Resources */ = {isa = PBXBuildFile; fileRef = 6EB2A0EB25F0D53F009715B4 /* DeepLabV3.mlarchive */; };
+		6EB2A0F125F0D53F009715B4 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A0EC25F0D53F009715B4 /* DeepLabV3FP16.mlmodel */; };
 		6EBEB4A525C09EEB0017C640 /* WorkManLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */; };
 		6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB50325C0D3830017C640 /* WorkManHandWrite.m */; };
 		6EBEB50B25C146300017C640 /* WorkManTalkWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB50A25C146300017C640 /* WorkManTalkWrite.m */; };
@@ -385,6 +395,9 @@
 		6EF0C95525CD503400BE7573 /* DinggoWinkTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95425CD503400BE7573 /* DinggoWinkTypo.m */; };
 		6EF0C95A25CD513000BE7573 /* DinggoMurder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95925CD513000BE7573 /* DinggoMurder.m */; };
 		6EF0C95F25CD528C00BE7573 /* DigitalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */; };
+		6EF1C72B25ECDF2D002B8820 /* EditingPhotoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1C72925ECDF2D002B8820 /* EditingPhotoButtonViewController.m */; };
+		6EF1C73F25ECE011002B8820 /* UIImage+Segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1C73E25ECE011002B8820 /* UIImage+Segmentation.swift */; };
+		6EF1C76F25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1C76E25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m */; };
 		6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */; };
 		6EF37B7725E4DE8400A43595 /* MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B7625E4DE8400A43595 /* MainFrame.m */; };
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
@@ -635,6 +648,12 @@
 		6E2845B025C5FCC4008B7A23 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		6E2845C925C98990008B7A23 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
+		6E40F42825E6E67100FD0F67 /* FreeFormCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeFormCollectionReusableView.h; sourceTree = "<group>"; };
+		6E40F42925E6E67100FD0F67 /* FreeFormCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeFormCollectionReusableView.m; sourceTree = "<group>"; };
+		6E40F42A25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreeFormCollectionReusableView.xib; sourceTree = "<group>"; };
+		6E40F43925E7DADD00FD0F67 /* Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		6E40F43A25E7DADD00FD0F67 /* Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		6E40F44125E7DEB100FD0F67 /* SegmentFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentFilter.swift; sourceTree = "<group>"; };
 		6E4A17E925888FFA008578BA /* CircleTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleTemplate.h; sourceTree = "<group>"; };
 		6E4A17EA25888FFA008578BA /* CircleTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleTemplate.m; sourceTree = "<group>"; };
 		6E4A17EF258891D7008578BA /* TemplateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateHeader.h; sourceTree = "<group>"; };
@@ -684,6 +703,8 @@
 		6E80772425C92EDC0033FF21 /* SDMiSaeng.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.otf; sourceTree = "<group>"; };
 		6E80772825C960D00033FF21 /* WorkManYoutube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManYoutube.h; sourceTree = "<group>"; };
 		6E80772925C960D00033FF21 /* WorkManYoutube.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManYoutube.m; sourceTree = "<group>"; };
+		6E84301B25E81A1F00034174 /* EditingPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditingPhotoViewController.h; sourceTree = "<group>"; };
+		6E84301D25E81A2000034174 /* EditingPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoViewController.m; sourceTree = "<group>"; };
 		6E88302C25CD73BC0025B8A5 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		6E88303125CDA7CC0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NEXON Lv2 Gothic OTF Bold.otf"; sourceTree = "<group>"; };
 		6E88303525CDB08E0025B8A5 /* BinggraeSamanco-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BinggraeSamanco-Bold.otf"; sourceTree = "<group>"; };
@@ -830,6 +851,11 @@
 		6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KOTRA_BOLD.otf; sourceTree = "<group>"; };
 		6EAFD5BE25B87D0400B193AB /* TrapezoidTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrapezoidTypo.h; sourceTree = "<group>"; };
 		6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrapezoidTypo.m; sourceTree = "<group>"; };
+		6EB2A0E825F0D53D009715B4 /* DeepLabV3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3Int8LUT.mlmodel; sourceTree = "<group>"; };
+		6EB2A0E925F0D53E009715B4 /* Deeplab.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Deeplab.mlmodel; sourceTree = "<group>"; };
+		6EB2A0EA25F0D53E009715B4 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
+		6EB2A0EB25F0D53F009715B4 /* DeepLabV3.mlarchive */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeepLabV3.mlarchive; sourceTree = "<group>"; };
+		6EB2A0EC25F0D53F009715B4 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
 		6EBEB4A325C09EEB0017C640 /* WorkManLogo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManLogo.h; sourceTree = "<group>"; };
 		6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManLogo.m; sourceTree = "<group>"; };
 		6EBEB50225C0D3830017C640 /* WorkManHandWrite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManHandWrite.h; sourceTree = "<group>"; };
@@ -1195,6 +1221,11 @@
 		6EF0C95925CD513000BE7573 /* DinggoMurder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinggoMurder.m; sourceTree = "<group>"; };
 		6EF0C95D25CD528C00BE7573 /* DigitalTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DigitalTypo.h; sourceTree = "<group>"; };
 		6EF0C95E25CD528C00BE7573 /* DigitalTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalTypo.m; sourceTree = "<group>"; };
+		6EF1C72925ECDF2D002B8820 /* EditingPhotoButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingPhotoButtonViewController.m; sourceTree = "<group>"; };
+		6EF1C72A25ECDF2D002B8820 /* EditingPhotoButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingPhotoButtonViewController.h; sourceTree = "<group>"; };
+		6EF1C73E25ECE011002B8820 /* UIImage+Segmentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Segmentation.swift"; sourceTree = "<group>"; };
+		6EF1C76D25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditingPhotoViewController+ButtonDelegate.h"; sourceTree = "<group>"; };
+		6EF1C76E25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "EditingPhotoViewController+ButtonDelegate.m"; sourceTree = "<group>"; };
 		6EF37B5125E399F000A43595 /* ThummIt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThummIt.entitlements; sourceTree = "<group>"; };
 		6EF37B6625E4DC6400A43595 /* MainFrameCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrameCollectionController.h; sourceTree = "<group>"; };
 		6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainFrameCollectionController.m; sourceTree = "<group>"; };
@@ -1406,6 +1437,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF37B5125E399F000A43595 /* ThummIt.entitlements */,
+				6E40F40825E6963B00FD0F67 /* CoreML */,
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
 				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E4A18AC258A15F6008578BA /* Storyboard */,
@@ -1603,6 +1635,29 @@
 			path = UserManager;
 			sourceTree = "<group>";
 		};
+		6E40F40825E6963B00FD0F67 /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				6EB2A0E925F0D53E009715B4 /* Deeplab.mlmodel */,
+				6EB2A0EB25F0D53F009715B4 /* DeepLabV3.mlarchive */,
+				6EB2A0EA25F0D53E009715B4 /* DeepLabV3.mlmodel */,
+				6EB2A0EC25F0D53F009715B4 /* DeepLabV3FP16.mlmodel */,
+				6EB2A0E825F0D53D009715B4 /* DeepLabV3Int8LUT.mlmodel */,
+			);
+			name = CoreML;
+			path = ../../archive/ThummIt/CoreML;
+			sourceTree = "<group>";
+		};
+		6E40F43E25E7DAE700FD0F67 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				6E40F44125E7DEB100FD0F67 /* SegmentFilter.swift */,
+				6E40F43925E7DADD00FD0F67 /* Photo.h */,
+				6E40F43A25E7DADD00FD0F67 /* Photo.m */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
 		6E4A17FA2588A521008578BA /* UIVIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -1702,6 +1757,9 @@
 		6E7DD4EA2587ABEA0014618E /* EditingVC */ = {
 			isa = PBXGroup;
 			children = (
+				6E9BE9FB258D130900F7F539 /* EditingModeController */,
+				6E9BE9BB258B2C5000F7F539 /* EditingGestureController */,
+				6E9BEA26258DECE200F7F539 /* EditingLayerController */,
 				6E7DD4E42587ABE10014618E /* EditingViewController.h */,
 				6E7DD4E52587ABE10014618E /* EditingViewController.m */,
 				6E6E5BE825A9F3BE009821CF /* EditingViewController+Text.h */,
@@ -1711,9 +1769,6 @@
 				6E4A1865258A0009008578BA /* EditingViewController+AlbumVCDelegate.h */,
 				6E4A1866258A0009008578BA /* EditingViewController+AlbumVCDelegate.m */,
 				6E1191392584D160000DD9C0 /* AlbumVC */,
-				6E9BE9FB258D130900F7F539 /* EditingModeController */,
-				6E9BE9BB258B2C5000F7F539 /* EditingGestureController */,
-				6E9BEA26258DECE200F7F539 /* EditingLayerController */,
 				6E8E7A28259B26D70008C5FF /* ItemCollectionVC */,
 				6E20BC7525AD938600BBA540 /* BGColorVC */,
 			);
@@ -1752,6 +1807,7 @@
 				6E9BE9DF258CFD0400F7F539 /* PhotoManager */,
 				6E8E7A3C259B2EA80008C5FF /* ItemManager */,
 				6E9BEA5C258F1BAD00F7F539 /* ProjectManager */,
+				6E20BCC725AEF59000BBA540 /* UndoManager */,
 				6E9BEA3A258E697200F7F539 /* SaveManager */,
 				6EC4DFF625A8952A0023485C /* TypoManager */,
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
@@ -1777,6 +1833,19 @@
 				6E9BE98F258A517400F7F539 /* VlogTemplate */,
 			);
 			path = Template;
+			sourceTree = "<group>";
+		};
+		6E84301A25E81A1F00034174 /* EditingPhotoVC */ = {
+			isa = PBXGroup;
+			children = (
+				6E84301B25E81A1F00034174 /* EditingPhotoViewController.h */,
+				6E84301D25E81A2000034174 /* EditingPhotoViewController.m */,
+				6EF1C76D25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.h */,
+				6EF1C76E25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m */,
+				6EF1C72A25ECDF2D002B8820 /* EditingPhotoButtonViewController.h */,
+				6EF1C72925ECDF2D002B8820 /* EditingPhotoButtonViewController.m */,
+			);
+			path = EditingPhotoVC;
 			sourceTree = "<group>";
 		};
 		6E8E799E258F82ED0008C5FF /* Migrator */ = {
@@ -1839,6 +1908,7 @@
 		6E8E7A01259237BC0008C5FF /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
+				6EF1C73E25ECE011002B8820 /* UIImage+Segmentation.swift */,
 				6E8E79F8259237B80008C5FF /* UIImage+Additions.h */,
 				6E8E79F9259237B80008C5FF /* UIImage+Additions.m */,
 			);
@@ -1852,6 +1922,7 @@
 				6E8E7A23259B26CF0008C5FF /* ItemCollectionViewController.m */,
 				6E6E5BFA25AA23F3009821CF /* ItemCollectionViewController+Button.h */,
 				6E6E5BFB25AA23F3009821CF /* ItemCollectionViewController+Button.m */,
+				6E84301A25E81A1F00034174 /* EditingPhotoVC */,
 				6E8E7A32259B27120008C5FF /* PhotoFrameCollectionController */,
 				6E8E7AC425A8335E0008C5FF /* TextCollectionController */,
 				B16FC61125ADCA9000E854C1 /* StickerCollectionController */,
@@ -1896,6 +1967,9 @@
 				6E8E7A98259CBB470008C5FF /* PhotoFrameCollectionReusableView.h */,
 				6E8E7A99259CBB470008C5FF /* PhotoFrameCollectionReusableView.m */,
 				6E8E7A9A259CBB470008C5FF /* PhotoFrameCollectionReusableView.xib */,
+				6E40F42825E6E67100FD0F67 /* FreeFormCollectionReusableView.h */,
+				6E40F42925E6E67100FD0F67 /* FreeFormCollectionReusableView.m */,
+				6E40F42A25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -2182,6 +2256,7 @@
 				6E9BE9C3258B2E8500F7F539 /* Item.h */,
 				6E9BE9C4258B2E8500F7F539 /* Item.m */,
 				6E8E7B0225A84EA30008C5FF /* Text */,
+				6E40F43E25E7DAE700FD0F67 /* Photo */,
 				6E8F9A6F25C344F5005C8071 /* PhotoFrame */,
 				B16FC62A25ADD8E800E854C1 /* Sticker */,
 				6EF37B7425E4DE3B00A43595 /* MainFrame */,
@@ -2228,7 +2303,6 @@
 		6E9BEA3A258E697200F7F539 /* SaveManager */ = {
 			isa = PBXGroup;
 			children = (
-				6E20BCC725AEF59000BBA540 /* UndoManager */,
 				6E9BEA34258E696F00F7F539 /* SaveManager.h */,
 				6E9BEA35258E696F00F7F539 /* SaveManager.m */,
 			);
@@ -3405,6 +3479,7 @@
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
 				B1F2B6E525C196E30064A044 /* SCDream9.otf in Resources */,
+				6EB2A0F025F0D53F009715B4 /* DeepLabV3.mlarchive in Resources */,
 				B1F2B6DF25C1940A0064A044 /* UTOIMAGE_ ChocolatLatte_OTF.otf in Resources */,
 				B1F2B74225C1C9BA0064A044 /* NanumBarunGothicBold.otf in Resources */,
 				B16FC62025ADCD9400E854C1 /* StickerCollectionViewCell.xib in Resources */,
@@ -3429,6 +3504,7 @@
 				B1F2B73425C1C3C50064A044 /* NanumGothicExtraBold.otf in Resources */,
 				6E698BC625B8D21000CE86FB /* GoogleService-Info.plist in Resources */,
 				B1F2B71225C1AF780064A044 /* yangpyeong_B.otf in Resources */,
+				6E40F42C25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib in Resources */,
 				6E8E7A9C259CBB470008C5FF /* PhotoFrameCollectionReusableView.xib in Resources */,
 				6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */,
 				6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */,
@@ -3620,6 +3696,7 @@
 				6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */,
 				6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */,
 				6EF0C7C925CBAA4C00BE7573 /* ArrowSticker6.m in Sources */,
+				6EB2A0F125F0D53F009715B4 /* DeepLabV3FP16.mlmodel in Sources */,
 				6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */,
 				6ED0AFE825E51C920027485F /* MacaronVlogMainFrame.m in Sources */,
 				6E1DBDFE25D8063F004C0416 /* ThreeFifthsRectangle.m in Sources */,
@@ -3627,6 +3704,7 @@
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
 				6EF0C92A25CD266600BE7573 /* DinggoBigEdit.m in Sources */,
 				6ED13CAF25C1AEF700012144 /* KnockOutTypo.m in Sources */,
+				6E84301F25E81A2100034174 /* EditingPhotoViewController.m in Sources */,
 				6ED13D2F25C2C73A00012144 /* RunningManExcSticker.m in Sources */,
 				6E28452325C35870008B7A23 /* VlogNanumSquareTypo.m in Sources */,
 				6E7DD4A82584D4490014618E /* AlbumViewController+CollectionViewDelegate.m in Sources */,
@@ -3729,6 +3807,7 @@
 				B11E0D6F25C5751C0050D9F0 /* VlogMacaronTypo.m in Sources */,
 				6E28451B25C35870008B7A23 /* VlogItaly.m in Sources */,
 				6E1DBCF825CBE240004C0416 /* SignInEmailViewController.m in Sources */,
+				6E40F42B25E6E67100FD0F67 /* FreeFormCollectionReusableView.m in Sources */,
 				B1F2B6F425C1995A0064A044 /* InfiniteChallengeBlackTypo.m in Sources */,
 				B1F2B6D925C193AF0064A044 /* InfiniteChallengeLogo.m in Sources */,
 				6E7DD51625888C980014618E /* Template.m in Sources */,
@@ -3766,6 +3845,7 @@
 				B1F2B7CF25C305C50064A044 /* BlinkSticker1.m in Sources */,
 				6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */,
 				6ED0AFED25E51CA40027485F /* SixToFourVlogMainFrame.m in Sources */,
+				6EB2A0ED25F0D53F009715B4 /* DeepLabV3Int8LUT.mlmodel in Sources */,
 				6EC7646825DAD938009FF873 /* InfiniteTemplateRectangle2.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */,
@@ -3798,6 +3878,7 @@
 				6EF0C95025CD4F4100BE7573 /* DinggoBehindTypo.m in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
 				B1F2B73E25C1C4E30064A044 /* InfiniteChallengeHashTag.m in Sources */,
+				6E40F44225E7DEB100FD0F67 /* SegmentFilter.swift in Sources */,
 				6EBEB69425C4C5770017C640 /* StayingHomeVlogTemplate.m in Sources */,
 				6E1DBE9925D82DF2004C0416 /* KidsTrapezoid2.m in Sources */,
 				6E8F9A9425C34581005C8071 /* FullRectangle.m in Sources */,
@@ -3831,6 +3912,7 @@
 				6E8E7AF425A83C110008C5FF /* TextCollectionViewCell.m in Sources */,
 				6EF0C85425CBC7F000BE7573 /* LockSticker.m in Sources */,
 				6EF0C7FB25CBAE2E00BE7573 /* CloudSticker2.m in Sources */,
+				6EF1C72B25ECDF2D002B8820 /* EditingPhotoButtonViewController.m in Sources */,
 				6EF0C8A425CBDB3E00BE7573 /* SpeechBubbleSticker3.m in Sources */,
 				6E1DBE6D25D825DB004C0416 /* ClothesTemplateRect2.m in Sources */,
 				6ED0AF8E25E514580027485F /* InfiniteChallenge1MainFrame.m in Sources */,
@@ -3842,8 +3924,10 @@
 				6ED0AFA225E515050027485F /* InfiniteChallenge2MainFrame.m in Sources */,
 				6E1DBE0E25D809AE004C0416 /* HorizontalHalfRectangle.m in Sources */,
 				6E80770F25C82B060033FF21 /* DanceVlogTemplate.m in Sources */,
+				6EF1C73F25ECE011002B8820 /* UIImage+Segmentation.swift in Sources */,
 				6EF0C93D25CD2B7800BE7573 /* DinggoPotatoTypo.m in Sources */,
 				6EC7645E25DAD8FC009FF873 /* InfiniteTemplateRectangle1.m in Sources */,
+				6EB2A0EF25F0D53F009715B4 /* DeepLabV3.mlmodel in Sources */,
 				6EF0C7F125CBAE0800BE7573 /* CircleSticker2.m in Sources */,
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
 				B11E0D8D25C595BF0050D9F0 /* VlogHolidayTypo.m in Sources */,
@@ -3854,6 +3938,7 @@
 				6E1DBCFD25CBE2B5004C0416 /* ForgotPasswordViewController.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E1DBE2325D81ADB004C0416 /* DailyVlogTemplateRectangle2.m in Sources */,
+				6EB2A0EE25F0D53F009715B4 /* Deeplab.mlmodel in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
 				6ED0AF8925E5143F0027485F /* SinSeoYuGi1MainFrame.m in Sources */,
 				B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */,
@@ -3895,6 +3980,7 @@
 				B11E0D6A25C56D560050D9F0 /* MacaronVlogTemplate.m in Sources */,
 				6E28452525C35870008B7A23 /* VlogSummerTypo.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
+				6EF1C76F25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m in Sources */,
 				6E1DBE8B25D82CC9004C0416 /* PolaroidRectangle.m in Sources */,
 				6E28451325C35870008B7A23 /* VlogShortDance.m in Sources */,
 				6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */,
@@ -3909,6 +3995,7 @@
 				6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */,
 				6EF0C7D325CBAC8A00BE7573 /* BlinkSticker3.m in Sources */,
 				6EBEB6BC25C4F8FE0017C640 /* VlogFreshmanTypo.m in Sources */,
+				6E40F43B25E7DADD00FD0F67 /* Photo.m in Sources */,
 				B1F2B7D625C305D90064A044 /* PigtailSticker.m in Sources */,
 				B1F8C6D825C4CC23002DDAF8 /* VlogMakingFilmTypo.m in Sources */,
 				6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */,
@@ -4190,7 +4277,7 @@
 				CODE_SIGN_ENTITLEMENTS = ThummIt/ThummIt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KD6B7H34C6;
@@ -4278,8 +4365,8 @@
 				CODE_SIGN_ENTITLEMENTS = ThummIt/ThummIt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KD6B7H34C6;
 				FRAMEWORK_SEARCH_PATHS = (

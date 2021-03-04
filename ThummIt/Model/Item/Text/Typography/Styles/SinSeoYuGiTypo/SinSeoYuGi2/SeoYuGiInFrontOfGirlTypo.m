@@ -16,7 +16,7 @@
         self.fontName = @"ELANDNiceM";
         self.textColor = UIColor.whiteColor;
         self.fontSize = 60;
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor colorWithRed:84/255.0f green:8/255.0f blue:8/255.0f alpha:1];
         bgTextAttribute1.borderWidth = 9;

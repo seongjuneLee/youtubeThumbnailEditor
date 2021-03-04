@@ -16,6 +16,7 @@
         self.itemName = @"goodSticker1";
         self.backgroundImageName = @"goodSticker1";
         self.tintColor = [UIColor blackColor];
+        self.canChangeColor = true;
     }
     return self;
 }

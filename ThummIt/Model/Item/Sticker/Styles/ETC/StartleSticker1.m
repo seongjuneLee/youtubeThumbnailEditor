@@ -16,6 +16,7 @@
         self.itemName = @"startleSticker1";
         self.backgroundImageName = @"startleSticker1";
         self.tintColor = [UIColor redColor];
+        self.canChangeColor = true;
     }
     return self;
 }

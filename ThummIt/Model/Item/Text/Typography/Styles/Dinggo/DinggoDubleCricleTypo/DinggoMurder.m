@@ -17,7 +17,7 @@
         self.fontName = @"NeoDunggeunmoPro-Regular";
         self.textColor = [UIColor colorWithRed:(0/255.0) green:(0/255.0) blue:(0/255.0) alpha:1] ;
         self.fontSize = 100;
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor colorWithRed:(249/255.0) green:(242/255.0) blue:(84/255.0) alpha:1];
        

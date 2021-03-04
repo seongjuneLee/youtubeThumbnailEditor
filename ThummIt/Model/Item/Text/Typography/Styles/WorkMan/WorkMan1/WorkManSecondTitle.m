@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"안받을게요",nil);
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor whiteColor];
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor blackColor];
         bgTextAttribute1.borderWidth = 5;

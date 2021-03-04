@@ -29,6 +29,8 @@
     if (self.itemName) {
         copied.itemName = [NSString stringWithString:self.itemName];
     }
+    [copied loadView];
+    [copied setItemCenterAndScale];
 
     return copied;
 }
@@ -93,11 +95,11 @@
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
     UIImage *image = [UIImage imageNamed:self.backgroundImageName];
     
-    if (self.cannotChangeColor) {
-        self.backgroundImageView.image = image;
-    } else {
+    if (self.canChangeColor) {
         self.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         self.backgroundImageView.tintColor = self.tintColor;
+    } else {
+        self.backgroundImageView.image = image;
     }
     
     [self.baseView addSubview:self.backgroundImageView];

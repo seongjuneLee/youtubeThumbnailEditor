@@ -16,6 +16,7 @@
         self.itemName = @"stainSticker2";
         self.backgroundImageName = @"stainSticker2";
         self.tintColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
+        self.canChangeColor = true;
     }
     return self;
 }

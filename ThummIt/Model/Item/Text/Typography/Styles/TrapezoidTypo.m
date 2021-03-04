@@ -19,6 +19,7 @@
         self.bgImageName = @"trapezoidBox";
         self.bgHeightPadding = 250;
         self.bgWidthPadding = 250;
+        self.canChangeColor = true;
     }
     return self;
 }

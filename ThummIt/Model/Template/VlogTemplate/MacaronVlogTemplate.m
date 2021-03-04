@@ -96,8 +96,6 @@
     VlogMacaronSticker *vlogMacaronSticker1 = [VlogMacaronSticker vlogMacaronSticker];
     vlogMacaronSticker1.scale = 0.13;
     vlogMacaronSticker1.isTemplateItem = true;
-    vlogMacaronSticker1.cannotChangeColor = true;
-    vlogMacaronSticker1.indexInLayer = @"2";
     vlogMacaronSticker1.rotationDegree = degreesToRadians(-10);
     vlogMacaronSticker1.center = CGPointMake(0.06, 0.09);
     [self.stickers addObject:vlogMacaronSticker1];
@@ -105,7 +103,6 @@
     VlogMacaronSticker *vlogMacaronSticker2 = [VlogMacaronSticker vlogMacaronSticker];
     vlogMacaronSticker2.scale = 0.13;
     vlogMacaronSticker2.isTemplateItem = true;
-    vlogMacaronSticker2.cannotChangeColor = true;
     vlogMacaronSticker2.indexInLayer = @"3";
     vlogMacaronSticker2.rotationDegree = degreesToRadians(-10);
     vlogMacaronSticker2.center = CGPointMake(0.94, 0.91);

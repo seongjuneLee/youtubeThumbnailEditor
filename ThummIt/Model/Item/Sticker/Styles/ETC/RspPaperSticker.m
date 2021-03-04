@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"rspPaperSticker";
         self.backgroundImageName = @"rspPaperSticker";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

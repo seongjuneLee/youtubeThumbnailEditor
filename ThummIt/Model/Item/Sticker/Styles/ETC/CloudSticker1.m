@@ -16,6 +16,7 @@
         self.itemName = @"cloudSticker1";
         self.backgroundImageName = @"cloudSticker1";
         self.tintColor = [UIColor whiteColor];
+        self.canChangeColor = true;
     }
     return self;
 }

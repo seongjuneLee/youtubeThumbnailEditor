@@ -16,6 +16,7 @@
         self.itemName = @"effectSticker2";
         self.backgroundImageName = @"effectSticker2";
         self.tintColor = [UIColor blackColor];
+        self.canChangeColor = true;
     }
     return self;
 }

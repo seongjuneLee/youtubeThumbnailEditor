@@ -17,7 +17,7 @@
         self.fontName = @"Cafe24Shiningstar";
         self.textColor = [UIColor colorWithRed:253/255.0 green:253/255.0 blue:214/255.0 alpha:1];
         self.fontSize = 100;
-        
+        self.canChangeColor = true;
     }
     return self;
 }

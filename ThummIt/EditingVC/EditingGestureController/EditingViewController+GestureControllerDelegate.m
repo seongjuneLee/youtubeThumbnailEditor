@@ -17,21 +17,32 @@
 -(void)didSelectItem:(Item *)item{
     
     self.modeController.editingMode = EditingItemMode;
-    
-    if ([item isKindOfClass:PhotoFrame.class]) {
+
+    if ([item isKindOfClass:Photo.class]) {
+        if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
+            if (PhotoManager.sharedInstance.phassets.count == 0) {
+                PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+            }
+            [self didTapPhoto:item];
+        } else {
+            [self taskWhenDenied];
+        }
+    } else if ([item isKindOfClass:PhotoFrame.class]) {
         
         if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
             if (PhotoManager.sharedInstance.phassets.count == 0) {
                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
             }
-            [self photoFrameTappedTaskWhenAuthorizedWithItem:item];
+            [self didTapPhotoFrame:item];
         } else {
             [self taskWhenDenied];
         }
         
     } else if([item isKindOfClass:Text.class]){
-        [self hideItemsForItemMode];
         
+        [self didTapText:item];
+        
+    } else if([item isKindOfClass:Sticker.class]){
         Text *text = (Text *)item;
         self.currentItem = text;
         self.currentText = text;
@@ -52,13 +63,12 @@
         [self.layerController bringCurrentItemToFront];
         self.itemCollectionVC.itemType = TextType;
         
-        if(!text.typo.cannotChangeColor){
+        if(text.typo.canChangeColor){
             [UIView animateWithDuration:0.2 animations:^{
                 self.hueSlider.alpha = 1.0;
             }];
         }
         
-        [self addItemCollectionVC];
         
     } else if([item isKindOfClass:Sticker.class]){
         [self hideItemsForItemMode];
@@ -70,7 +80,7 @@
         self.originalTransform = sticker.baseView.transform;
         self.originalStickerBGImageName = sticker.backgroundImageName;
         self.originalTintColor = sticker.tintColor;
-        self.originalColorChangable = sticker.cannotChangeColor;
+        self.originalColorChangable = sticker.canChangeColor;
         self.originalSticker = sticker;
         self.originalIndexInLayer = sticker.indexInLayer.integerValue;
         
@@ -78,17 +88,36 @@
         [self.layerController bringCurrentItemToFront];
         self.itemCollectionVC.itemType = StickerType;
         
-        if(!sticker.cannotChangeColor){
-            [UIView animateWithDuration:0.2 animations:^{
-                self.hueSlider.alpha = 1.0;
-            }];
-        }
-        
-        [self addItemCollectionVC];
+        [self didTapSticker:item];
 
-    } else if([item isKindOfClass:MainFrame.class]){
-        
     }
+    [self hideItemsForItemMode];
+    [self showItemCollectionVC];
+
+}
+
+#pragma mark - 포토
+
+-(void)didTapPhoto:(Item *)item{
+    
+    Photo *photo = (Photo *)item;
+    
+    Photo *copied = [photo copy];
+    self.currentItem = copied;
+    self.currentPhoto = copied;
+    self.originalPhoto = photo;
+    self.originalPhoto.baseView.hidden = true;
+    self.originalIndexInLayer = photo.indexInLayer.integerValue;
+    
+    [self.layerController showTransparentView];
+    [self hideItemsForItemMode];
+    
+    [self.layerController bringCurrentItemToFront];
+    self.itemCollectionVC.itemType = PhotoType;
+    
+    [self showItemCollectionVC];
+    [self addAlbumVC];
+    [self.albumVC showWithAnimation];
     
     for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
         
@@ -105,13 +134,13 @@
     
 }
 
--(void)photoFrameTappedTaskWhenAuthorizedWithItem:(Item *)item{
+#pragma mark - 포토프레임
+
+-(void)didTapPhotoFrame:(Item *)item{
     
     PhotoFrame *photoFrame = (PhotoFrame *)item;
     
     PhotoFrame *copied = [photoFrame copy];
-    [copied loadView];
-    [copied setItemCenterAndScale];
     self.currentItem = copied;
     self.currentPhotoFrame = copied;
     self.originalPhotoFrame = photoFrame;
@@ -127,46 +156,108 @@
     if (photoFrame.isFixedPhotoFrame) {
         [self fixedPhotoFrameTapped];
     } else {
-        [self addItemCollectionVC];
+        [self showItemCollectionVC];
         [self addAlbumVC];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.albumVC showWithAnimation];
+        });
+
     }
     [self setCurrentPhotoSelectedOnAlbumVC];
 }
 
 -(void)fixedPhotoFrameTapped{
     
-    [self addItemCollectionVC];
+    [self showItemCollectionVC];
     [self addAlbumVC];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.albumVC showWithAnimation];
     });
-    self.itemCollectionVC.photoButton.selected = true;
+    self.itemCollectionVC.photoFramePhotoButton.selected = true;
     
 }
 
 -(void)setCurrentPhotoSelectedOnAlbumVC{
-    PhotoFrame *photoFrame = self.currentPhotoFrame;
-
-    NSUInteger index = 0;
-    NSArray *phassets = PhotoManager.sharedInstance.phassets;
-    for (int i = 0; i < phassets.count; i++) {
-        PHAsset *phAsset = phassets[i];
-        if ([photoFrame.phAsset.localIdentifier isEqualToString:phAsset.localIdentifier]) {
-            index = i;
-        }
-    }
     
-    self.albumVC.selectedIndexPath = [NSIndexPath indexPathForItem:index inSection:0];
-    [self.albumVC.collectionView reloadData];
-    PHAsset *selectedPHAsset = phassets[index];
-    if (!photoFrame.photoImageView.image) {
-        [self didSelectPhotoWithPHAsset:selectedPHAsset];
+    if (self.itemCollectionVC.itemType == PhotoFrameType) {
+        PhotoFrame *photoFrame = self.currentPhotoFrame;
+
+        NSUInteger index = 0;
+        NSArray *phassets = PhotoManager.sharedInstance.phassets;
+        for (int i = 0; i < phassets.count; i++) {
+            PHAsset *phAsset = phassets[i];
+            if ([photoFrame.phAsset.localIdentifier isEqualToString:phAsset.localIdentifier]) {
+                index = i;
+            }
+        }
+        
+        self.albumVC.selectedIndexPath = [NSIndexPath indexPathForItem:index inSection:0];
+        [self.albumVC.collectionView reloadData];
+        PHAsset *selectedPHAsset = phassets[index];
+        if (!photoFrame.photoImageView.image) {
+            [self didSelectPhotoWithPHAsset:selectedPHAsset];
+        }
     }
     
 }
 
+#pragma mark -텍스트
 
+-(void)didTapText:(Item *)item{
+    Text *text = (Text *)item;
+    self.currentItem = text;
+    self.currentText = text;
+    
+    self.originalCenter = text.baseView.center;
+    self.originalTransform = text.baseView.transform;
+    self.originalTypo = text.typo;
+    self.originalText = text.text;
+    
+    self.itemCollectionVC.typoButton.selected = false;
+    self.itemCollectionVC.typoButton.alpha = 0.4;
+    self.itemCollectionVC.textButton.selected = true;
+    self.itemCollectionVC.textButton.alpha = 1.0;
+    
+    [text.textView becomeFirstResponder];
+    [self.layerController showTransparentView];
+    [self.layerController bringCurrentItemToFront];
+    self.itemCollectionVC.itemType = TextType;
+    
+    if(text.typo.canChangeColor){
+        [UIView animateWithDuration:0.2 animations:^{
+            self.hueSlider.alpha = 1.0;
+        }];
+    }
+
+}
+
+#pragma mark - 스티커
+
+-(void)didTapSticker:(Item *)item{
+    
+    Sticker *sticker = (Sticker *)item;
+    self.currentItem = sticker;
+    self.currentSticker = sticker;
+    self.originalCenter = sticker.baseView.center;
+    self.originalTransform = sticker.baseView.transform;
+    self.originalStickerBGImageName = sticker.backgroundImageName;
+    self.originalTintColor = sticker.tintColor;
+    self.originalColorChangable = sticker.canChangeColor;
+    self.originalSticker = sticker;
+    self.originalIndexInLayer = sticker.indexInLayer.integerValue;
+    
+    [self.layerController showTransparentView];
+    [self.layerController bringCurrentItemToFront];
+    self.itemCollectionVC.itemType = StickerType;
+    
+    if(sticker.canChangeColor){
+        [UIView animateWithDuration:0.2 animations:^{
+            self.hueSlider.alpha = 1.0;
+        }];
+    }
+    
+}
 
 #pragma mark - 팬
 
@@ -178,7 +269,7 @@
         self.undoButton.alpha = 0.0;
         self.redoButton.alpha = 0.0;
         self.buttonScrollView.alpha = 0.0;
-        self.deleteButtonContainerView.alpha = 1.0;
+        self.deleteButtonContentView.alpha = 1.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
         self.itemLayerScrollView.alpha = 0.0;
     }];
@@ -193,12 +284,12 @@
     float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
     if (currentPointY >= imageViewBottomY) {
         [UIView animateWithDuration:0.2 animations:^{
-            self.deleteButtonContainerView.alpha = 0.4;
+            self.deleteButtonContentView.alpha = 0.4;
             self.currentItem.baseView.alpha = 0.4;
         }];
     } else {
         [UIView animateWithDuration:0.2 animations:^{
-            self.deleteButtonContainerView.alpha = 1.0;
+            self.deleteButtonContentView.alpha = 1.0;
             self.currentItem.baseView.alpha = 1.0;
         }];
     }
@@ -212,8 +303,8 @@
     if (fingerPoint.y >= imageViewBottomY) {
         [item.baseView removeFromSuperview];
         [self.currentText.textView resignFirstResponder];
-        self.itemCollectionVC.checkButton.enabled = true;
-        self.itemCollectionVC.checkButton.alpha = 1.0;
+        self.itemCollectionVC.doneButton.enabled = true;
+        self.itemCollectionVC.doneButton.alpha = 1.0;
         
         [self.layerController itemLayerDelete];
         
@@ -246,7 +337,7 @@
         self.undoButton.alpha = 1.0;
         self.redoButton.alpha = 1.0;
         self.buttonScrollView.alpha = 1.0;
-        self.deleteButtonContainerView.alpha = 0.0;
+        self.deleteButtonContentView.alpha = 0.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
         self.itemLayerScrollView.alpha = 1.0;
     }];
@@ -258,8 +349,8 @@
 -(void)pinchGestureInNormalModeBeganWithItem:(Item *)item withSender:(UIGestureRecognizer *)sender{
     self.underAreaView.hidden = true;
     [UIView animateWithDuration:0.2 animations:^{
-        self.photoFrameButtonContainerView.alpha = 0.0;
-        self.deleteButtonContainerView.alpha = 1.0;
+        self.photoFrameButtonContentView.alpha = 0.0;
+        self.deleteButtonContentView.alpha = 1.0;
     }];
 }
 

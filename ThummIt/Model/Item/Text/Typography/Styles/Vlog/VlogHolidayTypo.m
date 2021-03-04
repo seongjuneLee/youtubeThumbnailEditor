@@ -17,7 +17,7 @@
         self.fontName = @"SDMiSaeng";
         self.textColor = [UIColor whiteColor];
         self.fontSize = 80;
-        
+        self.canChangeColor = true;
     }
     return self;
 }

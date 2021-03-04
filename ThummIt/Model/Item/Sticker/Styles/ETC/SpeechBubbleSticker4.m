@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"speechBubbleSticker4";
         self.backgroundImageName = @"speechBubbleSticker4";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

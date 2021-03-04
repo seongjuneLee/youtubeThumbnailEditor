@@ -12,6 +12,7 @@
 #import "EditingModeController.h"
 #import "BGColorViewController.h"
 #import "EditingLayerController.h"
+#import "EditingPhotoViewController.h"
 #import "ItemCollectionViewController.h"
 #import "SaveManager.h"
 #import "ItemManager.h"
@@ -20,9 +21,11 @@
 #import "UndoManager.h"
 #import "TypoHeader.h"
 #import "PhotoFrameHeader.h"
+#import "Photo.h"
 #import "StickerHeader.h"
 #import "MainFrameHeader.h"
 #import "AppManager.h"
+#import "EditingPhotoButtonViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
@@ -36,12 +39,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) BGColorViewController *bgColorVC;
 @property (strong, nonatomic) ItemCollectionViewController *itemCollectionVC;
 @property (strong, nonatomic, nullable) AlbumViewController *albumVC;
+@property (strong, nonatomic, nullable) EditingPhotoViewController *editingPhotoVC;
+@property (strong, nonatomic, nullable) EditingPhotoButtonViewController *editingPhotoButtonVC;
 
 // 모델
 @property (strong, nonatomic) Template *selectedTemplate;
 @property (strong, nonatomic, nullable) Item *currentItem;
 @property (strong, nonatomic, nullable) Text *currentText;
 @property (strong, nonatomic, nullable) PhotoFrame *currentPhotoFrame;
+@property (strong, nonatomic, nullable) Photo *currentPhoto;
 @property (strong, nonatomic, nullable) Sticker *currentSticker;
 
 // 최근 데이터
@@ -55,6 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGAffineTransform originalTransform;
 
 @property (strong, nonatomic, nullable) PhotoFrame *originalPhotoFrame;
+@property (strong, nonatomic, nullable) Photo *originalPhoto;
 
 @property (strong, nonatomic) Typography *originalTypo; // text
 @property (strong, nonatomic) NSString *originalText;
@@ -72,19 +79,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIView *upperArea;
 @property (weak, nonatomic) IBOutlet UIView *gestureView;
-@property (weak, nonatomic) IBOutlet UIView *photoFrameButtonContainerView;
-@property (weak, nonatomic) IBOutlet UIView *deleteButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *photoFrameButtonContentView;
+@property (weak, nonatomic) IBOutlet UIView *deleteButtonContentView;
 @property (weak, nonatomic) IBOutlet UIView *underAreaView;
-@property (weak, nonatomic) IBOutlet UIView *textButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *textButtonContentView;
 @property (weak, nonatomic) IBOutlet UIButton *textButtonInScrollView;
+@property (weak, nonatomic) IBOutlet UIView *photoButtonContentView;
 
 @property (weak, nonatomic) IBOutlet UIButton *photoFrameButton;
 @property (weak, nonatomic) IBOutlet UIButton *textButton;
 @property (weak, nonatomic) IBOutlet UIButton *stickerButton;
 @property (weak, nonatomic) IBOutlet UIButton *mainFrameButton;
 @property (weak, nonatomic) IBOutlet UIButton *bgColorButton;
-@property (weak, nonatomic) IBOutlet UIView *stickerButtonContainerView;
-@property (weak, nonatomic) IBOutlet UIView *bgColorButtonContainerView;
+@property (weak, nonatomic) IBOutlet UIView *stickerButtonContentView;
+@property (weak, nonatomic) IBOutlet UIView *bgColorButtonContentView;
 @property (weak, nonatomic) IBOutlet UIScrollView *itemLayerScrollView;
 @property (weak, nonatomic) IBOutlet UIView *itemLayerContentView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemLayerContentViewHeightConstraint;
@@ -97,6 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *mainFrameImageView;
 @property (weak, nonatomic) IBOutlet UIButton *leftItem;
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
+@property (weak, nonatomic) IBOutlet UIButton *photoButton;
 
 @property (strong, nonatomic) UIImageView *hueImageView;
 @property (strong, nonatomic) UIView *thumbCircleView;
@@ -110,9 +119,14 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)hideItemsForItemMode;
 
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
+@property (weak, nonatomic) IBOutlet UIView *itemCollectionContainerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionTopConstraint;
+@property (weak, nonatomic) IBOutlet UIView *bgColorContainerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgColorTopConstraint;
 
 @property (nonatomic) BOOL isFirstLoadVIew;
 
+- (IBAction)photoButtonTapped:(id)sender;
 
 @end
 

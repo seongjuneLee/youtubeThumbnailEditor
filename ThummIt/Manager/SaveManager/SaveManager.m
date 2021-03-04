@@ -38,7 +38,9 @@
 }
 
 -(void)addItem:(Item *)item{
-    if ([item isKindOfClass:PhotoFrame.class]) {
+    if ([item isKindOfClass:Photo.class]) {
+        [self.currentProject.photos addObject:(Photo *)item];
+    } else if ([item isKindOfClass:PhotoFrame.class]) {
         [self.currentProject.photoFrames addObject:(PhotoFrame *)item];
     } else if ([item isKindOfClass:Text.class]){
         [self.currentProject.texts addObject:(Text *)item];
@@ -48,7 +50,9 @@
 }
 
 -(void)deleteItem:(Item *)item{
-    if ([item isKindOfClass:PhotoFrame.class]) {
+    if ([item isKindOfClass:Photo.class]) {
+        [self.currentProject.photos removeObject:(Photo *)item];
+    } else if ([item isKindOfClass:PhotoFrame.class]) {
         [self.currentProject.photoFrames removeObject:(PhotoFrame *)item];
     } else if ([item isKindOfClass:Text.class]){
         [self.currentProject.texts removeObject:(Text *)item];
@@ -109,8 +113,6 @@
     // add Items
     for (Item *item in self.currentProject.items) {
         Item *copied = [item copy];
-        [copied loadView];
-        [copied setItemCenterAndScale];
         if (copied.isFixedPhotoFrame) {
             copied.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
             [view insertSubview:copied.baseView belowSubview:mainFrameImageView];
