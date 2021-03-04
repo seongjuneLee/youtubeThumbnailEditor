@@ -199,7 +199,7 @@
         } else {
             [self.view insertSubview:item.baseView aboveSubview:self.mainFrameImageView];
         }
-
+ 
     }
     //fixedphotoframe을 제외한 item 개수 얻기위함
     int itemCountExceptFixedPhotoFrame = 0;
