@@ -403,12 +403,12 @@
         self.itemCollectionVC.collectionView.hidden = false;
     }
     if (self.itemCollectionVC.itemType == TextType) {
-        
-        constant = self.itemCollectionContainerView.frameHeight - window.safeAreaInsets.bottom - AppManager.sharedInstance.keyboardSize.height;
+        //50은 언두버튼 + 위아래인셋
+        constant = self.underAreaView.frameHeight - (AppManager.sharedInstance.keyboardSize.height-window.safeAreaInsets.bottom) - 50;
     }
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
-        self.itemCollectionTopConstraint.constant = constant;
+        self.itemCollectionContainerTopConstraint.constant = constant;
         [self.view layoutIfNeeded];
 
     } completion:nil];

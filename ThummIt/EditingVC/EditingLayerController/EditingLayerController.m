@@ -183,6 +183,8 @@
                 //indexinlayer에 맞추어 bgview에서도 위치 변경
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
+                [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
+
             }
             
             //nextitemlayer가 array의 마지막 object일때는 nextitemlayer를 받으면 튕기는 현상에 대한 대응
@@ -219,6 +221,8 @@
                 self.directionShouldChange = YES;
                 }
             
+            [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
+
         }
     } else if(deltaPoint.y < 0){
         
@@ -255,6 +259,8 @@
                 
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
+                [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
+
             }
             
         } else{
@@ -282,6 +288,8 @@
                 
                 [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
+                [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
+
                 self.directionShouldChange = YES;
             }
         }
@@ -312,33 +320,49 @@
     ItemLayer *foundItemLayer;
     ItemLayer *anyItemLayer = [ItemLayer new];
     
-    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
-        if(itemLayer.item == editingVC.currentItem){
-            foundItemLayer = itemLayer;
-            [itemLayer.barBaseView removeFromSuperview];
-            deletedItemLayerIndex = itemLayer.itemLayerIndex;
+    //itemCollectionView가 올라와있는 경우 pan을 통해 내릴 때, contentview가 한칸 줄어드는 경우 방어
+    BOOL ButtonsInScrollViewSelected = YES;
+    for(Item *item in SaveManager.sharedInstance.currentProject.items){
+        if(editingVC.currentItem == item){
+            ButtonsInScrollViewSelected = NO;
+            break;
+        } else{
+            ButtonsInScrollViewSelected = YES;
         }
     }
-    [SaveManager.sharedInstance.currentProject.itemLayers removeObject:foundItemLayer];
     
-    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
-        if(itemLayer.itemLayerIndex > deletedItemLayerIndex){
-            itemLayer.itemLayerIndex -= 1;
+    if(!ButtonsInScrollViewSelected){
+        for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+                if(itemLayer.item == editingVC.currentItem){
+                        foundItemLayer = itemLayer;
+                        [itemLayer.barBaseView removeFromSuperview];
+                        deletedItemLayerIndex = itemLayer.itemLayerIndex;
+                     }
+            }
+        
+        [SaveManager.sharedInstance.currentProject.itemLayers removeObject:foundItemLayer];
+        
+        for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+            if(itemLayer.itemLayerIndex > deletedItemLayerIndex){
+                itemLayer.itemLayerIndex -= 1;
+            }
+        }
+        [UIView animateWithDuration:0.2 animations:^{
+        editingVC.itemLayerContentViewHeightConstraint.constant -= anyItemLayer.barBaseViewHeight/2 * 3;
+        }];
+        
+        for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+            if(itemLayer.itemLayerIndex < deletedItemLayerIndex){
+                
+                [UIView animateWithDuration:0.2 animations:^{
+                    itemLayer.barBaseView.centerY -= itemLayer.barBaseViewHeight/2 * 3;
+                }];
+                itemLayer.originalCenterY -= itemLayer.barBaseViewHeight/2 * 3;
+               
+            }
         }
     }
-    [UIView animateWithDuration:0.2 animations:^{
-    editingVC.itemLayerContentViewHeightConstraint.constant -= anyItemLayer.barBaseViewHeight/2 * 3;
-    }];
-    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
-        if(itemLayer.itemLayerIndex < deletedItemLayerIndex){
-            
-            [UIView animateWithDuration:0.2 animations:^{
-                itemLayer.barBaseView.centerY -= itemLayer.barBaseViewHeight/2 * 3;
-            }];
-            itemLayer.originalCenterY -= itemLayer.barBaseViewHeight/2 * 3;
-           
-        }
-    }
+    
 }
 
 @end

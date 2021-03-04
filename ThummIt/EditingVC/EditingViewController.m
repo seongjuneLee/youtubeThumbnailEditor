@@ -69,7 +69,8 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [SaveManager.sharedInstance saveAndAddToStack];
         });
-        self.bgColorTopConstraint.constant = self.itemCollectionTopConstraint.constant = self.view.frameHeight;
+        self.bgColorTopConstraint.constant = self.itemCollectionContainerTopConstraint.constant = self.view.frameHeight;
+        self.itemCollectionContainerHeightConstraint.constant = self.underAreaView.frameHeight;
     }
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
     

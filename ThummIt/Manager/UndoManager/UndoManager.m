@@ -84,9 +84,6 @@
     
     NSData *data = self.undoRedoStacks[self.currentIndex];
     Project *project = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    for (Item *item in project.items) {
-        NSLog(@"세이브 리두 %ld",item.indexInLayer.integerValue);
-    }
 
     project.coreDataStorage = SaveManager.sharedInstance.currentProject.coreDataStorage;
     [SaveManager.sharedInstance applyCurrentProject:project];

@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -491,6 +490,7 @@
                         <viewLayoutGuide key="safeArea" id="7pY-QV-G2j"/>
                         <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="mx5-Mu-TgO" firstAttribute="height" secondItem="ulM-C1-Guu" secondAttribute="height" id="0tV-wc-Ran"/>
                             <constraint firstItem="xcS-1G-W8A" firstAttribute="top" secondItem="7pY-QV-G2j" secondAttribute="top" constant="20" id="1Qf-8r-20P"/>
                             <constraint firstItem="zeV-pp-6xL" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="1cR-PM-yNk"/>
                             <constraint firstItem="zeV-pp-6xL" firstAttribute="height" secondItem="Mym-l3-rms" secondAttribute="height" constant="5" id="1kc-3A-3je"/>
@@ -522,15 +522,14 @@
                             <constraint firstItem="OGb-vs-PFa" firstAttribute="centerX" secondItem="c8Y-hQ-BzP" secondAttribute="centerX" id="VZ3-DL-LcJ"/>
                             <constraint firstItem="Ei1-47-GtK" firstAttribute="top" secondItem="a67-Pd-GYU" secondAttribute="top" constant="150" id="WyH-5l-31z"/>
                             <constraint firstItem="Yts-NW-w4K" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="X93-o3-Uof"/>
-                            <constraint firstItem="mx5-Mu-TgO" firstAttribute="top" secondItem="qIS-C8-jIt" secondAttribute="bottom" id="XFb-ab-Kkv"/>
                             <constraint firstItem="dNB-8m-B4w" firstAttribute="bottom" secondItem="c8Y-hQ-BzP" secondAttribute="bottom" id="XUc-dD-1x1"/>
-                            <constraint firstItem="mx5-Mu-TgO" firstAttribute="height" secondItem="Mym-l3-rms" secondAttribute="height" multiplier="0.578125" id="Y1Z-Ub-Vd1"/>
                             <constraint firstItem="ulM-C1-Guu" firstAttribute="top" secondItem="qIS-C8-jIt" secondAttribute="bottom" id="Yzl-qb-8Oz"/>
                             <constraint firstItem="UhL-LO-vTX" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="Zzp-b0-yX7"/>
                             <constraint firstItem="dNB-8m-B4w" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="bBQ-6c-uA4"/>
                             <constraint firstItem="QtR-ND-K0Y" firstAttribute="leading" secondItem="ulM-C1-Guu" secondAttribute="leading" constant="10" id="c7o-sK-oYA"/>
                             <constraint firstItem="qIS-C8-jIt" firstAttribute="width" secondItem="Mym-l3-rms" secondAttribute="width" id="cC3-zC-pcv"/>
                             <constraint firstItem="hyI-hU-5Mx" firstAttribute="leading" secondItem="QtR-ND-K0Y" secondAttribute="trailing" constant="5" id="cPS-tE-QEd"/>
+                            <constraint firstItem="mx5-Mu-TgO" firstAttribute="top" secondItem="ulM-C1-Guu" secondAttribute="top" id="d0J-2d-5Ke"/>
                             <constraint firstItem="wc0-ej-qTW" firstAttribute="centerX" secondItem="a67-Pd-GYU" secondAttribute="centerX" id="h8L-PT-MCF"/>
                             <constraint firstItem="a67-Pd-GYU" firstAttribute="centerX" secondItem="ulM-C1-Guu" secondAttribute="centerX" id="hE2-Br-xsR"/>
                             <constraint firstItem="Ei1-47-GtK" firstAttribute="height" secondItem="Mym-l3-rms" secondAttribute="height" multiplier="0.166295" id="jyh-by-Hnq"/>
@@ -560,8 +559,9 @@
                         <outlet property="deleteButtonContentView" destination="wc0-ej-qTW" id="tWS-ud-jZS"/>
                         <outlet property="gestureView" destination="zeV-pp-6xL" id="eFT-Gp-vQG"/>
                         <outlet property="hueSlider" destination="dNB-8m-B4w" id="pLl-pE-Mot"/>
+                        <outlet property="itemCollectionContainerHeightConstraint" destination="0tV-wc-Ran" id="WL0-GH-0Dr"/>
+                        <outlet property="itemCollectionContainerTopConstraint" destination="d0J-2d-5Ke" id="rwm-DY-pqk"/>
                         <outlet property="itemCollectionContainerView" destination="mx5-Mu-TgO" id="jz3-ax-PXn"/>
-                        <outlet property="itemCollectionTopConstraint" destination="XFb-ab-Kkv" id="jGL-QH-KPl"/>
                         <outlet property="itemLayerContentView" destination="IBX-hP-Jmq" id="Lxj-YB-sjN"/>
                         <outlet property="itemLayerContentViewHeightConstraint" destination="rAZ-yu-hi5" id="4mD-kI-DOo"/>
                         <outlet property="itemLayerScrollView" destination="Vjn-Vc-vW2" id="CqD-Hi-9Uq"/>
@@ -846,7 +846,6 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstItem="c17-LJ-mVD" firstAttribute="top" secondItem="Jgs-oD-TuW" secondAttribute="bottom" constant="10" id="0OT-SG-OQm"/>
                                     <constraint firstAttribute="trailing" secondItem="Utq-S7-3XT" secondAttribute="trailing" constant="5" id="1H9-Q0-KlE"/>
@@ -1213,8 +1212,5 @@
         <image name="textbox" catalog="system" width="128" height="91"/>
         <image name="undoImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
