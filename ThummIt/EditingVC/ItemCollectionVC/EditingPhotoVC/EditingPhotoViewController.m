@@ -114,12 +114,12 @@
         
     } else {
         // 아이템 편집 상태
-        if (sender.state == UIGestureRecognizerStateBegan) {
+        if (sender.state == UIGestureRecognizerStateBegan && sender.numberOfTouches == 1) {
             
             self.originalPoint = [sender locationInView:self.gestureView];
             self.originalCenter = photoImageView.center;
             
-        } else if (sender.state == UIGestureRecognizerStateChanged){
+        } else if (sender.state == UIGestureRecognizerStateChanged  && sender.numberOfTouches == 1){
             
             CGPoint fingerPoint = [sender locationInView:self.gestureView];
             
@@ -134,77 +134,32 @@
     
 }
 
--(void)gestureViewPinched:(UIGestureRecognizer *)sender {
+-(void)gestureViewPinched:(UIPinchGestureRecognizer *)sender {
     UIImageView *photoImageView = self.photoImageView;
-
     if (sender.state == UIGestureRecognizerStateBegan && sender.numberOfTouches ==2) {
 
         self.isPinching = true;
 
-        self.originalFirstFinger = [sender locationOfTouch:0 inView:self.gestureView];
-        self.originalSecondFinger = [sender locationOfTouch:1 inView:self.gestureView];
-        
-        self.originalPinchCenter = CGPointMake((self.originalFirstFinger.x+self.originalSecondFinger.x)/2.0, (self.originalFirstFinger.y+self.originalSecondFinger.y)/2.0);
-        self.originalItemViewCenter = photoImageView.center;
-        
         CGPoint finger1Point = [sender locationOfTouch:0 inView:self.gestureView];
         CGPoint finger2Point = [sender locationOfTouch:1 inView:self.gestureView];
         
         CGAffineTransform t = photoImageView.transform;
         self.originalScaleRatio = sqrt(t.a * t.a + t.c * t.c);
-        self.originalPinchDistance = [self distanceFrom:finger1Point to:finger2Point];
-        
-        CGPoint convertedPinchCenter = CGPointMake([self.gestureView convertPoint:self.originalPinchCenter toView:self.photoImageView].x*self.originalScaleRatio, [self.gestureView convertPoint:self.originalPinchCenter toView:self.photoImageView].y*self.originalScaleRatio) ;
+        CGPoint originalPinchCenter = CGPointMake((finger1Point.x+finger2Point.x)/2.0, (finger1Point.y+finger2Point.y)/2.0);
+        self.originalItemViewCenter = photoImageView.center;
+        CGPoint convertedPinchCenter = CGPointMake([self.gestureView convertPoint:originalPinchCenter toView:self.photoImageView].x*self.originalScaleRatio, [self.gestureView convertPoint:originalPinchCenter toView:self.photoImageView].y*self.originalScaleRatio) ;
         CGPoint anchorPoint = CGPointMake(convertedPinchCenter.x/self.photoImageView.frameWidth, convertedPinchCenter.y/self.photoImageView.frameHeight);
         [self.photoImageView setAnchorPoint:anchorPoint];
         
     } else if (sender.state == UIGestureRecognizerStateChanged && sender.numberOfTouches == 2){
-        
-        CGPoint finger1Point = [sender locationOfTouch:0 inView:self.gestureView];
-        CGPoint finger2Point = [sender locationOfTouch:1 inView:self.gestureView];
-        
-        float changedDistance = [self distanceFrom:finger1Point to:finger2Point];
-        if (fabs(self.lastPinchDistance - changedDistance) > 10) {
-            CGAffineTransform t = photoImageView.transform;
-            self.originalScaleRatio = sqrt(t.a * t.a + t.c * t.c);
-            self.originalPinchDistance = [self distanceFrom:finger1Point to:finger2Point];
-            changedDistance = [self distanceFrom:finger1Point to:finger2Point];
-            
-            self.originalFirstFinger = [sender locationOfTouch:0 inView:self.gestureView];
-            self.originalSecondFinger = [sender locationOfTouch:1 inView:self.gestureView];
-            
-            self.originalPinchCenter = CGPointMake((self.originalFirstFinger.x+self.originalSecondFinger.x)/2.0, (self.originalFirstFinger.y+self.originalSecondFinger.y)/2.0);
-            self.originalItemViewCenter = photoImageView.center;
+        float scale = self.originalScaleRatio *sender.scale;
 
-        }
-        float changeScale = changedDistance/self.originalPinchDistance;
-        
-        CGAffineTransform scaleTransform = CGAffineTransformMakeScale(self.originalScaleRatio*changeScale, self.originalScaleRatio*changeScale);
+        CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scale,scale);
         photoImageView.transform = scaleTransform;
-        self.lastPinchDistance = changedDistance;
         
-        // 중심값 이동
-        CGPoint newPinchCenter = [sender locationInView:self.gestureView];
-        float translationX = newPinchCenter.x - self.originalPinchCenter.x;
-        float translationY = newPinchCenter.y - self.originalPinchCenter.y;
-        // 센터가이드 적용
-        CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
-        photoImageView.center = changedPoint;
-        self.lastPoint = newPinchCenter;
-
-    } else if (sender.state == UIGestureRecognizerStateChanged && sender.numberOfTouches == 1){
-        
-//        // 중심값 이동
-//        CGPoint finger1Point = [sender locationInView:self.gestureView];
-//        float translationX = finger1Point.x - self.originalPinchCenter.x;
-//        float translationY = finger1Point.y - self.originalPinchCenter.y;
-//        // 센터가이드 적용
-//        CGPoint changedPoint = CGPointMake((finger1Point.x-self.lastPoint.x) + translationX, (finger1Point.y - self.lastPoint.y)  + translationY);
-//        photoImageView.center = changedPoint;
+    } else if (sender.state == UIGestureRecognizerStateEnded){
         
     }
-
-    
 }
 
 -(float)distanceFrom:(CGPoint)point1 to:(CGPoint)point2 {

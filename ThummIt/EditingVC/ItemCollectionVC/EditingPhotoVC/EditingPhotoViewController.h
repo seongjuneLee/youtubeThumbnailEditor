@@ -21,9 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic) CGPoint originalPoint;
 @property (nonatomic) CGPoint originalCenter;
-@property (nonatomic) CGPoint originalFirstFinger;
-@property (nonatomic) CGPoint originalSecondFinger;
-@property (nonatomic) CGPoint originalPinchCenter;
 @property (nonatomic) CGPoint originalItemViewCenter;
 
 @property (nonatomic) CGPoint lastPoint;

@@ -123,9 +123,6 @@
             
             [self itemLayerArrange:deltaPoint withSender:sender];
             
-            NSLog(@"%@",self.pressedItemLayer);
-            NSLog(@"%@",self.nextItemLayer);
-
             
         } else if(sender.state == UIGestureRecognizerStateEnded){
             
