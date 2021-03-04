@@ -176,7 +176,6 @@
     if (self.recentTypo == nil) {
         self.recentTypo = [NormalTypo normalTypo];
     }
-    self.textButtonInScrollView.selected = true;
     self.itemCollectionVC.typoButton.selected = true;
     self.itemCollectionVC.typoButton.alpha = 1.0;
     self.itemCollectionVC.textButton.selected = false;

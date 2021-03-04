@@ -43,55 +43,40 @@
 
 -(void)makeView{ // 객체가 가진 item의 type에 따른 view 제작
     
-    CGSize BarBaseViewSize = [self settingBarBaseViewHeightAccoridingToDevice];
+    CGSize barBaseViewSize = [self settingBarBaseViewHeightAccoridingToDevice];
     
     //3경우 모두 공통적으로 barbaseview 생성
-    self.barBaseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width, BarBaseViewSize.height)];
+    self.barBaseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width, barBaseViewSize.height)];
     self.barBaseView.backgroundColor = [UIColor colorWithRed:20/255.0 green:20/255.0 blue:20/255.0 alpha:1.0];
     self.barBaseView.layer.borderWidth = 1;
     self.barBaseView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.barBaseView.layer.cornerRadius = 10;
-
     
-    if ([self.item isKindOfClass:PhotoFrame.class]) {
-        
-        UIImageView *photoFrameView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width*0.8, BarBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
-        photoFrameView.image = [UIImage imageWithView:self.item.baseView];
-        [photoFrameView setContentMode:UIViewContentModeScaleAspectFit];
-        photoFrameView.backgroundColor = UIColor.clearColor;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width*0.8, barBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
+    imageView.image = [UIImage imageWithView:self.item.baseView];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    imageView.backgroundColor = UIColor.clearColor;
 
-        [self.barBaseView addSubview:photoFrameView];
-        
-        self.backgroundImageView = photoFrameView;
-        self.backgroundImageView.center = CGPointMake(BarBaseViewSize.width/2, BarBaseViewSize.height/2);
+    [self.barBaseView addSubview:imageView];
     
-    } else if([self.item isKindOfClass:Text.class]){
-        
-        UIImageView *textView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width*0.8, BarBaseViewSize.height*0.8)];
-        textView.image = [UIImage imageWithView:self.item.baseView];
-        [textView setContentMode:UIViewContentModeScaleAspectFit];
-        textView.backgroundColor = UIColor.clearColor;
+    self.backgroundImageView = imageView;
+    self.backgroundImageView.center = CGPointMake(barBaseViewSize.width/2, barBaseViewSize.height/2);
 
-        [self.barBaseView addSubview:textView];
-
-        self.backgroundImageView = textView;
-        self.backgroundImageView.center = CGPointMake(BarBaseViewSize.width/2, BarBaseViewSize.height/2);
-        
-    } else if([self.item isKindOfClass:Sticker.class]){
-        
-        UIImageView *stickerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BarBaseViewSize.width*0.8, BarBaseViewSize.height*0.8)];
-
-        stickerImageView.image = [UIImage imageWithView:self.item.baseView];
-        [stickerImageView setContentMode:UIViewContentModeScaleAspectFit];
-        stickerImageView.backgroundColor = UIColor.clearColor;
-
-        [self.barBaseView addSubview:stickerImageView];
-
-        self.backgroundImageView = stickerImageView;
-        self.backgroundImageView.center = CGPointMake(BarBaseViewSize.width/2, BarBaseViewSize.height/2);
-                
-    }
-    
 }
+
+//func getImage(image: UIImage, backgroundColor: UIColor)->UIImage?{
+//
+//    UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+//    backgroundColor.setFill()
+//    //UIRectFill(CGRect(origin: .zero, size: image.size))
+//    let rect = CGRect(origin: .zero, size: image.size)
+//    let path = UIBezierPath(arcCenter: CGPoint(x:rect.midX, y:rect.midY), radius: rect.midX, startAngle: 0, endAngle: 6.28319, clockwise: true)
+//    path.fill()
+//    image.draw(at: .zero)
+//    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+//    UIGraphicsEndImageContext()
+//    return newImage
+//}
+
 
 @end
