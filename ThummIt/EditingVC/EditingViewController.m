@@ -197,7 +197,7 @@
         if(!item.isFixedPhotoFrame){
             itemCountExceptFixedPhotoFrame += 1;
         }
-    }
+    } 
     
     //얻은 값을 사용하여 contentview의 height를 정함(itemlayers count를 사용할 수 없는 시점 이므로)
     ItemLayer *anyItemLayer = [ItemLayer new];
