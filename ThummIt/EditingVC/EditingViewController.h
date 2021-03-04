@@ -94,6 +94,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *stickerButtonContentView;
 @property (weak, nonatomic) IBOutlet UIView *bgColorButtonContentView;
 @property (weak, nonatomic) IBOutlet UIScrollView *itemLayerScrollView;
+@property (weak, nonatomic) IBOutlet UIView *itemLayerContentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemLayerContentViewHeightConstraint;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *buttonScrollView;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UIButton *undoButton;
@@ -121,7 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *bgColorContainerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgColorTopConstraint;
 
-
+@property (nonatomic) BOOL isFirstLoadVIew;
 
 - (IBAction)photoButtonTapped:(id)sender;
 

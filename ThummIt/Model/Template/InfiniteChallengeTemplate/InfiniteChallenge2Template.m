@@ -120,7 +120,7 @@
     entertainText.scale = 0.065;
     entertainText.center = CGPointMake(0.1, 0.195);
     entertainText.isTemplateItem = true;
-    entertainText.indexInLayer =@"4";
+    entertainText.indexInLayer =@"5";
     entertainText.text = @"예능";
     entertainText.textView.text = @"예능";
     entertainText.typo = hashTagYellow;
@@ -131,7 +131,7 @@
     legendText.scale = 0.09;
     legendText.center = CGPointMake(0.17, 0.195);
     legendText.isTemplateItem = true;
-    legendText.indexInLayer =@"4";
+    legendText.indexInLayer =@"6";
     legendText.text = @"레전드";
     legendText.textView.text = @"레전드";
     legendText.typo = hashTag;
@@ -146,7 +146,7 @@
     muYaHoText.scale = 0.15;
     muYaHoText.center = CGPointMake(0.3, 0.45);
     muYaHoText.isTemplateItem = true;
-    muYaHoText.indexInLayer =@"5";
+    muYaHoText.indexInLayer =@"7";
     muYaHoText.text = @"무야~호~";
     muYaHoText.textView.text = muYaHoText.text;
     muYaHoText.rotationDegree = degreesToRadians(30);
@@ -159,7 +159,7 @@
     questionMarkText.scale = 0.1;
     questionMarkText.center = CGPointMake(0.33, 0.35);
     questionMarkText.isTemplateItem = true;
-    questionMarkText.indexInLayer =@"6";
+    questionMarkText.indexInLayer =@"8";
     questionMarkText.text = @"??";
     questionMarkText.textView.text = questionMarkText.text;
     questionMarkText.rotationDegree = degreesToRadians(30);

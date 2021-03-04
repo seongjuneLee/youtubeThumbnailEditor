@@ -18,12 +18,14 @@
     return self;
 }
 
--(void)bringCurrentItemToFront:(Item *)currentItem{
-    
-    self.currentItem = currentItem;
+-(void)bringCurrentItemToFront{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    self.originalIndex = [editingVC.view.subviews indexOfObject:self.currentItem.baseView];
-    [editingVC.view insertSubview:self.currentItem.baseView belowSubview:editingVC.gestureView];
+
+    //바꾸기전 index를 저장해놓고
+    self.originalIndex = [editingVC.view.subviews indexOfObject:editingVC.currentItem.baseView];
+    //item을 젤 위로 올리고
+    [editingVC.view insertSubview:editingVC.currentItem.baseView belowSubview:editingVC.gestureView];
+    //올려진 상태로 다시 indexinlayer 값 모든 item들에 대해 저장
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }
@@ -43,18 +45,38 @@
 }
 
 -(void)recoverOriginalLayer{
-    
+    //transparentview 제거 & 원래 index위치에 currentitem 위치시킴 & 위치시킨 대로 indexinlayer 저장
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [self.transparentView removeFromSuperview];
     self.transparentView = nil;
-    [editingVC.view insertSubview:self.currentItem.baseView atIndex:self.originalIndex];
+    
+    [editingVC.view insertSubview:editingVC.currentItem.baseView atIndex:self.originalIndex];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.editingVC.view.subviews indexOfObject:item.baseView]];
     }
 }
+
 -(void)hideTransparentView{
+    //transparentview만 제거
     [self.transparentView removeFromSuperview];
     self.transparentView = nil;
+}
+
+-(ItemLayer *)getCurrentItemLayer:(UIGestureRecognizer*)sender{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    CGPoint tappedLocation = [sender locationInView:editingVC.itemLayerContentView];
+    NSMutableArray *foundItemLayers = [NSMutableArray new];
+    NSLog(@"SaveManager.sharedInstance.currentProject.itemLayers %@",SaveManager.sharedInstance.currentProject.itemLayers);
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        NSLog(@"itemLayer.barBaseView.frame %@",NSStringFromCGRect(itemLayer.barBaseView.frame));
+        NSLog(@"tappedLocationtappedLocation %@",NSStringFromCGPoint(tappedLocation));
+        if (CGRectContainsPoint(itemLayer.barBaseView.frame, tappedLocation)) {
+                [foundItemLayers addObject:itemLayer];
+            }
+        }
+    return [foundItemLayers firstObject];
+    
 }
 
 -(void)addItemLayerGestureRecognizers:(ItemLayer *)itemLayer{
@@ -63,12 +85,8 @@
     [itemLayer.barBaseView addGestureRecognizer:itemLayerTap];
 
     UILongPressGestureRecognizer *itemLayerlongPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(itemLayerLongPressed:)];
-    itemLayerlongPress.minimumPressDuration = 0.5;
+    itemLayerlongPress.minimumPressDuration = 0.3;
     [itemLayer.barBaseView addGestureRecognizer:itemLayerlongPress];
-    
-    UIPanGestureRecognizer *itemLayerPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(itemLayerPanned:)];
-    [itemLayer.barBaseView addGestureRecognizer:itemLayerPan];
-    
     
 }
 
@@ -78,182 +96,168 @@
     
     ItemLayer *tappedItemLayer = [self getCurrentItemLayer:sender];
     Item *itemOfItemLayer = [[Item alloc] init];
-    
+
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         if (tappedItemLayer.item == item) {
             itemOfItemLayer = item;
-            NSLog(@"찾음");
         }
     }
-    
     [editingVC didSelectItem:itemOfItemLayer];
-    
 }
 
 -(void)itemLayerLongPressed:(UILongPressGestureRecognizer *)sender{
-    
-    
-    if(sender.state == UIGestureRecognizerStateBegan){
-        self.pressedItemLayer = [self getCurrentItemLayer:sender];
-
-       
-        sender.state = UIGestureRecognizerStateCancelled;
-        
-        self.pressedItemLayer = [self getCurrentItemLayer:sender];
-        self.pressedItemLayer.isLongPressed = YES;
-        self.doesItemLayerArrangeFinished = NO;
-
-    } else if(sender.state == UIGestureRecognizerStateChanged){
-        
-    } else if(sender.state == UIGestureRecognizerStateEnded){
-        
-    } else if(sender.state == UIGestureRecognizerStateCancelled){
-    }
-    
-}
-
--(void)itemLayerPanned:(UIPanGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    
-    //pressed된 아이템이 없거나 & longpressed되지 않았다면 pan 자체 못함
-    if (!self.pressedItemLayer || !self.pressedItemLayer.isLongPressed){
-        return;
-    } else{
-        
-        CGPoint currentPoint = [sender locationInView:editingVC.itemLayerScrollView];
+
+        CGPoint currentPoint = [sender locationInView:editingVC.itemLayerContentView];
         CGPoint deltaPoint = CGPointZero;
-        
-        if (sender.state == UIGestureRecognizerStateBegan) {
+    
+        if(sender.state == UIGestureRecognizerStateBegan){
             
-           self.previousPoint = [sender locationInView:editingVC.itemLayerScrollView];
-           
+            [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
+            self.pressedItemLayer = [self getCurrentItemLayer:sender];
+            self.previousPoint = [sender locationInView:editingVC.itemLayerContentView];
+            
         } else if(sender.state == UIGestureRecognizerStateChanged){
             
-            deltaPoint = CGPointMake(editingVC.itemLayerScrollView.frameWidth/2 ,currentPoint.y - self.previousPoint.y);
+            deltaPoint = CGPointMake(editingVC.itemLayerContentView.frameWidth/2 ,currentPoint.y - self.previousPoint.y);
             
             self.pressedItemLayer.barBaseView.centerY += deltaPoint.y;
-            self.previousPoint = [sender locationInView:editingVC.itemLayerScrollView];
+            self.previousPoint = [sender locationInView:editingVC.itemLayerContentView];
             
-            [self itemLayerArrange:deltaPoint:sender];
+            [self itemLayerArrange:deltaPoint withSender:sender];
             
-            
-            
+            NSLog(@"%@",self.pressedItemLayer);
+            NSLog(@"%@",self.nextItemLayer);
+
             
         } else if(sender.state == UIGestureRecognizerStateEnded){
             
-            self.pressedItemLayer.isLongPressed = NO;
-
+            [UIView animateWithDuration:0.2 animations:^{
+            self.pressedItemLayer.barBaseView.centerY = self.pressedItemLayer.originalCenterY;
+            }];
+            [SaveManager.sharedInstance saveAndAddToStack];//여기
         }
-        
-    }
-
     
 }
 
--(ItemLayer *)getCurrentItemLayer:(UIGestureRecognizer*)sender{
+-(void)itemLayerArrange:(CGPoint)deltaPoint withSender:(UIGestureRecognizer *)sender{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-
-    CGPoint tappedLocation = [sender locationInView:editingVC.itemLayerScrollView];
-    NSMutableArray *foundItemLayers = [NSMutableArray new];
-    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
-        if (CGRectContainsPoint(itemLayer.barBaseView.frame, tappedLocation)) {
-                [foundItemLayers addObject:itemLayer];
-            }
-        }
-    return [foundItemLayers firstObject];
     
-}
-
--(void)itemLayerArrange:(CGPoint)deltaPoint :(UIGestureRecognizer *)sender{
-    
-    
+    NSInteger mainFrameImageViewIndex = [editingVC.view.subviews indexOfObject:editingVC.mainFrameImageView];
     NSInteger pressedItemOriginalCenterY;
     NSInteger nextItemOriginalCenterY;
     
     if(deltaPoint.y > 0){
-        if(self.pressedItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.lastObject){
+        //y > 0 인 case에 대해, 젤 아래 itemlayer가 선택되면 nextitem 존재 x -> return 시켜서 아래로 pan 불가하게
+        if(self.pressedItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.firstObject || self.directionShouldChange){
+            self.directionShouldChange = NO;
             return;
         }
-        self.nextItemLayer = SaveManager.sharedInstance.currentProject.itemLayers[self.pressedItemLayer.itemLayerIndex + 1];
-        //dy > 0 이면 nextitem 위와 같음
+        //dy > 0 이면 nextitem 다음과 같음
+        self.nextItemLayer = SaveManager.sharedInstance.currentProject.itemLayers[self.pressedItemLayer.itemLayerIndex - 1];
 
-        if(![self doesLastObjectEqualToNextItemLayer:self.nextItemLayer]){
+        if(![self doesNextItemLayerEqualToFirstObject:self.nextItemLayer]){
            //nextitemlayer가 array의 마지막 object 아닐때
             if(self.pressedItemLayer.barBaseView.centerY >= self.nextItemLayer.originalCenterY - self.nextItemLayer.barBaseView.frameHeight/2){
-
+                
+                //바꾸기 전 값 임시저장
                 pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
-                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;               // 바꾸기 전 저장해놈
-                
+                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;
+                //실제위치 변경
+                [UIView animateWithDuration:0.2 animations:^{
                 self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY; //실제위치를 바꿔줌
-                
+//                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY;
+                }];
+                //객체가 가진 위치값도 변경
                 self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
                 self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
-                
-                
+                                
+                //nextitem의 itemlayerindex 변경
                 self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
+                //presseditem를 array에서 제거
                 [SaveManager.sharedInstance.currentProject.itemLayers removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
-                //itemLayers에서 presseditemlayer자기 원래 자리에서 제거
-                self.pressedItemLayer.itemLayerIndex += 1;
-                
+                //변경된 값에 맞추어 array에 다시 넣음
+                self.pressedItemLayer.itemLayerIndex += -1;
+                //pressed & next item의 indexinlayer을 itemlayerindex에 맞추어 다시 설정
                 [SaveManager.sharedInstance.currentProject.itemLayers insertObject:self.pressedItemLayer atIndex:self.pressedItemLayer.itemLayerIndex];
+                //pressed & next item의 indexinlayer을 itemlayerindex에 맞추어 다시 설정
+                self.pressedItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.pressedItemLayer.itemLayerIndex + 1];
+                self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
+                //indexinlayer에 맞추어 bgview에서도 위치 변경
+                [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
-                        // stacksave도 해야댐
             }
             
-        } else{           //nextitemlayer가 array의 마지막 object일때는 nextitemlayer로 savemanager에서 받으면 튕기므로
+            //nextitemlayer가 array의 마지막 object일때는 nextitemlayer를 받으면 튕기는 현상에 대한 대응
+        } else{
             if(self.pressedItemLayer.barBaseView.centerY >= self.nextItemLayer.originalCenterY - self.nextItemLayer.barBaseView.frameHeight/2){
-
+                
+                // 바꾸기 전 값 저장
                 pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
-                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;        // 바꾸기 전 값 저장
-                
+                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;
+                //실제위치 변경
+                [UIView animateWithDuration:0.2 animations:^{
                 self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY; //실제위치를 바꿔줌
-                
+                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY;
+                }];
+                //객체가 가진 위치값도 변경
                 self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;     //객체가 가진 위치값도 바꿔줌
-                
+                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
+                                
+                //nextitem의 itemlayerindex 변경
                 self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
+                //presseditem를 array에서 제거
                 [SaveManager.sharedInstance.currentProject.itemLayers    removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
-                
-                self.pressedItemLayer.itemLayerIndex += 1;
+                //presseditem의 itemlayerindex 변경
+                self.pressedItemLayer.itemLayerIndex += -1;
+                //변경된 값에 맞추어 array에 다시 넣음
                 [SaveManager.sharedInstance.currentProject.itemLayers insertObject:self.pressedItemLayer atIndex:self.pressedItemLayer.itemLayerIndex];
+                //pressed & next item의 indexinlayer을 itemlayerindex에 맞추어 다시 설정
+                self.pressedItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.pressedItemLayer.itemLayerIndex + 1];
+                self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
+                //indexinlayer에 맞추어 bgview에서도 위치 변경
+                [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
                 
-//                self.doesItemLayerArrangeFinished = YES;
-                sender.state = UIGestureRecognizerStateEnded;
-            }
+                //nextitemlayer = first object 일시 state end시켜줘서 튕김 방어(이후 다른 방법 생각)
+                self.directionShouldChange = YES;
+                }
             
         }
     } else if(deltaPoint.y < 0){
         
-        if(self.pressedItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.firstObject){
+        if(self.pressedItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.lastObject || self.directionShouldChange){
+            self.directionShouldChange = NO;
             return;
         }
         
-        self.nextItemLayer = SaveManager.sharedInstance.currentProject.itemLayers[self.pressedItemLayer.itemLayerIndex - 1];
-        if(![self doesFirstObjectEqualToNextItemLayer:self.nextItemLayer]){
-           //nextitemlayer가 array의 마지막 object 아닐때
+        self.nextItemLayer = SaveManager.sharedInstance.currentProject.itemLayers[self.pressedItemLayer.itemLayerIndex + 1];
+        if(![self doesNextItemLayerEqualToLastObject:self.nextItemLayer]){
+
             if(self.pressedItemLayer.barBaseView.centerY <= self.nextItemLayer.originalCenterY + self.nextItemLayer.barBaseView.frameHeight/2){
 
                 pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
-                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;               //바꾸기 전 값 저장
-                
+                nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;
+                [UIView animateWithDuration:0.2 animations:^{
                 self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY;        //실제위치를 바꿔줌
+//                self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY;
+                }];
                 
                 self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
-                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;            //객체가 가지는 값도 바꿈
+                self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
                 
-                //객체가 가지는 index값 바꿈 & arrary에 save도 자기 index에 맞게
                 self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
                 [SaveManager.sharedInstance.currentProject.itemLayers removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
-                //itemLayers에서 presseditemlayer자기 원래 자리에서 제거
                 
-                self.pressedItemLayer.itemLayerIndex += -1;
+                self.pressedItemLayer.itemLayerIndex += 1;
                 
                 [SaveManager.sharedInstance.currentProject.itemLayers insertObject:self.pressedItemLayer atIndex:self.pressedItemLayer.itemLayerIndex];
                 
-                        // stacksave도 해야댐
+                self.pressedItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.pressedItemLayer.itemLayerIndex + 1];
+                self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
+                
+                
+                [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
+                
             }
             
         } else{
@@ -262,30 +266,32 @@
                 pressedItemOriginalCenterY = self.pressedItemLayer.originalCenterY;
                 nextItemOriginalCenterY = self.nextItemLayer.originalCenterY;
                 
+                [UIView animateWithDuration:0.2 animations:^{
                 self.nextItemLayer.barBaseView.centerY = pressedItemOriginalCenterY;
                 self.pressedItemLayer.barBaseView.centerY = nextItemOriginalCenterY;
+                }];
                 
                 self.nextItemLayer.originalCenterY = pressedItemOriginalCenterY;
                 self.pressedItemLayer.originalCenterY = nextItemOriginalCenterY;
-                
+                                
                 self.nextItemLayer.itemLayerIndex = self.pressedItemLayer.itemLayerIndex;
                 [SaveManager.sharedInstance.currentProject.itemLayers    removeObjectAtIndex:self.pressedItemLayer.itemLayerIndex];
                 
-                self.pressedItemLayer.itemLayerIndex += -1;
+                self.pressedItemLayer.itemLayerIndex += +1;
                 [SaveManager.sharedInstance.currentProject.itemLayers insertObject:self.pressedItemLayer atIndex:self.pressedItemLayer.itemLayerIndex];
                 
-//                self.doesItemLayerArrangeFinished = YES;
-                sender.state = UIGestureRecognizerStateEnded;
+                self.pressedItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.pressedItemLayer.itemLayerIndex + 1];
+                self.nextItemLayer.item.indexInLayer = [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + self.nextItemLayer.itemLayerIndex + 1];
+                
+                [editingVC.view insertSubview:self.pressedItemLayer.item.baseView atIndex:self.pressedItemLayer.item.indexInLayer.integerValue];
+                
+                self.directionShouldChange = YES;
             }
-            
         }
-        
     }
-
 }
 
-
--(BOOL)doesLastObjectEqualToNextItemLayer:(ItemLayer *)nextItemLayer{
+-(BOOL)doesNextItemLayerEqualToLastObject:(ItemLayer *)nextItemLayer{
     
     if(nextItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.lastObject){
         return YES;
@@ -293,11 +299,48 @@
         return NO;
     }
 }
--(BOOL)doesFirstObjectEqualToNextItemLayer:(ItemLayer *)nextItemLayer{
+-(BOOL)doesNextItemLayerEqualToFirstObject:(ItemLayer *)nextItemLayer{
+    
     if(nextItemLayer == SaveManager.sharedInstance.currentProject.itemLayers.firstObject){
         return YES;
     } else{
         return NO;
+    }
+}
+
+-(void)itemLayerDelete{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+
+    NSInteger deletedItemLayerIndex = 0;
+    ItemLayer *foundItemLayer;
+    ItemLayer *anyItemLayer = [ItemLayer new];
+    
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        if(itemLayer.item == editingVC.currentItem){
+            foundItemLayer = itemLayer;
+            [itemLayer.barBaseView removeFromSuperview];
+            deletedItemLayerIndex = itemLayer.itemLayerIndex;
+        }
+    }
+    [SaveManager.sharedInstance.currentProject.itemLayers removeObject:foundItemLayer];
+    
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        if(itemLayer.itemLayerIndex > deletedItemLayerIndex){
+            itemLayer.itemLayerIndex -= 1;
+        }
+    }
+    [UIView animateWithDuration:0.2 animations:^{
+    editingVC.itemLayerContentViewHeightConstraint.constant -= anyItemLayer.barBaseViewHeight/2 * 3;
+    }];
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        if(itemLayer.itemLayerIndex < deletedItemLayerIndex){
+            
+            [UIView animateWithDuration:0.2 animations:^{
+                itemLayer.barBaseView.centerY -= itemLayer.barBaseViewHeight/2 * 3;
+            }];
+            itemLayer.originalCenterY -= itemLayer.barBaseViewHeight/2 * 3;
+           
+        }
     }
 }
 

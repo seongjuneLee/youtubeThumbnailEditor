@@ -43,6 +43,10 @@
     
     [self setUpSlider];
     
+    self.layerController.impactFeedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy];
+    [self.layerController.impactFeedbackGenerator prepare];
+    
+    self.isFirstLoadVIew = YES;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -153,6 +157,7 @@
     
     self.itemLoaded = true;
     Project *project = SaveManager.sharedInstance.currentProject;
+    project.itemLayers = [NSMutableArray new];
     self.bgView.backgroundColor = project.backgroundColor;
     self.mainFrameImageView.image = [UIImage imageNamed:project.mainFrameImageName];
     for (Item *item in project.items) {
@@ -186,13 +191,73 @@
         }
 
     }
+    //fixedphotoframe을 제외한 item 개수 얻기위함
+    int itemCountExceptFixedPhotoFrame = 0;
+    for(Item *item in project.items){
+        if(!item.isFixedPhotoFrame){
+            itemCountExceptFixedPhotoFrame += 1;
+        }
+    }
     
+    //얻은 값을 사용하여 contentview의 height를 정함(itemlayers count를 사용할 수 없는 시점 이므로)
+    ItemLayer *anyItemLayer = [ItemLayer new];
+    self.itemLayerContentViewHeightConstraint.constant = - self.itemLayerScrollView.frameHeight + anyItemLayer.barBaseViewHeight/2 * (3*itemCountExceptFixedPhotoFrame + 1);
+    self.itemLayerScrollView.contentSize = CGSizeMake(self.itemLayerContentView.frameWidth, self.itemLayerContentView.frameHeight);
+    self.itemLayerContentView.backgroundColor = UIColor.systemBlueColor;
+
+    NSUInteger mainFrameImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
+    
+    for (Item *item in project.items) {
+        NSInteger itemIndex;
+        
+        if(self.isFirstLoadVIew){
+            itemIndex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
+        } else{
+            itemIndex = item.indexInLayer.integerValue - mainFrameImageViewIndex -1;
+        }
+        
+        if(!item.isFixedPhotoFrame){
+            // 만들기
+            ItemLayer *itemLayer = [[ItemLayer alloc] init];
+            itemLayer.item = item;
+            //각 itemLayer객체는 일치하는 item을 가짐 이후에 변동 없음
+            [itemLayer makeView];
+            //각 객체의 뷰 생성
+            
+            float itemLayerX = (self.itemLayerContentView.frameWidth)/2;
+            float itemLayerY = (self.itemLayerContentView.frameHeight) - ((itemLayer.barBaseViewHeight/2) * (3 * (itemIndex + 1) - 1));
+            
+            itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
+            itemLayer.originalCenterY = itemLayerY;
+            
+            //arrange에 쓰이는 original값에 정해진 y값 넣어줌
+            
+            [self.itemLayerContentView addSubview:itemLayer.barBaseView];
+            [self.layerController addItemLayerGestureRecognizers:itemLayer];
+            [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
+            itemLayer.itemLayerIndex = [SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
+        }
+    }
+    
+    if(!self.isFirstLoadVIew){
+        NSMutableArray *itemLayersCopy = [NSMutableArray new];
+        NSInteger i = 0;
+
+        for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+            itemLayer.itemLayerIndex = itemLayer.item.indexInLayer.integerValue - mainFrameImageViewIndex - 1;
+            [itemLayersCopy addObject:itemLayer];
+        }
+        for(i = 0; i < itemLayersCopy.count; i++){
+             ItemLayer *itemLayer = [itemLayersCopy objectAtIndex:i];
+            [SaveManager.sharedInstance.currentProject.itemLayers replaceObjectAtIndex:itemLayer.itemLayerIndex withObject:itemLayer];
+        }
+    }
+
     // 인덱스 맞춰주기
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {
             if (item.isTemplateItem) {
-                NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
-                item.indexInLayer = [NSString stringWithFormat:@"%ld",backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
+                item.indexInLayer = [NSString stringWithFormat:@"%ld",mainFrameImageViewIndex + [item.indexInLayer integerValue] + 1];
                 [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
             } else {
                 [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
@@ -202,39 +267,9 @@
         item.isTemplateItem = false;
     }
     
-    NSInteger i = 1;
-    for (Item *item in project.items) {
-        
-        if(!item.isFixedPhotoFrame){
-            // 만들기
-            ItemLayer *itemLayer = [[ItemLayer alloc] init];
-            itemLayer.item = item;                                  //각 itemLayer객체는 일치하는 item을 가짐 이후에 변동 x
-            
-            [itemLayer loadView];
-            
-            // scrollView에 올려주기 (indexInLayer 와 frameY)
-            float itemLayerX = (self.itemLayerScrollView.frameWidth)/2;
-            float itemLayerY = (itemLayer.barBaseView.frameHeight/2)*(3*i-1) ;
-            itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
-            itemLayer.originalCenterY = itemLayerY;
-            
-            [self.itemLayerScrollView addSubview:itemLayer.barBaseView];
-            
-            // itemLayer 들을 projects.itemlayers에 더해주기.
-            
-            
-            [self.layerController addItemLayerGestureRecognizers:itemLayer];
-            
-            
-            
-            [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
-            itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
-            i += 1;
-
-        }
-    }
-    
     [SaveManager.sharedInstance save];
+    
+    self.isFirstLoadVIew = NO;
 }
 
 -(void)respondToUndoRedo{
@@ -248,10 +283,13 @@
     
     [UIView animateWithDuration:0.2 animations:^{
         self.undoButton.alpha =
-        self.redoButton. alpha =
+        self.redoButton.alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 1.0;
         self.buttonScrollView.hidden = false;
+        self.rightItem.alpha =
+        self.itemLayerScrollView.alpha = 1.0;
+        self.buttonScrollView.alpha = 1.0;
     }];
 
 }
@@ -259,10 +297,13 @@
     
     [UIView animateWithDuration:0.2 animations:^{
         self.undoButton.alpha =
-        self.redoButton. alpha =
+        self.redoButton.alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 0;
         self.buttonScrollView.hidden = true;
+        self.rightItem.alpha =
+        self.itemLayerScrollView.alpha = 
+        self.buttonScrollView.alpha = 0;
     }];
 
 }

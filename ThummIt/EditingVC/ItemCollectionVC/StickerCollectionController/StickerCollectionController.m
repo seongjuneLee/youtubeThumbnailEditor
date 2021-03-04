@@ -116,7 +116,7 @@
         editingVC.currentItem = sticker;
         editingVC.currentSticker = sticker;
 
-        [editingVC.layerController bringCurrentItemToFront:sticker];
+        [editingVC.layerController bringCurrentItemToFront];
     }
 
     

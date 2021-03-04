@@ -40,7 +40,6 @@
 -(void)setUpPhotoFrame{
     
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
-    float screenHeight = screenWidth * 9/16;
     
     PhotoFrame *photoFrame1 = [MacaronRectangle1 macaronRectangle1];
     photoFrame1.isTemplateItem = true;
@@ -83,7 +82,7 @@
     homebakingText.scale = 0.115;
     homebakingText.center = CGPointMake(0.455, 0.35);
     homebakingText.isTemplateItem = true;
-    homebakingText.indexInLayer = @"0";
+    homebakingText.indexInLayer = @"1";
     homebakingText.text = @"homebaking\n:macaron";
     homebakingText.textView.text = homebakingText.text;
     homebakingText.textAlignment = NSTextAlignmentLeft;
@@ -104,6 +103,7 @@
     VlogMacaronSticker *vlogMacaronSticker2 = [VlogMacaronSticker vlogMacaronSticker];
     vlogMacaronSticker2.scale = 0.13;
     vlogMacaronSticker2.isTemplateItem = true;
+    vlogMacaronSticker2.indexInLayer = @"3";
     vlogMacaronSticker2.rotationDegree = degreesToRadians(-10);
     vlogMacaronSticker2.center = CGPointMake(0.94, 0.91);
     [self.stickers addObject:vlogMacaronSticker2];

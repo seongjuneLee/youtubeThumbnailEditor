@@ -317,7 +317,6 @@
     [self clearProjectContents];
     [UndoManager.sharedInstance undo];
     [self loadItems];
-    self.bgView.backgroundColor = SaveManager.sharedInstance.currentProject.backgroundColor;
         
 }
 
@@ -326,7 +325,6 @@
     [self clearProjectContents];
     [UndoManager.sharedInstance redo];
     [self loadItems];
-    self.bgView.backgroundColor = SaveManager.sharedInstance.currentProject.backgroundColor;
 
 }
 
@@ -336,6 +334,10 @@
         [item.baseView removeFromSuperview];
     }
     
+    for (ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers) {
+        [itemLayer.barBaseView removeFromSuperview];
+    }
+        
 }
 
 #pragma mark - slider

@@ -54,26 +54,6 @@
 
 }
 
--(void)setUpStickers{
-    
-    LongRectangleSticker *rectangleSticker = [LongRectangleSticker longRectangleSticker];
-    rectangleSticker.isTemplateItem = true;
-    rectangleSticker.indexInLayer = @"4";
-    rectangleSticker.scale = 0.47;
-    rectangleSticker.center = CGPointMake(0.5, 0.78);
-    rectangleSticker.tintColor = [UIColor colorWithRed:80/255.0 green:10/255.0 blue:205/255.0 alpha:1.0];
-    [self.stickers addObject:rectangleSticker];
-
-    LongRectangleSticker *rectangleSticker2 = [LongRectangleSticker longRectangleSticker];
-    rectangleSticker2.isTemplateItem = true;
-    rectangleSticker2.indexInLayer = @"5";
-    rectangleSticker2.scale = 0.7;
-    rectangleSticker2.center = CGPointMake(0.5, 0.9);
-    rectangleSticker2.tintColor = [UIColor colorWithRed:80/255.0 green:10/255.0 blue:205/255.0 alpha:1.0];
-    [self.stickers addObject:rectangleSticker2];
-
-}
-
 -(void)setUpTexts{
     
     Text *starWarsTypo = [[Text alloc] init];
@@ -114,7 +94,7 @@
     murdertypo.scale = 0.2;
     murdertypo.center = CGPointMake(0.75, 0.12);
     murdertypo.isTemplateItem = true;
-    murdertypo.indexInLayer = @"3";
+    murdertypo.indexInLayer = @"5";
     murdertypo.text = @"살인미소?!";
     murdertypo.textView.text = @"살인미소?!";
     murdertypo.typo = murder;
@@ -125,7 +105,7 @@
     binggoTypo.scale = 0.13;
     binggoTypo.center = CGPointMake(0.92, 0.06);
     binggoTypo.isTemplateItem = true;
-    binggoTypo.indexInLayer = @"4";
+    binggoTypo.indexInLayer = @"6";
     binggoTypo.text = @"bingo";
     binggoTypo.textView.text = @"bingo";
     binggoTypo.typo = binggo;
@@ -136,7 +116,7 @@
     kpopTyop.scale = 0.255;
     kpopTyop.center = CGPointMake(0.35,0.75);
     kpopTyop.isTemplateItem = true;
-    kpopTyop.indexInLayer = @"5";
+    kpopTyop.indexInLayer = @"9";
     kpopTyop.text = @"케이팝";
     kpopTyop.textView.text = @"케이팝";
     kpopTyop.typo = kpop;
@@ -147,7 +127,7 @@
     numberOne.scale = 0.255;
     numberOne.center = CGPointMake(0.64,0.75);
     numberOne.isTemplateItem = true;
-    numberOne.indexInLayer = @"5";
+    numberOne.indexInLayer = @"10";
     numberOne.text = @"넘버원";
     numberOne.textView.text = @"넘버원";
     numberOne.typo = yellow;
@@ -161,7 +141,7 @@
     kpopTypo2.scale = 0.43;
     kpopTypo2.center = CGPointMake(0.31, 0.9);
     kpopTypo2.isTemplateItem = true;
-    kpopTypo2.indexInLayer = @"6";
+    kpopTypo2.indexInLayer = @"11";
     kpopTypo2.text = @"승부욕그룹";
     kpopTypo2.textView.text = @"승부욕그룹";
     kpopTypo2.typo = kpop2;
@@ -172,7 +152,7 @@
     girlFriend.scale = 0.36;
     girlFriend.center = CGPointMake(0.72, 0.9);
     girlFriend.isTemplateItem = true;
-    girlFriend.indexInLayer = @"6";
+    girlFriend.indexInLayer = @"12";
     girlFriend.text = @"남자친구";
     girlFriend.textView.text = @"남자친구";
     girlFriend.typo = pink;
@@ -183,5 +163,24 @@
 
 }
 
+-(void)setUpStickers{
+    
+    LongRectangleSticker *rectangleSticker = [LongRectangleSticker longRectangleSticker];
+    rectangleSticker.isTemplateItem = true;
+    rectangleSticker.indexInLayer = @"7";
+    rectangleSticker.scale = 0.47;
+    rectangleSticker.center = CGPointMake(0.5, 0.78);
+    rectangleSticker.tintColor = [UIColor colorWithRed:80/255.0 green:10/255.0 blue:205/255.0 alpha:1.0];
+    [self.stickers addObject:rectangleSticker];
+
+    LongRectangleSticker *rectangleSticker2 = [LongRectangleSticker longRectangleSticker];
+    rectangleSticker2.isTemplateItem = true;
+    rectangleSticker2.indexInLayer = @"8";
+    rectangleSticker2.scale = 0.7;
+    rectangleSticker2.center = CGPointMake(0.5, 0.9);
+    rectangleSticker2.tintColor = [UIColor colorWithRed:80/255.0 green:10/255.0 blue:205/255.0 alpha:1.0];
+    [self.stickers addObject:rectangleSticker2];
+
+}
 
 @end

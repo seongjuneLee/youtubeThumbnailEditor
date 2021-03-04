@@ -125,7 +125,7 @@
     albaText.scale = 0.45;
     albaText.center = CGPointMake(0.26,0.87);
     albaText.isTemplateItem = true;
-    albaText.indexInLayer = @"5";
+    albaText.indexInLayer = @"6";
     albaText.text = @"대학축제 알바";
     albaText.textView.text = @"대학축제 알바";
     albaText.typo = blue;
@@ -135,7 +135,7 @@
     reviewText.scale = 0.16;
     reviewText.center = CGPointMake(0.56,0.87);
     reviewText.isTemplateItem = true;
-    reviewText.indexInLayer = @"5";
+    reviewText.indexInLayer = @"7";
     reviewText.text = @"리뷰";
     reviewText.textView.text = @"리뷰";
     reviewText.typo = secondTitle2;
@@ -150,7 +150,7 @@
     fastText.rotationDegree = degreesToRadians(-2);
     fastText.center = CGPointMake(0.77,0.55);
     fastText.isTemplateItem = true;
-    fastText.indexInLayer = @"6";
+    fastText.indexInLayer = @"8";
     fastText.text = @"끌어내려 빨리!!";
     fastText.textView.text = @"끌어내려 빨리!!";
     fastText.typo = fast;
@@ -163,7 +163,7 @@
     AngrySticker1 *angrySticker = [AngrySticker1 angrySticker1];
     angrySticker.scale = 0.08;
     angrySticker.rotationDegree = degreesToRadians(-7);
-    angrySticker.indexInLayer = @"7";
+    angrySticker.indexInLayer = @"9";
     angrySticker.isTemplateItem = true;
     angrySticker.center = CGPointMake(0.82, 0.31);
     

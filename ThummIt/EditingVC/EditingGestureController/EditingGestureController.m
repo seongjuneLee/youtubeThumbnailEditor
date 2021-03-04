@@ -145,7 +145,6 @@
         }
 
         [editingVC readyUIForPanning];
-        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
         self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
 
@@ -191,7 +190,6 @@
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
-
     }
 }
 
@@ -426,7 +424,7 @@
             return;
         }
         self.isPinching = true;
-        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
+//        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.originalFirstFinger = [sender locationOfTouch:0 inView:self.editingVC.view];
         self.originalSecondFinger = [sender locationOfTouch:1 inView:self.editingVC.view];
         
@@ -786,3 +784,4 @@
 }
 
 @end
+

@@ -42,6 +42,7 @@
     FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
     fullRectPhotoFrame.isTemplateItem = true;
     fullRectPhotoFrame.isFixedPhotoFrame = true;
+    fullRectPhotoFrame.indexInLayer =@"";
     fullRectPhotoFrame.center = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:fullRectPhotoFrame];
 
@@ -89,7 +90,7 @@
     withText.scale = 0.165;
     withText.center = CGPointMake(0.495, 0.55);
     withText.isTemplateItem = true;
-    withText.indexInLayer =@"2";
+    withText.indexInLayer =@"3";
     withText.text = @"과 함께";
     withText.textView.text = memberText.text;
     withText.typo = white;
@@ -99,7 +100,7 @@
     secreteText.scale = 0.105;
     secreteText.center = CGPointMake(0.635, 0.55);
     secreteText.isTemplateItem = true;
-    secreteText.indexInLayer =@"2";
+    secreteText.indexInLayer =@"4";
     secreteText.text = @"비밀";
     secreteText.textView.text = memberText.text;
     secreteText.typo = blue;
@@ -110,7 +111,7 @@
     eulText.scale = 0.06;
     eulText.center = CGPointMake(0.71, 0.55);
     eulText.isTemplateItem = true;
-    eulText.indexInLayer =@"2";
+    eulText.indexInLayer =@"5";
     eulText.text = @"을";
     eulText.textView.text = memberText.text;
     eulText.typo = white2;
@@ -120,7 +121,7 @@
     digingText.scale = 0.23;
     digingText.center = CGPointMake(0.86, 0.55);
     digingText.isTemplateItem = true;
-    digingText.indexInLayer =@"2";
+    digingText.indexInLayer =@"6";
     digingText.text = @"파헤쳐라!";
     digingText.textView.text = memberText.text;
     digingText.typo = black;
@@ -137,7 +138,7 @@
 -(void)setUpStickers{
     
     InfiniteChallengeSkullSticker *skullSticker = [InfiniteChallengeSkullSticker infiniteChallengeSkullSticker];
-    skullSticker.indexInLayer =@"3";
+    skullSticker.indexInLayer =@"7";
     skullSticker.scale = 0.09;
     skullSticker.isTemplateItem = true;
     skullSticker.center = CGPointMake(0.19, 0.32);

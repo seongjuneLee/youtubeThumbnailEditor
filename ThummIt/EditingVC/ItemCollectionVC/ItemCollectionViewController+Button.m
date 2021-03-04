@@ -65,6 +65,8 @@
     editingVC.currentPhotoFrame = nil;
     editingVC.currentSticker = nil;
     editingVC.currentPhoto = nil;
+    editingVC.layerController.currentItemLayer = nil;
+    
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
     }];
@@ -74,6 +76,7 @@
 - (IBAction)doneButtonTapped:(UIButton *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    
     if (editingVC.modeController.editingMode == AddingItemMode) { // 새로운 아이템 추가중
         if ([editingVC.currentItem isKindOfClass:Photo.class]) {
             [self doneAddingPhoto];
@@ -91,7 +94,9 @@
             [self doneAddingSticker];
         }
         
-    } else { // 기존 아이템 편집중
+        [self doneAddingItemLayer];
+        
+    } else{ // 기존 아이템 편집중
         
         if ([editingVC.currentItem isKindOfClass:Photo.class]) {
             [self doneEditingPhoto];
@@ -110,16 +115,25 @@
         } else {
             [self doneEditingMainFrame];
         }
+        for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
+            NSLog(@"의의 %d", itemlayer.item.indexInLayer.integerValue);
+        }
+        [self doneEditingItemLayer];
+        for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
+            NSLog(@"의의2 %d", itemlayer.item.indexInLayer.integerValue);
+        }
     }
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
     [editingVC showItemsForNormalMode];
-    
+
     editingVC.currentItem = nil;
     editingVC.currentSticker = nil;
     editingVC.currentText = nil;
     editingVC.currentPhotoFrame = nil;
     editingVC.currentPhoto = nil;
+    editingVC.layerController.currentItemLayer = nil;
+    
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
     }];
@@ -369,6 +383,7 @@
     self.doneButton.alpha = 1.0;
     }
     editingVC.modeController.editingMode = NormalMode;
+    [editingVC.layerController recoverOriginalLayer];//
     
 }
 
@@ -399,6 +414,7 @@
         sticker.backgroundImageView.image = [UIImage imageNamed:editingVC.originalStickerBGImageName];
     }
     [editingVC.layerController hideTransparentView];
+    [editingVC.layerController recoverOriginalLayer];//
     [self dismissSelf];
     editingVC.modeController.editingMode = NormalMode;
 
@@ -489,7 +505,8 @@
     [editingVC.originalPhotoFrame.baseView removeFromSuperview];
     [SaveManager.sharedInstance addItem:photoFrame];
 
-    // 레이어 되돌려 놓기
+//    // 레이어 되돌려 놓기
+    editingVC.layerController.originalIndex = editingVC.originalIndexInLayer;
     [editingVC.layerController recoverOriginalLayer];
     if (photoFrame.isFixedPhotoFrame) {
         [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.mainFrameImageView];
@@ -504,6 +521,7 @@
     [SaveManager.sharedInstance saveAndAddToStack];
 
     editingVC.modeController.editingMode = NormalMode;
+
 }
 
 #pragma mark - 텍스트
@@ -531,7 +549,9 @@
 -(void)doneEditingText{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
+    
     [editingVC.layerController hideTransparentView];
+    [editingVC.layerController recoverOriginalLayer];//
     [self dismissSelf];
 
     [SaveManager.sharedInstance addItem:editingVC.currentText];
@@ -565,11 +585,10 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     [editingVC.layerController hideTransparentView];
-    [editingVC.layerController recoverOriginalLayer];
     [self dismissSelf];
-    [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.modeController.editingMode = NormalMode;
-
+    [editingVC.layerController recoverOriginalLayer];//
+    [SaveManager.sharedInstance saveAndAddToStack];
 }
 
 #pragma mark - 메인프레임
@@ -581,6 +600,66 @@
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.modeController.editingMode = NormalMode;
     
+}
+
+-(void)doneAddingItemLayer{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+   
+    //itemlayers에 추가되기 전이므로 +1
+    NSInteger numberOfItemLayersAfterAdding = [SaveManager.sharedInstance.currentProject.itemLayers count] + 1;
+    ItemLayer *itemLayer = [ItemLayer new];
+
+    itemLayer.item = editingVC.currentItem;
+    [itemLayer makeView];
+    
+    float itemLayerX = (editingVC.itemLayerContentView.frameWidth)/2;
+    float itemLayerY = (editingVC.itemLayerContentView.frameHeight)-(itemLayer.barBaseView.frameHeight/2)*(3*numberOfItemLayersAfterAdding-1);
+    
+    itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
+    itemLayer.originalCenterY = itemLayerY;
+
+    [editingVC.itemLayerContentView addSubview:itemLayer.barBaseView];
+    
+    [editingVC.layerController addItemLayerGestureRecognizers:itemLayer];
+    
+    [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
+    itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
+    
+    //추가되는 아이템에 맞추어 itemlayercontentview크기 늘려줌
+    editingVC.itemLayerContentViewHeightConstraint.constant = -editingVC.itemLayerScrollView.frameHeight + (itemLayer.barBaseViewHeight/2)*(3*numberOfItemLayersAfterAdding + 1);
+    [editingVC.itemLayerScrollView setContentSize:CGSizeMake(editingVC.itemLayerContentView.frameWidth, editingVC.itemLayerContentView.frameHeight)];
+   
+    
+    //contentview는 아래로 넓어지므로 그에 맞추어 객체들의 실제 위치 & 위치값 모두 커진 만큼 내려줌
+    for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        
+        itemlayer.barBaseView.centerY += itemlayer.barBaseView.frameHeight/2*3;
+        
+        itemlayer.originalCenterY += itemlayer.barBaseView.frameHeight/2*3;
+    }
+    
+    //adding - donebutton 눌렀을때 실제 item도 위로 올라오도록
+    //새로추가된 itemlayer.item의 indexinlayer값 바꾸기 & 그에 맞게 다시 bgview에 띄우기
+    NSInteger mainFrameImageViewIndex = [editingVC.view.subviews indexOfObject:editingVC.mainFrameImageView];
+    
+    itemLayer.item.indexInLayer =  [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + itemLayer.itemLayerIndex + 1];
+    [editingVC.view insertSubview:itemLayer.item.baseView atIndex:itemLayer.item.indexInLayer.integerValue];
+    
+}
+
+-(void)doneEditingItemLayer{
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    
+    if ([editingVC.currentItem isKindOfClass:Text.class]) {
+        editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentText.baseView];
+    } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
+        editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentPhotoFrame.baseView];
+    } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
+        editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentSticker.baseView];
+    }
+
+    editingVC.layerController.currentItemLayer.item = editingVC.currentItem;
+
 }
 
 @end

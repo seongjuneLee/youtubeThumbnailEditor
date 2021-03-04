@@ -8,9 +8,10 @@
 #import <Foundation/Foundation.h>
 #import "Item.h"
 #import "ItemLayer.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EditingLayerController : NSObject 
+@interface EditingLayerController : NSObject
 
 @property (weak, nonatomic) UIViewController *editingVC;
 
@@ -18,22 +19,23 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSUInteger originalIndex;
 
 @property (strong, nonatomic) Item *currentItem;
-@property (strong, nonatomic) ItemLayer *itemLayer;
+@property (strong, nonatomic, nullable) ItemLayer *currentItemLayer; //tap된 itemlayer
 @property (nonatomic) CGPoint previousPoint;
-@property (strong, nonatomic) ItemLayer *pressedItemLayer;
-@property (strong, nonatomic) ItemLayer *nextItemLayer;
 
+@property (strong, nonatomic) ItemLayer *pressedItemLayer; // longpressed된 itemlayer
+@property (strong, nonatomic) ItemLayer *nextItemLayer;
 @property (nonatomic) NSInteger pressedItemOriginalCenterY;
 @property (nonatomic) NSInteger nextItemOriginalCenterY;
 
+@property (nonatomic, strong) UIImpactFeedbackGenerator *impactFeedbackGenerator;
+@property (nonatomic) BOOL directionShouldChange;
 
-@property (nonatomic) BOOL doesItemLayerArrangeFinished;
-
--(void)bringCurrentItemToFront:(Item *)CurrentItem;
+-(void)bringCurrentItemToFront;
 -(void)recoverOriginalLayer;
 -(void)showTransparentView;
 -(void)hideTransparentView;
 -(void)addItemLayerGestureRecognizers:(ItemLayer *)itemLayer;
+-(void)itemLayerDelete;
 
 @end
 
