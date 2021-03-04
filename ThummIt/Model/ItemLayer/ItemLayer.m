@@ -8,7 +8,7 @@
 #import "ItemLayer.h"
 #import "UIImage+Additions.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "PhotoManager.h"
 
 @implementation ItemLayer
 
@@ -52,16 +52,59 @@
     self.barBaseView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.barBaseView.layer.cornerRadius = 10;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width*0.8, barBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
-    imageView.image = [UIImage imageWithView:self.item.baseView];
-    [imageView setContentMode:UIViewContentModeScaleAspectFit];
-    imageView.backgroundColor = UIColor.clearColor;
 
-    [self.barBaseView addSubview:imageView];
-    
-    self.backgroundImageView = imageView;
-    self.backgroundImageView.center = CGPointMake(barBaseViewSize.width/2, barBaseViewSize.height/2);
+    if([self.item isKindOfClass:PhotoFrame.class]){
+        PhotoFrame *photoFrame =(PhotoFrame *)self.item;
+        if (photoFrame.phAsset) {
+            [PhotoManager.sharedInstance getImageFromPHAsset:photoFrame.phAsset withPHImageContentMode:PHImageContentModeAspectFit withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    float ratio = image.size.height/image.size.width;
+                    float width = photoFrame.baseView.bounds.size.width;
+                    float height = photoFrame.baseView.bounds.size.height;
+                    if (ratio > 1) {
+                        photoFrame.photoImageView.frameSize = CGSizeMake(width, width * ratio);
+                    } else {
+                        photoFrame.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
+                    }
+                    photoFrame.photoImageView.center = photoFrame.photoCenter;
+                    photoFrame.photoImageView.image = image;
 
+                    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width*0.8, barBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
+                    imageView.image = [UIImage imageWithView:self.item.baseView];
+                    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+                    imageView.backgroundColor = UIColor.clearColor;
+                    
+                    [self.barBaseView addSubview:imageView];
+                    
+                    self.backgroundImageView = imageView;
+                    self.backgroundImageView.center = CGPointMake(barBaseViewSize.width/2, barBaseViewSize.height/2);
+                });
+                
+            }];
+        } else {
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width*0.8, barBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
+            imageView.image = [UIImage imageWithView:self.item.baseView];
+            [imageView setContentMode:UIViewContentModeScaleAspectFit];
+            imageView.backgroundColor = UIColor.clearColor;
+
+            [self.barBaseView addSubview:imageView];
+            
+            self.backgroundImageView = imageView;
+            self.backgroundImageView.center = CGPointMake(barBaseViewSize.width/2, barBaseViewSize.height/2);
+        }
+    } else {
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width*0.8, barBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
+        imageView.image = [UIImage imageWithView:self.item.baseView];
+        [imageView setContentMode:UIViewContentModeScaleAspectFit];
+        imageView.backgroundColor = UIColor.clearColor;
+
+        [self.barBaseView addSubview:imageView];
+        
+        self.backgroundImageView = imageView;
+        self.backgroundImageView.center = CGPointMake(barBaseViewSize.width/2, barBaseViewSize.height/2);
+        
+    }
 }
 
 //func getImage(image: UIImage, backgroundColor: UIColor)->UIImage?{

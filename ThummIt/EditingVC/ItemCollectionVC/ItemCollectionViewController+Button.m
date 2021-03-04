@@ -25,8 +25,12 @@
             self.editPhotoButton.alpha = 0.4;
             [self cancelAddingPhoto];
         }  else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
+            self.photoFramePhotoButton.selected= true;
+            self.photoFramePhotoButton.alpha = 1.0;
+            self.photoFrameStyleButton.selected= false;
+            self.photoFrameStyleButton.alpha = 0.4;
+
             [self cancelAddingPhotoFrame];
-            [self photoFramePhotoButtonTapped:self.photoFramePhotoButton];
         } else if ([editingVC.currentItem isKindOfClass:Text.class]) {
             [self cancelAddingText];
             [self typoButtonTapped:self.textButton];
@@ -44,8 +48,12 @@
 
             [self cancelEditingPhoto];
         }  else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
+            self.photoFramePhotoButton.selected= true;
+            self.photoFramePhotoButton.alpha = 1.0;
+            self.photoFrameStyleButton.selected= false;
+            self.photoFrameStyleButton.alpha = 0.4;
+
             [self cancelEditingPhotoFrame];
-            [self photoFramePhotoButtonTapped:self.photoFramePhotoButton];
         }else if ([editingVC.currentItem isKindOfClass:Text.class]) {
             [self cancelEditingText];
             [self typoButtonTapped:self.textButton];
@@ -85,8 +93,12 @@
             self.editPhotoButton.selected= false;
             self.editPhotoButton.alpha = 0.4;
         } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
+            self.photoFramePhotoButton.selected= true;
+            self.photoFramePhotoButton.alpha = 1.0;
+            self.photoFrameStyleButton.selected= false;
+            self.photoFrameStyleButton.alpha = 0.4;
+
             [self doneAddingPhotoFrame];
-            [self photoFramePhotoButtonTapped:self.photoFramePhotoButton];
         } else if ([editingVC.currentItem isKindOfClass:Text.class]) {
             [self doneAddingText];
             [self typoButtonTapped:self.textButton];
@@ -105,8 +117,11 @@
             self.editPhotoButton.selected= false;
             self.editPhotoButton.alpha = 0.4;
         }else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
+            self.photoFramePhotoButton.selected= true;
+            self.photoFramePhotoButton.alpha = 1.0;
+            self.photoFrameStyleButton.selected= false;
+            self.photoFrameStyleButton.alpha = 0.4;
             [self doneEditingPhotoFrame];
-            [self photoFramePhotoButtonTapped:self.photoFramePhotoButton];
         } else if ([editingVC.currentItem isKindOfClass:Text.class]) {
             [self doneEditingText];
             [self typoButtonTapped:self.textButton];
