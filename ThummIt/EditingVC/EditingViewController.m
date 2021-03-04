@@ -172,10 +172,6 @@
         
         [item setItemCenterAndScale];
         
-        if ([item isKindOfClass:Photo.class]) {
-            NSLog(@"item baseview frame %@",NSStringFromCGRect(item.baseView.frame));
-        }
-        
         if ([item isKindOfClass:Text.class]){ // 텍스트 해주어야 할 일.
             Text *text = (Text *)item;
             text.textView.delegate = self;

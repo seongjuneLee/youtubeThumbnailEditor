@@ -194,14 +194,13 @@
 
     } else if (sender.state == UIGestureRecognizerStateChanged && sender.numberOfTouches == 1){
         
-        // 중심값 이동
-        CGPoint finger1Point = [sender locationInView:self.gestureView];
-        NSLog(@"self.lastPoint %@",NSStringFromCGPoint(self.lastPoint));
-        float translationX = finger1Point.x - self.originalPinchCenter.x;
-        float translationY = finger1Point.y - self.originalPinchCenter.y;
-        // 센터가이드 적용
-        CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + (self.lastPoint.x - self.originalItemViewCenter.x) + translationX, self.originalItemViewCenter.y + ( self.lastPoint.x-self.originalItemViewCenter.y) + translationY);
-        photoImageView.center = changedPoint;
+//        // 중심값 이동
+//        CGPoint finger1Point = [sender locationInView:self.gestureView];
+//        float translationX = finger1Point.x - self.originalPinchCenter.x;
+//        float translationY = finger1Point.y - self.originalPinchCenter.y;
+//        // 센터가이드 적용
+//        CGPoint changedPoint = CGPointMake((finger1Point.x-self.lastPoint.x) + translationX, (finger1Point.y - self.lastPoint.y)  + translationY);
+//        photoImageView.center = changedPoint;
         
     }
 
