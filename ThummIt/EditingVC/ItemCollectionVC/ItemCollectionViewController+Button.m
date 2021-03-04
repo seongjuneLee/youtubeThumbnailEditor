@@ -115,13 +115,8 @@
         } else {
             [self doneEditingMainFrame];
         }
-        for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
-            NSLog(@"의의 %d", itemlayer.item.indexInLayer.integerValue);
-        }
         [self doneEditingItemLayer];
-        for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
-            NSLog(@"의의2 %d", itemlayer.item.indexInLayer.integerValue);
-        }
+     
     }
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
@@ -623,7 +618,7 @@
     [editingVC.layerController addItemLayerGestureRecognizers:itemLayer];
     
     [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
-    itemLayer.itemLayerIndex =[SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
+    itemLayer.itemLayerIndex = [SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
     
     //추가되는 아이템에 맞추어 itemlayercontentview크기 늘려줌
     editingVC.itemLayerContentViewHeightConstraint.constant = -editingVC.itemLayerScrollView.frameHeight + (itemLayer.barBaseViewHeight/2)*(3*numberOfItemLayersAfterAdding + 1);

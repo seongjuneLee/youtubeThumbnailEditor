@@ -42,55 +42,24 @@
         
         [self didTapText:item];
         
-    } else if([item isKindOfClass:Sticker.class]){
-        Text *text = (Text *)item;
-        self.currentItem = text;
-        self.currentText = text;
-        
-        self.originalCenter = text.baseView.center;
-        self.originalTransform = text.baseView.transform;
-        self.originalTypo = text.typo;
-        self.originalText = text.text;
-        self.originalIndexInLayer = text.indexInLayer.integerValue;
-        
-        self.itemCollectionVC.typoButton.selected = false;
-        self.itemCollectionVC.typoButton.alpha = 0.4;
-        self.itemCollectionVC.textButton.selected = true;
-        self.itemCollectionVC.textButton.alpha = 1.0;
-        
-        [text.textView becomeFirstResponder];
-        [self.layerController showTransparentView];
-        [self.layerController bringCurrentItemToFront];
-        self.itemCollectionVC.itemType = TextType;
-        
-        if(text.typo.canChangeColor){
-            [UIView animateWithDuration:0.2 animations:^{
-                self.hueSlider.alpha = 1.0;
-            }];
-        }
-        
-        
-    } else if([item isKindOfClass:Sticker.class]){
-        [self hideItemsForItemMode];
-        
-        Sticker *sticker = (Sticker *)item;
-        self.currentItem = sticker;
-        self.currentSticker = sticker;
-        self.originalCenter = sticker.baseView.center;
-        self.originalTransform = sticker.baseView.transform;
-        self.originalStickerBGImageName = sticker.backgroundImageName;
-        self.originalTintColor = sticker.tintColor;
-        self.originalColorChangable = sticker.canChangeColor;
-        self.originalSticker = sticker;
-        self.originalIndexInLayer = sticker.indexInLayer.integerValue;
-        
-        [self.layerController showTransparentView];
-        [self.layerController bringCurrentItemToFront];
-        self.itemCollectionVC.itemType = StickerType;
-        
+    } else if([item isKindOfClass:Sticker.class]){        
         [self didTapSticker:item];
 
     }
+
+    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+        
+        if ([self.currentItem isKindOfClass:PhotoFrame.class]) {
+            if(itemLayer.item == self.originalPhotoFrame){
+                self.layerController.currentItemLayer = itemLayer;
+            }
+        } else {
+            if(itemLayer.item == self.currentItem){
+                self.layerController.currentItemLayer = itemLayer;
+            }
+        }
+    }//photoframe일 경우 self.currentitem에 copy객체가 들어있어서 주소값이 달라서 currentitemlayer가 안바뀜
+    
     [self hideItemsForItemMode];
     [self showItemCollectionVC];
 
@@ -205,6 +174,8 @@
 #pragma mark -텍스트
 
 -(void)didTapText:(Item *)item{
+    
+    
     Text *text = (Text *)item;
     self.currentItem = text;
     self.currentText = text;

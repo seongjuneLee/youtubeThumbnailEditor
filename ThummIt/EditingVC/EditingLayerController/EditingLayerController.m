@@ -67,10 +67,7 @@
 
     CGPoint tappedLocation = [sender locationInView:editingVC.itemLayerContentView];
     NSMutableArray *foundItemLayers = [NSMutableArray new];
-    NSLog(@"SaveManager.sharedInstance.currentProject.itemLayers %@",SaveManager.sharedInstance.currentProject.itemLayers);
     for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
-        NSLog(@"itemLayer.barBaseView.frame %@",NSStringFromCGRect(itemLayer.barBaseView.frame));
-        NSLog(@"tappedLocationtappedLocation %@",NSStringFromCGPoint(tappedLocation));
         if (CGRectContainsPoint(itemLayer.barBaseView.frame, tappedLocation)) {
                 [foundItemLayers addObject:itemLayer];
             }

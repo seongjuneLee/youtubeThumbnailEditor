@@ -34,7 +34,7 @@
     /* do something specifically for iPad. */
     } else {
         float barBaseViewWitdth = window.frameWidth * 4/5;
-        float barBaseViewHeight = window.frameWidth * 4/5 * 0.08;
+        float barBaseViewHeight = window.frameWidth * 4/5 * 0.1;
         
         return CGSizeMake(barBaseViewWitdth, barBaseViewHeight);
     /* do something specifically for iPhone or iPod touch. */

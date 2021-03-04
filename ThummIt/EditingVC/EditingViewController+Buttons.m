@@ -392,6 +392,7 @@
 #pragma  mark - VC 띄우고, 내리기
 
 -(void)showItemCollectionVC{
+    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
     
     [self.itemCollectionVC connectCollectionController];
     
@@ -402,7 +403,8 @@
         self.itemCollectionVC.collectionView.hidden = false;
     }
     if (self.itemCollectionVC.itemType == TextType) {
-        constant = self.itemCollectionVC.view.frameHeight - AppManager.sharedInstance.keyboardSize.height;
+        
+        constant = self.itemCollectionContainerView.frameHeight - window.safeAreaInsets.bottom - AppManager.sharedInstance.keyboardSize.height;
     }
     [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         

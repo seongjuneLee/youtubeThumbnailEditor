@@ -191,11 +191,6 @@
 		6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */; };
 		6EAFD5B625B876D400B193AB /* KOTRA_BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */; };
 		6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */; };
-		6EB2A0ED25F0D53F009715B4 /* DeepLabV3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A0E825F0D53D009715B4 /* DeepLabV3Int8LUT.mlmodel */; };
-		6EB2A0EE25F0D53F009715B4 /* Deeplab.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A0E925F0D53E009715B4 /* Deeplab.mlmodel */; };
-		6EB2A0EF25F0D53F009715B4 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A0EA25F0D53E009715B4 /* DeepLabV3.mlmodel */; };
-		6EB2A0F025F0D53F009715B4 /* DeepLabV3.mlarchive in Resources */ = {isa = PBXBuildFile; fileRef = 6EB2A0EB25F0D53F009715B4 /* DeepLabV3.mlarchive */; };
-		6EB2A0F125F0D53F009715B4 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A0EC25F0D53F009715B4 /* DeepLabV3FP16.mlmodel */; };
 		6EBEB4A525C09EEB0017C640 /* WorkManLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */; };
 		6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB50325C0D3830017C640 /* WorkManHandWrite.m */; };
 		6EBEB50B25C146300017C640 /* WorkManTalkWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB50A25C146300017C640 /* WorkManTalkWrite.m */; };
@@ -323,6 +318,11 @@
 		6ED13D6325C2FFB000012144 /* RunningMan3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D6225C2FFB000012144 /* RunningMan3Template.m */; };
 		6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D6C25C2FFD900012144 /* SinSeoYuGi2Template.m */; };
 		6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D7125C2FFE400012144 /* SinSeoYuGi3Template.m */; };
+		6ED3E9A025F0E51100FF8C3F /* DeepLabV3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3E99B25F0E51000FF8C3F /* DeepLabV3Int8LUT.mlmodel */; };
+		6ED3E9A125F0E51100FF8C3F /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3E99C25F0E51000FF8C3F /* DeepLabV3FP16.mlmodel */; };
+		6ED3E9A225F0E51100FF8C3F /* Deeplab.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3E99D25F0E51000FF8C3F /* Deeplab.mlmodel */; };
+		6ED3E9A325F0E51100FF8C3F /* DeepLabV3.mlarchive in Resources */ = {isa = PBXBuildFile; fileRef = 6ED3E99E25F0E51100FF8C3F /* DeepLabV3.mlarchive */; };
+		6ED3E9A425F0E51100FF8C3F /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3E99F25F0E51100FF8C3F /* DeepLabV3.mlmodel */; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
@@ -851,11 +851,6 @@
 		6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KOTRA_BOLD.otf; sourceTree = "<group>"; };
 		6EAFD5BE25B87D0400B193AB /* TrapezoidTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrapezoidTypo.h; sourceTree = "<group>"; };
 		6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrapezoidTypo.m; sourceTree = "<group>"; };
-		6EB2A0E825F0D53D009715B4 /* DeepLabV3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3Int8LUT.mlmodel; sourceTree = "<group>"; };
-		6EB2A0E925F0D53E009715B4 /* Deeplab.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Deeplab.mlmodel; sourceTree = "<group>"; };
-		6EB2A0EA25F0D53E009715B4 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
-		6EB2A0EB25F0D53F009715B4 /* DeepLabV3.mlarchive */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeepLabV3.mlarchive; sourceTree = "<group>"; };
-		6EB2A0EC25F0D53F009715B4 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
 		6EBEB4A325C09EEB0017C640 /* WorkManLogo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManLogo.h; sourceTree = "<group>"; };
 		6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManLogo.m; sourceTree = "<group>"; };
 		6EBEB50225C0D3830017C640 /* WorkManHandWrite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManHandWrite.h; sourceTree = "<group>"; };
@@ -1079,6 +1074,11 @@
 		6ED13D6C25C2FFD900012144 /* SinSeoYuGi2Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi2Template.m; sourceTree = "<group>"; };
 		6ED13D7025C2FFE400012144 /* SinSeoYuGi3Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinSeoYuGi3Template.h; sourceTree = "<group>"; };
 		6ED13D7125C2FFE400012144 /* SinSeoYuGi3Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi3Template.m; sourceTree = "<group>"; };
+		6ED3E99B25F0E51000FF8C3F /* DeepLabV3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3Int8LUT.mlmodel; sourceTree = "<group>"; };
+		6ED3E99C25F0E51000FF8C3F /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
+		6ED3E99D25F0E51000FF8C3F /* Deeplab.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Deeplab.mlmodel; sourceTree = "<group>"; };
+		6ED3E99E25F0E51100FF8C3F /* DeepLabV3.mlarchive */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeepLabV3.mlarchive; sourceTree = "<group>"; };
+		6ED3E99F25F0E51100FF8C3F /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -1638,11 +1638,11 @@
 		6E40F40825E6963B00FD0F67 /* CoreML */ = {
 			isa = PBXGroup;
 			children = (
-				6EB2A0E925F0D53E009715B4 /* Deeplab.mlmodel */,
-				6EB2A0EB25F0D53F009715B4 /* DeepLabV3.mlarchive */,
-				6EB2A0EA25F0D53E009715B4 /* DeepLabV3.mlmodel */,
-				6EB2A0EC25F0D53F009715B4 /* DeepLabV3FP16.mlmodel */,
-				6EB2A0E825F0D53D009715B4 /* DeepLabV3Int8LUT.mlmodel */,
+				6ED3E99D25F0E51000FF8C3F /* Deeplab.mlmodel */,
+				6ED3E99E25F0E51100FF8C3F /* DeepLabV3.mlarchive */,
+				6ED3E99F25F0E51100FF8C3F /* DeepLabV3.mlmodel */,
+				6ED3E99C25F0E51000FF8C3F /* DeepLabV3FP16.mlmodel */,
+				6ED3E99B25F0E51000FF8C3F /* DeepLabV3Int8LUT.mlmodel */,
 			);
 			name = CoreML;
 			path = ../../archive/ThummIt/CoreML;
@@ -3448,6 +3448,7 @@
 				6EBEB60625C328D10017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf in Resources */,
 				6EBEB5F825C3207F0017C640 /* UhBee-puding.otf in Resources */,
 				6EBEB5F525C320760017C640 /* UhBee-puding-Bold.otf in Resources */,
+				6ED3E9A325F0E51100FF8C3F /* DeepLabV3.mlarchive in Resources */,
 				6EBEB5E125C30C460017C640 /* KCC김훈체(MAC용).otf in Resources */,
 				6EBEB5DE25C30C3D0017C640 /* Recipekorea 레코체 FONT.otf in Resources */,
 				6EBEB5D925C308EB0017C640 /* SDSwagger.otf in Resources */,
@@ -3479,7 +3480,6 @@
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
 				B1F2B6E525C196E30064A044 /* SCDream9.otf in Resources */,
-				6EB2A0F025F0D53F009715B4 /* DeepLabV3.mlarchive in Resources */,
 				B1F2B6DF25C1940A0064A044 /* UTOIMAGE_ ChocolatLatte_OTF.otf in Resources */,
 				B1F2B74225C1C9BA0064A044 /* NanumBarunGothicBold.otf in Resources */,
 				B16FC62025ADCD9400E854C1 /* StickerCollectionViewCell.xib in Resources */,
@@ -3696,12 +3696,12 @@
 				6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */,
 				6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */,
 				6EF0C7C925CBAA4C00BE7573 /* ArrowSticker6.m in Sources */,
-				6EB2A0F125F0D53F009715B4 /* DeepLabV3FP16.mlmodel in Sources */,
 				6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */,
 				6ED0AFE825E51C920027485F /* MacaronVlogMainFrame.m in Sources */,
 				6E1DBDFE25D8063F004C0416 /* ThreeFifthsRectangle.m in Sources */,
 				6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */,
 				B16FC61F25ADCD9400E854C1 /* StickerCollectionViewCell.m in Sources */,
+				6ED3E9A225F0E51100FF8C3F /* Deeplab.mlmodel in Sources */,
 				6EF0C92A25CD266600BE7573 /* DinggoBigEdit.m in Sources */,
 				6ED13CAF25C1AEF700012144 /* KnockOutTypo.m in Sources */,
 				6E84301F25E81A2100034174 /* EditingPhotoViewController.m in Sources */,
@@ -3760,6 +3760,7 @@
 				6EF0C93625CD29D700BE7573 /* DinggoBingoTypo.m in Sources */,
 				6E8F9B1125C348C9005C8071 /* WorkManStartleSticker.m in Sources */,
 				6EF0C8AE25CBDB5E00BE7573 /* StainSticker1.m in Sources */,
+				6ED3E9A125F0E51100FF8C3F /* DeepLabV3FP16.mlmodel in Sources */,
 				6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */,
 				6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */,
 				B11E0D6025C561470050D9F0 /* DailyVlogTemplate.m in Sources */,
@@ -3845,7 +3846,6 @@
 				B1F2B7CF25C305C50064A044 /* BlinkSticker1.m in Sources */,
 				6EBEB64325C37A3F0017C640 /* WorkManSecondTitle.m in Sources */,
 				6ED0AFED25E51CA40027485F /* SixToFourVlogMainFrame.m in Sources */,
-				6EB2A0ED25F0D53F009715B4 /* DeepLabV3Int8LUT.mlmodel in Sources */,
 				6EC7646825DAD938009FF873 /* InfiniteTemplateRectangle2.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */,
@@ -3927,7 +3927,6 @@
 				6EF1C73F25ECE011002B8820 /* UIImage+Segmentation.swift in Sources */,
 				6EF0C93D25CD2B7800BE7573 /* DinggoPotatoTypo.m in Sources */,
 				6EC7645E25DAD8FC009FF873 /* InfiniteTemplateRectangle1.m in Sources */,
-				6EB2A0EF25F0D53F009715B4 /* DeepLabV3.mlmodel in Sources */,
 				6EF0C7F125CBAE0800BE7573 /* CircleSticker2.m in Sources */,
 				6E4A1867258A0009008578BA /* EditingViewController+AlbumVCDelegate.m in Sources */,
 				B11E0D8D25C595BF0050D9F0 /* VlogHolidayTypo.m in Sources */,
@@ -3938,7 +3937,6 @@
 				6E1DBCFD25CBE2B5004C0416 /* ForgotPasswordViewController.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E1DBE2325D81ADB004C0416 /* DailyVlogTemplateRectangle2.m in Sources */,
-				6EB2A0EE25F0D53F009715B4 /* Deeplab.mlmodel in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
 				6ED0AF8925E5143F0027485F /* SinSeoYuGi1MainFrame.m in Sources */,
 				B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */,
@@ -3951,6 +3949,7 @@
 				B11E0D7E25C57BB90050D9F0 /* KidsVlogTemplate.m in Sources */,
 				6ED13D4625C2C82900012144 /* SinSeoYuGiExc1Sticker.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
+				6ED3E9A425F0E51100FF8C3F /* DeepLabV3.mlmodel in Sources */,
 				6E1DBE1325D80A7A004C0416 /* OneThirdRectangle.m in Sources */,
 				B16FC68025AF459800E854C1 /* StickerCollectionReusableView.m in Sources */,
 				6EF0C80A25CBB0BE00BE7573 /* EffectSticker2.m in Sources */,
@@ -3961,6 +3960,7 @@
 				6EF0C7E225CBACBF00BE7573 /* ButtonPauseSticker.m in Sources */,
 				6E1DBE7925D82A71004C0416 /* CebuRectangle.m in Sources */,
 				6EF0C94225CD2CB000BE7573 /* DinggoGoodTalk.m in Sources */,
+				6ED3E9A025F0E51100FF8C3F /* DeepLabV3Int8LUT.mlmodel in Sources */,
 				B16FC63025ADD9DB00E854C1 /* Sticker.m in Sources */,
 				6E1DBECE25D918FF004C0416 /* WebDesignerVlogTemplate.m in Sources */,
 				6E7DD4D32584E1D30014618E /* AlbumCollectionViewCell.m in Sources */,
