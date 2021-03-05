@@ -190,8 +190,8 @@
 
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
+            editingVC.layerController.currentItemLayer = nil;
         }
-
     }
 }
 
