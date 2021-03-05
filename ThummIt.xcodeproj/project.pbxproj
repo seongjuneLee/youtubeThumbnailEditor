@@ -190,7 +190,6 @@
 		6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */; };
 		6EAFD5B625B876D400B193AB /* KOTRA_BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */; };
 		6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */; };
-		6EB2A16A25F24BA1009715B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EB2A16925F24BA1009715B4 /* GoogleService-Info.plist */; };
 		6EB2A19525F24BD9009715B4 /* DeepLabV3FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A19025F24BD8009715B4 /* DeepLabV3FP16.mlmodel */; };
 		6EB2A19625F24BD9009715B4 /* Deeplab.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A19125F24BD8009715B4 /* Deeplab.mlmodel */; };
 		6EB2A19725F24BD9009715B4 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A19225F24BD8009715B4 /* DeepLabV3.mlmodel */; };
@@ -323,6 +322,7 @@
 		6ED13D6325C2FFB000012144 /* RunningMan3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D6225C2FFB000012144 /* RunningMan3Template.m */; };
 		6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D6C25C2FFD900012144 /* SinSeoYuGi2Template.m */; };
 		6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D7125C2FFE400012144 /* SinSeoYuGi3Template.m */; };
+		6ED3E9AC25F2568400FF8C3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6ED3E9AB25F2568400FF8C3F /* GoogleService-Info.plist */; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
@@ -851,7 +851,6 @@
 		6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KOTRA_BOLD.otf; sourceTree = "<group>"; };
 		6EAFD5BE25B87D0400B193AB /* TrapezoidTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrapezoidTypo.h; sourceTree = "<group>"; };
 		6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrapezoidTypo.m; sourceTree = "<group>"; };
-		6EB2A16925F24BA1009715B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../bhbh/ThummIt/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EB2A19025F24BD8009715B4 /* DeepLabV3FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3FP16.mlmodel; sourceTree = "<group>"; };
 		6EB2A19125F24BD8009715B4 /* Deeplab.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Deeplab.mlmodel; sourceTree = "<group>"; };
 		6EB2A19225F24BD8009715B4 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
@@ -1080,6 +1079,7 @@
 		6ED13D6C25C2FFD900012144 /* SinSeoYuGi2Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi2Template.m; sourceTree = "<group>"; };
 		6ED13D7025C2FFE400012144 /* SinSeoYuGi3Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinSeoYuGi3Template.h; sourceTree = "<group>"; };
 		6ED13D7125C2FFE400012144 /* SinSeoYuGi3Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi3Template.m; sourceTree = "<group>"; };
+		6ED3E9AB25F2568400FF8C3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/아카이브/ThummIt/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -1437,7 +1437,7 @@
 		6E1190E32584B163000DD9C0 /* ThummIt */ = {
 			isa = PBXGroup;
 			children = (
-				6EB2A16925F24BA1009715B4 /* GoogleService-Info.plist */,
+				6ED3E9AB25F2568400FF8C3F /* GoogleService-Info.plist */,
 				6EF37B5125E399F000A43595 /* ThummIt.entitlements */,
 				6E40F40825E6963B00FD0F67 /* CoreML */,
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
@@ -3476,6 +3476,7 @@
 				6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */,
 				B182049F25C92BBE000B509B /* SDMiSaeng.otf in Resources */,
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
+				6ED3E9AC25F2568400FF8C3F /* GoogleService-Info.plist in Resources */,
 				B1F2B79425C2F6250064A044 /* UhBee DoolDool Bold.otf in Resources */,
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
@@ -3504,7 +3505,6 @@
 				6E1190F12584B164000DD9C0 /* Assets.xcassets in Resources */,
 				B1F2B73425C1C3C50064A044 /* NanumGothicExtraBold.otf in Resources */,
 				B1F2B71225C1AF780064A044 /* yangpyeong_B.otf in Resources */,
-				6EB2A16A25F24BA1009715B4 /* GoogleService-Info.plist in Resources */,
 				6E40F42C25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib in Resources */,
 				6E8E7A9C259CBB470008C5FF /* PhotoFrameCollectionReusableView.xib in Resources */,
 				6EF1C7D925EF4C41002B8820 /* (null) in Resources */,

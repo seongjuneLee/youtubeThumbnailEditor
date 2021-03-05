@@ -24,6 +24,10 @@
                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
             }
             [self didTapPhoto:item];
+            
+            [self hideItemsForItemMode];
+            [self showItemCollectionVC];
+
         } else {
             [PhotoManager.sharedInstance requstGoingToSettingWithVC:self];
         }
@@ -34,16 +38,24 @@
                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
             }
             [self didTapPhotoFrame:item];
+            [self hideItemsForItemMode];
+            [self showItemCollectionVC];
+
         } else {
             [self taskWhenDenied];
         }
         
     } else if([item isKindOfClass:Text.class]){
-        
         [self didTapText:item];
         
+        [self hideItemsForItemMode];
+        [self showItemCollectionVC];
+
     } else if([item isKindOfClass:Sticker.class]){        
         [self didTapSticker:item];
+        
+        [self hideItemsForItemMode];
+        [self showItemCollectionVC];
 
     }
 
@@ -58,10 +70,7 @@
                 self.layerController.currentItemLayer = itemLayer;
             }
         }
-    }//photoframe일 경우 self.currentitem에 copy객체가 들어있어서 주소값이 달라서 currentitemlayer가 안바뀜
-    
-    [self hideItemsForItemMode];
-    [self showItemCollectionVC];
+    }
 
 }
 
