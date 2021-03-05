@@ -33,7 +33,7 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     [UIView animateWithDuration:0.4 animations:^{
-        editingVC.itemCollectionTopConstraint.constant = editingVC.view.frameHeight;
+        editingVC.itemCollectionContainerTopConstraint.constant = editingVC.view.frameHeight;
         [editingVC.view layoutIfNeeded];
     }];
     

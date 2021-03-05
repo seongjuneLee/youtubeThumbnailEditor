@@ -116,6 +116,13 @@
                 }
                 self.photoImageView.center = self.photoCenter;
                 self.photoImageView.image = image;
+                
+                // 이미지 애니메이션
+                CATransition *transition = [CATransition animation];
+                transition.duration = 0.5f;
+                transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+                transition.type = kCATransitionFade;
+                [self.photoImageView.layer addAnimation:transition forKey:nil];
 
             });
         }];

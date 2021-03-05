@@ -68,6 +68,12 @@
     [SaveManager.sharedInstance applyCurrentProject:project];
     [SaveManager.sharedInstance.currentProject save];
     [self sendPushnotiForUndoRedo];
+//    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+//        if([itemLayer.item isKindOfClass:PhotoFrame.class]){
+//            itemLayer.item.
+//
+//        }
+//    }
     
 }
 

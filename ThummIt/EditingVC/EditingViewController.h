@@ -120,7 +120,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
 @property (weak, nonatomic) IBOutlet UIView *itemCollectionContainerView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionContainerTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionContainerHeightConstraint;
+
 @property (weak, nonatomic) IBOutlet UIView *bgColorContainerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgColorTopConstraint;
 
