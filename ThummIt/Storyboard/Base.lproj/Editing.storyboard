@@ -481,7 +481,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ei1-47-GtK">
-                                <rect key="frame" x="0.0" y="918" width="414" height="149"/>
+                                <rect key="frame" x="0.0" y="962" width="414" height="149"/>
                                 <connections>
                                     <segue destination="egG-51-AaV" kind="embed" identifier="BGColorVCSegue" id="X2U-kb-ya4"/>
                                 </connections>
@@ -520,7 +520,7 @@
                             <constraint firstItem="OGb-vs-PFa" firstAttribute="centerY" secondItem="c8Y-hQ-BzP" secondAttribute="centerY" id="Um7-Ys-7bG"/>
                             <constraint firstItem="c8Y-hQ-BzP" firstAttribute="top" secondItem="UhL-LO-vTX" secondAttribute="bottom" id="V9m-5v-dPa"/>
                             <constraint firstItem="OGb-vs-PFa" firstAttribute="centerX" secondItem="c8Y-hQ-BzP" secondAttribute="centerX" id="VZ3-DL-LcJ"/>
-                            <constraint firstItem="Ei1-47-GtK" firstAttribute="top" secondItem="a67-Pd-GYU" secondAttribute="top" constant="150" id="WyH-5l-31z"/>
+                            <constraint firstItem="Ei1-47-GtK" firstAttribute="top" secondItem="7pY-QV-G2j" secondAttribute="bottom" constant="100" id="WyH-5l-31z"/>
                             <constraint firstItem="Yts-NW-w4K" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="X93-o3-Uof"/>
                             <constraint firstItem="dNB-8m-B4w" firstAttribute="bottom" secondItem="c8Y-hQ-BzP" secondAttribute="bottom" id="XUc-dD-1x1"/>
                             <constraint firstItem="ulM-C1-Guu" firstAttribute="top" secondItem="qIS-C8-jIt" secondAttribute="bottom" id="Yzl-qb-8Oz"/>

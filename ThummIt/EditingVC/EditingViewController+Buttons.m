@@ -254,7 +254,7 @@
     }];
     
     [UIView animateWithDuration:0.4 animations:^{
-        self.bgColorTopConstraint.constant = 0;
+        self.bgColorTopConstraint.constant = -self.bgColorContainerView.frameHeight;
         [self.view layoutIfNeeded];
     }];
     
