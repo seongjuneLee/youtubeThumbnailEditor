@@ -57,9 +57,9 @@
         }else if ([editingVC.currentItem isKindOfClass:Text.class]) {
             [self cancelEditingText];
             [self typoButtonTapped:self.textButton];
-        } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
+        }else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
             [self cancelEditingSticker];
-        } else {
+        }else {
             [self cancelEditingMainFrame];
         }
     }

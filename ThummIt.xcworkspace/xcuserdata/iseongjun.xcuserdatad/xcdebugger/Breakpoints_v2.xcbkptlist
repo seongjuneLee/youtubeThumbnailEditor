@@ -1,70 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "FC93489E-7B3D-46F8-B5DA-1F87FE95DDCA"
+   uuid = "262FC3CD-4D32-45D8-87DA-3D26346E5AFA"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1B6440C8-EC48-4D6D-A909-78DB6F8F6A07"
+            uuid = "6DC852B0-6109-4256-BFA5-EE193703C375"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ThummIt/EditingVC/ItemCollectionVC/TextCollectionController/TextCollectionController.m"
+            filePath = "ThummIt/EditingVC/EditingLayerController/EditingLayerController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-itemLayerTapped:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DD621364-7CC4-4315-AFA3-9A80FCCE8691"
+            uuid = "63C03F1F-364D-49DD-AD69-E931EAB7E734"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ThummIt/EditingVC/ItemCollectionVC/TextCollectionController/TextCollectionController.m"
+            filePath = "ThummIt/ProjectVC/ProjectTableController/ProjectTableController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-numberOfSectionsInCollectionView:"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AF049719-AC40-4CDE-AC31-08D4F131367F"
+            uuid = "15F16D61-B517-4886-A871-86AB3A14B988"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ThummIt/EditingVC/ItemCollectionVC/TextCollectionController/TextCollectionController.m"
+            filePath = "ThummIt/ProjectVC/ProjectTableController/ProjectTableController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-collectionView:numberOfItemsInSection:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D7B8F9DA-4DB0-48FA-9C07-65B5CA8B098A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ThummIt/EditingVC/ItemCollectionVC/TextCollectionController/TextCollectionController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-initWithCollectionView:"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
