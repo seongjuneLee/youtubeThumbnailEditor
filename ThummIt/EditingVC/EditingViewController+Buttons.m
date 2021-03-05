@@ -30,12 +30,23 @@
             
             [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    
                     if (success) {
+                        PFObject* exported = [PFObject objectWithClassName:@"exported"];
+                        NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
+                        PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithName:@"test" data:thumbnailBigData contentType:@"png"];
+                        exported[@"exportedThumbnail"] = thumbnailBigFile;
+                        NSString * language = [[NSLocale preferredLanguages] firstObject];
+                        exported[@"contry"] = language;
+                        if (PFUser.currentUser) {
+                            exported[@"user"] = PFUser.currentUser;
+                        }
+                        [exported saveInBackground];
+                        
                         if (PFUser.currentUser) {
                             NSMutableArray *exportedImages = [NSMutableArray array];
                             [exportedImages addObjectsFromArray:PFUser.currentUser[@"exportedThumbnails"]];
-                            NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
-                            PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithData:thumbnailBigData];
                             [exportedImages addObject:thumbnailBigFile];
                             [PFUser.currentUser setObject:exportedImages forKey:@"exportedThumbnails"];
 
