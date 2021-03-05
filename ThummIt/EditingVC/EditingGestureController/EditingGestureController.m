@@ -172,6 +172,8 @@
         }
         self.isMagneting = false;
         
+        [editingVC panGestureEndedForItem:editingVC.currentItem withFingerPoint:currentPoint];
+
         for (GuideLine *guideLine in self.guideLines) {
             [guideLine removeFromSuperView];
         }
@@ -188,7 +190,6 @@
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
         }
-        [editingVC panGestureEndedForItem:editingVC.currentItem withFingerPoint:currentPoint];
 
     }
 }

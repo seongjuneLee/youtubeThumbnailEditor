@@ -304,12 +304,7 @@
         }
     }
     
-    if (self.currentItem) {
-        [UIView animateWithDuration:0.2 animations:^{
-            self.deleteButtonContentView.alpha = 0.0;
-            self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
-        }];
-    } else {
+    if(self.modeController.editingMode == NormalMode){
         [UIView animateWithDuration:0.2 animations:^{
             self.undoButton.alpha = 1.0;
             self.redoButton.alpha = 1.0;
@@ -317,6 +312,11 @@
             self.deleteButtonContentView.alpha = 0.0;
             self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
             self.itemLayerScrollView.alpha = 1.0;
+        }];
+    }else{
+        [UIView animateWithDuration:0.2 animations:^{
+            self.deleteButtonContentView.alpha = 0.0;
+            self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
         }];
     }
 }

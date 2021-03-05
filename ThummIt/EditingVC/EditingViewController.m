@@ -46,7 +46,7 @@
     self.layerController.impactFeedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy];
     [self.layerController.impactFeedbackGenerator prepare];
     
-    self.isFirstLoadVIew = YES;
+    self.isFirstLoadView = YES;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -211,7 +211,7 @@
     for (Item *item in project.items) {
         NSInteger itemIndex;
         
-        if(self.isFirstLoadVIew){
+        if(self.isFirstLoadView && !self.isApproachByContinue){
             itemIndex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
         } else{
             itemIndex = item.indexInLayer.integerValue - mainFrameImageViewIndex -1;
@@ -240,7 +240,7 @@
         }
     }
     
-    if(!self.isFirstLoadVIew){
+    if(!self.isFirstLoadView || self.isApproachByContinue){
         NSMutableArray *itemLayersCopy = [NSMutableArray new];
         NSInteger i = 0;
 
@@ -248,6 +248,7 @@
             itemLayer.itemLayerIndex = itemLayer.item.indexInLayer.integerValue - mainFrameImageViewIndex - 1;
             [itemLayersCopy addObject:itemLayer];
         }
+        
         for(i = 0; i < itemLayersCopy.count; i++){
              ItemLayer *itemLayer = [itemLayersCopy objectAtIndex:i];
             [SaveManager.sharedInstance.currentProject.itemLayers replaceObjectAtIndex:itemLayer.itemLayerIndex withObject:itemLayer];
@@ -270,7 +271,8 @@
     
     [SaveManager.sharedInstance save];
     
-    self.isFirstLoadVIew = NO;
+    self.isFirstLoadView = NO;
+    self.isApproachByContinue = NO;
 }
 
 -(void)respondToUndoRedo{

@@ -126,7 +126,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *bgColorContainerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgColorTopConstraint;
 
-@property (nonatomic) BOOL isFirstLoadVIew;
+@property (nonatomic) BOOL isFirstLoadView;
+@property (nonatomic) BOOL isApproachByContinue;
 
 - (IBAction)photoButtonTapped:(id)sender;
 
