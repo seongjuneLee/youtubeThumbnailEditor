@@ -195,6 +195,7 @@
 		6EB2A19725F24BD9009715B4 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A19225F24BD8009715B4 /* DeepLabV3.mlmodel */; };
 		6EB2A19825F24BD9009715B4 /* DeepLabV3.mlarchive in Resources */ = {isa = PBXBuildFile; fileRef = 6EB2A19325F24BD9009715B4 /* DeepLabV3.mlarchive */; };
 		6EB2A19925F24BD9009715B4 /* DeepLabV3Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2A19425F24BD9009715B4 /* DeepLabV3Int8LUT.mlmodel */; };
+		6EB2A1A325F2666F009715B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EB2A1A225F2666F009715B4 /* GoogleService-Info.plist */; };
 		6EBEB4A525C09EEB0017C640 /* WorkManLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */; };
 		6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB50325C0D3830017C640 /* WorkManHandWrite.m */; };
 		6EBEB50B25C146300017C640 /* WorkManTalkWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBEB50A25C146300017C640 /* WorkManTalkWrite.m */; };
@@ -322,7 +323,6 @@
 		6ED13D6325C2FFB000012144 /* RunningMan3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D6225C2FFB000012144 /* RunningMan3Template.m */; };
 		6ED13D6D25C2FFD900012144 /* SinSeoYuGi2Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D6C25C2FFD900012144 /* SinSeoYuGi2Template.m */; };
 		6ED13D7225C2FFE400012144 /* SinSeoYuGi3Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED13D7125C2FFE400012144 /* SinSeoYuGi3Template.m */; };
-		6ED3E9AC25F2568400FF8C3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6ED3E9AB25F2568400FF8C3F /* GoogleService-Info.plist */; };
 		6EDE19D8258A1732001FC1DA /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */; };
 		6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */; };
 		6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDE19E5258A2740001FC1DA /* HomeCollectionController.m */; };
@@ -856,6 +856,7 @@
 		6EB2A19225F24BD8009715B4 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
 		6EB2A19325F24BD9009715B4 /* DeepLabV3.mlarchive */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeepLabV3.mlarchive; sourceTree = "<group>"; };
 		6EB2A19425F24BD9009715B4 /* DeepLabV3Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3Int8LUT.mlmodel; sourceTree = "<group>"; };
+		6EB2A1A225F2666F009715B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EBEB4A325C09EEB0017C640 /* WorkManLogo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManLogo.h; sourceTree = "<group>"; };
 		6EBEB4A425C09EEB0017C640 /* WorkManLogo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkManLogo.m; sourceTree = "<group>"; };
 		6EBEB50225C0D3830017C640 /* WorkManHandWrite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkManHandWrite.h; sourceTree = "<group>"; };
@@ -1079,7 +1080,6 @@
 		6ED13D6C25C2FFD900012144 /* SinSeoYuGi2Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi2Template.m; sourceTree = "<group>"; };
 		6ED13D7025C2FFE400012144 /* SinSeoYuGi3Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinSeoYuGi3Template.h; sourceTree = "<group>"; };
 		6ED13D7125C2FFE400012144 /* SinSeoYuGi3Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinSeoYuGi3Template.m; sourceTree = "<group>"; };
-		6ED3E9AB25F2568400FF8C3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/아카이브/ThummIt/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EDE19D5258A1732001FC1DA /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		6EDE19D6258A1732001FC1DA /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		6EDE19D7258A1732001FC1DA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -1437,7 +1437,7 @@
 		6E1190E32584B163000DD9C0 /* ThummIt */ = {
 			isa = PBXGroup;
 			children = (
-				6ED3E9AB25F2568400FF8C3F /* GoogleService-Info.plist */,
+				6EB2A1A225F2666F009715B4 /* GoogleService-Info.plist */,
 				6EF37B5125E399F000A43595 /* ThummIt.entitlements */,
 				6E40F40825E6963B00FD0F67 /* CoreML */,
 				6E9BEA4A258F0AAD00F7F539 /* CoreData */,
@@ -3476,7 +3476,7 @@
 				6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */,
 				B182049F25C92BBE000B509B /* SDMiSaeng.otf in Resources */,
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
-				6ED3E9AC25F2568400FF8C3F /* GoogleService-Info.plist in Resources */,
+				6EB2A1A325F2666F009715B4 /* GoogleService-Info.plist in Resources */,
 				B1F2B79425C2F6250064A044 /* UhBee DoolDool Bold.otf in Resources */,
 				6E8F99C925C10804005C8071 /* BMDOHYEON_otf.otf in Resources */,
 				6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */,
