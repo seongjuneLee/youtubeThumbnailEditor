@@ -128,9 +128,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) BOOL isFirstLoadView;
 @property (nonatomic) BOOL isApproachByContinue;
-
-- (IBAction)photoButtonTapped:(id)sender;
-
 @end
 
 NS_ASSUME_NONNULL_END
