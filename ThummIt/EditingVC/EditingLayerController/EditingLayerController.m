@@ -216,9 +216,11 @@
                 
                 //nextitemlayer = first object 일시 state end시켜줘서 튕김 방어(이후 다른 방법 생각)
                 self.directionShouldChange = YES;
+                
+                [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
+
                 }
             
-            [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
 
         }
     } else if(deltaPoint.y < 0){
