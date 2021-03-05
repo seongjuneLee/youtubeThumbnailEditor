@@ -64,12 +64,21 @@
         self.photoFrameScrollContanerView.hidden = true;
         self.textScrollContentView.hidden = true;
         self.photoScrollContentView.hidden = false;
+        self.photoButton.selected= true;
+        self.photoButton.alpha = 1.0;
+        self.editPhotoButton.selected= false;
+        self.editPhotoButton.alpha = 0.4;
 
     }else if (self.itemType == PhotoFrameType) {
         self.photoFrameCollectionController = [[PhotoFrameCollectionController alloc] initWithCollectionView:self.collectionView];
+        self.photoFramePhotoButton.selected = true;
+        self.photoFramePhotoButton.alpha = 1.0;
+        self.photoFrameStyleButton.selected = false;
+        self.photoFrameStyleButton.alpha = 0.4;
         self.photoFrameCollectionController.editingVC = self.editingVC;
         if (editingVC.currentPhotoFrame.isFixedPhotoFrame) {
             self.photoFrameScrollContanerView.hidden = true;
+            self.photoScrollContentView.hidden = true;
             self.textScrollContentView.hidden = true;
             self.collectionView.hidden = true;
         } else {
@@ -80,6 +89,7 @@
         
     } else if (self.itemType == TextType){
         self.textCollectionController = [[TextCollectionController alloc] initWithCollectionView:self.collectionView];
+        [self typoButtonTapped:self.textButton];
         self.textCollectionController.editingVC = self.editingVC;
         self.photoFrameScrollContanerView.hidden = true;
         self.textScrollContentView.hidden = false;

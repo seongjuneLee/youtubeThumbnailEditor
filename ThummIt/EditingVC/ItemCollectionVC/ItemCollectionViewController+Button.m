@@ -97,7 +97,6 @@
             self.photoFramePhotoButton.alpha = 1.0;
             self.photoFrameStyleButton.selected= false;
             self.photoFrameStyleButton.alpha = 0.4;
-
             [self doneAddingPhotoFrame];
         } else if ([editingVC.currentItem isKindOfClass:Text.class]) {
             [self doneAddingText];
@@ -203,10 +202,10 @@
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.editingPhotoVC.view.alpha = 1.0;
         editingVC.editingPhotoButtonVC.view.alpha = 1.0;
-        editingVC.itemCollectionContainerTopConstraint.constant = self.view.frameHeight - buttonViewHeight - self.cancelButton.frameHeight;
+        editingVC.itemCollectionContainerTopConstraint.constant = editingVC.underAreaView.frameHeight - buttonViewHeight - self.cancelButton.frameHeight;
         [editingVC.view layoutIfNeeded];
     }];
-
+    
     UIImage *photoImage = editingVC.currentPhoto.photoImageView.image;
 
     editingVC.editingPhotoVC.photoImageView = [[UIImageView alloc] init];

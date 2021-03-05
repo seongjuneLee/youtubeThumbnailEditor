@@ -169,7 +169,7 @@
     rectangleSticker.isTemplateItem = true;
     rectangleSticker.indexInLayer = @"7";
     rectangleSticker.scale = 0.47;
-    rectangleSticker.center = CGPointMake(0.5, 0.78);
+    rectangleSticker.relativeCenter = CGPointMake(0.5, 0.78);
     rectangleSticker.tintColor = [UIColor colorWithRed:80/255.0 green:10/255.0 blue:205/255.0 alpha:1.0];
     [self.stickers addObject:rectangleSticker];
 
@@ -177,7 +177,7 @@
     rectangleSticker2.isTemplateItem = true;
     rectangleSticker2.indexInLayer = @"8";
     rectangleSticker2.scale = 0.7;
-    rectangleSticker2.center = CGPointMake(0.5, 0.9);
+    rectangleSticker2.relativeCenter = CGPointMake(0.5, 0.9);
     rectangleSticker2.tintColor = [UIColor colorWithRed:80/255.0 green:10/255.0 blue:205/255.0 alpha:1.0];
     [self.stickers addObject:rectangleSticker2];
 

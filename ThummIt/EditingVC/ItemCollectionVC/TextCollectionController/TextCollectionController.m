@@ -168,13 +168,8 @@
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
-    
-    float fromUnderAreaTopToCollectionViewTop = editingVC.underAreaView.frameHeight - (AppManager.sharedInstance.keyboardSize.height-window.safeAreaInsets.bottom) - 59.0;
-    float bottomInset = self.collectionView.frameHeight - (editingVC.underAreaView.frameHeight - fromUnderAreaTopToCollectionViewTop);
-    
-    return UIEdgeInsetsMake(0, 0, bottomInset, 0);
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;    
+    return UIEdgeInsetsMake(0, 0, -editingVC.underAreaView.frameY + editingVC.itemCollectionContainerView.frameY, 0);
 }
 
 @end

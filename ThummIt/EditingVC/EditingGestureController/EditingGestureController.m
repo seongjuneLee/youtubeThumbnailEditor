@@ -426,7 +426,6 @@
             return;
         }
         self.isPinching = true;
-//        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.originalFirstFinger = [sender locationOfTouch:0 inView:self.editingVC.view];
         self.originalSecondFinger = [sender locationOfTouch:1 inView:self.editingVC.view];
         
@@ -645,6 +644,7 @@
         // 센터가이드 적용
         CGPoint changedPoint = CGPointMake(self.originalItemViewCenter.x + translationX, self.originalItemViewCenter.y + translationY);
         photoFrame.photoImageView.center = changedPoint;
+        photoFrame.photoCenter = changedPoint;
 
 
     } else if (sender.state == UIGestureRecognizerStateEnded) {

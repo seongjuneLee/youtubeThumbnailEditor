@@ -27,6 +27,7 @@
                 }
                 photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.bounds.size.width/2,photoFrame.baseView.bounds.size.height/2);
                 photoFrame.photoImageView.image = image;
+                photoFrame.photoCenter = photoFrame.photoImageView.center;
             });
         }];
     } else {

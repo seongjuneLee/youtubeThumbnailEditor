@@ -70,7 +70,7 @@
             [SaveManager.sharedInstance saveAndAddToStack];
         });
         self.bgColorTopConstraint.constant = self.itemCollectionContainerTopConstraint.constant = self.view.frameHeight;
-        self.itemCollectionContainerHeightConstraint.constant = self.underAreaView.frameHeight;
+        self.itemCollectionContainerView.frameHeight = self.underAreaView.frameHeight;
     }
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
     
