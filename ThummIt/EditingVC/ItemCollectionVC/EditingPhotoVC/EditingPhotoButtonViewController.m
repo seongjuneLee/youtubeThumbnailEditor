@@ -43,9 +43,18 @@
     
 }
 
-- (IBAction)eraseButtonTapped:(id)sender {
+- (IBAction)eraseButtonTapped:(UIButton *)sender {
     
-    [self.delegate eraseButtonTapped];
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        self.eraseImageView.image = [self.eraseImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [self.eraseImageView setTintColor:UIColor.systemBlueColor];
+        self.eraseLabel.textColor = UIColor.systemBlueColor;
+    } else {
+        self.eraseImageView.image = [self.eraseImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [self.eraseImageView setTintColor:UIColor.whiteColor];
+        self.eraseLabel.textColor = UIColor.whiteColor;
+    }
     
 }
 
@@ -55,7 +64,7 @@
     
 }
 
-- (IBAction)redoButtonTapped:(id)sender {
+- (IBAction)redoButtonTapped:(UIButton *)sender {
     
     [self.delegate redoButtonTapped];
     

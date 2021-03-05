@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)removeBGButtonTapped;
 -(void)includeButtonTapped:(UIButton *)sender;
--(void)eraseButtonTapped;
+-(void)eraseButtonTapped:(UIButton *)sender;
 -(void)undoButtonTapped;
 -(void)redoButtonTapped;
 
@@ -30,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *redoButton;
 @property (weak, nonatomic) IBOutlet UIButton *includeButton;
 @property (weak, nonatomic) IBOutlet UIButton *eraseButton;
+@property (weak, nonatomic) IBOutlet UILabel *eraseLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *eraseImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *includeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *includeLabel;
 
 
 - (IBAction)removeBGButtonTapped:(id)sender;

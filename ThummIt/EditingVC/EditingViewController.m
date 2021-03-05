@@ -203,7 +203,6 @@
     ItemLayer *anyItemLayer = [ItemLayer new];
     self.itemLayerContentViewHeightConstraint.constant = - self.itemLayerScrollView.frameHeight + anyItemLayer.barBaseViewHeight/2 * (3*itemCountExceptFixedPhotoFrame + 1);
     self.itemLayerScrollView.contentSize = CGSizeMake(self.itemLayerContentView.frameWidth, self.itemLayerContentView.frameHeight);
-    self.itemLayerContentView.backgroundColor = UIColor.systemBlueColor;
 
     NSUInteger mainFrameImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
     

@@ -137,9 +137,6 @@
 -(void)gestureViewPinched:(UIPinchGestureRecognizer *)sender {
     UIImageView *photoImageView = self.photoImageView;
     if (sender.state == UIGestureRecognizerStateBegan && sender.numberOfTouches ==2) {
-
-        self.isPinching = true;
-
         CGPoint finger1Point = [sender locationOfTouch:0 inView:self.gestureView];
         CGPoint finger2Point = [sender locationOfTouch:1 inView:self.gestureView];
         
