@@ -16,7 +16,7 @@
         self.name = NSLocalizedString(@"행사비",nil);
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithRed:(204/255.0) green:(22/255.0) blue:(29/255.0) alpha:(1)];
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         BGTextAttribute *bgTextAttribute2 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor whiteColor];

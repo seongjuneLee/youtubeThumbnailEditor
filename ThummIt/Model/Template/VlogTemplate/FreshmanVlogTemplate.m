@@ -67,7 +67,7 @@
     leftVlogText.scale = 0.12;
     leftVlogText.relativeCenter = CGPointMake(0.065, 0.05);
     leftVlogText.isTemplateItem = true;
-    leftVlogText.indexInLayer =@"3";
+    leftVlogText.indexInLayer =@"1";
     leftVlogText.text = @"Thumm-log";
     leftVlogText.textView.text = @"Thumm-log";
     leftVlogText.typo = leftVlog;

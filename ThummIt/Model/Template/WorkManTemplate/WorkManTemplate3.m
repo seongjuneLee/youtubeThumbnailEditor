@@ -126,7 +126,7 @@
     youtubeText2.scale = 0.225;
     youtubeText2.relativeCenter = CGPointMake(0.328,0.73);
     youtubeText2.isTemplateItem = true;
-    youtubeText2.indexInLayer = @"5";
+    youtubeText2.indexInLayer = @"6";
     youtubeText2.text = @"유튜브";
     youtubeText2.textView.text = @"유튜브";
     youtubeText2.typo = yellow;
@@ -135,7 +135,7 @@
     headquatersText.scale = 0.24;
     headquatersText.relativeCenter = CGPointMake(0.548,0.73);
     headquatersText.isTemplateItem = true;
-    headquatersText.indexInLayer = @"5";
+    headquatersText.indexInLayer = @"7";
     headquatersText.text = @"본사로!";
     headquatersText.textView.text = @"본사로!";
     headquatersText.typo = upTitle;
@@ -151,7 +151,7 @@
     blueYoutube.scale = 0.21;
     blueYoutube.relativeCenter = CGPointMake(0.145,0.87);
     blueYoutube.isTemplateItem = true;
-    blueYoutube.indexInLayer = @"6";
+    blueYoutube.indexInLayer = @"8";
     blueYoutube.text = @"유튜브";
     blueYoutube.textView.text = @"유튜브";
     blueYoutube.typo = blueTypo;
@@ -161,7 +161,7 @@
     visitingText.scale = 0.15;
     visitingText.relativeCenter = CGPointMake(0.32,0.87);
     visitingText.isTemplateItem = true;
-    visitingText.indexInLayer = @"6";
+    visitingText.indexInLayer = @"9";
     visitingText.text = @"탐방";
     visitingText.textView.text = @"탐방";
     visitingText.typo = secondTitle;

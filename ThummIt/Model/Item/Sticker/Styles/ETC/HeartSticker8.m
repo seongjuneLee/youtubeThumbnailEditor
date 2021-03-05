@@ -16,6 +16,7 @@
         self.itemName = @"heartSticker8";
         self.backgroundImageName = @"heartSticker8";
         self.tintColor = [UIColor colorWithRed:255/255 green:123/255 blue:255/255 alpha:1];
+        self.canChangeColor = true;
     }
     return self;
 }

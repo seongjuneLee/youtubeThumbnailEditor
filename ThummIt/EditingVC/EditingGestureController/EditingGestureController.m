@@ -77,7 +77,7 @@
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
-    if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
+    if (editingVC.modeController.editingMode == MainFrameOrBGColorMode) {
         return;
     }
     if (editingVC.currentItem) { // 애딩 또는 에디팅 모드일 때 컨텐트 모드 진입
@@ -88,7 +88,7 @@
             if ([editingVC.currentItem isKindOfClass:Text.class]) {
                 [editingVC.itemCollectionVC textButtonTapped:editingVC.itemCollectionVC.textButton];
             } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
-                [editingVC.itemCollectionVC photoButtonTapped:editingVC.itemCollectionVC.photoButton];
+                [editingVC.itemCollectionVC photoFramePhotoButtonTapped:editingVC.itemCollectionVC.photoFramePhotoButton];
             } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
                // 해줄 것 없음.
             }
@@ -104,12 +104,10 @@
         
     } else { // 에디팅 모드 진입
         if ([self getCurrentItem:sender]) {
-            if (![editingVC.childViewControllers containsObject:editingVC.itemCollectionVC]) {
-                [editingVC didSelectItem:[self getCurrentItem:sender]];
-            }
+            [editingVC didSelectItem:[self getCurrentItem:sender]];
         }
     }
-
+    
 }
 
 #pragma mark - 팬
@@ -117,10 +115,10 @@
 -(void)gestureViewPanned:(UIPanGestureRecognizer *)sender{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
+    if (editingVC.modeController.editingMode == MainFrameOrBGColorMode) {
         return;
     }
-    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && (editingVC.modeController.editingMode != NormalMode) && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPannedForEditingPhotoModeWithSender:sender];
     } else {
         [self gestureViewPannedWithSender:sender];
@@ -147,12 +145,8 @@
         }
 
         [editingVC readyUIForPanning];
-        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.guideLines = [GuideLineManager.sharedInstance criteriasForFrameWithBGView:editingVC.bgView];
         self.itemGuideLines = [GuideLineManager.sharedInstance criteriasForItemFrameWithCurrentItem:editingVC.currentItem withBGView:editingVC.bgView];
-        if(!editingVC.currentItem.cannotChangeColor || [editingVC.currentItem isKindOfClass:PhotoFrame.class] ){
-            [editingVC hideAndInitSlider];
-        }
 
     } else if (sender.state == UIGestureRecognizerStateChanged){
         
@@ -178,15 +172,13 @@
             return;
         }
         self.isMagneting = false;
-
-        [editingVC panGestureEndedForItem:editingVC.currentItem withFingerPoint:currentPoint];
         
+        [editingVC panGestureEndedForItem:editingVC.currentItem withFingerPoint:currentPoint];
+
         for (GuideLine *guideLine in self.guideLines) {
             [guideLine removeFromSuperView];
         }
-        if(!editingVC.currentItem.cannotChangeColor){
-            [self deleteHueSliderRespondToCurrentPointY:currentPoint.y];
-        }
+        [self deleteHueSliderRespondToCurrentPointY:currentPoint.y];
         
         if([editingVC.currentItem isKindOfClass:Text.class]){
             [self deleteKeyBoardRespondToCurrentPointY:currentPoint.y];
@@ -408,11 +400,11 @@
     
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    if (editingVC.modeController.editingMode == MainFrameAndBGColorMode) {
+    if (editingVC.modeController.editingMode == MainFrameOrBGColorMode) {
         return;
     }
 
-    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && editingVC.itemCollectionVC.photoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
+    if ([editingVC.currentItem isKindOfClass:PhotoFrame.class] && (editingVC.modeController.editingMode != NormalMode) && editingVC.itemCollectionVC.photoFramePhotoButton.selected) { // 포토 프레임의 이미지뷰 제스쳐
         [self gestureViewPinchedForEditingPhotoModeWithSender:sender];
     } else {
         [self gestureViewPinchedWithSender:sender];
@@ -434,7 +426,7 @@
             return;
         }
         self.isPinching = true;
-        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
+//        [editingVC.layerController bringCurrentItemToFront:editingVC.currentItem];
         self.originalFirstFinger = [sender locationOfTouch:0 inView:self.editingVC.view];
         self.originalSecondFinger = [sender locationOfTouch:1 inView:self.editingVC.view];
         
@@ -687,13 +679,13 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     float imageViewBottomY = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
-    if (currentPointY >= imageViewBottomY || editingVC.modeController.editingMode == NormalMode || [editingVC.currentItem isKindOfClass:PhotoFrame.class] ) {
+    if (currentPointY > imageViewBottomY && editingVC.currentItem.canChangeColor) {
         [UIView animateWithDuration:0.2 animations:^{
-            [editingVC hideAndInitSlider];
+            editingVC.hueSlider.alpha = 1.0;
         }];
     } else {
         [UIView animateWithDuration:0.2 animations:^{
-            editingVC.hueSlider.alpha = 1.0;
+            [editingVC hideAndInitSlider];
         }];
     }
 }
@@ -795,3 +787,4 @@
 }
 
 @end
+

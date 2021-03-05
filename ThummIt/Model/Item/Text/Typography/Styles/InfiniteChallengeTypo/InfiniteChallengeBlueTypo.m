@@ -17,7 +17,7 @@
         self.fontName = @"S-CoreDream-9Black";
         self.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"whiteBlueGC"]];
         self.textColorPatternImageName = @"whiteBlueGC";
-        self.cannotChangeColor = true;
+        
 
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 15;

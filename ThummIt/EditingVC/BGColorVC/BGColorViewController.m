@@ -63,27 +63,26 @@
     [editingVC.layerController hideTransparentView];
     [UIView animateWithDuration:0.2 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
+        editingVC.bgColorTopConstraint.constant = editingVC.view.frameHeight;
+        [editingVC.view layoutIfNeeded];
     }];
-    [editingVC.bgColorVC dismissSelf];
     SaveManager.sharedInstance.currentProject.backgroundColor = editingVC.bgView.backgroundColor;
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.modeController.editingMode = NormalMode;
-    editingVC.buttonScrollView.hidden = false;
-
 }
 
 -(void)cancelEditingBGColor{
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     [editingVC showItemsForNormalMode];
-    // scrollView 가려주기
-    [UIView animateWithDuration:0.2 animations:^{
+    // scrollView 보여주기
+    [UIView animateWithDuration:0.4 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
+        editingVC.bgColorTopConstraint.constant = editingVC.view.frameHeight;
+        [editingVC.view layoutIfNeeded];
     }];
-    [editingVC.bgColorVC dismissSelf];
     editingVC.bgView.backgroundColor = editingVC.originalColor;
     editingVC.modeController.editingMode = NormalMode;
-    editingVC.buttonScrollView.hidden = false;
 }
 
 

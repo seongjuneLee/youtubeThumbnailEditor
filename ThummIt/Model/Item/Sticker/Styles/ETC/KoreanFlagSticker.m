@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"koreanFlagSticker";
         self.backgroundImageName = @"koreanFlagSticker";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

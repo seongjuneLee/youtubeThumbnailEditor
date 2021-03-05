@@ -19,7 +19,7 @@
         self.fontSize = TEXT_FONT_SIZE;
         self.bgImageName = @"DinggoTalkBox";
         self.bgHeightPadding = 10;        
-        
+        self.canChangeColor = true;
         BGTextAttribute *borderAtt = [[BGTextAttribute alloc] init];
         
         borderAtt.borderColor = [UIColor blackColor];

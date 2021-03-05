@@ -19,6 +19,7 @@
         self.bgImageName = @"blueMoon";
         self.bgHeightPadding = 20;
         self.bgWidthPadding = 20;
+        self.canChangeColor = true;
         BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
         shadowAtt.shadowColor =[UIColor colorWithRed:39/255.0 green:60/255.0 blue:184/255.0 alpha:1.0];
         shadowAtt.shadowOffset = CGPointMake(5, 5);

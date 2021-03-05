@@ -70,7 +70,7 @@
     momVlogText.scale = 0.222;
     momVlogText.relativeCenter = CGPointMake(0.115, 0.74);
     momVlogText.isTemplateItem = true;
-    momVlogText.indexInLayer = @"3";
+    momVlogText.indexInLayer = @"0";
     momVlogText.text = @"맘 Vlog";
     momVlogText.textView.text = momVlogText.text;
     momVlogText.typo = mom;
@@ -83,7 +83,7 @@
     dailyText.scale = 0.612;
     dailyText.relativeCenter = CGPointMake(0.275, 0.88);
     dailyText.isTemplateItem = true;
-    dailyText.indexInLayer = @"4";
+    dailyText.indexInLayer = @"1";
     dailyText.text = @"육아 일상 브이로그";
     dailyText.textView.text = dailyText.text;
     dailyText.typo = daily;

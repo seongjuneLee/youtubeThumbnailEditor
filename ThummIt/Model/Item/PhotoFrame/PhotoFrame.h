@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)addSubViewsToBaseView;
 -(void)setBaseViewFrame;
--(void)loadViewWithBlock:(void(^)(BOOL success))block;
 
 @end
 

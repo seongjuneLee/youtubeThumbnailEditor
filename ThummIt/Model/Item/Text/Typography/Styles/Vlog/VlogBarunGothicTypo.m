@@ -17,7 +17,7 @@
         self.fontName = @"NanumBarunGothicOTFBold";
         self.textColor = UIColor.whiteColor;
         self.fontSize = 80;
-        
+        self.canChangeColor = true;
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.shadowOffset = CGPointMake(0, 0);
         attribute.shadowColor = UIColor.blackColor;

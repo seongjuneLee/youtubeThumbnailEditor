@@ -17,7 +17,7 @@
         self.fontName = @"SangSangAnt";
         self.textColor = [UIColor colorWithRed:(219/255.0) green:(236/255.0) blue:(166/255.0) alpha:1];
         self.fontSize = 70;
-        
+        self.canChangeColor = true;
         BGTextAttribute *bgTextAttribute1 = [[BGTextAttribute alloc] init];
         bgTextAttribute1.borderColor = [UIColor colorWithRed:114/255.0f green:145/255.0f blue:72/255.0f alpha:1];
         

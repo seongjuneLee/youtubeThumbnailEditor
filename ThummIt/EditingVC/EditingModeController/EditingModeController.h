@@ -12,7 +12,7 @@ typedef enum {
     NormalMode = 0,
     EditingItemMode = 1,
     AddingItemMode = 2,
-    MainFrameAndBGColorMode = 3
+    MainFrameOrBGColorMode = 3
 } EditingMode;
 
 @interface EditingModeController : NSObject

@@ -38,7 +38,9 @@
 }
 
 -(void)addItem:(Item *)item{
-    if ([item isKindOfClass:PhotoFrame.class]) {
+    if ([item isKindOfClass:Photo.class]) {
+        [self.currentProject.photos addObject:(Photo *)item];
+    } else if ([item isKindOfClass:PhotoFrame.class]) {
         [self.currentProject.photoFrames addObject:(PhotoFrame *)item];
     } else if ([item isKindOfClass:Text.class]){
         [self.currentProject.texts addObject:(Text *)item];
@@ -48,7 +50,9 @@
 }
 
 -(void)deleteItem:(Item *)item{
-    if ([item isKindOfClass:PhotoFrame.class]) {
+    if ([item isKindOfClass:Photo.class]) {
+        [self.currentProject.photos removeObject:(Photo *)item];
+    } else if ([item isKindOfClass:PhotoFrame.class]) {
         [self.currentProject.photoFrames removeObject:(PhotoFrame *)item];
     } else if ([item isKindOfClass:Text.class]){
         [self.currentProject.texts removeObject:(Text *)item];

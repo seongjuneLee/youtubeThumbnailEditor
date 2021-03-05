@@ -16,6 +16,7 @@
         self.fontName = @"BMJUAOTF";
         self.textColor = [UIColor colorWithRed:62/255.0 green:50/255.0 blue:37/255.0 alpha:1];
         self.fontSize = 100;
+        self.canChangeColor = true;
     }
     return self; 
 }

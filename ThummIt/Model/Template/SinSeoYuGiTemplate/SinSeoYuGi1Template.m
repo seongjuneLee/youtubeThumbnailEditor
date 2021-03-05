@@ -40,6 +40,7 @@
 -(void)setUpPhotoFrame{
     
     FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
+    fullRectPhotoFrame.indexInLayer = @"";
     fullRectPhotoFrame.isTemplateItem = true;
     fullRectPhotoFrame.isFixedPhotoFrame = true;
     fullRectPhotoFrame.relativeCenter = CGPointMake(0.5, 0.5);

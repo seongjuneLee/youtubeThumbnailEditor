@@ -17,6 +17,7 @@
         self.fontName = @"S-CoreDream-2ExtraLight";
         self.textColor = UIColor.whiteColor;
         self.fontSize = 100;
+        self.canChangeColor = true;
     }
     return self;
 }

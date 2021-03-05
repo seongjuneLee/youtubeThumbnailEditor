@@ -84,10 +84,10 @@
     if (editingVC.currentSticker) {
         
         Sticker *currentSticker = (Sticker *)editingVC.currentSticker;
-        currentSticker.cannotChangeColor = sticker.cannotChangeColor;
+        currentSticker.canChangeColor = sticker.canChangeColor;
         currentSticker.backgroundImageName = sticker.backgroundImageName;
         currentSticker.tintColor = sticker.tintColor;
-        if (!currentSticker.cannotChangeColor) {
+        if (currentSticker.canChangeColor) {
             currentSticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [currentSticker.backgroundImageView setTintColor:sticker.tintColor];
             [UIView animateWithDuration:0.2 animations:^{
@@ -103,7 +103,7 @@
 
         sticker.baseView.center = editingVC.bgView.center;
         
-        if (!sticker.cannotChangeColor) {
+        if (sticker.canChangeColor) {
             sticker.backgroundImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             [sticker.backgroundImageView setTintColor:sticker.tintColor];
             [UIView animateWithDuration:0.2 animations:^{
@@ -117,7 +117,7 @@
         editingVC.currentItem = sticker;
         editingVC.currentSticker = sticker;
 
-        [editingVC.layerController bringCurrentItemToFront:sticker];
+        [editingVC.layerController bringCurrentItemToFront];
     }
 
     

@@ -20,7 +20,7 @@
         self.bgWidthPadding = 120;
         self.bgHeightPadding = 120;
         self.fontSize = 100;
-        
+        self.canChangeColor = true;
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 20;
         attribute.borderColor = [UIColor colorWithRed:172/255.0 green:245/255.0 blue:242/255.0 alpha:1.0];

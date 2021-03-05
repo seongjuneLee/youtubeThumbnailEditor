@@ -81,8 +81,8 @@
 -(void)loadView{
     
     self.baseView = [[UIView alloc] init];
-    self.baseView.clipsToBounds = true;
     self.baseView.backgroundColor = UIColor.whiteColor;
+    self.baseView.clipsToBounds = true;
     [self setBaseViewFrame];
     if (self.isCircle) {
         self.baseView.layer.cornerRadius = (self.baseView.frameWidth)/2;
@@ -115,6 +115,13 @@
                 }
                 self.photoImageView.center = self.photoCenter;
                 self.photoImageView.image = image;
+                
+                // 이미지 애니메이션
+                CATransition *transition = [CATransition animation];
+                transition.duration = 0.5f;
+                transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+                transition.type = kCATransitionFade;
+                [self.photoImageView.layer addAnimation:transition forKey:nil];
 
             });
         }];
@@ -130,7 +137,6 @@
         self.backgroundImageView.frameSize = self.baseView.frameSize;
         self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
         self.backgroundImageView.backgroundColor = UIColor.clearColor;
-        self.backgroundImageView.clipsToBounds = true;
         if (self.isCircle) {
             self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
         }

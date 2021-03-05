@@ -15,7 +15,7 @@
     if(self){
         self.itemName = @"medalGoldSticker";
         self.backgroundImageName = @"medalGoldSticker";
-        self.cannotChangeColor = true;
+        
     }
     return self;
 }

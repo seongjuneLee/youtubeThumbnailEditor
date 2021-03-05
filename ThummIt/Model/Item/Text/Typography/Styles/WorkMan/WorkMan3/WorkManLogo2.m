@@ -17,6 +17,7 @@
         self.fontName = @"BMDoHyeon-OTF";
         self.textColor = [UIColor colorWithRed:(20/255.0) green:(48/255.0) blue:(209/255.0) alpha:1] ;
         self.fontSize = 100;
+        self.canChangeColor = true;
     }
     return self;
 }

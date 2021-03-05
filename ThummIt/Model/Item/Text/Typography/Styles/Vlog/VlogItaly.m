@@ -19,7 +19,7 @@
         self.bgImageName = @"italyBG";
         self.bgHeightPadding = 200;
         self.bgWidthPadding = 200;
-        
+        self.canChangeColor = true;
     }
     return self;
 }

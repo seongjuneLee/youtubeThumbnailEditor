@@ -23,6 +23,8 @@
         attribute.shadowColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
         attribute.shadowRadius = 2;
         self.bgTextAttributes = @[attribute];
+        self.canChangeColor = true;
+        
     }
     return self;
 }

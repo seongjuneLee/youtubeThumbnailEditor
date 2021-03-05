@@ -43,23 +43,24 @@
     
     [self setUpSlider];
     
+    self.layerController.impactFeedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleHeavy];
+    [self.layerController.impactFeedbackGenerator prepare];
+    
+    self.isFirstLoadView = YES;
 }
 
--(void)setUpPhotoAlbums{
-    
-    
-    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
-     {
-         if (status == PHAuthorizationStatusAuthorized)
-         {
-             
-             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
-             });
-         }
-    }];
-
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+   NSString * segueName = segue.identifier;
+   if ([segueName isEqualToString: @"itemCollectionVCSegue"]) {
+       self.itemCollectionVC = (ItemCollectionViewController *) [segue destinationViewController];
+       self.itemCollectionVC.editingVC = self;
+   } else if ([segueName isEqualToString:@"BGColorVCSegue"]) {
+       self.bgColorVC = (BGColorViewController *) [segue destinationViewController];
+       self.bgColorVC.editingVC = self;
+   }
 }
+
 
 -(void)viewDidLayoutSubviews{
     SaveManager.sharedInstance.bgViewRect = self.bgView.frame;
@@ -68,19 +69,11 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [SaveManager.sharedInstance saveAndAddToStack];
         });
+        self.bgColorTopConstraint.constant = self.itemCollectionContainerTopConstraint.constant = self.view.frameHeight;
+        self.itemCollectionContainerHeightConstraint.constant = self.underAreaView.frameHeight;
     }
-    float imageViewBottomY = self.bgView.frameY + self.bgView.frameHeight;
-    self.itemCollectionVC.view.frame = CGRectMake(0, imageViewBottomY, self.view.frameWidth, self.view.frameHeight - imageViewBottomY);
-    if (self.itemCollectionVC.itemType == TextType) {
-        self.itemCollectionVC.view.frame = CGRectMake(0, self.view.frameHeight - (AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY), self.view.frameWidth, AppManager.sharedInstance.keyboardSize.height + self.itemCollectionVC.collectionView.frameY);
-    }
-    
-    float bgColorCollectionCellHeight = self.view.frameWidth/8 - 5;
-    float inset = 40;
-    float bgColorVCHeight = bgColorCollectionCellHeight + inset + self.bgColorVC.cancelButton.frameHeight;
-    self.bgColorVC.view.frame = CGRectMake(0, self.view.frameHeight - bgColorVCHeight, self.view.frameWidth, bgColorVCHeight);
-    
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
+    
 }
 
 -(void)setUpSlider{
@@ -123,15 +116,18 @@
     [self connectEditingLayerController];
     
     UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
-    self.itemCollectionVC = (ItemCollectionViewController *)[editing instantiateViewControllerWithIdentifier:@"ItemCollectionViewController"];
-    self.itemCollectionVC.editingVC = self;
 
     self.albumVC = (AlbumViewController *)[editing instantiateViewControllerWithIdentifier:@"AlbumViewController"];
     self.albumVC.editingVC = self;
     
     self.bgColorVC = (BGColorViewController *)[editing instantiateViewControllerWithIdentifier:@"BGColorViewController"];
     self.bgColorVC.editingVC = self;
-
+    
+    self.editingPhotoVC = (EditingPhotoViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingPhotoViewController"];
+    self.editingPhotoVC.editingVC = self;
+    
+    self.editingPhotoButtonVC = (EditingPhotoButtonViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingPhotoButtonViewController"];
+    
 }
 
 -(void)connectEditingGestureController{
@@ -162,11 +158,12 @@
     
     self.itemLoaded = true;
     Project *project = SaveManager.sharedInstance.currentProject;
+    project.itemLayers = [NSMutableArray new];
     self.bgView.backgroundColor = project.backgroundColor;
     self.mainFrameImageView.image = [UIImage imageNamed:project.mainFrameImageName];
     for (Item *item in project.items) {
         [item loadView]; // 뷰 로드하기.
-
+        
         if (item.isTemplateItem) {
             // 템플릿 상댓값 센터를 절댓값으로.
             float itemX = self.bgView.frameWidth * item.relativeCenter.x;
@@ -193,15 +190,75 @@
         } else {
             [self.view insertSubview:item.baseView aboveSubview:self.mainFrameImageView];
         }
+ 
+    }
+    //fixedphotoframe을 제외한 item 개수 얻기위함
+    int itemCountExceptFixedPhotoFrame = 0;
+    for(Item *item in project.items){
+        if(!item.isFixedPhotoFrame){
+            itemCountExceptFixedPhotoFrame += 1;
+        }
+    } 
+    
+    //얻은 값을 사용하여 contentview의 height를 정함(itemlayers count를 사용할 수 없는 시점 이므로)
+    ItemLayer *anyItemLayer = [ItemLayer new];
+    self.itemLayerContentViewHeightConstraint.constant = - self.itemLayerScrollView.frameHeight + anyItemLayer.barBaseViewHeight/2 * (3*itemCountExceptFixedPhotoFrame + 1);
+    self.itemLayerScrollView.contentSize = CGSizeMake(self.itemLayerContentView.frameWidth, self.itemLayerContentView.frameHeight);
 
+    NSUInteger mainFrameImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
+    
+    for (Item *item in project.items) {
+        NSInteger itemIndex;
+        
+        if(self.isFirstLoadView && !self.isApproachByContinue){
+            itemIndex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
+        } else{
+            itemIndex = item.indexInLayer.integerValue - mainFrameImageViewIndex -1;
+        }
+        
+        if(!item.isFixedPhotoFrame){
+            // 만들기
+            ItemLayer *itemLayer = [[ItemLayer alloc] init];
+            itemLayer.item = item;
+            //각 itemLayer객체는 일치하는 item을 가짐 이후에 변동 없음
+            [itemLayer makeView];
+            //각 객체의 뷰 생성
+            
+            float itemLayerX = (self.itemLayerContentView.frameWidth)/2;
+            float itemLayerY = (self.itemLayerContentView.frameHeight) - ((itemLayer.barBaseViewHeight/2) * (3 * (itemIndex + 1) - 1));
+            
+            itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
+            itemLayer.originalCenterY = itemLayerY;
+            
+            //arrange에 쓰이는 original값에 정해진 y값 넣어줌
+            
+            [self.itemLayerContentView addSubview:itemLayer.barBaseView];
+            [self.layerController addItemLayerGestureRecognizers:itemLayer];
+            [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
+            itemLayer.itemLayerIndex = [SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
+        }
     }
     
+    if(!self.isFirstLoadView || self.isApproachByContinue){
+        NSMutableArray *itemLayersCopy = [NSMutableArray new];
+        NSInteger i = 0;
+
+        for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
+            itemLayer.itemLayerIndex = itemLayer.item.indexInLayer.integerValue - mainFrameImageViewIndex - 1;
+            [itemLayersCopy addObject:itemLayer];
+        }
+        
+        for(i = 0; i < itemLayersCopy.count; i++){
+             ItemLayer *itemLayer = [itemLayersCopy objectAtIndex:i];
+            [SaveManager.sharedInstance.currentProject.itemLayers replaceObjectAtIndex:itemLayer.itemLayerIndex withObject:itemLayer];
+        }
+    }
+
     // 인덱스 맞춰주기
     for (Item *item in project.items) {
         if (!item.isFixedPhotoFrame) {
             if (item.isTemplateItem) {
-                NSUInteger backgroundImageViewIndex = [self.view.subviews indexOfObject:self.mainFrameImageView];
-                item.indexInLayer = [NSString stringWithFormat:@"%ld",backgroundImageViewIndex + [item.indexInLayer integerValue] + 1];
+                item.indexInLayer = [NSString stringWithFormat:@"%ld",mainFrameImageViewIndex + [item.indexInLayer integerValue] + 1];
                 [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
             } else {
                 [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
@@ -210,7 +267,11 @@
         
         item.isTemplateItem = false;
     }
+    
     [SaveManager.sharedInstance save];
+    
+    self.isFirstLoadView = NO;
+    self.isApproachByContinue = NO;
 }
 
 -(void)respondToUndoRedo{
@@ -224,9 +285,13 @@
     
     [UIView animateWithDuration:0.2 animations:^{
         self.undoButton.alpha =
-        self.redoButton. alpha =
+        self.redoButton.alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 1.0;
+        self.buttonScrollView.hidden = false;
+        self.rightItem.alpha =
+        self.itemLayerScrollView.alpha = 1.0;
+        self.buttonScrollView.alpha = 1.0;
     }];
 
 }
@@ -234,9 +299,13 @@
     
     [UIView animateWithDuration:0.2 animations:^{
         self.undoButton.alpha =
-        self.redoButton. alpha =
+        self.redoButton.alpha =
         self.leftItem.alpha =
         self.rightItem.alpha = 0;
+        self.buttonScrollView.hidden = true;
+        self.rightItem.alpha =
+        self.itemLayerScrollView.alpha = 
+        self.buttonScrollView.alpha = 0;
     }];
 
 }
@@ -270,6 +339,22 @@
     [self.bgColorButton addTarget:self action:@selector(bgColorButtonHoldRelease) forControlEvents:UIControlEventTouchDragExit];
     [self.bgColorButton addTarget:self action:@selector(bgColorButtonHoldRelease) forControlEvents:UIControlEventTouchUpOutside];
     [self.bgColorButton addTarget:self action:@selector(bgColorButtonHoldRelease) forControlEvents:UIControlEventTouchCancel];
+
+}
+
+-(void)setUpPhotoAlbums{
+    
+    
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status)
+     {
+         if (status == PHAuthorizationStatusAuthorized)
+         {
+             
+             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                 PhotoManager.sharedInstance.phassets = [PhotoManager.sharedInstance fetchPhassets];
+             });
+         }
+    }];
 
 }
 

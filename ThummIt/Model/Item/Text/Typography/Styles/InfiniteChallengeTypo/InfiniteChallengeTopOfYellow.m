@@ -17,7 +17,7 @@
         self.fontName = @"NanumGothicOTFExtraBold";
         self.textColor = [UIColor colorWithRed:184/255.0 green:33/255.0 blue:23/255.0 alpha:1.0];
         self.fontSize = 100;
-        
+        self.canChangeColor = true;
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
         attribute.borderWidth = 5;
         attribute.borderColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0];
