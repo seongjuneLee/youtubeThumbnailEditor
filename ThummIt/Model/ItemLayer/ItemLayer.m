@@ -43,6 +43,7 @@
 
 -(void)makeView{ // 객체가 가진 item의 type에 따른 view 제작
     
+    Item *item = [self.item copy];
     CGSize barBaseViewSize = [self settingBarBaseViewHeightAccoridingToDevice];
     
     //3경우 모두 공통적으로 barbaseview 생성
@@ -52,9 +53,15 @@
     self.barBaseView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.barBaseView.layer.cornerRadius = 10;
     
+    self.backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width*0.8, barBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
+    [self.backgroundImageView setContentMode:UIViewContentModeScaleAspectFit];
+    self.backgroundImageView.backgroundColor = UIColor.clearColor;
+    self.backgroundImageView.image = [UIImage imageWithView:item.baseView];
+    self.backgroundImageView.center = CGPointMake(barBaseViewSize.width/2, barBaseViewSize.height/2);
+    [self.barBaseView addSubview:self.backgroundImageView];
 
-    if([self.item isKindOfClass:PhotoFrame.class]){
-        PhotoFrame *photoFrame =(PhotoFrame *)self.item;
+    if([item isKindOfClass:PhotoFrame.class]){
+        PhotoFrame *photoFrame =(PhotoFrame *)item;
         if (photoFrame.phAsset) {
             [PhotoManager.sharedInstance getImageFromPHAsset:photoFrame.phAsset withPHImageContentMode:PHImageContentModeAspectFit withSize:CGSizeMake(1920, 1080) WithCompletionBlock:^(UIImage * _Nonnull image) {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -69,57 +76,13 @@
                     photoFrame.photoImageView.center = photoFrame.photoCenter;
                     photoFrame.photoImageView.image = image;
 
-                    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width*0.8, barBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
-                    imageView.image = [UIImage imageWithView:self.item.baseView];
-                    [imageView setContentMode:UIViewContentModeScaleAspectFit];
-                    imageView.backgroundColor = UIColor.clearColor;
-                    
-                    [self.barBaseView addSubview:imageView];
-                    
-                    self.backgroundImageView = imageView;
+                    self.backgroundImageView.image = [UIImage imageWithView:item.baseView];                    
                     self.backgroundImageView.center = CGPointMake(barBaseViewSize.width/2, barBaseViewSize.height/2);
                 });
                 
             }];
-        } else {
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width*0.8, barBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
-            imageView.image = [UIImage imageWithView:self.item.baseView];
-            [imageView setContentMode:UIViewContentModeScaleAspectFit];
-            imageView.backgroundColor = UIColor.clearColor;
-
-            [self.barBaseView addSubview:imageView];
-            
-            self.backgroundImageView = imageView;
-            self.backgroundImageView.center = CGPointMake(barBaseViewSize.width/2, barBaseViewSize.height/2);
         }
-    } else {
-        
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, barBaseViewSize.width*0.8, barBaseViewSize.height*0.8)]; //가져온 item 얹을 뷰
-        imageView.image = [UIImage imageWithView:self.item.baseView];
-        [imageView setContentMode:UIViewContentModeScaleAspectFit];
-        imageView.backgroundColor = UIColor.clearColor;
-
-        [self.barBaseView addSubview:imageView];
-        
-        self.backgroundImageView = imageView;
-        self.backgroundImageView.center = CGPointMake(barBaseViewSize.width/2, barBaseViewSize.height/2);
-        
     }
 }
-
-//func getImage(image: UIImage, backgroundColor: UIColor)->UIImage?{
-//
-//    UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
-//    backgroundColor.setFill()
-//    //UIRectFill(CGRect(origin: .zero, size: image.size))
-//    let rect = CGRect(origin: .zero, size: image.size)
-//    let path = UIBezierPath(arcCenter: CGPoint(x:rect.midX, y:rect.midY), radius: rect.midX, startAngle: 0, endAngle: 6.28319, clockwise: true)
-//    path.fill()
-//    image.draw(at: .zero)
-//    let newImage = UIGraphicsGetImageFromCurrentImageContext()
-//    UIGraphicsEndImageContext()
-//    return newImage
-//}
-
 
 @end

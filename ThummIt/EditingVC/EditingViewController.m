@@ -210,7 +210,7 @@
     for (Item *item in project.items) {
         NSInteger itemIndex;
         
-        if(self.isFirstLoadView && !self.isApproachByContinue){
+        if(self.isFirstLoadView && !self.isApproachingByContinue){
             itemIndex = item.indexInLayer.integerValue; //템플릿에서 설정한 초기 index
         } else{
             itemIndex = item.indexInLayer.integerValue - mainFrameImageViewIndex -1;
@@ -239,7 +239,7 @@
         }
     }
     
-    if(!self.isFirstLoadView || self.isApproachByContinue){
+    if(!self.isFirstLoadView || self.isApproachingByContinue){
         NSMutableArray *itemLayersCopy = [NSMutableArray new];
         NSInteger i = 0;
 
@@ -271,7 +271,7 @@
     [SaveManager.sharedInstance save];
     
     self.isFirstLoadView = NO;
-    self.isApproachByContinue = NO;
+    self.isApproachingByContinue = NO;
 }
 
 -(void)respondToUndoRedo{

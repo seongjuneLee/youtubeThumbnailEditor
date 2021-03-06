@@ -479,6 +479,9 @@
     [editingVC.view insertSubview:photo.baseView atIndex:editingVC.originalIndexInLayer];
 
     // VC들 없애주기
+    [editingVC.editingPhotoVC dismissSelf];
+    [editingVC.editingPhotoButtonVC dismissSelf];
+    [editingVC.layerController hideTransparentView];
     [self dismissSelf];
     [editingVC.albumVC dismissSelf];
     [SaveManager.sharedInstance saveAndAddToStack];

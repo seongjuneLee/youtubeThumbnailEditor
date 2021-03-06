@@ -127,7 +127,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgColorTopConstraint;
 
 @property (nonatomic) BOOL isFirstLoadView;
-@property (nonatomic) BOOL isApproachByContinue;
+@property (nonatomic) BOOL isApproachingByContinue;
 @end
 
 NS_ASSUME_NONNULL_END
