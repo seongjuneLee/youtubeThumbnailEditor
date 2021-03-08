@@ -185,10 +185,6 @@
     }
     [sortedItems removeObjectAtIndex:basePhotoFrameIndex];
         
-    for (Item *item in sortedItems) {
-        NSLog(@"item indexinlayer : %@ item : %@",item.indexInLayer,item);
-    }
-
     return sortedItems;
 }
 

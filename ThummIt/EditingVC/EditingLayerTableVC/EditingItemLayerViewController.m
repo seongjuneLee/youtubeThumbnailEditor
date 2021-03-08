@@ -90,7 +90,7 @@
         
         self.previousPoint = [sender locationInView:self.tableView];
         self.currentPinchingCell = (EditingItemLayerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        self.currentItem = SaveManager.sharedInstance.sortedItems[indexPath.row];
+        self.currentItem = self.sortedItems[indexPath.row];
         self.originalIndex = self.currentItem.indexInLayer;
         [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
 
@@ -181,7 +181,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    Item *item = SaveManager.sharedInstance.sortedItems[indexPath.row];
+    Item *item = self.sortedItems[indexPath.row];
     [editingVC didSelectItem:item];
     
     
