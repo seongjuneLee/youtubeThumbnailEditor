@@ -168,9 +168,6 @@
             [copiedPhotoFrame addBGImageView];
             [copiedPhotoFrame setItemCenterAndScale];
 
-        } else {
-            [copied loadView];
-            [copied setItemCenterAndScale];
         }
 
         copied.baseView.transform = CGAffineTransformConcat(copied.baseView.transform, CGAffineTransformMakeScale(scale, scale));
@@ -178,9 +175,36 @@
         if (copied.isBasePhotoFrame) {
             copied.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
             [view insertSubview:copied.baseView belowSubview:mainFrameImageView];
-        } else {
-            [view insertSubview:copied.baseView atIndex:copied.indexInLayer.integerValue];
         }
+    }
+    
+    
+    NSMutableArray *reversed = [[[SaveManager.sharedInstance.sortedItems reverseObjectEnumerator] allObjects] mutableCopy];
+
+    // add Items
+    for (Item *item in reversed) {
+        Item *copied = [item copy];
+        
+        if ([copied isKindOfClass:PhotoFrame.class]) {
+            PhotoFrame *photoFrame = (PhotoFrame *)item;
+            PhotoFrame *copiedPhotoFrame = (PhotoFrame *)copied;
+            [copiedPhotoFrame makeBaseView];
+            copiedPhotoFrame.photoImageView = [[UIImageView alloc] initWithFrame:photoFrame.photoImageView.frame];
+            copiedPhotoFrame.photoImageView.image = photoFrame.photoImageView.image;
+            [copiedPhotoFrame.baseView addSubview:copiedPhotoFrame.photoImageView];
+            [copiedPhotoFrame addBGImageView];
+            [copiedPhotoFrame setItemCenterAndScale];
+
+        } else {
+            [copied loadView];
+            [copied setItemCenterAndScale];
+        }
+        
+        copied.baseView.transform = CGAffineTransformConcat(copied.baseView.transform, CGAffineTransformMakeScale(scale, scale));
+        copied.baseView.center = CGPointMake(copied.relativeCenter.x * view.frameWidth, copied.relativeCenter.y * view.frameHeight);
+
+        [view addSubview:copied.baseView];
+
     }
     
     // to image and save

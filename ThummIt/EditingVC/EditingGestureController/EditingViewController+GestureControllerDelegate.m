@@ -230,7 +230,7 @@
         self.buttonScrollView.alpha = 0.0;
         self.deleteButtonContentView.alpha = 1.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
-        self.itemLayerScrollView.alpha = 0.0;
+        self.editingItemLayerVC.view.alpha = 0.0;
     }];
     
     if([self.currentItem isKindOfClass:Text.class]){
@@ -295,7 +295,7 @@
             self.buttonScrollView.alpha = 1.0;
             self.deleteButtonContentView.alpha = 0.0;
             self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 1.0;
-            self.itemLayerScrollView.alpha = 1.0;
+            self.editingItemLayerVC.view.alpha = 1.0;
         }];
     }else{
         [UIView animateWithDuration:0.2 animations:^{

@@ -26,6 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray *sortedItems;
 
 
+@property (strong, nonatomic) NSString *originalIndex;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

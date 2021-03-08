@@ -114,6 +114,20 @@
     for (Item *item in self.currentProject.items) {
         Item *copied = [item copy];
         
+        [copied loadView];
+        [copied setItemCenterAndScale];
+        if (copied.isBasePhotoFrame) {
+            copied.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
+            [view insertSubview:copied.baseView belowSubview:mainFrameImageView];
+        }
+    }
+    
+    
+    NSMutableArray *reversed = [[[[self sortedItems] reverseObjectEnumerator] allObjects] mutableCopy];
+
+    for (Item *item in reversed) {
+        Item *copied = [item copy];
+        
         if ([copied isKindOfClass:PhotoFrame.class]) {
             PhotoFrame *photoFrame = (PhotoFrame *)item;
             PhotoFrame *copiedPhotoFrame = (PhotoFrame *)copied;
@@ -123,17 +137,13 @@
             [copiedPhotoFrame.baseView addSubview:copiedPhotoFrame.photoImageView];
             [copiedPhotoFrame addBGImageView];
             [copiedPhotoFrame setItemCenterAndScale];
-
+            
         } else {
             [copied loadView];
             [copied setItemCenterAndScale];
         }
-        if (copied.isBasePhotoFrame) {
-            copied.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
-            [view insertSubview:copied.baseView belowSubview:mainFrameImageView];
-        } else {
-            [view insertSubview:copied.baseView atIndex:copied.indexInLayer.integerValue];
-        }
+        [view addSubview:copied.baseView];
+        
     }
     
     // to image and save

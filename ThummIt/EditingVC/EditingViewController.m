@@ -226,7 +226,6 @@
         self.rightItem.alpha = 1.0;
         self.buttonScrollView.hidden = false;
         self.rightItem.alpha =
-        self.itemLayerScrollView.alpha = 1.0;
         self.buttonScrollView.alpha = 1.0;
         self.editingItemLayerVC.view.alpha = 1.0;
     }];
@@ -241,7 +240,6 @@
         self.rightItem.alpha = 0;
         self.buttonScrollView.hidden = true;
         self.rightItem.alpha =
-        self.itemLayerScrollView.alpha = 
         self.buttonScrollView.alpha = 0;
         self.editingItemLayerVC.view.alpha = 0;
     }];

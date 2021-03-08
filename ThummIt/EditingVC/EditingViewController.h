@@ -94,9 +94,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *bgColorButton;
 @property (weak, nonatomic) IBOutlet UIView *stickerButtonContentView;
 @property (weak, nonatomic) IBOutlet UIView *bgColorButtonContentView;
-@property (weak, nonatomic) IBOutlet UIScrollView *itemLayerScrollView;
-@property (weak, nonatomic) IBOutlet UIView *itemLayerContentView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemLayerContentViewHeightConstraint;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *buttonScrollView;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
