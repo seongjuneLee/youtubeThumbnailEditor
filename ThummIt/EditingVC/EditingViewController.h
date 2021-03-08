@@ -16,7 +16,6 @@
 #import "ItemCollectionViewController.h"
 #import "SaveManager.h"
 #import "ItemManager.h"
-#import "ItemLayer.h"
 #import "Typography.h"
 #import "UndoManager.h"
 #import "TypoHeader.h"
@@ -26,6 +25,7 @@
 #import "MainFrameHeader.h"
 #import "AppManager.h"
 #import "EditingPhotoButtonViewController.h"
+#import "EditingItemLayerViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface EditingViewController : UIViewController
@@ -41,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) AlbumViewController *albumVC;
 @property (strong, nonatomic, nullable) EditingPhotoViewController *editingPhotoVC;
 @property (strong, nonatomic, nullable) EditingPhotoButtonViewController *editingPhotoButtonVC;
+@property (strong, nonatomic, nullable) EditingItemLayerViewController *editingItemLayerVC;
 
 // 모델
 @property (strong, nonatomic) Template *selectedTemplate;
@@ -107,6 +108,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *rightItem;
 @property (weak, nonatomic) IBOutlet UIButton *photoButton;
 
+
+@property (weak, nonatomic) IBOutlet UIView *scrollContentView;
+@property (weak, nonatomic) IBOutlet UIView *itemCollectionContainerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionContainerTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionContainerHeightConstraint;
+
+@property (weak, nonatomic) IBOutlet UIView *bgColorContainerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgColorTopConstraint;
+
+
 @property (strong, nonatomic) UIImageView *hueImageView;
 @property (strong, nonatomic) UIView *thumbCircleView;
 @property (nonatomic) BOOL itemLoaded;
@@ -118,16 +129,6 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)showItemsForNormalMode;
 -(void)hideItemsForItemMode;
 
-@property (weak, nonatomic) IBOutlet UIView *scrollContentView;
-@property (weak, nonatomic) IBOutlet UIView *itemCollectionContainerView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionContainerTopConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *itemCollectionContainerHeightConstraint;
-
-@property (weak, nonatomic) IBOutlet UIView *bgColorContainerView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bgColorTopConstraint;
-
-@property (nonatomic) BOOL isFirstLoadView;
-@property (nonatomic) BOOL isApproachingByContinue;
 @end
 
 NS_ASSUME_NONNULL_END

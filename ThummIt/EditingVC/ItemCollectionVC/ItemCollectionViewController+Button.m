@@ -67,13 +67,13 @@
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
     [editingVC showItemsForNormalMode];
-    
+    [editingVC.editingItemLayerVC.tableView reloadData];
+
     editingVC.currentItem = nil;
     editingVC.currentText = nil;
     editingVC.currentPhotoFrame = nil;
     editingVC.currentSticker = nil;
     editingVC.currentPhoto = nil;
-    editingVC.layerController.currentItemLayer = nil;
     
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
@@ -105,7 +105,6 @@
             [self doneAddingSticker];
         }
         
-        [self doneAddingItemLayer];
         
     } else{ // 기존 아이템 편집중
         
@@ -129,19 +128,18 @@
         } else {
             [self doneEditingMainFrame];
         }
-        [self doneEditingItemLayer];
      
     }
     editingVC.modeController.editingMode = NormalMode;
     [editingVC hideAndInitSlider];
     [editingVC showItemsForNormalMode];
+    [editingVC.editingItemLayerVC.tableView reloadData];
 
     editingVC.currentItem = nil;
     editingVC.currentSticker = nil;
     editingVC.currentText = nil;
     editingVC.currentPhotoFrame = nil;
     editingVC.currentPhoto = nil;
-    editingVC.layerController.currentItemLayer = nil;
     
     [UIView animateWithDuration:0.4 animations:^{
         editingVC.buttonScrollView.alpha = 1.0;
@@ -516,22 +514,18 @@
     [SaveManager.sharedInstance deleteItem:editingVC.originalPhotoFrame];
     [editingVC.originalPhotoFrame.baseView removeFromSuperview];
     [SaveManager.sharedInstance addItem:photoFrame];
-
-//    // 레이어 되돌려 놓기
+    
+    //    // 레이어 되돌려 놓기
     editingVC.layerController.originalIndex = editingVC.originalIndexInLayer;
     [editingVC.layerController recoverOriginalLayer];
-    if (photoFrame.isFixedPhotoFrame) {
-        [editingVC.view insertSubview:photoFrame.baseView belowSubview:editingVC.mainFrameImageView];
-    } else {
-        photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",editingVC.originalIndexInLayer];
-        [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
-    }
+    [editingVC.view insertSubview:photoFrame.baseView atIndex:editingVC.originalIndexInLayer];
+    
     editingVC.currentPhotoFrame.plusPhotoImageView.hidden = true;
     // VC들 없애주기
     [self dismissSelf];
     [editingVC.albumVC dismissSelf];
     [SaveManager.sharedInstance saveAndAddToStack];
-
+    
     editingVC.modeController.editingMode = NormalMode;
 
 }
@@ -612,66 +606,6 @@
     [SaveManager.sharedInstance saveAndAddToStack];
     editingVC.modeController.editingMode = NormalMode;
     
-}
-
--(void)doneAddingItemLayer{
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-   
-    //itemlayers에 추가되기 전이므로 +1
-    NSInteger numberOfItemLayersAfterAdding = [SaveManager.sharedInstance.currentProject.itemLayers count] + 1;
-    ItemLayer *itemLayer = [ItemLayer new];
-
-    itemLayer.item = editingVC.currentItem;
-    [itemLayer makeView];
-    
-    float itemLayerX = (editingVC.itemLayerContentView.frameWidth)/2;
-    float itemLayerY = (editingVC.itemLayerContentView.frameHeight)-(itemLayer.barBaseView.frameHeight/2)*(3*numberOfItemLayersAfterAdding-1);
-    
-    itemLayer.barBaseView.center = CGPointMake(itemLayerX, itemLayerY);
-    itemLayer.originalCenterY = itemLayerY;
-
-    [editingVC.itemLayerContentView addSubview:itemLayer.barBaseView];
-    
-    [editingVC.layerController addItemLayerGestureRecognizers:itemLayer];
-    
-    [SaveManager.sharedInstance.currentProject.itemLayers addObject:itemLayer];
-    itemLayer.itemLayerIndex = [SaveManager.sharedInstance.currentProject.itemLayers indexOfObject:itemLayer];
-    
-    //추가되는 아이템에 맞추어 itemlayercontentview크기 늘려줌
-    editingVC.itemLayerContentViewHeightConstraint.constant = -editingVC.itemLayerScrollView.frameHeight + (itemLayer.barBaseViewHeight/2)*(3*numberOfItemLayersAfterAdding + 1);
-    [editingVC.itemLayerScrollView setContentSize:CGSizeMake(editingVC.itemLayerContentView.frameWidth, editingVC.itemLayerContentView.frameHeight)];
-   
-    
-    //contentview는 아래로 넓어지므로 그에 맞추어 객체들의 실제 위치 & 위치값 모두 커진 만큼 내려줌
-    for(ItemLayer *itemlayer in SaveManager.sharedInstance.currentProject.itemLayers){
-        
-        itemlayer.barBaseView.centerY += itemlayer.barBaseView.frameHeight/2*3;
-        
-        itemlayer.originalCenterY += itemlayer.barBaseView.frameHeight/2*3;
-    }
-    
-    //adding - donebutton 눌렀을때 실제 item도 위로 올라오도록
-    //새로추가된 itemlayer.item의 indexinlayer값 바꾸기 & 그에 맞게 다시 bgview에 띄우기
-    NSInteger mainFrameImageViewIndex = [editingVC.view.subviews indexOfObject:editingVC.mainFrameImageView];
-    
-    itemLayer.item.indexInLayer =  [NSString stringWithFormat:@"%ld", mainFrameImageViewIndex + itemLayer.itemLayerIndex + 1];
-    [editingVC.view insertSubview:itemLayer.item.baseView atIndex:itemLayer.item.indexInLayer.integerValue];
-    
-}
-
--(void)doneEditingItemLayer{
-    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
-    
-    if ([editingVC.currentItem isKindOfClass:Text.class]) {
-        editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentText.baseView];
-    } else if ([editingVC.currentItem isKindOfClass:PhotoFrame.class]){
-        editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentPhotoFrame.baseView];
-    } else if ([editingVC.currentItem isKindOfClass:Sticker.class]){
-        editingVC.layerController.currentItemLayer.backgroundImageView.image = [UIImage imageWithView:editingVC.currentSticker.baseView];
-    }
-
-    editingVC.layerController.currentItemLayer.item = editingVC.currentItem;
-
 }
 
 @end

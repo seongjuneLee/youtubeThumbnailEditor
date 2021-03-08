@@ -19,7 +19,10 @@
 @implementation EditingViewController (Buttons)
 
 - (IBAction)rightItemTapped:(id)sender {
-    [self exportThumbnail];
+    
+    [SaveManager.sharedInstance sortedItems];
+    
+//    [self exportThumbnail];
 }
 
 -(void)exportThumbnail{
@@ -360,10 +363,6 @@
     
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
         [item.baseView removeFromSuperview];
-    }
-    
-    for (ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers) {
-        [itemLayer.barBaseView removeFromSuperview];
     }
         
 }

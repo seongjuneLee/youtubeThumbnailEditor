@@ -132,6 +132,7 @@
         photoFrame.photoImageView.frameSize = photoFrame.baseView.bounds.size;
         photoFrame.photoImageView.center = CGPointMake(photoFrame.baseView.bounds.size.width/2, photoFrame.baseView.bounds.size.height/2);
         photoFrame.photoImageView.image = currentPhotoFrame.photoImageView.image;
+        photoFrame.indexInLayer = [NSString stringWithFormat:@"%ld",editingVC.originalIndexInLayer];
         [currentPhotoFrame.baseView removeFromSuperview];// 기존 것 떼어주고
     } else {
         [photoFrame setItemCenterAndScale];

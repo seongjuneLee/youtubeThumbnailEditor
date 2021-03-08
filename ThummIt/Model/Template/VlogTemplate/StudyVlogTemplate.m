@@ -50,7 +50,7 @@
     
     PhotoFrame *photoFrame1 = [StudyTemplateRectangle studyTemplateRectangle];
     photoFrame1.isTemplateItem = true;
-    photoFrame1.isFixedPhotoFrame = true;
+    photoFrame1.isBasePhotoFrame = true;
     photoFrame1.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame1];
   

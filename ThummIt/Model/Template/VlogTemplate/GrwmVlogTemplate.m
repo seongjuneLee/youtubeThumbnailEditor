@@ -39,26 +39,26 @@
 
     PhotoFrame *photoFrame1 = [GRWMRectangle1 grwmRectangle1];
     photoFrame1.isTemplateItem = true;
-    photoFrame1.isFixedPhotoFrame = true;
+    photoFrame1.isBasePhotoFrame = true;
     photoFrame1.relativeCenter = CGPointMake(0.16666, 0.16666);
     [self.photoFrames addObject:photoFrame1];
     
     
     PhotoFrame *photoFrame2 = [GRWMRectangle1 grwmRectangle1];
     photoFrame2.isTemplateItem = true;
-    photoFrame2.isFixedPhotoFrame = true;
+    photoFrame2.isBasePhotoFrame = true;
     photoFrame2.relativeCenter = CGPointMake(0.16666, 0.5);
     [self.photoFrames addObject:photoFrame2];
     
     PhotoFrame *photoFrame3 = [GRWMRectangle1 grwmRectangle1];
     photoFrame3.isTemplateItem = true;
-    photoFrame3.isFixedPhotoFrame = true;
+    photoFrame3.isBasePhotoFrame = true;
     photoFrame3.relativeCenter = CGPointMake(0.16666, 0.83333);
     [self.photoFrames addObject:photoFrame3];
     
     PhotoFrame *photoFrame4 = [GRWMRectangle2 grwmRectangle2];
     photoFrame4.isTemplateItem = true;
-    photoFrame4.isFixedPhotoFrame = true;
+    photoFrame4.isBasePhotoFrame = true;
     photoFrame4.relativeCenter = CGPointMake(0.66666, 0.5);
     [self.photoFrames addObject:photoFrame4];
     

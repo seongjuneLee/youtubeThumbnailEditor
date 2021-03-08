@@ -76,7 +76,7 @@
         self.photoFrameStyleButton.selected = false;
         self.photoFrameStyleButton.alpha = 0.4;
         self.photoFrameCollectionController.editingVC = self.editingVC;
-        if (editingVC.currentPhotoFrame.isFixedPhotoFrame) {
+        if (editingVC.currentPhotoFrame.isBasePhotoFrame) {
             self.photoFrameScrollContanerView.hidden = true;
             self.photoScrollContentView.hidden = true;
             self.textScrollContentView.hidden = true;

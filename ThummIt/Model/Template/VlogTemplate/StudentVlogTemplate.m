@@ -43,19 +43,19 @@
     
     PhotoFrame *photoFrame1 = [OneThirdRectangle oneThirdRectangle];
     photoFrame1.isTemplateItem = true;
-    photoFrame1.isFixedPhotoFrame = true;
+    photoFrame1.isBasePhotoFrame = true;
     photoFrame1.relativeCenter = CGPointMake(0.166, 0.5);
     [self.photoFrames addObject:photoFrame1];
 
     PhotoFrame *photoFrame2 = [OneThirdRectangle oneThirdRectangle];
     photoFrame2.isTemplateItem = true;
-    photoFrame2.isFixedPhotoFrame = true;
+    photoFrame2.isBasePhotoFrame = true;
     photoFrame2.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame2];
 
     PhotoFrame *photoFrame3 = [OneThirdRectangle oneThirdRectangle];
     photoFrame3.isTemplateItem = true;
-    photoFrame3.isFixedPhotoFrame = true;
+    photoFrame3.isBasePhotoFrame = true;
     photoFrame3.relativeCenter = CGPointMake(0.834, 0.5);
     [self.photoFrames addObject:photoFrame3];
     

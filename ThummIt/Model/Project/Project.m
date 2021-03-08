@@ -28,7 +28,6 @@
     self.photos = [NSMutableArray<Photo*> new];
     self.texts = [NSMutableArray<Text*> new];
     self.stickers = [NSMutableArray<Sticker*> new];
-    self.itemLayers = [NSMutableArray<ItemLayer*> new];
     self.projectTitle = @"";
     self.selectedTemplateName = @"";
     self.mainFrameImageName = @"";
@@ -87,7 +86,6 @@
     self.photoFrames = [decoder decodeObjectForKey:@"photoFrames"];
     self.texts = [decoder decodeObjectForKey:@"texts"];
     self.stickers = [decoder decodeObjectForKey:@"stickers"];
-//    self.itemLayers = [decoder decodeObjectForKey:@"itemLayers"];
     self.selectedTemplateName = [decoder decodeObjectForKey:@"selectedTemplateName"];
     self.backgroundColor = [decoder decodeObjectForKey:@"backgroundColor"];
     self.lastEditedDate = [decoder decodeObjectForKey:@"lastEditedDate"];
@@ -104,7 +102,6 @@
     [encoder encodeObject:self.photoFrames forKey:@"photoFrames"];
     [encoder encodeObject:self.texts forKey:@"texts"];
     [encoder encodeObject:self.stickers forKey:@"stickers"];
-//    [encoder encodeObject:self.itemLayers forKey:@"itemLayers"];
     [encoder encodeObject:self.projectTitle forKey:@"projectTitle"];
     [encoder encodeObject:self.selectedTemplateName forKey:@"selectedTemplateName"];
     [encoder encodeObject:self.backgroundColor forKey:@"backgroundColor"];
@@ -113,5 +110,6 @@
     [encoder encodeObject:self.previewImage forKey:@"previewImage"];
 
 }
+
 
 @end

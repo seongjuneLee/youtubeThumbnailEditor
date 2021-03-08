@@ -99,7 +99,6 @@
     UIStoryboard *editing = [UIStoryboard storyboardWithName:@"Editing" bundle:NSBundle.mainBundle];
     EditingViewController *editingVC = (EditingViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingViewController"];
     [self.projectVC.navigationController pushViewController:editingVC animated:true];
-    editingVC.isApproachingByContinue = YES;
     [SaveManager.sharedInstance saveAndAddToStack];
     
 }

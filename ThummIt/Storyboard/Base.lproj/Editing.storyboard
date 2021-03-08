@@ -8,6 +8,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Editing Item Layer View Controller-->
+        <scene sceneID="Hah-rJ-hNh">
+            <objects>
+                <viewController storyboardIdentifier="EditingItemLayerViewController" id="Yh6-Mn-izg" customClass="EditingItemLayerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eLD-6y-WD1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-Uc-Yah">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="30" maxX="0.0" maxY="30"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yh6-Mn-izg" id="5Go-FL-ruP"/>
+                                    <outlet property="delegate" destination="Yh6-Mn-izg" id="kPQ-ST-c1G"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Whv-bP-HgB"/>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cxo-Uc-Yah" firstAttribute="centerX" secondItem="Whv-bP-HgB" secondAttribute="centerX" id="7J4-bT-kcP"/>
+                            <constraint firstItem="cxo-Uc-Yah" firstAttribute="centerY" secondItem="Whv-bP-HgB" secondAttribute="centerY" id="HTR-yc-7Va"/>
+                            <constraint firstItem="cxo-Uc-Yah" firstAttribute="height" secondItem="eLD-6y-WD1" secondAttribute="height" id="do2-hb-go4"/>
+                            <constraint firstItem="cxo-Uc-Yah" firstAttribute="width" secondItem="eLD-6y-WD1" secondAttribute="width" id="pAG-pD-WL6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="cxo-Uc-Yah" id="1dW-GI-y9R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJA-TG-47l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2642" y="177"/>
+        </scene>
         <!--Editing View Controller-->
         <scene sceneID="7nm-DH-c8D">
             <objects>
@@ -106,28 +141,6 @@
                                     <action selector="rightItemTapped:" destination="9gy-MH-RR0" eventType="touchUpInside" id="zzM-u3-qzZ"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vjn-Vc-vW2" userLabel="Item Layer Scroll View">
-                                <rect key="frame" x="0.0" y="403" width="414" height="355"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBX-hP-Jmq" userLabel="Item Layer ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="355"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="bbF-4q-cnH" firstAttribute="trailing" secondItem="IBX-hP-Jmq" secondAttribute="trailing" id="0Id-6p-D6z"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="leading" secondItem="bbF-4q-cnH" secondAttribute="leading" id="BKP-BS-pVY"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="width" secondItem="iGt-3I-8UG" secondAttribute="width" id="MDv-Ll-OjA"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="bottom" secondItem="bbF-4q-cnH" secondAttribute="bottom" id="Vbq-XI-7qu"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="top" secondItem="bbF-4q-cnH" secondAttribute="top" id="qdp-Ls-vVv"/>
-                                    <constraint firstItem="IBX-hP-Jmq" firstAttribute="height" secondItem="Vjn-Vc-vW2" secondAttribute="height" id="rAZ-yu-hi5"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="bbF-4q-cnH"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="iGt-3I-8UG"/>
-                            </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a67-Pd-GYU">
                                 <rect key="frame" x="0.0" y="768" width="414" height="69"/>
                                 <subviews>
@@ -502,8 +515,6 @@
                             <constraint firstItem="a67-Pd-GYU" firstAttribute="width" secondItem="ulM-C1-Guu" secondAttribute="width" id="6fq-zR-SvP"/>
                             <constraint firstItem="QtR-ND-K0Y" firstAttribute="top" secondItem="ulM-C1-Guu" secondAttribute="top" constant="10" id="9lZ-DF-EVH"/>
                             <constraint firstItem="JmC-6K-MjI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xcS-1G-W8A" secondAttribute="trailing" constant="8" symbolic="YES" id="A8R-kg-oFh"/>
-                            <constraint firstItem="Vjn-Vc-vW2" firstAttribute="top" secondItem="QtR-ND-K0Y" secondAttribute="bottom" constant="10" id="Apv-8k-KuI"/>
-                            <constraint firstItem="Vjn-Vc-vW2" firstAttribute="width" secondItem="Mym-l3-rms" secondAttribute="width" id="AvW-a8-GbZ"/>
                             <constraint firstItem="OGb-vs-PFa" firstAttribute="width" secondItem="c8Y-hQ-BzP" secondAttribute="width" id="Dc7-70-Oub"/>
                             <constraint firstItem="zeV-pp-6xL" firstAttribute="width" secondItem="Mym-l3-rms" secondAttribute="width" id="Hvc-Hw-eTo"/>
                             <constraint firstItem="dNB-8m-B4w" firstAttribute="width" secondItem="Mym-l3-rms" secondAttribute="width" multiplier="0.75" id="ICz-Ny-v9c"/>
@@ -539,11 +550,9 @@
                             <constraint firstItem="Ei1-47-GtK" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="nN4-N7-9JM"/>
                             <constraint firstItem="JmC-6K-MjI" firstAttribute="centerY" secondItem="xcS-1G-W8A" secondAttribute="centerY" id="odn-Vf-V7V"/>
                             <constraint firstItem="UhL-LO-vTX" firstAttribute="width" secondItem="Mym-l3-rms" secondAttribute="width" id="qDk-yq-LvY"/>
-                            <constraint firstItem="Vjn-Vc-vW2" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="qNc-iv-XT5"/>
                             <constraint firstItem="Yts-NW-w4K" firstAttribute="top" secondItem="c8Y-hQ-BzP" secondAttribute="top" constant="-1" id="sGy-iD-IMk"/>
                             <constraint firstItem="i2a-Qa-wOL" firstAttribute="centerY" secondItem="xcS-1G-W8A" secondAttribute="centerY" id="tRU-DX-d5C"/>
                             <constraint firstItem="c8Y-hQ-BzP" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="uGa-BX-F8L"/>
-                            <constraint firstItem="Vjn-Vc-vW2" firstAttribute="bottom" secondItem="a67-Pd-GYU" secondAttribute="top" constant="-10" id="vFn-9h-woD"/>
                             <constraint firstItem="7pY-QV-G2j" firstAttribute="trailing" secondItem="JmC-6K-MjI" secondAttribute="trailing" constant="10" id="x87-py-Lgz"/>
                             <constraint firstItem="mx5-Mu-TgO" firstAttribute="width" secondItem="Mym-l3-rms" secondAttribute="width" id="y4x-vI-TJA"/>
                             <constraint firstItem="xcS-1G-W8A" firstAttribute="centerX" secondItem="UhL-LO-vTX" secondAttribute="centerX" id="zUw-2w-iyo"/>
@@ -562,9 +571,6 @@
                         <outlet property="itemCollectionContainerHeightConstraint" destination="0tV-wc-Ran" id="WL0-GH-0Dr"/>
                         <outlet property="itemCollectionContainerTopConstraint" destination="d0J-2d-5Ke" id="rwm-DY-pqk"/>
                         <outlet property="itemCollectionContainerView" destination="mx5-Mu-TgO" id="jz3-ax-PXn"/>
-                        <outlet property="itemLayerContentView" destination="IBX-hP-Jmq" id="Lxj-YB-sjN"/>
-                        <outlet property="itemLayerContentViewHeightConstraint" destination="rAZ-yu-hi5" id="4mD-kI-DOo"/>
-                        <outlet property="itemLayerScrollView" destination="Vjn-Vc-vW2" id="CqD-Hi-9Uq"/>
                         <outlet property="leftItem" destination="i2a-Qa-wOL" id="HV2-ck-yN3"/>
                         <outlet property="mainFrameButton" destination="lNj-Ou-9TS" id="18p-Xr-bzP"/>
                         <outlet property="mainFrameImageView" destination="OGb-vs-PFa" id="xqj-bs-s9K"/>

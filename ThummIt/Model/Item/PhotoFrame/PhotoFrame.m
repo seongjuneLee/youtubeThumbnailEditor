@@ -32,7 +32,7 @@
     copied.photoScale = self.photoScale;
     copied.isCircle = self.isCircle;
         
-    copied.isFixedPhotoFrame = self.isFixedPhotoFrame;
+    copied.isBasePhotoFrame = self.isBasePhotoFrame;
     
     [copied loadView];
     [copied setItemCenterAndScale];
@@ -58,7 +58,7 @@
         self.photoCenter = [[decoder decodeObjectForKey:@"photoCenter"] CGPointValue];
         self.photoScale = [[decoder decodeObjectForKey:@"photoScale"] floatValue];
         self.isCircle = [[decoder decodeObjectForKey:@"isCircle"] boolValue];
-        self.isFixedPhotoFrame = [[decoder decodeObjectForKey:@"isFixedPhotoFrame"] boolValue];
+        self.isBasePhotoFrame = [[decoder decodeObjectForKey:@"isFixedPhotoFrame"] boolValue];
 
     }
     return self;
@@ -72,7 +72,7 @@
     [encoder encodeObject:[NSNumber numberWithFloat:self.photoScale] forKey:@"photoScale"];
     [encoder encodeObject:[NSValue valueWithCGPoint:self.photoImageView.center] forKey:@"photoCenter"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.isCircle] forKey:@"isCircle"];
-    [encoder encodeObject:[NSNumber numberWithFloat:self.isFixedPhotoFrame] forKey:@"isFixedPhotoFrame"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.isBasePhotoFrame] forKey:@"isFixedPhotoFrame"];
 
 }
 

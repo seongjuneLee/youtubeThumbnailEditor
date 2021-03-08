@@ -41,21 +41,21 @@
     
     PhotoFrame *smallPhotoFrame1 = [KidsTrapezoid1 kidsTrapezoid1];
     smallPhotoFrame1.isTemplateItem = true;
-    smallPhotoFrame1.isFixedPhotoFrame = true;
+    smallPhotoFrame1.isBasePhotoFrame = true;
     smallPhotoFrame1.indexInLayer = @"0";
     smallPhotoFrame1.relativeCenter = CGPointMake(0.75, 0.25);
     [self.photoFrames addObject:smallPhotoFrame1];
     
     PhotoFrame *smallPhotoFrame2 = [KidsTrapezoid2 kidsTrapezoid2];
     smallPhotoFrame2.isTemplateItem = true;
-    smallPhotoFrame2.isFixedPhotoFrame = true;
+    smallPhotoFrame2.isBasePhotoFrame = true;
     smallPhotoFrame2.indexInLayer = @"1";
     smallPhotoFrame2.relativeCenter = CGPointMake(0.8, 0.75);
     [self.photoFrames addObject:smallPhotoFrame2];
     
     PhotoFrame *bigPhotoFrame = [KidsTrapezoid3 kidsTrapezoid3];
     bigPhotoFrame.isTemplateItem = true;
-    bigPhotoFrame.isFixedPhotoFrame = true;
+    bigPhotoFrame.isBasePhotoFrame = true;
     bigPhotoFrame.indexInLayer = @"2";
     bigPhotoFrame.relativeCenter = CGPointMake(0.35, 0.5);
     [self.photoFrames addObject:bigPhotoFrame];

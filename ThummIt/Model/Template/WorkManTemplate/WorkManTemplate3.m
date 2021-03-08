@@ -42,7 +42,7 @@
     
     FullRectangle *photoFrame = [FullRectangle fullRectangle];
     photoFrame.isTemplateItem = true;
-    photoFrame.isFixedPhotoFrame = true;
+    photoFrame.isBasePhotoFrame = true;
     photoFrame.relativeCenter = CGPointMake(0.5, 0.5);
     [self.photoFrames addObject:photoFrame];
     

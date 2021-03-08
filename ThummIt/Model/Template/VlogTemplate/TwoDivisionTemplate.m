@@ -41,8 +41,8 @@
     VerticalHalfRectangle *secondPhotoFrame = [VerticalHalfRectangle verticalHalfRectangle];
     firstPhotoFrame.isTemplateItem = true;
     secondPhotoFrame.isTemplateItem = true;
-    firstPhotoFrame.isFixedPhotoFrame = true;
-    secondPhotoFrame.isFixedPhotoFrame = true;
+    firstPhotoFrame.isBasePhotoFrame = true;
+    secondPhotoFrame.isBasePhotoFrame = true;
     firstPhotoFrame.scale = 0.5;
     secondPhotoFrame.scale = 0.5;
     firstPhotoFrame.relativeCenter = CGPointMake(0.25, 0.5);

@@ -27,6 +27,13 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)applyCurrentProject:(Project *)project;
 -(void)save;
 
+-(NSMutableArray *)photos;
+-(NSMutableArray *)photoFrames;
+-(NSMutableArray *)stickers;
+-(NSMutableArray *)texts;
+-(NSMutableArray *)items;
+-(NSMutableArray *)sortedItems;
+
 @end
 
 NS_ASSUME_NONNULL_END

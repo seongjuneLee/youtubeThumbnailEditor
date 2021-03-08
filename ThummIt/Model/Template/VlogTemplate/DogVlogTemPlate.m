@@ -44,8 +44,8 @@
     QuarterRectangle *secondPhotoFrame = [QuarterRectangle quarterRectangle];
     firstPhotoFrame.isTemplateItem = true;
     secondPhotoFrame.isTemplateItem = true;
-    firstPhotoFrame.isFixedPhotoFrame = true;
-    secondPhotoFrame.isFixedPhotoFrame = true;
+    firstPhotoFrame.isBasePhotoFrame = true;
+    secondPhotoFrame.isBasePhotoFrame = true;
    
     firstPhotoFrame.relativeCenter = CGPointMake(0.25, 0.25);
     secondPhotoFrame.relativeCenter = CGPointMake(0.75, 0.25);
@@ -54,7 +54,7 @@
 
     PhotoFrame *photoFrame1 = [HorizontalHalfRectangle horizontalHalfRectangle];
     photoFrame1.isTemplateItem = true;
-    photoFrame1.isFixedPhotoFrame = true;
+    photoFrame1.isBasePhotoFrame = true;
     photoFrame1.relativeCenter = CGPointMake(0.5, 0.75);
     [self.photoFrames addObject:photoFrame1];
 }

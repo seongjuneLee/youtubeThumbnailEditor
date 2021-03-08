@@ -43,13 +43,13 @@
     
     PhotoFrame *photoFrame1 = [ClothesTemplateRect1 clothesTemplateRect1];
     photoFrame1.isTemplateItem = true;
-    photoFrame1.isFixedPhotoFrame = true;
+    photoFrame1.isBasePhotoFrame = true;
     photoFrame1.relativeCenter = CGPointMake(0.275, 0.5);
     [self.photoFrames addObject:photoFrame1];
     
     PhotoFrame *photoFrame2 = [ClothesTemplateRect2 clothesTemplateRect2];
     photoFrame2.isTemplateItem = true;
-    photoFrame2.isFixedPhotoFrame = true;
+    photoFrame2.isBasePhotoFrame = true;
     photoFrame2.relativeCenter = CGPointMake(0.775, 0.5);
     [self.photoFrames addObject:photoFrame2];
     

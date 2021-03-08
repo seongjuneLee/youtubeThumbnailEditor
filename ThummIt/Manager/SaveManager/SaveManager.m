@@ -113,7 +113,7 @@
     // add Items
     for (Item *item in self.currentProject.items) {
         Item *copied = [item copy];
-        if (copied.isFixedPhotoFrame) {
+        if (copied.isBasePhotoFrame) {
             copied.baseView.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0];
             [view insertSubview:copied.baseView belowSubview:mainFrameImageView];
         } else {
@@ -124,6 +124,46 @@
     // to image and save
     UIImage *viewImage = [view toImage];
     self.currentProject.previewImage = [viewImage crop:self.bgViewRect];
+}
+
+-(NSMutableArray *)items{
+    return SaveManager.sharedInstance.currentProject.items;
+}
+
+-(NSMutableArray *)texts{
+    return SaveManager.sharedInstance.currentProject.texts;
+}
+-(NSMutableArray *)stickers{
+    return SaveManager.sharedInstance.currentProject.stickers;
+}
+-(NSMutableArray *)photoFrames{
+    return SaveManager.sharedInstance.currentProject.photoFrames;
+}
+-(NSMutableArray *)photos{
+    return SaveManager.sharedInstance.currentProject.photos;
+}
+
+-(NSMutableArray *)sortedItems{
+    
+    NSArray *sorted = [SaveManager.sharedInstance.currentProject.items sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSString *first = [(Item*)a indexInLayer];
+        NSString *second = [(Item*)b indexInLayer];
+        return [first compare:second];
+    }];
+    NSMutableArray *sortedArray = [sorted mutableCopy];
+
+    NSUInteger basePhotoFrameIndex = 0;
+    for (Item *item in sortedArray) {
+        if (item.isBasePhotoFrame) {
+            break;
+        }
+        basePhotoFrameIndex ++;
+    }
+    [sortedArray removeObjectAtIndex:basePhotoFrameIndex];
+    
+    sortedArray = [[[sortedArray reverseObjectEnumerator] allObjects] mutableCopy];
+
+    return sortedArray;
 }
 
 @end

@@ -46,26 +46,26 @@
     
     PhotoFrame *photoFrame1 = [CebuRectangle cebuRectangle];
     photoFrame1.isTemplateItem = true;
-    photoFrame1.isFixedPhotoFrame = true;
+    photoFrame1.isBasePhotoFrame = true;
     photoFrame1.relativeCenter = CGPointMake(centerX1, centerY1);
     [self.photoFrames addObject:photoFrame1];
     
     
     PhotoFrame *photoFrame2 = [CebuRectangle cebuRectangle];
     photoFrame2.isTemplateItem = true;
-    photoFrame2.isFixedPhotoFrame = true;
+    photoFrame2.isBasePhotoFrame = true;
     photoFrame2.relativeCenter = CGPointMake(centerX2, centerY1);
     [self.photoFrames addObject:photoFrame2];
     
     PhotoFrame *photoFrame3 = [CebuRectangle cebuRectangle];
     photoFrame3.isTemplateItem = true;
-    photoFrame3.isFixedPhotoFrame = true;
+    photoFrame3.isBasePhotoFrame = true;
     photoFrame3.relativeCenter = CGPointMake(centerX1, centerY2);
     [self.photoFrames addObject:photoFrame3];
     
     PhotoFrame *photoFrame4 = [CebuRectangle cebuRectangle];
     photoFrame4.isTemplateItem = true;
-    photoFrame4.isFixedPhotoFrame = true;
+    photoFrame4.isBasePhotoFrame = true;
     photoFrame4.relativeCenter = CGPointMake(centerX2, centerY2);
     [self.photoFrames addObject:photoFrame4];
     

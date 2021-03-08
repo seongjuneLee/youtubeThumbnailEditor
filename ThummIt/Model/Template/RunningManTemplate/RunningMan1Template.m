@@ -40,13 +40,13 @@
     
     PhotoFrame *photoFrame1 = [ThreeFifthsRectangle threeFifthsRectangle];
     photoFrame1.isTemplateItem = true;
-    photoFrame1.isFixedPhotoFrame = true;
+    photoFrame1.isBasePhotoFrame = true;
     photoFrame1.relativeCenter = CGPointMake(0.3, 0.5);
     [self.photoFrames addObject:photoFrame1];
     
     PhotoFrame *photoFrame2 = [TwoFifthRectangle twoFifthRectangle];
     photoFrame2.isTemplateItem = true;
-    photoFrame2.isFixedPhotoFrame = true;
+    photoFrame2.isBasePhotoFrame = true;
     photoFrame2.relativeCenter = CGPointMake(0.8, 0.5);
     [self.photoFrames addObject:photoFrame2];
     

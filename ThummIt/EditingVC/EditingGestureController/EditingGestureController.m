@@ -69,6 +69,11 @@
     rotation.delegate = self;
     [editingVC.gestureView addGestureRecognizer:rotation];
     
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]
+      initWithTarget:self action:@selector(handleLongPress:)];
+    longPress.minimumPressDuration = 0.5; //seconds
+    [editingVC.gestureView addGestureRecognizer:longPress];
+
 }
 
 #pragma mark - 탭
@@ -139,7 +144,7 @@
         if (!editingVC.currentItem && [self getCurrentItem:sender]) {
             editingVC.currentItem = [self getCurrentItem:sender];
         }
-        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
+        if (!editingVC.currentItem || editingVC.currentItem.isBasePhotoFrame) {
             editingVC.currentItem = nil;
             return;
         }
@@ -150,7 +155,7 @@
 
     } else if (sender.state == UIGestureRecognizerStateChanged){
         
-        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
+        if (!editingVC.currentItem || editingVC.currentItem.isBasePhotoFrame) {
             return;
         }
 
@@ -168,7 +173,7 @@
         self.isMagneting = false;
 
     } else if (sender.state == UIGestureRecognizerStateEnded){
-        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
+        if (!editingVC.currentItem || editingVC.currentItem.isBasePhotoFrame) {
             return;
         }
         self.isMagneting = false;
@@ -190,7 +195,6 @@
 
         if (editingVC.modeController.editingMode == NormalMode) {
             editingVC.currentItem = nil;
-            editingVC.layerController.currentItemLayer = nil;
         }
     }
 }
@@ -421,7 +425,7 @@
         if (!editingVC.currentItem && [self getCurrentItem:sender]) {
             editingVC.currentItem = [self getCurrentItem:sender];
         }
-        if (!editingVC.currentItem || editingVC.currentItem.isFixedPhotoFrame) {
+        if (!editingVC.currentItem || editingVC.currentItem.isBasePhotoFrame) {
             editingVC.currentItem = nil;
             return;
         }
@@ -441,8 +445,7 @@
         
         
     } else if (sender.state == UIGestureRecognizerStateChanged && sender.numberOfTouches == 2){
-        
-        if (editingVC.currentItem.isFixedPhotoFrame) {
+        if (editingVC.currentItem.isBasePhotoFrame) {
             return;
         }
 
@@ -473,10 +476,10 @@
         [self showDegreeGuideLineWithMagnetWithDeltaDegree:self.currentRotation withScaleTransform:scaleTransform];
         
     } else if (sender.state == UIGestureRecognizerStateEnded){
-        if (editingVC.currentItem.isFixedPhotoFrame) {
+        if (editingVC.currentItem.isBasePhotoFrame) {
             return;
         }
-        
+
         self.isPinching = false;
         [self removeItemSizeGuideLinesFromSuperView];
         [self.rotationDashedLine removeFromSuperview];

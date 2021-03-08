@@ -59,19 +59,6 @@
 
     }
 
-    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
-        
-        if ([self.currentItem isKindOfClass:PhotoFrame.class]) {
-            if(itemLayer.item == self.originalPhotoFrame){
-                self.layerController.currentItemLayer = itemLayer;
-            }
-        } else {
-            if(itemLayer.item == self.currentItem){
-                self.layerController.currentItemLayer = itemLayer;
-            }
-        }
-    }
-
 }
 
 #pragma mark - 포토
@@ -96,20 +83,7 @@
     [self showItemCollectionVC];
     [self addAlbumVC];
     [self.albumVC showWithAnimation];
-    
-    for(ItemLayer *itemLayer in SaveManager.sharedInstance.currentProject.itemLayers){
         
-        if ([self.currentItem isKindOfClass:PhotoFrame.class]) {
-            if(itemLayer.item == self.originalPhotoFrame){
-                self.layerController.currentItemLayer = itemLayer;
-            }
-        } else {
-            if(itemLayer.item == self.currentItem){
-                self.layerController.currentItemLayer = itemLayer;
-            }
-        }
-    }//photoframe일 경우 self.currentitem에 copy객체가 들어있어서 주소값이 달라서 currentitemlayer가 안바뀜
-    
 }
 
 #pragma mark - 포토프레임
@@ -131,7 +105,7 @@
     [self.layerController bringCurrentItemToFront];
     self.itemCollectionVC.itemType = PhotoFrameType;
     
-    if (photoFrame.isFixedPhotoFrame) {
+    if (photoFrame.isBasePhotoFrame) {
         [self fixedPhotoFrameTapped];
     } else {
         [self showItemCollectionVC];
@@ -281,18 +255,14 @@
         [self.currentText.textView resignFirstResponder];
         self.itemCollectionVC.doneButton.enabled = true;
         self.itemCollectionVC.doneButton.alpha = 1.0;
-        
-        [self.layerController itemLayerDelete];
-        
+                
         self.currentItem = nil;
         self.currentText = nil;
         self.currentSticker = nil;
         self.currentPhotoFrame = nil;
         [SaveManager.sharedInstance deleteItem:item];
         for (Item *item in SaveManager.sharedInstance.currentProject.items) {
-            if (!item.isFixedPhotoFrame) {
-                item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
-            }
+            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
         }
         item.baseView.center = CGPointMake(self.bgView.frameWidth/2, self.bgView.frameY + self.bgView.frameHeight/2);
         [self showItemsForNormalMode];

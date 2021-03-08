@@ -42,9 +42,9 @@
     firstPhotoFrame.isTemplateItem = true;
     secondPhotoFrame.isTemplateItem = true;
     thirdPhotoFrame.isTemplateItem = true;
-    firstPhotoFrame.isFixedPhotoFrame = true;
-    secondPhotoFrame.isFixedPhotoFrame = true;
-    thirdPhotoFrame.isFixedPhotoFrame = true;
+    firstPhotoFrame.isBasePhotoFrame = true;
+    secondPhotoFrame.isBasePhotoFrame = true;
+    thirdPhotoFrame.isBasePhotoFrame = true;
     firstPhotoFrame.relativeCenter = CGPointMake(0.25, 0.5);
     secondPhotoFrame.relativeCenter = CGPointMake(0.75, 0.25);
     thirdPhotoFrame.relativeCenter = CGPointMake(0.75, 0.75);

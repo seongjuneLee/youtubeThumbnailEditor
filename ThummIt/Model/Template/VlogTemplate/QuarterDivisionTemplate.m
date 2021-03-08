@@ -44,10 +44,10 @@
     secondPhotoFrame.isTemplateItem = true;
     thirdPhotoFrame.isTemplateItem = true;
     fourthPhotoFrame.isTemplateItem = true;
-    firstPhotoFrame.isFixedPhotoFrame = true;
-    secondPhotoFrame.isFixedPhotoFrame = true;
-    thirdPhotoFrame.isFixedPhotoFrame = true;
-    fourthPhotoFrame.isFixedPhotoFrame = true;
+    firstPhotoFrame.isBasePhotoFrame = true;
+    secondPhotoFrame.isBasePhotoFrame = true;
+    thirdPhotoFrame.isBasePhotoFrame = true;
+    fourthPhotoFrame.isBasePhotoFrame = true;
     firstPhotoFrame.relativeCenter = CGPointMake(0.25, 0.25);
     secondPhotoFrame.relativeCenter = CGPointMake(0.75, 0.25);
     thirdPhotoFrame.relativeCenter = CGPointMake(0.25, 0.75);

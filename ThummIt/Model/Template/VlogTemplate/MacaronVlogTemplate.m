@@ -43,20 +43,20 @@
     
     PhotoFrame *photoFrame1 = [MacaronRectangle1 macaronRectangle1];
     photoFrame1.isTemplateItem = true;
-    photoFrame1.isFixedPhotoFrame = true;
+    photoFrame1.isBasePhotoFrame = true;
     photoFrame1.relativeCenter = CGPointMake(0.27, 0.5);
     [self.photoFrames addObject:photoFrame1];
     
     
     PhotoFrame *photoFrame2 = [MacaronRectangle2 macaronRectangle2];
     photoFrame2.isTemplateItem = true;
-    photoFrame2.isFixedPhotoFrame = true;
+    photoFrame2.isBasePhotoFrame = true;
     photoFrame2.relativeCenter = CGPointMake(0.77, 0.25);
     [self.photoFrames addObject:photoFrame2];
     
     PhotoFrame *photoFrame3 = [MacaronRectangle2 macaronRectangle2];
     photoFrame3.isTemplateItem = true;
-    photoFrame3.isFixedPhotoFrame = true;
+    photoFrame3.isBasePhotoFrame = true;
     photoFrame3.relativeCenter = CGPointMake(0.77, 0.75);
     [self.photoFrames addObject:photoFrame3];
     

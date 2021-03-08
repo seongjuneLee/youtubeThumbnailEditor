@@ -11,7 +11,6 @@
 #import "Photo.h"
 #import "Sticker.h"
 #import "MainFrame.h"
-#import "ItemLayer.h"
 #import "Template.h"
 @class CoreDataProject;
 
