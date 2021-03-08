@@ -48,7 +48,6 @@
 
 -(id)initWithCoder:(NSCoder *)decoder{
     if((self = [super init])) {        
-        self.backgroundImageView = [decoder decodeObjectForKey:@"backgroundImageView"];
         self.backgroundImageName = [decoder decodeObjectForKey:@"backgroundImageName"];
         self.backgroundImageView.image = [[UIImage imageNamed:self.backgroundImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         self.itemName = [decoder decodeObjectForKey:@"itemName"];
@@ -66,7 +65,6 @@
 
     [encoder encodeObject:self.itemName forKey:@"itemName"];
     [encoder encodeObject:self.indexInLayer forKey:@"indexInLayer"];
-    [encoder encodeObject:self.backgroundImageView forKey:@"backgroundImageView"];
     [encoder encodeObject:self.backgroundImageName forKey:@"backgroundImageName"];
     [encoder encodeObject:[NSValue valueWithCGPoint:self.baseView.center] forKey:@"center"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];

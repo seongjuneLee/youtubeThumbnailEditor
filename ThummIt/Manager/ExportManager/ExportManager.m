@@ -178,11 +178,8 @@
         }
     }
     
-    
-    NSMutableArray *reversed = [[[SaveManager.sharedInstance.sortedItems reverseObjectEnumerator] allObjects] mutableCopy];
-
     // add Items
-    for (Item *item in reversed) {
+    for (Item *item in SaveManager.sharedInstance.sortedItems) {
         Item *copied = [item copy];
         
         if ([copied isKindOfClass:PhotoFrame.class]) {

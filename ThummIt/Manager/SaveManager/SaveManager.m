@@ -123,9 +123,8 @@
     }
     
     
-    NSMutableArray *reversed = [[[[self sortedItems] reverseObjectEnumerator] allObjects] mutableCopy];
 
-    for (Item *item in reversed) {
+    for (Item *item in self.sortedItems) {
         Item *copied = [item copy];
         
         if ([copied isKindOfClass:PhotoFrame.class]) {
@@ -175,20 +174,22 @@
         NSString *second = [(Item*)b indexInLayer];
         return [first compare:second];
     }];
-    NSMutableArray *sortedArray = [sorted mutableCopy];
+    NSMutableArray *sortedItems = [sorted mutableCopy];
 
     NSUInteger basePhotoFrameIndex = 0;
-    for (Item *item in sortedArray) {
+    for (Item *item in sortedItems) {
         if (item.isBasePhotoFrame) {
             break;
         }
         basePhotoFrameIndex ++;
     }
-    [sortedArray removeObjectAtIndex:basePhotoFrameIndex];
-    
-    sortedArray = [[[sortedArray reverseObjectEnumerator] allObjects] mutableCopy];
+    [sortedItems removeObjectAtIndex:basePhotoFrameIndex];
+        
+    for (Item *item in sortedItems) {
+        NSLog(@"item indexinlayer : %@ item : %@",item.indexInLayer,item);
+    }
 
-    return sortedArray;
+    return sortedItems;
 }
 
 @end

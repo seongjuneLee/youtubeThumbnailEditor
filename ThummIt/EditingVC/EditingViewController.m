@@ -63,9 +63,6 @@
     SaveManager.sharedInstance.bgViewRect = self.bgView.frame;
     if (!self.itemLoaded) {
         [self loadItems];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [SaveManager.sharedInstance saveAndAddToStack];
-        });
         self.bgColorTopConstraint.constant = self.itemCollectionContainerTopConstraint.constant = self.view.frameHeight;
         self.itemCollectionContainerView.frameHeight = self.underAreaView.frameHeight;
         
@@ -74,6 +71,10 @@
         [self addChildViewController:self.editingItemLayerVC];
         [self.view addSubview:self.editingItemLayerVC.view];
         [self.editingItemLayerVC.tableView reloadData];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SaveManager.sharedInstance saveAndAddToStack];
+        });
     }
     [self.buttonScrollView setContentSize:CGSizeMake(self.scrollContentView.frameWidth, self.scrollContentView.frameHeight)];
     
@@ -163,7 +164,6 @@
 
 -(void)loadItems{
     
-    self.itemLoaded = true;
     Project *project = SaveManager.sharedInstance.currentProject;
     project.itemLayers = [NSMutableArray new];
     self.bgView.backgroundColor = project.backgroundColor;
@@ -200,14 +200,23 @@
         item.isTemplateItem = false;
 
     }
-        
+    
     // 인덱스 맞춰주기
     for (Item *item in project.items) {
-        item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+        if (!self.itemLoaded) {
+            item.indexInLayer = [NSString stringWithFormat:@"%ld",[self.view.subviews indexOfObject:item.baseView]];
+        } else {
+            if (!item.isBasePhotoFrame) {
+                [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
+            }
+        }
     }
     
     [SaveManager.sharedInstance save];
     [self.editingItemLayerVC.tableView reloadData];
+    
+    self.itemLoaded = true;
+
 }
 
 -(void)respondToUndoRedo{

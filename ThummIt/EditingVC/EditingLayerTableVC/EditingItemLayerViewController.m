@@ -41,14 +41,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    self.sortedItems = SaveManager.sharedInstance.sortedItems;
+    self.sortedItems = [[[SaveManager.sharedInstance.sortedItems reverseObjectEnumerator] allObjects] mutableCopy];
     return SaveManager.sharedInstance.sortedItems.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EditingItemLayerTableViewCell *cell = (EditingItemLayerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"EditingItemLayerTableViewCell"];
-    Item *item = SaveManager.sharedInstance.sortedItems[indexPath.row];
+    Item *item = self.sortedItems[indexPath.row];
     Item *copied = [item copy];
     if ([copied isKindOfClass:PhotoFrame.class]) {
         PhotoFrame *copiedPhotoFrame = (PhotoFrame *)copied;

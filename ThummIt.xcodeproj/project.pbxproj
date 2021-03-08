@@ -1801,12 +1801,12 @@
 				6E9BEA5C258F1BAD00F7F539 /* ProjectManager */,
 				6E20BCC725AEF59000BBA540 /* UndoManager */,
 				6E9BEA3A258E697200F7F539 /* SaveManager */,
+				6E07E74C25DABEE800A57801 /* ExportManager */,
 				6EC4DFF625A8952A0023485C /* TypoManager */,
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
 				6E698BA325B89CB200CE86FB /* GuideLine */,
 				6E2845B425C88640008B7A23 /* UserManager */,
 				6E07E74425DABCF600A57801 /* AppManager */,
-				6E07E74C25DABEE800A57801 /* ExportManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
