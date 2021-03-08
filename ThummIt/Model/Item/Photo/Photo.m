@@ -22,8 +22,6 @@
     Photo *copied = [super copyWithZone:zone];
         
     copied.imageData = self.imageData;
-    [copied loadView];
-    [copied setItemCenterAndScale];
 
     // 카피시에 이미지를 가져올 때 phasset으로 가져오면 시차가 발생하는 문제 해결 위해. loadView 아래해서 해줄것.
 //    copied.photoImageView.frame = self.photoImageView.frame;

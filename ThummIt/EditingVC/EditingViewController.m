@@ -133,6 +133,7 @@
     
     self.editingItemLayerVC = (EditingItemLayerViewController *)[editing instantiateViewControllerWithIdentifier:@"EditingItemLayerViewController"];
     self.editingItemLayerVC.layerController = self.layerController;
+    self.editingItemLayerVC.editingVC = self;
     
 }
 
@@ -227,6 +228,7 @@
         self.rightItem.alpha =
         self.itemLayerScrollView.alpha = 1.0;
         self.buttonScrollView.alpha = 1.0;
+        self.editingItemLayerVC.view.alpha = 1.0;
     }];
 
 }
@@ -241,6 +243,7 @@
         self.rightItem.alpha =
         self.itemLayerScrollView.alpha = 
         self.buttonScrollView.alpha = 0;
+        self.editingItemLayerVC.view.alpha = 0;
     }];
 
 }

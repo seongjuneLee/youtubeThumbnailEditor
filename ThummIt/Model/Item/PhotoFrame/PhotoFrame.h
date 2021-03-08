@@ -21,8 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL isCircle;
 @property (strong, nonatomic) PHAsset *phAsset;
 
--(void)addSubViewsToBaseView;
+-(void)addSubViewsToBaseViewImageSize:(CGSize)size withBlock:(void(^)(BOOL success))block;
+-(void)addPhotoImageView;
+-(void)addBGImageView;
 -(void)setBaseViewFrame;
+-(void)makeBaseView;
 
 @end
 

@@ -115,9 +115,6 @@
     copied.typoRangeArray = [self.typoRangeArray copy];
     copied.textAlignment = self.textAlignment;
     
-    [copied loadView];
-    [copied setItemCenterAndScale];
-
     return copied;
 }
 

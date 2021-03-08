@@ -6,6 +6,8 @@
 //
 
 #import "EditingItemLayerViewController.h"
+#import "EditingViewController.h"
+#import "EditingViewController+GestureControllerDelegate.h"
 #import "SaveManager.h"
 #import "UIImage+Additions.h"
 
@@ -47,9 +49,22 @@
     
     EditingItemLayerTableViewCell *cell = (EditingItemLayerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"EditingItemLayerTableViewCell"];
     Item *item = SaveManager.sharedInstance.sortedItems[indexPath.row];
-    UIImage *itemImage = [item.baseView toImage];
-    
-    cell.itemLayerImageView.image = itemImage;
+    Item *copied = [item copy];
+    if ([copied isKindOfClass:PhotoFrame.class]) {
+        PhotoFrame *copiedPhotoFrame = (PhotoFrame *)copied;
+        [copiedPhotoFrame makeBaseView];
+        [copiedPhotoFrame addSubViewsToBaseViewImageSize:CGSizeMake(100, 100) withBlock:^(BOOL success) {
+            
+            UIImage *itemImage = [item.baseView toImage];
+            cell.itemLayerImageView.image = itemImage;
+        }];
+
+    } else {
+        [copied loadView];
+        [copied setItemCenterAndScale];
+        UIImage *itemImage = [item.baseView toImage];
+        cell.itemLayerImageView.image = itemImage;
+    }
     return cell;
 }
 
@@ -68,17 +83,20 @@
     CGPoint currentPoint = [sender locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:currentPoint];
     
-    if (!indexPath) {
-        return;
-    }
     if (sender.state == UIGestureRecognizerStateBegan) {
-        
+        if (!indexPath) {
+            return;
+        }
+
         self.previousPoint = [sender locationInView:self.tableView];
         self.currentPinchingCell = (EditingItemLayerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         self.currentItem = SaveManager.sharedInstance.sortedItems[indexPath.row];
         [self.impactFeedbackGenerator performSelector:@selector(impactOccurred) withObject:nil afterDelay:0.0f];
 
     } else if (sender.state == UIGestureRecognizerStateChanged) {
+        if (!indexPath) {
+            return;
+        }
 
         if (currentPoint.y <= 0) {
             [self.tableView reloadData];
@@ -89,10 +107,6 @@
         }
         
         self.currentPinchingCell.centerY = currentPoint.y;
-        
-        
-        NSLog(@"currentPoint y %f",self.currentPinchingCell.centerY);
-        
         self.currentIndexPath = [self.tableView indexPathForRowAtPoint:currentPoint];
         
         float deltaY = currentPoint.y - self.previousPoint.y;
@@ -158,11 +172,15 @@
 }
 
 
--(void)goToNearestCenter{
+#pragma mark - delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    EditingViewController *editingVC = (EditingViewController *)self.editingVC;
+    Item *item = SaveManager.sharedInstance.sortedItems[indexPath.row];
+    [editingVC didSelectItem:item];
     
     
 }
-
 
 @end

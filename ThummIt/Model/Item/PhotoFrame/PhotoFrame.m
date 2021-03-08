@@ -31,15 +31,12 @@
     PhotoFrame *copied = [super copyWithZone:zone];
     copied.photoScale = self.photoScale;
     copied.isCircle = self.isCircle;
+    copied.phAsset = self.phAsset;
         
     copied.isBasePhotoFrame = self.isBasePhotoFrame;
     
-    [copied loadView];
-    [copied setItemCenterAndScale];
 
     // 카피시에 이미지를 가져올 때 phasset으로 가져오면 시차가 발생하는 문제 해결 위해. loadView 아래해서 해줄것.
-    copied.photoImageView.frame = self.photoImageView.frame;
-    copied.photoImageView.image = self.photoImageView.image;
 
     return copied;
 }
@@ -80,6 +77,14 @@
 #pragma mark - helper
 -(void)loadView{
     
+    [self makeBaseView];
+    [self addPhotoImageView];
+    [self addBGImageView];
+
+}
+
+-(void)makeBaseView{
+    
     self.baseView = [[UIView alloc] init];
     self.baseView.backgroundColor = UIColor.whiteColor;
     self.baseView.clipsToBounds = true;
@@ -89,7 +94,6 @@
         self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
         self.backgroundImageView.clipsToBounds = true;
     }
-    [self addSubViewsToBaseView];
 
 }
     
@@ -97,7 +101,7 @@
     
 }
 
--(void)addSubViewsToBaseView{
+-(void)addPhotoImageView{
     
     
     self.photoImageView = [[UIImageView alloc] init];
@@ -132,6 +136,11 @@
         [self.baseView addSubview:self.plusPhotoImageView];
     }
     [self.baseView addSubview:self.photoImageView];
+    
+}
+
+-(void)addBGImageView{
+    
     if (self.backgroundImageName) {
         self.backgroundImageView = [[UIImageView alloc] init];
         self.backgroundImageView.frameSize = self.baseView.frameSize;
@@ -143,6 +152,55 @@
         self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
         self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
         [self.baseView addSubview:self.backgroundImageView];
+    }
+
+}
+
+
+-(void)addSubViewsToBaseViewImageSize:(CGSize)size withBlock:(void(^)(BOOL success))block{
+    
+    
+    self.photoImageView = [[UIImageView alloc] init];
+    self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.baseView addSubview:self.photoImageView];
+    if (self.backgroundImageName) {
+        self.backgroundImageView = [[UIImageView alloc] init];
+        self.backgroundImageView.frameSize = self.baseView.frameSize;
+        self.backgroundImageView.center = CGPointMake(self.baseView.frameWidth/2, self.baseView.frameHeight/2);
+        self.backgroundImageView.backgroundColor = UIColor.clearColor;
+        if (self.isCircle) {
+            self.backgroundImageView.layer.cornerRadius = self.backgroundImageView.frameWidth/2;
+        }
+        self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.backgroundImageView.image = [UIImage imageNamed:self.backgroundImageName];
+        [self.baseView addSubview:self.backgroundImageView];
+    }
+
+    if (self.phAsset) {
+        [PhotoManager.sharedInstance getImageFromPHAsset:self.phAsset withPHImageContentMode:PHImageContentModeAspectFill withSize:size WithCompletionBlock:^(UIImage * _Nonnull image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                float ratio = image.size.height/image.size.width;
+                float width = self.baseView.bounds.size.width;
+                float height = self.baseView.bounds.size.height;
+                if (ratio > 1) {
+                    self.photoImageView.frameSize = CGSizeMake(width, width * ratio);
+                } else {
+                    self.photoImageView.frameSize = CGSizeMake(height * 1/ratio, height);
+                }
+                self.photoImageView.center = self.photoCenter;
+                self.photoImageView.image = image;
+                
+                // 이미지 애니메이션
+                CATransition *transition = [CATransition animation];
+                transition.duration = 0.5f;
+                transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+                transition.type = kCATransitionFade;
+                [self.photoImageView.layer addAnimation:transition forKey:nil];
+                block(true);
+            });
+        }];
+    } else {
+        block(true);
     }
     
 }

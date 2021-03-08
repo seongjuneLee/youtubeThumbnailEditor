@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EditingItemLayerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UIViewController *editingVC;
+
 @property (strong, nonatomic) EditingItemLayerTableViewCell *currentPinchingCell;
 @property (strong, nonatomic) UIImpactFeedbackGenerator *impactFeedbackGenerator;
 @property (nonatomic) CGPoint previousPoint;

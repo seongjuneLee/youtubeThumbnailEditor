@@ -44,29 +44,6 @@
     
 }
 
--(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
-
-    if (self.selectedIndex == 0) {
-        if (!PFUser.currentUser) {
-            UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-            SignInViewController *signInVC = (SignInViewController *)[main instantiateViewControllerWithIdentifier:@"SignInViewController"];
-            
-            UINavigationController *signInNavVC = (UINavigationController *)[main instantiateViewControllerWithIdentifier:@"signInNavVC"];
-
-            if ([viewController isKindOfClass:ProjectViewController.class]) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    signInVC.titleLabel.text = NSLocalizedString(@"Sign up for continuing past projects.", nil);
-                });
-            }
-            [self presentViewController:signInNavVC animated:true completion:nil];
-            return false;
-        }
-
-    }
-
-    return true;
-}
-
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
 
 }

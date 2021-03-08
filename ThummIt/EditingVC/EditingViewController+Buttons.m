@@ -19,10 +19,9 @@
 @implementation EditingViewController (Buttons)
 
 - (IBAction)rightItemTapped:(id)sender {
+        
+    [self exportThumbnail];
     
-    [SaveManager.sharedInstance sortedItems];
-    
-//    [self exportThumbnail];
 }
 
 -(void)exportThumbnail{

@@ -68,6 +68,10 @@
     Photo *photo = (Photo *)item;
     
     Photo *copied = [photo copy];
+    [copied loadView];
+    [copied setItemCenterAndScale];
+
+
     self.currentItem = copied;
     self.currentPhoto = copied;
     self.originalPhoto = photo;
@@ -93,6 +97,10 @@
     PhotoFrame *photoFrame = (PhotoFrame *)item;
     
     PhotoFrame *copied = [photoFrame copy];
+    [copied loadView];
+    [copied setItemCenterAndScale];
+
+
     self.currentItem = copied;
     self.currentPhotoFrame = copied;
     self.originalPhotoFrame = photoFrame;
@@ -173,6 +181,7 @@
     [self.layerController showTransparentView];
     [self.layerController bringCurrentItemToFront];
     self.itemCollectionVC.itemType = TextType;
+    [self showItemCollectionVC];
     
     if(text.typo.canChangeColor){
         [UIView animateWithDuration:0.2 animations:^{
@@ -270,7 +279,7 @@
         
         [self.itemCollectionVC dismissSelf];
         self.buttonScrollView.hidden = false;
-        
+        [self.editingItemLayerVC.tableView reloadData];
     } else{
         if(self.modeController.editingMode == NormalMode){
             self.buttonScrollView.hidden = false;
