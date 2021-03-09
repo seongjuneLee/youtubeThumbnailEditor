@@ -176,14 +176,16 @@
     }];
     NSMutableArray *sortedItems = [sorted mutableCopy];
 
-    NSUInteger basePhotoFrameIndex = 0;
+    Item *removableItem;
     for (Item *item in sortedItems) {
         if (item.isBasePhotoFrame) {
+            removableItem = item;
             break;
         }
-        basePhotoFrameIndex ++;
     }
-    [sortedItems removeObjectAtIndex:basePhotoFrameIndex];
+    if (removableItem) {
+        [sortedItems removeObject:removableItem];
+    }
         
     return sortedItems;
 }
