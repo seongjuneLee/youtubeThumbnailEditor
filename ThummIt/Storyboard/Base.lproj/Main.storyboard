@@ -414,33 +414,6 @@ You may submit a request to exercise your right to information, access or deleti
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="52V-P2-H6C">
                                 <rect key="frame" x="0.0" y="94" width="414" height="719"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="Xxw-vk-PoO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fca-tQ-sL2">
-                                            <rect key="frame" x="15" y="32" width="64" height="64"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="Fca-tQ-sL2" secondAttribute="height" multiplier="1:1" id="ohx-hy-rcu"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emy-d4-HYP" userLabel="Account Name Label">
-                                            <rect key="frame" x="99" y="32" width="46" height="64"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                            <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstItem="Fca-tQ-sL2" firstAttribute="centerY" secondItem="Xxw-vk-PoO" secondAttribute="centerY" id="1zs-AO-dea"/>
-                                        <constraint firstItem="Fca-tQ-sL2" firstAttribute="height" secondItem="Xxw-vk-PoO" secondAttribute="height" multiplier="0.5" id="21a-Ps-Xv7"/>
-                                        <constraint firstItem="Emy-d4-HYP" firstAttribute="height" secondItem="Xxw-vk-PoO" secondAttribute="height" multiplier="0.5" id="3kd-Fy-vcT"/>
-                                        <constraint firstItem="Emy-d4-HYP" firstAttribute="centerY" secondItem="Xxw-vk-PoO" secondAttribute="centerY" id="PGd-ax-cZz"/>
-                                        <constraint firstItem="Emy-d4-HYP" firstAttribute="leading" secondItem="Fca-tQ-sL2" secondAttribute="trailing" constant="20" id="m3G-zC-KqN"/>
-                                        <constraint firstItem="Fca-tQ-sL2" firstAttribute="leading" secondItem="Xxw-vk-PoO" secondAttribute="leading" constant="15" id="s9D-xD-j3U"/>
-                                    </constraints>
-                                </view>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ruT-sf-Npz"/>
@@ -456,9 +429,6 @@ You may submit a request to exercise your right to information, access or deleti
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="accountImage" id="t0J-sO-HyD"/>
                     <connections>
-                        <outlet property="accountIconImageView" destination="Fca-tQ-sL2" id="46B-0b-2rk"/>
-                        <outlet property="accountNameLabel" destination="Emy-d4-HYP" id="oph-qQ-lRd"/>
-                        <outlet property="header" destination="Xxw-vk-PoO" id="F8g-kr-6Di"/>
                         <outlet property="tableView" destination="52V-P2-H6C" id="sEh-z8-2XZ"/>
                     </connections>
                 </viewController>
@@ -1363,9 +1333,6 @@ with the design you want.</string>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

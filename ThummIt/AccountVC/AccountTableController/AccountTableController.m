@@ -23,7 +23,7 @@
         NSDictionary *customerCenterDict = @{NSLocalizedString(@"Customer Center", nil):@"customerCenter"}; // 이미지 추가
         NSDictionary *pivacyPolicyDict = @{NSLocalizedString(@"Privacy Policy", nil):@"privacyPolicy"}; // 이미지 추가
         NSDictionary *logOutDict = @{NSLocalizedString(@"Log Out", nil):@"logOut"}; // 이미지 추가
-        self.datas = @[customerCenterDict, pivacyPolicyDict, logOutDict];
+        self.datas = @[customerCenterDict, pivacyPolicyDict];
         self.tableView = tableView;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
