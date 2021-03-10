@@ -48,11 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             UserManager.sharedInstance().validatedUserName(username) { (validatedString) in
                 newUser["username"] = validatedString
                 newUser["password"] = password
-                newUser.signUpInBackground { (success, error) in
-                    print("PFUser.current() : ",PFUser.current() as Any)
-                }
+                newUser.signUpInBackground()
             }
-            
         }
 
         ApplicationDelegate.shared.application(

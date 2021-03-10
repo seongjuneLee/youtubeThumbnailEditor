@@ -25,11 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    UIStoryboard *editing = [UIStoryboard storyboardWithName:@"IAP" bundle:NSBundle.mainBundle];
-//    IAPViewController *iapVC = (IAPViewController *)[editing instantiateViewControllerWithIdentifier:@"IAPViewController"];
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self presentViewController:iapVC animated:true completion:nil];
-//    });
     self.makeNewImageView.layer.cornerRadius = 5.0;
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:NSBundle.mainBundle] forCellReuseIdentifier:@"HomeTableViewCell"];
     [self connectHomeTableController];
@@ -46,7 +41,7 @@
 
 - (IBAction)newProjectButtonTapped:(UIButton *)sender {
     
-    Project *project =  [ProjectManager.sharedInstance generateNewProjectWithTemplate:nil];
+    Project *project = [ProjectManager.sharedInstance generateNewProjectWithTemplate:nil];
     
     [SaveManager.sharedInstance applyCurrentProject:project];
     
