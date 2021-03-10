@@ -40,6 +40,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             let defaultACL = PFACL.init()
             defaultACL.setReadAccess(true, for: PFUser.current()!)
             PFACL.setDefault(defaultACL, withAccessForCurrentUser: true)
+        } else {
+            
+            let newUser = PFUser.init()
+            let username = NSString.randomString(withLength: 7) as String
+            let password = NSString.randomString(withLength: 10) as String
+            UserManager.sharedInstance().validatedUserName(username) { (validatedString) in
+                newUser["username"] = validatedString
+                newUser["password"] = password
+                newUser.signUpInBackground { (success, error) in
+                    print("PFUser.current() : ",PFUser.current() as Any)
+                }
+            }
+            
         }
 
         ApplicationDelegate.shared.application(

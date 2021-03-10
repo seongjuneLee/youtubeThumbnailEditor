@@ -136,15 +136,9 @@
 
 - (IBAction)subscribeButtonTapped:(UIButton *)sender {
     
-//    [self.view makeToastActivity:CSToastPositionCenter];
     if (self.validProducts != nil) {
         [self purchaseMyProduct:[self.validProducts objectAtIndex:0]];
     }
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self.view hideToastActivity];
-//    });
-
-
 
 }
 @end
