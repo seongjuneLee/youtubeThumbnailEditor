@@ -159,7 +159,9 @@
 		6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99877B258A2A9D00C8F907 /* TemplateManager.m */; };
 		6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E998794258A300300C8F907 /* HomeCollectionViewCell.m */; };
 		6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */; };
-		6E9A84FC25F78DE2004075E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9A84FB25F78DE2004075E1 /* StoreKit.framework */; };
+		6E9A850325F8AFAD004075E1 /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A850225F8AFAD004075E1 /* IAPViewController.m */; };
+		6E9A850725F8B6F2004075E1 /* IAP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E9A850625F8B6F2004075E1 /* IAP.storyboard */; };
+		6E9A850B25F8C25A004075E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9A850A25F8C25A004075E1 /* StoreKit.framework */; };
 		6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */; };
 		6E9BE998258A527C00F7F539 /* QuarterDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */; };
 		6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE99D258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m */; };
@@ -800,7 +802,10 @@
 		6E998793258A300300C8F907 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		6E998794258A300300C8F907 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
-		6E9A84FB25F78DE2004075E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6E9A850125F8AFAD004075E1 /* IAPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
+		6E9A850225F8AFAD004075E1 /* IAPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
+		6E9A850625F8B6F2004075E1 /* IAP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IAP.storyboard; sourceTree = "<group>"; };
+		6E9A850A25F8C25A004075E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6E9BE989258A517000F7F539 /* TwoDivisionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoDivisionTemplate.h; sourceTree = "<group>"; };
 		6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoDivisionTemplate.m; sourceTree = "<group>"; };
 		6E9BE996258A527C00F7F539 /* QuarterDivisionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuarterDivisionTemplate.h; sourceTree = "<group>"; };
@@ -1365,10 +1370,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E9A84FC25F78DE2004075E1 /* StoreKit.framework in Frameworks */,
 				6E90EFAC25E651270059DEEB /* SystemConfiguration.framework in Frameworks */,
 				6EC764B625E51E8A009FF873 /* WebKit.framework in Frameworks */,
 				6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */,
+				6E9A850B25F8C25A004075E1 /* StoreKit.framework in Frameworks */,
 				C3AA5AEB200F3BCD30FC7A2B /* Pods_ThummIt.framework in Frameworks */,
 				6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */,
 			);
@@ -1712,6 +1717,7 @@
 				6E1190F22584B164000DD9C0 /* LaunchScreen.storyboard */,
 				6E1190ED2584B163000DD9C0 /* Main.storyboard */,
 				6E7BC04D25CAB70E006C9F83 /* Editing.storyboard */,
+				6E9A850625F8B6F2004075E1 /* IAP.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -1767,6 +1773,8 @@
 				6E1191392584D160000DD9C0 /* AlbumVC */,
 				6E8E7A28259B26D70008C5FF /* ItemCollectionVC */,
 				6E20BC7525AD938600BBA540 /* BGColorVC */,
+				6E9A850125F8AFAD004075E1 /* IAPViewController.h */,
+				6E9A850225F8AFAD004075E1 /* IAPViewController.m */,
 			);
 			path = EditingVC;
 			sourceTree = "<group>";
@@ -2307,7 +2315,7 @@
 		6E9BEA3E258F099300F7F539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E9A84FB25F78DE2004075E1 /* StoreKit.framework */,
+				6E9A850A25F8C25A004075E1 /* StoreKit.framework */,
 				6E90EFAB25E651270059DEEB /* SystemConfiguration.framework */,
 				6EC764B525E51E89009FF873 /* WebKit.framework */,
 				6ED13A8625B9AAC400012144 /* Bolts.framework */,
@@ -3509,6 +3517,7 @@
 				6E7BC04B25CAB70E006C9F83 /* Editing.storyboard in Resources */,
 				6EAFD5B625B876D400B193AB /* KOTRA_BOLD.otf in Resources */,
 				B16FC68125AF459800E854C1 /* StickerCollectionReusableView.xib in Resources */,
+				6E9A850725F8B6F2004075E1 /* IAP.storyboard in Resources */,
 				6E8E7AF525A83C110008C5FF /* TextCollectionViewCell.xib in Resources */,
 				6E8E79ED25921E440008C5FF /* ProjectTableViewCell.xib in Resources */,
 				6ED13CB425C1B97600012144 /* JejuHallasan.otf in Resources */,
@@ -3908,6 +3917,7 @@
 				6ED0AF7525E4FB780027485F /* MainFrameCollectionReusableView.m in Sources */,
 				B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */,
 				6EB2A1E625F383ED009715B4 /* Deeplab.mlmodel in Sources */,
+				6E9A850325F8AFAD004075E1 /* IAPViewController.m in Sources */,
 				6E8F9A9725C34582005C8071 /* ChristmasCircle.m in Sources */,
 				6ED0AFB625E515410027485F /* WorkMan3MainFrame.m in Sources */,
 				6EBEB59625C1EA990017C640 /* WorkManTemplate3.m in Sources */,

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tOe-lS-Kcw">
+            <objects>
+                <viewController storyboardIdentifier="IAPViewController" id="TAQ-nM-nMi" customClass="IAPViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rue-7G-Fei">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-v6-ekY">
+                                <rect key="frame" x="20.5" y="318.5" width="373" height="269"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="subscribe"/>
+                                <connections>
+                                    <action selector="subscribeButtonTapped:" destination="TAQ-nM-nMi" eventType="touchUpInside" id="9Vn-vw-1L8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHL-yF-xbi">
+                                <rect key="frame" x="160.5" y="94" width="93.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="productDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLj-C1-L8z">
+                                <rect key="frame" x="133.5" y="135" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="productPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tde-4V-Hpp">
+                                <rect key="frame" x="157.5" y="176" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYc-ae-s5x">
+                                <rect key="frame" x="157" y="681" width="100" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Baz-XP-jaI"/>
+                                    <constraint firstAttribute="width" constant="100" id="Vnl-0t-18k"/>
+                                </constraints>
+                                <state key="normal" title="restore"/>
+                                <connections>
+                                    <action selector="restoreButtonTapped:" destination="TAQ-nM-nMi" eventType="touchUpInside" id="c7K-8x-PiT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fQ2-ck-6WI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tde-4V-Hpp" firstAttribute="centerX" secondItem="CLj-C1-L8z" secondAttribute="centerX" id="4e9-M4-md3"/>
+                            <constraint firstItem="HDv-v6-ekY" firstAttribute="height" secondItem="rue-7G-Fei" secondAttribute="height" multiplier="0.3" id="FPZ-Ss-0Pg"/>
+                            <constraint firstItem="HDv-v6-ekY" firstAttribute="width" secondItem="rue-7G-Fei" secondAttribute="width" multiplier="0.9" id="IfG-KR-wJb"/>
+                            <constraint firstItem="iYc-ae-s5x" firstAttribute="top" secondItem="HDv-v6-ekY" secondAttribute="bottom" constant="93.5" id="KB5-Fd-Ypu"/>
+                            <constraint firstItem="FHL-yF-xbi" firstAttribute="centerX" secondItem="fQ2-ck-6WI" secondAttribute="centerX" id="WoT-ZL-F9f"/>
+                            <constraint firstItem="FHL-yF-xbi" firstAttribute="top" secondItem="fQ2-ck-6WI" secondAttribute="top" constant="50" id="dS1-lg-7gM"/>
+                            <constraint firstItem="CLj-C1-L8z" firstAttribute="centerX" secondItem="FHL-yF-xbi" secondAttribute="centerX" id="feE-en-DUI"/>
+                            <constraint firstItem="CLj-C1-L8z" firstAttribute="top" secondItem="FHL-yF-xbi" secondAttribute="bottom" constant="20" id="kJy-TT-WJ8"/>
+                            <constraint firstItem="HDv-v6-ekY" firstAttribute="centerY" secondItem="fQ2-ck-6WI" secondAttribute="centerY" id="lwE-hD-3Nr"/>
+                            <constraint firstItem="iYc-ae-s5x" firstAttribute="centerX" secondItem="fQ2-ck-6WI" secondAttribute="centerX" id="sWq-Iq-mhW"/>
+                            <constraint firstItem="tde-4V-Hpp" firstAttribute="top" secondItem="CLj-C1-L8z" secondAttribute="bottom" constant="20" id="vbX-rZ-VEI"/>
+                            <constraint firstItem="HDv-v6-ekY" firstAttribute="centerX" secondItem="fQ2-ck-6WI" secondAttribute="centerX" id="wu0-63-lM7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="productDescriptionLabel" destination="CLj-C1-L8z" id="Wpj-7W-b8Q"/>
+                        <outlet property="productPriceLabel" destination="tde-4V-Hpp" id="mhe-2V-RkH"/>
+                        <outlet property="productTitleLabel" destination="FHL-yF-xbi" id="zmv-Qw-baW"/>
+                        <outlet property="purchaseButton" destination="HDv-v6-ekY" id="ari-k5-bGH"/>
+                        <outlet property="restorePurchaseButton" destination="iYc-ae-s5x" id="IuA-6w-0DE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hU-Gm-CWP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2164" y="-387"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
