@@ -185,8 +185,23 @@
     VlogMacaronTypo *vlogMacaronTypo = [VlogMacaronTypo vlogMacaronTypo];
     VlogMomTypo *vlogMomTypo = [VlogMomTypo vlogMomTypo];
     VlogHolidayTypo *vlogHolidayTypo = [VlogHolidayTypo vlogHolidayTypo];
+    
+    //music
+    PoemForSmallTypo *poemForSmallTypo = [PoemForSmallTypo poemForSmallTypo];
+    BTSTypo *btsTypo = [BTSTypo btsTypo];
+    LegendSongTypo *legendSongTypo = [LegendSongTypo legendSongTypo];
+    PlaylistTypo *playlistTypo = [PlaylistTypo playlistTypo];
+    NinetyCenturyTypo *ninetyCenturyTypo = [NinetyCenturyTypo ninetyCenturyTypo];
+    LalalandTypo *lalalandTypo = [LalalandTypo lalalandTypo];
+    RetroTypo *retroTypo = [RetroTypo retroTypo];
+    AppleSDTypo *appleSDTypo = [AppleSDTypo appleSDTypo];
 
-    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, seoYuGiGagwanTypo, vlogWebWrite, vlogDesiner, vlogCompany, vlogNewCampus, seoYuGiCloudLogoTypo, seoYuGiInFrontOfGirlTypo, seoYuGiCowRiseTypo, vlogDog, vlogModel, vlogSummer, vlogOriginal, vlogTrip, vlogInItaly, vlogItaly, vlogLongDance, vlogShortDance, vlogStudy, vlog365, vlogFreshmanTypo, vlogStudentTypo, seoYuGiHungryTypo, seoYuGiDawnWatchingTypo, runningManLogoTypo, workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle, workManRightTag, workManYoutube, workmanYelloewTitle, workManLogo2, workManLeftTag, workManSecondTitle, workManFast, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhiteTypo, infiniteChallengeBlackTypo, infiniteChallengeBlueTypo, infiniteChallengeOrangeTypo, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogLookbookTypo, vlogBrushTypo, vlogSummerTypo, vlogDailyTypo, vlogLogoTagTypo, vlogCookingTypo, vlogHashTagTypo, vlogBMDohyunTypo, vlogMyeongjoTypo, vlogGRWMTypo, vlogNanumSquareTypo, ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo, tikiTypo, knockOutTypo, matterTypo, successTypo, whyrealTypo, ruleTypo, vlogMakingFilmTypo,vlogVisitingCompanyTypo, vlogBarunGothicTypo, vlogMacaronTypo, vlogMomTypo, vlogHolidayTypo, dinggoSmileTypo, dinggoBigEdit, dinggoBingoTypo, dinggoPotatoTypo, dinggoGoodTalk, dinggoStarWarsTypo, dinggoBehindTypo, dinggoWinkTypo, dinggoMurder, digitalTypo];
+    
+
+    
+    
+    
+    NSArray *typos = @[normal, trapezoidTypo, seoYuGiLogoTypo, seoYuGiGagwanTypo, vlogWebWrite, vlogDesiner, vlogCompany, vlogNewCampus, seoYuGiCloudLogoTypo, seoYuGiInFrontOfGirlTypo, seoYuGiCowRiseTypo, vlogDog, vlogModel, vlogSummer, vlogOriginal, vlogTrip, vlogInItaly, vlogItaly, vlogLongDance, vlogShortDance, vlogStudy, vlog365, vlogFreshmanTypo, vlogStudentTypo, seoYuGiHungryTypo, seoYuGiDawnWatchingTypo, runningManLogoTypo, workManLogo, workManHandWrite,  workManTalkWrite, workManRedTitle, workManRightTag, workManYoutube, workmanYelloewTitle, workManLogo2, workManLeftTag, workManSecondTitle, workManFast, infiniteChallengeLogo, infiniteChallengeEscapeRoom, infiniteChallengeWhiteTypo, infiniteChallengeBlackTypo, infiniteChallengeBlueTypo, infiniteChallengeOrangeTypo, infiniteChallengeLegeno, infiniteChallengeYellowSpeechBoxWhite, infiniteChallengeYellowSpeechBoxYellow, infiniteChallengeTopOfYellow, infiniteChallengeFiveMinutes, infiniteChallengeHashTag, infiniteChallengeSkyBlueBox, infiniteChallengeCloudBox, vlogLookbookTypo, vlogBrushTypo, vlogSummerTypo, vlogDailyTypo, vlogLogoTagTypo, vlogCookingTypo, vlogHashTagTypo, vlogBMDohyunTypo, vlogMyeongjoTypo, vlogGRWMTypo, vlogNanumSquareTypo, ddamTypo, redShoutingTypo, yellowGradientTypo, workingManNameTypo, blueMoonTypo, whatTypo, atmosphereTypo, whiteYellowGradientTypo, tikiTypo, knockOutTypo, matterTypo, successTypo, whyrealTypo, ruleTypo, vlogMakingFilmTypo, vlogVisitingCompanyTypo, vlogBarunGothicTypo, vlogMacaronTypo, vlogMomTypo, vlogHolidayTypo, dinggoSmileTypo, dinggoBigEdit, dinggoBingoTypo, dinggoPotatoTypo, dinggoGoodTalk, dinggoStarWarsTypo, dinggoBehindTypo, dinggoWinkTypo, dinggoMurder, digitalTypo, poemForSmallTypo, btsTypo, legendSongTypo, playlistTypo, ninetyCenturyTypo, lalalandTypo, retroTypo, appleSDTypo];
     
     return @[typos];
 }
@@ -292,12 +307,23 @@
     TearsSticker *tearsSticker =[TearsSticker tearsSticker];
     TriangleSticker1 *triangleSticker1 =[TriangleSticker1 triangleSticker1];
     LongRectangleSticker *longRectangleSticker = [LongRectangleSticker longRectangleSticker];
-   
     
-    
+    //music
+    NextSticker *nextSticker = [NextSticker nextSticker];
+    TwoMusicNoteSticker *twoMusicNoteSticker = [TwoMusicNoteSticker twoMusicNoteSticker];
+    RectangleShadowSticker *rectangleShadowSticker = [RectangleShadowSticker rectangleShadowSticker];
+    VolumeSticker *volumeSticker = [VolumeSticker volumeSticker];
+    MintBoxSticker *mintBoxSticker = [MintBoxSticker mintBoxSticker];
+    RectangleTransparentSticker *rectangleTransparentSticker = [RectangleTransparentSticker rectangleTransparentSticker];
+    RectangleFrameSticker *rectangleFrameSticker = [RectangleFrameSticker rectangleFrameSticker];
+    RetroPlaySticker *retroPlaySticker = [RetroPlaySticker retroPlaySticker];
+
+
     
 
-    NSArray *basicStickers = @[longRectangleSticker, circleSticker1, arrowSticker1, xSticker1, runningManExcSticker, runningManQuSticker, sinSeoYuGiExc1Sticker, sinSeoYuGiExc2Sticker, sinSeoYuGiQu1Sticker, sinSeoYuGiQu2Sticker, startleSticker1, angrySticker1, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker, pigtailSticker, heartSticker1, heartSticker2, heartSticker3, heartSticker4, heartSticker5, heartSticker6, heartSticker7, heartSticker8, heartSticker9, heartSticker10, vlogMacaronSticker, vlogTapeSticker, arrowSticker2, arrowSticker3, arrowSticker4, arrowSticker5, arrowSticker6, arrowSticker7, blinkSticker1, blinkSticker3, bulbSticker, burstSticker1, buttonPauseSticker, buttonPlaySticker, buttonStopSticker, circleSticker2, cloudSticker1, cloudSticker2, dollarSticker, effectSticker1, effectSticker2, effectSticker3, gameSticker, glitterSticker, goodSticker1, koreanFlagSticker, lockSticker, medalBronzeSticker, medalSilverSticker, medalGoldSticker, noteSticker1, noteSticker2, noteSticker3, nuclearSticker, rspRockSticker, rspScissorsSticker, rspPaperSticker, snowflakeSticker1, snowflakeSticker2, snowmanSticker, speechBubbleSticker1, speechBubbleSticker2, speechBubbleSticker3, speechBubbleSticker4 ,stainSticker1, stainSticker2, starSticker1, starSticker2, starSticker3, starSticker4, tagSticker, targetSticker, tearsSticker, triangleSticker1];
+    
+
+    NSArray *basicStickers = @[longRectangleSticker, circleSticker1, arrowSticker1, xSticker1, runningManExcSticker, runningManQuSticker, sinSeoYuGiExc1Sticker, sinSeoYuGiExc2Sticker, sinSeoYuGiQu1Sticker, sinSeoYuGiQu2Sticker, startleSticker1, angrySticker1, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker, pigtailSticker, heartSticker1, heartSticker2, heartSticker3, heartSticker4, heartSticker5, heartSticker6, heartSticker7, heartSticker8, heartSticker9, heartSticker10, vlogMacaronSticker, vlogTapeSticker, arrowSticker2, arrowSticker3, arrowSticker4, arrowSticker5, arrowSticker6, arrowSticker7, blinkSticker1, blinkSticker3, bulbSticker, burstSticker1, buttonPauseSticker, buttonPlaySticker, buttonStopSticker, circleSticker2, cloudSticker1, cloudSticker2, dollarSticker, effectSticker1, effectSticker2, effectSticker3, gameSticker, glitterSticker, goodSticker1, koreanFlagSticker, lockSticker, medalBronzeSticker, medalSilverSticker, medalGoldSticker, noteSticker1, noteSticker2, noteSticker3, nuclearSticker, rspRockSticker, rspScissorsSticker, rspPaperSticker, snowflakeSticker1, snowflakeSticker2, snowmanSticker, speechBubbleSticker1, speechBubbleSticker2, speechBubbleSticker3, speechBubbleSticker4 ,stainSticker1, stainSticker2, starSticker1, starSticker2, starSticker3, starSticker4, tagSticker, targetSticker, tearsSticker, triangleSticker1, nextSticker, twoMusicNoteSticker, rectangleShadowSticker, volumeSticker, mintBoxSticker, rectangleTransparentSticker, rectangleFrameSticker, retroPlaySticker];
     
     return @[basicStickers];
 }
@@ -343,8 +369,16 @@
     VisitingCompanyVlogMainFrame *visitingCompanyVlogMainFrame = [VisitingCompanyVlogMainFrame visitingCompanyVlogMainFrame];
     WebDesignerVlogMainFrame *webDesignerVlogMainFrame = [WebDesignerVlogMainFrame webDesignerVlogMainFrame];
  
+    //music
+    BTSMusicMainFrame *btsMusicMainFrame = [BTSMusicMainFrame btsMusicMainFrame];
+    PlaylistMainFrame *playlistMainFrame = [PlaylistMainFrame playlistMainFrame];
+    NinetyCenturyMusicMainFrame *ninetyCenturyMusicMainFrame = [NinetyCenturyMusicMainFrame ninetyCenturyMusicMainFrame];
+    RetroMusicMainFrame *retroMusicMainFrame = [RetroMusicMainFrame retroMusicMainFrame];
+
     
-    NSArray *basicMainFrames = @[workMan1MainFrame, workMan2MainFrame, workMan3MainFrame, runningMan1MainFrame, runningMan2MainFrame, runningMan3MainFrame, infiniteChallenge1MainFrame, infiniteChallenge2MainFrame, sinSeoYuGi1MainFrame, sinSeoYuGi2MainFrame, babyVlogMainFrame, cookingVlogMainFrame, craftVlogMainFrame, danceVlogMainFrame, dogVlogMainFrame, freshManVlogMainFrame, italyTripVlogMainFrame, kidsVlogMainFrame, lookBookVlogMainFrame, macaronVlogMainFrame, sixToFourVlogMainFrame, studentVlogMainFrame, summerVlogMainFrame, teenVlogMainFrame, visitingCompanyVlogMainFrame, webDesignerVlogMainFrame];
+    
+    
+    NSArray *basicMainFrames = @[workMan1MainFrame, workMan2MainFrame, workMan3MainFrame, runningMan1MainFrame, runningMan2MainFrame, runningMan3MainFrame, infiniteChallenge1MainFrame, infiniteChallenge2MainFrame, sinSeoYuGi1MainFrame, sinSeoYuGi2MainFrame, babyVlogMainFrame, cookingVlogMainFrame, craftVlogMainFrame, danceVlogMainFrame, dogVlogMainFrame, freshManVlogMainFrame, italyTripVlogMainFrame, kidsVlogMainFrame, lookBookVlogMainFrame, macaronVlogMainFrame, sixToFourVlogMainFrame, studentVlogMainFrame, summerVlogMainFrame, teenVlogMainFrame, visitingCompanyVlogMainFrame, webDesignerVlogMainFrame, btsMusicMainFrame, playlistMainFrame, ninetyCenturyMusicMainFrame, retroMusicMainFrame];
     
     
     return @[basicMainFrames];

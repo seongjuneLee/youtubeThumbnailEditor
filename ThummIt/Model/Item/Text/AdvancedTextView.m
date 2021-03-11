@@ -257,6 +257,7 @@
     }
     
     [string addAttributes:@{NSObliquenessAttributeName:@(typo.obliqueValue)}range:range];
+    [string addAttribute:NSKernAttributeName value:@(typo.fontInterval) range:range];
     
     // 정렬
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -287,6 +288,8 @@
     }
     
         [string addAttributes:@{NSObliquenessAttributeName:@(bgTextAttribute.obliqueValue)}range:range];
+        [string addAttribute:NSKernAttributeName value:@(bgTextAttribute.fontInterval) range:range];
+
 
     // 그림자
     if (bgTextAttribute.shadowColor) {

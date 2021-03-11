@@ -116,4 +116,14 @@
 #import "VlogStudentTypo.h"
 #import "WorkManYoutube.h"
 
+//music
+#import "PoemForSmallTypo.h"
+#import "BTSTypo.h"
+#import "LegendSongTypo.h"
+#import "PlaylistTypo.h"
+#import "NinetyCenturyTypo.h"
+#import "LalalandTypo.h"
+#import "RetroTypo.h"
+#import "AppleSDTypo.h"
+
 #endif /* TypoHeader_h */

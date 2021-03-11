@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 폰트
 @property (strong, nonatomic) NSString* fontName;
 @property (nonatomic) float fontSize;
+@property (nonatomic) float fontInterval;
 
 
 // 색상

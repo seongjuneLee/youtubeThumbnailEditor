@@ -95,5 +95,14 @@
 #import "TearsSticker.h"
 #import "TriangleSticker1.h"
 
+//music
+#import "NextSticker.h"
+#import "TwoMusicNoteSticker.h"
+#import "RectangleShadowSticker.h"
+#import "VolumeSticker.h"
+#import "MintBoxSticker.h"
+#import "RectangleTransparentSticker.h"
+#import "RectangleFrameSticker.h"
+#import "RetroPlaySticker.h"
 
 #endif /* StickerHeader_h */

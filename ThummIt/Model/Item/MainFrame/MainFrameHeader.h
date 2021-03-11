@@ -39,4 +39,10 @@
 #import "VisitingCompanyVlogMainFrame.h"
 #import "WebDesignerVlogMainFrame.h"
 
+//music
+#import "BTSMusicMainFrame.h"
+#import "PlaylistMainFrame.h"
+#import "NinetyCenturyMusicMainFrame.h"
+#import "RetroMusicMainFrame.h"
+
 #endif /* MainFrameHeader_h */
