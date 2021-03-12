@@ -436,6 +436,7 @@
 		6EF5310225FA7DB8007E9B78 /* RetroStereoMusicTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5310125FA7DB8007E9B78 /* RetroStereoMusicTemplate.m */; };
 		6EF5310725FA7E6F007E9B78 /* RetroMusicMainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5310625FA7E6F007E9B78 /* RetroMusicMainFrame.m */; };
 		6EF5310F25FA9F59007E9B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF5310E25FA9F59007E9B78 /* Assets.xcassets */; };
+		6EF5311E25FB670F007E9B78 /* LalaLandPlaySticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5311D25FB670F007E9B78 /* LalaLandPlaySticker.m */; };
 		B11E0D4125C4EB510050D9F0 /* VlogBarunGothicTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */; };
 		B11E0D4F25C4EDBD0050D9F0 /* GrwmVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D4E25C4EDBD0050D9F0 /* GrwmVlogTemplate.m */; };
 		B11E0D5425C4F6070050D9F0 /* ClothesVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = B11E0D5325C4F6070050D9F0 /* ClothesVlogTemplate.m */; };
@@ -1329,6 +1330,8 @@
 		6EF5310525FA7E6F007E9B78 /* RetroMusicMainFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RetroMusicMainFrame.h; sourceTree = "<group>"; };
 		6EF5310625FA7E6F007E9B78 /* RetroMusicMainFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RetroMusicMainFrame.m; sourceTree = "<group>"; };
 		6EF5310E25FA9F59007E9B78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6EF5311C25FB670F007E9B78 /* LalaLandPlaySticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LalaLandPlaySticker.h; sourceTree = "<group>"; };
+		6EF5311D25FB670F007E9B78 /* LalaLandPlaySticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LalaLandPlaySticker.m; sourceTree = "<group>"; };
 		B11E0D3F25C4EB510050D9F0 /* VlogBarunGothicTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlogBarunGothicTypo.h; sourceTree = "<group>"; };
 		B11E0D4025C4EB510050D9F0 /* VlogBarunGothicTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlogBarunGothicTypo.m; sourceTree = "<group>"; };
 		B11E0D4D25C4EDBD0050D9F0 /* GrwmVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrwmVlogTemplate.h; sourceTree = "<group>"; };
@@ -3261,6 +3264,8 @@
 				6EF530E425FA6B43007E9B78 /* RectangleFrameSticker.m */,
 				6EF530FB25FA7D49007E9B78 /* RetroPlaySticker.h */,
 				6EF530FC25FA7D49007E9B78 /* RetroPlaySticker.m */,
+				6EF5311C25FB670F007E9B78 /* LalaLandPlaySticker.h */,
+				6EF5311D25FB670F007E9B78 /* LalaLandPlaySticker.m */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -4048,6 +4053,7 @@
 				6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */,
 				6EF0C7C925CBAA4C00BE7573 /* ArrowSticker6.m in Sources */,
 				6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */,
+				6EF5311E25FB670F007E9B78 /* LalaLandPlaySticker.m in Sources */,
 				6ED0AFE825E51C920027485F /* MacaronVlogMainFrame.m in Sources */,
 				6E1DBDFE25D8063F004C0416 /* ThreeFifthsRectangle.m in Sources */,
 				6E8F9B4925C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.m in Sources */,

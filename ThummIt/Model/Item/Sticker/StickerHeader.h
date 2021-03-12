@@ -104,5 +104,6 @@
 #import "RectangleTransparentSticker.h"
 #import "RectangleFrameSticker.h"
 #import "RetroPlaySticker.h"
+#import "LalaLandPlaySticker.h"
 
 #endif /* StickerHeader_h */

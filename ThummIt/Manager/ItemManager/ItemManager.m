@@ -195,7 +195,7 @@
     LalalandTypo *lalalandTypo = [LalalandTypo lalalandTypo];
     RetroTypo *retroTypo = [RetroTypo retroTypo];
     AppleSDTypo *appleSDTypo = [AppleSDTypo appleSDTypo];
-
+    
     
 
     
@@ -317,13 +317,15 @@
     RectangleTransparentSticker *rectangleTransparentSticker = [RectangleTransparentSticker rectangleTransparentSticker];
     RectangleFrameSticker *rectangleFrameSticker = [RectangleFrameSticker rectangleFrameSticker];
     RetroPlaySticker *retroPlaySticker = [RetroPlaySticker retroPlaySticker];
+    LalaLandPlaySticker *lalaLandPlaySticker = [LalaLandPlaySticker lalaLandPlaySticker];
 
+    
 
     
 
     
 
-    NSArray *basicStickers = @[longRectangleSticker, circleSticker1, arrowSticker1, xSticker1, runningManExcSticker, runningManQuSticker, sinSeoYuGiExc1Sticker, sinSeoYuGiExc2Sticker, sinSeoYuGiQu1Sticker, sinSeoYuGiQu2Sticker, startleSticker1, angrySticker1, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker, pigtailSticker, heartSticker1, heartSticker2, heartSticker3, heartSticker4, heartSticker5, heartSticker6, heartSticker7, heartSticker8, heartSticker9, heartSticker10, vlogMacaronSticker, vlogTapeSticker, arrowSticker2, arrowSticker3, arrowSticker4, arrowSticker5, arrowSticker6, arrowSticker7, blinkSticker1, blinkSticker3, bulbSticker, burstSticker1, buttonPauseSticker, buttonPlaySticker, buttonStopSticker, circleSticker2, cloudSticker1, cloudSticker2, dollarSticker, effectSticker1, effectSticker2, effectSticker3, gameSticker, glitterSticker, goodSticker1, koreanFlagSticker, lockSticker, medalBronzeSticker, medalSilverSticker, medalGoldSticker, noteSticker1, noteSticker2, noteSticker3, nuclearSticker, rspRockSticker, rspScissorsSticker, rspPaperSticker, snowflakeSticker1, snowflakeSticker2, snowmanSticker, speechBubbleSticker1, speechBubbleSticker2, speechBubbleSticker3, speechBubbleSticker4 ,stainSticker1, stainSticker2, starSticker1, starSticker2, starSticker3, starSticker4, tagSticker, targetSticker, tearsSticker, triangleSticker1, nextSticker, twoMusicNoteSticker, rectangleShadowSticker, volumeSticker, mintBoxSticker, rectangleTransparentSticker, rectangleFrameSticker, retroPlaySticker];
+    NSArray *basicStickers = @[longRectangleSticker, circleSticker1, arrowSticker1, xSticker1, runningManExcSticker, runningManQuSticker, sinSeoYuGiExc1Sticker, sinSeoYuGiExc2Sticker, sinSeoYuGiQu1Sticker, sinSeoYuGiQu2Sticker, startleSticker1, angrySticker1, workManStartleSticker, infiniteChallengeSkullSticker, vlogVideoSticker, pigtailSticker, heartSticker1, heartSticker2, heartSticker3, heartSticker4, heartSticker5, heartSticker6, heartSticker7, heartSticker8, heartSticker9, heartSticker10, vlogMacaronSticker, vlogTapeSticker, arrowSticker2, arrowSticker3, arrowSticker4, arrowSticker5, arrowSticker6, arrowSticker7, blinkSticker1, blinkSticker3, bulbSticker, burstSticker1, buttonPauseSticker, buttonPlaySticker, buttonStopSticker, circleSticker2, cloudSticker1, cloudSticker2, dollarSticker, effectSticker1, effectSticker2, effectSticker3, gameSticker, glitterSticker, goodSticker1, koreanFlagSticker, lockSticker, medalBronzeSticker, medalSilverSticker, medalGoldSticker, noteSticker1, noteSticker2, noteSticker3, nuclearSticker, rspRockSticker, rspScissorsSticker, rspPaperSticker, snowflakeSticker1, snowflakeSticker2, snowmanSticker, speechBubbleSticker1, speechBubbleSticker2, speechBubbleSticker3, speechBubbleSticker4 ,stainSticker1, stainSticker2, starSticker1, starSticker2, starSticker3, starSticker4, tagSticker, targetSticker, tearsSticker, triangleSticker1, nextSticker, twoMusicNoteSticker, rectangleShadowSticker, volumeSticker, mintBoxSticker, rectangleTransparentSticker, rectangleFrameSticker, retroPlaySticker, lalaLandPlaySticker];
     
     return @[basicStickers];
 }
