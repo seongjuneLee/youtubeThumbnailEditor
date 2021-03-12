@@ -75,20 +75,20 @@
 -(void)setUpStickers{
     
     RectangleTransparentSticker *rectangleTransparentSticker = [RectangleTransparentSticker rectangleTransparentSticker];
-    rectangleTransparentSticker.scale = 0.08;
-    rectangleTransparentSticker.rotationDegree = degreesToRadians(-7);
+    rectangleTransparentSticker.scale = 0.5;
+    rectangleTransparentSticker.rotationDegree = degreesToRadians(0);
     rectangleTransparentSticker.indexInLayer = @"2";
     rectangleTransparentSticker.isTemplateItem = true;
-    rectangleTransparentSticker.relativeCenter = CGPointMake(0.82, 0.31);
+    rectangleTransparentSticker.relativeCenter = CGPointMake(0.5, 0.5);
     
     [self.stickers addObject:rectangleTransparentSticker];
     
     RectangleFrameSticker *rectangleFrameSticker = [RectangleFrameSticker rectangleFrameSticker];
-    rectangleFrameSticker.scale = 0.08;
-    rectangleFrameSticker.rotationDegree = degreesToRadians(-7);
+    rectangleFrameSticker.scale = 0.7;
+    rectangleFrameSticker.rotationDegree = degreesToRadians(0);
     rectangleFrameSticker.indexInLayer = @"3";
     rectangleFrameSticker.isTemplateItem = true;
-    rectangleFrameSticker.relativeCenter = CGPointMake(0.82, 0.31);
+    rectangleFrameSticker.relativeCenter = CGPointMake(0.5, 0.5);
     
     [self.stickers addObject:rectangleFrameSticker];
     

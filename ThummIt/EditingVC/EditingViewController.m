@@ -199,6 +199,20 @@
         }
         item.isTemplateItem = false;
 
+        
+    }
+
+    for (Item *item in project.items) {
+        if([item isKindOfClass:Text.class]){
+            Text *text = (Text *)item;
+            if(text.typo.textColorPatternImageName){
+                
+                UIImage *patternImage = [UIImage imageNamed:text.typo.textColorPatternImageName];
+                UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(text.baseView.frameWidth, text.textView.frameHeight)];
+                text.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
+                [text applyTypo:text.typo];
+            }
+        }
     }
     
     // 인덱스 맞춰주기
@@ -210,6 +224,7 @@
                 [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
             }
         }
+        
     }
     
     [SaveManager.sharedInstance save];

@@ -72,6 +72,7 @@
     musicText.textView.text = musicText.text;
     musicText.typo = musicTypo;
     [self.texts addObject:musicText];
+
     
     //copyright
     Text *appleSDText = [[Text alloc] init];

@@ -163,7 +163,7 @@
     
     // 1. 타이포그래피 모델대로 텍스트뷰에 적용
     // 1-1. attributedText 세팅
-    NSMutableAttributedString* attributedString = [self makeAttributedStringWithTypo:typo range:range];
+    NSMutableAttributedString *attributedString = [self makeAttributedStringWithTypo:typo range:range];
     
     if ([attributedString.string isEqualToString:RANDOM_TEXT]) { // typingAttributes 뽑아내고 난 뒤에, 랜덤 텍스트 초기화하기
         attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
