@@ -14,9 +14,17 @@
     if (self) {
         self.name = NSLocalizedString(@"BTS",nil);
         self.fontName = @"HAN-YONG-UN";
-        self.textColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
+        self.textColor = [UIColor whiteColor];
         self.canChangeColor = true;
-        self.obliqueValue = 0.0;
+        self.obliqueValue = 0.25;
+        
+        BGTextAttribute *shadow = [[BGTextAttribute alloc] init];
+        shadow.shadowOffset = CGPointMake(3, 3);
+        shadow.shadowColor = [UIColor colorWithRed:70/255.0 green:70/255.0 blue:70/255.0 alpha:1.0];
+        shadow.obliqueValue = 0.25;
+        
+        self.bgTextAttributes = @[shadow];
+
     }
     return self;
 }

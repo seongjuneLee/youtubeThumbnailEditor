@@ -42,4 +42,8 @@
 #import "InfiniteTemplateRectangle1.h"
 #import "InfiniteTemplateRectangle2.h"
 #import "StudyTemplateRectangle.h"
+
+//music
+#import "AlbumRectangle.h"
+
 #endif /* BorderHeader_h */

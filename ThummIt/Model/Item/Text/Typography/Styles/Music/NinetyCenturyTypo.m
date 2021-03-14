@@ -15,7 +15,7 @@
     if (self) {
         self.name = NSLocalizedString(@"1990s PLAYLIST",nil);
         self.fontName = @"BlackHanSans-Black";
-        self.textColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
+        self.textColor = UIColor.blackColor;
         self.canChangeColor = true;
         self.obliqueValue = 0.0;
     }

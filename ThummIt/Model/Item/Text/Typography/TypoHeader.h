@@ -122,8 +122,10 @@
 #import "LegendSongTypo.h"
 #import "PlaylistTypo.h"
 #import "NinetyCenturyTypo.h"
+#import "ThatSongTypo.h"
 #import "LalalandTypo.h"
 #import "RetroTypo.h"
 #import "AppleSDTypo.h"
+#import "YourPlaylistTypo.h"
 
 #endif /* TypoHeader_h */

@@ -42,11 +42,13 @@
 
 -(void)setUpPhotoFrame{
     
-//    FullRectangle *fullRectPhotoFrame = [FullRectangle fullRectangle];
-//    fullRectPhotoFrame.isTemplateItem = true;
-//    fullRectPhotoFrame.isBasePhotoFrame = true;
-//    fullRectPhotoFrame.relativeCenter = CGPointMake(0.5, 0.5);
-//    [self.photoFrames addObject:fullRectPhotoFrame];
+    AlbumRectangle *albumRectPhotoFrame = [AlbumRectangle albumRectangle];
+    albumRectPhotoFrame.isTemplateItem = true;
+    albumRectPhotoFrame.isBasePhotoFrame = NO;
+    albumRectPhotoFrame.scale = 0.285;
+    albumRectPhotoFrame.indexInLayer = @"7";
+    albumRectPhotoFrame.relativeCenter = CGPointMake(0.5, 0.62);
+    [self.photoFrames addObject:albumRectPhotoFrame];
     
 }
 
@@ -55,8 +57,8 @@
     //작은 것들을 위한 시
     Text *poemForSmallText = [[Text alloc] init];
     PoemForSmallTypo *poemForSmallTypo = [PoemForSmallTypo poemForSmallTypo];
-    poemForSmallText.scale = 0.09;
-    poemForSmallText.relativeCenter = CGPointMake(0.3, 0.77);
+    poemForSmallText.scale = 0.44;
+    poemForSmallText.relativeCenter = CGPointMake(0.5, 0.16);
     poemForSmallText.isTemplateItem = true;
     poemForSmallText.indexInLayer = @"0";
     poemForSmallText.text = @"작은 것들을 위한 시";
@@ -67,8 +69,8 @@
     //BTS
     Text *btsText = [[Text alloc] init];
     BTSTypo *btsTypo = [BTSTypo btsTypo];
-    btsText.scale = 0.48;
-    btsText.relativeCenter = CGPointMake(0.77, 0.65);
+    btsText.scale = 0.07;
+    btsText.relativeCenter = CGPointMake(0.5, 0.3);
     btsText.isTemplateItem = true;
     btsText.indexInLayer = @"1";
     btsText.text = @"BTS";
@@ -79,8 +81,8 @@
     //2020년 한해를..
     Text *legendText = [[Text alloc] init];
     LegendSongTypo *legendSongTypo = [LegendSongTypo legendSongTypo];
-    legendText.scale = 0.28;
-    legendText.relativeCenter = CGPointMake(0.73, 0.37);
+    legendText.scale = 0.45;
+    legendText.relativeCenter = CGPointMake(0.5, 0.93);
     legendText.isTemplateItem = true;
     legendText.indexInLayer = @"2";
     legendText.text = @"2020년 한해동안 많은 사랑을 받았던 명곡";
@@ -92,30 +94,39 @@
 
 -(void)setUpStickers{
     
-    NextSticker *nextSticker = [NextSticker nextSticker];
-    nextSticker.scale = 0.08;
-    nextSticker.rotationDegree = degreesToRadians(-7);
-    nextSticker.indexInLayer = @"9";
-    nextSticker.isTemplateItem = true;
-    nextSticker.relativeCenter = CGPointMake(0.82, 0.31);
+    NextSticker *nextLeftSticker = [NextSticker nextSticker];
+    nextLeftSticker.scale = 0.047;
+    nextLeftSticker.rotationDegree = degreesToRadians(0);
+    nextLeftSticker.indexInLayer = @"3";
+    nextLeftSticker.isTemplateItem = true;
+    nextLeftSticker.relativeCenter = CGPointMake(0.05, 0.5);
     
-    [self.stickers addObject:nextSticker];
+    [self.stickers addObject:nextLeftSticker];
     
+    NextSticker *nextRightSticker = [NextSticker nextSticker];
+    nextRightSticker.scale = 0.047;
+    nextRightSticker.rotationDegree = degreesToRadians(180);
+    nextRightSticker.indexInLayer = @"4";
+    nextRightSticker.isTemplateItem = true;
+    nextRightSticker.relativeCenter = CGPointMake(0.95, 0.5);
+    
+    [self.stickers addObject:nextRightSticker];
+
     TwoMusicNoteSticker *twoMusicNoteSticker = [TwoMusicNoteSticker twoMusicNoteSticker];
-    twoMusicNoteSticker.scale = 0.08;
-    twoMusicNoteSticker.rotationDegree = degreesToRadians(-7);
-    twoMusicNoteSticker.indexInLayer = @"9";
+    twoMusicNoteSticker.scale = 0.04;
+    twoMusicNoteSticker.rotationDegree = degreesToRadians(0);
+    twoMusicNoteSticker.indexInLayer = @"5";
     twoMusicNoteSticker.isTemplateItem = true;
-    twoMusicNoteSticker.relativeCenter = CGPointMake(0.82, 0.31);
+    twoMusicNoteSticker.relativeCenter = CGPointMake(0.04, 0.93);
     
     [self.stickers addObject:twoMusicNoteSticker];
 
     RectangleShadowSticker *rectangleShadowSticker = [RectangleShadowSticker rectangleShadowSticker];
-    rectangleShadowSticker.scale = 0.08;
-    rectangleShadowSticker.rotationDegree = degreesToRadians(-7);
-    rectangleShadowSticker.indexInLayer = @"9";
+    rectangleShadowSticker.scale = 0.39;
+    rectangleShadowSticker.rotationDegree = degreesToRadians(0);
+    rectangleShadowSticker.indexInLayer = @"6";
     rectangleShadowSticker.isTemplateItem = true;
-    rectangleShadowSticker.relativeCenter = CGPointMake(0.82, 0.31);
+    rectangleShadowSticker.relativeCenter = CGPointMake(0.445, 0.7745);
     
     [self.stickers addObject:rectangleShadowSticker];
 

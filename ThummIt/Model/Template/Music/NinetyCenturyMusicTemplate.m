@@ -54,14 +54,43 @@
     //1990s PLAYLIST
     Text *ninetyCenturyText = [[Text alloc] init];
     NinetyCenturyTypo *ninetyCenturyTypo = [NinetyCenturyTypo ninetyCenturyTypo];
-    ninetyCenturyText.scale = 0.09;
-    ninetyCenturyText.relativeCenter = CGPointMake(0.3, 0.77);
+    ninetyCenturyTypo.textColor = UIColor.blackColor;
+    ninetyCenturyText.scale = 0.235;
+    ninetyCenturyText.relativeCenter = CGPointMake(0.18, 0.628);
     ninetyCenturyText.isTemplateItem = true;
     ninetyCenturyText.indexInLayer = @"0";
-    ninetyCenturyText.text = @"PLAYLIST";
+    ninetyCenturyText.text = @"1990s PLAYLIST";
     ninetyCenturyText.textView.text = ninetyCenturyText.text;
     ninetyCenturyText.typo = ninetyCenturyTypo;
     [self.texts addObject:ninetyCenturyText];
+    
+    //나만 몰랐던
+    Text *didntKnowText = [[Text alloc] init];
+    ThatSongTypo *didntKnowTypo = [ThatSongTypo thatSongTypo];
+    didntKnowTypo.textColor = UIColor.whiteColor;
+    didntKnowText.scale = 0.33;
+    didntKnowText.relativeCenter = CGPointMake(0.206, 0.74);
+    didntKnowText.isTemplateItem = true;
+    didntKnowText.indexInLayer = @"1";
+    didntKnowText.text = @"나만 몰랐던";
+    didntKnowText.textView.text = didntKnowText.text;
+    didntKnowText.typo = didntKnowTypo;
+    [self.texts addObject:didntKnowText];
+
+    
+    //그시절 그 노래
+    Text *thatSongText = [[Text alloc] init];
+    ThatSongTypo *thatSongTypo = [ThatSongTypo thatSongTypo];
+    thatSongTypo.textColor = [UIColor colorWithRed:0/255.0 green:220/255.0 blue:184/255.0 alpha:1];;
+    thatSongText.scale = 0.41;
+    thatSongText.relativeCenter = CGPointMake(0.246, 0.87);
+    thatSongText.isTemplateItem = true;
+    thatSongText.indexInLayer = @"2";
+    thatSongText.text = @"그시절 그 노래";
+    thatSongText.textView.text = thatSongText.text;
+    thatSongText.typo = thatSongTypo;
+    [self.texts addObject:thatSongText];
+
     
     
 }
@@ -69,11 +98,11 @@
 -(void)setUpStickers{
     
     MintBoxSticker *mintBoxSticker = [MintBoxSticker mintBoxSticker];
-    mintBoxSticker.scale = 0.08;
-    mintBoxSticker.rotationDegree = degreesToRadians(-7);
-    mintBoxSticker.indexInLayer = @"1";
+    mintBoxSticker.scale = 0.263;
+    mintBoxSticker.rotationDegree = degreesToRadians(0);
+    mintBoxSticker.indexInLayer = @"3";
     mintBoxSticker.isTemplateItem = true;
-    mintBoxSticker.relativeCenter = CGPointMake(0.82, 0.31);
+    mintBoxSticker.relativeCenter = CGPointMake(0.18, 0.63);
     
     [self.stickers addObject:mintBoxSticker];
     

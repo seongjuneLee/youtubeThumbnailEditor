@@ -59,7 +59,7 @@
     //ost
     Text *ostText = [[Text alloc] init];
     LalalandTypo *ostTypo = [LalalandTypo lalalandTypo];
-    ostText.scale = 0.197;
+    ostText.scale = 0.193;
     ostText.relativeCenter = CGPointMake(0.5, 0.615);
     ostText.isTemplateItem = true;
     ostText.indexInLayer = @"1";
@@ -71,9 +71,7 @@
     
     //your PLAYLIST
     Text *yourPlaylistText = [[Text alloc] init];
-    LalalandTypo *yourPlaylistTypo = [LalalandTypo lalalandTypo];
-    yourPlaylistTypo.textColor = [UIColor colorWithRed:(169/255.0) green:(96/255.0) blue:(220/255.0) alpha:1];
-    yourPlaylistTypo.fontInterval = 1;
+    YourPlaylistTypo *yourPlaylistTypo = [YourPlaylistTypo yourPlaylistTypo];
     yourPlaylistText.scale = 0.245;
     yourPlaylistText.relativeCenter = CGPointMake(0.163, 0.93);
     yourPlaylistText.isTemplateItem = true;
@@ -88,7 +86,7 @@
 -(void)setUpStickers{
     
     RectangleTransparentSticker *rectangleTransparentSticker = [RectangleTransparentSticker rectangleTransparentSticker];
-    rectangleTransparentSticker.scale = 0.47;
+    rectangleTransparentSticker.scale = 0.45;
     rectangleTransparentSticker.rotationDegree = degreesToRadians(0);
     rectangleTransparentSticker.indexInLayer = @"3";
     rectangleTransparentSticker.isTemplateItem = true;
@@ -97,7 +95,7 @@
     [self.stickers addObject:rectangleTransparentSticker];
     
     RectangleFrameSticker *rectangleFrameSticker = [RectangleFrameSticker rectangleFrameSticker];
-    rectangleFrameSticker.scale = 0.63;
+    rectangleFrameSticker.scale = 0.61;
     rectangleFrameSticker.rotationDegree = degreesToRadians(0);
     rectangleFrameSticker.indexInLayer = @"4";
     rectangleFrameSticker.isTemplateItem = true;
@@ -106,7 +104,7 @@
     [self.stickers addObject:rectangleFrameSticker];
     
     LalaLandPlaySticker *lalaLandPlaySticker = [LalaLandPlaySticker lalaLandPlaySticker];
-    lalaLandPlaySticker.scale = 0.03;
+    lalaLandPlaySticker.scale = 0.027;
     lalaLandPlaySticker.rotationDegree = degreesToRadians(0);
     lalaLandPlaySticker.indexInLayer = @"5";
     lalaLandPlaySticker.isTemplateItem = true;

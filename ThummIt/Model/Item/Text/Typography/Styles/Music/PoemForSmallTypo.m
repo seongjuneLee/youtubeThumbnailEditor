@@ -12,11 +12,17 @@
 -(id)init{
     self = [super init];
     if (self) {
-        self.name = NSLocalizedString(@"작은 것들을 위한 시",nil);
+        self.name = NSLocalizedString(@"작은 것",nil);
         self.fontName = @"YUN-BONG-GIL";
-        self.textColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];
+        self.textColor = [UIColor whiteColor];
         self.canChangeColor = true;
-        self.obliqueValue = 0.0;
+
+        BGTextAttribute *shadow = [[BGTextAttribute alloc] init];
+        shadow.shadowOffset = CGPointMake(2, 2);
+        shadow.shadowColor = [UIColor colorWithRed:30/255.0 green:30/255.0 blue:30/255.0 alpha:1.0];
+        
+        self.bgTextAttributes = @[shadow];
+
     }
     return self;
 }

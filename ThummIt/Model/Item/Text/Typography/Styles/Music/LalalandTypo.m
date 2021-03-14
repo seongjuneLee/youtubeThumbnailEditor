@@ -12,19 +12,16 @@
 -(id)init{
     self = [super init];
     if (self) {
-        self.name = NSLocalizedString(@"라라랜드\nOST",nil);
+        self.name = NSLocalizedString(@"라라랜드",nil);
         self.fontName = @"S-CoreDream-7ExtraBold";
         self.textColor = [UIColor whiteColor];
-        self.canChangeColor = true;
         self.obliqueValue = 0.2;
         self.fontSize = 40;
-//        self.fontInterval = 2;
         
         BGTextAttribute *shadow = [[BGTextAttribute alloc] init];
         shadow.shadowOffset = CGPointMake(0, 1.5);
         shadow.shadowColor = [UIColor blackColor];
         shadow.obliqueValue = 0.2;
-//        shadow.fontInterval = 2;
         
         self.bgTextAttributes = @[shadow];
     }
