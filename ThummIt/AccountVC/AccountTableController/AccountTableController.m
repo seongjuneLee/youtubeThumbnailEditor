@@ -8,9 +8,9 @@
 #import "AccountTableController.h"
 #import "AccountTableViewCell.h"
 #import "AccountViewController.h"
-#import "CustomerFeedbackViewController.h"
 #import "PrivacyPolicyViewController.h"
 #import "MainTabBarViewController.h"
+#import "ThummIt-Swift.h"
 @import Parse;
 
 @implementation AccountTableController
@@ -73,8 +73,8 @@
     if(indexPath.row == 0){
         
         UIStoryboard *main = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
-        CustomerFeedbackViewController *CustomerFeedbackVC = (CustomerFeedbackViewController *)[main instantiateViewControllerWithIdentifier:@"CustomerFeedbackViewController"];
-        [self.accountVC.navigationController pushViewController:CustomerFeedbackVC animated:true];
+        CustomerCenterViewController *customerCenterVC = (CustomerCenterViewController *)[main instantiateViewControllerWithIdentifier:@"CustomerCenterViewController"];
+        [self.accountVC.navigationController pushViewController:customerCenterVC animated:true];
 
     }else if (indexPath.row == 1){
         UIViewController *webVC = [[UIViewController alloc] init];

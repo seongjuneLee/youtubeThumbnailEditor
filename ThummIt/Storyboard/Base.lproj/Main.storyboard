@@ -218,7 +218,6 @@
                                 <state key="normal" image="leftBlack"/>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="kSG-k4-bVo" eventType="touchUpInside" id="1O8-Tb-BY1"/>
-                                    <action selector="closeButtonTapped:" destination="Gow-D6-lwO" eventType="touchUpInside" id="ZTS-S1-ye8"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2j-7x-0Vx">
@@ -436,10 +435,10 @@ You may submit a request to exercise your right to information, access or deleti
             </objects>
             <point key="canvasLocation" x="1900" y="1126"/>
         </scene>
-        <!--Customer Feedback View Controller-->
+        <!--Customer Center View Controller-->
         <scene sceneID="mgh-km-0ua">
             <objects>
-                <viewController storyboardIdentifier="CustomerFeedbackViewController" id="Gow-D6-lwO" customClass="CustomerFeedbackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomerCenterViewController" id="Gow-D6-lwO" customClass="CustomerCenterViewController" customModule="ThummIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vhh-9m-7FX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,75 +451,27 @@ You may submit a request to exercise your right to information, access or deleti
                                 </constraints>
                                 <state key="normal" image="leftBlack"/>
                                 <connections>
-                                    <action selector="closeButtonTapped:" destination="Gow-D6-lwO" eventType="touchUpInside" id="PUW-5L-Qno"/>
+                                    <action selector="dismissButtonTapped:" destination="Gow-D6-lwO" eventType="touchUpInside" id="q9Q-u0-LJr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please explain your problem or request." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXB-fr-iJj">
-                                <rect key="frame" x="30" y="114" width="333" height="24"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWd-ma-LZP">
-                                <rect key="frame" x="30" y="158" width="354" height="224"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJK-Jq-oMg">
-                                <rect key="frame" x="30" y="422" width="354" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPi-hb-YB3">
-                                        <rect key="frame" x="147" y="13" width="60" height="24"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkE-ti-GaK">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                        <state key="normal">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="submitButtonTapped:" destination="Gow-D6-lwO" eventType="touchUpInside" id="GzK-xS-zXN"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5Wm-pD-SRk"/>
-                                    <constraint firstItem="qkE-ti-GaK" firstAttribute="centerX" secondItem="LJK-Jq-oMg" secondAttribute="centerX" id="Nx8-9o-wrE"/>
-                                    <constraint firstItem="BPi-hb-YB3" firstAttribute="centerY" secondItem="LJK-Jq-oMg" secondAttribute="centerY" id="PXO-tV-ATV"/>
-                                    <constraint firstItem="qkE-ti-GaK" firstAttribute="height" secondItem="LJK-Jq-oMg" secondAttribute="height" id="SPv-fB-ZaZ"/>
-                                    <constraint firstItem="BPi-hb-YB3" firstAttribute="centerX" secondItem="LJK-Jq-oMg" secondAttribute="centerX" id="Uih-m5-xub"/>
-                                    <constraint firstItem="qkE-ti-GaK" firstAttribute="width" secondItem="LJK-Jq-oMg" secondAttribute="width" id="gxL-GC-fOV"/>
-                                    <constraint firstItem="qkE-ti-GaK" firstAttribute="centerY" secondItem="LJK-Jq-oMg" secondAttribute="centerY" id="yTj-ng-yaf"/>
-                                </constraints>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg6-qz-2hC">
+                                <rect key="frame" x="20" y="121" width="219" height="35"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                <state key="normal" title="Inquire with kakao channel"/>
+                                <connections>
+                                    <action selector="inquireButtonTapped:" destination="Gow-D6-lwO" eventType="touchUpInside" id="wIR-pW-1dm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F8F-7M-Y3L"/>
                         <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="F8F-7M-Y3L" firstAttribute="trailing" secondItem="KWd-ma-LZP" secondAttribute="trailing" constant="30" id="BxA-hs-g2d"/>
-                            <constraint firstItem="KWd-ma-LZP" firstAttribute="height" secondItem="Vhh-9m-7FX" secondAttribute="height" multiplier="0.25" id="Epw-4C-oj6"/>
                             <constraint firstItem="U1c-2k-F8e" firstAttribute="leading" secondItem="F8F-7M-Y3L" secondAttribute="leading" constant="10" id="G3l-6x-FaJ"/>
-                            <constraint firstItem="LJK-Jq-oMg" firstAttribute="top" secondItem="KWd-ma-LZP" secondAttribute="bottom" constant="40" id="Mq4-hB-jbG"/>
-                            <constraint firstItem="RXB-fr-iJj" firstAttribute="top" secondItem="F8F-7M-Y3L" secondAttribute="top" constant="70" id="RfW-Mz-gVG"/>
-                            <constraint firstItem="KWd-ma-LZP" firstAttribute="top" secondItem="RXB-fr-iJj" secondAttribute="bottom" constant="20" id="XV2-ks-ysG"/>
+                            <constraint firstItem="wg6-qz-2hC" firstAttribute="leading" secondItem="F8F-7M-Y3L" secondAttribute="leading" constant="20" id="NZ1-fN-sO8"/>
                             <constraint firstItem="U1c-2k-F8e" firstAttribute="top" secondItem="F8F-7M-Y3L" secondAttribute="top" constant="22" id="eYU-ge-dEa"/>
-                            <constraint firstItem="RXB-fr-iJj" firstAttribute="leading" secondItem="F8F-7M-Y3L" secondAttribute="leading" constant="30" id="fex-Ex-sa5"/>
-                            <constraint firstItem="LJK-Jq-oMg" firstAttribute="leading" secondItem="F8F-7M-Y3L" secondAttribute="leading" constant="30" id="flc-TC-dhQ"/>
-                            <constraint firstItem="F8F-7M-Y3L" firstAttribute="trailing" secondItem="LJK-Jq-oMg" secondAttribute="trailing" constant="30" id="lWh-XY-qZ3"/>
-                            <constraint firstItem="KWd-ma-LZP" firstAttribute="leading" secondItem="F8F-7M-Y3L" secondAttribute="leading" constant="30" id="vum-s2-ZwE"/>
+                            <constraint firstItem="wg6-qz-2hC" firstAttribute="top" secondItem="U1c-2k-F8e" secondAttribute="bottom" constant="30" id="vl8-Eh-cUE"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="closeButton" destination="U1c-2k-F8e" id="xPF-JC-GOw"/>
-                        <outlet property="sendFeedbackTextView" destination="KWd-ma-LZP" id="QLY-cq-R2X"/>
-                        <outlet property="submitView" destination="LJK-Jq-oMg" id="8p5-wW-Tqm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="plT-Tg-dXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1328,9 +1279,6 @@ with the design you want.</string>
         <image name="kakaoLogo" width="100" height="100"/>
         <image name="leftBlack" width="208" height="208"/>
         <image name="makeNewPreview" width="640" height="429.33334350585938"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
