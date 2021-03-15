@@ -15,6 +15,7 @@ import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
 import FBSDKCoreKit
+import GoogleMobileAds
 
 @UIApplicationMain
 
@@ -27,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
-        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+
         MigratorJul.shared().migrateIfNeeded()
         
         Parse.initialize(with: ParseClientConfiguration(block: { ( configuration :  ParseMutableClientConfiguration) in
