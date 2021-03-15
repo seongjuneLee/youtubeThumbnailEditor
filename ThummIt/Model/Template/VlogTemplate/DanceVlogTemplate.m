@@ -78,7 +78,7 @@
     [self.texts addObject:dacevlogText];
     
     Text *vlogText = [[Text alloc] init];
-    VlogShortDance *vlog = [VlogShortDance vlogShortDance];
+    VlogLongDance *vlog = [VlogLongDance vlogLongDance];
     vlogText.scale = 0.17;
     vlogText.relativeCenter = CGPointMake(0.5, 0.59);
     vlogText.isTemplateItem = true;

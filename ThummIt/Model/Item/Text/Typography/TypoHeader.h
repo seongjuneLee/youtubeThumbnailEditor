@@ -46,7 +46,6 @@
 
 #import "SeoYuGiLogoTypo.h"
 #import "SeoYuGiGagwanTypo.h"
-#import "SeoYuGiCloudLogoTypo.h"
 #import "SeoYuGiCowRiseTypo.h"
 #import "SeoYuGiDawnWatchingTypo.h"
 #import "SeoYuGiInFrontOfGirlTypo.h"
@@ -92,7 +91,6 @@
 #import "VlogInItaly.h"
 #import "VlogItaly.h"
 #import "VlogLongDance.h"
-#import "VlogShortDance.h"
 #import "VlogStudy.h"
 #import "Vlog365.h"
 #import "VlogMakingFilmTypo.h"

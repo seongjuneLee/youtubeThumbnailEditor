@@ -51,7 +51,6 @@
 		6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BC8E25AD94D700BBA540 /* BGColorCollectionController.m */; };
 		6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BCB325AE245000BBA540 /* BGColorViewController+ControllerDelegate.m */; };
 		6E20BCC025AEF58600BBA540 /* UndoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20BCBF25AEF58600BBA540 /* UndoManager.m */; };
-		6E28451325C35870008B7A23 /* VlogShortDance.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2844DF25C3586B008B7A23 /* VlogShortDance.m */; };
 		6E28451425C35870008B7A23 /* VlogBrushTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2844E125C3586B008B7A23 /* VlogBrushTypo.m */; };
 		6E28451525C35870008B7A23 /* VlogGRWMTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2844E325C3586B008B7A23 /* VlogGRWMTypo.m */; };
 		6E28451625C35870008B7A23 /* VlogDailyTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2844E425C3586B008B7A23 /* VlogDailyTypo.m */; };
@@ -138,7 +137,6 @@
 		6E8F997025C0C522005C8071 /* 62570-_1_.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8F996F25C0C4F5005C8071 /* 62570-_1_.otf */; };
 		6E8F997725C0D006005C8071 /* SeoYuGiGagwanTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F997625C0D006005C8071 /* SeoYuGiGagwanTypo.m */; };
 		6E8F997B25C0D3CC005C8071 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8F997A25C0D3B4005C8071 /* NotoSansCJKkr-Bold.otf */; };
-		6E8F998725C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F998625C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m */; };
 		6E8F99A225C0E8C9005C8071 /* ELAND-Nice-M.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E8F99A125C0E8C9005C8071 /* ELAND-Nice-M.otf */; };
 		6E8F99BE25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99BD25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m */; };
 		6E8F99C525C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F99C425C0FC92005C8071 /* SeoYuGiDawnWatchingTypo.m */; };
@@ -163,6 +161,7 @@
 		6E9A850725F8B6F2004075E1 /* IAP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E9A850625F8B6F2004075E1 /* IAP.storyboard */; };
 		6E9A850B25F8C25A004075E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9A850A25F8C25A004075E1 /* StoreKit.framework */; };
 		6E9A857925FF4E5B004075E1 /* CustomerCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A857825FF4E5B004075E1 /* CustomerCenterViewController.swift */; };
+		6E9A858B25FFA648004075E1 /* MainFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E9A858D25FFA648004075E1 /* MainFrameCollectionViewCell.xib */; };
 		6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */; };
 		6E9BE998258A527C00F7F539 /* QuarterDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */; };
 		6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE99D258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m */; };
@@ -259,7 +258,6 @@
 		6EC7647025DADB74009FF873 /* StudyTemplateRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7646F25DADB74009FF873 /* StudyTemplateRectangle.m */; };
 		6EC764B625E51E8A009FF873 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC764B525E51E89009FF873 /* WebKit.framework */; };
 		6ED0AF6D25E4FAFE0027485F /* MainFrameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF6B25E4FAFE0027485F /* MainFrameCollectionViewCell.m */; };
-		6ED0AF6E25E4FAFE0027485F /* MainFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0AF6C25E4FAFE0027485F /* MainFrameCollectionViewCell.xib */; };
 		6ED0AF7525E4FB780027485F /* MainFrameCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF7325E4FB780027485F /* MainFrameCollectionReusableView.m */; };
 		6ED0AF7625E4FB780027485F /* MainFrameCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED0AF7425E4FB780027485F /* MainFrameCollectionReusableView.xib */; };
 		6ED0AF8925E5143F0027485F /* SinSeoYuGi1MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0AF8825E5143F0027485F /* SinSeoYuGi1MainFrame.m */; };
@@ -598,14 +596,12 @@
 		6E20BCB325AE245000BBA540 /* BGColorViewController+ControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BGColorViewController+ControllerDelegate.m"; sourceTree = "<group>"; };
 		6E20BCBE25AEF58600BBA540 /* UndoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UndoManager.h; sourceTree = "<group>"; };
 		6E20BCBF25AEF58600BBA540 /* UndoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UndoManager.m; sourceTree = "<group>"; };
-		6E2844DF25C3586B008B7A23 /* VlogShortDance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VlogShortDance.m; sourceTree = "<group>"; };
 		6E2844E025C3586B008B7A23 /* VlogNanumSquareTypo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VlogNanumSquareTypo.h; sourceTree = "<group>"; };
 		6E2844E125C3586B008B7A23 /* VlogBrushTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VlogBrushTypo.m; sourceTree = "<group>"; };
 		6E2844E225C3586B008B7A23 /* VlogSummer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VlogSummer.h; sourceTree = "<group>"; };
 		6E2844E325C3586B008B7A23 /* VlogGRWMTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VlogGRWMTypo.m; sourceTree = "<group>"; };
 		6E2844E425C3586B008B7A23 /* VlogDailyTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VlogDailyTypo.m; sourceTree = "<group>"; };
 		6E2844E525C3586C008B7A23 /* VlogWebWrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VlogWebWrite.h; sourceTree = "<group>"; };
-		6E2844E625C3586C008B7A23 /* VlogShortDance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VlogShortDance.h; sourceTree = "<group>"; };
 		6E2844E725C3586C008B7A23 /* VlogCookingTypo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VlogCookingTypo.m; sourceTree = "<group>"; };
 		6E2844E825C3586C008B7A23 /* Vlog365.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vlog365.m; sourceTree = "<group>"; };
 		6E2844E925C3586C008B7A23 /* VlogDesiner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VlogDesiner.m; sourceTree = "<group>"; };
@@ -763,8 +759,6 @@
 		6E8F997525C0D006005C8071 /* SeoYuGiGagwanTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoYuGiGagwanTypo.h; sourceTree = "<group>"; };
 		6E8F997625C0D006005C8071 /* SeoYuGiGagwanTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiGagwanTypo.m; sourceTree = "<group>"; };
 		6E8F997A25C0D3B4005C8071 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
-		6E8F998525C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoYuGiCloudLogoTypo.h; sourceTree = "<group>"; };
-		6E8F998625C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiCloudLogoTypo.m; sourceTree = "<group>"; };
 		6E8F99A125C0E8C9005C8071 /* ELAND-Nice-M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ELAND-Nice-M.otf"; sourceTree = "<group>"; };
 		6E8F99BC25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeoYuGiCowRiseTypo.h; sourceTree = "<group>"; };
 		6E8F99BD25C0FB3D005C8071 /* SeoYuGiCowRiseTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeoYuGiCowRiseTypo.m; sourceTree = "<group>"; };
@@ -807,6 +801,8 @@
 		6E9A850625F8B6F2004075E1 /* IAP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IAP.storyboard; sourceTree = "<group>"; };
 		6E9A850A25F8C25A004075E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6E9A857825FF4E5B004075E1 /* CustomerCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCenterViewController.swift; sourceTree = "<group>"; };
+		6E9A858C25FFA648004075E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainFrameCollectionViewCell.xib; sourceTree = "<group>"; };
+		6E9A858F25FFA64C004075E1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainFrameCollectionViewCell.strings; sourceTree = "<group>"; };
 		6E9BE989258A517000F7F539 /* TwoDivisionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoDivisionTemplate.h; sourceTree = "<group>"; };
 		6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoDivisionTemplate.m; sourceTree = "<group>"; };
 		6E9BE996258A527C00F7F539 /* QuarterDivisionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuarterDivisionTemplate.h; sourceTree = "<group>"; };
@@ -968,7 +964,6 @@
 		6EC764B525E51E89009FF873 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6ED0AF6A25E4FAFE0027485F /* MainFrameCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrameCollectionViewCell.h; sourceTree = "<group>"; };
 		6ED0AF6B25E4FAFE0027485F /* MainFrameCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainFrameCollectionViewCell.m; sourceTree = "<group>"; };
-		6ED0AF6C25E4FAFE0027485F /* MainFrameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainFrameCollectionViewCell.xib; sourceTree = "<group>"; };
 		6ED0AF7225E4FB780027485F /* MainFrameCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFrameCollectionReusableView.h; sourceTree = "<group>"; };
 		6ED0AF7325E4FB780027485F /* MainFrameCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainFrameCollectionReusableView.m; sourceTree = "<group>"; };
 		6ED0AF7425E4FB780027485F /* MainFrameCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainFrameCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -2055,8 +2050,6 @@
 			children = (
 				6E8F9B4825C3528A005C8071 /* SeoYuGiInFrontOfGirlTypo.h */,
 				6E8F9B4725C35289005C8071 /* SeoYuGiInFrontOfGirlTypo.m */,
-				6E8F998525C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.h */,
-				6E8F998625C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m */,
 			);
 			path = SinSeoYuGi2;
 			sourceTree = "<group>";
@@ -2649,8 +2642,6 @@
 				6E28450925C3586F008B7A23 /* VlogNewCampus.m */,
 				6E28450E25C35870008B7A23 /* VlogOriginal.h */,
 				6E2844F425C3586E008B7A23 /* VlogOriginal.m */,
-				6E2844E625C3586C008B7A23 /* VlogShortDance.h */,
-				6E2844DF25C3586B008B7A23 /* VlogShortDance.m */,
 				6E2844FD25C3586F008B7A23 /* VlogStudy.h */,
 				6E28451225C35870008B7A23 /* VlogStudy.m */,
 				6E2844E225C3586B008B7A23 /* VlogSummer.h */,
@@ -3037,7 +3028,7 @@
 			children = (
 				6ED0AF6A25E4FAFE0027485F /* MainFrameCollectionViewCell.h */,
 				6ED0AF6B25E4FAFE0027485F /* MainFrameCollectionViewCell.m */,
-				6ED0AF6C25E4FAFE0027485F /* MainFrameCollectionViewCell.xib */,
+				6E9A858D25FFA648004075E1 /* MainFrameCollectionViewCell.xib */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -3468,7 +3459,7 @@
 				6E88303625CDB0A80025B8A5 /* BinggraeSamanco-Bold.otf in Resources */,
 				6E88303225CDA7FA0025B8A5 /* NEXON Lv2 Gothic OTF Bold.otf in Resources */,
 				6EF0C91925CD21CE00BE7573 /* NEXON Lv2 Gothic OTF.otf in Resources */,
-				6ED0AF6E25E4FAFE0027485F /* MainFrameCollectionViewCell.xib in Resources */,
+				6E9A858B25FFA648004075E1 /* MainFrameCollectionViewCell.xib in Resources */,
 				6EF0C91625CD21C600BE7573 /* BinggraeⅡ-Bold.otf in Resources */,
 				6EBEB60A25C32A140017C640 /* neodgm_pro.otf in Resources */,
 				6EBEB60625C328D10017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf in Resources */,
@@ -3919,7 +3910,6 @@
 				6E8F9A9725C34582005C8071 /* ChristmasCircle.m in Sources */,
 				6ED0AFB625E515410027485F /* WorkMan3MainFrame.m in Sources */,
 				6EBEB59625C1EA990017C640 /* WorkManTemplate3.m in Sources */,
-				6E8F998725C0DAC1005C8071 /* SeoYuGiCloudLogoTypo.m in Sources */,
 				6E1DBE6825D8259C004C0416 /* ClothesTemplateRect1.m in Sources */,
 				6EF0C82525CBC33C00BE7573 /* GoodSticker1.m in Sources */,
 				6E07E74725DABED100A57801 /* ExportManager.m in Sources */,
@@ -4013,7 +4003,6 @@
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
 				6EF1C76F25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m in Sources */,
 				6E1DBE8B25D82CC9004C0416 /* PolaroidRectangle.m in Sources */,
-				6E28451325C35870008B7A23 /* VlogShortDance.m in Sources */,
 				6E20BC6725AD78B700BBA540 /* ColorManager.m in Sources */,
 				6ED13BA525C08F1F00012144 /* DDamTypo.m in Sources */,
 				B11E0D7425C576760050D9F0 /* VlogMacaronSticker.m in Sources */,
@@ -4179,6 +4168,15 @@
 				6E90EFC325E652530059DEEB /* ko */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6E9A858D25FFA648004075E1 /* MainFrameCollectionViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E9A858C25FFA648004075E1 /* Base */,
+				6E9A858F25FFA64C004075E1 /* ko */,
+			);
+			name = MainFrameCollectionViewCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -80,6 +80,7 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     [sticker loadView];
     [sticker setItemCenterAndScale];
+    NSLog(@"sticker.backgroundImageName %@",sticker.backgroundImageName);
     UIImage *image = [UIImage imageNamed:sticker.backgroundImageName];
     if (editingVC.currentSticker) {
         

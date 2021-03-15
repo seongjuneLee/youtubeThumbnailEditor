@@ -52,7 +52,7 @@
     
     //서유기
     Text *logoText = [[Text alloc] init];
-    SeoYuGiCloudLogoTypo *cloudLogo = [SeoYuGiCloudLogoTypo seoYuGiCloudLogoTypo];
+    SeoYuGiLogoTypo *cloudLogo = [SeoYuGiLogoTypo seoYuGiLogoTypo];
     logoText.scale = 0.138;
     logoText.relativeCenter = CGPointMake(0.14, 0.15);
     logoText.isTemplateItem = true;

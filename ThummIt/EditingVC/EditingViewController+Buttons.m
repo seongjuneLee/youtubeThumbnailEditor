@@ -41,6 +41,9 @@
                         exported[@"exportedThumbnail"] = thumbnailBigFile;
                         NSString * language = [[NSLocale preferredLanguages] firstObject];
                         exported[@"contry"] = language;
+                        if (SaveManager.sharedInstance.currentTemplate.templateName) {
+                            exported[@"template"] = SaveManager.sharedInstance.currentTemplate.templateName;
+                        }
                         if (PFUser.currentUser) {
                             exported[@"user"] = PFUser.currentUser;
                         }

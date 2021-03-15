@@ -60,7 +60,12 @@
    
     NSArray *mainFrames = ItemManager.sharedInstance.mainFrameDatas[indexPath.section];
     MainFrame *mainFrame = mainFrames[indexPath.item];
-    cell.mainFrameImageView.image = [UIImage imageNamed:mainFrame.backgroundImageName];
+    if (indexPath.item == 0) {
+        cell.noneLabel.hidden = false;
+    } else {
+        cell.noneLabel.hidden = true;
+        cell.mainFrameImageView.image = [UIImage imageNamed:mainFrame.backgroundImageName];
+    }
     return cell;
     
 }

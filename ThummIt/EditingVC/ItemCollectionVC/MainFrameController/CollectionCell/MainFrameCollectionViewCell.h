@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MainFrameCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *mainFrameImageView;
+@property (weak, nonatomic) IBOutlet UILabel *noneLabel;
 
 @end
 
