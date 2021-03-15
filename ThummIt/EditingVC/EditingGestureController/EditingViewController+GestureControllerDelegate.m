@@ -231,6 +231,7 @@
         self.deleteButtonContentView.alpha = 1.0;
         self.albumVC.view.alpha = self.itemCollectionVC.view.alpha = 0;
         self.editingItemLayerVC.view.alpha = 0.0;
+        self.hueSlider.alpha = 0.0;
     }];
     
     if([self.currentItem isKindOfClass:Text.class]){

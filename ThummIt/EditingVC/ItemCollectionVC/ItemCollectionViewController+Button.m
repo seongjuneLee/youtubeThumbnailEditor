@@ -560,7 +560,6 @@
     [editingVC.layerController recoverOriginalLayer];//
     [self dismissSelf];
 
-    [SaveManager.sharedInstance addItem:editingVC.currentText];
     for (Item *item in SaveManager.sharedInstance.currentProject.items) {
     item.indexInLayer = [NSString stringWithFormat:@"%ld",[editingVC.view.subviews indexOfObject:item.baseView]];
     }
