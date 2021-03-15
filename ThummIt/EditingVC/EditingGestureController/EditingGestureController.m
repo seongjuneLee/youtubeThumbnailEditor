@@ -69,11 +69,6 @@
     rotation.delegate = self;
     [editingVC.gestureView addGestureRecognizer:rotation];
     
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]
-      initWithTarget:self action:@selector(handleLongPress:)];
-    longPress.minimumPressDuration = 0.5; //seconds
-    [editingVC.gestureView addGestureRecognizer:longPress];
-
 }
 
 #pragma mark - 탭
@@ -158,7 +153,6 @@
         if (!editingVC.currentItem || editingVC.currentItem.isBasePhotoFrame) {
             return;
         }
-        NSLog(@"editingVC.currentItem indexInLayer %@",editingVC.currentItem.indexInLayer);
         deltaPoint = CGPointMake(currentPoint.x - self.originalPoint.x,currentPoint.y - self.originalPoint.y);
         
         editingVC.currentItem.baseView.centerX += deltaPoint.x;
@@ -682,7 +676,7 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     float imageViewBottomY = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
-    if (currentPointY > imageViewBottomY && editingVC.currentItem.canChangeColor) {
+    if (currentPointY < imageViewBottomY && editingVC.currentItem.canChangeColor) {
         [UIView animateWithDuration:0.2 animations:^{
             editingVC.hueSlider.alpha = 1.0;
         }];
