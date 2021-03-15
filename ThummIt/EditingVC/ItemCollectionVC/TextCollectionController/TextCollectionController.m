@@ -14,6 +14,8 @@
 #import "ItemManager.h"
 #import "Typography.h"
 #import "Text.h"
+#import "UIImage+Additions.h"
+
 @implementation TextCollectionController
 
 -(id)init{
@@ -64,15 +66,12 @@
     if(image){
         cell.textImageView.image = image;
     } else{
-        
         cell.textImageView.image = nil;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
             UIImage *image = [Text makePlaceHolderWithTypo:typo].image;
             cell.textImageView.image = image;
             [self.imageCaching setObject:image forKey:imageName];
-            
         });
     }
     
@@ -95,18 +94,18 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
     
     Text *text = [[Text alloc] init];
-    if (editingVC.currentText) {
+    if (editingVC.currentText){
         editingVC.currentText.typo = text.typo;
         editingVC.currentText.scale = text.scale;
         text = (Text *)editingVC.currentText;
         
         text.textView.backgroundAttributedTexts = [NSMutableArray array];
-        if (editingVC.currentText.isTypedByUser) {
+        if (editingVC.currentText.isTypedByUser){
             text.text = editingVC.currentText.text;
             text.textView.text = editingVC.currentText.text;
             editingVC.itemCollectionVC.doneButton.enabled = true;
             editingVC.itemCollectionVC.doneButton.alpha = 1;
-        } else {
+        } else{
             text.text = typo.name;
             text.textView.text = typo.name;
             editingVC.itemCollectionVC.doneButton.enabled = false;
@@ -114,11 +113,10 @@
         }
         text.isTypedByUser = editingVC.currentText.isTypedByUser;
         text.baseView.center = editingVC.currentText.baseView.center;
-        text.baseView.transform = editingVC.currentText.baseView.transform;
         editingVC.currentItem = text;
         editingVC.currentText = text;
         editingVC.recentTypo = typo;
-    } else {
+    } else{
         editingVC.itemCollectionVC.doneButton.enabled = false;
         editingVC.itemCollectionVC.doneButton.alpha = 0.4;
         [text loadView];
@@ -129,21 +127,23 @@
 
         text.text = typo.name;
         text.textView.text = typo.name;
-        [text.textView setNeedsDisplay];
 
         text.textViewContainer.center = editingVC.bgView.center;
         editingVC.currentItem = text;
         editingVC.currentText = text;
         editingVC.recentTypo = typo;
-        
 
         [editingVC.layerController bringCurrentItemToFront];
     }
-    
+    [text.textView setNeedsDisplay];
+    [text.textViewContainer setNeedsLayout];
     [text applyTypo:typo];
-    [text setItemCenterAndScale];
-    
-    
+    if (typo.textColorPatternImageName.length > 0){
+        UIImage *patternImage = [UIImage imageNamed:typo.textColorPatternImageName];
+        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(text.baseView.frameWidth, text.baseView.frameHeight)];
+        text.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
+        [text applyTypo:typo];
+    }
     // 칼라 바
     if (text.typo.canChangeColor) {
         [UIView animateWithDuration:0.2 animations:^{

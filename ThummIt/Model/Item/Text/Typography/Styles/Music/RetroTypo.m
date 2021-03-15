@@ -18,7 +18,6 @@
         self.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"retroGC"]];
         self.textColorPatternImageName = @"retroGC";
         self.canChangeColor = true;
-        self.obliqueValue = 0.0;
         self.fontInterval = 5.0;
         self.fontSize = 70;
 
