@@ -172,19 +172,18 @@
     NSArray *sorted = [SaveManager.sharedInstance.currentProject.items sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
         NSString *first = [(Item*)a indexInLayer];
         NSString *second = [(Item*)b indexInLayer];
-        return [first compare:second];
+        return [@(first.integerValue) compare:@(second.integerValue)];
     }];
     NSMutableArray *sortedItems = [sorted mutableCopy];
 
-    Item *removableItem;
+    NSMutableArray *removableItems = [NSMutableArray array];
     for (Item *item in sortedItems) {
         if (item.isBasePhotoFrame) {
-            removableItem = item;
-            break;
+            [removableItems addObject:item];
         }
     }
-    if (removableItem) {
-        [sortedItems removeObject:removableItem];
+    if (removableItems.count>0) {
+        [sortedItems removeObjectsInArray:removableItems];
     }
         
     return sortedItems;

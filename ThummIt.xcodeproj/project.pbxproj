@@ -1456,6 +1456,7 @@
 				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E4A18AC258A15F6008578BA /* Storyboard */,
 				6E8E79C22591F9600008C5FF /* MainTBVC */,
+				6E9A858225FF5EDB004075E1 /* IAPVC */,
 				6E11912C2584D118000DD9C0 /* HomeVC */,
 				6E7DD4EA2587ABEA0014618E /* EditingVC */,
 				6E8E79D225921C8B0008C5FF /* ProjectVC */,
@@ -1772,8 +1773,6 @@
 				6E1191392584D160000DD9C0 /* AlbumVC */,
 				6E8E7A28259B26D70008C5FF /* ItemCollectionVC */,
 				6E20BC7525AD938600BBA540 /* BGColorVC */,
-				6E9A850125F8AFAD004075E1 /* IAPViewController.h */,
-				6E9A850225F8AFAD004075E1 /* IAPViewController.m */,
 			);
 			path = EditingVC;
 			sourceTree = "<group>";
@@ -2184,6 +2183,15 @@
 				6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */,
 			);
 			path = HomeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		6E9A858225FF5EDB004075E1 /* IAPVC */ = {
+			isa = PBXGroup;
+			children = (
+				6E9A850125F8AFAD004075E1 /* IAPViewController.h */,
+				6E9A850225F8AFAD004075E1 /* IAPViewController.m */,
+			);
+			path = IAPVC;
 			sourceTree = "<group>";
 		};
 		6E9BE98F258A517400F7F539 /* VlogTemplate */ = {

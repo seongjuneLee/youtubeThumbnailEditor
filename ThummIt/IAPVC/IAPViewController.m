@@ -6,7 +6,7 @@
 //
 
 #import "IAPViewController.h"
-
+@import Parse;
 @interface IAPViewController ()
 
 @end
@@ -37,7 +37,8 @@
         [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
         [[SKPaymentQueue defaultQueue] addPayment:payment];
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+            PFUser.currentUser[@"purchasedUser"] = @(true);
+            [PFUser.currentUser saveInBackground];
             [self.view makeToast:@"Purchased" duration:3.0 position:CSToastPositionCenter];
         });
     } else {

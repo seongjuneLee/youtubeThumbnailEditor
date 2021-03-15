@@ -42,7 +42,10 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     self.sortedItems = [[[SaveManager.sharedInstance.sortedItems reverseObjectEnumerator] allObjects] mutableCopy];
-    return SaveManager.sharedInstance.sortedItems.count;
+    for(Item*item in SaveManager.sharedInstance.sortedItems){
+        NSLog(@"item index in layer : %@ item :%@",item.indexInLayer,item);
+    }
+    return self.sortedItems.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

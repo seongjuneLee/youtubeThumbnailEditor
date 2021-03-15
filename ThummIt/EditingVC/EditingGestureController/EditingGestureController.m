@@ -158,7 +158,7 @@
         if (!editingVC.currentItem || editingVC.currentItem.isBasePhotoFrame) {
             return;
         }
-
+        NSLog(@"editingVC.currentItem indexInLayer %@",editingVC.currentItem.indexInLayer);
         deltaPoint = CGPointMake(currentPoint.x - self.originalPoint.x,currentPoint.y - self.originalPoint.y);
         
         editingVC.currentItem.baseView.centerX += deltaPoint.x;
