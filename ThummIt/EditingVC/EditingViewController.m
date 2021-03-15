@@ -205,11 +205,13 @@
     for (Item *item in project.items) {
         if([item isKindOfClass:Text.class]){
             Text *text = (Text *)item;
-            if(text.typo.textColorPatternImageName){
+            if(text.typo.textColorPatternImageName.length > 0){
                 
                 UIImage *patternImage = [UIImage imageNamed:text.typo.textColorPatternImageName];
                 UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(text.baseView.frameWidth, text.textView.frameHeight)];
                 text.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
+                text.typo.originalGradientImageSize = CGSizeMake(resizedImage.size.width, resizedImage.size.height);
+
                 [text applyTypo:text.typo];
             }
         }

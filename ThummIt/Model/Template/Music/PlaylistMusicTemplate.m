@@ -55,7 +55,7 @@
     //PLAYLIST
     Text *playlistText = [[Text alloc] init];
     PlaylistTypo *playlistTypo = [PlaylistTypo playlistTypo];
-    playlistText.scale = 0.68;
+    playlistText.scale = 0.73;
     playlistText.relativeCenter = CGPointMake(0.515, 0.45);
     playlistText.isTemplateItem = true;
     playlistText.indexInLayer = @"0";

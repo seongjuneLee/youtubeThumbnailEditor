@@ -62,6 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIColor* shadowToColor;
 @property (nonatomic) float shadowGradientHeight;
 
+@property (nonatomic) CGSize originalGradientImageSize;
 // 스타일
 @property (nonatomic) float obliqueValue;
 

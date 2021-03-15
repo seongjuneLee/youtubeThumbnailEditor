@@ -7,6 +7,7 @@
 
 #import "Text.h"
 #import "UITextView+Additions.h"
+#import "UIImage+Additions.h"
 
 @implementation Text
 -(id)init{
@@ -329,6 +330,7 @@
     self.textViewContainer.bounds = self.textView.bounds;
     // 배경이미지뷰 리사이즈
     [self updateBackgroundImageViewFrame:self.typo];
+    
 }
 
 

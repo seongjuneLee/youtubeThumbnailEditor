@@ -63,9 +63,7 @@
     
     if(image){
         cell.textImageView.image = image;
-    }
-    
-    else{
+    } else{
         
         cell.textImageView.image = nil;
         

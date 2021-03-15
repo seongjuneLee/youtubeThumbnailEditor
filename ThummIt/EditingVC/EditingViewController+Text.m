@@ -53,17 +53,6 @@
     self.currentText.isTypedByUser = true;
     [self.currentText.textView setNeedsDisplay];
     
-    if (self.currentText.typo.textColorPatternImageName.length > 0) {
-        
-        UIImage *patternImage = [UIImage imageNamed:self.currentText.typo.textColorPatternImageName];
-        
-        float ratio = self.currentText.baseView.frameWidth/patternImage.size.width; // imageSize/텍스트뷰의 사이즈
-        
-        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(patternImage.size.width*ratio, patternImage.size.height)];
-        
-        self.currentText.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
-    }
-
     // 부분 타이포 적용
     for (NSMutableAttributedString *attributedText in self.currentText.backgroundAttributedTexts) {
         attributedText.mutableString.string = textView.text;
@@ -72,6 +61,13 @@
     [self.currentText applyTypo:self.currentText.typo];
     [self.currentText.textViewContainer setNeedsLayout];
     self.currentText.textView.selectedRange = prevRange;
+    
+    if (self.currentText.typo.textColorPatternImageName.length > 0) {
+        UIImage *patternImage = [UIImage imageNamed:self.currentText.typo.textColorPatternImageName];
+        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(self.currentText.baseView.frameWidth, self.currentText.baseView.frameHeight)];
+        self.currentText.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
+        [self.currentText applyTypo:self.currentText.typo];
+    }
 }
 
 @end

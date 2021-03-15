@@ -16,15 +16,8 @@
         self.fontName = @"MapoFlowerIsland";
         self.textColor = [UIColor colorWithRed:252/255.0 green:189/255.0 blue:64/255.0 alpha:1];
         self.canChangeColor = true;
-        self.obliqueValue = 0.0;
-        self.fontInterval = 9.0;
+        self.fontInterval = 6.0;
         
-        BGTextAttribute *shadow = [[BGTextAttribute alloc] init];
-        shadow.shadowOffset = CGPointMake(3, 3);
-        shadow.shadowColor = [UIColor blackColor];
-        shadow.fontInterval = 9.0;
-        
-        self.bgTextAttributes = @[shadow];
     }
     return self;
 }

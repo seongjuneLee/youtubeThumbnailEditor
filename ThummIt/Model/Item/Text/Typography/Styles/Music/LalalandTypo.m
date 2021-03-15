@@ -16,10 +16,10 @@
         self.fontName = @"S-CoreDream-7ExtraBold";
         self.textColor = [UIColor whiteColor];
         self.obliqueValue = 0.2;
-        self.fontSize = 40;
+        self.fontSize = 80;
         
         BGTextAttribute *shadow = [[BGTextAttribute alloc] init];
-        shadow.shadowOffset = CGPointMake(0, 1.5);
+        shadow.shadowOffset = CGPointMake(0, 2);
         shadow.shadowColor = [UIColor blackColor];
         shadow.obliqueValue = 0.2;
         

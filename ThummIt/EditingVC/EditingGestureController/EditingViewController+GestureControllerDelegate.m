@@ -9,6 +9,7 @@
 #import "EditingViewController+AlbumVCDelegate.h"
 #import "ItemCollectionViewController+Button.h"
 #import "EditingViewController+Buttons.h"
+#import "UIImage+Additions.h"
 
 
 @implementation EditingViewController (GestureControllerDelegate)
@@ -169,7 +170,17 @@
     
     self.originalCenter = text.baseView.center;
     self.originalTransform = text.baseView.transform;
-    self.originalTypo = text.typo;
+    
+    Text *copied = [text copy];
+    if(text.typo.textColorPatternImageName.length > 0){
+        
+        UIImage *patternImage = [UIImage imageNamed:text.typo.textColorPatternImageName];
+        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:text.typo.originalGradientImageSize];
+
+        copied.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
+    }
+    
+    self.originalTypo = copied.typo;
     self.originalText = text.text;
     
     self.itemCollectionVC.typoButton.selected = false;
