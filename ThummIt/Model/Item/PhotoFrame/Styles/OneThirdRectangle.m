@@ -14,7 +14,7 @@
     self = [super init];
     if(self){
         
-        self.itemName = @"TwoFifthPhotoFrame";
+        self.itemName = @"OneThirdPhotoFrame";
         [self setBaseViewFrame];
         
     }

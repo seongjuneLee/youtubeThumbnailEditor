@@ -93,6 +93,13 @@
 	<string>Photo Library Access</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Retro-Stereo-Wide.otf</string>
+		<string>SCDream7.otf</string>
+		<string>BlackHanSans.otf</string>
+		<string>MapoFlowerIsland.otf</string>
+		<string>Cafe24Oneprettynight.otf</string>
+		<string>독립서체_한용운_GSCaltex.otf</string>
+		<string>독립서체_윤봉길_GSCaltex.otf</string>
 		<string>KOTRA_BOLD.otf</string>
 		<string>NanumSquareOTFBold.otf</string>
 		<string>AnyConv.com__NanumGothic.otf</string>

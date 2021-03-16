@@ -57,4 +57,11 @@
 #import "InfiniteChallenge2Template.h"
 #import "InfiniteChallenge3Template.h"
 
+//music
+#import "BTSMusicTemplate.h"
+#import "PlaylistMusicTemplate.h"
+#import "NinetyCenturyMusicTemplate.h"
+#import "LalalandMusicTemplate.h"
+#import "RetroStereoMusicTemplate.h"
+
 #endif /* TemplateHeader_h */

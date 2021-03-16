@@ -229,6 +229,22 @@ didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
         }
         item.isTemplateItem = false;
 
+        
+    }
+
+    for (Item *item in project.items) {
+        if([item isKindOfClass:Text.class]){
+            Text *text = (Text *)item;
+            if(text.typo.textColorPatternImageName.length > 0){
+                
+                UIImage *patternImage = [UIImage imageNamed:text.typo.textColorPatternImageName];
+                UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(text.baseView.boundsWidth, text.textView.boundsHeight)];
+                text.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
+                text.typo.originalGradientImageSize = CGSizeMake(resizedImage.size.width, resizedImage.size.height);
+
+                [text applyTypo:text.typo];
+            }
+        }
     }
     
     // 인덱스 맞춰주기
@@ -240,6 +256,7 @@ didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
                 [self.view insertSubview:item.baseView atIndex:item.indexInLayer.integerValue];
             }
         }
+        
     }
     
     [SaveManager.sharedInstance save];

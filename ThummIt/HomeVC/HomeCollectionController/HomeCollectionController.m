@@ -68,10 +68,25 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     float screenWidth = UIScreen.mainScreen.bounds.size.width;
-    float cellWidth = screenWidth/1.5;
-    float cellHeight = cellWidth * 9/16;
-
-    return CGSizeMake(cellWidth, cellHeight);
+    CGSize collectionViewSize;
+    
+    UIDevice* thisDevice = [UIDevice currentDevice];
+    
+    if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        float cellWidth = screenWidth * 1/3;
+        float cellHeight = cellWidth * 9/16;
+        collectionViewSize =  CGSizeMake(cellWidth, cellHeight);
+        return collectionViewSize;
+    /* do something specifically for iPad. */
+    } else {
+        float cellWidth = screenWidth * 3/5;
+        float cellHeight = cellWidth * 9/16;
+        collectionViewSize =  CGSizeMake(cellWidth, cellHeight);
+        return collectionViewSize;
+    /* do something specifically for iPhone or iPod touch. */
+}
+    
+    return collectionViewSize;
 }
 
 

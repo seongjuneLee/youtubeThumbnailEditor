@@ -6,7 +6,7 @@
 //
 
 #import "EditingViewController+Text.h"
-
+#import "UIImage+Additions.h"
 @implementation EditingViewController (Text)
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
@@ -53,15 +53,21 @@
     self.currentText.isTypedByUser = true;
     [self.currentText.textView setNeedsDisplay];
     
-    
     // 부분 타이포 적용
-    for (NSMutableAttributedString* attributedText in self.currentText.backgroundAttributedTexts) {
+    for (NSMutableAttributedString *attributedText in self.currentText.backgroundAttributedTexts) {
         attributedText.mutableString.string = textView.text;
     }
     NSRange prevRange = self.currentText.textView.selectedRange;
     [self.currentText applyTypo:self.currentText.typo];
     [self.currentText.textViewContainer setNeedsLayout];
     self.currentText.textView.selectedRange = prevRange;
+    
+    if (self.currentText.typo.textColorPatternImageName.length > 0) {
+        UIImage *patternImage = [UIImage imageNamed:self.currentText.typo.textColorPatternImageName];
+        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(self.currentText.baseView.boundsWidth, self.currentText.baseView.boundsHeight)];
+        self.currentText.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
+        [self.currentText applyTypo:self.currentText.typo];
+    }
 }
 
 @end

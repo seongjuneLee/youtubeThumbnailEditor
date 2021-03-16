@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 폰트
 @property (strong, nonatomic) NSString* fontName;
 @property (nonatomic) float fontSize;
+@property (nonatomic) float fontInterval;
 
 
 // 색상
@@ -61,6 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIColor* shadowToColor;
 @property (nonatomic) float shadowGradientHeight;
 
+@property (nonatomic) CGSize originalGradientImageSize;
 // 스타일
 @property (nonatomic) float obliqueValue;
 

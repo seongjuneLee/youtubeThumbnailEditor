@@ -78,18 +78,18 @@
     
     //daily vlog
     
-    
     Template *visitingCompanyVlogTemplate = [VisitingCompanyVlogTemplate visitingCompanyVlogTemplate];
     Template * craftVlogTemplate= [CraftVlogTemplate craftVlogTemplate];
     Template * lookBookVlogTemplate= [LookBookVlogTemplate lookBookVlogTemplate];
     Template * stayingHomeVlogTemplate= [StayingHomeVlogTemplate stayingHomeVlogTemplate];
     Template * babyVlogTemplate= [BabyVlogTemplate babyVlogTemplate];
+    
     Template * summerVlogTemplate= [SummerVlogTemplate summerVlogTemplate];
     Template * dogVlogTemPlate= [DogVlogTemplate dogVlogTemPlate];
     Template * webDesignerVlogTemPlate= [WebDesignerVlogTemplate webDesignerVlogTemplate];
-
     Template *grwmVlogTemplate = [GrwmVlogTemplate grwmVlogTemplate];
     Template *sixToFourVlogTemplate = [ClothesVlogTemplate sixToFourVlogTemplate];
+    
     Template *dailyVlogTemplate = [DailyVlogTemplate dailyVlogTemplate];
     Template *modelVlogTemplate = [ModelVlogTemplate modelVlogTemplate];
     Template *kidsVlogTemplate = [KidsVlogTemplate kidsVlogTemplate];
@@ -104,14 +104,32 @@
     Template *cookingVlogTemplate = [CookingVlogTemplate cookingVlogTemplate];
     Template *macaronVlogTemplate = [MacaronVlogTemplate macaronVlogTemplate];
     
-    NSArray *cookingVlogTemplates = @[cookingVlogTemplate,macaronVlogTemplate];
-    NSArray *cookingVlogTemplatePreviewImages =  @[cookingVlogTemplate.previewImageName,macaronVlogTemplate.previewImageName];
+    NSArray *cookingVlogTemplates = @[cookingVlogTemplate, macaronVlogTemplate];
+    NSArray *cookingVlogTemplatePreviewImages =  @[cookingVlogTemplate.previewImageName, macaronVlogTemplate.previewImageName];
     
     
-    self.templatePreviewImages = @[tvEntertainTemplatePreviewImages,youtubeEntertainTemplatePreviewImages, tripVlogTemplatePreviewImages,schoolVlogTemplatePreviewImages,dailyVlogTemplatePreviewImages,cookingVlogTemplatePreviewImages];
-    NSArray *templates = @[tvEntertainTemplates,youtubeEntertainTemplates ,tripVlogTemplates,schoolVlogTemplates,dailyVlogTemplates,cookingVlogTemplates];
+    
+    //music
+    Template *btsMusicTemplate = [BTSMusicTemplate btsMusicTemplate];
+    Template *playlistMusicTemplate = [PlaylistMusicTemplate playlistMusicTemplate];
+    Template *ninetyCenturyMusicTemplate = [NinetyCenturyMusicTemplate ninetyCenturyMusicTemplate];
+    Template *lalalandMusicTemplate = [LalalandMusicTemplate lalalandMusicTemplate];
+    Template *retroStereoMusicTemplate = [RetroStereoMusicTemplate retroStereoMusicTemplate];
+
+    
+    NSArray *musicTemplates = @[playlistMusicTemplate, ninetyCenturyMusicTemplate, retroStereoMusicTemplate, lalalandMusicTemplate, btsMusicTemplate];
+    NSArray *musicTemplatePreviewImages = @[playlistMusicTemplate.previewImageName, ninetyCenturyMusicTemplate.previewImageName,retroStereoMusicTemplate.previewImageName, lalalandMusicTemplate.previewImageName, btsMusicTemplate.previewImageName];
+    
+    //category
+    self.templatePreviewImages = @[tvEntertainTemplatePreviewImages, youtubeEntertainTemplatePreviewImages,  tripVlogTemplatePreviewImages, schoolVlogTemplatePreviewImages, dailyVlogTemplatePreviewImages, cookingVlogTemplatePreviewImages, musicTemplatePreviewImages];
+    
+    NSArray *templates = @[tvEntertainTemplates, youtubeEntertainTemplates , tripVlogTemplates, schoolVlogTemplates, dailyVlogTemplates, cookingVlogTemplates, musicTemplates];
+    
+
     
     return templates;
+    
+    
     
 }
 

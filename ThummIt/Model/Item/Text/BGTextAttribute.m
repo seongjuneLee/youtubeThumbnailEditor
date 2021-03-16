@@ -17,6 +17,7 @@
         self.scale = 1;
         
         self.textColor = UIColor.whiteColor;
+        
         self.borderColor = UIColor.clearColor;
         self.borderWidth = 0;
         
@@ -35,6 +36,7 @@
     [encoder encodeObject:[NSValue valueWithCGPoint:self.offset] forKey:@"offset"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.scale] forKey:@"scale"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.obliqueValue] forKey:@"obliqueValue"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.fontInterval] forKey:@"fontInterval"];
     if (!CGColorGetPattern(self.textColor.CGColor)) {
         [encoder encodeObject:self.textColor forKey:@"textColor"];
     } else {
@@ -55,6 +57,7 @@
         self.offset = [[decoder decodeObjectForKey:@"offset"] CGPointValue];
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.obliqueValue = [[decoder decodeObjectForKey:@"obliqueValue"] floatValue];
+        self.fontInterval = [[decoder decodeObjectForKey:@"fontInterval"] floatValue];
         self.textColor = [decoder decodeObjectForKey:@"textColor"];
         self.textColorPatternImageName = [decoder decodeObjectForKey:@"textColorPatternImageName"];
         if (self.textColorPatternImageName) {
@@ -114,6 +117,10 @@
     [mutableAttributedString addAttribute:NSShadowAttributeName value:shadow range:range];
     
     [mutableAttributedString addAttributes:@{NSObliquenessAttributeName:@(self.obliqueValue)}range:range];
+    [mutableAttributedString addAttribute:NSKernAttributeName value:@(self.fontInterval) range:range];
+    if(self.fontInterval){
+        self.textColor = UIColor.clearColor;
+    }
 
     [mutableAttributedString.mutableString replaceOccurrencesOfString:RANDOM_TEXT withString:@"" options:NSCaseInsensitiveSearch range:range];
     

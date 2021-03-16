@@ -80,6 +80,7 @@
     [encoder encodeObject:self.bgTextAttributes forKey:@"bgTextAttributes"];
 
     [encoder encodeObject:[NSNumber numberWithFloat:self.obliqueValue] forKey:@"obliqueValue"];
+    [encoder encodeObject:[NSNumber numberWithFloat:self.fontInterval] forKey:@"fontInterval"];
 
     [encoder encodeObject:[NSValue valueWithCGSize:self.shadowOffset] forKey:@"shadowOffset"];
     [encoder encodeObject:[NSNumber numberWithFloat:self.shadowRadius] forKey:@"shadowRadius"];
@@ -105,6 +106,7 @@
         self.fontSize = [[decoder decodeObjectForKey:@"fontSize"] floatValue];
         self.scale = [[decoder decodeObjectForKey:@"scale"] floatValue];
         self.obliqueValue = [[decoder decodeObjectForKey:@"obliqueValue"] floatValue];
+        self.fontInterval = [[decoder decodeObjectForKey:@"fontInterval"] floatValue];
         self.typoImageFilePath = [decoder decodeObjectForKey:@"typoImageFilePath"];
 
         self.textFromColor = [decoder decodeObjectForKey:@"textFromColor"];
@@ -220,6 +222,7 @@
     copy.bgTextAttributes = [self.bgTextAttributes copyWithZone:zone];
 
     copy.obliqueValue = self.obliqueValue;
+    copy.fontInterval = self.fontInterval;
     return copy;
 }
 
@@ -234,6 +237,7 @@
             BGTextAttribute *shadowAtt = [[BGTextAttribute alloc] init];
             shadowAtt.shadowColor = color;
             shadowAtt.obliqueValue = self.obliqueValue;
+            shadowAtt.fontInterval = self.fontInterval;
             shadowAtt.shadowOffset = CGPointMake(currentOffset.x, currentOffset.y);
             currentOffset.x += 0.2;
             currentOffset.y += 0.2;
