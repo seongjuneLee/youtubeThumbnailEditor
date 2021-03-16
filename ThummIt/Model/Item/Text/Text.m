@@ -314,7 +314,7 @@
     // 만약 타이포가 사선 그라데이션이면 이미지 크기 똑같이 해주기
     if (self.typo.textColorPatternImageName.length > 0) {
         UIImage *patternImage = [UIImage imageNamed:self.typo.textColorPatternImageName];
-        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(self.baseView.frameWidth, self.baseView.frameHeight)];
+        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(self.baseView.boundsWidth, self.baseView.boundsHeight)];
         self.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
     }
     

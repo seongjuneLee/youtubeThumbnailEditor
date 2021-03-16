@@ -140,7 +140,7 @@
     [text applyTypo:typo];
     if (typo.textColorPatternImageName.length > 0){
         UIImage *patternImage = [UIImage imageNamed:typo.textColorPatternImageName];
-        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(text.baseView.frameWidth, text.baseView.frameHeight)];
+        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(text.baseView.boundsWidth, text.baseView.boundsHeight)];
         text.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
         [text applyTypo:typo];
     }

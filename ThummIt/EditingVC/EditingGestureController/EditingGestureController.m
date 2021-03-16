@@ -476,16 +476,15 @@
         [self showDegreeGuideLineWithMagnetWithDeltaDegree:self.currentRotation withScaleTransform:scaleTransform];
         
     } else if (sender.state == UIGestureRecognizerStateEnded){
-        if (editingVC.currentItem.isBasePhotoFrame) {
+        if (editingVC.currentItem.isBasePhotoFrame){
             return;
         }
-
         self.isPinching = false;
         [self removeItemSizeGuideLinesFromSuperView];
         [self.rotationDashedLine removeFromSuperview];
         
         [SaveManager.sharedInstance saveAndAddToStack];
-        if (editingVC.modeController.editingMode == NormalMode) {
+        if (editingVC.modeController.editingMode == NormalMode){
             editingVC.currentItem = nil;
         }
 

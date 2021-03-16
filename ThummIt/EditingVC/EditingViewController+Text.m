@@ -64,7 +64,7 @@
     
     if (self.currentText.typo.textColorPatternImageName.length > 0) {
         UIImage *patternImage = [UIImage imageNamed:self.currentText.typo.textColorPatternImageName];
-        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(self.currentText.baseView.frameWidth, self.currentText.baseView.frameHeight)];
+        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(self.currentText.baseView.boundsWidth, self.currentText.baseView.boundsHeight)];
         self.currentText.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
         [self.currentText applyTypo:self.currentText.typo];
     }

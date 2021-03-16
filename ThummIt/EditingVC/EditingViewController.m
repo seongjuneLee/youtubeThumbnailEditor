@@ -208,7 +208,7 @@
             if(text.typo.textColorPatternImageName.length > 0){
                 
                 UIImage *patternImage = [UIImage imageNamed:text.typo.textColorPatternImageName];
-                UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(text.baseView.frameWidth, text.textView.frameHeight)];
+                UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(text.baseView.boundsWidth, text.textView.boundsHeight)];
                 text.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
                 text.typo.originalGradientImageSize = CGSizeMake(resizedImage.size.width, resizedImage.size.height);
 
