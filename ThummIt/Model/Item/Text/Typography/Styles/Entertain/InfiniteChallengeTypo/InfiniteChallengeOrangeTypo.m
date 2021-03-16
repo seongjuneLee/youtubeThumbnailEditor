@@ -15,8 +15,8 @@
         
         self.name = NSLocalizedString(@"무한오렌",nil);
         self.fontName = @"S-CoreDream-9Black";
-        self.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"rrr"]];
-        self.textColorPatternImageName = @"rrr";
+        self.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"whiteOrangeGC"]];
+        self.textColorPatternImageName = @"whiteOrangeGC";
         
 
         BGTextAttribute *attribute = [[BGTextAttribute alloc] init];
