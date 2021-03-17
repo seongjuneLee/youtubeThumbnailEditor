@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-5851044002792096~9229917714</string>
-	<key>SKAdNetworkItems</key>
-	<array>
-		<dict>
-			<key>SKAdNetworkIdentifier</key>
-			<string>cstr6suwn9.skadnetwork</string>
-		</dict>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -54,6 +45,8 @@
 	<string>470445923976829</string>
 	<key>FacebookDisplayName</key>
 	<string>ThummIt</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-5851044002792096~9229917714</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>7d796ccb0943d83c4721fe5d3ff85e1c</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -91,6 +84,13 @@
 	<string>$(PRODUCT_NAME) uses Cameras</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photo Library Access</string>
+	<key>SKAdNetworkItems</key>
+	<array>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>cstr6suwn9.skadnetwork</string>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>KOTRA_BOLD.otf</string>
