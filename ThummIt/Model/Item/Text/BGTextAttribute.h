@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float shadowRadius;
 
 @property (nonatomic) float obliqueValue;
+@property (nonatomic) float fontInterval;
+
 
 -(NSMutableAttributedString*)toAttributedStringWithText:(NSString*)text;
 

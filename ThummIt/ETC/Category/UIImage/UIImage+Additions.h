@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *)imageWithView:(UIView *)view;
 - (UIImage *)crop:(CGRect)rect;
 + (UIImage *)trimImage:(UIImage *)originalImage;
++ (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size;
 
 @end
 

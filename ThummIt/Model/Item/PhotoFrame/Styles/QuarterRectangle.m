@@ -35,9 +35,9 @@
     return self;
 }
 
-+(QuarterRectangle*)quarterRectangle{
++(QuarterRectangle *)quarterRectangle{
     
-    QuarterRectangle* quarterRectangle = [[self alloc] init];
+    QuarterRectangle *quarterRectangle = [[self alloc] init];
     return quarterRectangle;
     
 }

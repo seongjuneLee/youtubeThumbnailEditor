@@ -7,6 +7,7 @@
 
 #import "Text.h"
 #import "UITextView+Additions.h"
+#import "UIImage+Additions.h"
 
 @implementation Text
 -(id)init{
@@ -225,9 +226,9 @@
     return textViewContainer;
 }
 
-+(UIImageView*)makePlaceHolderWithTypo:(Typography*)typo{
++(UIImageView *)makePlaceHolderWithTypo:(Typography*)typo{
     
-    Text * placeHolderText = [[Text alloc] init];
+    Text *placeHolderText = [[Text alloc] init];
     placeHolderText.text = typo.name;
     placeHolderText.typo = typo;
     [placeHolderText loadView];
@@ -241,10 +242,10 @@
 
     CGSize size = CGSizeMake(self.textViewContainer.boundsWidth, self.textViewContainer.boundsHeight);
     
-    UIImage* image;
+    UIImage *image;
     if (self.typo.bgImageName == nil) {
         image = [self imageFromView:self.textView];
-    } else {
+    } else{
         // backgroundImageView 기준으로 사이즈 설정
         UIImageView* backgroundImageView = self.backgroundImageView;
         size = CGSizeMake(backgroundImageView.boundsWidth, backgroundImageView.boundsHeight);
@@ -310,6 +311,13 @@
     [self updateBackgroundImageViewFrame:self.typo];
     [self.textViewContainer setNeedsLayout];
     
+    // 만약 타이포가 사선 그라데이션이면 이미지 크기 똑같이 해주기
+    if (self.typo.textColorPatternImageName.length > 0) {
+        UIImage *patternImage = [UIImage imageNamed:self.typo.textColorPatternImageName];
+        UIImage *resizedImage = [UIImage imageWithImage:patternImage convertToSize:CGSizeMake(self.baseView.boundsWidth, self.baseView.boundsHeight)];
+        self.typo.textColor = [UIColor colorWithPatternImage:resizedImage];
+    }
+    
     [self applyTypo:self.typo];
     
     // 5. 부분 타이포 적용
@@ -329,6 +337,7 @@
     self.textViewContainer.bounds = self.textView.bounds;
     // 배경이미지뷰 리사이즈
     [self updateBackgroundImageViewFrame:self.typo];
+    
 }
 
 
