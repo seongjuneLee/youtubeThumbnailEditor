@@ -3803,7 +3803,6 @@
 				6EF0C91925CD21CE00BE7573 /* NEXON Lv2 Gothic OTF.otf in Resources */,
 				6E9A858B25FFA648004075E1 /* MainFrameCollectionViewCell.xib in Resources */,
 				6EF5302025FA1083007E9B78 /* 독립서체_윤봉길_GSCaltex.otf in Resources */,
-				6ED0AF6E25E4FAFE0027485F /* MainFrameCollectionViewCell.xib in Resources */,
 				6EF0C91625CD21C600BE7573 /* BinggraeⅡ-Bold.otf in Resources */,
 				6EBEB60A25C32A140017C640 /* neodgm_pro.otf in Resources */,
 				6EBEB60625C328D10017C640 /* Fraunces-VariableFont_SOFT_WONK_opsz_wght.otf in Resources */,
@@ -4685,7 +4684,7 @@
 				CODE_SIGN_ENTITLEMENTS = ThummIt/ThummIt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KD6B7H34C6;
@@ -4702,7 +4701,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.13;
+				MARKETING_VERSION = 1.0.14;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",
@@ -4774,7 +4773,7 @@
 				CODE_SIGN_ENTITLEMENTS = ThummIt/ThummIt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KD6B7H34C6;
@@ -4791,7 +4790,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.13;
+				MARKETING_VERSION = 1.0.14;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",

@@ -121,9 +121,9 @@
     NSArray *musicTemplatePreviewImages = @[playlistMusicTemplate.previewImageName, ninetyCenturyMusicTemplate.previewImageName,retroStereoMusicTemplate.previewImageName, lalalandMusicTemplate.previewImageName, btsMusicTemplate.previewImageName];
     
     //category
-    self.templatePreviewImages = @[tvEntertainTemplatePreviewImages, youtubeEntertainTemplatePreviewImages,  tripVlogTemplatePreviewImages, schoolVlogTemplatePreviewImages, dailyVlogTemplatePreviewImages, cookingVlogTemplatePreviewImages, musicTemplatePreviewImages];
+    self.templatePreviewImages = @[dailyVlogTemplatePreviewImages, tripVlogTemplatePreviewImages, schoolVlogTemplatePreviewImages, cookingVlogTemplatePreviewImages, musicTemplatePreviewImages, tvEntertainTemplatePreviewImages, youtubeEntertainTemplatePreviewImages];
     
-    NSArray *templates = @[tvEntertainTemplates, youtubeEntertainTemplates , tripVlogTemplates, schoolVlogTemplates, dailyVlogTemplates, cookingVlogTemplates, musicTemplates];
+    NSArray *templates = @[dailyVlogTemplates, tripVlogTemplates, schoolVlogTemplates, cookingVlogTemplates, musicTemplates, tvEntertainTemplates, youtubeEntertainTemplates];
     
 
     
