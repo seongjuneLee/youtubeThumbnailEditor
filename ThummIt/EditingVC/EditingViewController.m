@@ -72,7 +72,19 @@ didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
 
 /// Tells the delegate that the ad dismissed full screen content.
 - (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
-   NSLog(@"Ad did dismiss full screen content.");
+    GADRequest *request = [GADRequest request];
+    
+    [GADInterstitialAdBeta loadWithAdUnitID:@"ca-app-pub-5851044002792096/1051226557"
+                                    request:request
+                          completionHandler:^(GADInterstitialAdBeta *ad, NSError *error) {
+        if (error) {
+            NSLog(@"Failed to load interstitial ad with error: %@", [error localizedDescription]);
+            return;
+        }
+        self.interstitial = ad;
+        self.interstitial.fullScreenContentDelegate = self;
+        
+    }];
 }
 
 
