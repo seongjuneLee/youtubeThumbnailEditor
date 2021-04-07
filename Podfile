@@ -5,6 +5,7 @@ target 'ThummIt' do
   use_frameworks!
   
   pod 'Parse'
+  pod 'Parse/UI'
   
   pod 'Toast', '~> 4.0.0'
   

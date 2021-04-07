@@ -135,6 +135,8 @@ PODS:
     - Parse/Core (= 1.19.0)
   - Parse/Core (1.19.0):
     - Bolts/Tasks (= 1.9.1)
+  - Parse/UI (1.19.0):
+    - Parse/Core
   - PromisesObjC (1.2.11)
   - Toast (4.0.0)
 
@@ -146,6 +148,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - KakaoSDK
   - Parse
+  - Parse/UI
   - Toast (~> 4.0.0)
 
 SPEC REPOS:
@@ -215,6 +218,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 244e864f939dfae5ed6cf6a2bd68a342260a6b7e
+PODFILE CHECKSUM: fba75d3f7096d4f9c061a472e9ce9e9a6942d3cf
 
 COCOAPODS: 1.10.1
