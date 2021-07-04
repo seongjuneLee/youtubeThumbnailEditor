@@ -66,7 +66,8 @@
     if (oldFilePath && oldFilePath.length > 0){
         [ProjectFileManager.sharedInstance deleteWithFilePath:oldFilePath error:&error];
     }
-    
+    NSLog(@"save");
+
 }
 
 -(NSMutableArray *)items{

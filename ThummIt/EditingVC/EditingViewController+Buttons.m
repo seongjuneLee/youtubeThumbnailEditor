@@ -37,35 +37,14 @@
             
             [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    
                     if (success) {
-                        PFObject* exported = [PFObject objectWithClassName:@"exported"];
-                        NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
-                        PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithName:@"test" data:thumbnailBigData contentType:@"png"];
-                        exported[@"exportedThumbnail"] = thumbnailBigFile;
-                        NSString * language = [[NSLocale preferredLanguages] firstObject];
-                        exported[@"contry"] = language;
-                        if (SaveManager.sharedInstance.currentTemplate.templateName) {
-                            exported[@"template"] = SaveManager.sharedInstance.currentTemplate.templateName;
-                        }
-                        if (PFUser.currentUser) {
-                            exported[@"user"] = PFUser.currentUser;
-                        }
-                        [exported saveInBackground];
-                        
-                        if (PFUser.currentUser) {
-                            NSMutableArray *exportedImages = [NSMutableArray array];
-                            [exportedImages addObjectsFromArray:PFUser.currentUser[@"exportedThumbnails"]];
-                            [exportedImages addObject:thumbnailBigFile];
-                            [PFUser.currentUser setObject:exportedImages forKey:@"exportedThumbnails"];
-
-                            [PFUser.currentUser saveInBackground];
-                        }
-                        
                         [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
                     } else {
-                        [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+                        UIImageWriteToSavedPhotosAlbum(ExportManager.sharedInstance.exportingImage,
+                           self, // send the message to 'self' when calling the callback
+                                                       @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), // the selector to tell the method to call on completion
+                           NULL); // you generally won't need a contextInfo here
+
                     }
                 });
             }];
@@ -76,6 +55,15 @@
     }
 
 }
+
+- (void)thisImage:(UIImage *)image hasBeenSavedInPhotoAlbumWithError:(NSError *)error usingContextInfo:(void*)ctxInfo {
+    if (error) {
+        [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+    } else {
+        [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
+    }
+}
+
 -(void)setThumbnailAndResolution:(CGSize)resolution{
     UIImage *viewImage = [self.view toImage];
     UIImage *croppedImage = [viewImage crop:self.bgView.frame];
