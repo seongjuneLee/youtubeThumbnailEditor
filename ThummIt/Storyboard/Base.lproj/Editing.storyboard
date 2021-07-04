@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -94,6 +95,16 @@
                                 <color key="textColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoQ-vE-ism">
+                                <rect key="frame" x="161" y="58" width="92" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="최근 항목 ▾">
+                                    <color key="titleColor" red="1" green="1" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="categoryButtonTapped:" destination="9gy-MH-RR0" eventType="touchUpInside" id="bdc-ej-dco"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtR-ND-K0Y">
                                 <rect key="frame" x="10" y="354" width="39" height="39"/>
                                 <constraints>
@@ -533,8 +544,10 @@
                             <constraint firstItem="OGb-vs-PFa" firstAttribute="centerX" secondItem="c8Y-hQ-BzP" secondAttribute="centerX" id="VZ3-DL-LcJ"/>
                             <constraint firstItem="Ei1-47-GtK" firstAttribute="top" secondItem="7pY-QV-G2j" secondAttribute="bottom" constant="100" id="WyH-5l-31z"/>
                             <constraint firstItem="Yts-NW-w4K" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="X93-o3-Uof"/>
+                            <constraint firstItem="RoQ-vE-ism" firstAttribute="centerX" secondItem="xcS-1G-W8A" secondAttribute="centerX" id="XJx-zq-8uf"/>
                             <constraint firstItem="dNB-8m-B4w" firstAttribute="bottom" secondItem="c8Y-hQ-BzP" secondAttribute="bottom" id="XUc-dD-1x1"/>
                             <constraint firstItem="ulM-C1-Guu" firstAttribute="top" secondItem="qIS-C8-jIt" secondAttribute="bottom" id="Yzl-qb-8Oz"/>
+                            <constraint firstItem="RoQ-vE-ism" firstAttribute="centerY" secondItem="xcS-1G-W8A" secondAttribute="centerY" id="ZoV-zs-QCt"/>
                             <constraint firstItem="UhL-LO-vTX" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="Zzp-b0-yX7"/>
                             <constraint firstItem="dNB-8m-B4w" firstAttribute="centerX" secondItem="7pY-QV-G2j" secondAttribute="centerX" id="bBQ-6c-uA4"/>
                             <constraint firstItem="QtR-ND-K0Y" firstAttribute="leading" secondItem="ulM-C1-Guu" secondAttribute="leading" constant="10" id="c7o-sK-oYA"/>
@@ -565,6 +578,7 @@
                         <outlet property="bgColorTopConstraint" destination="WyH-5l-31z" id="eCN-ju-4jF"/>
                         <outlet property="bgView" destination="c8Y-hQ-BzP" id="NMv-b2-Pr6"/>
                         <outlet property="buttonScrollView" destination="a67-Pd-GYU" id="i4e-k2-YxV"/>
+                        <outlet property="categoryButton" destination="RoQ-vE-ism" id="ZM6-3s-qik"/>
                         <outlet property="deleteButtonContentView" destination="wc0-ej-qTW" id="tWS-ud-jZS"/>
                         <outlet property="gestureView" destination="zeV-pp-6xL" id="eFT-Gp-vQG"/>
                         <outlet property="hueSlider" destination="dNB-8m-B4w" id="pLl-pE-Mot"/>
@@ -586,6 +600,7 @@
                         <outlet property="textButton" destination="IR6-qv-FJI" id="VHX-kA-5XZ"/>
                         <outlet property="textButtonContentView" destination="4DQ-QU-Zk5" id="0tZ-ey-VZw"/>
                         <outlet property="textButtonInScrollView" destination="IR6-qv-FJI" id="yEt-jS-0dq"/>
+                        <outlet property="titleLabel" destination="xcS-1G-W8A" id="OiZ-ET-hBn"/>
                         <outlet property="underAreaView" destination="ulM-C1-Guu" id="X8Q-cO-OHa"/>
                         <outlet property="undoButton" destination="QtR-ND-K0Y" id="5H1-yi-OUN"/>
                         <outlet property="upperArea" destination="UhL-LO-vTX" id="sm6-pY-crA"/>
@@ -619,18 +634,29 @@
                                     <outlet property="delegate" destination="jtH-J7-PzA" id="R5k-tr-XNa"/>
                                 </connections>
                             </collectionView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfs-O5-07V">
+                                <rect key="frame" x="0.0" y="1000" width="414" height="896"/>
+                                <connections>
+                                    <segue destination="EnN-0W-w1m" kind="embed" identifier="categoryContainer" id="KYm-4B-4nE"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lg3-28-MTv"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="xfs-O5-07V" firstAttribute="centerX" secondItem="NS3-zs-gzl" secondAttribute="centerX" id="ELw-da-dri"/>
                             <constraint firstItem="NS3-zs-gzl" firstAttribute="centerX" secondItem="Lg3-28-MTv" secondAttribute="centerX" id="FKG-sM-15C"/>
                             <constraint firstItem="NS3-zs-gzl" firstAttribute="top" secondItem="Lg3-28-MTv" secondAttribute="top" constant="-44" id="JVs-75-17L"/>
                             <constraint firstItem="NS3-zs-gzl" firstAttribute="bottom" secondItem="Lg3-28-MTv" secondAttribute="bottom" constant="34" id="Vv8-IK-DsY"/>
+                            <constraint firstItem="xfs-O5-07V" firstAttribute="width" secondItem="NS3-zs-gzl" secondAttribute="width" id="evk-OZ-rEV"/>
+                            <constraint firstItem="xfs-O5-07V" firstAttribute="height" secondItem="NS3-zs-gzl" secondAttribute="height" id="ise-Pg-v2R"/>
+                            <constraint firstItem="xfs-O5-07V" firstAttribute="top" secondItem="NS3-zs-gzl" secondAttribute="top" constant="1000" id="pOt-sv-oEU"/>
                             <constraint firstItem="NS3-zs-gzl" firstAttribute="width" secondItem="Jfk-Wl-q0s" secondAttribute="width" id="xX0-6A-5K3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Album" id="RKB-uI-dlr"/>
                     <connections>
+                        <outlet property="albumCategoryContainerTopConstraint" destination="pOt-sv-oEU" id="My8-RM-Pxl"/>
                         <outlet property="collectionView" destination="NS3-zs-gzl" id="3he-4Z-LR9"/>
                         <outlet property="collectionViewTopConstraint" destination="JVs-75-17L" id="7wv-lJ-WoN"/>
                     </connections>
@@ -940,7 +966,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4Y-kx-Et6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1878" y="-749"/>
+            <point key="canvasLocation" x="-442" y="-749"/>
         </scene>
         <!--Color View Controller-->
         <scene sceneID="UAH-W7-dlC">
@@ -1203,7 +1229,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfX-Lv-s3o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1196" y="-532"/>
+            <point key="canvasLocation" x="239" y="-532"/>
+        </scene>
+        <!--Album Category View Controller-->
+        <scene sceneID="bJe-zg-3tH">
+            <objects>
+                <viewController storyboardIdentifier="AlbumCategoryViewController" id="EnN-0W-w1m" customClass="AlbumCategoryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s6T-WU-ycd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mg1-0D-Ld9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewLayout key="collectionViewLayout" id="jXd-7g-9yg" customClass="AlbumCollectionViewCellFlowLayout"/>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="EnN-0W-w1m" id="n7x-0v-dGQ"/>
+                                    <outlet property="delegate" destination="EnN-0W-w1m" id="9vG-t5-hf1"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mg1-0D-Ld9" firstAttribute="width" secondItem="s6T-WU-ycd" secondAttribute="width" id="TVc-XQ-Jd6"/>
+                            <constraint firstItem="Mg1-0D-Ld9" firstAttribute="height" secondItem="s6T-WU-ycd" secondAttribute="height" id="cjP-xK-pSa"/>
+                            <constraint firstItem="Mg1-0D-Ld9" firstAttribute="centerX" secondItem="s6T-WU-ycd" secondAttribute="centerX" id="jBN-PX-LJ9"/>
+                            <constraint firstItem="Mg1-0D-Ld9" firstAttribute="centerY" secondItem="s6T-WU-ycd" secondAttribute="centerY" id="nqw-ZA-fT2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Mg1-0D-Ld9" id="1Ir-LS-Dns"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="daT-pm-C6q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1984" y="-750"/>
         </scene>
     </scenes>
     <resources>
@@ -1224,5 +1285,8 @@
         <image name="textbox" catalog="system" width="128" height="91"/>
         <image name="undoImage" width="266.66665649414062" height="266.66665649414062"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

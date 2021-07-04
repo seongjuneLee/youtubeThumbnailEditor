@@ -137,6 +137,11 @@
     [self.view insertSubview:photo.baseView belowSubview:self.gestureView];
     [self didSelectPhotoWithPHAsset:self.recentPHAsset];
     
+    [UIView animateWithDuration:0.2 animations:^{
+        self.titleLabel.alpha = 0.0;
+        self.categoryButton.alpha = 1.0;
+    }];
+
 }
 
 #pragma mark - 포토 프레임 버튼
@@ -183,6 +188,12 @@
         self.recentPHAsset = PhotoManager.sharedInstance.phassets[0];
     }
     [self didSelectPhotoWithPHAsset:self.recentPHAsset];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.titleLabel.alpha = 0.0;
+        self.categoryButton.alpha = 1.0;
+    }];
+
     
 }
 -(void)taskWhenDenied{
@@ -467,6 +478,30 @@
     
 }
 
+- (IBAction)categoryButtonTapped:(UIButton *)sender {
+    
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        NSString* title = [sender.titleLabel.text stringByReplacingOccurrencesOfString:@"▾" withString:@"▴"];
+        //blackDownArrow
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            self.albumVC.albumCategoryContainerTopConstraint.constant = 0;
+            [self.albumVC.view layoutIfNeeded];
+            [self.categoryButton setTitle:title forState:UIControlStateNormal];
+        }];
+    } else {
+        NSString* title = [sender.titleLabel.text stringByReplacingOccurrencesOfString:@"▴" withString:@"▾"];
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            self.albumVC.albumCategoryContainerTopConstraint.constant = self.albumVC.view.frameHeight;
+            [self.albumVC.view layoutIfNeeded];
+            [self.categoryButton setTitle:title forState:UIControlStateNormal];
+        }];
+    }
+
+
+}
 
 
 @end

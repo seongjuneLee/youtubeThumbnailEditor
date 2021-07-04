@@ -72,7 +72,6 @@
     [copied loadView];
     [copied setItemCenterAndScale];
 
-
     self.currentItem = copied;
     self.currentPhoto = copied;
     self.originalPhoto = photo;
@@ -88,7 +87,11 @@
     [self showItemCollectionVC];
     [self addAlbumVC];
     [self.albumVC showWithAnimation];
-        
+    [UIView animateWithDuration:0.2 animations:^{
+        self.titleLabel.alpha = 0.0;
+        self.categoryButton.alpha = 1.0;
+    }];
+
 }
 
 #pragma mark - 포토프레임
@@ -123,6 +126,12 @@
 
     }
     [self setCurrentPhotoSelectedOnAlbumVC];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.titleLabel.alpha = 0.0;
+        self.categoryButton.alpha = 1.0;
+    }];
+
 }
 
 -(void)fixedPhotoFrameTapped{

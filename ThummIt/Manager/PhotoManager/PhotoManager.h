@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (strong, nonatomic) NSMutableArray *phassets;
+@property (strong, nonatomic) NSMutableArray *albums;
 
 -(void)getImageFromPHAsset:(PHAsset *)phAsset withPHImageContentMode:(PHImageContentMode)contentMode withSize:(CGSize)size WithCompletionBlock:(void(^)(UIImage *image))block;
 -(void)getFirstPhotoFromAlbumWithContentMode:(PHImageContentMode)contentMode withSize:(CGSize)size WithCompletionBlock:(void(^)(UIImage *image))block;

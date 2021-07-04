@@ -9,6 +9,7 @@
 #import <Photos/Photos.h>
 #import "AlbumCollectionViewCell.h"
 #import "PhotoManager.h"
+#import "AlbumCategoryViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,11 +19,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface AlbumViewController : UIViewController
+@interface AlbumViewController : UIViewController <AlbumCategoryVCDelegate>
 @property (weak, nonatomic) id<AlbumViewControllerDelegate> delegate;
 @property (strong, nonatomic) NSMutableArray *phAssets;
 @property (strong, nonatomic) NSIndexPath *selectedIndexPath;
 @property (strong, nonatomic) UIViewController *editingVC;
+@property (strong, nonatomic) AlbumCategoryViewController *albumCategoryVC;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *albumCategoryContainerTopConstraint;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 

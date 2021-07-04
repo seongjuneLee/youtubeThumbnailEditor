@@ -14,6 +14,7 @@
     static dispatch_once_t onceToken; // onceToken = 0
     dispatch_once(&onceToken, ^{
         sharedInstance = [[PhotoManager alloc] init];
+        sharedInstance.albums = [NSMutableArray array];
         sharedInstance.phassets = [sharedInstance fetchPhassets];
     });
     
@@ -58,20 +59,26 @@
 -(NSMutableArray *)fetchPhassets{
     
     __block NSMutableArray* phAssets = [NSMutableArray array];
+    NSArray* fetchResults = [self categoryFetchResults];
     
-    for (PHFetchResult *result in [self categoryFetchResults]) {
-        [result enumerateObjectsUsingBlock:^(PHAssetCollection *phAssetCollection, NSUInteger idx, BOOL * _Nonnull stop) {
-            PHFetchOptions *fetchOptions = [[PHFetchOptions alloc] init];
-            fetchOptions.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:false]];
-            
-            fetchOptions.predicate = [NSPredicate predicateWithFormat:@"mediaType = %ld ",PHAssetMediaTypeImage];
-            PHFetchResult *result = [PHAsset fetchAssetsInAssetCollection:phAssetCollection options:fetchOptions];
-            [result enumerateObjectsUsingBlock:^(PHAsset *phAsset, NSUInteger idx, BOOL * _Nonnull stop) {
-                [phAssets addObject:phAsset];
-            }];
-        }];
+    for (int i = 0; i < fetchResults.count; i ++) {
+        PHFetchResult *fetchResult = fetchResults[i];
+        for (int x = 0; x < fetchResult.count; x ++) {
+            PHCollection *collection = fetchResult[x];
+            PHAssetCollection *phAssetCollection = fetchResult[x];
+            if ([collection.localizedTitle isEqualToString:NSLocalizedString(@"Recent", nil)]) {
+                PHFetchOptions *fetchOptions = [[PHFetchOptions alloc] init];
+                fetchOptions.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:false]];
+                
+                fetchOptions.predicate = [NSPredicate predicateWithFormat:@"mediaType = %ld ",PHAssetMediaTypeImage];
+                PHFetchResult *result = [PHAsset fetchAssetsInAssetCollection:phAssetCollection options:fetchOptions];
+                [result enumerateObjectsUsingBlock:^(PHAsset *phAsset, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [phAssets addObject:phAsset];
+                }];
+            }
+        }
     }
-    
+
     return phAssets;
 }
 
