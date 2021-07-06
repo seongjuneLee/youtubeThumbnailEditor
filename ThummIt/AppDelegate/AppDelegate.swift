@@ -16,6 +16,8 @@ import FirebaseAuth
 import GoogleSignIn
 import FBSDKCoreKit
 import GoogleMobileAds
+import AppTrackingTransparency
+
 
 @UIApplicationMain
 
@@ -62,11 +64,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         KakaoSDKCommon.initSDK(appKey: "4df206455336b6c8a2d990fd54b0bb39")
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        self.requestPermission()
 
         // Override point for customization after application launch.
         return true
     }
-    
+    func requestPermission() {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                case .authorized:
+                    // Tracking authorization dialog was shown
+                    // and we are authorized
+                    print("Authorized")
+                    
+                    // Now that we are authorized we can get the IDFA
+                case .denied:
+                    // Tracking authorization dialog was
+                    // shown and permission is denied
+                    print("Denied")
+                case .notDetermined:
+                    // Tracking authorization dialog has not been shown
+                    print("Not Determined")
+                case .restricted:
+                    print("Restricted")
+                @unknown default:
+                    print("Unknown")
+                }
+            }
+        }
+    }
+
+
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
         let currentInstallation = PFInstallation.current()
