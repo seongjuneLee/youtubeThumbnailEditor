@@ -85,7 +85,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photo Library Access</string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>If you click Allow, your usage information will be used to improve the app.</string>
+	<string>If you click Accept, we will provide you with customized information and benefits.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
