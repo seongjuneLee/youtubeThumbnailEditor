@@ -675,14 +675,20 @@
     EditingViewController *editingVC = (EditingViewController *)self.editingVC;
 
     float imageViewBottomY = editingVC.bgView.frameY + editingVC.bgView.frameHeight;
-    if (currentPointY < imageViewBottomY && editingVC.currentItem.canChangeColor) {
-        [UIView animateWithDuration:0.2 animations:^{
-            editingVC.hueSlider.alpha = 1.0;
-        }];
-    } else {
+    if (editingVC.modeController.editingMode == NormalMode) {
         [UIView animateWithDuration:0.2 animations:^{
             [editingVC hideAndInitSlider];
         }];
+    } else {
+        if (currentPointY < imageViewBottomY && editingVC.currentItem.canChangeColor) {
+            [UIView animateWithDuration:0.2 animations:^{
+                editingVC.hueSlider.alpha = 1.0;
+            }];
+        } else {
+            [UIView animateWithDuration:0.2 animations:^{
+                [editingVC hideAndInitSlider];
+            }];
+        }
     }
 }
 
