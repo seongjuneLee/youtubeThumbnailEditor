@@ -62,7 +62,6 @@
 }
 
 -(void)saveAndAddToStack{
-    NSLog(@"saveAndAddToStack");
     dispatch_sync(self.savingQueue, ^{
         [self.currentProject save];
         [UndoManager.sharedInstance addCurrentProjectToUndoRedoStack];

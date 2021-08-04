@@ -6,7 +6,7 @@
 //
 
 #import "Photo.h"
-
+#import "PhotoManager.h"
 @implementation Photo
 -(instancetype)init{
     self = [super init];
@@ -63,8 +63,13 @@
 -(id)initWithCoder:(NSCoder *)decoder{
     if((self = [super initWithCoder:decoder])) {
         
-        self.imageData = [decoder decodeObjectForKey:@"imageData"];
-
+        NSString *phAssetLocalIdentifier = [decoder decodeObjectForKey:@"localIdentifier"];
+        for (PHAsset *phAsset in PhotoManager.sharedInstance.phassets) {
+            if ([phAsset.localIdentifier isEqualToString:phAssetLocalIdentifier]) {
+                self.phAsset = phAsset;
+            }
+        }
+        
     }
     return self;
 }
@@ -72,6 +77,8 @@
 -(void)encodeWithCoder:(NSCoder *)encoder{
     
     [super encodeWithCoder:encoder];
+    [encoder encodeObject:self.phAsset.localIdentifier forKey:@"localIdentifier"];
+
     NSData *imageData = UIImagePNGRepresentation(self.photoImageView.image);
     [encoder encodeObject:imageData forKey:@"imageData"];
 
