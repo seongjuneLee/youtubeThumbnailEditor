@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 #import "UIView+Additions.h"
-#import <Toast/UIView+Toast.h>
 #import <Photos/Photos.h>
 
 

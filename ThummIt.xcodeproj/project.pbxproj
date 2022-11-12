@@ -8,18 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		01B0F527C2CA96816AA509E5 /* Pods_ThummItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B33E7A63385FF8364DC98CF /* Pods_ThummItTests.framework */; };
-		3E3DF43CE000686E4455BE28 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		3E3DF43CE000686E4455BE28 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		6E07E74725DABED100A57801 /* ExportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E07E74625DABED100A57801 /* ExportManager.m */; };
 		6E1190EC2584B163000DD9C0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1190EB2584B163000DD9C0 /* HomeViewController.m */; };
 		6E1190EF2584B163000DD9C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190ED2584B163000DD9C0 /* Main.storyboard */; };
 		6E1190F42584B164000DD9C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1190F22584B164000DD9C0 /* LaunchScreen.storyboard */; };
 		6E1191012584B165000DD9C0 /* ThummitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1191002584B165000DD9C0 /* ThummitTests.m */; };
 		6E11910C2584B165000DD9C0 /* ThummitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11910B2584B165000DD9C0 /* ThummitUITests.m */; };
-		6E1DBCF825CBE240004C0416 /* SignInEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */; };
-		6E1DBCFD25CBE2B5004C0416 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBCFC25CBE2B5004C0416 /* ForgotPasswordViewController.m */; };
-		6E1DBD0225CBE2C5004C0416 /* SignInNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */; };
-		6E1DBD0725CBE2D4004C0416 /* SignInPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */; };
-		6E1DBD1725CD1A72004C0416 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBD1625CD1A72004C0416 /* LogInViewController.m */; };
 		6E1DBDBC25CEF492004C0416 /* LongRectangleSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBDBB25CEF492004C0416 /* LongRectangleSticker.m */; };
 		6E1DBDFE25D8063F004C0416 /* ThreeFifthsRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBDFD25D8063F004C0416 /* ThreeFifthsRectangle.m */; };
 		6E1DBE0325D806B4004C0416 /* TwoFifthRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1DBE0225D806B4004C0416 /* TwoFifthRectangle.m */; };
@@ -76,7 +71,6 @@
 		6E28452B25C35870008B7A23 /* VlogHashTagTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28451125C35870008B7A23 /* VlogHashTagTypo.m */; };
 		6E28452C25C35870008B7A23 /* VlogStudy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28451225C35870008B7A23 /* VlogStudy.m */; };
 		6E2845B125C5FCC4008B7A23 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845B025C5FCC4008B7A23 /* UserManager.m */; };
-		6E2845CB25C98990008B7A23 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */; };
 		6E40F42B25E6E67100FD0F67 /* FreeFormCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F42925E6E67100FD0F67 /* FreeFormCollectionReusableView.m */; };
 		6E40F42C25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E40F42A25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib */; };
 		6E40F43B25E7DADD00FD0F67 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E40F43A25E7DADD00FD0F67 /* Photo.m */; };
@@ -107,6 +101,10 @@
 		6E7DD4D42584E1D30014618E /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7DD4D22584E1D30014618E /* AlbumCollectionViewCell.xib */; };
 		6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD4E52587ABE10014618E /* EditingViewController.m */; };
 		6E7DD51625888C980014618E /* Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD51525888C980014618E /* Template.m */; };
+		6E7EEC58291FA3D70017FD44 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7EEC57291FA3D70017FD44 /* MainTabbarViewController.swift */; };
+		6E7EEC5B291FA50C0017FD44 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7EEC5A291FA50C0017FD44 /* Realm */; };
+		6E7EEC5E291FA5580017FD44 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7EEC5D291FA5580017FD44 /* SnapKit */; };
+		6E7EEC61291FADC10017FD44 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 6E7EEC60291FADC10017FD44 /* Toast */; };
 		6E80770F25C82B060033FF21 /* DanceVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80770E25C82B060033FF21 /* DanceVlogTemplate.m */; };
 		6E80771825C857520033FF21 /* StudyVlogTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80771725C857520033FF21 /* StudyVlogTemplate.m */; };
 		6E80771D25C85FDB0033FF21 /* VlogTapeSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80771C25C85FDB0033FF21 /* VlogTapeSticker.m */; };
@@ -163,10 +161,7 @@
 		6E99877C258A2A9D00C8F907 /* TemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E99877B258A2A9D00C8F907 /* TemplateManager.m */; };
 		6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E998794258A300300C8F907 /* HomeCollectionViewCell.m */; };
 		6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */; };
-		6E9A850325F8AFAD004075E1 /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A850225F8AFAD004075E1 /* IAPViewController.m */; };
 		6E9A850725F8B6F2004075E1 /* IAP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E9A850625F8B6F2004075E1 /* IAP.storyboard */; };
-		6E9A850B25F8C25A004075E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9A850A25F8C25A004075E1 /* StoreKit.framework */; };
-		6E9A857925FF4E5B004075E1 /* CustomerCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9A857825FF4E5B004075E1 /* CustomerCenterViewController.swift */; };
 		6E9A858B25FFA648004075E1 /* MainFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E9A858D25FFA648004075E1 /* MainFrameCollectionViewCell.xib */; };
 		6E9BE98B258A517000F7F539 /* TwoDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE98A258A517000F7F539 /* TwoDivisionTemplate.m */; };
 		6E9BE998258A527C00F7F539 /* QuarterDivisionTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BE997258A527C00F7F539 /* QuarterDivisionTemplate.m */; };
@@ -188,13 +183,6 @@
 		6E9BEA61258F26B600F7F539 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA60258F26B600F7F539 /* CoreDataStack.swift */; };
 		6E9BEA6F258F513F00F7F539 /* ProjectFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA6E258F513F00F7F539 /* ProjectFileManager.swift */; };
 		6E9BEA79258F51BA00F7F539 /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */; };
-		6EA7A32725CB1435001041A1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7A32625CB1435001041A1 /* SignInViewController.swift */; };
-		6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 6EA7A35225CB1975001041A1 /* FacebookLogin */; };
-		6EABDE6D25DFBD5C006510ED /* launchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EABDE6C25DFBD5C006510ED /* launchScreen.png */; };
-		6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */; };
-		6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */; };
-		6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8A25B767C700C42187 /* AccountTableController.m */; };
-		6EAD5C9025B767C700C42187 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5C8B25B767C700C42187 /* AccountViewController.m */; };
 		6EAD5CA625B7699F00C42187 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */; };
 		6EAFD5B625B876D400B193AB /* KOTRA_BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */; };
 		6EAFD5C025B87D0400B193AB /* TrapezoidTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAFD5BF25B87D0400B193AB /* TrapezoidTypo.m */; };
@@ -407,7 +395,7 @@
 		6EF1C72B25ECDF2D002B8820 /* EditingPhotoButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1C72925ECDF2D002B8820 /* EditingPhotoButtonViewController.m */; };
 		6EF1C73F25ECE011002B8820 /* UIImage+Segmentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1C73E25ECE011002B8820 /* UIImage+Segmentation.swift */; };
 		6EF1C76F25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1C76E25ED359F002B8820 /* EditingPhotoViewController+ButtonDelegate.m */; };
-		6EF1C7D925EF4C41002B8820 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6EF1C7D925EF4C41002B8820 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		6EF37B6825E4DC6400A43595 /* MainFrameCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B6725E4DC6400A43595 /* MainFrameCollectionController.m */; };
 		6EF37B7725E4DE8400A43595 /* MainFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF37B7625E4DE8400A43595 /* MainFrame.m */; };
 		6EF5301B25FA1067007E9B78 /* Cafe24Oneprettynight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EF5301A25FA1067007E9B78 /* Cafe24Oneprettynight.otf */; };
@@ -514,7 +502,7 @@
 		B1F8C6D825C4CC23002DDAF8 /* VlogMakingFilmTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6D725C4CC23002DDAF8 /* VlogMakingFilmTypo.m */; };
 		B1F8C6DD25C4CD8B002DDAF8 /* VlogVideoSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6DC25C4CD8B002DDAF8 /* VlogVideoSticker.m */; };
 		B1F8C6E225C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F8C6E125C4CF0C002DDAF8 /* VlogVisitingCompanyTypo.m */; };
-		C3AA5AEB200F3BCD30FC7A2B /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA70909105CF786CC44E691 /* Pods_ThummIt.framework */; };
+		E24CA2CC90747B94C1D947B0 /* Pods_ThummIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA70909105CF786CC44E691 /* Pods_ThummIt.framework */; };
 		EB2B94A808AA44862A06F2C6 /* Pods_ThummIt_ThummItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1B7F0FA57312CBE3447BC7 /* Pods_ThummIt_ThummItUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -569,16 +557,6 @@
 		6E1191072584B165000DD9C0 /* ThummItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThummItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E11910B2584B165000DD9C0 /* ThummitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThummitUITests.m; sourceTree = "<group>"; };
 		6E11910D2584B165000DD9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E1DBCF625CBE240004C0416 /* SignInEmailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInEmailViewController.h; sourceTree = "<group>"; };
-		6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInEmailViewController.m; sourceTree = "<group>"; };
-		6E1DBCFB25CBE2B5004C0416 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
-		6E1DBCFC25CBE2B5004C0416 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
-		6E1DBD0025CBE2C5004C0416 /* SignInNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInNameViewController.h; sourceTree = "<group>"; };
-		6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInNameViewController.m; sourceTree = "<group>"; };
-		6E1DBD0525CBE2D4004C0416 /* SignInPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInPasswordViewController.h; sourceTree = "<group>"; };
-		6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInPasswordViewController.m; sourceTree = "<group>"; };
-		6E1DBD1525CD1A72004C0416 /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
-		6E1DBD1625CD1A72004C0416 /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		6E1DBDBA25CEF492004C0416 /* LongRectangleSticker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LongRectangleSticker.h; sourceTree = "<group>"; };
 		6E1DBDBB25CEF492004C0416 /* LongRectangleSticker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongRectangleSticker.m; sourceTree = "<group>"; };
 		6E1DBDFC25D8063F004C0416 /* ThreeFifthsRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeFifthsRectangle.h; sourceTree = "<group>"; };
@@ -690,8 +668,6 @@
 		6E28451225C35870008B7A23 /* VlogStudy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VlogStudy.m; sourceTree = "<group>"; };
 		6E2845AF25C5FCC4008B7A23 /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		6E2845B025C5FCC4008B7A23 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
-		6E2845C925C98990008B7A23 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
-		6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		6E40F42825E6E67100FD0F67 /* FreeFormCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeFormCollectionReusableView.h; sourceTree = "<group>"; };
 		6E40F42925E6E67100FD0F67 /* FreeFormCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeFormCollectionReusableView.m; sourceTree = "<group>"; };
 		6E40F42A25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreeFormCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -750,6 +726,8 @@
 		6E7DD4E52587ABE10014618E /* EditingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditingViewController.m; sourceTree = "<group>"; };
 		6E7DD51425888C980014618E /* Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Template.h; sourceTree = "<group>"; };
 		6E7DD51525888C980014618E /* Template.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Template.m; sourceTree = "<group>"; };
+		6E7EEC56291F84B40017FD44 /* ThummItDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThummItDebug.entitlements; sourceTree = "<group>"; };
+		6E7EEC57291FA3D70017FD44 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		6E80770D25C82B060033FF21 /* DanceVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DanceVlogTemplate.h; sourceTree = "<group>"; };
 		6E80770E25C82B060033FF21 /* DanceVlogTemplate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DanceVlogTemplate.m; sourceTree = "<group>"; };
 		6E80771625C857520033FF21 /* StudyVlogTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyVlogTemplate.h; sourceTree = "<group>"; };
@@ -851,11 +829,7 @@
 		6E998793258A300300C8F907 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		6E998794258A300300C8F907 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		6E998795258A300300C8F907 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
-		6E9A850125F8AFAD004075E1 /* IAPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
-		6E9A850225F8AFAD004075E1 /* IAPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
 		6E9A850625F8B6F2004075E1 /* IAP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IAP.storyboard; sourceTree = "<group>"; };
-		6E9A850A25F8C25A004075E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		6E9A857825FF4E5B004075E1 /* CustomerCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCenterViewController.swift; sourceTree = "<group>"; };
 		6E9A858C25FFA648004075E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainFrameCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E9A858F25FFA64C004075E1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainFrameCollectionViewCell.strings; sourceTree = "<group>"; };
 		6E9BE989258A517000F7F539 /* TwoDivisionTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoDivisionTemplate.h; sourceTree = "<group>"; };
@@ -896,15 +870,6 @@
 		6E9BEA77258F51BA00F7F539 /* NSDate+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
 		6EA70909105CF786CC44E691 /* Pods_ThummIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThummIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EA7A32625CB1435001041A1 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		6EABDE6C25DFBD5C006510ED /* launchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen.png; sourceTree = "<group>"; };
-		6EAD5C8525B767C700C42187 /* AccountTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableController.h; sourceTree = "<group>"; };
-		6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
-		6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
-		6EAD5C8925B767C700C42187 /* AccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewCell.h; sourceTree = "<group>"; };
-		6EAD5C8A25B767C700C42187 /* AccountTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableController.m; sourceTree = "<group>"; };
-		6EAD5C8B25B767C700C42187 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
-		6EAD5C8C25B767C700C42187 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		6EAD5CA425B7699F00C42187 /* UILabel+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
 		6EAD5CA525B7699F00C42187 /* UILabel+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Additions.m"; sourceTree = "<group>"; };
 		6EAFD5B525B876D400B193AB /* KOTRA_BOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KOTRA_BOLD.otf; sourceTree = "<group>"; };
@@ -1488,9 +1453,10 @@
 				6E90EFAC25E651270059DEEB /* SystemConfiguration.framework in Frameworks */,
 				6EC764B625E51E8A009FF873 /* WebKit.framework in Frameworks */,
 				6ED13A2D25B8DB2A00012144 /* KakaoOpenSDK.framework in Frameworks */,
-				6E9A850B25F8C25A004075E1 /* StoreKit.framework in Frameworks */,
-				C3AA5AEB200F3BCD30FC7A2B /* Pods_ThummIt.framework in Frameworks */,
-				6EA7A35325CB1975001041A1 /* FacebookLogin in Frameworks */,
+				6E7EEC5E291FA5580017FD44 /* SnapKit in Frameworks */,
+				6E7EEC61291FADC10017FD44 /* Toast in Frameworks */,
+				6E7EEC5B291FA50C0017FD44 /* Realm in Frameworks */,
+				E24CA2CC90747B94C1D947B0 /* Pods_ThummIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1502,7 +1468,7 @@
 				6ED13A8125B9A92C00012144 /* FBSDKLoginKit.framework in Frameworks */,
 				6ED13A8325B9A92C00012144 /* FBSDKCoreKit.framework in Frameworks */,
 				6ED13A8225B9A92C00012144 /* FBSDKShareKit.framework in Frameworks */,
-				3E3DF43CE000686E4455BE28 /* (null) in Frameworks */,
+				3E3DF43CE000686E4455BE28 /* BuildFile in Frameworks */,
 				01B0F527C2CA96816AA509E5 /* Pods_ThummItTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1539,7 +1505,6 @@
 		6E1190D82584B163000DD9C0 = {
 			isa = PBXGroup;
 			children = (
-				6EABDE6C25DFBD5C006510ED /* launchScreen.png */,
 				6E4A18022588A744008578BA /* ThummIt-PrefixHeader.pch */,
 				6E9BEA4B258F1A9200F7F539 /* ThummIt-Bridging-Header.h */,
 				6E1190E32584B163000DD9C0 /* ThummIt */,
@@ -1565,6 +1530,7 @@
 		6E1190E32584B163000DD9C0 /* ThummIt */ = {
 			isa = PBXGroup;
 			children = (
+				6E7EEC56291F84B40017FD44 /* ThummItDebug.entitlements */,
 				6EB2A1A225F2666F009715B4 /* GoogleService-Info.plist */,
 				6EF37B5125E399F000A43595 /* ThummIt.entitlements */,
 				6EB2A1DE25F383EC009715B4 /* CoreML */,
@@ -1572,12 +1538,9 @@
 				6E4A18AD258A1607008578BA /* AppDelegate */,
 				6E4A18AC258A15F6008578BA /* Storyboard */,
 				6E8E79C22591F9600008C5FF /* MainTBVC */,
-				6E9A858225FF5EDB004075E1 /* IAPVC */,
 				6E11912C2584D118000DD9C0 /* HomeVC */,
 				6E7DD4EA2587ABEA0014618E /* EditingVC */,
 				6E8E79D225921C8B0008C5FF /* ProjectVC */,
-				6E28453B25C4CD88008B7A23 /* SignInVC */,
-				6EAD5C8325B767C700C42187 /* AccountVC */,
 				6E7DD50B25888C3A0014618E /* Model */,
 				6E7DD50F25888C400014618E /* Manager */,
 				6E4A17FB2588A529008578BA /* ETC */,
@@ -1631,30 +1594,6 @@
 				6E7DD4C92584E0160014618E /* AlbumCollectionViewCell */,
 			);
 			path = AlbumVC;
-			sourceTree = "<group>";
-		};
-		6E1DBD0F25CD1A4B004C0416 /* Signin */ = {
-			isa = PBXGroup;
-			children = (
-				6E1DBCF625CBE240004C0416 /* SignInEmailViewController.h */,
-				6E1DBCF725CBE240004C0416 /* SignInEmailViewController.m */,
-				6E1DBD0025CBE2C5004C0416 /* SignInNameViewController.h */,
-				6E1DBD0125CBE2C5004C0416 /* SignInNameViewController.m */,
-				6E1DBD0525CBE2D4004C0416 /* SignInPasswordViewController.h */,
-				6E1DBD0625CBE2D4004C0416 /* SignInPasswordViewController.m */,
-			);
-			path = Signin;
-			sourceTree = "<group>";
-		};
-		6E1DBD1225CD1A59004C0416 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				6E1DBD1525CD1A72004C0416 /* LogInViewController.h */,
-				6E1DBD1625CD1A72004C0416 /* LogInViewController.m */,
-				6E1DBCFB25CBE2B5004C0416 /* ForgotPasswordViewController.h */,
-				6E1DBCFC25CBE2B5004C0416 /* ForgotPasswordViewController.m */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		6E1DBE3225D81C1C004C0416 /* DailyVlog */ = {
@@ -1746,16 +1685,6 @@
 				6E20BCBF25AEF58600BBA540 /* UndoManager.m */,
 			);
 			path = UndoManager;
-			sourceTree = "<group>";
-		};
-		6E28453B25C4CD88008B7A23 /* SignInVC */ = {
-			isa = PBXGroup;
-			children = (
-				6EA7A32625CB1435001041A1 /* SignInViewController.swift */,
-				6E1DBD1225CD1A59004C0416 /* Login */,
-				6E1DBD0F25CD1A4B004C0416 /* Signin */,
-			);
-			path = SignInVC;
 			sourceTree = "<group>";
 		};
 		6E2845B425C88640008B7A23 /* UserManager */ = {
@@ -2022,6 +1951,7 @@
 			children = (
 				6E8E79B62591F9570008C5FF /* MainTabBarViewController.h */,
 				6E8E79B72591F9570008C5FF /* MainTabBarViewController.m */,
+				6E7EEC57291FA3D70017FD44 /* MainTabbarViewController.swift */,
 			);
 			path = MainTBVC;
 			sourceTree = "<group>";
@@ -2336,15 +2266,6 @@
 			path = HomeCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		6E9A858225FF5EDB004075E1 /* IAPVC */ = {
-			isa = PBXGroup;
-			children = (
-				6E9A850125F8AFAD004075E1 /* IAPViewController.h */,
-				6E9A850225F8AFAD004075E1 /* IAPViewController.m */,
-			);
-			path = IAPVC;
-			sourceTree = "<group>";
-		};
 		6E9BE98F258A517400F7F539 /* VlogTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -2473,7 +2394,6 @@
 		6E9BEA3E258F099300F7F539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E9A850A25F8C25A004075E1 /* StoreKit.framework */,
 				6E90EFAB25E651270059DEEB /* SystemConfiguration.framework */,
 				6EC764B525E51E89009FF873 /* WebKit.framework */,
 				6ED13A8625B9AAC400012144 /* Bolts.framework */,
@@ -2527,47 +2447,6 @@
 				6E9BEA78258F51BA00F7F539 /* NSDate+Additions.m */,
 			);
 			path = NSDate;
-			sourceTree = "<group>";
-		};
-		6EA7A2F925CAA97A001041A1 /* PrivacyPolicy */ = {
-			isa = PBXGroup;
-			children = (
-				6E2845C925C98990008B7A23 /* PrivacyPolicyViewController.h */,
-				6E2845CA25C98990008B7A23 /* PrivacyPolicyViewController.m */,
-			);
-			path = PrivacyPolicy;
-			sourceTree = "<group>";
-		};
-		6EAD5C8325B767C700C42187 /* AccountVC */ = {
-			isa = PBXGroup;
-			children = (
-				6E9A857825FF4E5B004075E1 /* CustomerCenterViewController.swift */,
-				6EAD5C8425B767C700C42187 /* AccountTableController */,
-				6EAD5C8C25B767C700C42187 /* AccountViewController.h */,
-				6EAD5C8B25B767C700C42187 /* AccountViewController.m */,
-				6EA7A2F925CAA97A001041A1 /* PrivacyPolicy */,
-			);
-			path = AccountVC;
-			sourceTree = "<group>";
-		};
-		6EAD5C8425B767C700C42187 /* AccountTableController */ = {
-			isa = PBXGroup;
-			children = (
-				6EAD5C8525B767C700C42187 /* AccountTableController.h */,
-				6EAD5C8A25B767C700C42187 /* AccountTableController.m */,
-				6EAD5C8625B767C700C42187 /* AccountTableViewCell */,
-			);
-			path = AccountTableController;
-			sourceTree = "<group>";
-		};
-		6EAD5C8625B767C700C42187 /* AccountTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				6EAD5C8925B767C700C42187 /* AccountTableViewCell.h */,
-				6EAD5C8725B767C700C42187 /* AccountTableViewCell.m */,
-				6EAD5C8825B767C700C42187 /* AccountTableViewCell.xib */,
-			);
-			path = AccountTableViewCell;
 			sourceTree = "<group>";
 		};
 		6EAD5CAA25B769A300C42187 /* UILabel */ = {
@@ -3747,8 +3626,6 @@
 				6E1190DE2584B163000DD9C0 /* Frameworks */,
 				6E1190DF2584B163000DD9C0 /* Resources */,
 				6ED138EC25B82BF900012144 /* Embed Frameworks */,
-				5382FD38E426137BAC86DE7D /* [CP] Embed Pods Frameworks */,
-				06C3707C3E7963BD46EC44A5 /* [CP] Copy Pods Resources */,
 				6E11CABC25DDB8150003E02D /* ShellScript */,
 			);
 			buildRules = (
@@ -3757,7 +3634,9 @@
 			);
 			name = ThummIt;
 			packageProductDependencies = (
-				6EA7A35225CB1975001041A1 /* FacebookLogin */,
+				6E7EEC5A291FA50C0017FD44 /* Realm */,
+				6E7EEC5D291FA5580017FD44 /* SnapKit */,
+				6E7EEC60291FADC10017FD44 /* Toast */,
 			);
 			productName = ThumbnailMaker;
 			productReference = 6E1190E12584B163000DD9C0 /* ThummIt.app */;
@@ -3790,8 +3669,6 @@
 				6E1191032584B165000DD9C0 /* Sources */,
 				6E1191042584B165000DD9C0 /* Frameworks */,
 				6E1191052584B165000DD9C0 /* Resources */,
-				62EAF2B10285FF51C06A4A4D /* [CP] Embed Pods Frameworks */,
-				80CB73F8F55224D067446044 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3836,7 +3713,10 @@
 			);
 			mainGroup = 6E1190D82584B163000DD9C0;
 			packageReferences = (
-				6EA7A35125CB1975001041A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				6E7EEC59291FA50C0017FD44 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				6E7EEC5C291FA5570017FD44 /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+				6E7EEC5F291FADC10017FD44 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				6E7EEC62291FB1010017FD44 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
 			);
 			productRefGroup = 6E1190E22584B163000DD9C0 /* Products */;
 			projectDirPath = "";
@@ -3893,7 +3773,6 @@
 				6E8F997025C0C522005C8071 /* 62570-_1_.otf in Resources */,
 				6E7DD4D42584E1D30014618E /* AlbumCollectionViewCell.xib in Resources */,
 				6ED13C8325C1940400012144 /* BMYEONSUNG_otf.otf in Resources */,
-				6EAD5C8E25B767C700C42187 /* AccountTableViewCell.xib in Resources */,
 				6ED13D1C25C2152500012144 /* NanumSquareEB.otf in Resources */,
 				B182049F25C92BBE000B509B /* SDMiSaeng.otf in Resources */,
 				6E20BC8925AD944B00BBA540 /* BGColorCollectionViewCell.xib in Resources */,
@@ -3924,7 +3803,6 @@
 				B1F2B7A725C2FBAC0064A044 /* NanumMyeongjoExtraBold.otf in Resources */,
 				6E8F99A225C0E8C9005C8071 /* ELAND-Nice-M.otf in Resources */,
 				B1F2B72725C1BE320064A044 /* NanumBarunGothic.otf in Resources */,
-				6EABDE6D25DFBD5C006510ED /* launchScreen.png in Resources */,
 				B1F2B7B625C2FFD30064A044 /* RecipekoreaFONT.otf in Resources */,
 				B1F2B73425C1C3C50064A044 /* NanumGothicExtraBold.otf in Resources */,
 				6EB2A1F825F3E4D3009715B4 /* EditingItemLayerTableViewCell.xib in Resources */,
@@ -3932,7 +3810,7 @@
 				6EF5302125FA1083007E9B78 /* 독립서체_한용운_GSCaltex.otf in Resources */,
 				6E40F42C25E6E67100FD0F67 /* FreeFormCollectionReusableView.xib in Resources */,
 				6E8E7A9C259CBB470008C5FF /* PhotoFrameCollectionReusableView.xib in Resources */,
-				6EF1C7D925EF4C41002B8820 /* (null) in Resources */,
+				6EF1C7D925EF4C41002B8820 /* BuildFile in Resources */,
 				6E998797258A300300C8F907 /* HomeCollectionViewCell.xib in Resources */,
 				6EDE19D9258A1732001FC1DA /* HomeTableViewCell.xib in Resources */,
 				6E1190EF2584B163000DD9C0 /* Main.storyboard in Resources */,
@@ -3956,23 +3834,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06C3707C3E7963BD46EC44A5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		13784F1782A0617343F4ABF1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3993,40 +3854,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5382FD38E426137BAC86DE7D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt/Pods-ThummIt-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		62EAF2B10285FF51C06A4A4D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		68866F48FF07B78E9601D7D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -4090,23 +3917,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		80CB73F8F55224D067446044 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThummIt-ThummItUITests/Pods-ThummIt-ThummItUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -4118,7 +3928,6 @@
 				6EF5312F25FDE620007E9B78 /* YourPlaylistTypo.m in Sources */,
 				B1F8C68A25C4988E002DDAF8 /* WhyRealTypo.m in Sources */,
 				6ED13C8A25C1ADAA00012144 /* BlueMoonTypo.m in Sources */,
-				6E1DBD1725CD1A72004C0416 /* LogInViewController.m in Sources */,
 				6E28452825C35870008B7A23 /* VlogLogoTagTypo.m in Sources */,
 				6E5A738E26924F9000CD9C84 /* AlbumCollectionViewCellFlowLayout.m in Sources */,
 				6EF0C8B325CBDB6B00BE7573 /* StainSticker2.m in Sources */,
@@ -4159,7 +3968,6 @@
 				B11E0D5425C4F6070050D9F0 /* ClothesVlogTemplate.m in Sources */,
 				6EF0C8C225CBDB9600BE7573 /* StarSticker3.m in Sources */,
 				6E8E79D825921D140008C5FF /* ProjectTableController.m in Sources */,
-				6EAD5C8F25B767C700C42187 /* AccountTableController.m in Sources */,
 				B11E0D8325C58C4D0050D9F0 /* VlogMomTypo.m in Sources */,
 				6EF0C7B525CBAA1A00BE7573 /* ArrowSticker2.m in Sources */,
 				B1F2B71725C1B2AD0064A044 /* InfiniteChallengeLegeno.m in Sources */,
@@ -4235,20 +4043,16 @@
 				6EF0C88B25CBD33A00BE7573 /* SnowflakeSticker1.m in Sources */,
 				6ED0AFA725E515170027485F /* RunningMan2MainFrame.m in Sources */,
 				6E2845B125C5FCC4008B7A23 /* UserManager.m in Sources */,
-				6EAD5C8D25B767C700C42187 /* AccountTableViewCell.m in Sources */,
 				6E80771D25C85FDB0033FF21 /* VlogTapeSticker.m in Sources */,
 				6E9BEA4F258F1A9200F7F539 /* CoreDataProject+CoreDataProperties.swift in Sources */,
-				6EAD5C9025B767C700C42187 /* AccountViewController.m in Sources */,
 				6E7DD4E62587ABE10014618E /* EditingViewController.m in Sources */,
 				6ED0AFD425E51C3F0027485F /* FreshManVlogMainFrame.m in Sources */,
 				B11E0D6F25C5751C0050D9F0 /* VlogMacaronTypo.m in Sources */,
 				6E28451B25C35870008B7A23 /* VlogItaly.m in Sources */,
-				6E1DBCF825CBE240004C0416 /* SignInEmailViewController.m in Sources */,
 				6E40F42B25E6E67100FD0F67 /* FreeFormCollectionReusableView.m in Sources */,
 				B1F2B6F425C1995A0064A044 /* InfiniteChallengeBlackTypo.m in Sources */,
 				B1F2B6D925C193AF0064A044 /* InfiniteChallengeLogo.m in Sources */,
 				6E7DD51625888C980014618E /* Template.m in Sources */,
-				6E1DBD0225CBE2C5004C0416 /* SignInNameViewController.m in Sources */,
 				6E20BC8F25AD94D700BBA540 /* BGColorCollectionController.m in Sources */,
 				6EBEB68A25C4AB6D0017C640 /* CraftVlogTemplate.m in Sources */,
 				6EF530D225FA5D3E007E9B78 /* NinetyCenturyMusicTemplate.m in Sources */,
@@ -4289,6 +4093,7 @@
 				6EC7646825DAD938009FF873 /* InfiniteTemplateRectangle2.m in Sources */,
 				6EDE19E6258A2741001FC1DA /* HomeCollectionController.m in Sources */,
 				6EBEB69F25C4D1DD0017C640 /* BabyVlogTemplate.m in Sources */,
+				6E7EEC58291FA3D70017FD44 /* MainTabbarViewController.swift in Sources */,
 				6EF0C94B25CD45F100BE7573 /* DinggoStarWarsTypo.m in Sources */,
 				6E998796258A300300C8F907 /* HomeCollectionViewCell.m in Sources */,
 				6E8F9A6A25C344EB005C8071 /* PhotoFrame.m in Sources */,
@@ -4332,7 +4137,6 @@
 				6ED0AF7525E4FB780027485F /* MainFrameCollectionReusableView.m in Sources */,
 				B12E989925C38DB700F706DD /* InfiniteChallenge3Template.m in Sources */,
 				6EB2A1E625F383ED009715B4 /* Deeplab.mlmodel in Sources */,
-				6E9A850325F8AFAD004075E1 /* IAPViewController.m in Sources */,
 				6E8F9A9725C34582005C8071 /* ChristmasCircle.m in Sources */,
 				6ED0AFB625E515410027485F /* WorkMan3MainFrame.m in Sources */,
 				6EBEB59625C1EA990017C640 /* WorkManTemplate3.m in Sources */,
@@ -4387,7 +4191,6 @@
 				6E9BEA4E258F1A9200F7F539 /* CoreDataProject+CoreDataClass.swift in Sources */,
 				6EBEB6C625C56EA10017C640 /* VlogStudentTypo.m in Sources */,
 				6ED13B9C25C08ECC00012144 /* RunningManLogoTypo.m in Sources */,
-				6E1DBCFD25CBE2B5004C0416 /* ForgotPasswordViewController.m in Sources */,
 				6ED13CD625C1CAF700012144 /* SuccessTypo.m in Sources */,
 				6E1DBE2325D81ADB004C0416 /* DailyVlogTemplateRectangle2.m in Sources */,
 				6E28451825C35870008B7A23 /* Vlog365.m in Sources */,
@@ -4398,7 +4201,6 @@
 				6EF0C83925CBC37400BE7573 /* HeartSticker8.m in Sources */,
 				B11E0D8825C594A10050D9F0 /* HolidayVlogTemplate.m in Sources */,
 				6EF0C8A925CBDB4A00BE7573 /* SpeechBubbleSticker4.m in Sources */,
-				6E9A857925FF4E5B004075E1 /* CustomerCenterViewController.swift in Sources */,
 				6EF0C89025CBD34A00BE7573 /* SnowflakeSticker2.m in Sources */,
 				B11E0D7E25C57BB90050D9F0 /* KidsVlogTemplate.m in Sources */,
 				6ED13D4625C2C82900012144 /* SinSeoYuGiExc1Sticker.m in Sources */,
@@ -4456,7 +4258,6 @@
 				B1F8C6D825C4CC23002DDAF8 /* VlogMakingFilmTypo.m in Sources */,
 				6EBEB50425C0D3830017C640 /* WorkManHandWrite.m in Sources */,
 				6E8E79FA259237B80008C5FF /* UIImage+Additions.m in Sources */,
-				6E1DBD0725CBE2D4004C0416 /* SignInPasswordViewController.m in Sources */,
 				6E8E7A6A259C91560008C5FF /* PhotoFrameCollectionViewCell.m in Sources */,
 				6EBEB56725C1DD000017C640 /* WorkManLogo2.m in Sources */,
 				6EF5312525FDBE9E007E9B78 /* ThatSongTypo.m in Sources */,
@@ -4510,13 +4311,11 @@
 				6E8E79B82591F9570008C5FF /* MainTabBarViewController.m in Sources */,
 				6E9BE9B7258B2C4C00F7F539 /* EditingGestureController.m in Sources */,
 				6E1DBDBC25CEF492004C0416 /* LongRectangleSticker.m in Sources */,
-				6E2845CB25C98990008B7A23 /* PrivacyPolicyViewController.m in Sources */,
 				6E1DBEC925D918B1004C0416 /* DogVlogTemplate.m in Sources */,
 				B1F2B73925C1C4A50064A044 /* InfiniteChallengeFiveMinutes.m in Sources */,
 				6ED13D6325C2FFB000012144 /* RunningMan3Template.m in Sources */,
 				6E8F9A9825C34582005C8071 /* VerticalHalfRectangle.m in Sources */,
 				6E4A1885258A1201008578BA /* CategoryManager.m in Sources */,
-				6EA7A32725CB1435001041A1 /* SignInViewController.swift in Sources */,
 				6ED0AFDE25E51C660027485F /* KidsVlogMainFrame.m in Sources */,
 				6ED0AF6D25E4FAFE0027485F /* MainFrameCollectionViewCell.m in Sources */,
 				6E8E7AC025A833590008C5FF /* TextCollectionController.m in Sources */,
@@ -4745,10 +4544,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = ThummIt/ThummIt.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ThummIt/ThummItDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KD6B7H34C6;
@@ -4765,7 +4564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.16;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",
@@ -4816,7 +4615,7 @@
 					"\"Social\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thummit.ThummIt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seongjune.youtubethumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThummIt-Bridging-Header.h";
@@ -4837,10 +4636,10 @@
 				CODE_SIGN_ENTITLEMENTS = ThummIt/ThummIt.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = KD6B7H34C6;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -4854,7 +4653,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.16;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",
@@ -4905,7 +4704,7 @@
 					"\"Social\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thummit.ThummIt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seongjune.youtubethumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThummIt-Bridging-Header.h";
@@ -5049,21 +4848,55 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6EA7A35125CB1975001041A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+		6E7EEC59291FA50C0017FD44 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 5.0.0;
+			};
+		};
+		6E7EEC5C291FA5570017FD44 /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		6E7EEC5F291FADC10017FD44 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		6E7EEC62291FB1010017FD44 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6EA7A35225CB1975001041A1 /* FacebookLogin */ = {
+		6E7EEC5A291FA50C0017FD44 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6EA7A35125CB1975001041A1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookLogin;
+			package = 6E7EEC59291FA50C0017FD44 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			productName = Realm;
+		};
+		6E7EEC5D291FA5580017FD44 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E7EEC5C291FA5570017FD44 /* XCRemoteSwiftPackageReference "SnapKit.git" */;
+			productName = SnapKit;
+		};
+		6E7EEC60291FADC10017FD44 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E7EEC5F291FADC10017FD44 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 

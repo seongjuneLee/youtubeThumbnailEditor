@@ -10,9 +10,6 @@
 #import "UILabel+Additions.h"
 #import "UserManager.h"
 #import "UIView+Additions.h"
-#import <Toast/UIView+Toast.h>
-#import "SignInEmailViewController.h"
-#import "LogInViewController.h"
 #import "AppManager.h"
 #import <Reachability/Reachability.h>
 #import "Deeplab.h"

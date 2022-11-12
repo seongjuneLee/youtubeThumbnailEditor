@@ -7,7 +7,6 @@
 
 #import "ExportManager.h"
 #import "SaveManager.h"
-@import Parse;
 @implementation ExportManager
 
 + (ExportManager *)sharedInstance {

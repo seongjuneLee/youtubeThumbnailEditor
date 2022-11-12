@@ -7,16 +7,6 @@
 
 import Foundation
 import UIKit
-import Parse
-import KakaoSDKAuth
-import KakaoSDKUser
-import KakaoSDKCommon
-import FirebaseCore
-import FirebaseAuth
-import GoogleSignIn
-import FBSDKCoreKit
-import GoogleMobileAds
-import AppTrackingTransparency
 
 
 @UIApplicationMain
@@ -30,78 +20,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-
         MigratorJul.shared().migrateIfNeeded()
-        
-        Parse.initialize(with: ParseClientConfiguration(block: { ( configuration :  ParseMutableClientConfiguration) in
-            configuration.applicationId = "myappID";
-            configuration.clientKey = "3IKuPKnRgLwN"
-            configuration.server = "http://3.35.208.70/parse";
-        }))
-        
-        if PFUser.current() != nil {
-            let defaultACL = PFACL.init()
-            defaultACL.setReadAccess(true, for: PFUser.current()!)
-            PFACL.setDefault(defaultACL, withAccessForCurrentUser: true)
-        } else {
-            
-            let newUser = PFUser.init()
-            let username = NSString.randomString(withLength: 7) as String
-            let password = NSString.randomString(withLength: 10) as String
-            UserManager.sharedInstance().validatedUserName(username) { (validatedString) in
-                newUser["username"] = validatedString
-                newUser["password"] = password
-                newUser.signUpInBackground()
-            }
-        }
-
-        ApplicationDelegate.shared.application(
-            application,
-            didFinishLaunchingWithOptions: launchOptions
-        )
-
-        KakaoSDKCommon.initSDK(appKey: "4df206455336b6c8a2d990fd54b0bb39")
-        FirebaseApp.configure()
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         self.requestPermission()
 
         // Override point for customization after application launch.
         return true
     }
     func requestPermission() {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization { status in
-                switch status {
-                case .authorized:
-                    // Tracking authorization dialog was shown
-                    // and we are authorized
-                    print("Authorized")
-                    
-                    // Now that we are authorized we can get the IDFA
-                case .denied:
-                    // Tracking authorization dialog was
-                    // shown and permission is denied
-                    print("Denied")
-                case .notDetermined:
-                    // Tracking authorization dialog has not been shown
-                    print("Not Determined")
-                case .restricted:
-                    print("Restricted")
-                @unknown default:
-                    print("Unknown")
-                }
-            }
-        }
+//        if #available(iOS 14, *) {
+//            ATTrackingManager.requestTrackingAuthorization { status in
+//                switch status {
+//                case .authorized:
+//                    // Tracking authorization dialog was shown
+//                    // and we are authorized
+//                    print("Authorized")
+//
+//                    // Now that we are authorized we can get the IDFA
+//                case .denied:
+//                    // Tracking authorization dialog was
+//                    // shown and permission is denied
+//                    print("Denied")
+//                case .notDetermined:
+//                    // Tracking authorization dialog has not been shown
+//                    print("Not Determined")
+//                case .restricted:
+//                    print("Restricted")
+//                @unknown default:
+//                    print("Unknown")
+//                }
+//            }
+//        }
     }
 
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
-        let currentInstallation = PFInstallation.current()
-        currentInstallation?.setDeviceTokenFrom(deviceToken)
-        currentInstallation?.saveInBackground()
-        
+                
     }
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -116,24 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         
     }
     //facebook_login
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
-//        if (url.scheme == kakaoURLScheme) {
-        if (AuthApi.isKakaoTalkLoginUrl(url)) {
-            return AuthController.handleOpenUrl(url: url)
-        }
-//        }
-        if (url.scheme == googleURLScheme) {
-            if GIDSignIn.sharedInstance().handle(url) {
-                return GIDSignIn.sharedInstance().handle(url)
-            }
-        }
-
-        return false;
-
-    }
-    
     func applicationDidBecomeActive(_ application: UIApplication) {
         KOSession.handleDidBecomeActive()
     }

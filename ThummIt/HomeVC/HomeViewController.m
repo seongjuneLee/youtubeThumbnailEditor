@@ -6,7 +6,6 @@
 //
 
 #import "HomeViewController.h"
-#import "IAPViewController.h"
 #import "HomeViewController+TableControllerDelegate.h"
 #import "Project.h"
 #import "ProjectManager.h"
@@ -14,7 +13,6 @@
 #import "GuideLine.h"
 #import "DashedGuideLineView.h"
 #import "NSString+Additions.h"
-@import Parse;
 
 @interface HomeViewController ()
 

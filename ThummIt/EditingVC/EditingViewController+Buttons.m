@@ -14,8 +14,6 @@
 #import "UIColor+Additions.h"
 #import "UIImage+Additions.h"
 #import "ExportManager.h"
-@import Parse;
-#import <Parse/PFFileObject.h>
 @implementation EditingViewController (Buttons)
 
 - (IBAction)rightItemTapped:(id)sender {
@@ -30,38 +28,38 @@
 }
 
 -(void)exportThumbnail{
-    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [ExportManager.sharedInstance savePreviewImageWithResolution:CGSizeMake(2048.f, 1152.f) withProject:SaveManager.sharedInstance.currentProject];
-            
-            [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (success) {
-                        [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-                    } else {
-                        UIImageWriteToSavedPhotosAlbum(ExportManager.sharedInstance.exportingImage,
-                           self, // send the message to 'self' when calling the callback
-                                                       @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), // the selector to tell the method to call on completion
-                           NULL); // you generally won't need a contextInfo here
-
-                    }
-                });
-            }];
-
-        });
-    } else {
-        [PhotoManager.sharedInstance requstGoingToSettingWithVC:self];
-    }
+//    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//
+//            [ExportManager.sharedInstance savePreviewImageWithResolution:CGSizeMake(2048.f, 1152.f) withProject:SaveManager.sharedInstance.currentProject];
+//
+//            [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    if (success) {
+//                        [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
+//                    } else {
+//                        UIImageWriteToSavedPhotosAlbum(ExportManager.sharedInstance.exportingImage,
+//                           self, // send the message to 'self' when calling the callback
+//                                                       @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), // the selector to tell the method to call on completion
+//                           NULL); // you generally won't need a contextInfo here
+//
+//                    }
+//                });
+//            }];
+//
+//        });
+//    } else {
+//        [PhotoManager.sharedInstance requstGoingToSettingWithVC:self];
+//    }
 
 }
 
 - (void)thisImage:(UIImage *)image hasBeenSavedInPhotoAlbumWithError:(NSError *)error usingContextInfo:(void*)ctxInfo {
-    if (error) {
-        [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
-    } else {
-        [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-    }
+//    if (error) {
+//        [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+//    } else {
+//        [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
+//    }
 }
 
 -(void)setThumbnailAndResolution:(CGSize)resolution{

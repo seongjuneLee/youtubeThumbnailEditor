@@ -7,11 +7,8 @@
 
 #import "MainTabBarViewController.h"
 #import "ProjectViewController.h"
-#import "AccountViewController.h"
 #import "ThummIt-Swift.h"
 #import "AppManager.h"
-#import <Parse/ParseUIConstants.h>
-@import Parse;
 
 @interface MainTabBarViewController ()
 
@@ -36,22 +33,22 @@
     [textField resignFirstResponder];
     [textField removeFromSuperview];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"exported"];
-    
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
-        
-        NSLog(@"objectobjectobject %@",object);
-        PFFileObject *fileObject =  object[@"exportedThumbnail"];
-        [fileObject getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-            
-            UIImage *image = [UIImage imageWithData:data];
-            NSLog(@"image %@",image);
-            
-        }];
-        
-        NSLog(@"object exportedThumbnail %@",object[@"exportedThumbnail"]);
-        NSLog(@"object object %@",object);
-    }];
+//    PFQuery *query = [PFQuery queryWithClassName:@"exported"];
+//    
+//    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+//        
+//        NSLog(@"objectobjectobject %@",object);
+//        PFFileObject *fileObject =  object[@"exportedThumbnail"];
+//        [fileObject getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+//            
+//            UIImage *image = [UIImage imageWithData:data];
+//            NSLog(@"image %@",image);
+//            
+//        }];
+//        
+//        NSLog(@"object exportedThumbnail %@",object[@"exportedThumbnail"]);
+//        NSLog(@"object object %@",object);
+//    }];
     
 }
 

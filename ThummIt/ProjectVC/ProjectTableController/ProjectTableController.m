@@ -11,8 +11,6 @@
 #import "SaveManager.h"
 #import "ExportManager.h"
 #import "ProjectManager.h"
-#import <Toast/Toast.h>
-@import Parse;
 @implementation ProjectTableController
 
 -(instancetype)init{ 
@@ -70,23 +68,23 @@
 }
 
 -(void)loadMoreWithOffset:(NSUInteger)offset{
-    [self.projectVC.view makeToastActivity:CSToastPositionCenter];
-    NSUInteger beforeDataCounts = self.projects.count;
-    NSMutableArray *indexPathsToReload = [NSMutableArray new];
-    [self.projects addObjectsFromArray:[ProjectManager.sharedInstance getRecentProjectsFromCoreDataWithOffset:self.offset]];
-    for (NSUInteger i = beforeDataCounts; i < self.projects.count - beforeDataCounts; i++) {
-        [indexPathsToReload addObject:[NSIndexPath indexPathForRow:i inSection:0]];
-    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView transitionWithView: self.tableView
-                          duration: 0.35f
-                           options: UIViewAnimationOptionCurveEaseIn
-                        animations: ^(void){
-              [self.tableView reloadData];
-         }completion:^(BOOL finished) {
-            [self.projectVC.view hideToastActivity];
-        }];
-    });
+//    [self.projectVC.view makeToastActivity:CSToastPositionCenter];
+//    NSUInteger beforeDataCounts = self.projects.count;
+//    NSMutableArray *indexPathsToReload = [NSMutableArray new];
+//    [self.projects addObjectsFromArray:[ProjectManager.sharedInstance getRecentProjectsFromCoreDataWithOffset:self.offset]];
+//    for (NSUInteger i = beforeDataCounts; i < self.projects.count - beforeDataCounts; i++) {
+//        [indexPathsToReload addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+//    }
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [UIView transitionWithView: self.tableView
+//                          duration: 0.35f
+//                           options: UIViewAnimationOptionCurveEaseIn
+//                        animations: ^(void){
+//              [self.tableView reloadData];
+//         }completion:^(BOOL finished) {
+//            [self.projectVC.view hideToastActivity];
+//        }];
+//    });
 }
 
 #pragma mark - 테이블 뷰 델리게이트
@@ -155,37 +153,37 @@
 
 -(void)downloadButtonTappedWithProject:(Project *)project{
     
-    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
-        dispatch_async(dispatch_get_main_queue(), ^{
+//    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//
+//            [ExportManager.sharedInstance savePreviewImageWithResolution:CGSizeMake(2048.f, 1152.f) withProject:project];
             
-            [ExportManager.sharedInstance savePreviewImageWithResolution:CGSizeMake(2048.f, 1152.f) withProject:project];
-            
-            [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (success) {
-                        if (PFUser.currentUser) {
-                            NSMutableArray *exportedImages = [NSMutableArray array];
-                            [exportedImages addObjectsFromArray:PFUser.currentUser[@"exportedThumbnails"]];
-                            NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
-                            PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithData:thumbnailBigData];
-                            [exportedImages addObject:thumbnailBigFile];
-                            [PFUser.currentUser setObject:exportedImages forKey:@"exportedThumbnails"];
+//            [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    if (success) {
+//                        if (PFUser.currentUser) {
+//                            NSMutableArray *exportedImages = [NSMutableArray array];
+//                            [exportedImages addObjectsFromArray:PFUser.currentUser[@"exportedThumbnails"]];
+//                            NSData* thumbnailBigData = UIImagePNGRepresentation(ExportManager.sharedInstance.exportingImage);
+//                            PFFileObject *thumbnailBigFile = [PFFileObject fileObjectWithData:thumbnailBigData];
+//                            [exportedImages addObject:thumbnailBigFile];
+//                            [PFUser.currentUser setObject:exportedImages forKey:@"exportedThumbnails"];
+//
+//                            [PFUser.currentUser saveInBackground];
+//                        }
+//
+//                        [self.projectVC.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
+//                    } else {
+//                        [self.projectVC.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
+//                    }
+//                });
+//            }];
 
-                            [PFUser.currentUser saveInBackground];
-                        }
-                        
-                        [self.projectVC.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-                    } else {
-                        [self.projectVC.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
-                    }
-                });
-            }];
-
-        });
-    } else {
-        [PhotoManager.sharedInstance requstGoingToSettingWithVC:self.projectVC];
-    }
-    
+//        });
+//    } else {
+//        [PhotoManager.sharedInstance requstGoingToSettingWithVC:self.projectVC];
+//    }
+//    
 }
 
 
