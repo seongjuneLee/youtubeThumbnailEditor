@@ -25,7 +25,6 @@
 -(NSArray *)templateDatas{
     
     //TV entertain
-    
     Template *runningMan1Template = [RunningMan1Template runningMan1Template];
     Template *runningMan2Template = [RunningMan2Template runningMan2Template];
     Template *runningMan3Template = [RunningMan3Template runningMan3Template];

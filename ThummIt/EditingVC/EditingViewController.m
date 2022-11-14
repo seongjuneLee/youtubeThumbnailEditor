@@ -44,48 +44,48 @@
     
     [self setUpSlider];
     
-    GADRequest *request = [GADRequest request];
-    
-    [GADInterstitialAdBeta loadWithAdUnitID:@"ca-app-pub-5851044002792096/1051226557"
-                                    request:request
-                          completionHandler:^(GADInterstitialAdBeta *ad, NSError *error) {
-        if (error) {
-            NSLog(@"Failed to load interstitial ad with error: %@", [error localizedDescription]);
-            return;
-        }
-        self.interstitial = ad;
-        self.interstitial.fullScreenContentDelegate = self;
-        
-    }];
+//    GADRequest *request = [GADRequest request];
+//
+//    [GADInterstitialAdBeta loadWithAdUnitID:@"ca-app-pub-5851044002792096/1051226557"
+//                                    request:request
+//                          completionHandler:^(GADInterstitialAdBeta *ad, NSError *error) {
+//        if (error) {
+//            NSLog(@"Failed to load interstitial ad with error: %@", [error localizedDescription]);
+//            return;
+//        }
+//        self.interstitial = ad;
+//        self.interstitial.fullScreenContentDelegate = self;
+//
+//    }];
     
 }
 
-- (void)ad:(nonnull id<GADFullScreenPresentingAd>)ad
-didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
-    NSLog(@"Ad did fail to present full screen content.");
-}
-
-/// Tells the delegate that the ad presented full screen content.
-- (void)adDidPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
-    NSLog(@"Ad did present full screen content.");
-}
-
-/// Tells the delegate that the ad dismissed full screen content.
-- (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
-    GADRequest *request = [GADRequest request];
-    
-    [GADInterstitialAdBeta loadWithAdUnitID:@"ca-app-pub-5851044002792096/1051226557"
-                                    request:request
-                          completionHandler:^(GADInterstitialAdBeta *ad, NSError *error) {
-        if (error) {
-            NSLog(@"Failed to load interstitial ad with error: %@", [error localizedDescription]);
-            return;
-        }
-        self.interstitial = ad;
-        self.interstitial.fullScreenContentDelegate = self;
-        
-    }];
-}
+//- (void)ad:(nonnull id<GADFullScreenPresentingAd>)ad
+//didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
+//    NSLog(@"Ad did fail to present full screen content.");
+//}
+//
+///// Tells the delegate that the ad presented full screen content.
+//- (void)adDidPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+//    NSLog(@"Ad did present full screen content.");
+//}
+//
+///// Tells the delegate that the ad dismissed full screen content.
+//- (void)adDidDismissFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+//    GADRequest *request = [GADRequest request];
+//    
+//    [GADInterstitialAdBeta loadWithAdUnitID:@"ca-app-pub-5851044002792096/1051226557"
+//                                    request:request
+//                          completionHandler:^(GADInterstitialAdBeta *ad, NSError *error) {
+//        if (error) {
+//            NSLog(@"Failed to load interstitial ad with error: %@", [error localizedDescription]);
+//            return;
+//        }
+//        self.interstitial = ad;
+//        self.interstitial.fullScreenContentDelegate = self;
+//        
+//    }];
+//}
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

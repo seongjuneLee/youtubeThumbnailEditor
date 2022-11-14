@@ -26,11 +26,9 @@
 #import "AppManager.h"
 #import "EditingPhotoButtonViewController.h"
 #import "EditingItemLayerViewController.h"
-#import <GoogleMobileAds/GADInterstitial.h>
-@import GoogleMobileAds;
 
 NS_ASSUME_NONNULL_BEGIN
-@interface EditingViewController : UIViewController <GADFullScreenContentDelegate>
+@interface EditingViewController : UIViewController
 
 @property (strong, nonatomic) EditingViewController *collectionView;
 
@@ -125,7 +123,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic, nullable) NSString *justTyped;
 @property (strong, nonatomic, nullable) UIColor *originalCursorColor;
-@property(nonatomic, strong) GADInterstitialAdBeta *interstitial;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 -(void)loadItems;

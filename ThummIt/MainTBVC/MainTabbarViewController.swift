@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MainTabbarViewController : UITabBarController {
     
@@ -13,9 +14,20 @@ class MainTabbarViewController : UITabBarController {
         super.viewDidLoad()
         
         
-        
+//        continueImage, homeTabbarImage
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let homeTabbarItem = UITabBarItem(title: "home", image: UIImage(named: "homeTabBarImage"), tag: 0)
+        
+        
+        
+        let projectTabbarItem = UITabBarItem(title: "continue", image: UIImage(named: "continueTabBarImage"), tag: 1)
+        
+        
+        
+    }
     
 }

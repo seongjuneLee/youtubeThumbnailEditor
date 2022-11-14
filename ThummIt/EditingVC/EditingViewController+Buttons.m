@@ -19,11 +19,6 @@
 - (IBAction)rightItemTapped:(id)sender {
         
     [self exportThumbnail];
-    if (self.interstitial) {
-      [self.interstitial presentFromRootViewController:self];
-    } else {
-      NSLog(@"Ad wasn't ready");
-    }
     
 }
 

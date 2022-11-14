@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="-520" y="384"/>
         </scene>
-        <!--Main Tabbar View Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="ws9-hl-8ao">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabbarViewController" automaticallyAdjustsScrollViewInsets="NO" id="802-IF-3Jx" customClass="MainTabbarViewController" customModule="ThummIt" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="802-IF-3Jx" customClass="MainTabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Tn3-P7-J5p"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Ry-W2-o8E">
