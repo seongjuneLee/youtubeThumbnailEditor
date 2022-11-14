@@ -10,7 +10,6 @@
 #import "EditingViewController.h"
 #import "EditingViewController+Text.h"
 #import "EditingViewController+Buttons.h"
-#import "TypoManager.h"
 #import "ItemManager.h"
 #import "Typography.h"
 #import "Text.h"

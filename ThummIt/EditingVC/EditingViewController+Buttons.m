@@ -23,38 +23,54 @@
 }
 
 -(void)exportThumbnail{
-//    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//
-//            [ExportManager.sharedInstance savePreviewImageWithResolution:CGSizeMake(2048.f, 1152.f) withProject:SaveManager.sharedInstance.currentProject];
-//
-//            [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    if (success) {
-//                        [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-//                    } else {
-//                        UIImageWriteToSavedPhotosAlbum(ExportManager.sharedInstance.exportingImage,
-//                           self, // send the message to 'self' when calling the callback
-//                                                       @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), // the selector to tell the method to call on completion
-//                           NULL); // you generally won't need a contextInfo here
-//
-//                    }
-//                });
-//            }];
-//
-//        });
-//    } else {
-//        [PhotoManager.sharedInstance requstGoingToSettingWithVC:self];
-//    }
+    if (PHPhotoLibrary.authorizationStatus == PHAuthorizationStatusAuthorized){
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            [ExportManager.sharedInstance savePreviewImageWithResolution:CGSizeMake(2048.f, 1152.f) withProject:SaveManager.sharedInstance.currentProject];
+
+            [ExportManager.sharedInstance exportImageWithBlock:^(BOOL success) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (success) {
+                        
+                        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"완료"
+                                                   message:@"앨범에 저장을 완료했습니다."
+                                                   preferredStyle:UIAlertControllerStyleAlert];
+
+                        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * action) {}];
+
+                        [alert addAction:defaultAction];
+                        [self presentViewController:alert animated:YES completion:nil];
+
+                    } else {
+                        UIImageWriteToSavedPhotosAlbum(ExportManager.sharedInstance.exportingImage,
+                           self, // send the message to 'self' when calling the callback
+                                                       @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), // the selector to tell the method to call on completion
+                           NULL); // you generally won't need a contextInfo here
+
+                    }
+                });
+            }];
+
+        });
+    } else {
+        [PhotoManager.sharedInstance requstGoingToSettingWithVC:self];
+    }
 
 }
 
 - (void)thisImage:(UIImage *)image hasBeenSavedInPhotoAlbumWithError:(NSError *)error usingContextInfo:(void*)ctxInfo {
-//    if (error) {
-//        [self.view makeToast:NSLocalizedString(@"Download failed. Contact us in account view", nil) duration:4.0 position:CSToastPositionCenter];
-//    } else {
-//        [self.view makeToast:NSLocalizedString(@"Download success", nil) duration:4.0 position:CSToastPositionCenter];
-//    }
+    if (error) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"에러"
+                                   message: [NSString stringWithFormat:@"앨범에 저장을 실해했습니다. : %@",error.localizedDescription]
+                                   preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction * action) {}];
+
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 -(void)setThumbnailAndResolution:(CGSize)resolution{

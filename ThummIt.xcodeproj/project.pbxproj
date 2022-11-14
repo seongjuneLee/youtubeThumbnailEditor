@@ -87,15 +87,9 @@
 		6E5A739026924F9000CD9C84 /* AlbumCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A738826924F9000CD9C84 /* AlbumCategoryViewController.m */; };
 		6E5A739126924F9000CD9C84 /* AlbumCategoryViewController+CollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A738926924F9000CD9C84 /* AlbumCategoryViewController+CollectionViewDelegate.m */; };
 		6E5A739726924FB000CD9C84 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A739526924FB000CD9C84 /* Album.m */; };
-		6E694E632920D14F009AB301 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E694E622920D14F009AB301 /* HomeViewController.swift */; };
-		6E694E652920DDCD009AB301 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E694E642920DDCD009AB301 /* HomeViewModel.swift */; };
-		6E694E6829221FBA009AB301 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E694E6729221FBA009AB301 /* HomeModel.swift */; };
 		6E694E6B29222002009AB301 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6E694E6A29222002009AB301 /* RxCocoa */; };
 		6E694E6D29222002009AB301 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 6E694E6C29222002009AB301 /* RxRelay */; };
 		6E694E6F29222002009AB301 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6E694E6E29222002009AB301 /* RxSwift */; };
-		6E694E7529222100009AB301 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E694E7429222100009AB301 /* Template.swift */; };
-		6E694E782922238F009AB301 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E694E772922238F009AB301 /* Playlist.swift */; };
-		6E694E7A29222A7C009AB301 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E694E7929222A7C009AB301 /* Item.swift */; };
 		6E698BB825B89DBC00CE86FB /* GuideLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BB725B89DBC00CE86FB /* GuideLineView.m */; };
 		6E698BBE25B8A21300CE86FB /* DashedGuideLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E698BBD25B8A21300CE86FB /* DashedGuideLineView.m */; };
 		6E6E5BEA25A9F3BE009821CF /* EditingViewController+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5BE925A9F3BE009821CF /* EditingViewController+Text.m */; };
@@ -250,7 +244,6 @@
 		6EC4DFD525A885970023485C /* UITextView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFD425A885970023485C /* UITextView+Additions.m */; };
 		6EC4DFDF25A887010023485C /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFDE25A887010023485C /* NSArray+Additions.m */; };
 		6EC4DFEC25A892B00023485C /* NormalTypo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFEB25A892B00023485C /* NormalTypo.m */; };
-		6EC4DFF225A895240023485C /* TypoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4DFF125A895240023485C /* TypoManager.m */; };
 		6EC7644525D2222F009FF873 /* Fraunces_9pt-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6EC7644425D22204009FF873 /* Fraunces_9pt-SemiBold.otf */; };
 		6EC7645E25DAD8FC009FF873 /* InfiniteTemplateRectangle1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7645D25DAD8FC009FF873 /* InfiniteTemplateRectangle1.m */; };
 		6EC7646825DAD938009FF873 /* InfiniteTemplateRectangle2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC7646725DAD938009FF873 /* InfiniteTemplateRectangle2.m */; };
@@ -695,12 +688,6 @@
 		6E5A738B26924F9000CD9C84 /* AlbumCategoryViewController+CollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AlbumCategoryViewController+CollectionViewDataSource.h"; sourceTree = "<group>"; };
 		6E5A739526924FB000CD9C84 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		6E5A739626924FB000CD9C84 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
-		6E694E622920D14F009AB301 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		6E694E642920DDCD009AB301 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		6E694E6729221FBA009AB301 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		6E694E7429222100009AB301 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
-		6E694E772922238F009AB301 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
-		6E694E7929222A7C009AB301 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6E698BB625B89DBC00CE86FB /* GuideLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideLineView.h; sourceTree = "<group>"; };
 		6E698BB725B89DBC00CE86FB /* GuideLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideLineView.m; sourceTree = "<group>"; };
 		6E698BBC25B8A21300CE86FB /* DashedGuideLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashedGuideLineView.h; sourceTree = "<group>"; };
@@ -967,8 +954,6 @@
 		6EC4DFDE25A887010023485C /* NSArray+Additions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
 		6EC4DFEA25A892B00023485C /* NormalTypo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalTypo.h; sourceTree = "<group>"; };
 		6EC4DFEB25A892B00023485C /* NormalTypo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalTypo.m; sourceTree = "<group>"; };
-		6EC4DFF025A895240023485C /* TypoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypoManager.h; sourceTree = "<group>"; };
-		6EC4DFF125A895240023485C /* TypoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypoManager.m; sourceTree = "<group>"; };
 		6EC4DFFD25A8955E0023485C /* TypoHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypoHeader.h; sourceTree = "<group>"; };
 		6EC7644425D22204009FF873 /* Fraunces_9pt-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces_9pt-SemiBold.otf"; sourceTree = "<group>"; };
 		6EC7645C25DAD8FC009FF873 /* InfiniteTemplateRectangle1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteTemplateRectangle1.h; sourceTree = "<group>"; };
@@ -1554,9 +1539,6 @@
 		6E11912C2584D118000DD9C0 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
-				6E694E622920D14F009AB301 /* HomeViewController.swift */,
-				6E694E642920DDCD009AB301 /* HomeViewModel.swift */,
-				6E694E6729221FBA009AB301 /* HomeModel.swift */,
 				6EDE19ED258A277F001FC1DA /* HomeCollectionController */,
 				6E4A189C258A1394008578BA /* HomeTableController */,
 				6E1190EA2584B163000DD9C0 /* HomeViewController.h */,
@@ -1886,7 +1868,6 @@
 				6E20BCC725AEF59000BBA540 /* UndoManager */,
 				6E9BEA3A258E697200F7F539 /* SaveManager */,
 				6E07E74C25DABEE800A57801 /* ExportManager */,
-				6EC4DFF625A8952A0023485C /* TypoManager */,
 				6E20BC6B25AD78BB00BBA540 /* ColorManager */,
 				6E698BA325B89CB200CE86FB /* GuideLine */,
 				6E2845B425C88640008B7A23 /* UserManager */,
@@ -1898,7 +1879,6 @@
 		6E7DD51D25888C9E0014618E /* Template */ = {
 			isa = PBXGroup;
 			children = (
-				6E694E7429222100009AB301 /* Template.swift */,
 				6E4A17EF258891D7008578BA /* TemplateHeader.h */,
 				6E7DD51425888C980014618E /* Template.h */,
 				6E7DD51525888C980014618E /* Template.m */,
@@ -2329,7 +2309,6 @@
 		6E9BE9BF258B2E7900F7F539 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				6E694E7929222A7C009AB301 /* Item.swift */,
 				6E9BE9C3258B2E8500F7F539 /* Item.h */,
 				6E9BE9C4258B2E8500F7F539 /* Item.m */,
 				6E8E7B0225A84EA30008C5FF /* Text */,
@@ -2740,15 +2719,6 @@
 				6EC4DFDE25A887010023485C /* NSArray+Additions.m */,
 			);
 			path = NSArray;
-			sourceTree = "<group>";
-		};
-		6EC4DFF625A8952A0023485C /* TypoManager */ = {
-			isa = PBXGroup;
-			children = (
-				6EC4DFF025A895240023485C /* TypoManager.h */,
-				6EC4DFF125A895240023485C /* TypoManager.m */,
-			);
-			path = TypoManager;
 			sourceTree = "<group>";
 		};
 		6EC4E00125A8BAA40023485C /* Styles */ = {
@@ -3261,7 +3231,6 @@
 		6EF5308125FA2C45007E9B78 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				6E694E772922238F009AB301 /* Playlist.swift */,
 				6EF530B125FA5438007E9B78 /* PlaylistMusicTemplate.h */,
 				6EF530B225FA5438007E9B78 /* PlaylistMusicTemplate.m */,
 				6EF5308925FA2CF0007E9B78 /* BTSMusicTemplate.h */,
@@ -3881,7 +3850,6 @@
 				B1F2B71725C1B2AD0064A044 /* InfiniteChallengeLegeno.m in Sources */,
 				6EF0C89F25CBDB3100BE7573 /* SpeechBubbleSticker2.m in Sources */,
 				6EF5303925FA1346007E9B78 /* PoemForSmallTypo.m in Sources */,
-				6E694E782922238F009AB301 /* Playlist.swift in Sources */,
 				6E4A18612589F7BD008578BA /* EditingViewController+Buttons.m in Sources */,
 				6E20BCC025AEF58600BBA540 /* UndoManager.m in Sources */,
 				6ED13D3425C2C76D00012144 /* RunningManQuSticker.m in Sources */,
@@ -3893,7 +3861,6 @@
 				6ED13C1C25C10DE400012144 /* RunningMan1Template.m in Sources */,
 				6E20BC8825AD944B00BBA540 /* BGColorCollectionViewCell.m in Sources */,
 				6E20BCB425AE245000BBA540 /* BGColorViewController+ControllerDelegate.m in Sources */,
-				6EC4DFF225A895240023485C /* TypoManager.m in Sources */,
 				6E9BEA2C258E448700F7F539 /* Project.m in Sources */,
 				6E8E7A9B259CBB470008C5FF /* PhotoFrameCollectionReusableView.m in Sources */,
 				B1F2B6EF25C198DD0064A044 /* InfiniteChallengeWhiteTypo.m in Sources */,
@@ -4032,10 +3999,8 @@
 				6EBEB6A425C4D8B10017C640 /* SummerVlogTemplate.m in Sources */,
 				6EF0C83E25CBC37F00BE7573 /* HeartSticker9.m in Sources */,
 				6E28452625C35870008B7A23 /* VlogNewCampus.m in Sources */,
-				6E694E7A29222A7C009AB301 /* Item.swift in Sources */,
 				6EF0C95025CD4F4100BE7573 /* DinggoBehindTypo.m in Sources */,
 				6EF5309825FA2EA8007E9B78 /* BTSMusicMainFrame.m in Sources */,
-				6E694E7529222100009AB301 /* Template.swift in Sources */,
 				6E9BE99E258A5B5C00F7F539 /* HomeViewController+TableControllerDelegate.m in Sources */,
 				B1F2B73E25C1C4E30064A044 /* InfiniteChallengeHashTag.m in Sources */,
 				6E40F44225E7DEB100FD0F67 /* SegmentFilter.swift in Sources */,
@@ -4110,7 +4075,6 @@
 				6EF0C87725CBD2E600BE7573 /* NuclearSticker.m in Sources */,
 				6E8F995625C084BB005C8071 /* SinSeoYuGi1Template.m in Sources */,
 				6EF0C83925CBC37400BE7573 /* HeartSticker8.m in Sources */,
-				6E694E632920D14F009AB301 /* HomeViewController.swift in Sources */,
 				B11E0D8825C594A10050D9F0 /* HolidayVlogTemplate.m in Sources */,
 				6EF0C8A925CBDB4A00BE7573 /* SpeechBubbleSticker4.m in Sources */,
 				6EF0C89025CBD34A00BE7573 /* SnowflakeSticker2.m in Sources */,
@@ -4145,7 +4109,6 @@
 				6EF0C85925CBD25400BE7573 /* MedalBronzeSticker.m in Sources */,
 				6E1DBE7E25D82B28004C0416 /* MacaronRectangle1.m in Sources */,
 				6ED0B00625E51CF50027485F /* WebDesignerVlogMainFrame.m in Sources */,
-				6E694E652920DDCD009AB301 /* HomeViewModel.swift in Sources */,
 				B11E0D6A25C56D560050D9F0 /* MacaronVlogTemplate.m in Sources */,
 				6E28452525C35870008B7A23 /* VlogSummerTypo.m in Sources */,
 				6E8E7A4E259B4D280008C5FF /* ChristmasCircleTemplate.m in Sources */,
@@ -4243,7 +4206,6 @@
 				6E698BB825B89DBC00CE86FB /* GuideLineView.m in Sources */,
 				6E9BEA58258F1BA800F7F539 /* ProjectManager.m in Sources */,
 				6ED0AFB125E515360027485F /* WorkMan2MainFrame.m in Sources */,
-				6E694E6829221FBA009AB301 /* HomeModel.swift in Sources */,
 				6E8E7999258F82E80008C5FF /* Migrator200406.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
