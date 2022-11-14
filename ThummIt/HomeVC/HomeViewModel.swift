@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeTableViewModel {
+class HomeViewModel {
     
     
     

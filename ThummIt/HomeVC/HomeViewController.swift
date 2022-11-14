@@ -11,7 +11,6 @@ import SnapKit
 class HomeViewController : UIViewController {
     
     let tableView = UITableView()
-    let tableViewViewModel = HomeTableViewModel()
     
     override func loadView() {
         super.loadView()
